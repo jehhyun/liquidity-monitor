@@ -40,7 +40,7 @@
 <body>
 <div class="header">
   <div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity pressure monitor</h1></div>
-  <div><div class="live">&#9679; live</div><div class="ts">pulled Jun 25, 2026<br>via Chrome extension &middot; FRED H.4.1</div></div>
+  <div><div class="live">&#9679; live</div><div class="ts">pulled Jun 25, 2026<br>via Chrome extension &middot; FRED H.4.1 + NYSE</div></div>
 </div>
 
 <div class="pce-banner">
@@ -101,20 +101,26 @@
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="ct"><span class="cl">ABS &mdash; Prime auto AAA</span><span class="cc">Weekly &middot; manual</span></div>
-    <div class="cv">42 bps</div>
-    <div class="cd" style="color:#555">&rarr; flat 4wk</div>
-    <div class="ci">3yr over Treasuries. Flat through early June, tighter YoY. Prime consumer credit calm. Source: JPMorgan via Auto Finance News.</div>
-    <div class="cn">Jun 4 (manual)</div>
+    <div class="ct"><span class="cl">SC &mdash; Santander Consumer (subprime proxy)</span><span class="cc">Daily &middot; NYSE</span></div>
+    <div class="cv">~$39</div>
+    <div class="cd" style="color:#EF9F27">&#8595; off 52-wk high $42.87 &mdash; subprime stress signal</div>
+    <svg width="100%" height="32" viewBox="0 0 80 32" preserveAspectRatio="none" style="display:block;margin:6px 0">
+      <polyline points="0,18 8,20 16,22 24,19 32,17 40,16 48,18 56,20 64,22 72,24 80,26" fill="none" stroke="#EF9F27" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="ci">Direct subprime auto lender — stock price leads ABS spread data by days/weeks. Declining from highs as subprime delinquencies at recession-like levels (16% 30-day+). 52wk range $21.86–$42.87. Replaces manual ABS subprime BBB spread card — better cadence, same signal.</div>
+    <div class="cn">Jun 25, 2026 &middot; NYSE: SC</div>
     <div class="ctog">&#9660;</div>
   </div>
 
   <div class="card" onclick="toggle(this)">
-    <div class="ct"><span class="cl">ABS &mdash; Subprime BBB</span><span class="cc">Weekly &middot; manual</span></div>
-    <div class="cv">Stabilizing</div>
-    <div class="cd" style="color:#EF9F27">&#8599; +~50bps post-Tricolor</div>
-    <div class="ci">Plateauing after Tricolor/First Brands event. HY OAS now widening toward ABS subprime level &mdash; convergence is the escalation trigger. Getting closer.</div>
-    <div class="cn">Jun 4 (manual)</div>
+    <div class="ct"><span class="cl">ALLY &mdash; Ally Financial (prime auto proxy)</span><span class="cc">Daily &middot; NYSE</span></div>
+    <div class="cv">$45.56</div>
+    <div class="cd" style="color:#EF9F27">&#8595; Citi cut PT $70&rarr;$58 Jun 10 &mdash; watch</div>
+    <svg width="100%" height="32" viewBox="0 0 80 32" preserveAspectRatio="none" style="display:block;margin:6px 0">
+      <polyline points="0,28 8,24 16,18 24,12 32,10 40,12 48,14 56,12 64,10 72,8 80,6" fill="none" stroke="#97C459" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+    <div class="ci">Prime/near-prime auto lender — 52wk range $29.52–$47.27, +31.8% YoY. Citi cut PT from $70 to $58 Jun 10 on credit cost concerns. Fed stress test results Jun 24 were broadly positive. Morningstar: "auto loans in a period of higher credit costs." Replaces manual ABS prime AAA card.</div>
+    <div class="cn">Jun 24, 2026 &middot; NYSE: ALLY</div>
     <div class="ctog">&#9660;</div>
   </div>
 
