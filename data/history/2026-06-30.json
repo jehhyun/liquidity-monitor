@@ -1,181 +1,88 @@
 {
   "date": "2026-06-30",
-  "timestamp_utc": "2026-06-30T17:40:00Z",
-  "run_source": "manual_seed",
+  "timestamp_utc": "2026-06-30T18:22:00Z",
+  "run_source": "cowork_manual",
+
   "regime_scores": {
-    "liquidity": {
-      "value": 38,
-      "trend_wk": -4
-    },
-    "credit": {
-      "value": 62,
-      "trend_wk": -3
-    },
-    "inflation": {
-      "value": 71,
-      "trend_wk": 3
-    },
-    "vol": {
-      "value": 68,
-      "trend_wk": -6
-    }
+    "liquidity": { "value": 38, "trend_wk": -4 },
+    "credit":    { "value": 63, "trend_wk": 1 },
+    "inflation": { "value": 71, "trend_wk": 0 },
+    "vol":       { "value": 67, "trend_wk": -1 }
   },
-  "regime_confidence_pct": 61,
+
+  "regime_confidence_pct": 63,
+
   "trade_implications": [
-    {
-      "theme": "Semis / enabling layer",
-      "signal": "Bullish",
-      "conviction": 7,
-      "horizon": "3-10 days"
-    },
-    {
-      "theme": "Duration / IGV",
-      "signal": "Cautious",
-      "conviction": 5,
-      "horizon": "1-3 wks"
-    },
-    {
-      "theme": "Korea / EWY",
-      "signal": "No trade",
-      "conviction": null,
-      "horizon": "Jun 2027 review"
-    },
-    {
-      "theme": "Financials",
-      "signal": "Neutral",
-      "conviction": 5,
-      "horizon": "2-4 wks"
-    },
-    {
-      "theme": "USD / dollar shorts",
-      "signal": "Mild tailwind",
-      "conviction": 5,
-      "horizon": "1-2 wks"
-    },
-    {
-      "theme": "Long credit (HYG)",
-      "signal": "Avoid",
-      "conviction": 2,
-      "horizon": "2-6 wks"
-    },
-    {
-      "theme": "Small caps",
-      "signal": "Avoid",
-      "conviction": 2,
-      "horizon": "6-10 wks"
-    }
+    { "theme": "Semis / enabling layer", "signal": "Bullish", "conviction": 8, "horizon": "3-10 days" },
+    { "theme": "Duration / IGV",         "signal": "Cautious", "conviction": 4, "horizon": "1-3 wks" },
+    { "theme": "Korea / EWY",            "signal": "Watch closely", "conviction": null, "horizon": "Days — USDKRW watch" },
+    { "theme": "Financials",             "signal": "Neutral", "conviction": 4, "horizon": "2-4 wks" },
+    { "theme": "USD / dollar shorts",    "signal": "Neutral", "conviction": 3, "horizon": "Watch" },
+    { "theme": "Long credit (HYG)",      "signal": "Avoid", "conviction": 2, "horizon": "2-6 wks" },
+    { "theme": "Small caps",             "signal": "Avoid", "conviction": 2, "horizon": "6-10 wks" }
   ],
+
   "korea_gate": {
     "status": "closed",
-    "conditions_met": 1,
+    "conditions_met": 2,
     "conditions_total": 3,
-    "ewy_price": 197.5,
-    "ewy_sma20": 200.89,
-    "ewy_above_sma20": false,
-    "usdkrw": 1541.68,
+    "ewy_price": 202.14,
+    "ewy_sma20": 200.16,
+    "ewy_above_sma20": true,
+    "usdkrw": 1546.04,
     "usdkrw_below_1530": false,
-    "kospi": 8394.66,
+    "kospi": 8476.49,
     "kospi_above_8200": true
   },
+
   "plumbing": {
     "tga_usd_b": 919,
     "rrp_usd_b": 3.55,
     "reserves_usd_t": 2.951,
     "sofr_pct": 3.62,
-    "hy_oas_pct": 2.83,
-    "fed_net_liquidity_usd_t": 5.813
+    "hy_oas_pct": 2.80,
+    "fed_net_liquidity_usd_t": 5.812
   },
+
   "curve": {
-    "us03my": 3.772,
-    "us06my": 3.952,
-    "us02y": 4.109,
-    "us05y": 4.146,
-    "us10y": 4.378,
-    "us30y": 4.865,
-    "spread_2s10s": 0.269,
-    "spread_3m10y": 0.606,
-    "real_10y": 2.17
+    "us03my": 3.828, "us06my": 3.970, "us02y": 4.131,
+    "us05y": 4.179, "us10y": 4.412, "us30y": 4.899,
+    "spread_2s10s": 0.281, "spread_3m10y": 0.584,
+    "real_10y": 2.19
   },
+
   "fx": {
-    "usdjpy": 161.96,
-    "usdkrw": 1541.68,
-    "usdcny": 6.7931,
-    "dxy": 101.12,
-    "jp10y": 2.638,
-    "us_japan_spread_bps": 174
+    "usdjpy": 162.602, "usdkrw": 1546.04, "usdcny": 6.7846,
+    "dxy": 101.151, "jp10y": 2.687, "us_japan_spread_bps": 173
   },
+
   "watchlist": {
-    "TLT": 87.45,
-    "SHY": 82.17,
-    "HYG": 80.01,
-    "MOVE": 68.14,
-    "VIX": 17.66,
-    "T10YIE": 2.2,
-    "CL1": 70.47,
-    "GOLD": 4015.16,
-    "NI225": 69467.89,
-    "KOSPI": 8394.66,
-    "SOXX": 614.35,
-    "QQQ": 724.08,
-    "SPY": 741.0,
-    "soxx_spy_ratio": 0.829,
-    "DRAM": 71.94,
-    "CRDO": 245.68,
-    "ASX": 42.13,
-    "GLW": 255.69,
-    "LITE": 851.4,
-    "AMKR": 82.34,
-    "MU": 1145.28,
-    "APH": 166.42,
-    "POWI": 78.96,
-    "EOSE": 6.09,
-    "ALLY": 47.25,
-    "CACC": 638.23,
-    "COF": 202.28
+    "TLT": 86.85, "SHY": 82.14, "HYG": 80.01, "MOVE": 68.14,
+    "VIX": 16.60, "T10YIE": 2.22, "CL1": 69.59, "GOLD": 4032.11,
+    "NI225": 70062.10, "KOSPI": 8476.49,
+    "SOXX": 639.10, "QQQ": 736.14, "SPY": 746.84,
+    "soxx_spy_ratio": 0.856,
+    "DRAM": 73.65, "CRDO": 270.80, "ASX": 44.85, "GLW": 252.06,
+    "LITE": 866.42, "AMKR": 86.52, "MU": 1148.41,
+    "APH": 176.84, "POWI": 83.03, "EOSE": 5.73,
+    "ALLY": 46.19, "CACC": 639.28, "COF": 200.45,
+    "EWY": 202.14
   },
+
   "positions": [
-    {
-      "ticker": "ASX",
-      "type": "shares",
-      "qty": 50,
-      "status": "above cost basis"
-    },
-    {
-      "ticker": "GLW",
-      "type": "shares",
-      "qty": 14,
-      "status": "well above cost basis, +15.7% today"
-    },
-    {
-      "ticker": "POWI",
-      "type": "shares",
-      "qty": 25,
-      "status": "below cost basis"
-    },
-    {
-      "ticker": "APH",
-      "type": "spread",
-      "detail": "$165/$170 Jul 17 bull call",
-      "status": "in the money"
-    },
-    {
-      "ticker": "DRAM",
-      "type": "spread",
-      "detail": "$69/$74 Jul 17 bull call x2",
-      "status": "hold, gate closed"
-    },
-    {
-      "ticker": "EOSE",
-      "type": "spread",
-      "detail": "$7.50/$10 Jul 17 bull call x10",
-      "status": "thesis broken, close priority"
-    }
+    { "ticker": "ASX",  "type": "shares", "qty": 50, "cost_basis": 38.57, "status": "above cost basis" },
+    { "ticker": "GLW",  "type": "shares", "qty": 14, "cost_basis": 189.66, "status": "well above cost basis" },
+    { "ticker": "POWI", "type": "shares", "qty": 25, "cost_basis": 84.21, "status": "approaching cost basis" },
+    { "ticker": "APH",  "type": "spread", "detail": "$165/$170 Jul 17 bull call", "status": "deep in the money" },
+    { "ticker": "DRAM", "type": "spread", "detail": "$69/$74 Jul 17 bull call x2", "status": "above $74 target, hold" },
+    { "ticker": "EOSE", "type": "spread", "detail": "$7.50/$10 Jul 17 bull call x10", "status": "thesis broken, close priority" }
   ],
+
   "data_quality": {
     "fred_series_ok": 5,
     "fred_series_failed": [],
-    "tradingview_symbols_ok": 35,
+    "tradingview_symbols_ok": 36,
     "tradingview_symbols_failed": [],
-    "notes": "First seeded snapshot \u2014 manual backfill of today's already-collected dashboard data"
+    "notes": "EWY SMA20 sourced from TradingView technicals page. Full cowork manual run. Korea gate improved 1/3 → 2/3 vs scheduled run earlier today. USDJPY breached 162.00 BOJ threshold."
   }
 }
