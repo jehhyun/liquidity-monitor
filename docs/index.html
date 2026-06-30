@@ -1,241 +1,831 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <title>Fat Cat Capital — Liquidity Monitor</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #111; color: #f0f0f0;
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 20px 16px 60px; max-width: 960px; margin: 0 auto;
-    }
-    .header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; flex-wrap: wrap; gap: 10px; }
-    .eyebrow { font-size: 10px; color: #444; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
-    h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
-    .header-right { text-align: right; }
-    .live-dot { font-size: 11px; color: #97C459; margin-bottom: 3px; }
-    .pulled-at { font-size: 10px; color: #3a3a3a; line-height: 1.6; }
-    .section { margin-bottom: 24px; }
-    .section-label { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: #3a3a3a; font-weight: 600; border-bottom: 1px solid #1a1a1a; padding-bottom: 6px; margin-bottom: 10px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
-    .card { background: #181818; border: 1px solid #252525; border-radius: 8px; padding: 12px 14px; cursor: pointer; user-select: none; }
-    .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 6px; margin-bottom: 8px; }
-    .card-label { font-size: 11px; color: #666; line-height: 1.35; flex: 1; }
-    .cadence { font-size: 9px; color: #3a3a3a; background: #111; padding: 2px 5px; border-radius: 3px; white-space: nowrap; flex-shrink: 0; }
-    .card-value { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; line-height: 1; color: #f0f0f0; font-family: ui-monospace, 'SF Mono', monospace; margin-bottom: 6px; }
-    .card-delta { font-size: 11px; min-height: 16px; margin-bottom: 2px; }
-    .card-insight { font-size: 11px; color: #777; line-height: 1.5; margin-top: 8px; padding-top: 8px; border-top: 1px solid #222; display: none; }
-    .card-note { font-size: 10px; color: #444; line-height: 1.5; margin-top: 6px; display: none; }
-    .card-toggle { text-align: right; font-size: 9px; color: #2a2a2a; margin-top: 6px; }
-    .card.open .card-insight, .card.open .card-note { display: block; }
-    .catalyst { background: #181818; border: 1px solid #252525; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; }
-    .catalyst-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 4px; }
-    .catalyst-eyebrow { font-size: 9px; color: #444; text-transform: uppercase; letter-spacing: 0.08em; }
-    .catalyst-date { font-size: 16px; font-weight: 600; color: #EF9F27; margin-bottom: 6px; }
-    .catalyst-note { font-size: 11px; color: #555; line-height: 1.6; }
-    .footer { font-size: 9px; color: #2e2e2e; line-height: 1.8; margin-top: 8px; }
-    @media (max-width: 480px) { .grid { grid-template-columns: 1fr 1fr; } .card-value { font-size: 20px; } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Fat Cat Capital — Liquidity Monitor</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;color:#f0f0f0;font-family:system-ui,-apple-system,sans-serif;padding:20px 16px 60px;max-width:1100px;margin:0 auto}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.eyebrow{font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+h1{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.live{font-size:11px;color:#97C459;margin-bottom:2px}
+.ts{font-size:10px;color:#3a3a3a;line-height:1.6;text-align:right}
+.sec{margin-bottom:18px}
+.sl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#3a3a3a;font-weight:600;border-bottom:1px solid #1a1a1a;padding-bottom:5px;margin-bottom:8px}
+.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.g6{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.card{background:#181818;border:1px solid #252525;border-radius:8px;padding:11px 13px;cursor:pointer;user-select:none}
+.card.red{border-color:#3a1a1a;background:#1a1212}
+.card.amb{border-color:#2e2800}
+.card.grn{border-color:#1a2e1a}
+.ct{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:6px}
+.cl{font-size:10px;color:#666;line-height:1.3;flex:1}
+.cc{font-size:9px;color:#3a3a3a;background:#111;padding:1px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.cv{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:4px}
+.cv.sm{font-size:17px}
+.cd{font-size:11px;min-height:14px}
+.ci{display:none;font-size:11px;color:#666;line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid #252525}
+.csrc{display:none;font-size:9px;color:#3a3a3a;margin-top:3px}
+.ctog{text-align:right;font-size:9px;color:#2a2a2a;margin-top:3px}
+.card.open .ci,.card.open .csrc{display:block}
+.pills{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:10px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;padding:2px 8px;color:#888}
+.bar{height:4px;border-radius:2px;background:#1a1a1a;overflow:hidden;margin-top:3px}
+.bfill{height:4px;border-radius:2px}
+
+/* ── CHANGED TODAY ── */
+.changes{background:#161616;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:16px}
+.changes-title{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.chg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.chg-item{background:#111;border-radius:5px;padding:7px 9px}
+.chg-label{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.chg-val{font-size:13px;font-weight:600;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.01em}
+.chg-delta{font-size:10px;margin-top:1px}
+
+/* ── REGIME ENGINE ── */
+.regime{background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:16px}
+.regime-hdr{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;justify-content:space-between}
+.scores{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:12px}
+.score-card{background:#111;border-radius:6px;padding:9px 11px}
+.score-label{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.score-top{display:flex;align-items:baseline;gap:8px;margin-bottom:3px}
+.score-num{font-size:20px;font-weight:700;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em}
+.score-trend{font-size:11px}
+.score-sub{font-size:10px;color:#3a3a3a;margin-bottom:6px;line-height:1.4}
+.score-decomp{display:none;margin-top:6px;padding-top:6px;border-top:1px solid #1a1a1a}
+.score-card.open .score-decomp{display:block}
+.decomp-row{display:flex;justify-content:space-between;font-size:10px;color:#555;margin-bottom:3px}
+.decomp-row span:last-child{font-family:ui-monospace,'SF Mono',monospace;font-size:10px}
+.regime-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid}
+.regime-bias{background:#111;border-radius:6px;padding:9px 11px;font-size:11px;color:#666;line-height:1.55;margin-bottom:12px}
+
+/* TRADE TABLE */
+.ttable{width:100%;border-collapse:collapse}
+.ttable th{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:5px 8px;border-bottom:1px solid #1e1e1e}
+.ttable td{font-size:11px;padding:6px 8px;border-bottom:1px solid #161616;color:#777;vertical-align:top}
+.ttable td:first-child{color:#f0f0f0;font-weight:500;white-space:nowrap}
+.ttable tr:last-child td{border-bottom:none}
+.horizon{font-size:9px;color:#3a3a3a;margin-top:2px}
+
+/* EVENT CALENDAR */
+.cal{background:#161616;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:16px}
+.cal-title{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px}
+.cal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px}
+.cal-item{background:#111;border-radius:5px;padding:8px 10px;border-left:2px solid}
+.cal-date{font-size:10px;color:#555;margin-bottom:2px}
+.cal-event{font-size:12px;font-weight:600;color:#f0f0f0;margin-bottom:3px}
+.cal-stars{font-size:11px;letter-spacing:1px}
+.cal-note{font-size:10px;color:#444;line-height:1.4;margin-top:3px}
+
+/* NET LIQUIDITY */
+.nl{background:#111;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.nl-formula{font-size:9px;color:#3a3a3a;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:6px}
+.nl-val{font-size:30px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em}
+.nl-delta{font-size:11px;margin:3px 0 8px}
+.nl-bar-labels{display:flex;justify-content:space-between;font-size:9px;color:#3a3a3a;margin-bottom:3px}
+.nl-track{height:5px;background:#1e1e1e;border-radius:3px;position:relative}
+.nl-fill{height:5px;border-radius:3px;position:absolute;top:0;left:0}
+.nl-dot{width:9px;height:9px;border-radius:50%;position:absolute;top:-2px;transform:translateX(-50%);border:2px solid #111}
+.nl-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid #252525;font-size:11px;color:#666;line-height:1.6}
+.nl.open .nl-detail{display:block}
+
+/* KOREA GATE */
+.kgate{border:2px solid #3a1a1a;background:#1a1212;border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.kgate.above{border-color:#1a3a1a;background:#121a12}
+
+/* CHAIN */
+.chain{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
+.cc2{background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px;cursor:pointer;user-select:none}
+.cc2.warn{border-color:#3a1a1a}
+.cc2.grn{border-color:#1a2e1a}
+.cc2-t{font-size:9px;color:#444;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.cc2-p{font-size:17px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.01em;margin-bottom:2px}
+.cc2-d{font-size:11px}
+.cc2-n{display:none;font-size:10px;color:#555;margin-top:5px;padding-top:5px;border-top:1px solid #1e1e1e;line-height:1.5}
+.cc2.open .cc2-n{display:block}
+
+.cat{background:#181818;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:14px}
+.footer{font-size:9px;color:#2e2e2e;line-height:1.8;margin-top:4px}
+@media(max-width:600px){.g6,.chain{grid-template-columns:1fr 1fr}.scores,.chg-grid{grid-template-columns:1fr 1fr}}
+</style>
 </head>
 <body>
-  <div class="header">
-    <div>
-      <div class="eyebrow">Fat Cat Capital</div>
-      <h1>Liquidity pressure monitor</h1>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity pressure monitor</h1></div>
+  <div><div class="live">&#9679; live</div><div class="ts">Jun 29, 2026<br>FRED H.4.1 + TradingView watchlist</div></div>
+</div>
+
+<!-- ══ WHAT CHANGED TODAY ══ -->
+<div class="changes">
+  <div class="changes-title">&#9650; What changed today</div>
+  <div class="chg-grid">
+    <div class="chg-item">
+      <div class="chg-label">SOXX</div>
+      <div class="chg-val" style="color:#97C459">$614.35</div>
+      <div class="chg-delta" style="color:#97C459">&#8593; +4.14% &mdash; semis leading</div>
     </div>
-    <div class="header-right">
-      <div class="live-dot">● live</div>
-      <div class="pulled-at">
-        pulled Jun 30, 2026 13:05 UTC<br>
-        via Cowork · FRED
+    <div class="chg-item">
+      <div class="chg-label">GLW</div>
+      <div class="chg-val" style="color:#97C459">$255.69</div>
+      <div class="chg-delta" style="color:#97C459">&#8593; +15.67% &mdash; &#9888; investigate</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">US10Y</div>
+      <div class="chg-val" style="color:#97C459">4.378%</div>
+      <div class="chg-delta" style="color:#97C459">&#8595; &minus;9bps from 4.49% ATH</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">HY OAS</div>
+      <div class="chg-val" style="color:#EF9F27">2.83%</div>
+      <div class="chg-delta" style="color:#E24B4A">&#8593; +20bps from tight (trend)</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">USDJPY</div>
+      <div class="chg-val" style="color:#E24B4A">161.96</div>
+      <div class="chg-delta" style="color:#E24B4A">&#8593; AT 162 BOJ threshold</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">MOVE</div>
+      <div class="chg-val" style="color:#EF9F27">68.14</div>
+      <div class="chg-delta" style="color:#EF9F27">&#8593; +2.03% &mdash; bond vol rising</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">Oil (CL1!)</div>
+      <div class="chg-val" style="color:#EF9F27">$70.47</div>
+      <div class="chg-delta" style="color:#EF9F27">&#8593; +1.79% &mdash; &#9888; PCE risk</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">DXY</div>
+      <div class="chg-val" style="color:#97C459">101.12</div>
+      <div class="chg-delta" style="color:#97C459">&#8595; &minus;0.24% &mdash; dollar soft</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">Liq. score</div>
+      <div class="chg-val" style="color:#EF9F27">38</div>
+      <div class="chg-delta" style="color:#555">&#8594; unchanged</div>
+    </div>
+    <div class="chg-item">
+      <div class="chg-label">Inflation score</div>
+      <div class="chg-val" style="color:#97C459">71</div>
+      <div class="chg-delta" style="color:#EF9F27">&#8593; +3 (PCE peak read)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REGIME ENGINE ══ -->
+<div class="regime">
+  <div class="regime-hdr"><span>Regime engine &mdash; decision layer</span><span style="font-size:10px;color:#3a3a3a">Jun 29, 2026</span></div>
+
+  <div class="scores">
+    <!-- Liquidity score -->
+    <div class="score-card" onclick="this.classList.toggle('open');event.stopPropagation()">
+      <div class="score-label">Liquidity score</div>
+      <div class="score-top">
+        <div class="score-num" style="color:#E24B4A">38</div>
+        <div class="score-trend" style="color:#E24B4A">&#8595; &minus;4 wk</div>
+      </div>
+      <div class="bar"><div class="bfill" style="width:38%;background:#E24B4A"></div></div>
+      <div class="score-sub">Tightening &mdash; TGA rebuild active, reserves below $3T, QT compounding</div>
+      <div class="score-decomp">
+        <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Score contributors</div>
+        <div class="decomp-row"><span>TGA rebuilding $38B/wk</span><span style="color:#E24B4A">&minus;22</span></div>
+        <div class="decomp-row"><span>QT ~$60B/mo ongoing</span><span style="color:#E24B4A">&minus;18</span></div>
+        <div class="decomp-row"><span>Reserves below $3T</span><span style="color:#E24B4A">&minus;15</span></div>
+        <div class="decomp-row"><span>RRP near zero (no cushion)</span><span style="color:#E24B4A">&minus;13</span></div>
+        <div class="decomp-row"><span>SOFR below IORB (clean)</span><span style="color:#97C459">+6</span></div>
+        <div class="decomp-row"><span>HYG holding (credit calm)</span><span style="color:#97C459">+5</span></div>
+        <div style="border-top:1px solid #1a1a1a;margin-top:5px;padding-top:5px">
+          <div class="decomp-row" style="font-weight:600"><span style="color:#aaa">Net score</span><span style="color:#E24B4A">38 / 100</span></div>
+        </div>
+        <div style="font-size:9px;color:#3a3a3a;margin-top:4px">Tap to collapse &middot; WALCL $6.735T &minus; TGA $919B &minus; RRP $4B = $5.813T net</div>
+      </div>
+    </div>
+    <!-- Credit score -->
+    <div class="score-card" onclick="this.classList.toggle('open');event.stopPropagation()">
+      <div class="score-label">Credit score</div>
+      <div class="score-top">
+        <div class="score-num" style="color:#EF9F27">62</div>
+        <div class="score-trend" style="color:#E24B4A">&#8595; &minus;3 wk</div>
+      </div>
+      <div class="bar"><div class="bfill" style="width:62%;background:#EF9F27"></div></div>
+      <div class="score-sub">Stable but drifting &mdash; HY OAS +20bps from tight, MOVE rising</div>
+      <div class="score-decomp">
+        <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Score contributors</div>
+        <div class="decomp-row"><span>HYG holding (credit bid)</span><span style="color:#97C459">+18</span></div>
+        <div class="decomp-row"><span>ALLY near 52-week highs</span><span style="color:#97C459">+12</span></div>
+        <div class="decomp-row"><span>HY OAS +20bps from tight</span><span style="color:#E24B4A">&minus;14</span></div>
+        <div class="decomp-row"><span>MOVE rising to 68.14</span><span style="color:#E24B4A">&minus;8</span></div>
+        <div class="decomp-row"><span>COF softening</span><span style="color:#EF9F27">&minus;4</span></div>
+        <div style="border-top:1px solid #1a1a1a;margin-top:5px;padding-top:5px">
+          <div class="decomp-row" style="font-weight:600"><span style="color:#aaa">Net score</span><span style="color:#EF9F27">62 / 100</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Inflation score -->
+    <div class="score-card" onclick="this.classList.toggle('open');event.stopPropagation()">
+      <div class="score-label">Inflation score</div>
+      <div class="score-top">
+        <div class="score-num" style="color:#97C459">71</div>
+        <div class="score-trend" style="color:#97C459">&#8593; +3 wk</div>
+      </div>
+      <div class="bar"><div class="bfill" style="width:71%;background:#97C459"></div></div>
+      <div class="score-sub">Improving &mdash; PCE peak read, oil &minus;35% from war high</div>
+      <div class="score-decomp">
+        <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Score contributors</div>
+        <div class="decomp-row"><span>Oil &minus;35% from $114 peak</span><span style="color:#97C459">+22</span></div>
+        <div class="decomp-row"><span>PCE print at 4.1% (peaked)</span><span style="color:#97C459">+15</span></div>
+        <div class="decomp-row"><span>Breakeven 2.2% (anchored)</span><span style="color:#97C459">+12</span></div>
+        <div class="decomp-row"><span>Core PCE 3.4% (above target)</span><span style="color:#E24B4A">&minus;10</span></div>
+        <div class="decomp-row"><span>Oil bouncing today +1.8%</span><span style="color:#EF9F27">&minus;8</span></div>
+        <div style="border-top:1px solid #1a1a1a;margin-top:5px;padding-top:5px">
+          <div class="decomp-row" style="font-weight:600"><span style="color:#aaa">Net score</span><span style="color:#97C459">71 / 100</span></div>
+        </div>
+      </div>
+    </div>
+    <!-- Vol score -->
+    <div class="score-card" onclick="this.classList.toggle('open');event.stopPropagation()">
+      <div class="score-label">Vol score</div>
+      <div class="score-top">
+        <div class="score-num" style="color:#EF9F27">68</div>
+        <div class="score-trend" style="color:#E24B4A">&#8595; &minus;6 wk (MOVE rising)</div>
+      </div>
+      <div class="bar"><div class="bfill" style="width:68%;background:#EF9F27"></div></div>
+      <div class="score-sub">Drifting lower &mdash; VIX calm but MOVE rising 2%</div>
+      <div class="score-decomp">
+        <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Score contributors</div>
+        <div class="decomp-row"><span>VIX 17.66 (below 20)</span><span style="color:#97C459">+22</span></div>
+        <div class="decomp-row"><span>No SOFR stress signal</span><span style="color:#97C459">+10</span></div>
+        <div class="decomp-row"><span>MOVE 68.14 (+2% today)</span><span style="color:#EF9F27">&minus;8</span></div>
+        <div class="decomp-row"><span>USDJPY at 162 threshold</span><span style="color:#E24B4A">&minus;10</span></div>
+        <div style="border-top:1px solid #1a1a1a;margin-top:5px;padding-top:5px">
+          <div class="decomp-row" style="font-weight:600"><span style="color:#aaa">Net score</span><span style="color:#EF9F27">68 / 100</span></div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- PLUMBING SECTION -->
-  <div class="section">
-    <div class="section-label">Plumbing</div>
-    <div class="grid">
-      <div class="card" id="WTREGEN">
-        <div class="card-top">
-          <span class="card-label">Treasury General Account</span>
-          <span class="cadence">Weekly · Wed H.4.1</span>
-        </div>
-        <div class="card-value">$919B</div>
-        <div class="card-delta" style="color:#E24B4A">↑ +$38.0B vs ~4wk ago</div>
-        <div class="card-insight">$919B, up $38B in 4 weeks as Treasury rebuilds toward the Aug 5 QRA target. RRP near empty means this drain pulls straight from reserves — the Jul–Sep pressure window is now live.</div>
-        <div class="card-note">Last print: 2026-06-24 · FRED (WTREGEN)</div>
-        <div class="card-toggle">▼</div>
+  <!-- Regime tags -->
+  <div class="regime-tags">
+    <span class="tag" style="background:#1a1212;border-color:#3a1a1a;color:#E24B4A">Liquidity: Tightening</span>
+    <span class="tag" style="background:#1a1a12;border-color:#3a3a1a;color:#EF9F27">Inflation: Improving</span>
+    <span class="tag" style="background:#1a1a12;border-color:#2a2a1a;color:#EF9F27">Credit: Stable / drifting</span>
+    <span class="tag" style="background:#121a12;border-color:#1a3a1a;color:#97C459">Rates: Easing from peak</span>
+    <span class="tag" style="background:#1a1a12;border-color:#2a2a1a;color:#EF9F27">Vol: Low but MOVE rising</span>
+  </div>
+
+  <!-- Bias -->
+  <div class="regime-bias">
+    <strong style="color:#aaa">Recommended bias:</strong> Selective long enabling-layer hardware with tight sizing. Korea gate closed &mdash; no DRAM/Korea-linked adds until EWY reclaims $216.75. Jul&ndash;Sep liquidity drain is active; reduce crowded duration-sensitive names before late July TGA peak. Oil bounce today (+1.8%) is the key risk to monitor &mdash; if sustained, PCE peak narrative reverses and 10Y reprices higher.
+  </div>
+
+  <!-- Trade table -->
+  <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Trade implications</div>
+  <table class="ttable">
+    <thead><tr><th>Theme</th><th>Signal</th><th>Conv.</th><th>Horizon</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Semis / enabling layer</td>
+        <td style="color:#97C459">Bullish</td>
+        <td>7/10<div class="bar"><div class="bfill" style="width:70%;background:#97C459"></div></div></td>
+        <td><div class="horizon">3&ndash;10 days</div></td>
+        <td>MU beat confirmed HBM thesis. SOXX +4.1%. 10Y easing from ATH. EWY gate blocks Korea add but US semis intact.</td>
+      </tr>
+      <tr>
+        <td>Duration / IGV</td>
+        <td style="color:#97C459">Cautious</td>
+        <td>5/10<div class="bar"><div class="bfill" style="width:50%;background:#97C459"></div></div></td>
+        <td><div class="horizon">1&ndash;3 wks</div></td>
+        <td>10Y &minus;9bps from ATH but real yield 2.17% still elevated. Oil bounce today is the key risk. Jul&ndash;Sep drain caps duration upside.</td>
+      </tr>
+      <tr>
+        <td>Korea / EWY</td>
+        <td style="color:#E24B4A">No trade</td>
+        <td>&mdash;<div class="bar"><div class="bfill" style="width:0%;background:#555"></div></div></td>
+        <td><div class="horizon">Jun 2027 review</div></td>
+        <td>Gate closed. $197.50 vs $216.75. MSCI DM exclusion forced unwind. No add regardless of thesis strength.</td>
+      </tr>
+      <tr>
+        <td>Financials</td>
+        <td style="color:#EF9F27">Neutral</td>
+        <td>5/10<div class="bar"><div class="bfill" style="width:50%;background:#EF9F27"></div></div></td>
+        <td><div class="horizon">2&ndash;4 wks</div></td>
+        <td>High NIM + calm credit = still supportive. HY OAS drifting wider is the watch signal. No edge currently.</td>
+      </tr>
+      <tr>
+        <td>USD / dollar shorts</td>
+        <td style="color:#97C459">Mild tailwind</td>
+        <td>5/10<div class="bar"><div class="bfill" style="width:50%;background:#97C459"></div></div></td>
+        <td><div class="horizon">1&ndash;2 wks</div></td>
+        <td>DXY &minus;0.24% on PCE peak read. Dollar weakness = EM tailwind. BOJ intervention at 162 is the binary risk that reverses this.</td>
+      </tr>
+      <tr>
+        <td>Long credit (HYG)</td>
+        <td style="color:#E24B4A">Avoid</td>
+        <td>2/10<div class="bar"><div class="bfill" style="width:20%;background:#E24B4A"></div></div></td>
+        <td><div class="horizon">2&ndash;6 wks</div></td>
+        <td>HY OAS +20bps from 25yr tights + liquidity tightening = unattractive risk/reward for new longs. More room to widen.</td>
+      </tr>
+      <tr>
+        <td>Small caps</td>
+        <td style="color:#E24B4A">Avoid</td>
+        <td>2/10<div class="bar"><div class="bfill" style="width:20%;background:#E24B4A"></div></div></td>
+        <td><div class="horizon">6&ndash;10 wks</div></td>
+        <td>Jul&ndash;Sep reserve drain disproportionately hits levered small caps. Credit drift wider amplifies this. No catalyst.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ EVENT CALENDAR ══ -->
+<div class="cal">
+  <div class="cal-title">Upcoming catalysts</div>
+  <div class="cal-grid">
+    <div class="cal-item" style="border-color:#E24B4A">
+      <div class="cal-date">Jul 2</div>
+      <div class="cal-event">H.4.1 Release</div>
+      <div class="cal-stars" style="color:#E24B4A">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="cal-note">TGA + Reserves print. Will show if drain rate accelerating. Most important near-term data point.</div>
+    </div>
+    <div class="cal-item" style="border-color:#EF9F27">
+      <div class="cal-date">Jul 3</div>
+      <div class="cal-event">Payrolls (NFP)</div>
+      <div class="cal-stars" style="color:#EF9F27">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+      <div class="cal-note">Strong print = Warsh hike back on table. Weak print = duration relief. Binary for 2Y/10Y.</div>
+    </div>
+    <div class="cal-item" style="border-color:#3a3a3a">
+      <div class="cal-date">Jul 9</div>
+      <div class="cal-event">10Y Auction</div>
+      <div class="cal-stars" style="color:#555">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+      <div class="cal-note">Bid-to-cover and tail will show whether private demand absorbing Treasury supply at current yields.</div>
+    </div>
+    <div class="cal-item" style="border-color:#E24B4A">
+      <div class="cal-date">Jul 15</div>
+      <div class="cal-event">CPI</div>
+      <div class="cal-stars" style="color:#E24B4A">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="cal-note">PCE peak narrative confirmed or reversed here. Hot CPI = duration selloff + Warsh hike = duration thesis reversal.</div>
+    </div>
+    <div class="cal-item" style="border-color:#EF9F27">
+      <div class="cal-date">Jul 17</div>
+      <div class="cal-event">Options expiry</div>
+      <div class="cal-stars" style="color:#EF9F27">&#9733;&#9733;&#9733;&#9734;&#9734;</div>
+      <div class="cal-note">APH $165/$170, DRAM $69/$74, EOSE $7.50/$10 spreads all expire. Position resolution day.</div>
+    </div>
+    <div class="cal-item" style="border-color:#E24B4A">
+      <div class="cal-date">Aug 5</div>
+      <div class="cal-event">Treasury QRA</div>
+      <div class="cal-stars" style="color:#E24B4A">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="cal-note">Quarterly Refunding Announcement. Auction sizes + TGA guidance for Q3. Structural pressure window anchor.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NET LIQUIDITY ══ -->
+<div class="sec">
+  <div class="sl">Fed net liquidity &mdash; primary signal</div>
+  <div class="nl" onclick="this.classList.toggle('open')">
+    <div class="nl-formula">Net Liquidity = WALCL $6,735B &minus; TGA $919B &minus; RRP $4B</div>
+    <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+      <div>
+        <div class="nl-val">$5.813T</div>
+        <div class="nl-delta" style="color:#E24B4A">&#8595; declining &mdash; TGA rebuild + QT compounding simultaneously</div>
       </div>
-      <div class="card" id="RRPONTSYD">
-        <div class="card-top">
-          <span class="card-label">Overnight Reverse Repo</span>
-          <span class="cadence">Daily · NY Fed</span>
-        </div>
-        <div class="card-value">$3.55B</div>
-        <div class="card-delta" style="color:#EF9F27">↓ −$0.38B vs ~4wk ago</div>
-        <div class="card-insight">$3.55B — effectively zero, down slightly from $3.93B. The old shock absorber for TGA swings is gone; further TGA building now drains reserves directly with no buffer left to cushion it.</div>
-        <div class="card-note">Last print: 2026-06-29 · FRED (RRPONTSYD)</div>
-        <div class="card-toggle">▼</div>
+    </div>
+    <div class="nl-bar-labels"><span>Tight ($5.0T)</span><span>Current</span><span>Ample ($7.5T)</span></div>
+    <div class="nl-track">
+      <div class="nl-fill" style="width:66%;background:linear-gradient(90deg,#EF9F27,#E24B4A)"></div>
+      <div class="nl-dot" style="left:66%;background:#E24B4A"></div>
+    </div>
+    <div class="nl-detail">Net liquidity is the amount the Fed is effectively injecting into or draining from the financial system. When it falls, risk assets come under pressure with a 2&ndash;6 week lag. Current trajectory: WALCL shrinking via QT (~$60B/mo), TGA growing ($38B/wk), RRP near zero. All three vectors tightening simultaneously &mdash; this is the Jul&ndash;Sep pressure window.<div style="font-size:9px;color:#3a3a3a;margin-top:4px">Jun 24 &middot; FRED WALCL + WTREGEN + RRPONTSYD (H.4.1)</div></div>
+    <div style="text-align:right;font-size:9px;color:#2a2a2a;margin-top:3px">&#9660;</div>
+  </div>
+  <div class="g4">
+    <div class="card red" onclick="toggle(this)">
+      <div class="ct"><span class="cl">Treasury General Account</span><span class="cc">H.4.1 weekly</span></div>
+      <div class="cv">$919B</div>
+      <div class="cd" style="color:#E24B4A">&#8593; +$38B/wk &rarr; ~$1T late July</div>
+      <div class="ci">Rebuild accelerating toward ~$1T. Each week drains reserves directly &mdash; no RRP buffer.<div class="csrc">Jun 24 &middot; FRED WTREGEN &middot; next H.4.1 Jul 2</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">Overnight Reverse Repo</span><span class="cc">Daily NY Fed</span></div>
+      <div class="cv">$3.55B</div>
+      <div class="cd" style="color:#EF9F27">&#8594; near zero &mdash; no buffer</div>
+      <div class="ci">Depleted from $2T+ pre-2022. TGA drain now hits reserves directly without this cushion.<div class="csrc">Jun 29 &middot; FRED RRPONTSYD</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card red" onclick="toggle(this)">
+      <div class="ct"><span class="cl">Reserve Balances</span><span class="cc">H.4.1 weekly</span></div>
+      <div class="cv">$2.951T</div>
+      <div class="cd" style="color:#E24B4A">&#8595; &minus;$82B/wk &mdash; below $3T</div>
+      <div class="ci">Crossed below $3T for the first time this cycle. $2.8T is the next watch level. $2.5T = scarcity threshold.<div class="csrc">Jun 24 &middot; FRED WRESBAL &middot; next H.4.1 Jul 2</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">SOFR</span><span class="cc">Daily 8am ET</span></div>
+      <div class="cv">3.62%</div>
+      <div class="cd" style="color:#555">&#8594; 3bps below IORB &mdash; clean</div>
+      <div class="ci">Normal. SOFR above IORB (3.65%) = repo stress signal. Not firing despite structural tightening.<div class="csrc">Jun 26 &middot; FRED SOFR</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ DURATION ══ -->
+<div class="sec">
+  <div class="sl">Duration signal &mdash; TradingView live</div>
+  <div class="g4">
+    <div class="card grn" onclick="toggle(this)">
+      <div class="ct"><span class="cl">TLT &mdash; 20Y+ Treasury</span><span class="cc">Live</span></div>
+      <div class="cv">$87.45</div>
+      <div class="cd" style="color:#97C459">&#8593; +0.10% &mdash; duration bid</div>
+      <div class="ci">TLT/SHY = 87.45/82.17 = 1.065. Rising TLT = falling 10Y = relief for CRDO/LITE/DRAM duration component.<div class="csrc">Jun 29 &middot; TradingView TLT</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">SHY &mdash; 1-3Y Treasury</span><span class="cc">Live</span></div>
+      <div class="cv">$82.17</div>
+      <div class="cd" style="color:#555">&#8594; flat &mdash; front end anchored</div>
+      <div class="ci">SHY flat while TLT rises = curve steepening. Mild reversal of post-Warsh flattening. Constructive for risk.<div class="csrc">Jun 29 &middot; TradingView SHY</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">HYG &mdash; HY Corp Bond</span><span class="cc">Live</span></div>
+      <div class="cv">$80.01</div>
+      <div class="cd" style="color:#97C459">&#8593; +0.23% &mdash; credit bid</div>
+      <div class="ci">HYG rising = credit spreads stable. Watch for HYG falling while SPY flat &mdash; that's the early credit divergence signal. Not firing.<div class="csrc">Jun 29 &middot; TradingView HYG</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">T10YIE &mdash; Breakeven</span><span class="cc">Live</span></div>
+      <div class="cv">2.20%</div>
+      <div class="cd" style="color:#555">&#8594; flat &mdash; real yield 2.17%</div>
+      <div class="ci">Real yield = 4.378% &minus; 2.20% = 2.17%. Elevated real yields are the structural headwind for growth. Oil bounce today risks re-anchoring breakevens higher.<div class="csrc">Jun 29 &middot; TradingView T10YIE</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+  </div>
+  <div class="pills">
+    <div class="pill">TLT/SHY: <strong style="color:#97C459">1.065</strong></div>
+    <div class="pill">Real 10Y: <strong style="color:#EF9F27">2.17%</strong></div>
+    <div class="pill">MOVE: <strong style="color:#EF9F27">68.14 &#8593;2%</strong></div>
+  </div>
+</div>
+
+<!-- ══ CREDIT ══ -->
+<div class="sec">
+  <div class="sl">Credit</div>
+  <div class="g4">
+    <div class="card amb" onclick="toggle(this)">
+      <div class="ct"><span class="cl">HY OAS &mdash; ICE BofA</span><span class="cc">Daily</span></div>
+      <div class="cv">2.83%</div>
+      <div class="cd" style="color:#E24B4A">&#8593; +20bps from tight &mdash; trend</div>
+      <div class="ci">Tightest 5% of 25yr history but direction changed. Pace accelerating. ABS convergence = Stage 2 trigger.<div class="csrc">Jun 26 &middot; FRED BAMLH0A0HYM2</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">ALLY &mdash; Prime credit</span><span class="cc">Live</span></div>
+      <div class="cv">$47.25</div>
+      <div class="cd" style="color:#97C459">&#8593; +0.17% &mdash; near highs</div>
+      <div class="ci">High NIM + calm credit = Stage 1. Rollover = Stage 2 confirmation. Not rolling over.<div class="csrc">Jun 29 &middot; TradingView ALLY</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">CACC &mdash; Subprime proxy</span><span class="cc">Live</span></div>
+      <div class="cv">$638.23</div>
+      <div class="cd" style="color:#97C459">&#8593; +1.49% &mdash; holding</div>
+      <div class="ci">Credit Acceptance Corp. Subprime auto. Holding up. Breakdown + OAS widening = stress spreading.<div class="csrc">Jun 29 &middot; TradingView CACC</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">COF &mdash; Consumer credit</span><span class="cc">Live</span></div>
+      <div class="cv">$202.28</div>
+      <div class="cd" style="color:#EF9F27">&#8595; &minus;0.84%</div>
+      <div class="ci">Capital One. Mild softness. ALLY + COF not rolling over = consumer credit stress not visible yet in lender equities.<div class="csrc">Jun 29 &middot; TradingView COF</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px;margin-top:8px">
+    <div style="background:#181818;border:2px solid #EF9F27;border-radius:6px;padding:8px 11px">
+      <div style="font-size:9px;color:#EF9F27;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 1 &mdash; now</div>
+      <div style="font-size:10px;color:#555;line-height:1.5">OAS drifting wider &middot; HYG bid &middot; ALLY &amp; CACC holding</div>
+    </div>
+    <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:8px 11px">
+      <div style="font-size:9px;color:#E24B4A;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 2 &mdash; watch</div>
+      <div style="font-size:10px;color:#555;line-height:1.5">HYG drops while SPY flat &middot; ALLY rolls &middot; OAS &gt;3.5%</div>
+    </div>
+    <div style="background:#181818;border:1px solid #1a1a1a;border-radius:6px;padding:8px 11px">
+      <div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 3 &mdash; stress</div>
+      <div style="font-size:10px;color:#444;line-height:1.5">SOFR &gt; IORB &middot; OAS &gt;400bps &middot; MOVE &gt;130</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ YIELD CURVE ══ -->
+<div class="sec">
+  <div class="sl">Yield curve &mdash; full term structure &middot; TradingView live</div>
+  <div class="g6">
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">3M</span><span class="cc">US03MY</span></div>
+      <div class="cv sm">3.772%</div>
+      <div class="cd" style="color:#555">&#8594; flat</div>
+      <div class="ci">Front-end anchor. No near-term hike or cut priced.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">6M</span><span class="cc">US06MY</span></div>
+      <div class="cv sm">3.952%</div>
+      <div class="cd" style="color:#EF9F27">&#8593; +0.028%</div>
+      <div class="ci">Edging up. Still below 2Y — no front-end inversion.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">2Y</span><span class="cc">US02Y</span></div>
+      <div class="cv sm">4.104%</div>
+      <div class="cd" style="color:#EF9F27">&#8593; +24bps vs 4wk</div>
+      <div class="ci">Elevated post-Warsh but easing from 4.20% peak. Warsh hike pricing softening at the margin.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">5Y</span><span class="cc">US05Y</span></div>
+      <div class="cv sm">4.146%</div>
+      <div class="cd" style="color:#555">&#8594; flat</div>
+      <div class="ci">Belly of curve stable. Real 5Y yield ~1.9%.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">10Y</span><span class="cc">US10Y</span></div>
+      <div class="cv sm">4.378%</div>
+      <div class="cd" style="color:#97C459">&#8595; &minus;9bps from ATH</div>
+      <div class="ci">Easing on oil normalization + PCE peak. Real yield 2.17%. Oil bounce is the key risk.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">30Y</span><span class="cc">US30Y</span></div>
+      <div class="cv sm">4.866%</div>
+      <div class="cd" style="color:#97C459">&#8595; flat &mdash; long end easing</div>
+      <div class="ci">Long end easing. Private demand absorbing supply without term-premium blowout. Calm credit consistent.<div class="csrc">Jun 29 &middot; TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+  </div>
+  <div class="pills">
+    <div class="pill">2s10s: <strong style="color:#f0f0f0">+0.274%</strong></div>
+    <div class="pill">3M10Y: <strong style="color:#97C459">+0.606%</strong></div>
+    <div class="pill">Real 10Y: <strong style="color:#EF9F27">+2.17%</strong></div>
+    <div class="pill">US/JP spread: <strong style="color:#EF9F27">174bps</strong> (4.378&minus;2.638)</div>
+  </div>
+</div>
+
+<!-- ══ FX & CARRY ══ -->
+<div class="sec">
+  <div class="sl">FX &amp; carry trade &mdash; TradingView live</div>
+  <div class="g4">
+    <div class="card red" onclick="toggle(this)">
+      <div class="ct"><span class="cl">USD/JPY</span><span class="cc">Live</span></div>
+      <div class="cv">161.96</div>
+      <div class="cd" style="color:#E24B4A">&#8593; AT 162.00 &mdash; BOJ threshold</div>
+      <div class="ci">4 pips below BOJ intervention threshold. Verbal-only intervention so far. 90%+ retail FX short JPY. Actual intervention = violent squeeze, not orderly move. Prior rounds fully retraced.<div class="csrc">Jun 29 &middot; TradingView USDJPY</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card amb" onclick="toggle(this)">
+      <div class="ct"><span class="cl">USD/KRW</span><span class="cc">Live</span></div>
+      <div class="cv">1,540.68</div>
+      <div class="cd" style="color:#EF9F27">&#8593; +0.37% &mdash; watch 1,550</div>
+      <div class="ci">MSCI DM exclusion overhang + dollar strength weighing on KRW. BOK smoothing but not full intervention. 1,550 = BOK watch level.<div class="csrc">Jun 29 &middot; TradingView USDKRW</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">US/Japan 10Y spread</span><span class="cc">Calculated live</span></div>
+      <div class="cv sm">174 bps</div>
+      <div class="cd" style="color:#97C459">&#8595; from ~180bps peak</div>
+      <div class="ci">4.378% &minus; 2.638% = 174bps. Live calculation replaces monthly OECD lag. Compressing as US yields ease. 150bps = carry-unwind early warning threshold.<div class="csrc">Jun 29 &middot; TradingView US10Y + JP10Y</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card grn" onclick="toggle(this)">
+      <div class="ct"><span class="cl">DXY &mdash; Dollar Index</span><span class="cc">Live</span></div>
+      <div class="cv">101.12</div>
+      <div class="cd" style="color:#97C459">&#8595; &minus;0.24% &mdash; softening</div>
+      <div class="ci">Dollar soft on PCE peak read. DXY below 101 = mild tailwind for EM. Sustained DXY weakness helps EWY recover post-MSCI exclusion.<div class="csrc">Jun 29 &middot; TradingView DXY</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+  </div>
+  <div class="pills">
+    <div class="pill">JP10Y: <strong style="color:#f0f0f0">2.638%</strong> (live)</div>
+    <div class="pill">NI225: <strong style="color:#97C459">69,468 (+0.15%)</strong></div>
+    <div class="pill">USDCNY: <strong style="color:#555">6.7931 (&minus;0.06%)</strong></div>
+  </div>
+</div>
+
+<!-- ══ REGIONAL CONFIRMATION ══ -->
+<div class="sec">
+  <div class="sl">Regional confirmation &mdash; Korea &amp; semis</div>
+
+  <!-- Korea gate — 3 condition framework -->
+  <div style="background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px;margin-bottom:8px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+      <div>
+        <div style="font-size:10px;color:#666;margin-bottom:2px">EWY &mdash; Korea session confirmation</div>
+        <div style="font-size:28px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em">$197.50</div>
       </div>
-      <div class="card" id="WRESBAL">
-        <div class="card-top">
-          <span class="card-label">Reserve Balances</span>
-          <span class="cadence">Weekly · Wed H.4.1</span>
-        </div>
-        <div class="card-value">$2.95T</div>
-        <div class="card-delta" style="color:#E24B4A">↓ −$0.08T vs ~4wk ago</div>
-        <div class="card-insight">$2.95T, down $82B in 4 weeks as the TGA rebuild absorbs liquidity. Still above the ~$2.5T scarcity line, but with RRP empty, reserves are now the only buffer for the Jul–Sep window.</div>
-        <div class="card-note">Last print: 2026-06-24 · FRED (WRESBAL)</div>
-        <div class="card-toggle">▼</div>
+      <div style="background:#1a1212;border:1px solid #3a1a1a;border-radius:6px;padding:8px 14px;text-align:center">
+        <div style="font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Gate status</div>
+        <div style="font-size:16px;font-weight:700;color:#E24B4A">&#10007; CLOSED &mdash; 1/3</div>
+        <div style="font-size:10px;color:#555;margin-top:2px">All 3 conditions required</div>
       </div>
-      <div class="card" id="SOFR">
-        <div class="card-top">
-          <span class="card-label">SOFR</span>
-          <span class="cadence">Daily · 8am ET</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:10px">
+
+      <div style="background:#1a1212;border:1px solid #3a1a1a;border-radius:6px;padding:9px 11px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+          <div style="font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.06em">Condition 1 &mdash; Trend</div>
+          <div style="font-size:11px;font-weight:700;color:#E24B4A">&#10007; FAIL</div>
         </div>
-        <div class="card-value">3.62%</div>
-        <div class="card-delta" style="color:#555">→ flat ~4wk</div>
-        <div class="card-insight">3.62%, unchanged vs IORB at 3.65% — about 3bps below, which is normal. No repo stress in the plumbing right now; a print above IORB would be the first warning sign to watch.</div>
-        <div class="card-note">Last print: 2026-06-29 · FRED (SOFR)</div>
-        <div class="card-toggle">▼</div>
+        <div style="font-size:13px;font-weight:600;color:#f0f0f0;margin-bottom:2px">EWY above 20-day MA</div>
+        <div style="font-size:11px;color:#666">EWY $197.50 &lt; SMA20 $200.89 &lt; EMA20 $198.81</div>
+        <div style="font-size:10px;color:#3a3a3a;margin-top:3px">Confirms trend direction, not bouncing into resistance</div>
       </div>
+
+      <div style="background:#1a1212;border:1px solid #3a1a1a;border-radius:6px;padding:9px 11px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+          <div style="font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.06em">Condition 2 &mdash; FX</div>
+          <div style="font-size:11px;font-weight:700;color:#E24B4A">&#10007; FAIL</div>
+        </div>
+        <div style="font-size:13px;font-weight:600;color:#f0f0f0;margin-bottom:2px">USDKRW below 1,530</div>
+        <div style="font-size:11px;color:#666">USDKRW 1,541.68 &mdash; 11.68 above threshold</div>
+        <div style="font-size:10px;color:#3a3a3a;margin-top:3px">KRW not in distress, foreign flows not fleeing</div>
+      </div>
+
+      <div style="background:#121a12;border:1px solid #1a3a1a;border-radius:6px;padding:9px 11px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+          <div style="font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.06em">Condition 3 &mdash; Market</div>
+          <div style="font-size:11px;font-weight:700;color:#97C459">&#10003; PASS</div>
+        </div>
+        <div style="font-size:13px;font-weight:600;color:#f0f0f0;margin-bottom:2px">KOSPI above 8,200</div>
+        <div style="font-size:11px;color:#666">KOSPI 8,394 &mdash; 194 above threshold</div>
+        <div style="font-size:10px;color:#3a3a3a;margin-top:3px">Korean market itself is stable</div>
+      </div>
+
+    </div>
+
+    <div style="background:#111;border-radius:5px;padding:8px 11px;font-size:11px;color:#555;line-height:1.55">
+      <strong style="color:#aaa">To open the gate:</strong>
+      EWY must close above SMA20 ($200.89) &nbsp;&middot;&nbsp;
+      USDKRW must drop below 1,530 &nbsp;&middot;&nbsp;
+      KOSPI must hold above 8,200 (currently passing).
+      <span style="color:#3a3a3a;display:block;margin-top:4px">
+        These conditions update dynamically &mdash; no arbitrary price line. Replaces old $216.75 gamma-flip level which was set pre-MSCI-exclusion shock and is no longer meaningful.
+        MAs sourced from TradingView technicals page. Next MSCI review Jun 2027.
+      </span>
     </div>
   </div>
 
-  <!-- CREDIT SECTION -->
-  <div class="section">
-    <div class="section-label">Credit spreads</div>
-    <div class="grid">
-      <div class="card" id="BAMLH0A0HYM2">
-        <div class="card-top">
-          <span class="card-label">HY Corporate OAS</span>
-          <span class="cadence">Daily</span>
-        </div>
-        <div class="card-value">2.83%</div>
-        <div class="card-delta" style="color:#E24B4A">↑ +0.17% vs ~4wk ago</div>
-        <div class="card-insight">2.83%, up 17bps in 4 weeks but still near the tightest 5% of readings in 25 years. Corporate credit hasn't cracked — the real escalation trigger is convergence toward subprime ABS, not this move alone.</div>
-        <div class="card-note">Last print: 2026-06-26 · FRED (BAMLH0A0HYM2)</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="ABS_PRIME">
-        <div class="card-top">
-          <span class="card-label">ABS — Prime auto AAA</span>
-          <span class="cadence">Weekly · manual</span>
-        </div>
-        <div class="card-value">42 bps</div>
-        <div class="card-delta" style="color:#97C459">↓ −5bps vs ~4wk ago</div>
-        <div class="card-insight">3yr spread over Treasuries, flat through early June and tighter year-over-year. No live update this cycle — manual series sourced from JPMorgan via Auto Finance News, not on FRED.</div>
-        <div class="card-note">Last print: Jun 4, 2026 (manual) · JPMorgan / Auto Finance News</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="ABS_SUB">
-        <div class="card-top">
-          <span class="card-label">ABS — Subprime BBB</span>
-          <span class="cadence">Weekly · manual</span>
-        </div>
-        <div class="card-value">stabilizing</div>
-        <div class="card-delta" style="color:#EF9F27">↗ +~50bps after Tricolor/First Brands</div>
-        <div class="card-insight">Spread widening has plateaued after the Tricolor/First Brands shock. Convergence with HY OAS — not subprime ABS stress alone — is the signal that would mark consumer stress spilling into corporate credit.</div>
-        <div class="card-note">Last print: Jun 4, 2026 (manual) · JPMorgan / Auto Finance News</div>
-        <div class="card-toggle">▼</div>
-      </div>
+  <!-- Semis pulse -->
+  <div class="g4">
+    <div class="card grn" onclick="toggle(this)">
+      <div class="ct"><span class="cl">SOXX &mdash; Semi ETF</span><span class="cc">Live</span></div>
+      <div class="cv">$614.35</div>
+      <div class="cd" style="color:#97C459">&#8593; +4.14% &mdash; leading market</div>
+      <div class="ci">SOXX outperforming SPY by 2.5ppts. MU beat + 10Y relief driving. Hardware narrative intact post-earnings.<div class="csrc">Jun 29 &middot; TradingView SOXX</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">SOXX/SPY ratio</span><span class="cc">Calculated</span></div>
+      <div class="cv sm">0.829</div>
+      <div class="cd" style="color:#97C459">&#8593; semis outperforming</div>
+      <div class="ci">614.35/741.00 = 0.829. Rising = semis leading. Falling = enabling-layer thesis weakening. Currently decisively outperforming on MU beat.<div class="csrc">Jun 29 &middot; Calculated from TradingView</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">QQQ &mdash; Nasdaq 100</span><span class="cc">Live</span></div>
+      <div class="cv">$724.08</div>
+      <div class="cd" style="color:#97C459">&#8593; +2.49%</div>
+      <div class="ci">Growth leading. QQQ/SPY = 0.977. Growth slightly lagging on price ratio basis. Not concerning at this level.<div class="csrc">Jun 29 &middot; TradingView QQQ</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">SPY &mdash; S&amp;P 500</span><span class="cc">Live</span></div>
+      <div class="cv">$741.00</div>
+      <div class="cd" style="color:#97C459">&#8593; +1.65%</div>
+      <div class="ci">Broad market up. VIX compressing alongside. SOXX (+4.1%) significantly outperforming SPY (+1.65%) = semis leading, consistent with thesis.<div class="csrc">Jun 29 &middot; TradingView SPY</div></div>
+      <div class="ctog">&#9660;</div>
     </div>
   </div>
+</div>
 
-  <!-- CURVE SECTION -->
-  <div class="section">
-    <div class="section-label">Yield curve — short to long</div>
-    <div class="grid">
-      <div class="card" id="DGS3MO">
-        <div class="card-top">
-          <span class="card-label">3-month yield</span>
-          <span class="cadence">Daily · H.15</span>
-        </div>
-        <div class="card-value">3.83%</div>
-        <div class="card-delta" style="color:#888">→ flat ~4wk</div>
-        <div class="card-insight">3.83%, flat — front-end pricing unchanged on the Fed path. No new signal here this cycle; this is the steadiest read on the curve right now.</div>
-        <div class="card-note">Last print: 2026-06-26 · FRED (DGS3MO)</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="DGS6MO">
-        <div class="card-top">
-          <span class="card-label">6-month yield</span>
-          <span class="cadence">Daily · H.15</span>
-        </div>
-        <div class="card-value">3.94%</div>
-        <div class="card-delta" style="color:#E24B4A">↑ +0.02% vs ~4wk ago</div>
-        <div class="card-insight">3.94%, up just 2bps — marginal, not yet a repricing. Worth watching alongside the 2Y move before reading this as the start of a hawkish shift.</div>
-        <div class="card-note">Last print: 2026-06-26 · FRED (DGS6MO)</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="DGS2">
-        <div class="card-top">
-          <span class="card-label">2-year yield</span>
-          <span class="cadence">Daily · H.15</span>
-        </div>
-        <div class="card-value">4.07%</div>
-        <div class="card-delta" style="color:#97C459">↓ −0.12% vs ~4wk ago</div>
-        <div class="card-insight">4.07%, down 12bps in 4 weeks — easing off the Warsh-era hawkish repricing. This looks like the "right kind" of move: growth-consistent cooling, not a panic unwind.</div>
-        <div class="card-note">Last print: 2026-06-26 · FRED (DGS2)</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="DGS10">
-        <div class="card-top">
-          <span class="card-label">10-year yield</span>
-          <span class="cadence">Daily · H.15</span>
-        </div>
-        <div class="card-value">4.38%</div>
-        <div class="card-delta" style="color:#97C459">↓ −0.08% vs ~4wk ago</div>
-        <div class="card-insight">4.38%, down 8bps as the long end follows the 2Y lower. Curve action reads as cooling rate-hike bets rather than a growth scare — duration isn't flashing stress.</div>
-        <div class="card-note">Last print: 2026-06-26 · FRED (DGS10)</div>
-        <div class="card-toggle">▼</div>
-      </div>
-      <div class="card" id="T10Y2Y">
-        <div class="card-top">
-          <span class="card-label">2s10s spread</span>
-          <span class="cadence">Daily</span>
-        </div>
-        <div class="card-value">+0.28%</div>
-        <div class="card-delta" style="color:#97C459">↑ +0.01% vs ~4wk ago</div>
-        <div class="card-insight">+0.28%, ticking up 1bp as the 2Y falls faster than the 10Y. Modest steepening, no inversion risk — hike-cycle pricing is easing rather than intensifying.</div>
-        <div class="card-note">Last print: 2026-06-29 · FRED (T10Y2Y)</div>
-        <div class="card-toggle">▼</div>
-      </div>
+<!-- ══ ENABLING LAYER ══ -->
+<div class="sec">
+  <div class="sl">Enabling-layer thesis chain &mdash; TradingView live</div>
+  <div class="chain">
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">DRAM</div><div class="cc2-p">$71.94</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +0.08%</div>
+      <div class="cc2-n">Memory ETF. $69/$74 Jul 17 spread (2 contracts). EWY gate closed = no add. Hold.</div>
+    </div>
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">MU</div><div class="cc2-p">$1,145</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +1.14%</div>
+      <div class="cc2-n">Earnings beat Jun 24 confirmed HBM demand. Continuing higher.</div>
+    </div>
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">CRDO</div><div class="cc2-p">$245.68</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +3.23%</div>
+      <div class="cc2-n">Data movement silicon. Off $274 ATH. No active position.</div>
+    </div>
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">GLW</div><div class="cc2-p">$255.69</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +15.67%</div>
+      <div class="cc2-n">&#9888; +15.7% today. Investigate catalyst. 14 shares @ $189.66. Well above cost basis.</div>
+    </div>
+    <div class="cc2" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">LITE</div><div class="cc2-p">$851.40</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +4.21%</div>
+      <div class="cc2-n">Optical/connectivity. Off $964 ATH. No active position.</div>
+    </div>
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">ASX</div><div class="cc2-p">$42.13</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +4.77%</div>
+      <div class="cc2-n">50 shares @ $38.57. Above cost basis. AGM Jun 24 passed.</div>
+    </div>
+    <div class="cc2" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">AMKR</div><div class="cc2-p">$82.34</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +4.60%</div>
+      <div class="cc2-n">Prior spread closed for profit. Off $96 ATH. Watchlist re-entry.</div>
+    </div>
+    <div class="cc2 grn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">APH</div><div class="cc2-p">$166.42</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +1.65%</div>
+      <div class="cc2-n">$165/$170 Jul 17 spread active. In the money. Redeploy post-Jul 17.</div>
+    </div>
+    <div class="cc2" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">POWI</div><div class="cc2-p">$78.96</div>
+      <div class="cc2-d" style="color:#EF9F27">&#8595; &minus;0.52%</div>
+      <div class="cc2-n">25 shares @ $84.21. Below cost basis. Power electronics.</div>
+    </div>
+    <div class="cc2 warn" onclick="this.classList.toggle('open')">
+      <div class="cc2-t">EOSE &#9888;</div><div class="cc2-p">$6.09</div>
+      <div class="cc2-d" style="color:#97C459">&#8593; +2.70%</div>
+      <div class="cc2-n">$7.50/$10 Jul 17 spread (10 contracts). Thesis broken. Below $7 floor. CLOSE PRIORITY.</div>
     </div>
   </div>
+</div>
 
-  <!-- CATALYST -->
-  <div class="catalyst">
-    <div class="catalyst-header">
-      <span class="catalyst-eyebrow">Next dated catalyst</span>
-      <span style="font-size:9px;color:#3a3a3a;">quarterly refunding cycle</span>
+<!-- ══ MACRO CROSS-CHECKS ══ -->
+<div class="sec">
+  <div class="sl">Macro cross-checks</div>
+  <div class="g4">
+    <div class="card grn" onclick="toggle(this)">
+      <div class="ct"><span class="cl">VIX</span><span class="cc">Live</span></div>
+      <div class="cv">17.66</div>
+      <div class="cd" style="color:#97C459">&#8595; &minus;4.02% &mdash; vol compressing</div>
+      <div class="ci">Below 20 = low fear. VIX compressing while HY OAS widens = divergence worth watching. Not a stress signal today.<div class="csrc">Jun 29 &middot; TradingView VIX</div></div>
+      <div class="ctog">&#9660;</div>
     </div>
-    <div class="catalyst-date">Treasury QRA — August 5, 2026</div>
-    <div class="catalyst-note">
-      TGA rebuild to ~$1T projected late July. RRP at $3.55B = no buffer.
-      Reserve drain hits banking system directly in the Jul–Sep window.
-      Wednesday H.4.1 (WTREGEN + WRESBAL) is the live tracker between now and then.
+    <div class="card amb" onclick="toggle(this)">
+      <div class="ct"><span class="cl">CL1! &mdash; Crude oil</span><span class="cc">Live</span></div>
+      <div class="cv">$70.47</div>
+      <div class="cd" style="color:#EF9F27">&#8593; +1.79% &mdash; &#9888; bounce risk</div>
+      <div class="ci">Down 35%+ from $114 war peak. Today&rsquo;s bounce is the key risk to the PCE peak / duration relief narrative. If oil re-accelerates, 10Y reprices higher and the duration thesis reverses.<div class="csrc">Jun 29 &middot; TradingView CL1!</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">GOLD</span><span class="cc">Live</span></div>
+      <div class="cv">$4,015</div>
+      <div class="cd" style="color:#E24B4A">&#8595; &minus;1.80% &mdash; risk-on</div>
+      <div class="ci">Selling into risk-on rally. Real yield 2.17% = structural headwind. Consistent with PCE peak / semis rally. Not a macro stress signal.<div class="csrc">Jun 29 &middot; TradingView GOLD</div></div>
+      <div class="ctog">&#9660;</div>
+    </div>
+    <div class="card" onclick="toggle(this)">
+      <div class="ct"><span class="cl">MOVE &mdash; Bond vol</span><span class="cc">Live</span></div>
+      <div class="cv">68.14</div>
+      <div class="cd" style="color:#EF9F27">&#8593; +2.03% &mdash; rising</div>
+      <div class="ci">MOVE ticking up today. Still well below 100 (stress threshold) but the direction is worth watching alongside HY OAS drifting wider. Dual signal = credit + rate vol both moving.<div class="csrc">Jun 29 &middot; TradingView MOVE</div></div>
+      <div class="ctog">&#9660;</div>
     </div>
   </div>
+</div>
 
-  <div class="footer">
-    10 FRED series · pulled via Cowork + Chrome extension ·
-    deltas vs ~4wk prior · ABS manual (JPMorgan/Auto Finance News) ·
-    tap any card for AI insight and source detail
+<!-- CATALYST -->
+<div class="cat">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;flex-wrap:wrap;gap:4px">
+    <span style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.08em">Pressure window &mdash; active</span>
+    <span style="font-size:9px;color:#3a3a3a">H.4.1 Jul 2 &middot; QRA Aug 5</span>
   </div>
+  <div style="font-size:14px;font-weight:600;color:#EF9F27;margin-bottom:4px">Net liquidity $5.813T &amp; falling &nbsp;|&nbsp; TGA $919B &rarr; ~$1T late July &nbsp;|&nbsp; QRA Aug 5</div>
+  <div style="font-size:11px;color:#555;line-height:1.6">Jul&ndash;Sep window is active not approaching. WALCL shrinking, TGA rebuilding $38B/wk, RRP depleted. H.4.1 <strong style="color:#aaa">Jul 2</strong> is next critical data point. Oil bounce today (+1.8%) is the primary risk to the PCE peak / duration relief thesis. Treasury QRA <strong style="color:#EF9F27">Aug 5</strong> is the structural anchor date.</div>
+</div>
 
-  <script>
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-        card.classList.toggle('open');
-        const t = card.querySelector('.card-toggle');
-        if (t) t.textContent = card.classList.contains('open') ? '▲' : '▼';
-      });
-    });
-  </script>
+<div class="footer">
+  FRED: WALCL &middot; WTREGEN &middot; RRPONTSYD &middot; WRESBAL &middot; SOFR &middot; BAMLH0A0HYM2 (H.4.1 weekly, next Jul 2) &nbsp;|&nbsp; TradingView &ldquo;Liquidity Monitor - Jae&rdquo; (39 symbols) &nbsp;|&nbsp; Net Liq = WALCL&minus;TGA&minus;RRP &middot; US/JP spread live &middot; SOXX/SPY calculated &nbsp;|&nbsp; Tap cards for detail &middot; Score cards tap for decomposition &middot; EOSE close priority
+</div>
+
+<script>
+function toggle(c){c.classList.toggle('open');var t=c.querySelector('.ctog');if(t)t.innerHTML=c.classList.contains('open')?'&#9650;':'&#9660;'}
+</script>
 </body>
 </html>
