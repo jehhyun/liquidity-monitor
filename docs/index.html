@@ -1,364 +1,498 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <title>Fat Cat Capital — Liquidity Monitor</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #111;
-      color: #f0f0f0;
-      font-family: system-ui, -apple-system, sans-serif;
-      padding: 20px 16px 60px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .header-left .eyebrow {
-      font-size: 10px;
-      color: #444;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .header-left h1 {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-    .header-right {
-      text-align: right;
-    }
-    .live-dot {
-      font-size: 11px;
-      color: #97C459;
-      margin-bottom: 3px;
-    }
-    .pulled-at {
-      font-size: 10px;
-      color: #3a3a3a;
-      line-height: 1.6;
-    }
-    .section {
-      margin-bottom: 24px;
-    }
-    .section-label {
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #3a3a3a;
-      font-weight: 600;
-      border-bottom: 1px solid #1a1a1a;
-      padding-bottom: 6px;
-      margin-bottom: 10px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 8px;
-    }
-    .card {
-      background: #181818;
-      border: 1px solid #252525;
-      border-radius: 8px;
-      padding: 12px 14px;
-      cursor: pointer;
-      user-select: none;
-      position: relative;
-    }
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-    .card-label {
-      font-size: 11px;
-      color: #666;
-      line-height: 1.35;
-      flex: 1;
-    }
-    .cadence {
-      font-size: 9px;
-      color: #3a3a3a;
-      background: #111;
-      padding: 2px 5px;
-      border-radius: 3px;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .card-value {
-      font-size: 26px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1;
-      color: #f0f0f0;
-      font-family: ui-monospace, 'SF Mono', monospace;
-      margin-bottom: 6px;
-    }
-    .card-delta {
-      font-size: 11px;
-      min-height: 16px;
-      margin-bottom: 2px;
-    }
-    .card-note {
-      display: none;
-      font-size: 11px;
-      color: #666;
-      line-height: 1.6;
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #252525;
-    }
-    .last-print {
-      font-size: 10px;
-      color: #383838;
-      display: block;
-      margin-top: 4px;
-    }
-    .card-toggle {
-      text-align: right;
-      font-size: 9px;
-      color: #2a2a2a;
-      margin-top: 6px;
-    }
-    .card.open .card-note { display: block; }
-    .card.open .card-toggle { content: "▲"; }
-    .catalyst {
-      background: #181818;
-      border: 1px solid #252525;
-      border-radius: 8px;
-      padding: 14px 16px;
-      margin-bottom: 20px;
-    }
-    .catalyst-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-      flex-wrap: wrap;
-      gap: 4px;
-    }
-    .catalyst-eyebrow {
-      font-size: 9px;
-      color: #444;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .catalyst-cadence {
-      font-size: 9px;
-      color: #3a3a3a;
-    }
-    .catalyst-date {
-      font-size: 16px;
-      font-weight: 600;
-      color: #EF9F27;
-      margin-bottom: 6px;
-    }
-    .catalyst-note {
-      font-size: 11px;
-      color: #555;
-      line-height: 1.6;
-    }
-    .footer {
-      font-size: 9px;
-      color: #2e2e2e;
-      line-height: 1.8;
-      margin-top: 8px;
-    }
-    @media (max-width: 480px) {
-      .grid { grid-template-columns: 1fr 1fr; }
-      .card-value { font-size: 20px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111111">
+<title>Fat Cat Capital — Liquidity Monitor</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;color:#f0f0f0;font-family:system-ui,-apple-system,sans-serif;padding:20px 16px 60px;max-width:1100px;margin:0 auto}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.eyebrow{font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+h1{font-size:22px;font-weight:700;letter-spacing:-.03em;line-height:1}
+.live{font-size:11px;color:#97C459;margin-bottom:2px}
+.ts{font-size:10px;color:#3a3a3a;line-height:1.6;text-align:right}
+.loading{display:flex;align-items:center;justify-content:center;height:60vh;font-size:14px;color:#444}
+.err{background:#1a1212;border:1px solid #3a1a1a;border-radius:8px;padding:14px;color:#a55;font-size:12px;margin:20px 0}
+.sec{margin-bottom:18px}
+.sl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#3a3a3a;font-weight:600;border-bottom:1px solid #1a1a1a;padding-bottom:5px;margin-bottom:8px}
+.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.g6{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}
+.card{background:#181818;border:1px solid #252525;border-radius:8px;padding:11px 13px;cursor:pointer;user-select:none}
+.card.red{border-color:#3a1a1a;background:#1a1212}
+.card.amb{border-color:#2e2800}
+.card.grn{border-color:#1a2e1a}
+.ct{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:6px}
+.cl{font-size:10px;color:#666;line-height:1.3;flex:1}
+.cc{font-size:9px;color:#3a3a3a;background:#111;padding:1px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.cv{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:4px}
+.cv.sm{font-size:17px}
+.cd{font-size:11px;min-height:14px}
+.ci{display:none;font-size:11px;color:#666;line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid #252525}
+.ctog{text-align:right;font-size:9px;color:#2a2a2a;margin-top:3px}
+.card.open .ci{display:block}
+.bar{height:4px;border-radius:2px;background:#1a1a1a;overflow:hidden;margin-top:3px}
+.bfill{height:4px;border-radius:2px}
+.pills{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.pill{font-size:10px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;padding:2px 8px;color:#888}
+/* Changes */
+.changes{background:#161616;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:16px}
+.chg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px;margin-top:8px}
+.chg-item{background:#111;border-radius:5px;padding:7px 9px}
+.chg-label{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.chg-val{font-size:13px;font-weight:600;font-family:ui-monospace,'SF Mono',monospace}
+.chg-delta{font-size:10px;margin-top:1px}
+/* Regime */
+.regime{background:#161616;border:1px solid #2a2a2a;border-radius:10px;padding:14px;margin-bottom:16px}
+.scores{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:12px}
+.sc{background:#111;border-radius:6px;padding:9px 11px;cursor:pointer;user-select:none}
+.sc-label{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.sc-top{display:flex;align-items:baseline;gap:8px;margin-bottom:2px}
+.sc-num{font-size:20px;font-weight:700;font-family:ui-monospace,'SF Mono',monospace}
+.sc-trend{font-size:11px}
+.sc-sub{font-size:10px;color:#3a3a3a;margin-bottom:5px}
+.sc-decomp{display:none;margin-top:6px;padding-top:6px;border-top:1px solid #1a1a1a}
+.sc.open .sc-decomp{display:block}
+.dr{display:flex;justify-content:space-between;font-size:10px;color:#555;margin-bottom:3px}
+.dr span:last-child{font-family:ui-monospace,'SF Mono',monospace}
+/* Confidence */
+.conf{background:#111;border-radius:6px;padding:9px 11px;margin-bottom:10px}
+/* Trade table */
+.ttable{width:100%;border-collapse:collapse;margin-top:8px}
+.ttable th{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:5px 8px;border-bottom:1px solid #1e1e1e}
+.ttable td{font-size:11px;padding:6px 8px;border-bottom:1px solid #161616;color:#777;vertical-align:top}
+.ttable td:first-child{color:#f0f0f0;font-weight:500;white-space:nowrap}
+.ttable tr:last-child td{border-bottom:none}
+.horizon{font-size:9px;color:#3a3a3a;margin-top:2px}
+/* Counterargs */
+.cargs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+/* Calendar */
+.cal{background:#161616;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:16px}
+.cal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:6px;margin-top:8px}
+.ci2{background:#111;border-radius:5px;padding:8px 10px;border-left:2px solid}
+/* Net liq */
+.nl{background:#111;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.nl-track{height:5px;background:#1e1e1e;border-radius:3px;position:relative;margin:6px 0}
+.nl-fill{height:5px;border-radius:3px;position:absolute;top:0;left:0}
+.nl-dot{width:9px;height:9px;border-radius:50%;position:absolute;top:-2px;transform:translateX(-50%);border:2px solid #111}
+.nl.open .nl-detail{display:block}
+.nl-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid #252525;font-size:11px;color:#666;line-height:1.6}
+/* Korea gate */
+.kgate{border:2px solid #3a1a1a;background:#1a1212;border-radius:8px;padding:12px 14px;margin-bottom:8px}
+.kgate.open{border-color:#1a3a1a;background:#121a12}
+/* Chain */
+.chain{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
+.cc2{background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px;cursor:pointer;user-select:none}
+.cc2.warn{border-color:#3a1a1a}
+.cc2.grn2{border-color:#1a2e1a}
+.cc2.open .cc2-n{display:block}
+.cc2-n{display:none;font-size:10px;color:#555;margin-top:5px;padding-top:5px;border-top:1px solid #1e1e1e;line-height:1.5}
+/* Tags */
+.tag{font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid}
+.footer-bar{font-size:9px;color:#3a3a3a;margin-top:16px;cursor:pointer}
+.footer-detail{display:none;font-size:9px;color:#2e2e2e;margin-top:4px;line-height:1.8}
+@media(max-width:600px){.g6,.chain{grid-template-columns:1fr 1fr}.scores,.chg-grid,.cargs{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="header">
-    <div class="header-left">
-      <div class="eyebrow">Fat Cat Capital</div>
-      <h1>Liquidity pressure monitor</h1>
+<div id="app"><div class="loading">Loading latest data…</div></div>
+
+<script>
+const C = { red:'#E24B4A', amber:'#EF9F27', green:'#97C459', grey:'#555' };
+const col = k => C[k] || C.grey;
+
+function esc(s){ return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') }
+function tog(el){ el.classList.toggle('open'); const t=el.querySelector('.ctog'); if(t) t.innerHTML=el.classList.contains('open')?'&#9650;':'&#9660;' }
+function stars(n){ return '★'.repeat(n)+'☆'.repeat(5-n) }
+
+function render(d) {
+  const meta = d.meta || {};
+  const s = d.scores || {};
+  const sc = (k,label,cadence,note) => {
+    const x = s[k]||{};
+    const tr = x.trend_wk>=0 ? `<span style="color:${C.green}">▲${Math.abs(x.trend_wk)} wk</span>` : `<span style="color:${C.red}">▼${Math.abs(x.trend_wk)} wk</span>`;
+    const decomp = (x.decomp||[]).map(([lbl,v])=>`<div class="dr"><span>${esc(lbl)}</span><span style="color:${v>=0?C.green:C.red}">${v>=0?'+':''}${v}</span></div>`).join('');
+    return `<div class="sc" onclick="this.classList.toggle('open')">
+      <div class="sc-label">${esc(label)}</div>
+      <div class="sc-top"><span class="sc-num" style="color:${col(x.color)}">${x.value}</span>${tr}</div>
+      <div class="bar"><div class="bfill" style="width:${x.value}%;background:${col(x.color)}"></div></div>
+      <div class="sc-sub">${esc(x.label||'')}</div>
+      <div class="sc-decomp"><div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">Contributors</div>${decomp}<div style="border-top:1px solid #1a1a1a;margin-top:5px;padding-top:5px"><div class="dr" style="font-weight:600"><span style="color:#aaa">Net score</span><span style="color:${col(x.color)}">${x.value} / 100</span></div></div></div>
+    </div>`
+  };
+
+  const tags = Object.entries(s).map(([k,v])=>{
+    const colors = {red:['#1a1212','#3a1a1a',C.red], amber:['#1a1a12','#3a3a1a',C.amber], green:['#121a12','#1a3a1a',C.green]};
+    const [bg,bc,tc] = colors[v.color]||['#111','#252525',C.grey];
+    const labelMap = {liquidity:'Liquidity',credit:'Credit',inflation:'Inflation',vol:'Vol'};
+    return `<span class="tag" style="background:${bg};border-color:${bc};color:${tc}">${labelMap[k]||k}: ${esc(v.label)}</span>`
+  }).join('');
+
+  const tradeRows = (d.trade_table||[]).map(r=>`<tr>
+    <td>${esc(r.theme)}</td>
+    <td style="color:${col(r.signal_color)}">${esc(r.signal)}</td>
+    <td>${r.conviction||'—'}<div class="bar"><div class="bfill" style="width:${(r.conviction||0)*10}%;background:${col(r.signal_color)}"></div></div></td>
+    <td><div class="horizon">${esc(r.horizon)}</div></td>
+    <td>${esc(r.rationale)}</td>
+  </tr>`).join('');
+
+  const ca = d.counterargs || {};
+  const sup = (ca.supporting||[]).map(x=>`<div style="font-size:11px;color:#888;line-height:1.8">✓ ${esc(x)}</div>`).join('');
+  const aga = (ca.against||[]).map(x=>`<div style="font-size:11px;color:#888;line-height:1.8">✗ ${esc(x)}</div>`).join('');
+
+  const calCards = (d.catalysts||[]).map(c=>{
+    const bc = {red:C.red, amber:C.amber, grey:'#3a3a3a'}[c.type_color]||'#3a3a3a';
+    const tc = {red:C.red, amber:C.amber, grey:'#555'}[c.type_color]||'#555';
+    const typeBg = {red:'#1a1212', amber:'#1a1a12', grey:'#161616'}[c.type_color]||'#161616';
+    return `<div class="ci2" style="border-color:${bc}">
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div style="font-size:10px;color:#555">${esc(c.date)} · ${c.days}d</div>
+        <span style="font-size:8px;color:${tc};background:${typeBg};padding:1px 5px;border-radius:3px;text-transform:uppercase;letter-spacing:.04em">${esc(c.type)}</span>
+      </div>
+      <div style="font-size:12px;font-weight:600;color:#f0f0f0;margin:3px 0">${esc(c.event)}</div>
+      <div style="font-size:11px;color:${bc}">${stars(c.stars)}</div>
+      <div style="font-size:10px;color:#444;margin-top:3px;line-height:1.4">${esc(c.note)}</div>
+    </div>`
+  }).join('');
+
+  const p = d.plumbing || {};
+  const pCards = [
+    { label:'Treasury General Account', cadence:'Weekly · H.4.1', val:`$${p.tga_b}B`, delta:p.tga_delta, color:p.tga_color, note:`Rebuilding toward ~$1T late July. Each $38B/wk drains reserves directly — no RRP buffer.` },
+    { label:'Overnight Reverse Repo', cadence:'Daily · NY Fed', val:`$${p.rrp_b}B`, delta:p.rrp_delta, color:p.rrp_color, note:`Depleted from $2T+ pre-2022. TGA rebuild hits reserves directly without this cushion.` },
+    { label:'Reserve Balances', cadence:'Weekly · H.4.1', val:`$${p.reserves_t}T`, delta:p.reserves_delta, color:p.reserves_color, note:`Crossed below $3T for the first time this cycle. $2.8T is the next watch level.` },
+    { label:'SOFR', cadence:'Daily · 8am ET', val:`${p.sofr_pct}%`, delta:p.sofr_delta, color:p.sofr_color, note:`vs IORB 3.65%. Spike above IORB = repo stress signal. Currently clean.` }
+  ].map(x=>`<div class="card ${x.color}" onclick="tog(this)">
+    <div class="ct"><span class="cl">${x.label}</span><span class="cc">${x.cadence}</span></div>
+    <div class="cv">${esc(x.val)}</div>
+    <div class="cd" style="color:${col(x.color)}">${esc(x.delta)}</div>
+    <div class="ci">${esc(x.note)}</div>
+    <div class="ctog">▼</div>
+  </div>`).join('');
+
+  const dur = d.duration || {};
+  const cv = d.curve || {};
+  const fx = d.fx || {};
+  const kg = d.korea_gate || {};
+  const sm = d.semis || {};
+
+  const condCard = (label, pass, val, threshold, note) => `<div style="background:${pass?'#121a12':'#1a1212'};border:1px solid ${pass?'#1a3a1a':'#3a1a1a'};border-radius:6px;padding:9px 11px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px">
+      <div style="font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.06em">${esc(label)}</div>
+      <div style="font-size:11px;font-weight:700;color:${pass?C.green:C.red}">${pass?'✓ PASS':'✗ FAIL'}</div>
     </div>
-    <div class="header-right">
-      <div class="live-dot">● live</div>
-      <div class="pulled-at">
-        pulled Jun 30, 2026 23:53 UTC<br>
-        via GitHub Actions · FRED API
+    <div style="font-size:13px;font-weight:600;color:#f0f0f0;margin-bottom:2px">${esc(val)}</div>
+    <div style="font-size:10px;color:#3a3a3a">${esc(note)}</div>
+  </div>`;
+
+  const chainCards = (d.chain||[]).map(c=>`<div class="cc2 ${c.color==='warn'?'warn':c.color==='green'?'grn2':''}" onclick="this.classList.toggle('open')">
+    <div style="font-size:9px;color:#444;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px">${esc(c.ticker)}${c.flag?' ⚠':''}</div>
+    <div style="font-size:17px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.01em;margin-bottom:2px">$${typeof c.price==='number'&&c.price>1000?(c.price/1000).toFixed(2)+'K':c.price}</div>
+    <div style="font-size:11px;color:${c.color==='green'?C.green:c.color==='amber'?C.amber:c.color==='warn'?C.red:C.grey}">${esc(c.delta)}</div>
+    <div class="cc2-n">${esc(c.note)}</div>
+  </div>`).join('');
+
+  const chgItems = (d.changed_today||[]).map(x=>`<div class="chg-item">
+    <div class="chg-label">${esc(x.label)}</div>
+    <div class="chg-val" style="color:${col(x.color)}">${esc(x.value)}</div>
+    <div class="chg-delta" style="color:${col(x.color)}">${esc(x.delta)}</div>
+  </div>`).join('');
+
+  document.getElementById('app').innerHTML = `
+  <!-- HEADER -->
+  <div class="hdr">
+    <div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity pressure monitor</h1></div>
+    <div><div class="live">● live</div><div class="ts">${esc(meta.pulled_at_cet||'')}<br>${esc(meta.source||'')}</div></div>
+  </div>
+
+  <!-- WHAT CHANGED -->
+  <div class="changes">
+    <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em">▲ What changed today — ranked by macro impact</div>
+    <div class="chg-grid">${chgItems}</div>
+  </div>
+
+  <!-- REGIME ENGINE -->
+  <div class="regime">
+    <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;display:flex;justify-content:space-between"><span>Regime engine — decision layer</span><span style="color:#3a3a3a">${esc(meta.pulled_at_cet||'')}</span></div>
+    <div class="scores">
+      ${sc('liquidity','Liquidity score','','')}\n${sc('credit','Credit score','','')}\n${sc('inflation','Inflation score','','')}\n${sc('vol','Vol score','','')}
+    </div>
+
+    <!-- Confidence -->
+    <div class="conf">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+        <span style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em">Regime confidence</span>
+        <span style="font-size:9px;color:#3a3a3a">based on score agreement</span>
+      </div>
+      <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:4px">
+        <div style="font-size:24px;font-weight:700;color:${C.amber};font-family:ui-monospace,'SF Mono',monospace">${d.regime_confidence}%</div>
+        <div style="font-size:11px;color:#666">2 of 4 scores moving same direction — mixed regime, avoid large position changes</div>
+      </div>
+      <div class="bar"><div class="bfill" style="width:${d.regime_confidence}%;background:${C.amber}"></div></div>
+    </div>
+
+    <!-- Tags -->
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px">${tags}</div>
+
+    <!-- Bias -->
+    <div style="background:#111;border-radius:6px;padding:9px 11px;font-size:11px;color:#666;line-height:1.55;margin-bottom:12px">
+      <strong style="color:#aaa">Recommended bias:</strong> ${esc(d.bias||'')}
+    </div>
+
+    <!-- Trade table -->
+    <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Trade implications</div>
+    <table class="ttable">
+      <thead><tr><th>Theme</th><th>Signal</th><th>Conv.</th><th>Horizon</th><th>Rationale</th></tr></thead>
+      <tbody>${tradeRows}</tbody>
+    </table>
+
+    <!-- Counterarguments -->
+    <div style="margin-top:12px">
+      <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Counterarguments — stress-testing the ${esc(ca.thesis||'duration')} thesis</div>
+      <div class="cargs">
+        <div style="background:#121a12;border:1px solid #1a3a1a;border-radius:6px;padding:10px 12px">
+          <div style="font-size:10px;color:${C.green};text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Supporting</div>${sup}
+        </div>
+        <div style="background:#1a1212;border:1px solid #3a1a1a;border-radius:6px;padding:10px 12px">
+          <div style="font-size:10px;color:${C.red};text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Against</div>${aga}
+        </div>
+      </div>
+      <div style="font-size:10px;color:#555;line-height:1.6;margin-top:6px;background:#111;border-radius:5px;padding:8px 11px">
+        <strong style="color:#888">Read:</strong> ${esc(ca.read||'')}
       </div>
     </div>
   </div>
 
-  
-  <div class="section">
-    <div class="section-label">Plumbing</div>
-    <div class="grid">
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">Treasury General Account</span>
-        <span class="cadence">Weekly · Wed H.4.1</span>
-      </div>
-      <div class="card-value">$919B</div>
-      <div class="card-delta" style="color:#E24B4A">↑ +$3B vs ~4wk ago</div>
-      <div class="card-note">Week-avg TGA via H.4.1. Trending toward ~$1T late July per Treasury quarterly guidance — drains reserves as it fills. No RRP buffer to absorb it.<br><span class="last-print">Last print: 2026-06-24 · FRED (WTREGEN)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">Overnight Reverse Repo</span>
-        <span class="cadence">Daily · NY Fed</span>
-      </div>
-      <div class="card-value">$26.90B</div>
-      <div class="card-delta" style="color:#888">↑ +$24.40B vs ~4wk ago</div>
-      <div class="card-note">Depleted from $2T+ pre-2022 to near zero. Old shock absorber is gone — TGA rebuild now hits reserves directly.<br><span class="last-print">Last print: 2026-06-30 · FRED (RRPONTSYD)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">Reserve Balances</span>
-        <span class="cadence">Weekly · Wed H.4.1</span>
-      </div>
-      <div class="card-value">$2.95T</div>
-      <div class="card-delta" style="color:#97C459">↑ +$0.01T vs ~4wk ago</div>
-      <div class="card-note">Last cushion with RRP gone. $2.5T is widely-cited stress threshold. TGA rebuild in July drains this directly.<br><span class="last-print">Last print: 2026-06-24 · FRED (WRESBAL)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">SOFR</span>
-        <span class="cadence">Daily · 8am ET</span>
-      </div>
-      <div class="card-value">3.62%</div>
-      <div class="card-delta" style="color:#888">↓ −0.03% vs ~4wk ago</div>
-      <div class="card-note">vs IORB 3.65% — spread of ~−2bps is normal. Spikes above IORB signal repo stress. Currently clean.<br><span class="last-print">Last print: 2026-06-29 · FRED (SOFR)</span></div>
-      <div class="card-toggle">▼</div>
-    </div></div>
-  </div>
-  <div class="section">
-    <div class="section-label">Credit</div>
-    <div class="grid">
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">HY Corporate OAS</span>
-        <span class="cadence">Daily</span>
-      </div>
-      <div class="card-value">2.80%</div>
-      <div class="card-delta" style="color:#E24B4A">↑ +0.09% vs ~4wk ago</div>
-      <div class="card-note">Tightest 5% of readings over 25 years. Widening is the stress signal — watch for convergence with subprime ABS as the escalation trigger.<br><span class="last-print">Last print: 2026-06-29 · FRED (BAMLH0A0HYM2)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">ABS — Prime auto AAA</span>
-        <span class="cadence">Weekly · manual</span>
-      </div>
-      <div class="card-value">42 bps</div>
-      <div class="card-delta" style="color:#97C459">↓ −5bps vs ~4wk ago</div>
-      <div class="card-note">3yr over Treasuries. Flat through early Jun, tighter YoY. Source: JPMorgan via Auto Finance News (not on FRED).<br><span class="last-print">Last print: Jun 4, 2026 (manual)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">ABS — Subprime BBB</span>
-        <span class="cadence">Weekly · manual</span>
-      </div>
-      <div class="card-value">stabilizing</div>
-      <div class="card-delta" style="color:#EF9F27">↗ +~50bps after Tricolor/First Brands</div>
-      <div class="card-note">Now plateauing. Convergence with HY OAS is the escalation signal — not subprime ABS stress alone.<br><span class="last-print">Last print: Jun 4, 2026 (manual)</span></div>
-      <div class="card-toggle">▼</div>
-    </div></div>
-  </div>
-  <div class="section">
-    <div class="section-label">Curve</div>
-    <div class="grid">
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">3-month yield</span>
-        <span class="cadence">Daily · H.15</span>
-      </div>
-      <div class="card-value">3.87%</div>
-      <div class="card-delta" style="color:#888">↑ +0.09% vs ~4wk ago</div>
-      <div class="card-note">Front-end policy anchor. No near-term cut priced, no acute funding stress.<br><span class="last-print">Last print: 2026-06-29 · FRED (DGS3MO)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">6-month yield</span>
-        <span class="cadence">Daily · H.15</span>
-      </div>
-      <div class="card-value">4.00%</div>
-      <div class="card-delta" style="color:#888">↑ +0.21% vs ~4wk ago</div>
-      <div class="card-note">Below 2Y = curve still upward sloping at the front end.<br><span class="last-print">Last print: 2026-06-29 · FRED (DGS6MO)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">2-year yield</span>
-        <span class="cadence">Daily · H.15</span>
-      </div>
-      <div class="card-value">4.10%</div>
-      <div class="card-delta" style="color:#E24B4A">↑ +0.05% vs ~4wk ago</div>
-      <div class="card-note">Most policy-sensitive tenor. Highest since Feb 2025 after Warsh's hawkish FOMC debut. ~Half of FOMC projecting a 2026 hike.<br><span class="last-print">Last print: 2026-06-29 · FRED (DGS2)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">10-year yield</span>
-        <span class="cadence">Daily · H.15</span>
-      </div>
-      <div class="card-value">4.38%</div>
-      <div class="card-delta" style="color:#97C459">↓ −0.09% vs ~4wk ago</div>
-      <div class="card-note">Rising on hawkish repricing, not growth — wrong kind of higher rates per the framework.<br><span class="last-print">Last print: 2026-06-29 · FRED (DGS10)</span></div>
-      <div class="card-toggle">▼</div>
-    </div>
-    <div class="card" onclick="this.classList.toggle('open')">
-      <div class="card-top">
-        <span class="card-label">2s10s spread</span>
-        <span class="cadence">Daily</span>
-      </div>
-      <div class="card-value">+0.30%</div>
-      <div class="card-delta" style="color:#E24B4A">↓ −+0.11% vs ~4wk ago</div>
-      <div class="card-note">Positive = upward sloping. Compressing as 2Y reprices faster than 10Y. Watch for inversion as hike bets firm up.<br><span class="last-print">Last print: 2026-06-30 · FRED (T10Y2Y)</span></div>
-      <div class="card-toggle">▼</div>
-    </div></div>
+  <!-- EVENT CALENDAR -->
+  <div class="cal">
+    <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.1em">Upcoming catalysts</div>
+    <div class="cal-grid">${calCards}</div>
   </div>
 
-  <div class="catalyst">
-    <div class="catalyst-header">
-      <span class="catalyst-eyebrow">Next dated catalyst</span>
-      <span class="catalyst-cadence">quarterly refunding cycle</span>
+  <!-- NET LIQUIDITY -->
+  <div class="sec">
+    <div class="sl">Fed net liquidity — primary signal</div>
+    <div class="nl" onclick="this.classList.toggle('open')">
+      <div style="font-size:9px;color:#3a3a3a;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:6px">Net Liquidity = WALCL $${p.walcl_b}B − TGA $${p.tga_b}B − RRP $${p.rrp_b}B</div>
+      <div style="font-size:30px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em">$${d.plumbing.net_liquidity_t}T</div>
+      <div style="font-size:11px;color:${C.red};margin:3px 0 8px">↓ declining — TGA rebuild + QT compounding simultaneously</div>
+      <div style="display:flex;justify-content:space-between;font-size:9px;color:#3a3a3a;margin-bottom:3px"><span>Tight ($5.0T)</span><span>Current</span><span>Ample ($7.5T)</span></div>
+      <div class="nl-track"><div class="nl-fill" style="width:66%;background:linear-gradient(90deg,${C.amber},${C.red})"></div><div class="nl-dot" style="left:66%;background:${C.red}"></div></div>
+      <div class="nl-detail">Net liquidity = amount the Fed is effectively injecting or draining. When it falls, risk assets come under pressure with a 2–6 week lag. Current trajectory: WALCL shrinking via QT (~$60B/mo), TGA growing ($38B/wk), RRP near zero. All three vectors tightening simultaneously — this is the Jul–Sep pressure window.</div>
+      <div style="text-align:right;font-size:9px;color:#2a2a2a;margin-top:3px">▼</div>
     </div>
-    <div class="catalyst-date">Treasury QRA — August 5, 2026</div>
-    <div class="catalyst-note">
-      TGA rebuild to ~$1T projected late July. RRP at $0.25B = no buffer.
-      Reserve drain hits banking system directly in the Jul–Sep window.
-      Wednesday H.4.1 (WTREGEN + WRESBAL) is the live tracker between now and then.
+    <div class="g4">${pCards}</div>
+  </div>
+
+  <!-- DURATION -->
+  <div class="sec">
+    <div class="sl">Duration signal — TradingView live</div>
+    <div class="g4">
+      ${[
+        {l:'TLT — 20Y+ Treasury',c:'Live',v:`$${dur.tlt}`,d:dur.tlt_delta,col:dur.tlt_color,n:`TLT/SHY = ${dur.tlt_shy_ratio}. Rising TLT = falling 10Y = relief for long-duration growth names.`},
+        {l:'SHY — 1-3Y Treasury',c:'Live',v:`$${dur.shy}`,d:dur.shy_delta,col:dur.shy_color,n:`SHY flat while TLT rises = curve steepening. Mild reversal of post-Warsh flattening.`},
+        {l:'HYG — HY Corp Bond',c:'Live OAS proxy',v:`$${dur.hyg}`,d:dur.hyg_delta,col:dur.hyg_color,n:`HYG rising = credit spreads stable. HYG falling while SPY flat = early credit divergence signal.`},
+        {l:'T10YIE — Breakeven',c:'Live',v:`${dur.t10yie}%`,d:dur.t10yie_delta,col:dur.t10yie_color,n:`Real yield = US10Y (${cv.us10y}%) − T10YIE (${dur.t10yie}%) = ${dur.real_yield}%. Elevated real yields = structural headwind for growth.`}
+      ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
+        <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
+        <div class="cv">${esc(x.v)}</div>
+        <div class="cd" style="color:${col(x.col)}">${esc(x.d)}</div>
+        <div class="ci">${esc(x.n)}</div>
+        <div class="ctog">▼</div>
+      </div>`).join('')}
+    </div>
+    <div class="pills">
+      <div class="pill">TLT/SHY: <strong style="color:${C.green}">${dur.tlt_shy_ratio}</strong></div>
+      <div class="pill">Real 10Y: <strong style="color:${C.amber}">${dur.real_yield}%</strong></div>
+      <div class="pill">MOVE: <strong style="color:${C.amber}">${dur.move} ${dur.move_delta}</strong></div>
     </div>
   </div>
 
-  <div class="footer">
-    10 FRED series · fetched twice daily via GitHub Actions (8am + 4pm ET) ·
-    deltas vs ~20 prior observations · ABS manual (JPMorgan/Auto Finance News) ·
-    tap any card for detail and source
+  <!-- CREDIT -->
+  <div class="sec">
+    <div class="sl">Credit</div>
+    <div class="g4">
+      ${[
+        {l:'HY OAS — ICE BofA',c:'Daily',v:`${d.credit.hy_oas}%`,d:d.credit.hy_oas_delta,col:d.credit.hy_oas_color,n:'Tightest 5% of 25yr history but direction changed. ABS convergence = Stage 2 trigger.'},
+        {l:'ALLY — Prime credit',c:'Live',v:`$${d.credit.ally}`,d:d.credit.ally_delta,col:d.credit.ally_color,n:'High NIM + calm credit = Stage 1. Rollover = Stage 2 confirmation.'},
+        {l:'CACC — Subprime proxy',c:'Live',v:`$${d.credit.cacc}`,d:d.credit.cacc_delta,col:d.credit.cacc_color,n:'Credit Acceptance Corp. Subprime auto. Breakdown + OAS widening = stress spreading.'},
+        {l:'COF — Consumer credit',c:'Live',v:`$${d.credit.cof}`,d:d.credit.cof_delta,col:d.credit.cof_color,n:'Capital One. ALLY + COF not rolling over = consumer stress not yet visible in lender equity prices.'}
+      ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
+        <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
+        <div class="cv">${esc(x.v)}</div>
+        <div class="cd" style="color:${col(x.col)}">${esc(x.d)}</div>
+        <div class="ci">${esc(x.n)}</div>
+        <div class="ctog">▼</div>
+      </div>`).join('')}
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px;margin-top:8px">
+      <div style="background:#181818;border:2px solid ${C.amber};border-radius:6px;padding:8px 11px"><div style="font-size:9px;color:${C.amber};text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 1 — now</div><div style="font-size:10px;color:#555;line-height:1.5">OAS drifting wider · HYG bid · ALLY &amp; CACC holding</div></div>
+      <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:8px 11px"><div style="font-size:9px;color:${C.red};text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 2 — watch</div><div style="font-size:10px;color:#555;line-height:1.5">HYG drops while SPY flat · ALLY rolls · OAS &gt;3.5%</div></div>
+      <div style="background:#181818;border:1px solid #1a1a1a;border-radius:6px;padding:8px 11px"><div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Stage 3 — stress</div><div style="font-size:10px;color:#444;line-height:1.5">SOFR &gt; IORB · OAS &gt;400bps · MOVE &gt;130</div></div>
+    </div>
   </div>
 
-  <script>
-    // Toggle card arrow text
-    document.querySelectorAll('.card').forEach(card => {
-      card.addEventListener('click', () => {
-        const toggle = card.querySelector('.card-toggle');
-        toggle.textContent = card.classList.contains('open') ? '▲' : '▼';
-      });
-    });
-  </script>
+  <!-- YIELD CURVE -->
+  <div class="sec">
+    <div class="sl">Yield curve — full term structure · TradingView live</div>
+    <div class="g6">
+      ${[['3M','US03MY',cv.us03my],['6M','US06MY',cv.us06my],['2Y','US02Y',cv.us02y],['5Y','US05Y',cv.us05y],['10Y','US10Y',cv.us10y],['30Y','US30Y',cv.us30y]].map(([l,t,v])=>`
+      <div class="card" onclick="tog(this)">
+        <div class="ct"><span class="cl">${l}</span><span class="cc">${t}</span></div>
+        <div class="cv sm">${v}%</div>
+        <div class="cd" style="color:#555">live</div>
+        <div class="ci">TradingView ${t}</div>
+        <div class="ctog">▼</div>
+      </div>`).join('')}
+    </div>
+    <div class="pills">
+      <div class="pill">2s10s: <strong style="color:#f0f0f0">+${cv.spread_2s10s}%</strong></div>
+      <div class="pill">3M10Y: <strong style="color:${C.green}">+${cv.spread_3m10y}%</strong></div>
+      <div class="pill">Real 10Y: <strong style="color:${C.amber}">${cv.real_10y}%</strong></div>
+      <div class="pill">US/JP spread: <strong style="color:${C.amber}">${cv.us_japan_spread_bps}bps</strong></div>
+    </div>
+  </div>
+
+  <!-- FX -->
+  <div class="sec">
+    <div class="sl">FX &amp; carry trade — TradingView live</div>
+    <div class="g4">
+      <div class="card ${fx.usdjpy_alert?'red':''}" onclick="tog(this)">
+        <div class="ct"><span class="cl">USD/JPY</span><span class="cc">Live</span></div>
+        <div class="cv">${fx.usdjpy}</div>
+        <div class="cd" style="color:${C.red}">${esc(fx.usdjpy_note)}</div>
+        <div class="ci">Sitting at BOJ intervention threshold. Verbal-only so far. Prior rounds fully retraced. Actual intervention = violent squeeze, not orderly retreat.</div>
+        <div class="ctog">▼</div>
+      </div>
+      <div class="card amb" onclick="tog(this)">
+        <div class="ct"><span class="cl">USD/KRW</span><span class="cc">Live</span></div>
+        <div class="cv">${fx.usdkrw.toLocaleString()}</div>
+        <div class="cd" style="color:${C.amber}">${esc(fx.usdkrw_note)}</div>
+        <div class="ci">MSCI DM exclusion overhang + dollar strength weighing. BOK smoothing. 1,530 = BOK watch level.</div>
+        <div class="ctog">▼</div>
+      </div>
+      <div class="card" onclick="tog(this)">
+        <div class="ct"><span class="cl">US/Japan 10Y spread</span><span class="cc">Calculated live</span></div>
+        <div class="cv sm">${fx.us_japan_spread_bps} bps</div>
+        <div class="cd" style="color:${C.green}">↓ compressing from ~180bps</div>
+        <div class="ci">US10Y (${cv.us10y}%) − JP10Y (${fx.jp10y}%) = ${fx.us_japan_spread_bps}bps. Live calculation replaces monthly OECD lag. 150bps = carry-unwind early warning threshold.</div>
+        <div class="ctog">▼</div>
+      </div>
+      <div class="card grn" onclick="tog(this)">
+        <div class="ct"><span class="cl">DXY — Dollar Index</span><span class="cc">Live</span></div>
+        <div class="cv">${fx.dxy}</div>
+        <div class="cd" style="color:${C.green}">${esc(fx.dxy_delta)}</div>
+        <div class="ci">Dollar soft on PCE peak read. DXY below 101 = mild tailwind for EM and Korean assets.</div>
+        <div class="ctog">▼</div>
+      </div>
+    </div>
+    <div class="pills">
+      <div class="pill">JP10Y: <strong style="color:#f0f0f0">${fx.jp10y}% (live)</strong></div>
+      <div class="pill">NI225: <strong style="color:${C.green}">${(fx.ni225/1000).toFixed(1)}K JPY</strong></div>
+    </div>
+  </div>
+
+  <!-- KOREA GATE -->
+  <div class="sec">
+    <div class="sl">Regional confirmation — Korea gate (3-condition framework)</div>
+    <div style="background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px;margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
+        <div>
+          <div style="font-size:10px;color:#666;margin-bottom:2px">EWY — Korea session confirmation</div>
+          <div style="font-size:28px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace">$${kg.ewy}</div>
+        </div>
+        <div style="background:#1a1212;border:1px solid #3a1a1a;border-radius:6px;padding:8px 14px;text-align:center">
+          <div style="font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Gate status</div>
+          <div style="font-size:16px;font-weight:700;color:${C.red}">✗ CLOSED — ${kg.conditions_met}/3</div>
+          <div style="font-size:10px;color:#555;margin-top:2px">All 3 conditions required</div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:10px">
+        ${condCard('Condition 1 — Trend', kg.ewy_pass, `EWY $${kg.ewy} vs SMA20 $${kg.ewy_sma20}`, kg.ewy_sma20, 'Confirms trend direction, not bouncing into resistance')}
+        ${condCard('Condition 2 — FX', kg.usdkrw_pass, `USDKRW ${kg.usdkrw.toLocaleString()} vs threshold ${kg.usdkrw_threshold.toLocaleString()}`, kg.usdkrw_threshold, 'KRW not in distress, foreign flows not fleeing')}
+        ${condCard('Condition 3 — Market', kg.kospi_pass, `KOSPI ${kg.kospi.toLocaleString()} vs threshold ${kg.kospi_threshold.toLocaleString()}`, kg.kospi_threshold, 'Korean market itself is stable')}
+      </div>
+      <div style="background:#111;border-radius:5px;padding:8px 11px;font-size:11px;color:#555;line-height:1.55">
+        <strong style="color:#aaa">To open the gate:</strong> EWY must close above SMA20 ($${kg.ewy_sma20}) · USDKRW must drop below ${kg.usdkrw_threshold.toLocaleString()} · KOSPI must hold above ${kg.kospi_threshold.toLocaleString()}.
+        <span style="color:#3a3a3a;display:block;margin-top:4px">Conditions update dynamically each run. No arbitrary price line. Next MSCI review Jun 2027.</span>
+      </div>
+    </div>
+
+    <!-- Semis pulse -->
+    <div class="g4">
+      ${[
+        {l:'SOXX — Semi ETF',c:'Live',v:`$${sm.soxx}`,d:sm.soxx_delta,col:sm.soxx_color,n:'SOXX outperforming SPY on MU beat. Hardware narrative intact post-earnings.'},
+        {l:'SOXX/SPY ratio',c:'Calculated',v:sm.soxx_spy_ratio,d:'↑ semis outperforming',col:'green',n:`${sm.soxx}/${sm.spy} = ${sm.soxx_spy_ratio}. Rising = semis leading. Falling = enabling-layer thesis weakening.`},
+        {l:'QQQ — Nasdaq 100',c:'Live',v:`$${sm.qqq}`,d:sm.qqq_delta,col:sm.qqq_color,n:'Growth leading broad market. QQQ/SPY ratio consistent with duration relief narrative.'},
+        {l:'SPY — S&P 500',c:'Live',v:`$${sm.spy}`,d:sm.spy_delta,col:sm.spy_color,n:`SOXX (+${sm.soxx_delta}) significantly outperforming SPY. Semis leading = thesis intact.`}
+      ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
+        <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
+        <div class="cv">${esc(String(x.v))}</div>
+        <div class="cd" style="color:${col(x.col)}">${esc(x.d)}</div>
+        <div class="ci">${esc(x.n)}</div>
+        <div class="ctog">▼</div>
+      </div>`).join('')}
+    </div>
+  </div>
+
+  <!-- ENABLING LAYER -->
+  <div class="sec">
+    <div class="sl">Enabling-layer thesis chain — TradingView live</div>
+    <div class="chain">${chainCards}</div>
+  </div>
+
+  <!-- MACRO CROSS-CHECKS -->
+  <div class="sec">
+    <div class="sl">Macro cross-checks</div>
+    <div class="g4">
+      ${[
+        {l:'VIX',c:'Live',v:'17.66',d:'↓ −4.02% — vol compressing',col:'green',n:'Below 20 = low fear. VIX compressing while HY OAS widens = divergence worth watching.'},
+        {l:'CL1! — Crude oil',c:'Live',v:'$70.47',d:'↑ +1.79% — ⚠ bounce risk',col:'amber',n:"Today's oil bounce is the key risk to the PCE peak / duration relief thesis. Watch closely."},
+        {l:'GOLD',c:'Live',v:'$4,015',d:'↓ −1.80% — risk-on',col:'red',n:'Selling into risk-on rally. Real yield 2.17% = structural headwind. Not a stress signal.'},
+        {l:'MOVE — Bond vol',c:'Live',v:'68.14',d:'↑ +2.03% — rising',col:'amber',n:'Ticking up today. Still below 100 (stress threshold). Watch alongside HY OAS widening.'}
+      ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
+        <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
+        <div class="cv">${esc(x.v)}</div>
+        <div class="cd" style="color:${col(x.col)}">${esc(x.d)}</div>
+        <div class="ci">${esc(x.n)}</div>
+        <div class="ctog">▼</div>
+      </div>`).join('')}
+    </div>
+  </div>
+
+  <!-- CATALYST -->
+  <div style="background:#181818;border:1px solid #252525;border-radius:8px;padding:12px 14px;margin-bottom:14px">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;flex-wrap:wrap;gap:4px">
+      <span style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.08em">Pressure window — active</span>
+      <span style="font-size:9px;color:#3a3a3a">H.4.1 Jul 2 · QRA Aug 5</span>
+    </div>
+    <div style="font-size:14px;font-weight:600;color:${C.amber};margin-bottom:4px">Net liquidity $${p.net_liquidity_t}T &amp; falling | TGA $${p.tga_b}B → ~$1T late July | QRA Aug 5</div>
+    <div style="font-size:11px;color:#555;line-height:1.6">Jul–Sep window is active not approaching. WALCL shrinking, TGA rebuilding $38B/wk, RRP depleted. H.4.1 <strong style="color:#aaa">Jul 2</strong> is next critical data point. Oil bounce today is the primary risk to the PCE peak / duration relief thesis. Treasury QRA <strong style="color:${C.amber}">Aug 5</strong> is the structural anchor.</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">ⓘ Data sources</div>
+  <div class="footer-detail">
+    FRED: WALCL · WTREGEN · RRPONTSYD · WRESBAL · SOFR · BAMLH0A0HYM2 (H.4.1 weekly) | TradingView "Liquidity Monitor - Jae" (~35 symbols) | Net Liq = WALCL−TGA−RRP · US/JP spread calculated live · SOXX/SPY calculated · Regime confidence = % score agreement | Dashboard reads data/latest.json on load — Cowork writes JSON only, never HTML
+  </div>`;
+}
+
+async function load() {
+  try {
+    const r = await fetch('https://jehhyun.github.io/liquidity-monitor/data/latest.json?v=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    render(d);
+  } catch(e) {
+    document.getElementById('app').innerHTML = `
+      <div class="hdr"><div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity pressure monitor</h1></div></div>
+      <div class="err">Failed to load latest.json: ${esc(e.message)}<br><br>
+      This usually means the data file hasn't been pushed yet by Cowork, or there's a network issue.<br>
+      Cowork writes <code>data/latest.json</code> on each scheduled run — check that the run completed successfully.</div>`;
+  }
+}
+
+load();
+</script>
 </body>
 </html>
