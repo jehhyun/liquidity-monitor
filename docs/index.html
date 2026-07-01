@@ -445,18 +445,20 @@ function render(d) {
   <div class="sec">
     <div class="sl">Macro cross-checks</div>
     <div class="g4">
-      ${[
-        {l:'VIX',c:'Live',v:'17.66',d:'↓ −4.02% — vol compressing',col:'green',n:'Below 20 = low fear. VIX compressing while HY OAS widens = divergence worth watching.'},
-        {l:'CL1! — Crude oil',c:'Live',v:'$70.47',d:'↑ +1.79% — ⚠ bounce risk',col:'amber',n:"Today's oil bounce is the key risk to the PCE peak / duration relief thesis. Watch closely."},
-        {l:'GOLD',c:'Live',v:'$4,015',d:'↓ −1.80% — risk-on',col:'red',n:'Selling into risk-on rally. Real yield 2.17% = structural headwind. Not a stress signal.'},
-        {l:'MOVE — Bond vol',c:'Live',v:'68.14',d:'↑ +2.03% — rising',col:'amber',n:'Ticking up today. Still below 100 (stress threshold). Watch alongside HY OAS widening.'}
-      ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
-        <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
-        <div class="cv">${esc(x.v)}</div>
-        <div class="cd" style="color:${col(x.col)}">${esc(x.d)}</div>
-        <div class="ci">${esc(x.n)}</div>
-        <div class="ctog">▼</div>
-      </div>`).join('')}
+      ${(()=>{
+        const cx = d.crosschecks || {};
+        const labels = {vix:'VIX', oil:'CL1! — Crude oil', gold:'GOLD', move:'MOVE — Bond vol'};
+        return Object.entries(labels).map(([k,l])=>{
+          const x = cx[k] || {value:'—', delta:'', color:'grey', note:''};
+          return `<div class="card ${x.color}" onclick="tog(this)">
+            <div class="ct"><span class="cl">${l}</span><span class="cc">Live</span></div>
+            <div class="cv">${esc(String(x.value))}</div>
+            <div class="cd" style="color:${col(x.color)}">${esc(x.delta)}</div>
+            <div class="ci">${esc(x.note)}</div>
+            <div class="ctog">▼</div>
+          </div>`;
+        }).join('');
+      })()}
     </div>
   </div>
 
