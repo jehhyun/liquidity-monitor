@@ -479,7 +479,7 @@ function render(d) {
 
 async function load() {
   try {
-    const r = await fetch('https://jehhyun.github.io/liquidity-monitor/data/latest.json?v=' + Date.now());
+    const r = await fetch('data/latest.json?v=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     const d = await r.json();
     render(d);
@@ -488,7 +488,7 @@ async function load() {
       <div class="hdr"><div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity pressure monitor</h1></div></div>
       <div class="err">Failed to load latest.json: ${esc(e.message)}<br><br>
       This usually means the data file hasn't been pushed yet by Cowork, or there's a network issue.<br>
-      Cowork writes <code>data/latest.json</code> on each scheduled run — check that the run completed successfully.</div>`;
+      Cowork writes <code>docs/data/latest.json</code> on each scheduled run — check that the run completed successfully.</div>`;
   }
 }
 
