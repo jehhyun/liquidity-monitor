@@ -1,165 +1,161 @@
 {
   "meta": {
-    "pulled_at": "2026-07-01T13:30:00Z",
-    "pulled_at_cet": "Jul 1, 2026 15:30 CET",
+    "pulled_at": "2026-07-01T19:44:00Z",
+    "pulled_at_cet": "Jul 1, 2026 21:44 CET",
     "source": "Cowork · FRED + TradingView Liquidity Monitor - Jae"
   },
   "scores": {
     "liquidity": {
-      "value": 34,
-      "trend_wk": -4,
-      "label": "Tightening (repo stress)",
-      "color": "red",
+      "value": 36,
+      "trend_wk": 2,
+      "label": "Tightening (repo stress persists)",
+      "color": "amber",
       "decomp": [
         [
-          "SOFR above IORB (3.68% vs 3.65%)",
-          -22
+          "RRP normalized: $26.9B→$1.0B (Q2 window dressing unwound)",
+          6
         ],
         [
-          "TGA rebuild continuing ($918.7B)",
-          -18
+          "SOFR still above IORB (3.68% vs 3.65%)",
+          -20
         ],
         [
-          "Reserves below $3T ($2.951T)",
-          -15
+          "TGA unchanged ($918.7B), H.4.1 due tomorrow",
+          -16
         ],
         [
-          "RRP off record low ($3.55B→$26.9B)",
+          "Reserves unchanged, still below $3T",
+          -14
+        ],
+        [
+          "HYG roughly flat",
           4
-        ],
-        [
-          "HYG still holding (credit calm)",
-          5
         ]
       ]
     },
     "credit": {
-      "value": 59,
-      "trend_wk": -3,
-      "label": "Softening",
-      "color": "amber",
+      "value": 63,
+      "trend_wk": 4,
+      "label": "Improving",
+      "color": "green",
       "decomp": [
         [
-          "HY OAS tightened 3bps to 2.80%",
-          10
+          "HY OAS tightened further to 2.75% (-5bps)",
+          12
         ],
         [
-          "HYG roughly flat, still holding",
-          8
+          "ALLY +0.50%, CACC +4.02%, COF +2.23% — lenders rallying",
+          16
         ],
         [
-          "ALLY -2.75%, COF -0.82%, CACC -0.23%",
-          -18
+          "HYG -0.41%, mildly softer",
+          -5
         ],
         [
-          "MOVE +5.60% — vol bleeding into credit",
-          -10
+          "No stress spreading despite the semis rout",
+          5
         ]
       ]
     },
     "inflation": {
-      "value": 72,
+      "value": 73,
       "trend_wk": 1,
       "label": "Improving",
       "color": "green",
       "decomp": [
         [
-          "Oil -1.11% today, extending decline",
+          "Oil -1.86% today, extending the decline",
           8
         ],
         [
+          "Breakeven flat at 2.24%, still anchored",
+          3
+        ],
+        [
+          "Real 10Y ~2.24%, still elevated",
+          -5
+        ],
+        [
           "PCE peak narrative intact",
-          5
-        ],
-        [
-          "Breakeven ticks up 2bps to 2.24%",
-          -3
-        ],
-        [
-          "Real 10Y yield rises to 2.257%",
-          -6
+          4
         ]
       ]
     },
     "vol": {
-      "value": 58,
-      "trend_wk": -10,
-      "label": "Elevated (dual FX breach)",
+      "value": 60,
+      "trend_wk": 2,
+      "label": "Contained headline vol, sharp sector break",
       "color": "amber",
       "decomp": [
         [
-          "VIX +2.86% to 16.93",
-          -10
+          "VIX -0.79% to 16.33 — broad vol calm",
+          10
         ],
         [
-          "MOVE +5.60% to 71.96",
-          -14
-        ],
-        [
-          "USDJPY breached 162.00 BOJ line",
-          -12
-        ],
-        [
-          "USDKRW breached 1,550 BOK line",
-          -8
-        ],
-        [
-          "Still below hard stress levels",
+          "MOVE flat at 71.96 — no new bond-vol signal",
           6
+        ],
+        [
+          "EWY -7.49%, MU -9.16%, DRAM -10.05%, GLW -13.86%",
+          -16
+        ],
+        [
+          "USDJPY/USDKRW still pinned at thresholds",
+          -8
         ]
       ]
     }
   },
-  "regime_confidence": 72,
-  "bias": "Several signals flipped at once today: SOFR closed above IORB for the first time this cycle (repo stress — watch closely), the 10Y broke to a fresh cycle high (4.497%), and both USDJPY (162.69) and USDKRW (1,557) breached their intervention/watch thresholds intraday. Korea gate improved to 2/3 — EWY reclaimed its 20-day average — but the USDKRW breach keeps it closed. Enabling-layer hardware (APH, POWI, CRDO, ASX) rallied broadly; stay selective given the vol backdrop. Duration is now a headwind, not a relief valve — reduce crowded long-duration exposure into the Jul–Sep TGA rebuild.",
+  "regime_confidence": 74,
+  "bias": "The session reversed hard: after this morning's broad semis rally, the enabling-layer chain cratered into the close — EWY -7.49%, MU -9.16%, DRAM -10.05%, GLW -13.86%, LITE -7.06%, AMKR -6.29%, SOXX -5.96% vs SPY roughly flat. This looks idiosyncratic to Korea/semis rather than a macro risk-off: VIX actually fell, MOVE didn't move, and financials (ALLY, CACC, COF) all rallied while HY OAS tightened further. Korea gate regressed to 1/3 (EWY back below its SMA20) — stay out. Don't chase the semis dip until the catalyst behind today's reversal is identified; check ASX/APH/POWI/DRAM position P&L given the size of the move. RRP normalizing back to ~$1B confirms the Q2 quarter-end spike was transient, a mild liquidity positive.",
   "counterargs": {
-    "thesis": "Semis rally",
+    "thesis": "Semis reversal is idiosyncratic, not macro",
     "supporting": [
-      "SOXX +4.30% vs SPY +0.78%, clearly leading",
-      "APH +5.95%, POWI +6.08%, CRDO +10.69% broad strength",
-      "MU earnings/HBM thesis still intact",
-      "HY OAS tightened 3bps despite the rates selloff"
+      "VIX -0.79% — broad equity vol actually eased",
+      "MOVE unchanged at 71.96 — no fresh bond-vol signal",
+      "ALLY +0.50%, CACC +4.02%, COF +2.23% all rallied",
+      "HY OAS tightened another 5bps to 2.75%"
     ],
     "against": [
-      "10Y broke to a fresh cycle high (4.497%)",
-      "SOFR closed above IORB — first repo stress print this cycle",
-      "VIX +2.86% and MOVE +5.60% spiking the same day",
-      "USDJPY and USDKRW both breached their thresholds"
+      "EWY -7.49%, the sharpest single-session move in the dataset",
+      "MU -9.16%, DRAM -10.05%, GLW -13.86% — the whole chain broke together",
+      "Korea gate regressed from 2/3 to 1/3 in one session",
+      "USDKRW still pinned right at the 1,550 BOK line (1,550.17)"
     ],
-    "read": "The bull case is idiosyncratic strength in specific names (APH, POWI, CRDO, MU) plus credit that keeps refusing to crack. The bear case is macro and getting louder — a repo stress print, a fresh yield high, and two FX threshold breaches all landed the same session. Semis are working despite the backdrop right now, not because of it; a reversal in yields or FX would test that quickly."
+    "read": "A synchronized double-digit drawdown across DRAM/MU/GLW/LITE/AMKR/EWY on a day when VIX fell and credit tightened is a strong signal this is sector- or region-specific (Korea/semiconductor news, guidance, or a single large holder unwinding) rather than a liquidity or rate event. Worth checking for a specific catalyst before treating this as thesis-broken — but until identified, treat today's reversal as a hard stop on adding, not a dip to buy."
   },
   "trade_table": [
     {
       "theme": "Semis / enabling layer",
-      "signal": "Bullish",
-      "signal_color": "green",
-      "conviction": 7,
-      "horizon": "3–10 days",
-      "rationale": "APH +5.95%, POWI +6.08%, CRDO +10.69% led a broad rally. SOXX +4.30% vs SPY +0.78%. Yields at fresh highs are the swing risk."
+      "signal": "Caution — investigate",
+      "signal_color": "amber",
+      "conviction": 3,
+      "horizon": "Days",
+      "rationale": "Reversed from +4.3% (SOXX) this morning to -5.96% into the close. MU -9.16%, DRAM -10.05%, GLW -13.86%. Identify the catalyst before re-adding."
     },
     {
       "theme": "Duration / IGV",
-      "signal": "Avoid",
-      "signal_color": "red",
-      "conviction": 3,
+      "signal": "Cautious",
+      "signal_color": "amber",
+      "conviction": 4,
       "horizon": "1–3 wks",
-      "rationale": "10Y broke to a fresh cycle high (4.497%) and TLT fell 1.18%. Real yield 2.26% is now a headwind, not a tailwind. Reduce into the TGA rebuild."
+      "rationale": "10Y eased off the cycle high to 4.477% (from 4.497%) and TLT is only -0.94%. Less acute than this morning but still not a tailwind."
     },
     {
       "theme": "Korea / EWY",
       "signal": "No trade",
       "signal_color": "red",
       "conviction": 0,
-      "horizon": "Watch USDKRW",
-      "rationale": "Gate improved to 2/3 — EWY now above its 20-day SMA — but USDKRW breached 1,530 (1,557). No add until KRW reverses."
+      "horizon": "Watch for catalyst",
+      "rationale": "Gate regressed to 1/3 — EWY -7.49% and back below its 20-day SMA. USDKRW still pinned at 1,550.17. Confirms staying out was right."
     },
     {
       "theme": "Financials",
-      "signal": "Neutral",
-      "signal_color": "amber",
-      "conviction": 4,
+      "signal": "Constructive",
+      "signal_color": "green",
+      "conviction": 6,
       "horizon": "2–4 wks",
-      "rationale": "ALLY -2.75%, COF -0.82%, CACC -0.23% all softer today despite tighter HY OAS. Credit score drifting to 59. No edge."
+      "rationale": "ALLY +0.50%, CACC +4.02%, COF +2.23% all rallied while HY OAS tightened another 5bps to 2.75%. Genuine divergence from the semis carnage."
     },
     {
       "theme": "USD / dollar shorts",
@@ -167,15 +163,15 @@
       "signal_color": "amber",
       "conviction": 3,
       "horizon": "1–2 wks",
-      "rationale": "DXY +0.32% today, reversing the prior soft-dollar read. USDJPY/USDKRW both breaching thresholds argues for dollar firmness near-term."
+      "rationale": "DXY +0.21% today, still firm though decelerating from +0.32% this morning. USDJPY/USDKRW remain pinned at their thresholds."
     },
     {
       "theme": "Long credit (HYG)",
-      "signal": "Avoid",
-      "signal_color": "red",
-      "conviction": 2,
+      "signal": "Neutral",
+      "signal_color": "amber",
+      "conviction": 3,
       "horizon": "2–6 wks",
-      "rationale": "OAS tightened 3bps but lender equities softened together with a MOVE spike — unattractive risk/reward for new longs."
+      "rationale": "HYG -0.41% but OAS tightened to 2.75% — credit itself is not confirming the semis-equity stress. Watch for convergence."
     },
     {
       "theme": "Small caps",
@@ -183,7 +179,7 @@
       "signal_color": "red",
       "conviction": 2,
       "horizon": "6–10 wks",
-      "rationale": "Jul–Sep reserve drain disproportionately hits levered small caps. Repo stress print (SOFR>IORB) amplifies this. No catalyst."
+      "rationale": "Jul–Sep reserve drain still ahead. Today's sector-specific volatility is a reminder of how exposed levered small caps are to single-name shocks."
     }
   ],
   "catalysts": [
@@ -194,7 +190,7 @@
       "type": "Portfolio Risk",
       "type_color": "red",
       "stars": 5,
-      "note": "TGA + Reserves print, first new read since Jun 24. Will show if drain rate accelerating."
+      "note": "TGA + Reserves print, first new read since Jun 24. Will show if drain rate is accelerating."
     },
     {
       "date": "Jul 3",
@@ -230,7 +226,7 @@
       "type": "Portfolio Risk",
       "type_color": "amber",
       "stars": 3,
-      "note": "APH $165/$170, DRAM $69/$74, EOSE $7.50/$10 spreads all expire."
+      "note": "APH $165/$170, DRAM $69/$74, EOSE $7.50/$10 spreads all expire — today's reversal changes the P&L picture materially."
     },
     {
       "date": "Aug 5",
@@ -243,89 +239,89 @@
     }
   ],
   "plumbing": {
-    "net_liquidity_t": 5.789,
+    "net_liquidity_t": 5.815,
     "walcl_b": 6735,
     "tga_b": 918.7,
-    "tga_delta": "flat vs last read — H.4.1 due Jul 2",
+    "tga_delta": "unchanged — H.4.1 due tomorrow (Jul 2)",
     "tga_color": "grey",
-    "rrp_b": 26.9,
-    "rrp_delta": "up from $3.55B record low — still de minimis",
-    "rrp_color": "amber",
+    "rrp_b": 1.001,
+    "rrp_delta": "normalized from $26.9B — Q2 window dressing unwound as expected",
+    "rrp_color": "green",
     "reserves_t": 2.951,
     "reserves_delta": "unchanged — still below $3T",
     "reserves_color": "grey",
     "sofr_pct": 3.68,
-    "sofr_delta": "ABOVE IORB (3.65%) — stress",
+    "sofr_delta": "still ABOVE IORB (3.65%) — stress persists",
     "sofr_color": "red"
   },
   "duration": {
-    "tlt": 86.42,
-    "tlt_delta": "-1.18%",
+    "tlt": 85.61,
+    "tlt_delta": "-0.94%",
     "tlt_color": "red",
-    "shy": 82.11,
-    "shy_delta": "-0.07%",
-    "shy_color": "grey",
-    "hyg": 79.97,
-    "hyg_delta": "-0.05%",
-    "hyg_color": "grey",
+    "shy": 81.84,
+    "shy_delta": "-0.33%",
+    "shy_color": "amber",
+    "hyg": 79.64,
+    "hyg_delta": "-0.41%",
+    "hyg_color": "amber",
     "t10yie": 2.24,
-    "t10yie_delta": "+2bps",
-    "t10yie_color": "amber",
-    "real_yield": 2.26,
-    "tlt_shy_ratio": 1.053,
-    "move": 71.96,
-    "move_delta": "+5.60% — sharpest move in a while",
-    "move_color": "red"
+    "t10yie_delta": "flat",
+    "t10yie_color": "grey",
+    "real_yield": 2.24,
+    "tlt_shy_ratio": 1.046,
+    "move": 71.9589,
+    "move_delta": "flat — no new print",
+    "move_color": "grey"
   },
   "credit": {
-    "hy_oas": 2.8,
-    "hy_oas_delta": "-3bps — tightened back",
+    "hy_oas": 2.75,
+    "hy_oas_delta": "-5bps — tightened further",
     "hy_oas_color": "green",
-    "ally": 45.95,
-    "ally_delta": "-2.75%",
-    "ally_color": "red",
-    "cacc": 636.74,
-    "cacc_delta": "-0.23%",
-    "cacc_color": "amber",
-    "cof": 200.62,
-    "cof_delta": "-0.82%",
-    "cof_color": "amber",
+    "ally": 46.18,
+    "ally_delta": "+0.50%",
+    "ally_color": "green",
+    "cacc": 662.32,
+    "cacc_delta": "+4.02%",
+    "cacc_color": "green",
+    "cof": 205.1,
+    "cof_delta": "+2.23%",
+    "cof_color": "green",
     "stage": 1
   },
   "curve": {
-    "us03my": 3.833,
-    "us06my": 3.984,
-    "us02y": 4.191,
-    "us05y": 4.256,
-    "us10y": 4.497,
-    "us30y": 4.987,
-    "spread_2s10s": 0.306,
-    "spread_3m10y": 0.664,
-    "real_10y": 2.26,
-    "us_japan_spread_bps": 179
+    "us03my": 3.8,
+    "us06my": 3.965,
+    "us02y": 4.174,
+    "us05y": 4.235,
+    "us10y": 4.477,
+    "us30y": 4.967,
+    "spread_2s10s": 0.303,
+    "spread_3m10y": 0.677,
+    "real_10y": 2.24,
+    "us_japan_spread_bps": 177
   },
   "fx": {
-    "usdjpy": 162.69,
+    "usdjpy": 162.53,
     "usdjpy_alert": true,
-    "usdjpy_note": "BREACHED 162.00 BOJ threshold",
-    "usdkrw": 1557.05,
+    "usdjpy_note": "STILL ABOVE 162.00 BOJ threshold",
+    "usdkrw": 1550.17,
     "usdkrw_alert": true,
-    "usdkrw_note": "BREACHED 1,550 BOK level",
-    "dxy": 101.5,
-    "dxy_delta": "+0.32% — firming",
-    "dxy_color": "red",
+    "usdkrw_note": "PINNED at the 1,550 BOK level",
+    "dxy": 101.38,
+    "dxy_delta": "+0.21% — firm",
+    "dxy_color": "amber",
     "jp10y": 2.705,
-    "us_japan_spread_bps": 179,
+    "us_japan_spread_bps": 177,
     "ni225": 70474.74
   },
   "korea_gate": {
     "status": "closed",
-    "conditions_met": 2,
+    "conditions_met": 1,
     "conditions_total": 3,
-    "ewy": 201.9,
-    "ewy_sma20": 200.15,
-    "ewy_pass": true,
-    "usdkrw": 1557.05,
+    "ewy": 186.77,
+    "ewy_sma20": 198.76,
+    "ewy_pass": false,
+    "usdkrw": 1550.17,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": false,
     "kospi": 8303.42,
@@ -333,149 +329,152 @@
     "kospi_pass": true
   },
   "semis": {
-    "soxx": 640.76,
-    "soxx_delta": "+4.30%",
-    "soxx_color": "green",
-    "qqq": 736.4,
-    "qqq_delta": "+1.70%",
-    "qqq_color": "green",
-    "spy": 746.77,
-    "spy_delta": "+0.78%",
-    "spy_color": "green",
-    "soxx_spy_ratio": 0.858
+    "soxx": 602.58,
+    "soxx_delta": "-5.96%",
+    "soxx_color": "red",
+    "qqq": 726.75,
+    "qqq_delta": "-1.31%",
+    "qqq_color": "amber",
+    "spy": 746.64,
+    "spy_delta": "-0.02%",
+    "spy_color": "grey",
+    "soxx_spy_ratio": 0.807
   },
   "chain": [
     {
       "ticker": "DRAM",
-      "price": 73.85,
-      "delta": "+2.65%",
-      "color": "green",
-      "note": "Memory ETF. $69/$74 Jul 17 spread (2 contracts), now near the upper strike. EWY gate closed (2/3) = no add."
+      "price": 66.43,
+      "delta": "-10.05%",
+      "color": "warn",
+      "flag": true,
+      "note": "Sharpest single-day drop in the chain. $69/$74 Jul 17 spread (2 contracts) now well out of the money. Reassess."
     },
     {
       "ticker": "MU",
-      "price": 1154.29,
-      "delta": "+0.79%",
-      "color": "green",
-      "note": "Earnings beat / HBM demand thesis continues to play out. Grinding higher."
+      "price": 1048.5,
+      "delta": "-9.16%",
+      "color": "warn",
+      "flag": true,
+      "note": "Gave back this morning's HBM-thesis gains and more. No specific catalyst confirmed yet — investigate."
     },
     {
       "ticker": "CRDO",
-      "price": 271.95,
-      "delta": "+10.69%",
-      "color": "green",
-      "note": "Data movement silicon. Today's biggest mover in the chain, closing in on the $274 ATH. No active position."
+      "price": 262.78,
+      "delta": "-3.37%",
+      "color": "amber",
+      "note": "Retraced part of this morning's +10.69% surge. Off $274 ATH. No active position."
     },
     {
       "ticker": "GLW",
-      "price": 255.43,
-      "delta": "-0.10%",
-      "color": "amber",
-      "note": "Giving back almost nothing after yesterday's +15.7% spike. 14 shares @ $189.66. Well above cost basis."
+      "price": 220.02,
+      "delta": "-13.86%",
+      "color": "warn",
+      "flag": true,
+      "note": "Biggest single-session move in the dataset. 14 shares @ $189.66 — still above cost basis but the reversal from yesterday's +15.7% spike is dramatic. Investigate catalyst urgently."
     },
     {
       "ticker": "LITE",
-      "price": 858.06,
-      "delta": "+0.78%",
-      "color": "green",
-      "note": "Optical/connectivity. Off $964 ATH. No active position."
+      "price": 797.45,
+      "delta": "-7.06%",
+      "color": "warn",
+      "note": "Off $964 ATH, extending the pullback. No active position."
     },
     {
       "ticker": "ASX",
-      "price": 45.12,
-      "delta": "+7.10%",
-      "color": "green",
-      "note": "50 shares @ $38.57. Well above cost basis."
+      "price": 43.4,
+      "delta": "-3.81%",
+      "color": "amber",
+      "note": "50 shares @ $38.57 — still above cost basis despite today's pullback."
     },
     {
       "ticker": "AMKR",
-      "price": 86.23,
-      "delta": "+4.72%",
-      "color": "green",
-      "note": "Prior spread closed for profit. Off $96 ATH. Watchlist re-entry candidate."
+      "price": 80.81,
+      "delta": "-6.29%",
+      "color": "warn",
+      "note": "Off $96 ATH. Watchlist re-entry candidate, no active position."
     },
     {
       "ticker": "APH",
-      "price": 176.32,
-      "delta": "+5.95%",
-      "color": "green",
-      "note": "$165/$170 Jul 17 spread now deep in the money on both strikes. Redeploy post-Jul 17."
+      "price": 172.89,
+      "delta": "-1.95%",
+      "color": "amber",
+      "note": "$165/$170 Jul 17 spread still in the money despite today's pullback."
     },
     {
       "ticker": "POWI",
-      "price": 83.76,
-      "delta": "+6.08%",
-      "color": "green",
-      "note": "25 shares @ $84.21. Nearly back to cost basis after today's move."
+      "price": 80.27,
+      "delta": "-4.17%",
+      "color": "warn",
+      "note": "25 shares @ $84.21 — back below cost basis after this morning's recovery."
     },
     {
       "ticker": "EOSE",
-      "price": 5.88,
-      "delta": "-3.45%",
+      "price": 5.64,
+      "delta": "-4.17%",
       "color": "warn",
       "flag": true,
-      "note": "$7.50/$10 Jul 17 spread (10 contracts). Thesis broken, continuing to slide below the $7 floor. CLOSE PRIORITY."
+      "note": "$7.50/$10 Jul 17 spread (10 contracts). Thesis broken, continuing to slide. CLOSE PRIORITY."
     }
   ],
   "changed_today": [
     {
-      "label": "US10Y",
-      "value": "4.497%",
-      "delta": "↑ fresh cycle high",
+      "label": "GLW",
+      "value": "$220.02",
+      "delta": "↓ −13.86% — reversal from +15.7% spike",
       "color": "red"
     },
     {
-      "label": "SOFR",
-      "value": "3.68%",
-      "delta": "↑ ABOVE IORB — stress",
+      "label": "EWY",
+      "value": "$186.77",
+      "delta": "↓ −7.49% — gate regressed to 1/3",
       "color": "red"
     },
     {
-      "label": "USDJPY",
-      "value": "162.69",
-      "delta": "↑ BREACHED 162 BOJ line",
+      "label": "DRAM",
+      "value": "$66.43",
+      "delta": "↓ −10.05% — sharpest in the chain",
       "color": "red"
+    },
+    {
+      "label": "MU",
+      "value": "$1,048.50",
+      "delta": "↓ −9.16% — gave back HBM rally",
+      "color": "red"
+    },
+    {
+      "label": "SOXX",
+      "value": "$602.58",
+      "delta": "↓ −5.96% — full reversal from +4.3% AM",
+      "color": "red"
+    },
+    {
+      "label": "VIX",
+      "value": "16.33",
+      "delta": "↓ −0.79% — broad vol calm despite chain rout",
+      "color": "green"
+    },
+    {
+      "label": "RRP",
+      "value": "$1.00B",
+      "delta": "↓ normalized from $26.9B quarter-end spike",
+      "color": "green"
+    },
+    {
+      "label": "HY OAS",
+      "value": "2.75%",
+      "delta": "↓ −5bps — tightened further",
+      "color": "green"
     },
     {
       "label": "USDKRW",
-      "value": "1,557.05",
-      "delta": "↑ BREACHED 1,550 BOK line",
-      "color": "red"
+      "value": "1,550.17",
+      "delta": "→ pinned at the 1,550 BOK line",
+      "color": "amber"
     },
     {
-      "label": "MOVE",
-      "value": "71.96",
-      "delta": "↑ +5.60% — bond vol spike",
-      "color": "red"
-    },
-    {
-      "label": "CRDO",
-      "value": "$271.95",
-      "delta": "↑ +10.69% — leading the rally",
-      "color": "green"
-    },
-    {
-      "label": "Oil (CL1!)",
-      "value": "$68.73",
-      "delta": "↓ −1.11% — easing further",
-      "color": "green"
-    },
-    {
-      "label": "DXY",
-      "value": "101.50",
-      "delta": "↑ +0.32% — firming",
-      "color": "red"
-    },
-    {
-      "label": "Liq. score",
-      "value": "34",
-      "delta": "↓ −4 (SOFR>IORB)",
-      "color": "red"
-    },
-    {
-      "label": "Infl. score",
-      "value": "72",
-      "delta": "↑ +1 (oil easing)",
+      "label": "Credit score",
+      "value": "63",
+      "delta": "↑ +4 (lenders rallying)",
       "color": "green"
     }
   ]
