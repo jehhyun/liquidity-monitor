@@ -1,0 +1,489 @@
+{
+  "meta": {
+    "pulled_at": "2026-07-01T10:26:00Z",
+    "pulled_at_cet": "Jul 1, 2026 12:26 CET",
+    "source": "Cowork \u00b7 FRED + TradingView Liquidity Monitor - Jae"
+  },
+  "scores": {
+    "liquidity": {
+      "value": 38,
+      "trend_wk": -4,
+      "label": "Tightening",
+      "color": "red",
+      "decomp": [
+        [
+          "TGA rebuilding $38B/wk",
+          -22
+        ],
+        [
+          "QT ~$60B/mo ongoing",
+          -18
+        ],
+        [
+          "Reserves below $3T",
+          -15
+        ],
+        [
+          "RRP near zero (no cushion)",
+          -13
+        ],
+        [
+          "SOFR below IORB (clean)",
+          6
+        ],
+        [
+          "HYG holding (credit calm)",
+          5
+        ]
+      ]
+    },
+    "credit": {
+      "value": 62,
+      "trend_wk": -3,
+      "label": "Stable / drifting",
+      "color": "amber",
+      "decomp": [
+        [
+          "HYG holding (credit bid)",
+          18
+        ],
+        [
+          "ALLY near 52-week highs",
+          12
+        ],
+        [
+          "HY OAS +20bps from tight",
+          -14
+        ],
+        [
+          "MOVE rising to 68.14",
+          -8
+        ],
+        [
+          "COF softening",
+          -4
+        ]
+      ]
+    },
+    "inflation": {
+      "value": 71,
+      "trend_wk": 3,
+      "label": "Improving",
+      "color": "green",
+      "decomp": [
+        [
+          "Oil -35% from $114 peak",
+          22
+        ],
+        [
+          "PCE print at 4.1% (peaked)",
+          15
+        ],
+        [
+          "Breakeven 2.2% (anchored)",
+          12
+        ],
+        [
+          "Core PCE 3.4% (above target)",
+          -10
+        ],
+        [
+          "Oil bouncing today +1.8%",
+          -8
+        ]
+      ]
+    },
+    "vol": {
+      "value": 68,
+      "trend_wk": -6,
+      "label": "Low but MOVE rising",
+      "color": "amber",
+      "decomp": [
+        [
+          "VIX 17.66 (below 20)",
+          22
+        ],
+        [
+          "No SOFR stress signal",
+          10
+        ],
+        [
+          "MOVE 68.14 (+2% today)",
+          -8
+        ],
+        [
+          "USDJPY at 162 threshold",
+          -10
+        ]
+      ]
+    }
+  },
+  "regime_confidence": 61,
+  "bias": "Selective long enabling-layer hardware with tight sizing. Korea gate closed \u2014 no DRAM/Korea-linked adds until EWY reclaims SMA20. Jul\u2013Sep liquidity drain active; reduce crowded duration-sensitive names before late July TGA peak. Oil bounce today (+1.8%) is the key risk \u2014 watch CL1! as the swing variable that resolves the PCE peak thesis.",
+  "counterargs": {
+    "thesis": "Duration",
+    "supporting": [
+      "10Y easing \u22129bps from ATH",
+      "PCE read as peak inflation",
+      "DXY weakening (\u22120.24%)",
+      "Oil down 35% from war peak"
+    ],
+    "against": [
+      "Oil bouncing today +1.79%",
+      "MOVE rising +2.03%",
+      "HY OAS widening, +20bps from tight",
+      "2Y still +24bps vs 4wk ago"
+    ],
+    "read": "The bull case rests on yesterday's data (PCE, oil's 35% decline from peak). The bear case is forming in real-time. If oil continues higher into next week, the supporting column flips. Watch CL1! as the swing variable."
+  },
+  "trade_table": [
+    {
+      "theme": "Semis / enabling layer",
+      "signal": "Bullish",
+      "signal_color": "green",
+      "conviction": 7,
+      "horizon": "3\u201310 days",
+      "rationale": "MU beat confirmed HBM thesis. SOXX +4.1%. 10Y easing from ATH. EWY gate blocks Korea add but US semis intact."
+    },
+    {
+      "theme": "Duration / IGV",
+      "signal": "Cautious",
+      "signal_color": "green",
+      "conviction": 5,
+      "horizon": "1\u20133 wks",
+      "rationale": "10Y \u22129bps from ATH but real yield 2.17% still elevated. Oil bounce today is the key risk. Jul\u2013Sep drain caps upside."
+    },
+    {
+      "theme": "Korea / EWY",
+      "signal": "No trade",
+      "signal_color": "red",
+      "conviction": 0,
+      "horizon": "Jun 2027",
+      "rationale": "Gate closed. $197.50 vs SMA20 $200.89. MSCI DM exclusion forced unwind. No add regardless of thesis strength."
+    },
+    {
+      "theme": "Financials",
+      "signal": "Neutral",
+      "signal_color": "amber",
+      "conviction": 5,
+      "horizon": "2\u20134 wks",
+      "rationale": "High NIM + calm credit = still supportive. HY OAS drifting wider is the watch signal."
+    },
+    {
+      "theme": "USD / dollar shorts",
+      "signal": "Mild tailwind",
+      "signal_color": "green",
+      "conviction": 5,
+      "horizon": "1\u20132 wks",
+      "rationale": "DXY \u22120.24% on PCE peak read. BOJ intervention at 162 is the binary risk that reverses this."
+    },
+    {
+      "theme": "Long credit (HYG)",
+      "signal": "Avoid",
+      "signal_color": "red",
+      "conviction": 2,
+      "horizon": "2\u20136 wks",
+      "rationale": "HY OAS +20bps from 25yr tights + liquidity tightening = unattractive risk/reward for new longs."
+    },
+    {
+      "theme": "Small caps",
+      "signal": "Avoid",
+      "signal_color": "red",
+      "conviction": 2,
+      "horizon": "6\u201310 wks",
+      "rationale": "Jul\u2013Sep reserve drain disproportionately hits levered small caps. No catalyst."
+    }
+  ],
+  "catalysts": [
+    {
+      "date": "Jul 2",
+      "days": 2,
+      "event": "H.4.1 Release",
+      "type": "Portfolio Risk",
+      "type_color": "red",
+      "stars": 5,
+      "note": "TGA + Reserves print. Will show if drain rate accelerating."
+    },
+    {
+      "date": "Jul 3",
+      "days": 3,
+      "event": "Payrolls (NFP)",
+      "type": "Binary",
+      "type_color": "red",
+      "stars": 4,
+      "note": "Strong print = Warsh hike back on table. Weak print = duration relief."
+    },
+    {
+      "date": "Jul 9",
+      "days": 9,
+      "event": "10Y Auction",
+      "type": "Informational",
+      "type_color": "grey",
+      "stars": 3,
+      "note": "Bid-to-cover and tail will show whether private demand absorbing supply at current yields."
+    },
+    {
+      "date": "Jul 15",
+      "days": 15,
+      "event": "CPI",
+      "type": "Binary",
+      "type_color": "red",
+      "stars": 5,
+      "note": "PCE peak narrative confirmed or reversed. Hot CPI = duration selloff + Warsh hike."
+    },
+    {
+      "date": "Jul 17",
+      "days": 17,
+      "event": "Options expiry",
+      "type": "Portfolio Risk",
+      "type_color": "amber",
+      "stars": 3,
+      "note": "APH $165/$170, DRAM $69/$74, EOSE $7.50/$10 spreads all expire."
+    },
+    {
+      "date": "Aug 5",
+      "days": 36,
+      "event": "Treasury QRA",
+      "type": "Binary",
+      "type_color": "red",
+      "stars": 5,
+      "note": "Quarterly Refunding Announcement. Auction sizes + TGA guidance for Q3."
+    }
+  ],
+  "plumbing": {
+    "net_liquidity_t": 5.813,
+    "walcl_b": 6735,
+    "tga_b": 919,
+    "tga_delta": "+$38B/wk",
+    "tga_color": "red",
+    "rrp_b": 3.55,
+    "rrp_delta": "near zero \u2014 no buffer",
+    "rrp_color": "amber",
+    "reserves_t": 2.951,
+    "reserves_delta": "\u2212$82B/wk \u2014 below $3T",
+    "reserves_color": "red",
+    "sofr_pct": 3.62,
+    "sofr_delta": "3bps below IORB \u2014 clean",
+    "sofr_color": "grey"
+  },
+  "duration": {
+    "tlt": 87.45,
+    "tlt_delta": "+0.10%",
+    "tlt_color": "green",
+    "shy": 82.17,
+    "shy_delta": "flat",
+    "shy_color": "grey",
+    "hyg": 80.01,
+    "hyg_delta": "+0.23%",
+    "hyg_color": "green",
+    "t10yie": 2.2,
+    "t10yie_delta": "flat",
+    "t10yie_color": "grey",
+    "real_yield": 2.17,
+    "tlt_shy_ratio": 1.065,
+    "move": 68.14,
+    "move_delta": "+2.03% \u2014 rising",
+    "move_color": "amber"
+  },
+  "credit": {
+    "hy_oas": 2.83,
+    "hy_oas_delta": "+20bps from tight \u2014 trend active",
+    "hy_oas_color": "red",
+    "ally": 47.25,
+    "ally_delta": "+0.17% \u2014 near highs",
+    "ally_color": "green",
+    "cacc": 638.23,
+    "cacc_delta": "+1.49% \u2014 resilient",
+    "cacc_color": "green",
+    "cof": 202.28,
+    "cof_delta": "\u22120.84%",
+    "cof_color": "amber",
+    "stage": 1
+  },
+  "curve": {
+    "us03my": 3.772,
+    "us06my": 3.952,
+    "us02y": 4.104,
+    "us05y": 4.146,
+    "us10y": 4.378,
+    "us30y": 4.866,
+    "spread_2s10s": 0.274,
+    "spread_3m10y": 0.606,
+    "real_10y": 2.17,
+    "us_japan_spread_bps": 174
+  },
+  "fx": {
+    "usdjpy": 161.96,
+    "usdjpy_alert": true,
+    "usdjpy_note": "AT 162 BOJ threshold",
+    "usdkrw": 1540.68,
+    "usdkrw_alert": false,
+    "usdkrw_note": "+0.37% \u2014 watch 1,530",
+    "dxy": 101.12,
+    "dxy_delta": "\u22120.24% \u2014 softening",
+    "dxy_color": "green",
+    "jp10y": 2.638,
+    "us_japan_spread_bps": 174,
+    "ni225": 69467.89
+  },
+  "korea_gate": {
+    "status": "closed",
+    "conditions_met": 1,
+    "ewy": 197.5,
+    "ewy_sma20": 200.89,
+    "ewy_pass": false,
+    "usdkrw": 1541.68,
+    "usdkrw_threshold": 1530,
+    "usdkrw_pass": false,
+    "kospi": 8394.66,
+    "kospi_threshold": 8200,
+    "kospi_pass": true
+  },
+  "semis": {
+    "soxx": 614.35,
+    "soxx_delta": "+4.14%",
+    "soxx_color": "green",
+    "qqq": 724.08,
+    "qqq_delta": "+2.49%",
+    "qqq_color": "green",
+    "spy": 741.0,
+    "spy_delta": "+1.65%",
+    "spy_color": "green",
+    "soxx_spy_ratio": 0.829
+  },
+  "chain": [
+    {
+      "ticker": "DRAM",
+      "price": 71.94,
+      "delta": "+0.08%",
+      "color": "green",
+      "note": "$69/$74 Jul 17 spread (2 contracts). EWY gate closed = no add. Hold."
+    },
+    {
+      "ticker": "MU",
+      "price": 1145.28,
+      "delta": "+1.14%",
+      "color": "green",
+      "note": "Earnings beat Jun 24 confirmed HBM demand. Continuing higher."
+    },
+    {
+      "ticker": "CRDO",
+      "price": 245.68,
+      "delta": "+3.23%",
+      "color": "green",
+      "note": "Data movement silicon. Off $274 ATH. No active position."
+    },
+    {
+      "ticker": "GLW",
+      "price": 255.69,
+      "delta": "+15.67%",
+      "color": "green",
+      "flag": true,
+      "note": "\u26a0 +15.7% today \u2014 investigate catalyst. 14 shares @ $189.66."
+    },
+    {
+      "ticker": "LITE",
+      "price": 851.4,
+      "delta": "+4.21%",
+      "color": "green",
+      "note": "Optical/connectivity. Off $964 ATH. No active position."
+    },
+    {
+      "ticker": "ASX",
+      "price": 42.13,
+      "delta": "+4.77%",
+      "color": "green",
+      "note": "50 shares @ $38.57. Above cost basis. AGM Jun 24 passed."
+    },
+    {
+      "ticker": "AMKR",
+      "price": 82.34,
+      "delta": "+4.60%",
+      "color": "green",
+      "note": "Prior spread closed for profit. Off $96 ATH. Watchlist re-entry."
+    },
+    {
+      "ticker": "APH",
+      "price": 166.42,
+      "delta": "+1.65%",
+      "color": "green",
+      "note": "$165/$170 Jul 17 spread active. In the money. Redeploy post-Jul 17."
+    },
+    {
+      "ticker": "POWI",
+      "price": 78.96,
+      "delta": "\u22120.52%",
+      "color": "amber",
+      "note": "25 shares @ $84.21. Below cost basis."
+    },
+    {
+      "ticker": "EOSE",
+      "price": 6.09,
+      "delta": "+2.70%",
+      "color": "warn",
+      "note": "\u26a0 $7.50/$10 Jul 17 spread (10 contracts). Thesis broken. CLOSE PRIORITY."
+    }
+  ],
+  "changed_today": [
+    {
+      "label": "US10Y",
+      "value": "4.378%",
+      "delta": "\u2193 \u22129bps from ATH",
+      "color": "green"
+    },
+    {
+      "label": "MOVE",
+      "value": "68.14",
+      "delta": "\u2191 +2.03% \u2014 bond vol rising",
+      "color": "amber"
+    },
+    {
+      "label": "HY OAS",
+      "value": "2.83%",
+      "delta": "\u2191 +20bps from tight",
+      "color": "red"
+    },
+    {
+      "label": "Oil (CL1!)",
+      "value": "$70.47",
+      "delta": "\u2191 +1.79% \u2014 \u26a0 PCE risk",
+      "color": "amber"
+    },
+    {
+      "label": "USDJPY",
+      "value": "161.96",
+      "delta": "\u2191 AT 162 BOJ threshold",
+      "color": "red"
+    },
+    {
+      "label": "DXY",
+      "value": "101.12",
+      "delta": "\u2193 \u22120.24% \u2014 dollar soft",
+      "color": "green"
+    },
+    {
+      "label": "Liq. score",
+      "value": "38",
+      "delta": "\u2192 unchanged",
+      "color": "grey"
+    },
+    {
+      "label": "Infl. score",
+      "value": "71",
+      "delta": "\u2191 +3 (PCE peak read)",
+      "color": "amber"
+    },
+    {
+      "label": "SOXX",
+      "value": "$614.35",
+      "delta": "\u2191 +4.14% \u2014 semis leading",
+      "color": "green"
+    },
+    {
+      "label": "GLW",
+      "value": "$255.69",
+      "delta": "\u2191 +15.67% \u2014 \u26a0 investigate",
+      "color": "green"
+    }
+  ]
+}
