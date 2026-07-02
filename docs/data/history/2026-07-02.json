@@ -1,86 +1,137 @@
 {
   "meta": {
-    "pulled_at": "2026-07-02T13:42:00Z",
-    "pulled_at_cet": "Jul 2, 2026 15:42 CET",
+    "pulled_at": "2026-07-02T17:58:00Z",
+    "pulled_at_cet": "Jul 2, 2026 19:58 CET",
     "source": "Cowork · FRED + TradingView Liquidity Monitor - Jae"
   },
   "scores": {
     "liquidity": {
-      "value": 40,
-      "trend_wk": 4,
-      "label": "Tightening, but SOFR/IORB spread narrowing",
+      "value": 39,
+      "trend_wk": 1,
+      "label": "Tightening, but repo stress resolved",
       "color": "amber",
       "decomp": [
-        ["No new H.4.1 print yet — TGA/Reserves still as of Jun 24", -2],
-        ["SOFR eased to 3.66% vs IORB 3.65% — spread narrowing but still above", -14],
-        ["RRP holding near $1.00B, normalized", 6],
-        ["HYG +0.21%, turned positive", 3]
+        [
+          "SOFR steady at 3.66%, just 1bp above IORB (3.65%)",
+          -6
+        ],
+        [
+          "No new H.4.1 print yet — TGA/Reserves still Jun 24, release now late",
+          -6
+        ],
+        [
+          "RRP holding near $1.00B, normalized",
+          6
+        ],
+        [
+          "HY OAS ticked down to 2.74% on new Jul 1 print",
+          5
+        ]
       ]
     },
     "credit": {
-      "value": 68,
-      "trend_wk": 4,
-      "label": "Improving",
-      "color": "green",
+      "value": 60,
+      "trend_wk": -5,
+      "label": "First crack after 3 calm sessions",
+      "color": "amber",
       "decomp": [
-        ["HY OAS holding at 2.75% (no new print)", 8],
-        ["ALLY +0.48%, CACC +1.23%, COF +1.47% — lenders extending gains", 12],
-        ["HYG +0.21%, turned positive", 4],
-        ["No credit stress despite Korea/semis rout deepening further", 6]
+        [
+          "HY OAS still tight at 2.74% — spread itself unmoved",
+          10
+        ],
+        [
+          "ALLY -2.80%, CACC -1.01%, COF -0.79% — first red day for financials this episode",
+          -12
+        ],
+        [
+          "HYG roughly flat, -0.05% intraday, not yet cracking",
+          3
+        ],
+        [
+          "Equity-side wobble in lenders, not yet a credit-spread signal",
+          4
+        ]
       ]
     },
     "inflation": {
-      "value": 75,
-      "trend_wk": 2,
-      "label": "Improving",
+      "value": 71,
+      "trend_wk": -2,
+      "label": "Improving, but oil ticked up",
       "color": "green",
       "decomp": [
-        ["Oil -1.21% today, extending the decline", 7],
-        ["Breakeven flat at 2.23%, still anchored", 3],
-        ["Real 10Y ~2.25%, still elevated", -5],
-        ["PCE peak narrative intact", 4]
+        [
+          "Oil roughly flat, -0.16% today, off its earlier lows",
+          4
+        ],
+        [
+          "Breakeven flat at 2.23%, still anchored",
+          5
+        ],
+        [
+          "Real 10Y ~2.26%, still elevated",
+          -4
+        ],
+        [
+          "PCE peak narrative still broadly intact",
+          4
+        ]
       ]
     },
     "vol": {
-      "value": 63,
-      "trend_wk": 2,
-      "label": "Global vol calming, Korea-domestic crisis deepening",
-      "color": "amber",
+      "value": 48,
+      "trend_wk": -15,
+      "label": "Spillover — VIX turns higher for the first time this episode",
+      "color": "red",
       "decomp": [
-        ["VIX -3.68% to 15.97 — vol compressing further", 10],
-        ["MOVE flat, no new print — bond vol still calm", 6],
-        ["Gold +2.40% — safe-haven bid extending a 2nd session", -6],
-        ["USDJPY fell back below 162.00 BOJ threshold", 4],
-        ["KOSPI -7.89% to a fresh post-selloff low of 7,648.10", -12]
+        [
+          "VIX +3.02% to 17.08 — first up day in the vol complex since the Korea rout began",
+          -14
+        ],
+        [
+          "SOXX -6.96%, MU -7.32%, broad US semis now selling off hard, not just Korea",
+          -12
+        ],
+        [
+          "EWY -5.71% to $174.90 — the earlier flat/decoupled read has broken down",
+          -8
+        ],
+        [
+          "Gold still +1.91%, safe-haven bid holding",
+          4
+        ],
+        [
+          "MOVE still flat — bond vol not yet confirming the equity move",
+          6
+        ]
       ]
     }
   },
-  "regime_confidence": 74,
-  "bias": "The Korea/semis rout is bifurcating rather than resolving: the Korean domestic epicenter keeps deepening — KOSPI -7.89% to a fresh post-selloff low of 7,648.10, SK Hynix -14.57%, Samsung -9.06% — while the US-listed read-through is stabilizing or reversing: MU +1.04%, ASX +3.35%, SOXX back to roughly flat (-0.42%) after yesterday's -6.41%. EWY itself is flat (+0.15%) despite the KOSPI plunge. The Korea gate stays 0/3 — EWY below its $197.32 SMA20, USDKRW at 1,542.98 (still above the 1,530 BOK watch level), KOSPI well below 8,200. Elsewhere, risk signals continue to calm: VIX -3.68% to 15.97, MOVE flat, financials (ALLY/CACC/COF) all firm and extending gains, and USDJPY has fallen back below the 162.00 BOJ threshold (-0.97%). Gold is up another +2.40%, extending its safe-haven bid for a second session — the one signal arguing this episode has more than one day's legs. Net: this looks increasingly like a contained, Korea-domestic dislocation (the chip majors and the local index, not the broader chain or US macro) rather than a systemic liquidity or rate event, but the persistent gold bid and the still-falling KOSPI argue for keeping the Korea gate closed and the EWY/Korea complex avoided until the local index actually stabilizes.",
+  "regime_confidence": 55,
+  "bias": "This run marks a real inflection. EWY, which had been eerily flat while KOSPI cratered, finally broke down hard (-5.71% to $174.90, widening its gap below the 196.80 SMA20 even further). More importantly, the 'contained, Korea-only' thesis from a few hours ago has broken: US-listed semis and enabling-layer names are now selling off broadly in NY afternoon trading — SOXX -6.96%, MU -7.32%, DRAM -10.26%, GLW -11.87%, LITE -10.86%, AMKR -12.64%, POWI -9.62%, CRDO -8.68%, EOSE -6.94% — and VIX has flipped from falling to rising (+3.02%), its first red print since this episode began. Financials cracked too: ALLY -2.80%, CACC -1.01%, COF -0.79%, the first negative day for lenders after three sessions of calm. Gold is still elevated (+1.91%) though off its intraday peak, and USDKRW continued easing toward 1,530 (now 1,538, the closest approach yet), but Korea's own market (KOSPI, SK Hynix, Samsung) is closed for the day and unchanged from this morning's print. Read together: what looked like an idiosyncratic Korean event through midday now looks like it is spilling into broader US risk sentiment. Korea gate remains firmly 0/3. Treat this as a genuine regime-confidence downgrade, not just a data update — the divergence that anchored the 'contained' call is gone.",
   "counterargs": {
-    "thesis": "Korea/semis rout is a specific, Korea-domestic catalyst, not a macro regime shift",
+    "thesis": "The Korea/semis shock has broadened into genuine US risk-off, not stayed contained",
     "supporting": [
-      "VIX -3.68% to 15.97 — global vol compressing, not spiking",
-      "MOVE flat, still calm — no rates contagion",
-      "ALLY, CACC, COF and HYG all up today — credit and lenders unfazed",
-      "US-listed chip proxies (MU +1.04%, ASX +3.35%, SOXX ~flat) stabilizing even as Korea falls further"
+      "VIX +3.02% — first up day in the vol complex since the episode began",
+      "SOXX -6.96%, MU -7.32%, broad US-listed semis reversing hard after this morning's brief stabilization",
+      "ALLY/CACC/COF all red — first crack in financials after three calm sessions",
+      "EWY itself finally broke down -5.71%, ending the earlier flat/decoupled pattern"
     ],
     "against": [
-      "KOSPI -7.89% to a fresh post-selloff low of 7,648.10",
-      "SK Hynix -14.57%, Samsung -9.06% — the actual Korean chip majors accelerating lower, not stabilizing",
-      "Korea gate still 0/3, unchanged from this morning",
-      "Gold +2.40% for a second straight session — a genuine, persistent safe-haven bid"
+      "MOVE still flat — bond-market vol shows zero confirmation of the equity move",
+      "HY OAS unchanged at 2.74% — credit spreads themselves aren't widening, only equity-side lender names",
+      "Gold pulled back from its earlier +2.46% peak to +1.91% — safe-haven bid isn't accelerating",
+      "KOSPI/SK Hynix/Samsung unchanged today (Korea market closed) — no fresh Korea-specific catalyst confirmed"
     ],
-    "read": "The divergence has sharpened rather than resolved: US-listed proxies and broad macro vol both argue this is contained, but the Korean domestic names are getting worse, not better — the opposite of what you'd expect from a one-off technical air pocket. Until KOSPI, SK Hynix, and Samsung show a real stabilization, keep the Korea complex fully avoided regardless of how calm SOXX/MU look."
+    "read": "The clean Korea-vs-US decoupling from earlier today did not hold through the US session. Whether this is a genuine regime shift or a single rough US afternoon reversing on a lighter catalyst (index rebalancing, momentum unwind, options-related flows) isn't yet clear — MOVE and HY OAS staying flat argue for the latter. But VIX turning positive and financials cracking are exactly the kind of broadening signals that would justify treating this as more than noise. Watch tomorrow's Asia open and whether US vol holds these levels overnight."
   },
   "trade_table": [
     {
       "theme": "Semis / enabling layer",
-      "signal": "Neutral — stabilizing, still cautious",
-      "signal_color": "amber",
-      "conviction": 4,
-      "horizon": "Until catalyst ID'd",
-      "rationale": "US-listed proxies (MU +1.04%, ASX +3.35%, SOXX ~flat) are stabilizing after two rough sessions, but the Korean chip majors (SK Hynix -14.57%, Samsung -9.06%) are still falling — too early to re-engage."
+      "signal": "Reduce / Avoid adds",
+      "signal_color": "red",
+      "conviction": 3,
+      "horizon": "Days",
+      "rationale": "This morning's US-listed stabilization (MU +1.1%, SOXX flat) fully reversed — SOXX -6.96%, MU -7.32%, AMKR -12.64%. No longer a Korea-only story."
     },
     {
       "theme": "Duration / IGV",
@@ -88,39 +139,39 @@
       "signal_color": "grey",
       "conviction": 4,
       "horizon": "1–3 wks",
-      "rationale": "10Y essentially flat at 4.477%. No fresh signal either way; watch the delayed H.4.1 print for the next catalyst."
+      "rationale": "Curve drifted modestly higher (10Y 4.485%, +1bp vs midday). SOFR steady near IORB. Still awaiting the delayed H.4.1 print."
     },
     {
       "theme": "Korea / EWY",
       "signal": "No trade",
       "signal_color": "red",
       "conviction": 0,
-      "horizon": "Until gate reopens",
-      "rationale": "Gate remains 0/3. KOSPI fell to a fresh low (7,648.10, -7.89%) even as EWY itself is flat — until the local index stabilizes, stay out regardless of gate math."
+      "horizon": "Until KOSPI stabilizes",
+      "rationale": "Gate still 0/3. EWY itself finally cracked -5.71% to $174.90, now well below its 196.80 SMA20. KOSPI unchanged at 7,648.10 (market closed)."
     },
     {
       "theme": "Financials",
-      "signal": "Constructive",
-      "signal_color": "green",
-      "conviction": 7,
+      "signal": "Caution — first reversal",
+      "signal_color": "amber",
+      "conviction": 3,
       "horizon": "2–4 wks",
-      "rationale": "ALLY +0.48%, CACC +1.23%, COF +1.47% — extending the divergence for a third straight session. HY OAS steady at 2.75%."
+      "rationale": "ALLY -2.80%, CACC -1.01%, COF -0.79% — first red day after three sessions of strength. HY OAS itself still tight at 2.74%, watch for confirmation."
     },
     {
       "theme": "USD / dollar shorts",
-      "signal": "Mild tailwind",
+      "signal": "Constructive",
       "signal_color": "green",
-      "conviction": 5,
+      "conviction": 4,
       "horizon": "1–2 wks",
-      "rationale": "USDJPY back below the 162.00 BOJ threshold (-0.97%), DXY -0.63%. First real give-back in dollar strength this episode."
+      "rationale": "DXY -0.53% on the day, USDJPY still below 162. Dollar weakness continuing to hold."
     },
     {
       "theme": "Long credit (HYG)",
       "signal": "Neutral",
       "signal_color": "amber",
-      "conviction": 4,
+      "conviction": 3,
       "horizon": "2–6 wks",
-      "rationale": "HYG +0.21%, OAS flat at 2.75% — credit still not confirming any equity stress, now into a third session."
+      "rationale": "HYG roughly flat, OAS steady at 2.74%. Credit itself not yet confirming the equity-vol spillover."
     },
     {
       "theme": "Small caps",
@@ -128,7 +179,7 @@
       "signal_color": "red",
       "conviction": 2,
       "horizon": "6–10 wks",
-      "rationale": "Jul–Sep reserve drain still ahead, and this week remains a live demonstration of how fast sector-specific shocks can compound for levered names."
+      "rationale": "Jul–Sep reserve drain still ahead. Today's broader risk-off adds a near-term reason for caution on top of the structural case."
     }
   ],
   "catalysts": [
@@ -139,7 +190,7 @@
       "type": "Portfolio Risk",
       "type_color": "red",
       "stars": 5,
-      "note": "TGA + Reserves print due today; still showing Jun 24 data as of this run. Will show if the drain rate is accelerating."
+      "note": "TGA + Reserves print still not posted as of 19:58 CET — running late. Watch for a possible slip to tomorrow."
     },
     {
       "date": "Jul 3",
@@ -148,7 +199,7 @@
       "type": "Binary",
       "type_color": "red",
       "stars": 4,
-      "note": "Strong print = Warsh hike back on table. Weak print = duration relief."
+      "note": "Strong print = Warsh hike back on table. Weak print = duration relief. Lands right into a now-jumpier vol backdrop."
     },
     {
       "date": "Jul 9",
@@ -174,8 +225,8 @@
       "event": "Options expiry",
       "type": "Portfolio Risk",
       "type_color": "amber",
-      "stars": 3,
-      "note": "APH $165/$170, DRAM $69/$74, EOSE $7.50/$10 spreads all expire — Korea/semis volatility has materially worsened the P&L picture here."
+      "stars": 4,
+      "note": "APH $165/$170 spread now trading OUT of the money (APH $162.51) — reassess. DRAM $69/$74 and EOSE $7.50/$10 both deep OTM after today's moves."
     },
     {
       "date": "Aug 5",
@@ -191,263 +242,264 @@
     "net_liquidity_t": 5.815,
     "walcl_b": 6735,
     "tga_b": 918.7,
-    "tga_delta": "unchanged — H.4.1 due today, not yet posted",
+    "tga_delta": "unchanged — H.4.1 running late, not yet posted",
     "tga_color": "grey",
     "rrp_b": 1.001,
     "rrp_delta": "holding near $1.00B, normalized",
     "rrp_color": "green",
     "reserves_t": 2.951,
-    "reserves_delta": "unchanged — H.4.1 due today, not yet posted",
+    "reserves_delta": "unchanged — H.4.1 running late, not yet posted",
     "reserves_color": "grey",
     "sofr_pct": 3.66,
-    "sofr_delta": "eased to 3.66%, still ABOVE IORB (3.65%) but the spread is narrowing",
+    "sofr_delta": "steady at 3.66%, just 1bp above IORB",
     "sofr_color": "amber"
   },
   "duration": {
-    "tlt": 85.48,
-    "tlt_delta": "-0.05%",
+    "tlt": 85.41,
+    "tlt_delta": "-0.13%",
     "tlt_color": "grey",
-    "shy": 81.95,
-    "shy_delta": "+0.13%",
+    "shy": 81.93,
+    "shy_delta": "+0.10%",
     "shy_color": "green",
-    "hyg": 79.76,
-    "hyg_delta": "+0.21%",
+    "hyg": 79.72,
+    "hyg_delta": "+0.16%",
     "hyg_color": "green",
     "t10yie": 2.23,
     "t10yie_delta": "flat",
     "t10yie_color": "grey",
-    "real_yield": 2.25,
-    "tlt_shy_ratio": 1.043,
+    "real_yield": 2.26,
+    "tlt_shy_ratio": 1.0425,
     "move": 68.5617,
     "move_delta": "flat — no new print since this morning",
     "move_color": "grey"
   },
   "credit": {
-    "hy_oas": 2.75,
-    "hy_oas_delta": "flat — no new print",
-    "hy_oas_color": "grey",
-    "ally": 46.30,
-    "ally_delta": "+0.48%",
-    "ally_color": "green",
-    "cacc": 663.81,
-    "cacc_delta": "+1.23%",
-    "cacc_color": "green",
-    "cof": 207.84,
-    "cof_delta": "+1.47%",
-    "cof_color": "green",
+    "hy_oas": 2.74,
+    "hy_oas_delta": "new Jul 1 print, essentially unchanged",
+    "hy_oas_color": "green",
+    "ally": 44.79,
+    "ally_delta": "-2.80% — first red day this episode",
+    "ally_color": "red",
+    "cacc": 649.13,
+    "cacc_delta": "-1.01%",
+    "cacc_color": "amber",
+    "cof": 203.21,
+    "cof_delta": "-0.79%",
+    "cof_color": "amber",
     "stage": 1
   },
   "curve": {
-    "us03my": 3.759,
-    "us06my": 3.934,
-    "us02y": 4.125,
-    "us05y": 4.216,
-    "us10y": 4.477,
-    "us30y": 4.980,
-    "spread_2s10s": 0.352,
-    "spread_3m10y": 0.718,
-    "real_10y": 2.25,
-    "us_japan_spread_bps": 171
+    "us03my": 3.765,
+    "us06my": 3.94,
+    "us02y": 4.141,
+    "us05y": 4.232,
+    "us10y": 4.485,
+    "us30y": 4.986,
+    "spread_2s10s": 0.344,
+    "spread_3m10y": 0.72,
+    "real_10y": 2.26,
+    "us_japan_spread_bps": 170
   },
   "fx": {
-    "usdjpy": 161.024,
+    "usdjpy": 161.072,
     "usdjpy_alert": false,
-    "usdjpy_note": "Fell back BELOW the 162.00 BOJ threshold (-0.97%) — de-escalation",
-    "usdkrw": 1542.98,
+    "usdjpy_note": "still below the 162.00 BOJ threshold, little changed since midday",
+    "usdkrw": 1538.19,
     "usdkrw_alert": true,
-    "usdkrw_note": "STILL above the 1,530 BOK threshold, though easing from this morning's 1,552",
-    "dxy": 100.769,
-    "dxy_delta": "-0.63%",
-    "dxy_color": "amber",
-    "jp10y": 2.772,
-    "us_japan_spread_bps": 171,
+    "usdkrw_note": "continuing to ease toward 1,530 — closest approach yet this episode",
+    "dxy": 100.876,
+    "dxy_delta": "-0.53% — weakening",
+    "dxy_color": "green",
+    "jp10y": 2.782,
+    "us_japan_spread_bps": 170,
     "ni225": 68732.93
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 0,
     "conditions_total": 3,
-    "ewy": 185.78,
-    "ewy_sma20": 197.32,
+    "ewy": 174.9,
+    "ewy_sma20": 196.8,
     "ewy_pass": false,
-    "usdkrw": 1542.98,
+    "usdkrw": 1538.19,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": false,
-    "kospi": 7648.10,
+    "kospi": 7648.1,
     "kospi_threshold": 8200,
     "kospi_pass": false
   },
   "semis": {
-    "soxx": 597.17,
-    "soxx_delta": "-0.42%",
-    "soxx_color": "amber",
-    "qqq": 727.05,
-    "qqq_delta": "+0.26%",
-    "qqq_color": "green",
-    "spy": 749.51,
-    "spy_delta": "+0.50%",
-    "spy_color": "green",
-    "soxx_spy_ratio": 0.797
+    "soxx": 557.98,
+    "soxx_delta": "-6.96%",
+    "soxx_color": "red",
+    "qqq": 708.35,
+    "qqq_delta": "-2.32%",
+    "qqq_color": "red",
+    "spy": 740.58,
+    "spy_delta": "-0.69%",
+    "spy_color": "amber",
+    "soxx_spy_ratio": 0.7534
   },
   "chain": [
     {
       "ticker": "DRAM",
-      "price": 64.44,
-      "delta": "-2.16%",
-      "color": "amber",
-      "note": "Stabilizing after two double-digit-loss sessions. $69/$74 Jul 17 spread (2 contracts) remains deep out of the money."
+      "price": 59.1,
+      "delta": "-10.26%",
+      "color": "red",
+      "note": "Fourth consecutive lower session and the sharpest yet — the earlier deceleration has fully reversed."
     },
     {
       "ticker": "MU",
-      "price": 1043.00,
-      "delta": "+1.04%",
-      "color": "green",
-      "note": "First positive session after ~20% combined losses over the prior two days. Watch for follow-through before calling it a bottom."
+      "price": 956.69,
+      "delta": "-7.32%",
+      "color": "red",
+      "note": "This morning's brief bounce (+1.1%) fully reversed in the US afternoon. HBM thesis intact but momentum has turned hard."
     },
     {
       "ticker": "CRDO",
-      "price": 252.91,
-      "delta": "-2.39%",
-      "color": "amber",
-      "note": "Continuing to give back the earlier surge. Off $274 ATH. No active position."
+      "price": 236.61,
+      "delta": "-8.68%",
+      "color": "red",
+      "note": "Accelerating lower again, now over 13% off the $274 ATH."
     },
     {
       "ticker": "GLW",
-      "price": 214.33,
-      "delta": "-2.86%",
-      "color": "amber",
-      "note": "Losses moderating vs prior session's -13.62%. 14 shares @ $189.66 — still above cost basis."
+      "price": 194.44,
+      "delta": "-11.87%",
+      "color": "red",
+      "note": "14 shares @ $189.66 — sharpest single-day drop of the episode; position now barely above cost basis."
     },
     {
       "ticker": "LITE",
-      "price": 783.99,
-      "delta": "-2.14%",
-      "color": "amber",
-      "note": "Off $964 ATH but the decline is decelerating vs the prior session."
+      "price": 714.15,
+      "delta": "-10.86%",
+      "color": "red",
+      "note": "Off the $964 ATH by over 25%, decline accelerating again after a brief pause."
     },
     {
       "ticker": "ASX",
-      "price": 44.43,
-      "delta": "+3.35%",
-      "color": "green",
-      "note": "50 shares @ $38.57 — cushion rebuilding after two rough sessions."
+      "price": 41.29,
+      "delta": "-3.95%",
+      "color": "amber",
+      "note": "50 shares @ $38.57 — this morning's +3.35% bounce fully reversed; still above cost basis but the cushion is narrowing fast."
     },
     {
       "ticker": "AMKR",
-      "price": 76.78,
-      "delta": "-4.01%",
-      "color": "amber",
-      "note": "Off $96 ATH, still sliding. Watchlist re-entry candidate, no active position."
+      "price": 69.88,
+      "delta": "-12.64%",
+      "color": "red",
+      "note": "Sharpest drop of the episode, off the $96 ATH by ~27%. Watchlist only, no active position."
     },
     {
       "ticker": "APH",
-      "price": 170.60,
-      "delta": "-0.94%",
-      "color": "amber",
-      "note": "$165/$170 Jul 17 spread barely in the money — margin has narrowed to almost nothing."
+      "price": 162.51,
+      "delta": "-5.64%",
+      "color": "red",
+      "flag": true,
+      "note": "$165/$170 Jul 17 spread now trading OUT of the money (APH below both strikes) — reassess this position."
     },
     {
       "ticker": "POWI",
-      "price": 78.59,
-      "delta": "-2.09%",
-      "color": "amber",
-      "note": "25 shares @ $84.21 — still below cost basis, roughly unchanged from the prior read."
+      "price": 72.55,
+      "delta": "-9.62%",
+      "color": "red",
+      "note": "25 shares @ $84.21 — now down over 13% from cost basis, worst reading yet."
     },
     {
       "ticker": "EOSE",
-      "price": 5.55,
-      "delta": "-0.09%",
+      "price": 5.17,
+      "delta": "-6.94%",
       "color": "warn",
       "flag": true,
-      "note": "$7.50/$10 Jul 17 spread (10 contracts). Thesis still broken, essentially flat at depressed levels. CLOSE PRIORITY."
+      "note": "$7.50/$10 Jul 17 spread (10 contracts). Thesis broken, continuing lower. CLOSE PRIORITY."
     }
   ],
   "changed_today": [
     {
-      "label": "KOSPI",
-      "value": "7,648.10",
-      "delta": "↓ −7.89% — fresh post-selloff low",
-      "color": "red"
-    },
-    {
-      "label": "SK Hynix",
-      "value": "₩2,187,000",
-      "delta": "↓ −14.57% — epicenter of the rout deepens",
-      "color": "red"
-    },
-    {
-      "label": "Samsung",
-      "value": "₩286,000",
-      "delta": "↓ −9.06% — Korean chip majors still falling",
-      "color": "red"
-    },
-    {
-      "label": "USDJPY",
-      "value": "161.024",
-      "delta": "↓ −0.97% — back BELOW 162.00 BOJ threshold",
-      "color": "green"
-    },
-    {
-      "label": "GOLD",
-      "value": "$4,128.05",
-      "delta": "↑ +2.40% — safe-haven bid extends a 2nd session",
-      "color": "amber"
-    },
-    {
       "label": "VIX",
-      "value": "15.97",
-      "delta": "↓ −3.68% — vol compressing further",
-      "color": "green"
+      "value": "17.08",
+      "delta": "↑ +3.02% — first red vol print this episode",
+      "color": "red"
     },
     {
-      "label": "MU",
-      "value": "$1,043.00",
-      "delta": "↑ +1.04% — US-listed proxy reversing higher",
-      "color": "green"
+      "label": "EWY",
+      "value": "$174.90",
+      "delta": "↓ -5.71% — the flat/decoupled read just broke down",
+      "color": "red"
     },
     {
-      "label": "ASX",
-      "value": "$44.43",
-      "delta": "↑ +3.35% — reversing after two down sessions",
-      "color": "green"
+      "label": "AMKR",
+      "value": "$69.88",
+      "delta": "↓ -12.64% — sharpest move of the episode",
+      "color": "red"
     },
     {
-      "label": "CACC",
-      "value": "$663.81",
-      "delta": "↑ +1.23% — financials still firm",
-      "color": "green"
+      "label": "GLW",
+      "value": "$194.44",
+      "delta": "↓ -11.87%",
+      "color": "red"
     },
     {
       "label": "SOXX",
-      "value": "$597.17",
-      "delta": "→ −0.42% — nearly flat after -6.41% prior session",
+      "value": "557.98",
+      "delta": "↓ -6.96% — broad US semis rolling over",
+      "color": "red"
+    },
+    {
+      "label": "ALLY",
+      "value": "$44.79",
+      "delta": "↓ -2.80% — first red day for financials this episode",
+      "color": "amber"
+    },
+    {
+      "label": "GOLD",
+      "value": "$4,108.10",
+      "delta": "↑ +1.91% — still elevated, off today's highs",
+      "color": "amber"
+    },
+    {
+      "label": "USDKRW",
+      "value": "1,538.19",
+      "delta": "↓ closest approach yet to the 1,530 gate threshold",
+      "color": "amber"
+    },
+    {
+      "label": "HY OAS",
+      "value": "2.74%",
+      "delta": "→ new print, essentially unchanged",
+      "color": "green"
+    },
+    {
+      "label": "MOVE",
+      "value": "68.56",
+      "delta": "→ flat — bond vol still not confirming the equity move",
       "color": "grey"
     }
   ],
   "crosschecks": {
     "vix": {
-      "value": 15.97,
-      "delta": "↓ −3.68% — vol compressing further",
-      "color": "green",
-      "note": "VIX easing further even as the Korea-domestic rout deepens — reinforces the idiosyncratic-not-macro read."
+      "value": 17.08,
+      "delta": "↑ +3.02% — first red print this episode",
+      "color": "amber",
+      "note": "VIX flips positive as the Korea/semis rout broadens into US risk sentiment — the 'contained' read from earlier today no longer fully holds."
     },
     "oil": {
-      "value": 67.75,
-      "delta": "↓ −1.21% — extending the decline",
-      "color": "green",
-      "note": "Oil extends its decline, well off the war-era highs. No inflation impulse; supportive of the PCE-peak narrative."
+      "value": 68.47,
+      "delta": "↓ -0.16% — roughly flat",
+      "color": "grey",
+      "note": "Oil little changed on the day; still no fresh inflation impulse."
     },
     "gold": {
-      "value": 4128.05,
-      "delta": "↑ +2.40% — safe-haven bid extends",
+      "value": 4108.1,
+      "delta": "↑ +1.91% — safe-haven bid holding, off today's highs",
       "color": "amber",
-      "note": "Second straight session of a real gold bid. The clearest cross-asset signal this episode has more than one day's legs."
+      "note": "Pulled back from the earlier +2.46% peak but remains firmly bid — third straight session of a real gold rally."
     },
     "move": {
       "value": 68.5617,
-      "delta": "flat — no new print since this morning",
+      "delta": "→ flat — no new print since this morning",
       "color": "grey",
-      "note": "Bond-market vol still calm despite the deepening Korea/semis rout. No signs of stress migrating into rates."
+      "note": "Bond-market vol still shows zero reaction despite equities broadening their selloff — the key thing to watch overnight."
     }
   }
 }
