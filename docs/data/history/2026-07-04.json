@@ -1,8 +1,9 @@
 {
   "meta": {
-    "pulled_at": "2026-07-04T19:25:00Z",
-    "pulled_at_cet": "Jul 4, 2026 21:25 CET",
-    "source": "Cowork · FRED + TradingView Liquidity Monitor - Jae"
+    "pulled_at": "2026-07-04T19:32:14Z",
+    "pulled_at_cet": "Jul 4, 2026, 21:32 CET",
+    "source": "Cowork · FRED + TradingView Liquidity Monitor - Jae",
+    "note": "No material change vs prior run 5 min earlier (2026-07-04T19:25:00Z) — weekend, markets closed, same Fri Jul 3 session data confirmed across FRED + TradingView."
   },
   "scores": {
     "liquidity": {
