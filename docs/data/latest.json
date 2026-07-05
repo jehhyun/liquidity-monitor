@@ -1,9 +1,9 @@
 {
   "meta": {
-    "pulled_at": "2026-07-04T19:32:14Z",
-    "pulled_at_cet": "Jul 4, 2026, 21:32 CET",
+    "pulled_at": "2026-07-05T21:37:13Z",
+    "pulled_at_cet": "Jul 5, 2026, 23:37 CET",
     "source": "Cowork · FRED + TradingView Liquidity Monitor - Jae",
-    "note": "No material change vs prior run 5 min earlier (2026-07-04T19:25:00Z) — weekend, markets closed, same Fri Jul 3 session data confirmed across FRED + TradingView."
+    "note": "Cash equities/rates/credit unchanged — still Fri Jul 3 close, US markets closed for the weekend. Only new data point: Sunday-evening Asia FX reopen ticked USDKRW to 1,529.24 (from 1,530.15), the first close below the 1,530 gate threshold this episode, on very thin weekend liquidity — not yet confirmed by a real session."
   },
   "scores": {
     "liquidity": {
@@ -302,12 +302,12 @@
     "us_japan_spread_bps": 171
   },
   "fx": {
-    "usdjpy": 161.383,
+    "usdjpy": 161.314,
     "usdjpy_alert": false,
     "usdjpy_note": "still below the 162.00 BOJ threshold",
-    "usdkrw": 1530.15,
-    "usdkrw_alert": true,
-    "usdkrw_note": "sitting right on the 1,530 gate threshold — closest approach all episode",
+    "usdkrw": 1529.24,
+    "usdkrw_alert": false,
+    "usdkrw_note": "ticked just below the 1,530 gate threshold on thin Sunday-evening Asia FX flow — first sub-1,530 print this episode, but unconfirmed by a real session",
     "dxy": 100.878,
     "dxy_delta": "+0.03% — roughly flat",
     "dxy_color": "grey",
@@ -317,14 +317,14 @@
   },
   "korea_gate": {
     "status": "closed",
-    "conditions_met": 0,
+    "conditions_met": 1,
     "conditions_total": 3,
     "ewy": 180.14,
     "ewy_sma20": 197.06,
     "ewy_pass": false,
-    "usdkrw": 1530.15,
+    "usdkrw": 1529.24,
     "usdkrw_threshold": 1530,
-    "usdkrw_pass": false,
+    "usdkrw_pass": true,
     "kospi": 8088.35,
     "kospi_threshold": 8200,
     "kospi_pass": false
@@ -454,8 +454,8 @@
     },
     {
       "label": "USDKRW",
-      "value": "1,530.15",
-      "delta": "→ sitting right on the 1,530 gate threshold",
+      "value": "1,529.24",
+      "delta": "↓ first close below the 1,530 gate threshold this episode (thin weekend FX, unconfirmed)",
       "color": "amber"
     },
     {
