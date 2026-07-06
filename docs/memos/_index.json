@@ -70,5 +70,85 @@
     "verdict": "AVOID",
     "weighted_composite": 3.9,
     "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "AMZN",
+    "file": "docs/memos/2026-07-06-AMZN.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 3.7,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "APP",
+    "file": "docs/memos/2026-07-06-APP.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 5.0,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "BRUN",
+    "file": "docs/memos/2026-07-06-BRUN.md",
+    "verdict": "AVOID",
+    "weighted_composite": 0.0,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "ESTA",
+    "file": "docs/memos/2026-07-06-ESTA.md",
+    "verdict": "AVOID",
+    "weighted_composite": 0.0,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "HD",
+    "file": "docs/memos/2026-07-06-HD.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 3.9,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "IBM",
+    "file": "docs/memos/2026-07-06-IBM.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 5.5,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "MA",
+    "file": "docs/memos/2026-07-06-MA.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 4.35,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "NET",
+    "file": "docs/memos/2026-07-06-NET.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 3.5,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "OKTA",
+    "file": "docs/memos/2026-07-06-OKTA.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 4.9,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "TWLO",
+    "file": "docs/memos/2026-07-06-TWLO.md",
+    "verdict": "AVOID",
+    "weighted_composite": 2.1,
+    "trade_gate": "fail"
   }
 ]
