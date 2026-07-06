@@ -30,5 +30,45 @@
     "verdict": "AVOID",
     "weighted_composite": -3.8,
     "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "GS",
+    "file": "docs/memos/2026-07-06-GS.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 5.8,
+    "trade_gate": "conditional_pass"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "PLTR",
+    "file": "docs/memos/2026-07-06-PLTR.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 5.6,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "META",
+    "file": "docs/memos/2026-07-06-META.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 4.3,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "AMD",
+    "file": "docs/memos/2026-07-06-AMD.md",
+    "verdict": "WATCHLIST",
+    "weighted_composite": 3.8,
+    "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "SNOW",
+    "file": "docs/memos/2026-07-06-SNOW.md",
+    "verdict": "AVOID",
+    "weighted_composite": 3.9,
+    "trade_gate": "fail"
   }
 ]
