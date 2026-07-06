@@ -14,5 +14,13 @@
     "verdict": "AVOID",
     "weighted_composite": -4.35,
     "trade_gate": "fail"
+  },
+  {
+    "date": "2026-07-06",
+    "ticker": "NVTS",
+    "file": "docs/memos/2026-07-06-NVTS.md",
+    "verdict": "AVOID",
+    "weighted_composite": -3.4,
+    "trade_gate": "fail"
   }
 ]
