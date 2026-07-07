@@ -28,7 +28,9 @@
           "SOFR eased to 3.64%, now 1bp below IORB (3.65%) \u2014 funding stress easing slightly",
           4
         ]
-      ]
+      ],
+      "trend_label": "Deteriorating",
+      "trend_note": "TGA +$38B/wk, reserves below $3T and falling \u2014 structural drain accelerating"
     },
     "credit": {
       "value": 65,
@@ -56,7 +58,9 @@
           "COF +0.67% constructive",
           6
         ]
-      ]
+      ],
+      "trend_label": "Improving",
+      "trend_note": "HY OAS tightened from 2.83% to 2.74%, ALLY/CACC holding \u2014 credit conditions easing at the margin"
     },
     "inflation": {
       "value": 65,
@@ -84,7 +88,9 @@
           "Real yield rising = headwind for growth",
           -10
         ]
-      ]
+      ],
+      "trend_label": "Stable",
+      "trend_note": "Breakeven 2.24% anchored, oil flat near $69 \u2014 no new inflation impulse but 10Y/30Y rising suggests term premium, not inflation"
     },
     "vol": {
       "value": 72,
@@ -108,11 +114,13 @@
           "KOSPI -4.91% \u2014 Korea stress",
           -10
         ]
-      ]
+      ],
+      "trend_label": "Improving",
+      "trend_note": "VIX 15.84, MOVE 65.76 \u2014 vol receding despite yield move, suggests equity-specific not macro fear"
     }
   },
-  "regime_confidence": 55,
-  "bias": "Yields pushing higher (10Y 4.485%, 30Y 5.003%) \u2014 wrong direction for duration thesis. Korea gate remains closed despite USDKRW breaking below 1,530 (now 1,511) as KOSPI dropped to 7,656, failing the 8,200 threshold. DRAM +6.81% and EWY +5.39% today are constructive but do not open the gate. Credit is the one bright spot \u2014 HY OAS tightened to 2.74%. Selective long enabling-layer hardware with tight sizing; no Korea-linked adds.",
+  "regime_confidence": 47,
+  "bias": "Structural liquidity neutral \u2014 TGA drain ongoing but credit conditions have improved (HY OAS tightened to 2.74%). Short-term conditions improving. Long-term conditions still restrictive (10Y 4.485%, 30Y crossed 5%). The yield rise today is term premium expansion, not inflation reacceleration \u2014 breakevens anchored at 2.24%. Financials and value positioned better than long-duration growth in this environment. Korea gate 1/3 \u2014 USDKRW finally passed but KOSPI failed. Hold semis with tight sizing; no Korea adds.",
   "counterargs": {
     "thesis": "The weekend FX/Asia moves (USDJPY above 162, USDKRW above 1,530, KOSPI pullback) are a genuine regime shift, not just pre-market noise",
     "supporting": [
@@ -294,7 +302,33 @@
     "spread_2s10s": 0.358,
     "spread_3m10y": 0.665,
     "real_10y": 2.25,
-    "us_japan_spread_bps": 165
+    "us_japan_spread_bps": 165,
+    "trend_classifications": {
+      "us10y": {
+        "level": "Restrictive",
+        "trend": "Deteriorating",
+        "momentum": "Negative",
+        "note": "4.485% and rising \u2014 wrong direction for duration thesis. Up from ~4.37% prior session."
+      },
+      "us30y": {
+        "level": "Very Restrictive",
+        "trend": "Deteriorating",
+        "momentum": "Negative",
+        "note": "Crossed 5.00% \u2014 term premium expanding. Long end pricing something beyond just policy."
+      },
+      "us02y": {
+        "level": "Elevated",
+        "trend": "Stable",
+        "momentum": "Flat",
+        "note": "4.127% \u2014 policy rate expectations stable, not re-pricing sharply. Front end anchored."
+      },
+      "spread_2s10s": {
+        "level": "Positive (upward sloping)",
+        "trend": "Steepening",
+        "momentum": "Positive",
+        "note": "0.358% \u2014 curve steepening as long end moves more than front. Not inversion risk."
+      }
+    }
   },
   "fx": {
     "usdjpy": 161.78,
@@ -498,5 +532,110 @@
       "color": "amber",
       "note": "MOVE ticking up alongside 10Y/30Y yield rise. Still well below 100 stress threshold. Bond market not in distress."
     }
+  },
+  "duration_score": {
+    "score": -2,
+    "classification": "Term Premium Expansion",
+    "reason": "10Y rising (+9bps) while breakevens stable (+0.01) and credit tightening \u2014 yield rise is term premium / fiscal concern, not inflation reacceleration. Different from 'Fed easing' duration bull case. Negative for long-duration growth assets.",
+    "positive_conditions_met": 0,
+    "negative_conditions_met": 2,
+    "conditions": {
+      "10y_falling": false,
+      "breakevens_stable": true,
+      "credit_stable": true,
+      "credit_exploding": false,
+      "10y_vs_breakeven_gap_widening": true
+    }
+  },
+  "sector_rotation": {
+    "current_regime": "Mixed \u2014 Term Premium / Partial Liquidity Shock",
+    "regime_scores": {
+      "liquidity_expansion": {
+        "score": 1,
+        "characteristics": "Falling real rates, improving credit, weaker dollar",
+        "leaders": [
+          "Semis",
+          "Cyclicals",
+          "Small caps"
+        ],
+        "match": "Partial \u2014 credit improving, dollar soft, but real rates RISING"
+      },
+      "disinflationary_slowdown": {
+        "score": 2,
+        "characteristics": "Falling long yields, sticky front end, slowing growth",
+        "leaders": [
+          "IGV",
+          "Mega-cap software",
+          "Quality growth"
+        ],
+        "match": "Partial \u2014 growth slowing signals but yields RISING not falling"
+      },
+      "recession": {
+        "score": 0,
+        "characteristics": "Falling yields, widening credit spreads, falling earnings",
+        "leaders": [
+          "Treasuries",
+          "Defensives"
+        ],
+        "match": "No \u2014 credit TIGHTENING, yields rising, no earnings collapse"
+      },
+      "inflation_reacceleration": {
+        "score": 3,
+        "characteristics": "Rising yields, rising breakevens, stronger commodities",
+        "leaders": [
+          "Energy",
+          "Value",
+          "Financials"
+        ],
+        "match": "Partial \u2014 yields rising, but breakevens STABLE and oil flat"
+      },
+      "liquidity_shock": {
+        "score": 3,
+        "characteristics": "Rising yields, widening credit spreads, dollar strength",
+        "leaders": [
+          "Cash",
+          "Short-duration Treasuries"
+        ],
+        "match": "Partial \u2014 yields rising but credit TIGHTENING (opposite of shock) and dollar flat"
+      }
+    },
+    "best_fit": "inflation_reacceleration",
+    "second_fit": "liquidity_shock",
+    "confidence": "Low \u2014 mixed signals prevent clean classification",
+    "actionable_output": {
+      "structural_liquidity": "Neutral \u2014 TGA drain ongoing but credit calm",
+      "short_term_conditions": "Improving \u2014 HY OAS tighter, USDKRW broke below 1,530",
+      "long_term_conditions": "Still Restrictive \u2014 10Y 4.485%, 30Y 5.003%, real yield 2.245%",
+      "macro_trend": "Term Premium Expansion with Disinflationary undertones",
+      "likely_rotation": "Financials / Value over long-duration growth near-term",
+      "risk_level": "Medium",
+      "next_catalyst": "10Y Auction Jul 9 \u2014 bid-to-cover will clarify term premium thesis"
+    }
+  },
+  "confidence_meta": {
+    "base_confidence": 55,
+    "adjusted_confidence": 47,
+    "penalty_applied": 8,
+    "reason": "1 catalyst(s) within 48h (US cash equities open (today, pre-market pull)) \u2014 regime call has elevated uncertainty until results are known"
+  },
+  "section_horizons": {
+    "plumbing": "structural",
+    "curve": "structural",
+    "fx": "structural",
+    "credit": "structural",
+    "duration": "tactical",
+    "crosschecks": "tactical",
+    "semis": "tactical",
+    "korea_gate": "structural"
+  },
+  "structured_conclusion": {
+    "structural_liquidity": "Neutral",
+    "short_term_conditions": "Improving",
+    "long_term_conditions": "Restrictive",
+    "macro_trend": "Term Premium Expansion / Partial Disinflationary Slowdown",
+    "likely_rotation": "Financials, Value over long-duration growth",
+    "risk_level": "Medium",
+    "next_catalyst": "10Y Auction Jul 9 (2 days)",
+    "korea_gate": "Closed 1/3 \u2014 USDKRW passed, KOSPI failed"
   }
 }
