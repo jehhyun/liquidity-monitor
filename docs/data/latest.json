@@ -1,15 +1,15 @@
 {
   "meta": {
     "pulled_at": "2026-07-07T15:05:00Z",
-    "pulled_at_cet": "Jul 7, 2026 17:05 CET",
-    "source": "Manual screenshot scrape · TradingView mobile (desktop offline)",
-    "note": "Pre-market Monday pull — US-listed cash equities (TLT, EWY, semis, financials) still reflect Friday Jul 3's close since the cash session hasn't opened. FX, rates, gold, VIX futures, and Asia equities are live: USDJPY broke above the 162.00 BOJ threshold overnight, USDKRW round-tripped back above the 1,530 Korea-gate line, and KOSPI gave back part of Friday's rebound. || 17:05 CET structural update: added 2Y breakeven (1.95%, manual/Bloomberg USGGBE02 basis) and explicit 2Y real yield (2.18%); regime reclassified from Inflation Reacceleration to Policy-Tight / Growth-Scare / Disinflation-Pricing; duration score rationale rewritten around the real-rate tightening mechanism."
+    "pulled_at_cet": "Jul 7, 2026 19:34 CET",
+    "source": "TradingView mobile screenshots + James macro analysis",
+    "note": "Pre-market Monday pull \u2014 US-listed cash equities (TLT, EWY, semis, financials) still reflect Friday Jul 3's close since the cash session hasn't opened. FX, rates, gold, VIX futures, and Asia equities are live: USDJPY broke above the 162.00 BOJ threshold overnight, USDKRW round-tripped back above the 1,530 Korea-gate line, and KOSPI gave back part of Friday's rebound. || 17:05 CET structural update: added 2Y breakeven (1.95%, manual/Bloomberg USGGBE02 basis) and explicit 2Y real yield (2.18%); regime reclassified from Inflation Reacceleration to Policy-Tight / Growth-Scare / Disinflation-Pricing; duration score rationale rewritten around the real-rate tightening mechanism."
   },
   "scores": {
     "liquidity": {
       "value": 47,
       "trend_wk": -4,
-      "label": "No new H.4.1 print yet — TGA/Reserves flat, SOFR eased 2bp below IORB",
+      "label": "No new H.4.1 print yet \u2014 TGA/Reserves flat, SOFR eased 2bp below IORB",
       "color": "green",
       "decomp": [
         [
@@ -21,21 +21,21 @@
           2
         ],
         [
-          "RRP flat at $2.18B — still historically low",
+          "RRP flat at $2.18B \u2014 still historically low",
           1
         ],
         [
-          "SOFR eased to 3.64%, now 1bp below IORB (3.65%) — funding stress easing slightly",
+          "SOFR eased to 3.64%, now 1bp below IORB (3.65%) \u2014 funding stress easing slightly",
           4
         ]
       ],
       "trend_label": "Deteriorating",
-      "trend_note": "TGA +$38B/wk, reserves below $3T and falling — structural drain accelerating"
+      "trend_note": "TGA +$38B/wk, reserves below $3T and falling \u2014 structural drain accelerating"
     },
     "credit": {
       "value": 65,
       "trend_wk": 3,
-      "label": "Stable — OAS tightened to 2.74%",
+      "label": "Stable \u2014 OAS tightened to 2.74%",
       "color": "green",
       "decomp": [
         [
@@ -60,16 +60,16 @@
         ]
       ],
       "trend_label": "Improving",
-      "trend_note": "HY OAS tightened from 2.83% to 2.74%, ALLY/CACC holding — credit conditions easing at the margin"
+      "trend_note": "HY OAS tightened from 2.83% to 2.74%, ALLY/CACC holding \u2014 credit conditions easing at the margin"
     },
     "inflation": {
       "value": 65,
       "trend_wk": -6,
-      "label": "Disinflation priced — 2Y BE 1.95% below Fed target",
+      "label": "Disinflation priced \u2014 2Y BE 1.95% below Fed target",
       "color": "green",
       "decomp": [
         [
-          "2Y breakeven 1.95% — collapsed 143bp since Mar, below 2% target",
+          "2Y breakeven 1.95% \u2014 collapsed 143bp since Mar, below 2% target",
           15
         ],
         [
@@ -94,20 +94,20 @@
         ]
       ],
       "trend_label": "Stable",
-      "trend_note": "2Y BE 1.95% (below target), 10Y BE 2.24% anchored, oil flat — inflation expectations fully repriced away. Rising nominals = policy/funding pressure, not inflation. Net effect: real yields rising."
+      "trend_note": "2Y BE 1.95% (below target), 10Y BE 2.24% anchored, oil flat \u2014 inflation expectations fully repriced away. Rising nominals = policy/funding pressure, not inflation. Net effect: real yields rising."
     },
     "vol": {
       "value": 72,
       "trend_wk": 4,
-      "label": "Low — VIX 15.84, MOVE 65.76",
+      "label": "Low \u2014 VIX 15.84, MOVE 65.76",
       "color": "amber",
       "decomp": [
         [
-          "VIX 15.84 — low fear",
+          "VIX 15.84 \u2014 low fear",
           24
         ],
         [
-          "MOVE 65.76 — bond vol calm",
+          "MOVE 65.76 \u2014 bond vol calm",
           14
         ],
         [
@@ -115,31 +115,32 @@
           8
         ],
         [
-          "KOSPI -4.91% — Korea stress",
+          "KOSPI -4.91% \u2014 Korea stress",
           -10
         ]
       ],
       "trend_label": "Improving",
-      "trend_note": "VIX 15.84, MOVE 65.76 — vol receding despite yield move, suggests equity-specific not macro fear"
+      "trend_note": "VIX 15.84, MOVE 65.76 \u2014 vol receding despite yield move, suggests equity-specific not macro fear"
     }
   },
   "regime_confidence": 47,
-  "bias": "Regime reclassified: 2Y breakeven has collapsed 3.38%→1.95% since March (−143bp, now below the Fed's 2% target on a market-implied basis) while nominal 2Y sits sticky at 4.127% — so the 2Y real yield is ~2.18% and rising. That is passive real-rate tightening into disinflation, not inflation reacceleration. Worst mix for long-duration equities; someone turned off the oxygen and blamed sentiment. Credit is the offset (HY OAS 2.74%, tightening) — this is pressure, not crisis. Watch signal: nominal 2Y rolling over = transition to cuts/growth-scare pricing = tactical risk relief IF credit holds. It is not rolling over yet. Korea gate 1/3 — no Korea adds. Hold semis with tight sizing; do not add duration-sensitive risk into rising real rates.",
+  "bias": "This is NOT good disinflation. Good disinflation = breakevens down + nominal yields down + real yields stable + dollar soft + credit calm. What you have: 2Y breakeven collapsed to 1.95% (below Fed target) while nominal 2Y stays sticky at 4.13% \u2014 real 2Y yield rising to 2.175%. That is real-rate tightening into a disinflationary path. TGA/funding pressure keeping front end elevated. This is the environment where high-duration high-beta equities get hit. Watch: if nominal 2Y starts falling, that signals transition to cuts/growth-scare and temporary risk relief. Until then, quality growth (IGV) over semis/Korea.",
   "counterargs": {
-    "thesis": "The weekend FX/Asia moves (USDJPY above 162, USDKRW above 1,530, KOSPI pullback) are a genuine regime shift, not just pre-market noise",
+    "thesis": "Duration / Risk assets",
     "supporting": [
-      "HY OAS tightened to 2.74% — credit calm",
-      "USDKRW broke below 1,530 (now 1,511)",
-      "EWY +5.39% — Korea bouncing",
-      "DRAM +6.81%, CRDO +9.77% — semis recovering"
+      "HY OAS tightened to 2.74% \u2014 credit still calm",
+      "USDKRW broke below 1,530 \u2014 FX stress easing",
+      "VIX 15.84 \u2014 no panic pricing yet",
+      "If nominal 2Y starts falling \u2192 transition to relief"
     ],
     "against": [
-      "US10Y 4.485% — yields rising, wrong direction",
-      "US30Y crossed 5.003% — term premium expanding",
-      "KOSPI 7,656 — below 8,200 gate threshold",
-      "NI225 -2.12% — Japan risk-off"
+      "2Y breakeven at 1.95% \u2014 below Fed target, collapsing",
+      "Real 2Y yield 2.175% and RISING \u2014 the pain trade",
+      "Nominal 2Y sticky at 4.13% \u2014 no relief from front end",
+      "10Y/30Y rising \u2014 wrong direction for duration",
+      "Chain: TGA pressure \u2192 sticky front-end \u2192 rising real yields \u2192 USD firm \u2192 Asia FX stress \u2192 high-beta equities hit"
     ],
-    "read": "Today has two competing narratives: credit and FX are improving (HY OAS tighter, KRW stronger), but rates are moving against the duration thesis (10Y +4.5bps, 30Y crossing 5%). The Korea gate remains closed because KOSPI failed — FX condition finally opened for the first time but the market condition regressed. Net: cautiously constructive on semis, not yet actionable on Korea. Overlay (Jul 7 PM reclassification): the 2Y breakeven collapse to 1.95% reframes rising nominals as real-rate tightening into disinflation — the inflection to watch is nominal 2Y breaking lower, which would signal cuts/growth-scare pricing and possible tactical relief if credit stays calm."
+    "read": "James's key insight: this is not CPI panic. It is real-rate tightening via breakeven collapse with nominal rates sticky. The 2Y breakeven went from 3.38% in March to 1.95% now \u2014 143bps. The market has fully repriced inflation away but the Fed/funding pressure is keeping nominal rates high. That gap IS the real yield rise, and it IS the mechanism hitting equities. Watch nominal 2Y \u2014 if it starts falling, temporary relief. If it stays here, the squeeze continues."
   },
   "trade_table": [
     {
@@ -160,7 +161,7 @@
     },
     {
       "theme": "Korea / EWY",
-      "signal": "Gate regressed — no trade",
+      "signal": "Gate regressed \u2014 no trade",
       "signal_color": "red",
       "conviction": 1,
       "horizon": "Days",
@@ -180,7 +181,7 @@
       "signal_color": "amber",
       "conviction": 2,
       "horizon": "1-2 wks",
-      "rationale": "USDJPY broke above 162.00 and DXY firmed +0.24% overnight — the dollar-weakness case needs a rethink if this holds into the session."
+      "rationale": "USDJPY broke above 162.00 and DXY firmed +0.24% overnight \u2014 the dollar-weakness case needs a rethink if this holds into the session."
     },
     {
       "theme": "Long credit (HYG)",
@@ -243,62 +244,62 @@
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Quarterly Refunding Announcement — auction sizes and TGA guidance for Q3."
+      "note": "Quarterly Refunding Announcement \u2014 auction sizes and TGA guidance for Q3."
     }
   ],
   "plumbing": {
     "net_liquidity_t": 5.813,
     "walcl_b": 6735,
     "tga_b": 880.2,
-    "tga_delta": "flat at $880.2B — no new H.4.1 print yet (next due Jul 9)",
+    "tga_delta": "flat at $880.2B \u2014 no new H.4.1 print yet (next due Jul 9)",
     "tga_color": "grey",
     "rrp_b": 2.175,
-    "rrp_delta": "flat at $2.18B — still historically low",
+    "rrp_delta": "flat at $2.18B \u2014 still historically low",
     "rrp_color": "grey",
     "reserves_t": 2.967,
-    "reserves_delta": "flat at $2.967T — no new weekly print",
+    "reserves_delta": "flat at $2.967T \u2014 no new weekly print",
     "reserves_color": "grey",
     "sofr_pct": 3.64,
-    "sofr_delta": "↓ eased 2bp to 3.64%, now 1bp below IORB (3.65%) — modest funding-stress relief",
+    "sofr_delta": "\u2193 eased 2bp to 3.64%, now 1bp below IORB (3.65%) \u2014 modest funding-stress relief",
     "sofr_color": "green"
   },
   "duration": {
     "tlt": 85.45,
-    "tlt_delta": "−0.07% — duration bid fading",
+    "tlt_delta": "\u22120.07% \u2014 duration bid fading",
     "tlt_color": "amber",
     "shy": 81.98,
     "shy_delta": "+0.05%",
     "shy_color": "grey",
     "hyg": 79.87,
-    "hyg_delta": "+0.20% — credit holding",
+    "hyg_delta": "+0.20% \u2014 credit holding",
     "hyg_color": "green",
     "t10yie": 2.24,
-    "t10yie_delta": "+0.01 — breakeven edging up",
+    "t10yie_delta": "+0.01 \u2014 breakeven edging up",
     "t10yie_color": "grey",
     "real_yield": 2.25,
     "tlt_shy_ratio": 1.042,
     "move": 65.76,
-    "move_delta": "+0.56% — ticking up",
+    "move_delta": "+0.56% \u2014 ticking up",
     "move_color": "amber",
     "t2yie": 1.95,
-    "t2yie_delta": "collapsed from 3.38% (Mar) — −143bp, now below Fed 2% target",
+    "t2yie_delta": "collapsed from 3.38% (Mar) \u2014 \u2212143bp, now below Fed 2% target",
     "t2yie_color": "red",
-    "t2yie_source": "manual — Bloomberg USGGBE02 equiv. (no FRED series; not yet in TV watchlist)",
+    "t2yie_source": "manual \u2014 Bloomberg USGGBE02 equiv. (no FRED series; not yet in TV watchlist)",
     "real_2y": 2.18,
-    "real_2y_note": "2Y real = US02Y 4.127% − 2Y BE 1.95% = 2.18% and RISING as breakevens collapse against a sticky nominal front end. This is the actual pain trade: real-rate tightening into disinflation."
+    "real_2y_note": "2Y real = US02Y 4.127% \u2212 2Y BE 1.95% = 2.18% and RISING as breakevens collapse against a sticky nominal front end. This is the actual pain trade: real-rate tightening into disinflation."
   },
   "credit": {
     "hy_oas": 2.74,
-    "hy_oas_delta": "↓ −0.09 tightened — credit constructive",
+    "hy_oas_delta": "\u2193 \u22120.09 tightened \u2014 credit constructive",
     "hy_oas_color": "green",
     "ally": 46.23,
-    "ally_delta": "+2.01% — holding near highs",
+    "ally_delta": "+2.01% \u2014 holding near highs",
     "ally_color": "green",
     "cacc": 657.2,
-    "cacc_delta": "+0.01% — flat",
+    "cacc_delta": "+0.01% \u2014 flat",
     "cacc_color": "grey",
     "cof": 206.5,
-    "cof_delta": "+0.67% — constructive",
+    "cof_delta": "+0.67% \u2014 constructive",
     "cof_color": "green",
     "stage": 1
   },
@@ -318,31 +319,31 @@
         "level": "Restrictive",
         "trend": "Deteriorating",
         "momentum": "Negative",
-        "note": "4.485% and rising — wrong direction for duration thesis. Up from ~4.37% prior session."
+        "note": "4.485% and rising \u2014 wrong direction for duration thesis. Up from ~4.37% prior session."
       },
       "us30y": {
         "level": "Very Restrictive",
         "trend": "Deteriorating",
         "momentum": "Negative",
-        "note": "Crossed 5.00% — term premium expanding. Long end pricing something beyond just policy."
+        "note": "Crossed 5.00% \u2014 term premium expanding. Long end pricing something beyond just policy."
       },
       "us02y": {
         "level": "Elevated",
         "trend": "Stable",
         "momentum": "Flat",
-        "note": "4.127% — sticky. Not repricing down despite 2Y breakeven collapsing to 1.95%. The stickiness IS the signal: policy/funding pressure, not inflation fear. WATCH: nominal 2Y falling = transition to cuts/growth-scare pricing = potential risk relief (credit-dependent)."
+        "note": "4.127% \u2014 sticky. Not repricing down despite 2Y breakeven collapsing to 1.95%. The stickiness IS the signal: policy/funding pressure, not inflation fear. WATCH: nominal 2Y falling = transition to cuts/growth-scare pricing = potential risk relief (credit-dependent)."
       },
       "spread_2s10s": {
         "level": "Positive (upward sloping)",
         "trend": "Steepening",
         "momentum": "Positive",
-        "note": "0.358% — curve steepening as long end moves more than front. Not inversion risk."
+        "note": "0.358% \u2014 curve steepening as long end moves more than front. Not inversion risk."
       },
       "real_2y": {
         "level": "Restrictive and tightening",
         "trend": "Deteriorating",
         "momentum": "Negative",
-        "note": "2.18% and rising. Nominal 2Y sticky at 4.127% while 2Y breakeven collapsed 3.38%→1.95% since March — passive real-rate tightening. Fed/TGA/funding pressure holding the front end up as inflation expectations reprice away."
+        "note": "2.18% and rising. Nominal 2Y sticky at 4.127% while 2Y breakeven collapsed 3.38%\u21921.95% since March \u2014 passive real-rate tightening. Fed/TGA/funding pressure holding the front end up as inflation expectations reprice away."
       }
     },
     "t2yie": 1.95,
@@ -351,13 +352,13 @@
   "fx": {
     "usdjpy": 161.78,
     "usdjpy_alert": false,
-    "usdjpy_note": "−0.19% — eased off 162 BOJ threshold",
+    "usdjpy_note": "\u22120.19% \u2014 eased off 162 BOJ threshold",
     "usdkrw": 1511.68,
     "usdkrw_alert": false,
-    "usdkrw_note": "−1.23% — broke below 1,530 ✓ gate condition 2 PASS",
+    "usdkrw_note": "\u22121.23% \u2014 broke below 1,530 \u2713 gate condition 2 PASS",
     "usdcny": 6.795,
     "dxy": 100.879,
-    "dxy_delta": "+0.02% — flat",
+    "dxy_delta": "+0.02% \u2014 flat",
     "dxy_color": "grey",
     "jp10y": 2.831,
     "us_japan_spread_bps": 165,
@@ -414,9 +415,9 @@
     {
       "ticker": "GLW",
       "price": 194.8,
-      "delta": "−1.01%",
+      "delta": "\u22121.01%",
       "color": "amber",
-      "note": "14 shares @ $189.66 — still above cost basis (+3.8%) but the cushion has shrunk sharply this week."
+      "note": "14 shares @ $189.66 \u2014 still above cost basis (+3.8%) but the cushion has shrunk sharply this week."
     },
     {
       "ticker": "LITE",
@@ -430,7 +431,7 @@
       "price": 43.32,
       "delta": "+3.46%",
       "color": "green",
-      "note": "50 shares @ $38.57 — still above cost basis (+8.6%), held up better than peers Friday."
+      "note": "50 shares @ $38.57 \u2014 still above cost basis (+8.6%), held up better than peers Friday."
     },
     {
       "ticker": "AMKR",
@@ -445,19 +446,19 @@
       "delta": "+1.35%",
       "color": "green",
       "flag": true,
-      "note": "$165/$170 Jul 17 spread still sitting right at the lower strike — reassess once the cash session opens."
+      "note": "$165/$170 Jul 17 spread still sitting right at the lower strike \u2014 reassess once the cash session opens."
     },
     {
       "ticker": "POWI",
       "price": 73.06,
       "delta": "+0.10%",
       "color": "grey",
-      "note": "25 shares @ $84.21 — still down over 13% from cost basis."
+      "note": "25 shares @ $84.21 \u2014 still down over 13% from cost basis."
     },
     {
       "ticker": "EOSE",
       "price": 5.06,
-      "delta": "−3.25%",
+      "delta": "\u22123.25%",
       "color": "warn",
       "flag": true,
       "note": "$7.50/$10 Jul 17 spread (10 contracts). Thesis remains broken, still well below the floor. CLOSE PRIORITY."
@@ -465,133 +466,125 @@
   ],
   "changed_today": [
     {
-      "label": "2Y Breakeven",
-      "value": "1.95%",
-      "delta": "↓ 3.38%→1.95% since Mar — below Fed 2% target",
+      "label": "2Y real yield",
+      "value": "2.175%",
+      "delta": "\u2191 RISING \u2014 the pain trade (James)",
       "color": "red"
     },
     {
-      "label": "2Y Real Yield",
-      "value": "2.18%",
-      "delta": "↑ rising — real-rate tightening, the actual pain trade",
+      "label": "2Y breakeven",
+      "value": "1.952%",
+      "delta": "\u2193 below Fed 2% target \u2014 disinflation",
       "color": "red"
     },
     {
       "label": "US10Y",
       "value": "4.485%",
-      "delta": "↑ +9bps — wrong direction for duration",
+      "delta": "\u2191 +9bps \u2014 term premium expanding",
       "color": "red"
     },
     {
       "label": "US30Y",
       "value": "5.003%",
-      "delta": "↑ crossed 5% — term premium expanding",
+      "delta": "\u2191 crossed 5% \u2014 long end repricing",
       "color": "red"
     },
     {
       "label": "USDKRW",
       "value": "1,511.68",
-      "delta": "↓ −1.23% — gate cond. 2 PASS ✓",
+      "delta": "\u2193 \u22121.23% \u2014 gate cond. 2 PASS \u2713",
       "color": "green"
     },
     {
       "label": "KOSPI",
       "value": "7,656",
-      "delta": "↓ −4.91% — gate cond. 3 FAIL ✗",
+      "delta": "\u2193 \u22124.91% \u2014 gate cond. 3 FAIL \u2717",
       "color": "red"
     },
     {
       "label": "HY OAS",
       "value": "2.74%",
-      "delta": "↓ tightened — credit constructive",
+      "delta": "\u2193 tightened \u2014 credit constructive",
       "color": "green"
     },
     {
       "label": "DRAM",
       "value": "$64.76",
-      "delta": "↑ +6.81% — semis recovering",
+      "delta": "\u2191 +6.81% \u2014 recovering",
       "color": "green"
-    },
-    {
-      "label": "CRDO",
-      "value": "$256.32",
-      "delta": "↑ +9.77%",
-      "color": "green"
-    },
-    {
-      "label": "EWY",
-      "value": "$189.85",
-      "delta": "↑ +5.39% — but below SMA20",
-      "color": "amber"
     },
     {
       "label": "USDJPY",
       "value": "161.78",
-      "delta": "↓ eased off 162 BOJ threshold",
+      "delta": "\u2193 eased off 162 BOJ threshold",
       "color": "green"
     },
     {
-      "label": "Gold",
-      "value": "$4,164",
-      "delta": "→ flat near ATH — resilient",
-      "color": "grey"
+      "label": "Regime",
+      "value": "Updated",
+      "delta": "Policy-Tight / Disinflation (per James)",
+      "color": "amber"
     }
   ],
   "crosschecks": {
     "vix": {
       "value": 15.84,
-      "delta": "+1.80% — low but ticking up",
+      "delta": "+1.80% \u2014 low but ticking up",
       "color": "green",
-      "note": "VIX 15.84 — still low. Rising slightly alongside yield move. Not a stress signal yet."
+      "note": "VIX 15.84 \u2014 still low. Rising slightly alongside yield move. Not a stress signal yet."
     },
     "oil": {
       "value": 69.04,
-      "delta": "+0.71% — flat/stable",
+      "delta": "+0.71% \u2014 flat/stable",
       "color": "grey",
       "note": "Oil stable near $69. Hormuz reopening narrative holding. No new inflation impulse from energy."
     },
     "gold": {
       "value": 4164.35,
-      "delta": "−0.02% — flat near all-time highs",
+      "delta": "\u22120.02% \u2014 flat near all-time highs",
       "color": "grey",
-      "note": "Gold flat at $4,164 near ATH. Real yield rising (2.245%) should headwind gold — resilience here is notable."
+      "note": "Gold flat at $4,164 near ATH. Real yield rising (2.245%) should headwind gold \u2014 resilience here is notable."
     },
     "move": {
       "value": 65.76,
-      "delta": "+0.56% — mild tick up",
+      "delta": "+0.56% \u2014 mild tick up",
       "color": "amber",
       "note": "MOVE ticking up alongside 10Y/30Y yield rise. Still well below 100 stress threshold. Bond market not in distress."
     }
   },
   "duration_score": {
     "score": -3,
-    "classification": "Real-Rate Tightening (Disinflation-Priced)",
-    "reason": "2Y breakeven has collapsed 3.38%→1.95% since March (−143bp) while nominal 2Y is sticky at 4.127% — so 2Y real yield is 2.18% and RISING passively. This is not inflation reacceleration and not a benign term-premium story: it is real-rate tightening into a disinflationary environment, the worst mix for long-duration equities. Relief trigger: nominal 2Y starts falling (Fed pressure → cuts/growth-scare pricing). It is not falling yet.",
+    "classification": "Policy-Tight / Growth-Scare / Disinflation",
+    "reason": "Nominal 2Y sticky at 4.127% while 2Y breakeven collapsed to 1.952% \u2014 real 2Y yield rising to 2.175%. This is not 'Fed easing' or 'inflation reaccel'. It is the Fed/TGA/funding pressure staying tight into a weakening disinflationary forward path. Worst for risk assets because real rates tighten without the inflation alibi.",
+    "james_framework": {
+      "what_market_is_NOT_saying": "Inflation is ripping and the Fed must hike",
+      "what_market_IS_saying": "The Fed/front-end is staying tight into a weakening/disinflationary forward path",
+      "pain_trade": "Real-rate tightening. Not CPI panic.",
+      "watch_signal": "If nominal 2Y starts falling too \u2192 transition to cuts/growth scare \u2192 temporary risk relief (credit-dependent)"
+    },
     "positive_conditions_met": 0,
     "negative_conditions_met": 3,
     "conditions": {
       "10y_falling": false,
       "breakevens_stable": false,
-      "breakevens_collapsing_2y": true,
-      "nominal_2y_falling": false,
-      "credit_stable": true,
-      "credit_exploding": false,
-      "real_rates_rising": true
-    },
-    "watch_signal": "Nominal 2Y < ~4.00% with credit stable = regime transition to cuts/growth-scare → tactical risk relief. Nominal 2Y < 4.00% with HY OAS widening = growth scare confirmed → no relief."
+      "two_y_breakeven_collapsing": true,
+      "nominal_2y_sticky": true,
+      "real_2y_rising": true,
+      "credit_calm": true
+    }
   },
   "sector_rotation": {
     "current_regime": "Policy-Tight / Growth-Scare / Disinflation-Pricing",
     "regime_scores": {
       "liquidity_expansion": {
-        "score": 1,
+        "score": 0,
         "characteristics": "Falling real rates, improving credit, weaker dollar",
         "leaders": [
           "Semis",
           "Cyclicals",
           "Small caps"
         ],
-        "match": "Partial — credit improving, dollar soft, but real rates RISING"
+        "match": "No \u2014 real rates RISING, not falling"
       },
       "disinflationary_slowdown": {
         "score": 4,
@@ -601,55 +594,56 @@
           "Mega-cap software",
           "Quality growth"
         ],
-        "match": "Strong — 2Y BE collapsed to 1.95% (below Fed target), sticky front end, growth repricing. Long yields not falling YET because term premium/funding offsets."
+        "match": "Strong match \u2014 2Y breakeven collapsed, front-end sticky, real yields rising"
       },
       "recession": {
-        "score": 0,
+        "score": 2,
         "characteristics": "Falling yields, widening credit spreads, falling earnings",
         "leaders": [
           "Treasuries",
           "Defensives"
         ],
-        "match": "No — credit TIGHTENING, yields rising, no earnings collapse"
+        "match": "Partial \u2014 credit still calm, but real yield tightening is recessionary in effect"
       },
       "inflation_reacceleration": {
-        "score": 1,
+        "score": 0,
         "characteristics": "Rising yields, rising breakevens, stronger commodities",
         "leaders": [
           "Energy",
           "Value",
           "Financials"
         ],
-        "match": "Rejected — 2Y breakeven at 1.95% (−143bp since Mar) says inflation expectations are being priced AWAY, not back. Rising nominals are policy/funding pressure, not CPI fear."
+        "match": "No \u2014 breakevens COLLAPSING, not rising. Mislabeled previously."
       },
       "liquidity_shock": {
-        "score": 3,
+        "score": 2,
         "characteristics": "Rising yields, widening credit spreads, dollar strength",
         "leaders": [
           "Cash",
           "Short-duration Treasuries"
         ],
-        "match": "Partial — sticky front end consistent with TGA/funding pressure, but credit tightening (not widening) and dollar flat."
+        "match": "Partial \u2014 yields rising but credit tightening (opposite of shock signal)"
       }
     },
     "best_fit": "disinflationary_slowdown",
-    "second_fit": "liquidity_shock",
-    "confidence": "Medium — 2Y breakeven collapse resolves the earlier mixed read; front-end stickiness is the remaining open question",
+    "second_fit": "recession",
+    "confidence": "Medium \u2014 cleaner classification post James analysis",
     "actionable_output": {
-      "structural_liquidity": "Neutral — TGA drain ongoing but credit calm",
-      "short_term_conditions": "Improving — HY OAS tighter, USDKRW broke below 1,530",
-      "long_term_conditions": "Restrictive — 2Y real 2.18% and rising, 10Y 4.485%, 30Y 5.003%",
-      "macro_trend": "Real-Rate Tightening: disinflation priced (2Y BE 1.95%) against a sticky, policy-pressured front end",
-      "likely_rotation": "Rising real rates into disinflation = de-risk high-duration growth; this is NOT the buy-every-semi-dip regime. Quality/cash-flow-now over duration until nominal 2Y breaks lower.",
-      "risk_level": "Medium-High",
-      "next_catalyst": "10Y Auction Jul 9; then watch nominal 2Y — a break lower flips regime to cuts/growth-scare"
+      "structural_liquidity": "Tightening \u2014 real rates rising via breakeven collapse not rate hikes",
+      "short_term_conditions": "Improving at margin \u2014 HY OAS tighter, KRW stronger",
+      "long_term_conditions": "Restrictive and getting worse \u2014 real 2Y yield 2.175% and rising",
+      "macro_trend": "Policy-Tight / Growth-Scare / Disinflation \u2014 NOT inflation reacceleration",
+      "likely_rotation": "IGV / Quality growth / Mega-cap software if 2Y nominal starts falling; avoid semis/Korea until real rates peak",
+      "risk_level": "High",
+      "next_catalyst": "10Y Auction Jul 9 \u2014 bid-to-cover will show whether term premium is demand problem or supply problem",
+      "james_watch": "Key signal: does nominal 2Y start falling? If yes \u2192 cuts/growth scare \u2192 temporary relief. If no \u2192 real rate pain continues."
     }
   },
   "confidence_meta": {
     "base_confidence": 55,
     "adjusted_confidence": 47,
     "penalty_applied": 8,
-    "reason": "1 catalyst(s) within 48h (US cash equities open (today, pre-market pull)) — regime call has elevated uncertainty until results are known"
+    "reason": "1 catalyst(s) within 48h (US cash equities open (today, pre-market pull)) \u2014 regime call has elevated uncertainty until results are known"
   },
   "section_horizons": {
     "plumbing": "structural",
@@ -662,13 +656,48 @@
     "korea_gate": "structural"
   },
   "structured_conclusion": {
-    "structural_liquidity": "Neutral",
-    "short_term_conditions": "Improving",
-    "long_term_conditions": "Restrictive",
-    "macro_trend": "Policy-Tight / Growth-Scare / Disinflation-Pricing — real-rate tightening",
-    "likely_rotation": "De-risk long-duration growth; quality/value over duration until nominal 2Y falls",
-    "risk_level": "Medium-High",
+    "structural_liquidity": "Tightening",
+    "short_term_conditions": "Marginally improving",
+    "long_term_conditions": "Restrictive \u2014 real 2Y yield 2.175% and rising",
+    "macro_trend": "Policy-Tight / Disinflationary Growth-Scare",
+    "likely_rotation": "IGV / Quality Growth over Semis / Korea near-term",
+    "risk_level": "High",
     "next_catalyst": "10Y Auction Jul 9 (2 days)",
-    "korea_gate": "Closed 1/3 — USDKRW passed, KOSPI failed"
+    "korea_gate": "Closed 1/3 \u2014 USDKRW passed, KOSPI failed"
+  },
+  "breakevens": {
+    "t2yie": {
+      "value": 1.9516,
+      "label": "2Y breakeven inflation",
+      "delta_from_high": -143,
+      "high_date": "Mar 20, 2026",
+      "high_value": 3.3831,
+      "start_of_period": 2.6247,
+      "color": "red",
+      "trend_label": "Collapsing",
+      "note": "Down 143bps from March panic high. Now BELOW Fed 2% target on market-implied basis. This is not inflation fear \u2014 this is disinflation pricing."
+    },
+    "t10yie": {
+      "value": 2.24,
+      "label": "10Y breakeven inflation",
+      "color": "grey",
+      "trend_label": "Stable",
+      "note": "Anchored near 2.24%. Long-end inflation expectations stable while short-end collapses \u2014 curve of expectations is inverting."
+    },
+    "breakeven_curve_signal": "Short-end inflation expectations collapsing while long-end stable = market pricing near-term disinflation / policy overtightening, not structural inflation",
+    "real_yield_2y": {
+      "value": 2.175,
+      "calculation": "US02Y (4.127%) - T2YIE (1.952%) = 2.175%",
+      "color": "red",
+      "trend_label": "Rising / Tightening",
+      "note": "THE PAIN TRADE. Real 2Y yield rising as nominal stays sticky while breakeven collapses. This is real-rate tightening, not CPI panic. Worst combination for high-duration risk assets."
+    },
+    "real_yield_10y": {
+      "value": 2.245,
+      "calculation": "US10Y (4.485%) - T10YIE (2.24%) = 2.245%",
+      "color": "red",
+      "trend_label": "Elevated",
+      "note": "10Y real yield elevated at 2.245%. Structural headwind for long-duration growth assets."
+    }
   }
 }
