@@ -317,7 +317,8 @@ function render(d) {
         {l:'TLT — 20Y+ Treasury',c:'Live',v:`$${dur.tlt}`,d:dur.tlt_delta,col:dur.tlt_color,n:`TLT/SHY = ${dur.tlt_shy_ratio}. Rising TLT = falling 10Y = relief for long-duration growth names.`},
         {l:'SHY — 1-3Y Treasury',c:'Live',v:`$${dur.shy}`,d:dur.shy_delta,col:dur.shy_color,n:`SHY flat while TLT rises = curve steepening. Mild reversal of post-Warsh flattening.`},
         {l:'HYG — HY Corp Bond',c:'Live OAS proxy',v:`$${dur.hyg}`,d:dur.hyg_delta,col:dur.hyg_color,n:`HYG rising = credit spreads stable. HYG falling while SPY flat = early credit divergence signal.`},
-        {l:'T10YIE — Breakeven',c:'Live',v:`${dur.t10yie}%`,d:dur.t10yie_delta,col:dur.t10yie_color,n:`Real yield = US10Y (${cv.us10y}%) − T10YIE (${dur.t10yie}%) = ${dur.real_yield}%. Elevated real yields = structural headwind for growth.`}
+        {l:'T10YIE — Breakeven',c:'Live',v:`${dur.t10yie}%`,d:dur.t10yie_delta,col:dur.t10yie_color,n:`Real yield = US10Y (${cv.us10y}%) − T10YIE (${dur.t10yie}%) = ${dur.real_yield}%. Elevated real yields = structural headwind for growth.`},
+        ...(dur.t2yie!=null?[{l:'2Y Breakeven',c:'Manual · USGGBE02',v:`${dur.t2yie}%`,d:dur.t2yie_delta,col:dur.t2yie_color,n:dur.real_2y_note||`2Y real = US02Y (${cv.us02y}%) − 2Y BE (${dur.t2yie}%) = ${dur.real_2y}%.`}]:[])
       ].map(x=>`<div class="card ${x.col}" onclick="tog(this)">
         <div class="ct"><span class="cl">${x.l}</span><span class="cc">${x.c}</span></div>
         <div class="cv">${esc(x.v)}</div>
@@ -329,6 +330,7 @@ function render(d) {
     <div class="pills">
       <div class="pill">TLT/SHY: <strong style="color:${C.green}">${dur.tlt_shy_ratio}</strong></div>
       <div class="pill">Real 10Y: <strong style="color:${C.amber}">${dur.real_yield}%</strong></div>
+      ${dur.real_2y!=null?`<div class="pill">Real 2Y: <strong style="color:${C.red}">${dur.real_2y}% ↑</strong></div>`:''}
       <div class="pill">MOVE: <strong style="color:${C.amber}">${dur.move} ${dur.move_delta}</strong></div>
     </div>
     ${(()=>{
