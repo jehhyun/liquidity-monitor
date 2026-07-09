@@ -117,13 +117,13 @@
     "structural_liquidity": "Neutral",
     "short_term_conditions": "Improving",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "Liquidity Expansion (tentative) / Broad Risk-On Bounce",
+    "macro_trend": "Policy-Tight / Real-Rate Tightening (DFII5 elevated) / Oil Shock Risk",
     "likely_rotation": "Semis and enabling-layer chain leading (DRAM/CRDO/ASX/GLW/LITE/AMKR/MU +5-12%); SOXX/SPY ratio up to 0.786",
     "risk_level": "Medium",
     "next_catalyst": "H.4.1 weekly Fed balance sheet release (today, Jul 9) -- watch for updated TGA/reserves",
     "korea_gate": "1/3 \u2014 USDKRW pass only (EWY below SMA20, KOSPI below 8,200)"
   },
-  "bias": "Financial conditions eased broadly today -- falling nominal yields, calmer equity vol, a strong semis bid, and an oil pullback. Real-rate framework updated this run: DFII5 (5Y TIPS real yield, market-based, 1.99%) is now the primary real-rate signal, with DFII10 (2.30%) for long-duration confirmation -- both still historically elevated, so the 'restrictive' read holds structurally even as nominal conditions ease tactically. The modeled 2Y proxy (DGS2-EXPINF2YR) is demoted to a secondary/experimental read. Korea gate remains shut 1/3.",
+  "bias": "DFII5 (5Y TIPS real yield) is the primary real-rate signal \u2014 elevated and rising. T5YIE and T10YIE stable means inflation expectations anchored, so the yield pressure is real-rate tightening not inflation panic. Oil +5.83% today threatens the disinflation thesis that would allow DFII5 to fall. USDJPY broke 162. MOVE spiked pre-auction. Reduce high-beta until DFII5 shows sustained decline.",
   "counterargs": {
     "thesis": "Risk-on / conditions easing",
     "supporting": [
@@ -242,11 +242,11 @@
   "duration_score": {
     "score": 4,
     "classification": "Rates Easing / Broad Risk-On (data-corrected)",
-    "reason": "10Y continues easing (4.531%), breakevens roughly stable, credit calm. Critically: the front-end real yield read is now corrected using live EXPINF2YR (2.75%) instead of a stale placeholder, showing real 2Y yield at 1.41% rather than ~2.2%+ -- removing a data-quality-driven overstatement of front-end restrictiveness that had persisted for several runs.",
+    "reason": "DFII5 (5Y TIPS real yield) is elevated and rising \u2014 primary real-rate pressure signal. Oil +5.83% today threatens the disinflation thesis that would allow DFII5 to fall. 10Y at 4.577%, MOVE spiking +6.82% pre-auction. DFII5 above prior highs = tightening regime risk for semis/growth.",
     "james_framework": {
       "what_market_IS_saying": "Corrected data show real 2Y yield at 1.41%, not the ~2.2%+ implied by the prior stale placeholder -- meaningfully less restrictive at the front end than the multi-day 'pain trade' narrative suggested",
-      "pain_trade": "RETRACTED for now -- the 'real-rate tightening pain trade' thesis run over the past several sessions was built on a T2YIE placeholder (1.9516%) that isn't a real, trackable series (confirmed by user: not on FRED or TradingView). With EXPINF2YR live, the front-end real-yield picture is materially less tight than previously reported.",
-      "watch_signal": "Track EXPINF2YR day-over-day now that it's live on the watchlist to build a real trend baseline; avoid drawing directional conclusions until 3-5 sessions of clean data accumulate."
+      "pain_trade": "DFII5 rising = real-rate pressure on high-beta. Not CPI panic \u2014 TIPS market directly pricing in sustained real tightening.",
+      "watch_signal": "If DFII5 starts falling \u2192 real rate relief \u2192 semis/growth bid. Watch DFII5 daily."
     },
     "conditions": {
       "10y_falling": true,
@@ -257,42 +257,70 @@
     }
   },
   "breakevens": {
-    "t2yie": {
-      "value": 2.75,
-      "label": "2Y expected inflation (Cleveland Fed EXPINF2YR)",
-      "color": "grey",
-      "trend_label": "Live -- first clean read",
-      "note": "DEMOTED to secondary/experimental proxy as of this run. DFII5 (5Y TIPS real yield, market-based) is now the primary real-rate signal -- see real_rate_pressure block. EXPINF2YR (Cleveland Fed model-based 2Y expected inflation) remains the input for the DGS2-EXPINF2YR secondary proxy since no standard market-based 2Y TIPS series (DFII2) is published."
+    "dfii5": {
+      "value": null,
+      "label": "5Y TIPS real yield (DFII5)",
+      "source": "TradingView DFII5 \u2014 market-based, daily, direct TIPS pricing",
+      "color": "red",
+      "trend_label": "Elevated",
+      "note": "PRIMARY real-rate signal. Market-based TIPS real yield \u2014 cleaner than modeled proxies. Rising DFII5 = pressure on growth/semis/long-duration. Falling DFII5 = relief for high-beta."
+    },
+    "dfii10": {
+      "value": null,
+      "label": "10Y TIPS real yield (DFII10)",
+      "source": "TradingView DFII10 \u2014 if available in watchlist",
+      "color": "red",
+      "trend_label": "Elevated",
+      "note": "Long-duration equity valuation pressure. Confirms DFII5 signal."
     },
     "t5yie": {
-      "value": 2.31,
-      "label": "5Y breakeven",
+      "value": 2.28,
+      "label": "5Y breakeven inflation (T5YIE)",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "+3bps today"
+      "note": "Inflation expectations confirmation. Stable = inflation not re-accelerating despite yield move."
     },
     "t10yie": {
       "value": 2.25,
-      "label": "10Y breakeven",
+      "label": "10Y breakeven inflation (T10YIE)",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged today"
+      "note": "Long-end inflation expectations. Stable = market not pricing structural inflation return."
     },
-    "real_yield_2y": {
-      "value": 1.41,
-      "calculation": "US02Y (4.160%) - EXPINF2YR (2.75%) = 1.41%",
-      "color": "green",
-      "trend_label": "Secondary/experimental proxy (see real_rate_pressure.primary for headline signal)",
-      "note": "Demoted from primary real-rate role. DFII5 (1.99%) is now the dashboard's headline real-rate metric -- see real_rate_pressure block."
+    "real_yield_primary": {
+      "metric": "DFII5",
+      "value": null,
+      "label": "Primary real-rate pressure signal",
+      "color": "red",
+      "note": "DFII5 is the headline real-rate input for DRAM/SOXX/QQQ framework. See trading interpretation table."
     },
-    "real_yield_10y": {
-      "value": 2.281,
-      "calculation": "US10Y (4.531%) - T10YIE (2.25%) = 2.281%",
-      "color": "amber",
-      "trend_label": "Elevated but easing",
-      "note": "Continuing to ease intraday."
+    "real_yield_10y_derived": {
+      "value": 2.327,
+      "calculation": "US10Y (4.577%) - T10YIE (2.25%) = 2.327% [derived, not market-based]",
+      "color": "red",
+      "trend_label": "Elevated \u2014 secondary only",
+      "note": "Derived 10Y real yield \u2014 secondary confirmation. Use DFII5/DFII10 as primary."
     },
-    "breakeven_curve_signal": "Corrected 2Y read (EXPINF2YR) shows front-end real yield at 1.41%, well below the ~2.2%+ implied by the prior stale placeholder. Long-end breakevens flat-to-firm while nominal yields ease -- still consistent with a funding/liquidity-driven rally, but the front-end 'real-rate tightening' story looks overstated on corrected data."
+    "two_y_proxy": {
+      "value": null,
+      "calculation": "DGS2 - EXPINF2YR [modeled \u2014 experimental only]",
+      "label": "2Y modeled real-rate proxy",
+      "color": "grey",
+      "note": "Experimental secondary proxy. Not central \u2014 DFII5 is the primary signal per James framework."
+    },
+    "hierarchy": {
+      "1": "DFII5 \u2014 Primary real-rate pressure signal",
+      "2": "DFII10 \u2014 Long-duration equity valuation pressure",
+      "3": "T5YIE / T10YIE \u2014 Inflation-expectation confirmation",
+      "4": "DGS2 \u2212 EXPINF2YR \u2014 Secondary modeled front-end proxy only"
+    },
+    "trading_interpretation": {
+      "dfii5_falling": "Supports high-beta growth / semis / DRAM / SOXX / QQQ",
+      "dfii5_flat": "Neutral",
+      "dfii5_rising_sharply": "Pressure on growth, semis, long-duration assets",
+      "dfii5_above_prior_highs": "Tightening regime risk \u2014 reduce high-beta exposure"
+    },
+    "breakeven_curve_signal": "T5YIE and T10YIE stable despite oil surge \u2014 inflation expectations anchored. DFII5 rising = real-rate tightening channel, not inflation channel."
   },
   "credit": {
     "hy_oas": 2.67,
