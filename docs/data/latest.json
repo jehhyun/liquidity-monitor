@@ -1,8 +1,8 @@
 {
   "meta": {
-    "pulled_at": "2026-07-09T17:03:00Z",
-    "pulled_at_cet": "Jul 9, 2026 19:03 CET",
-    "source": "TradingView watchlist + FRED live scrape (Chrome extension)"
+    "pulled_at": "2026-07-09T17:20:00Z",
+    "pulled_at_cet": "Jul 9, 2026 19:20 CET",
+    "source": "TradingView watchlist + FRED live scrape (Chrome extension) -- corrected: EXPINF2YR replaces invalid T2YIE"
   },
   "scores": {
     "liquidity": {
@@ -120,10 +120,10 @@
     "macro_trend": "Liquidity Expansion (tentative) / Broad Risk-On Bounce",
     "likely_rotation": "Semis and enabling-layer chain leading (DRAM/CRDO/ASX/GLW/LITE/AMKR/MU +5-12%); SOXX/SPY ratio up to 0.786",
     "risk_level": "Medium",
-    "next_catalyst": "H.4.1 weekly Fed balance sheet release (today, Jul 9) \u2014 watch for updated TGA/reserves",
+    "next_catalyst": "H.4.1 weekly Fed balance sheet release (today, Jul 9) -- watch for updated TGA/reserves",
     "korea_gate": "1/3 \u2014 USDKRW pass only (EWY below SMA20, KOSPI below 8,200)"
   },
-  "bias": "Financial conditions eased broadly today -- falling yields, calmer equity vol, a strong semis bid, and an oil pullback -- reversing yesterday's real-rate tightening pain trade, though real yields stay restrictive in absolute terms and the Korea gate remains shut 1/3.",
+  "bias": "Financial conditions eased broadly today -- falling yields, calmer equity vol, a strong semis bid, and an oil pullback -- while a data fix (EXPINF2YR replacing an invalid T2YIE placeholder) shows the front-end real-rate picture was less restrictive than recently reported. Real 10Y yield stays elevated and the Korea gate remains shut 1/3.",
   "counterargs": {
     "thesis": "Risk-on / conditions easing",
     "supporting": [
@@ -137,10 +137,10 @@
       "MOVE still climbing, +3.07% to 72.41 -- bond vol not confirming equity calm",
       "USDJPY still above 162 BOJ intervention threshold",
       "Korea gate remains closed 1/3",
-      "Real yields still historically restrictive (~2.2%+ on both 2Y and 10Y)",
-      "T2YIE still not live in watchlist -- real 2Y read is stale/unreliable"
+      "10Y real yield still elevated (~2.28%)",
+      "EXPINF2YR is model-based (Cleveland Fed), not a market breakeven -- treat as directional proxy, not exact substitute for a true 2Y breakeven"
     ],
-    "read": "Today's data points broadly toward easing conditions -- falling yields, calmer equity vol, a strong semis bid, and a pullback in oil -- but bond-market vol (MOVE) is still climbing and the structural gates (Korea, BOJ threshold) haven't opened. This looks more like a one-day relief bounce within a still-restrictive regime than a confirmed trend change; the next 1-2 sessions and a live T2YIE reading will clarify whether the easing has legs."
+    "read": "Today's data points broadly toward easing conditions -- falling yields, calmer equity vol, a strong semis bid, and a pullback in oil. A data-quality fix also matters here: the front-end 'real-rate tightening pain trade' that's been the throughline of recent runs was partly an artifact of a stale placeholder breakeven. With EXPINF2YR now live, real 2Y yield reads 1.41%, well below the ~2.2%+ previously reported -- the front end looks less restrictive than believed. Bond-market vol (MOVE) is still climbing and the structural gates (Korea, BOJ threshold) haven't opened, so this isn't an all-clear, but both the price action and the corrected data argue for less alarm than recent runs implied."
   },
   "trade_table": [
     {
@@ -221,51 +221,48 @@
     "sofr_color": "green"
   },
   "duration": {
-    "tlt": 84.51,
-    "tlt_delta": "+0.18%",
+    "tlt": 84.63,
+    "tlt_delta": "+0.32%",
     "tlt_color": "green",
     "shy": 81.92,
-    "shy_delta": "+0.09%",
+    "shy_delta": "+0.10%",
     "shy_color": "grey",
-    "hyg": 79.82,
-    "hyg_delta": "+0.19%",
+    "hyg": 79.86,
+    "hyg_delta": "+0.24%",
     "hyg_color": "green",
     "t10yie": 2.25,
     "t10yie_delta": "0%",
     "t10yie_color": "grey",
-    "real_yield": 2.291,
-    "tlt_shy_ratio": 1.0316,
+    "real_yield": 2.281,
+    "tlt_shy_ratio": 1.0331,
     "move": 72.41,
     "move_delta": "+3.07%, still climbing",
     "move_color": "red"
   },
   "duration_score": {
-    "score": 3,
-    "classification": "Rates Easing / Broad Risk-On",
-    "reason": "10Y fell 3.6bps to 4.541%, breakevens roughly stable (T10YIE flat, T5YIE +3bps), and credit stayed calm (HY OAS flat, ALLY/CACC/COF up 2-5%) -- matches an 'easing, not recession fear' pattern rather than yesterday's real-rate tightening pain trade.",
+    "score": 4,
+    "classification": "Rates Easing / Broad Risk-On (data-corrected)",
+    "reason": "10Y continues easing (4.531%), breakevens roughly stable, credit calm. Critically: the front-end real yield read is now corrected using live EXPINF2YR (2.75%) instead of a stale placeholder, showing real 2Y yield at 1.41% rather than ~2.2%+ -- removing a data-quality-driven overstatement of front-end restrictiveness that had persisted for several runs.",
     "james_framework": {
-      "what_market_IS_saying": "Broad curve bull-flattening with risk-on equity participation -- reads as relief/easing-bias, not a growth-scare bid for duration",
-      "pain_trade": "Yesterday's real-rate tightening (nominal 2Y sticky, breakeven falling) paused today as nominal yields broadly declined",
-      "watch_signal": "Need a second consecutive day of falling nominal 2Y plus a live (non-stale) T2YIE print before calling a trend reversal"
+      "what_market_IS_saying": "Corrected data show real 2Y yield at 1.41%, not the ~2.2%+ implied by the prior stale placeholder -- meaningfully less restrictive at the front end than the multi-day 'pain trade' narrative suggested",
+      "pain_trade": "RETRACTED for now -- the 'real-rate tightening pain trade' thesis run over the past several sessions was built on a T2YIE placeholder (1.9516%) that isn't a real, trackable series (confirmed by user: not on FRED or TradingView). With EXPINF2YR live, the front-end real-yield picture is materially less tight than previously reported.",
+      "watch_signal": "Track EXPINF2YR day-over-day now that it's live on the watchlist to build a real trend baseline; avoid drawing directional conclusions until 3-5 sessions of clean data accumulate."
     },
     "conditions": {
       "10y_falling": true,
       "breakevens_stable": true,
       "two_y_breakeven_collapsing": false,
       "nominal_2y_sticky": false,
-      "real_2y_rising": false
+      "real_2y_rising": null
     }
   },
   "breakevens": {
     "t2yie": {
-      "value": 1.9516,
-      "label": "2Y breakeven inflation",
-      "delta_from_high": -143,
-      "high_date": "Mar 20, 2026",
-      "high_value": 3.3831,
+      "value": 2.75,
+      "label": "2Y expected inflation (Cleveland Fed EXPINF2YR)",
       "color": "grey",
-      "trend_label": "Stale -- not in watchlist",
-      "note": "Carried forward from last live read. Add FRED:T2YIE to the watchlist for a fresh value."
+      "trend_label": "Live -- first clean read",
+      "note": "T2YIE is not a real FRED/TradingView series -- it doesn't exist. The user added EXPINF2YR (Cleveland Fed model-based 2Y expected inflation) to the watchlist as the working proxy. This replaces a stale 1.9516% placeholder that had been carried forward for multiple runs and was overstating real 2Y yields. Note: EXPINF2YR is model-based expected inflation, not a market breakeven, so it isn't perfectly apples-to-apples with T10YIE/T5YIE (which are market breakevens) -- but it's the best available live proxy."
     },
     "t5yie": {
       "value": 2.31,
@@ -282,20 +279,20 @@
       "note": "Unchanged today"
     },
     "real_yield_2y": {
-      "value": 2.218,
-      "calculation": "US02Y (4.170%) - T2YIE (1.9516%, stale) = 2.218%",
-      "color": "amber",
-      "trend_label": "Falling (on stale T2YIE)",
-      "note": "Eased from 2.266% yesterday as nominal 2Y fell; treat with caution given stale breakeven input."
+      "value": 1.41,
+      "calculation": "US02Y (4.160%) - EXPINF2YR (2.75%) = 1.41%",
+      "color": "green",
+      "trend_label": "Corrected -- materially lower than prior stale estimate",
+      "note": "Prior runs used a stale 1.9516% placeholder, overstating real 2Y yield at ~2.2%+ and feeding a 'real-rate tightening pain trade' narrative. With EXPINF2YR live, real 2Y yield is meaningfully lower at 1.41% -- undercutting that thesis. Treat this as a fresh baseline; no clean day-over-day trend yet."
     },
     "real_yield_10y": {
-      "value": 2.291,
-      "calculation": "US10Y (4.541%) - T10YIE (2.25%) = 2.291%",
+      "value": 2.281,
+      "calculation": "US10Y (4.531%) - T10YIE (2.25%) = 2.281%",
       "color": "amber",
       "trend_label": "Elevated but easing",
-      "note": "Down from 2.327% yesterday."
+      "note": "Continuing to ease intraday."
     },
-    "breakeven_curve_signal": "Front-end breakeven still stale/unconfirmed; long-end breakevens flat-to-firm while nominal yields ease -- consistent with a funding/liquidity-driven rally rather than a growth or inflation repricing."
+    "breakeven_curve_signal": "Corrected 2Y read (EXPINF2YR) shows front-end real yield at 1.41%, well below the ~2.2%+ implied by the prior stale placeholder. Long-end breakevens flat-to-firm while nominal yields ease -- still consistent with a funding/liquidity-driven rally, but the front-end 'real-rate tightening' story looks overstated on corrected data."
   },
   "credit": {
     "hy_oas": 2.67,
@@ -304,30 +301,30 @@
     "ally": 45.36,
     "ally_delta": "+1.98%",
     "ally_color": "green",
-    "cacc": 622.87,
-    "cacc_delta": "-0.97%",
+    "cacc": 625.6,
+    "cacc_delta": "-0.53%",
     "cacc_color": "amber",
-    "cof": 200.83,
-    "cof_delta": "+4.63%",
+    "cof": 200.2,
+    "cof_delta": "+4.30%",
     "cof_color": "green"
   },
   "curve": {
-    "us03my": 3.784,
+    "us03my": 3.779,
     "us06my": 3.923,
-    "us02y": 4.17,
-    "us05y": 4.274,
-    "us10y": 4.541,
-    "us30y": 5.06,
+    "us02y": 4.16,
+    "us05y": 4.262,
+    "us10y": 4.531,
+    "us30y": 5.05,
     "spread_2s10s": 0.371,
-    "spread_3m10y": 0.757,
-    "real_10y": 2.291,
-    "us_japan_spread_bps": 164,
+    "spread_3m10y": 0.752,
+    "real_10y": 2.281,
+    "us_japan_spread_bps": 165,
     "trend_classifications": {
       "us10y": {
         "level": "Restrictive",
         "trend": "Easing",
         "momentum": "Positive",
-        "note": "Fell 3.6bps to 4.541%"
+        "note": "4.531%, continuing to ease"
       },
       "us30y": {
         "level": "Very Restrictive",
@@ -339,7 +336,7 @@
         "level": "Elevated",
         "trend": "Easing",
         "momentum": "Positive",
-        "note": "Fell 4.8bps to 4.170%, front end no longer sticky"
+        "note": "4.160%, front end continuing to ease"
       },
       "spread_2s10s": {
         "level": "Positive",
@@ -350,24 +347,24 @@
     }
   },
   "fx": {
-    "usdjpy": 162.314,
+    "usdjpy": 162.294,
     "usdjpy_alert": true,
-    "usdjpy_note": "Still above 162 BOJ threshold despite -0.20% pullback",
-    "usdkrw": 1508.89,
+    "usdjpy_note": "Still above 162 BOJ threshold",
+    "usdkrw": 1507.86,
     "usdkrw_pass": true,
     "usdkrw_note": "-0.31% vs prior close, well below 1,530",
-    "dxy": 100.883,
-    "dxy_delta": "-0.18%",
+    "dxy": 100.876,
+    "dxy_delta": "-0.19%",
     "dxy_color": "grey",
-    "jp10y": 2.899,
-    "us_japan_spread_bps": 164,
+    "jp10y": 2.878,
+    "us_japan_spread_bps": 165,
     "ni225": 67743.63,
     "usdcny": 6.7921
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 1,
-    "ewy": 183.69,
+    "ewy": 185.01,
     "ewy_sma20": 196.49,
     "ewy_pass": false,
     "usdkrw": 1508.89,
@@ -378,85 +375,85 @@
     "kospi_pass": false
   },
   "semis": {
-    "soxx": 589.66,
-    "soxx_delta": "+4.92%",
+    "soxx": 590.66,
+    "soxx_delta": "+5.09%",
     "soxx_color": "green",
-    "qqq": 722.17,
-    "qqq_delta": "+1.51%",
+    "qqq": 723.99,
+    "qqq_delta": "+1.76%",
     "qqq_color": "green",
-    "spy": 750.55,
-    "spy_delta": "+0.69%",
+    "spy": 751.84,
+    "spy_delta": "+0.86%",
     "spy_color": "green",
-    "soxx_spy_ratio": 0.786
+    "soxx_spy_ratio": 0.7856
   },
   "chain": [
     {
       "ticker": "DRAM",
-      "price": 65.02,
-      "delta": "+4.80%",
+      "price": 65.66,
+      "delta": "+5.83%",
       "color": "green",
       "note": ""
     },
     {
       "ticker": "MU",
-      "price": 1016.0,
-      "delta": "+7.08%",
+      "price": 1023.84,
+      "delta": "+7.91%",
       "color": "green",
       "note": ""
     },
     {
       "ticker": "CRDO",
-      "price": 273.68,
-      "delta": "+5.79%",
+      "price": 274.86,
+      "delta": "+6.25%",
       "color": "green",
       "note": ""
     },
     {
       "ticker": "GLW",
-      "price": 197.23,
-      "delta": "+7.17%",
+      "price": 197.05,
+      "delta": "+7.07%",
       "color": "green",
       "note": "14 shares @ $189.66"
     },
     {
       "ticker": "LITE",
-      "price": 786.18,
-      "delta": "+11.18%",
+      "price": 793.78,
+      "delta": "+12.26%",
       "color": "green",
       "note": ""
     },
     {
       "ticker": "ASX",
-      "price": 44.12,
-      "delta": "+10.49%",
+      "price": 44.15,
+      "delta": "+10.57%",
       "color": "green",
       "note": "50 shares @ $38.57"
     },
     {
       "ticker": "AMKR",
-      "price": 72.88,
-      "delta": "+8.92%",
+      "price": 73.34,
+      "delta": "+9.61%",
       "color": "green",
       "note": ""
     },
     {
       "ticker": "APH",
-      "price": 163.16,
-      "delta": "+3.12%",
+      "price": 163.58,
+      "delta": "+3.39%",
       "color": "green",
       "note": "$165/$170 Jul 17 spread"
     },
     {
       "ticker": "POWI",
-      "price": 70.96,
-      "delta": "+6.77%",
+      "price": 71.11,
+      "delta": "+7.00%",
       "color": "green",
       "note": "25 shares @ $84.21"
     },
     {
       "ticker": "EOSE",
-      "price": 4.64,
-      "delta": "+3.11%",
+      "price": 4.62,
+      "delta": "+2.55%",
       "color": "amber",
       "flag": true,
       "note": "CLOSE PRIORITY -- still monitor $7.50/$10 Jul 17 spread"
@@ -470,14 +467,14 @@
       "note": "Equity vol calming sharply"
     },
     "oil": {
-      "value": 72.03,
-      "delta": "-2.03%",
+      "value": 71.45,
+      "delta": "-2.82%",
       "color": "green",
       "note": "Reversing yesterday's +5.83% inflation scare"
     },
     "gold": {
-      "value": 4126.861,
-      "delta": "+1.17%",
+      "value": 4135.42,
+      "delta": "+1.38%",
       "color": "amber",
       "note": "Still bid despite risk-on tape"
     },
