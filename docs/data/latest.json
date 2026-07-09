@@ -1,8 +1,8 @@
 {
   "meta": {
-    "pulled_at": "2026-07-09T17:20:00Z",
-    "pulled_at_cet": "Jul 9, 2026 19:20 CET",
-    "source": "TradingView watchlist + FRED live scrape (Chrome extension) -- corrected: EXPINF2YR replaces invalid T2YIE"
+    "pulled_at": "2026-07-09T17:35:00Z",
+    "pulled_at_cet": "Jul 9, 2026 19:35 CET",
+    "source": "TradingView watchlist + FRED live scrape (Chrome extension) -- real-rate framework updated: DFII5/DFII10 now primary, DGS2-EXPINF2YR demoted to secondary proxy"
   },
   "scores": {
     "liquidity": {
@@ -123,7 +123,7 @@
     "next_catalyst": "H.4.1 weekly Fed balance sheet release (today, Jul 9) -- watch for updated TGA/reserves",
     "korea_gate": "1/3 \u2014 USDKRW pass only (EWY below SMA20, KOSPI below 8,200)"
   },
-  "bias": "Financial conditions eased broadly today -- falling yields, calmer equity vol, a strong semis bid, and an oil pullback -- while a data fix (EXPINF2YR replacing an invalid T2YIE placeholder) shows the front-end real-rate picture was less restrictive than recently reported. Real 10Y yield stays elevated and the Korea gate remains shut 1/3.",
+  "bias": "Financial conditions eased broadly today -- falling nominal yields, calmer equity vol, a strong semis bid, and an oil pullback. Real-rate framework updated this run: DFII5 (5Y TIPS real yield, market-based, 1.99%) is now the primary real-rate signal, with DFII10 (2.30%) for long-duration confirmation -- both still historically elevated, so the 'restrictive' read holds structurally even as nominal conditions ease tactically. The modeled 2Y proxy (DGS2-EXPINF2YR) is demoted to a secondary/experimental read. Korea gate remains shut 1/3.",
   "counterargs": {
     "thesis": "Risk-on / conditions easing",
     "supporting": [
@@ -137,8 +137,8 @@
       "MOVE still climbing, +3.07% to 72.41 -- bond vol not confirming equity calm",
       "USDJPY still above 162 BOJ intervention threshold",
       "Korea gate remains closed 1/3",
-      "10Y real yield still elevated (~2.28%)",
-      "EXPINF2YR is model-based (Cleveland Fed), not a market breakeven -- treat as directional proxy, not exact substitute for a true 2Y breakeven"
+      "DFII5 (1.99%) and DFII10 (2.30%) -- both market-based real yields -- remain historically elevated, a structural headwind for long-duration growth/semis",
+      "DFII5/DFII10 are as of Jul 7 (latest published H.15 print); today's print not yet available at scrape time"
     ],
     "read": "Today's data points broadly toward easing conditions -- falling yields, calmer equity vol, a strong semis bid, and a pullback in oil. A data-quality fix also matters here: the front-end 'real-rate tightening pain trade' that's been the throughline of recent runs was partly an artifact of a stale placeholder breakeven. With EXPINF2YR now live, real 2Y yield reads 1.41%, well below the ~2.2%+ previously reported -- the front end looks less restrictive than believed. Bond-market vol (MOVE) is still climbing and the structural gates (Korea, BOJ threshold) haven't opened, so this isn't an all-clear, but both the price action and the corrected data argue for less alarm than recent runs implied."
   },
@@ -262,7 +262,7 @@
       "label": "2Y expected inflation (Cleveland Fed EXPINF2YR)",
       "color": "grey",
       "trend_label": "Live -- first clean read",
-      "note": "T2YIE is not a real FRED/TradingView series -- it doesn't exist. The user added EXPINF2YR (Cleveland Fed model-based 2Y expected inflation) to the watchlist as the working proxy. This replaces a stale 1.9516% placeholder that had been carried forward for multiple runs and was overstating real 2Y yields. Note: EXPINF2YR is model-based expected inflation, not a market breakeven, so it isn't perfectly apples-to-apples with T10YIE/T5YIE (which are market breakevens) -- but it's the best available live proxy."
+      "note": "DEMOTED to secondary/experimental proxy as of this run. DFII5 (5Y TIPS real yield, market-based) is now the primary real-rate signal -- see real_rate_pressure block. EXPINF2YR (Cleveland Fed model-based 2Y expected inflation) remains the input for the DGS2-EXPINF2YR secondary proxy since no standard market-based 2Y TIPS series (DFII2) is published."
     },
     "t5yie": {
       "value": 2.31,
@@ -282,8 +282,8 @@
       "value": 1.41,
       "calculation": "US02Y (4.160%) - EXPINF2YR (2.75%) = 1.41%",
       "color": "green",
-      "trend_label": "Corrected -- materially lower than prior stale estimate",
-      "note": "Prior runs used a stale 1.9516% placeholder, overstating real 2Y yield at ~2.2%+ and feeding a 'real-rate tightening pain trade' narrative. With EXPINF2YR live, real 2Y yield is meaningfully lower at 1.41% -- undercutting that thesis. Treat this as a fresh baseline; no clean day-over-day trend yet."
+      "trend_label": "Secondary/experimental proxy (see real_rate_pressure.primary for headline signal)",
+      "note": "Demoted from primary real-rate role. DFII5 (1.99%) is now the dashboard's headline real-rate metric -- see real_rate_pressure block."
     },
     "real_yield_10y": {
       "value": 2.281,
@@ -550,5 +550,46 @@
     "crosschecks": "tactical",
     "semis": "tactical",
     "korea_gate": "structural"
+  },
+  "real_rate_pressure": {
+    "primary": {
+      "series": "DFII5",
+      "label": "5Y TIPS real yield (market-based)",
+      "value": 1.99,
+      "as_of": "2026-07-07",
+      "color": "amber",
+      "trend_label": "Elevated but below front-end proxy",
+      "note": "Market-based, updates daily, directly reflects real yield from inflation-indexed Treasuries. Least distorted by near-term Fed policy noise of the tenors tracked here. This is now the headline real-rate signal for the dashboard, replacing the modeled 2Y proxy in that role."
+    },
+    "confirmation": {
+      "series": "DFII10",
+      "label": "10Y TIPS real yield (market-based)",
+      "value": 2.3,
+      "as_of": "2026-07-07",
+      "color": "amber",
+      "trend_label": "Elevated, structural headwind",
+      "note": "Long-duration equity valuation pressure gauge. Cross-checks closely against the US10Y - T10YIE breakeven calc (2.281%) -- consistent read, small gap is methodology (constant-maturity TIPS vs. breakeven)."
+    },
+    "inflation_context": {
+      "t5yie": 2.31,
+      "t10yie": 2.25,
+      "note": "Market breakevens for confirmation only -- not used to derive real yields directly here since DFII5/DFII10 are already market-priced real yields."
+    },
+    "secondary_proxy": {
+      "series": "DGS2 - EXPINF2YR",
+      "label": "Modeled front-end real-rate proxy (experimental)",
+      "value": 1.41,
+      "calculation": "US02Y (4.160%) - EXPINF2YR (2.75%) = 1.41%",
+      "color": "grey",
+      "trend_label": "Experimental -- demoted from primary",
+      "note": "EXPINF2YR is Cleveland Fed model-based expected inflation, not a market breakeven, and there is no clean market-based 2Y TIPS benchmark (DFII2 is not a standard published series). Kept as a secondary/experimental front-end read only -- DFII5 is now the primary real-rate signal per dashboard hierarchy."
+    },
+    "trading_read": {
+      "dfii5_falling": "Supports high-beta growth / semis",
+      "dfii5_flat": "Neutral",
+      "dfii5_rising_sharply": "Pressure on growth, semis, long-duration assets",
+      "dfii5_above_prior_highs": "Tightening regime risk"
+    },
+    "hierarchy_note": "Rank 1: DFII5 (primary). Rank 2: DFII10 (confirmation). Rank 3: T5YIE/T10YIE (inflation-expectation confirmation). Rank 4: DGS2-EXPINF2YR (secondary/experimental front-end proxy only)."
   }
 }
