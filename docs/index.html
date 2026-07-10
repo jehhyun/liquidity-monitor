@@ -376,59 +376,77 @@ function render(d) {
     </div>
   </div>
 
-  <!-- BREAKEVENS + REAL YIELDS — James's framework -->
+  <!-- BREAKEVENS + REAL YIELDS — DFII5 primary -->
   <div class="sec">
-    <div class="sl">Breakeven inflation &amp; real yields — the pain trade signal</div>
+    <div class="sl">Real yields &amp; breakevens — primary rate-pressure signal</div>
     ${(()=>{
       const be = d.breakevens || {};
-      const ry2 = be.real_yield_2y || {};
-      const ry10 = be.real_yield_10y || {};
-      const t2 = be.t2yie || {};
+      const df5 = be.dfii5 || {};
+      const df10 = be.dfii10 || {};
+      const t5 = be.t5yie || {};
       const t10 = be.t10yie || {};
+      const ry10d = be.real_yield_10y_derived || {};
+      const ds = d.duration_score || {};
+      const jf = ds.james_framework || {};
+      const dfVal = df5.value != null ? df5.value + '%' : 'pending scrape';
+      const dfColor = df5.value != null ? (df5.value > 1.5 ? C.red : C.amber) : C.grey;
       return `
+      <!-- DFII5 hero card -->
       <div style="background:#1a1212;border:2px solid #3a1a1a;border-radius:8px;padding:12px 14px;margin-bottom:8px">
-        <div style="font-size:9px;color:#E24B4A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">⚠ Primary signal — real-rate tightening mechanism</div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:8px">
+        <div style="font-size:9px;color:#E24B4A;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px">⚠ Primary real-rate signal — DFII5 (5Y TIPS real yield)</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:10px">
           <div style="background:#111;border-radius:6px;padding:10px 12px">
-            <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">2Y breakeven (T2YIE)</div>
-            <div style="font-size:26px;font-weight:700;color:${C.red};font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em">${t2.value||'—'}%</div>
-            <div style="font-size:11px;color:${C.red};margin:3px 0">↓ ${t2.delta_from_high||''}bps from ${t2.high_value||''}% high (${t2.high_date||''})</div>
-            <div style="font-size:10px;color:#555;line-height:1.5">${esc(t2.note||'')}</div>
+            <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">DFII5 — 5Y TIPS real yield</div>
+            <div style="font-size:30px;font-weight:700;color:${dfColor};font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em">${dfVal}</div>
+            <div style="font-size:10px;color:${C.amber};margin:3px 0">${esc(df5.trend_label||'')} — market-based, daily</div>
+            <div style="font-size:10px;color:#555;line-height:1.5;margin-top:4px">${esc(df5.note||'')}</div>
           </div>
           <div style="background:#111;border-radius:6px;padding:10px 12px">
-            <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">2Y real yield = nominal − breakeven</div>
-            <div style="font-size:26px;font-weight:700;color:${C.red};font-family:ui-monospace,'SF Mono',monospace;letter-spacing:-.02em">${ry2.value||'—'}%</div>
-            <div style="font-size:11px;color:${C.red};margin:3px 0">↑ RISING &mdash; ${esc(ry2.calculation||'')}</div>
-            <div style="font-size:10px;color:#555;line-height:1.5">${esc(ry2.note||'')}</div>
+            <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Trading interpretation</div>
+            <div style="font-size:10px;color:#666;line-height:1.8">
+              <div style="color:${C.green}">↓ Falling → supports DRAM / SOXX / QQQ</div>
+              <div style="color:${C.grey}">→ Flat → neutral</div>
+              <div style="color:${C.red}">↑ Rising sharply → pressure on growth / semis</div>
+              <div style="color:${C.red}">↑ Above prior highs → tightening regime risk</div>
+            </div>
           </div>
         </div>
         <div style="background:#111;border-radius:5px;padding:8px 11px;font-size:11px;color:#888;line-height:1.65">
           <strong style="color:#aaa">James's framework:</strong>
-          Nominal 2Y sticky (${d.curve&&d.curve.us02y||'4.127'}%) minus 2Y breakeven collapsing (${t2.value||'1.952'}%) = 2Y real yield rising (${ry2.value||'2.175'}%).
-          That is the pain trade. <strong style="color:#f0f0f0">Not CPI panic. Real-rate pressure.</strong>
+          ${esc(jf.pain_trade||'Real-rate pressure via DFII5. Not CPI panic.')}
           <div style="margin-top:6px;color:#555">
-            <strong style="color:#888">Watch signal:</strong> If nominal 2Y starts falling too → transition to cuts/growth-scare → temporary risk relief (credit-dependent). Until then, high-duration high-beta equities remain under pressure.
+            <strong style="color:#888">Watch signal:</strong> ${esc(jf.watch_signal||'If DFII5 starts falling → real rate relief → semis/growth bid.')}
           </div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+      <!-- Confirmation metrics -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px">
         <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px">
-          <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">10Y breakeven (T10YIE)</div>
-          <div style="font-size:18px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace">${t10.value||'—'}%</div>
-          <div style="font-size:10px;color:${C.amber};margin:2px 0">${esc(t10.trend_label||'')} — anchored</div>
+          <div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">DFII10 — 10Y TIPS real yield</div>
+          <div style="font-size:18px;font-weight:700;color:${C.red};font-family:ui-monospace,'SF Mono',monospace">${df10.value!=null?df10.value+'%':'pending'}</div>
+          <div style="font-size:10px;color:#444;margin:2px 0">Long-duration equity valuation pressure</div>
+          <div style="font-size:10px;color:#3a3a3a;line-height:1.4">${esc(df10.note||'Add DFII10 to watchlist for live read')}</div>
+        </div>
+        <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px">
+          <div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">T5YIE — 5Y breakeven</div>
+          <div style="font-size:18px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace">${t5.value!=null?t5.value+'%':'—'}</div>
+          <div style="font-size:10px;color:${C.amber};margin:2px 0">${esc(t5.trend_label||'')} — inflation expectations</div>
+          <div style="font-size:10px;color:#444;line-height:1.4">${esc(t5.note||'')}</div>
+        </div>
+        <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px">
+          <div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">T10YIE — 10Y breakeven</div>
+          <div style="font-size:18px;font-weight:700;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace">${t10.value!=null?t10.value+'%':'—'}</div>
+          <div style="font-size:10px;color:${C.amber};margin:2px 0">${esc(t10.trend_label||'')} — inflation expectations</div>
           <div style="font-size:10px;color:#444;line-height:1.4">${esc(t10.note||'')}</div>
         </div>
         <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px">
-          <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">10Y real yield</div>
-          <div style="font-size:18px;font-weight:700;color:${C.red};font-family:ui-monospace,'SF Mono',monospace">${ry10.value||'—'}%</div>
-          <div style="font-size:10px;color:${C.red};margin:2px 0">Elevated — structural headwind</div>
-          <div style="font-size:10px;color:#444;line-height:1.4">${esc(ry10.calculation||'')}</div>
+          <div style="font-size:9px;color:#555;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">10Y real yield (derived)</div>
+          <div style="font-size:18px;font-weight:700;color:${C.red};font-family:ui-monospace,'SF Mono',monospace">${ry10d.value!=null?ry10d.value+'%':'—'}</div>
+          <div style="font-size:10px;color:#3a3a3a;margin:2px 0">Secondary — ${esc(ry10d.calculation||'US10Y − T10YIE')}</div>
+          <div style="font-size:10px;color:#3a3a3a;line-height:1.4">Use DFII5/DFII10 as primary. Derived = less precise.</div>
         </div>
-        <div style="background:#181818;border:1px solid #252525;border-radius:6px;padding:9px 11px">
-          <div style="font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Breakeven curve signal</div>
-          <div style="font-size:11px;color:${C.amber};line-height:1.5;margin-top:4px">${esc(be.breakeven_curve_signal||'')}</div>
-        </div>
-      </div>`;
+      </div>
+      ${be.breakeven_curve_signal?`<div style="background:#181818;border-radius:5px;padding:8px 11px;margin-top:8px;font-size:11px;color:#555;line-height:1.5">${esc(be.breakeven_curve_signal)}</div>`:''}`;
     })()}
   </div>
 
