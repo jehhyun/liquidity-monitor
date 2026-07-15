@@ -1,224 +1,97 @@
 {
   "meta": {
-    "pulled_at": "2026-07-14T17:44:17Z",
-    "pulled_at_cet": "Jul 14, 2026 19:44 CEST",
+    "pulled_at": "2026-07-15T17:05:00Z",
+    "pulled_at_cet": "Jul 15, 2026 19:05 CET",
     "source": "TradingView watchlist live scrape (Chrome extension) + FRED"
   },
+
   "scores": {
-    "liquidity": {
-      "value": 60,
-      "trend_wk": 22,
-      "label": "Easing, stable",
-      "color": "green",
-      "trend_label": "Stable",
-      "decomp": [
-        ["TGA flat at $774B, next H.4.1 print Jul 16", 0],
-        ["Reserves flat at $3.099T, above $3T buffer", 5],
-        ["RRP ticked up to $0.795B, still near-zero buffer", -2],
-        ["SOFR +5bps to 3.60%, mild firming", -3],
-        ["Net liquidity flat at $5.961T", 3]
-      ]
-    },
-    "credit": {
-      "value": 60,
-      "trend_wk": 5,
-      "label": "Calm, orderly",
-      "color": "green",
-      "trend_label": "Stable",
-      "decomp": [
-        ["HY OAS flat at 2.69% — no stress", 0],
-        ["HYG +0.17%, orderly bid", 3],
-        ["COF +0.61%, ALLY +0.27% — financials firm", 3],
-        ["CACC -0.62%, modest pullback", -2],
-        ["MOVE +11.83% to 77.8 — approaching 80, rates-vol risk not yet credit stress", -4]
-      ]
-    },
-    "inflation": {
-      "value": 57,
-      "trend_wk": 24,
-      "label": "CPI relief, oil risk lingers",
-      "color": "amber",
-      "trend_label": "Improving",
-      "decomp": [
-        ["June CPI cooler than expected: headline -0.4% MoM, core flat vs +0.2% consensus", 25],
-        ["Oil (CL1!) +1.19% to $79.07 — still ~11% higher over the past week on Hormuz risk", -10],
-        ["T5YIE +0.03 to 2.31%, T10YIE +0.02 to 2.26% — breakevens creeping up despite soft print", -4],
-        ["Fed Sept hike odds only fell to 63% from 75% — market still pricing meaningful hike risk", -5]
-      ]
-    },
-    "vol": {
-      "value": 42,
-      "trend_wk": 4,
-      "label": "Bond vol still hot, equity vol calming",
-      "color": "amber",
-      "trend_label": "Deteriorating",
-      "decomp": [
-        ["VIX -3.85% to 16.49 — equity vol easing", 8],
-        ["MOVE +11.83% to 77.77 — nearing 80 stress threshold", -15],
-        ["USDJPY 162.18, still above 162 BOJ line", -4],
-        ["EWY/SOXX/KOSPI rebounding — risk appetite recovering", 5]
-      ]
-    }
+    "liquidity":  { "value": 50, "trend_wk": 12, "label": "Improving", "color": "amber", "trend_label": "Improving", "decomp": [["TGA -$145B/2wk", 25], ["Reserves +$148B/wk to $3.099T", 20], ["WALCL flat ($6,735.6B) — QT effectively paused", 10], ["RRP drained to $0.28B — buffer exhausted", -15], ["SOFR flat at 3.63%, no funding stress", 0]] },
+    "credit":     { "value": 56, "trend_wk": -2, "label": "Stable",    "color": "amber", "trend_label": "Stable", "decomp": [["HY OAS +5bp to 2.72%", -8], ["ALLY +4.45%", 10], ["COF +6.37%", 10], ["CACC roughly flat", 0], ["MOVE +6.8%", -8]] },
+    "inflation":  { "value": 54, "trend_wk": -4, "label": "Watch — oil risk", "color": "amber", "trend_label": "Stable", "decomp": [["T5YIE/T10YIE flat", 0], ["Oil +6.7%/wk to $79.56", -15], ["DFII5 (primary real yield) 2.06%, +4bp", -5], ["EXPINF2YR 2.44%", 0]] },
+    "vol":        { "value": 58, "trend_wk": -4, "label": "Mixed",     "color": "amber", "trend_label": "Stable", "decomp": [["VIX -4.4% to 16.17", 10], ["MOVE +6.8% to 75.03", -15], ["USDJPY still above 162 BOJ line", -8], ["Semis/EWY selloff intraday", -8]] }
   },
-  "regime_confidence": 50,
+
+  "regime_confidence": 47,
   "confidence_meta": {
     "base_confidence": 55,
-    "adjusted_confidence": 50,
-    "penalty_applied": 5,
-    "reason": "MOVE at 77.8 approaching the 80 stress line; Iran-Israel/Strait of Hormuz risk remains unresolved"
+    "adjusted_confidence": 47,
+    "penalty_applied": 8,
+    "reason": "H.4.1 Factors Affecting Reserve Balances release within 48h (Jul 16)"
   },
+
   "structured_conclusion": {
-    "structural_liquidity": "Neutral",
+    "structural_liquidity": "Easing",
     "short_term_conditions": "Improving",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "CPI-Driven Relief Rally, Oil/Hormuz Risk Still Overhanging",
-    "likely_rotation": "Semis/Korea beta and cyclicals rebounding; energy still bid on Hormuz risk; duration modestly favored on lower yields",
-    "risk_level": "High",
-    "next_catalyst": "FOMC decision Jul 28-29 (14d); Iran-Hormuz risk ongoing",
-    "korea_gate": "Closed 1/3 — USDKRW pass only, EWY and KOSPI still below thresholds despite today's rally"
+    "macro_trend": "Disinflationary Slowdown",
+    "likely_rotation": "Quality growth / mega-cap software over broad semis",
+    "risk_level": "Medium",
+    "next_catalyst": "H.4.1 Fed balance sheet release — 1 day (Jul 16)",
+    "korea_gate": "1/3 — USDKRW below 1,530 PASS; EWY below SMA20 FAIL; KOSPI below 8,200 FAIL"
   },
-  "bias": "Today's tape is a relief rally: a cooler-than-expected June CPI (core flat vs +0.2% consensus) drove yields lower and lifted Korea/semis/cyclicals sharply off yesterday's Iran-Hormuz oil-shock lows, while equity vol eased. But the relief is partial, not complete — oil is still ~11% higher over the past week and ground up again today, MOVE extended its spike to within 2.5 points of the 80 stress line, and USDJPY remains pinned above the BOJ's 162 line. Structural plumbing (TGA, reserves, net liquidity) was unchanged this run and won't print again until Thursday.",
+
+  "bias": "Financial conditions have eased modestly from recent tightness — bank reserves are rising and the Treasury General Account is drawing down — but the reverse repo buffer that has absorbed prior liquidity swings for three years is now nearly exhausted, and real yields remain restrictive even as nominal rates drift lower.",
+
   "counterargs": {
-    "thesis": "CPI relief supports a near-term risk-on bounce, but oil/Hormuz and bond-vol risk keep the base case fragile",
+    "thesis": "Liquidity backdrop improving at the margin / early disinflationary slowdown",
     "supporting": [
-      "Core CPI flat (cons. +0.2%), headline -0.4% MoM — largest 1-month drop since Apr 2020",
-      "US10Y/US02Y both down on the day, curve easing",
-      "EWY +4.77%, SOXX +3.31%, KOSPI +0.73%, DRAM +6.80% — sharp rebound off yesterday's shock lows",
-      "VIX -3.85%, USDKRW improved to 1,489.52 — well below the 1,530 BOK line",
-      "HY OAS flat at 2.69% — no credit contagion"
+      "TGA drew down ~$145B in two weeks, injecting reserves into the system",
+      "Bank reserves (WRESBAL) rose ~$148B to $3.099T",
+      "Nominal 10Y and 2Y yields both declined this week",
+      "VIX fell to 16.17 — equity vol continues to be suppressed",
+      "Consumer-credit proxies (ALLY +4.45%, COF +6.37%) rallied"
     ],
     "against": [
-      "Oil (CL1!) +1.19% to $79.07 — still up ~11% over the past week on Strait of Hormuz risk",
-      "MOVE +11.83% to 77.77 — closing in on the 80 stress threshold",
-      "USDJPY 162.18 — still above the BOJ's 162 intervention line",
-      "Fed Sept hike odds only eased to 63% from 75% despite the CPI beat — market still pricing real hike risk",
-      "Korea gate still closed 1/3 — EWY and KOSPI remain well below their SMA20/8,200 thresholds even after today's bounce"
+      "RRP drained to $0.28B — the Fed's liquidity buffer is effectively gone",
+      "MOVE index up ~7% to 75.0 — bond vol building even as VIX falls",
+      "Oil up ~6.7%/wk to $79.56 — renewed inflation risk to the disinflation narrative",
+      "Korea gate still closed 1/3 — EWY well below its 20-day SMA and KOSPI below 8,200",
+      "Semis under pressure today (SOXX -3.86%, DRAM -8.67%) even as SK Hynix/Samsung rallied domestically; 9 enabling-layer tickers have dropped off the watchlist"
     ],
-    "read": "The cool CPI print is a genuine positive surprise and explains most of today's relief — yields down, risk assets up, vol easing. But this looks like a bounce inside an unresolved risk event rather than a new all-clear: oil is still trending higher on the Hormuz situation, MOVE is now flirting with stress-level readings, and the fact that Fed hike odds barely moved despite a soft CPI suggests the market isn't fully buying the disinflation story yet. Treat today's rally as tactical relief, not confirmation that the oil-shock/vol regime from yesterday has resolved."
+    "read": "The plumbing keeps improving — TGA is draining, reserves are climbing, and nominal yields are drifting lower — but the RRP buffer that has cushioned liquidity swings for three years is now essentially empty, so the next TGA rebuild will show up directly in reserve balances rather than being absorbed. Combine that with oil's climb back above $79 and a semiconductor complex that sold off hard intraday even as Korean chip names rallied domestically, and the case for a clean 'liquidity expansion' regime isn't secure yet. Korea's gate stays closed on two of three conditions, reinforcing that this is a backdrop getting better at the margin, not a green light for broad risk-on rotation."
   },
+
   "trade_table": [
-    {
-      "theme": "Korea/Semis rebound (EWY, SOXX, 000660, 005930)",
-      "signal": "Tactical Bullish",
-      "signal_color": "green",
-      "conviction": 5,
-      "horizon": "1-5 days",
-      "rationale": "Sharp bounce off yesterday's Iran/HBM-fear lows (+4.77%/+3.31%/+3.69%/+3.34%), but Korea gate remains closed 1/3 — trend not yet confirmed."
-    },
-    {
-      "theme": "Oil (CL1!)",
-      "signal": "Bullish (risk)",
-      "signal_color": "amber",
-      "conviction": 5,
-      "horizon": "3-10 days",
-      "rationale": "Continuing higher (+1.19% today, +~11% over the week) on Strait of Hormuz escalation — the key threat to the CPI relief narrative."
-    },
-    {
-      "theme": "Duration (TLT)",
-      "signal": "Neutral/Bullish",
-      "signal_color": "green",
-      "conviction": 4,
-      "horizon": "3-10 days",
-      "rationale": "Yields eased across the curve on the cool CPI print (US10Y -0.93%, US02Y -1.75%); real 2Y proxy fell, not the sticky-front-end pain trade."
-    },
-    {
-      "theme": "Vol (MOVE)",
-      "signal": "Caution",
-      "signal_color": "red",
-      "conviction": 6,
-      "horizon": "1-5 days",
-      "rationale": "MOVE +11.83% to 77.77, nearest to the 80 stress line since this dashboard began tracking — bond-market vol not confirming the equity-vol calm."
-    },
-    {
-      "theme": "Credit (HYG, ALLY/CACC/COF)",
-      "signal": "Neutral",
-      "signal_color": "grey",
-      "conviction": 3,
-      "horizon": "3-10 days",
-      "rationale": "HY OAS flat, financials mixed but orderly — no contagion from either the oil shock or the CPI surprise."
-    }
+    { "theme": "Duration", "signal": "Neutral-to-Bullish", "signal_color": "amber", "conviction": 5, "horizon": "1-2 weeks", "rationale": "10Y/2Y drifting lower, breakevens flat, but RRP depletion is a lurking risk into the next TGA rebuild." },
+    { "theme": "Credit / Consumer lenders", "signal": "Bullish", "signal_color": "green", "conviction": 6, "horizon": "2-4 weeks", "rationale": "ALLY, COF rallying; HY OAS only marginally wider and still historically tight." },
+    { "theme": "Semis", "signal": "Watch / Bearish near-term", "signal_color": "red", "conviction": 4, "horizon": "3-10 days", "rationale": "SOXX -3.86% and DRAM -8.67% intraday selloff; enabling-layer thesis tickers removed from watchlist this run." },
+    { "theme": "Korea", "signal": "Avoid / Watchlist", "signal_color": "red", "conviction": 3, "horizon": "structural", "rationale": "Gate closed 1/3; EWY well below SMA20 despite a strong domestic KOSPI session." },
+    { "theme": "Oil / Inflation", "signal": "Watch", "signal_color": "amber", "conviction": 5, "horizon": "1-4 weeks", "rationale": "Oil +6.7%/wk to $79.56 — sustained strength would threaten the disinflation thesis." }
   ],
+
   "catalysts": [
-    {
-      "date": "Jul 14",
-      "days": 0,
-      "event": "June CPI — printed cooler than expected (core flat, headline -0.4%)",
-      "type": "Realized",
-      "type_color": "green",
-      "stars": 5,
-      "note": "Consensus was +0.2% core; largest headline drop since Apr 2020. Fed Sept hike odds eased only to 63% from 75%."
-    },
-    {
-      "date": "Ongoing",
-      "days": 0,
-      "event": "Iran-Israel war / Strait of Hormuz escalation",
-      "type": "Binary/Ongoing",
-      "type_color": "red",
-      "stars": 5,
-      "note": "Oil still grinding higher (+1.19% today); unresolved — the key overhang on the relief-rally thesis."
-    },
-    {
-      "date": "~Jul 20",
-      "days": 6,
-      "event": "SK Hynix Q2 earnings",
-      "type": "Binary",
-      "type_color": "amber",
-      "stars": 4,
-      "note": "KIS research flagged a possible ~8% operating-profit miss on HBM pricing."
-    },
-    {
-      "date": "Jul 28-29",
-      "days": 14,
-      "event": "FOMC decision",
-      "type": "Scheduled",
-      "type_color": "amber",
-      "stars": 3,
-      "note": "No SEP this meeting; cooler CPI complicates the September hike debate."
-    }
+    { "date": "Jul 16", "days": 1, "event": "H.4.1 Factors Affecting Reserve Balances release (WALCL/TGA/Reserves)", "type": "Data", "type_color": "amber", "stars": 4, "note": "Will confirm whether TGA drawdown and reserve build continued into this week" }
   ],
+
   "plumbing": {
     "net_liquidity_t": 5.961,
     "walcl_b": 6735.6,
-    "tga_b": 774.1,
-    "tga_delta": "flat, next H.4.1 Jul 16",
-    "tga_color": "grey",
-    "rrp_b": 0.795,
-    "rrp_delta": "+$0.25B, still near-zero buffer",
-    "rrp_color": "amber",
-    "reserves_t": 3.099,
-    "reserves_delta": "flat, above $3T",
-    "reserves_color": "grey",
-    "sofr_pct": 3.60,
-    "sofr_delta": "+5bps to 3.60%",
-    "sofr_color": "amber"
+    "tga_b": 774.1, "tga_delta": "-$145B/2wk", "tga_color": "green",
+    "rrp_b": 0.278, "rrp_delta": "drained to near-zero", "rrp_color": "red",
+    "reserves_t": 3.099, "reserves_delta": "+$148B/wk", "reserves_color": "green",
+    "sofr_pct": 3.63, "sofr_delta": "flat vs prior reading", "sofr_color": "grey"
   },
+
   "duration": {
-    "tlt": 84.18,
-    "tlt_delta": "+0.24%",
-    "tlt_color": "green",
-    "shy": 81.90,
-    "shy_delta": "+0.13%",
-    "shy_color": "grey",
-    "hyg": 79.66,
-    "hyg_delta": "+0.17%",
-    "hyg_color": "green",
-    "t10yie": 2.26,
-    "t10yie_delta": "+0.02",
-    "t10yie_color": "grey",
-    "real_yield": 2.321,
-    "tlt_shy_ratio": 1.0278,
-    "move": 77.7746,
-    "move_delta": "+11.83% — nearing 80 stress line",
-    "move_color": "red"
+    "tlt": 84.27, "tlt_delta": "-0.05%/wk", "tlt_color": "grey",
+    "shy": 82.01, "shy_delta": "+0.22%/wk", "shy_color": "grey",
+    "hyg": 79.80, "hyg_delta": "+0.19%/wk", "hyg_color": "green",
+    "t10yie": 2.25, "t10yie_delta": "flat/wk", "t10yie_color": "grey",
+    "real_yield": 2.301,
+    "real_yield_5y_dfii5": 2.06,
+    "tlt_shy_ratio": 1.0276,
+    "move": 75.0326, "move_delta": "+6.8%/wk (-3.53% today)", "move_color": "red"
   },
+
   "duration_score": {
-    "score": 3,
-    "classification": "Post-CPI Relief Rally / Broad Yield Decline",
-    "reason": "Cooler June CPI drove nominal yields down across the curve (US10Y -0.93%, US02Y -1.75%) while breakevens ticked only marginally higher and credit stayed calm — a broadly duration-friendly combination. The real 2Y proxy actually fell (1.46% vs 1.52% prior), the opposite of the sticky-front-end pain trade, so today reads as genuine relief rather than a real-rate tightening episode. Caveat: MOVE spiking to 77.8 signals the bond market isn't fully comfortable yet.",
+    "score": 2,
+    "classification": "Modest Easing / Not Yet Pain-Trade",
+    "reason": "10Y and 2Y both declined this week while breakevens held flat and HY OAS widened only marginally — consistent with a mild growth/Fed-easing read rather than the real-rate tightening pain trade seen in early July.",
     "james_framework": {
-      "what_market_IS_saying": "The CPI beat is being read as durable disinflation for now — yields down, breakevens roughly stable, credit unstressed",
-      "pain_trade": "Not currently active — nominal 2Y fell rather than staying sticky, and the real-2Y proxy eased rather than rising",
-      "watch_signal": "Watch oil: if the Hormuz-driven rise continues alongside sticky Fed hike pricing, that combination could revive the real-rate-tightening pain trade even without a hawkish CPI print"
+      "what_market_IS_saying": "Nominal yields drifting lower across the curve while inflation expectations hold steady — market pricing gradual disinflation, not a growth shock.",
+      "pain_trade": "The sticky-front-end pain trade flagged in prior runs has eased for now — nominal 2Y is falling, not sticky.",
+      "watch_signal": "If nominal 2Y reverses higher while breakevens fall, real-rate tightening resumes and the pain trade is back on."
     },
     "conditions": {
       "10y_falling": true,
@@ -228,186 +101,101 @@
       "real_2y_rising": false
     }
   },
+
   "breakevens": {
-    "t5yie": {
-      "value": 2.31,
-      "label": "5Y breakeven",
-      "color": "amber",
-      "trend_label": "Rising slightly",
-      "note": "+0.03 despite the cool CPI print — oil-driven inflation expectations creeping up."
-    },
-    "t10yie": {
-      "value": 2.26,
-      "label": "10Y breakeven",
-      "color": "amber",
-      "trend_label": "Rising slightly",
-      "note": "+0.02, similar drift."
-    },
-    "expinf2yr": {
-      "value": 2.75,
-      "label": "2Y expected inflation",
-      "color": "grey",
-      "trend_label": "Stable",
-      "note": "Unchanged, modeled proxy."
-    },
-    "dfii5": {
-      "value": 2.02,
-      "label": "5Y TIPS real yield (primary)",
-      "color": "grey",
-      "trend_label": "Stable",
-      "note": "+0.03, the primary market-based real-rate signal — a small tick up worth watching but not yet a trend."
-    },
-    "dfii10": {
-      "value": 2.32,
-      "label": "10Y TIPS real yield",
-      "color": "grey",
-      "trend_label": "Stable",
-      "note": "+0.01, flat."
-    },
-    "real_yield_10y": {
-      "value": 2.321,
-      "calculation": "US10Y (4.581%) - T10YIE (2.26%) = 2.321%",
-      "color": "green",
-      "trend_label": "Easing",
-      "note": "Down from 2.374% yesterday — derived/secondary confirmation."
-    },
-    "real_yield_2y_proxy": {
-      "value": 1.456,
-      "calculation": "US02Y (4.206%) - EXPINF2YR (2.75%) = 1.456% [experimental]",
-      "color": "green",
-      "trend_label": "Easing",
-      "note": "Down from 1.521% yesterday — real-rate pressure easing, not the pain-trade direction."
-    },
-    "breakeven_curve_signal": "Breakevens ticked up marginally (T5YIE/T10YIE both +0.02-0.03) even as realized CPI came in soft — a sign markets are pricing some of the recent oil rise into forward inflation expectations, but the move is still small relative to the scale of the CPI beat."
+    "t5yie": { "value": 2.28, "label": "5Y breakeven", "color": "grey", "trend_label": "Stable", "note": "Flat week-over-week" },
+    "t10yie": { "value": 2.25, "label": "10Y breakeven", "color": "grey", "trend_label": "Stable", "note": "Flat week-over-week" },
+    "dfii5": { "value": 2.06, "label": "5Y TIPS real yield (PRIMARY signal)", "color": "amber", "trend_label": "Stable-elevated", "note": "+4bp/wk; market-based real-rate signal per James framework" },
+    "dfii10": { "value": 2.36, "label": "10Y TIPS real yield", "color": "amber", "trend_label": "Stable-elevated", "note": "+4bp/wk" },
+    "real_yield_10y": { "value": 2.301, "calculation": "US10Y (4.551%) - T10YIE (2.25%) = 2.301%", "color": "amber", "trend_label": "Elevated but easing", "note": "Down from 2.327% last run" },
+    "real_yield_2y_proxy": { "value": 1.701, "calculation": "US02Y (4.141%) - EXPINF2YR (2.44%) = 1.701% [experimental proxy]", "color": "grey", "trend_label": "N/A — no prior EXPINF2YR reading for delta", "note": "T2YIE is not a real FRED metric; removed per prior-run note" },
+    "breakeven_curve_signal": "Breakevens flat across tenors while nominal yields drift lower — consistent with gradual disinflation rather than growth-scare or reacceleration."
   },
+
   "credit": {
-    "hy_oas": 2.69,
-    "hy_oas_delta": "flat",
-    "hy_oas_color": "grey",
-    "ally": 45.24,
-    "ally_delta": "+0.27%",
-    "ally_color": "green",
-    "cacc": 622.24,
-    "cacc_delta": "-0.62%",
-    "cacc_color": "amber",
-    "cof": 204.26,
-    "cof_delta": "+0.61%",
-    "cof_color": "green"
+    "hy_oas": 2.72, "hy_oas_delta": "+5bp/wk", "hy_oas_color": "amber",
+    "ally": 46.27, "ally_delta": "+4.45%/wk", "ally_color": "green",
+    "cacc": 618.04, "cacc_delta": "-0.50%/wk", "cacc_color": "grey",
+    "cof": 208.93, "cof_delta": "+6.37%/wk", "cof_color": "green"
   },
+
   "curve": {
-    "us03my": 3.792,
-    "us06my": 3.936,
-    "us02y": 4.206,
-    "us05y": 4.321,
-    "us10y": 4.581,
-    "us30y": 5.090,
-    "spread_2s10s": 0.375,
-    "spread_3m10y": 0.789,
-    "real_10y": 2.321,
-    "us_japan_spread_bps": 189.0,
+    "us03my": 3.787, "us06my": 3.897, "us02y": 4.141,
+    "us05y": 4.264, "us10y": 4.551, "us30y": 5.083,
+    "spread_2s10s": 0.410, "spread_3m10y": 0.764,
+    "real_10y": 2.301, "us_japan_spread_bps": 186.9,
     "trend_classifications": {
-      "us10y": { "level": "Restrictive", "trend": "Easing", "momentum": "Positive", "note": "-0.93% on the cool CPI print." },
-      "us30y": { "level": "Very Restrictive", "trend": "Easing", "momentum": "Positive", "note": "-0.33%." },
-      "us02y": { "level": "Elevated", "trend": "Easing", "momentum": "Positive", "note": "-1.75%, front end leading the decline." },
-      "spread_2s10s": { "level": "Positive", "trend": "Steepening", "momentum": "Positive", "note": "0.375% vs 0.343% yesterday." }
+      "us10y": { "level": "Restrictive", "trend": "Easing", "momentum": "Positive", "note": "Down ~3bp/wk" },
+      "us30y": { "level": "Very Restrictive", "trend": "Easing", "momentum": "Positive", "note": "Down ~4bp/wk" },
+      "us02y": { "level": "Elevated", "trend": "Easing", "momentum": "Positive", "note": "Down ~8bp/wk" },
+      "spread_2s10s": { "level": "Positive", "trend": "Steepening", "momentum": "Positive", "note": "Widened to +0.410% from +0.359%" }
     }
   },
+
   "fx": {
-    "usdjpy": 162.184,
-    "usdjpy_alert": true,
-    "usdjpy_note": "Still above 162 — BOJ intervention threshold, though easing (-0.17%)",
-    "usdkrw": 1489.52,
-    "usdkrw_pass": true,
-    "usdkrw_note": "-0.50%, comfortably below 1,530",
-    "dxy": 100.912,
-    "dxy_delta": "-0.36%",
-    "dxy_color": "green",
-    "jp10y": 2.691,
-    "us_japan_spread_bps": 189.0,
-    "ni225": 67743.28,
-    "usdcny": 6.7700
+    "usdjpy": 162.118, "usdjpy_alert": true, "usdjpy_note": "Still above 162 BOJ intervention threshold, though off week-ago high of 162.49",
+    "usdkrw": 1487.84, "usdkrw_pass": true, "usdkrw_note": "-1.28%/wk, comfortably below 1,530 gate threshold",
+    "dxy": 100.616, "dxy_delta": "-0.42%/wk", "dxy_color": "grey",
+    "jp10y": 2.682, "us_japan_spread_bps": 186.9, "ni225": 68751.44,
+    "usdcny": 6.7677
   },
+
   "korea_gate": {
-    "status": "closed",
-    "conditions_met": 1,
-    "ewy": 176.05,
-    "ewy_sma20": 194.18,
-    "ewy_pass": false,
-    "usdkrw": 1489.52,
-    "usdkrw_threshold": 1530,
-    "usdkrw_pass": true,
-    "kospi": 6856.84,
-    "kospi_threshold": 8200,
-    "kospi_pass": false
+    "status": "closed", "conditions_met": 1,
+    "ewy": 167.38, "ewy_sma20": 192.02, "ewy_pass": false,
+    "usdkrw": 1487.84, "usdkrw_threshold": 1530, "usdkrw_rock": true,
+    "kospi": 7284.42, "kospi_threshold": 8200, "kospi_pass": false
   },
+
   "semis": {
-    "soxx": 571.94,
-    "soxx_delta": "+3.31%",
-    "soxx_color": "green",
-    "qqq": 721.17,
-    "qqq_delta": "+1.32%",
-    "qqq_color": "green",
-    "spy": 751.99,
-    "spy_delta": "+0.38%",
-    "spy_color": "green",
-    "soxx_spy_ratio": 0.7606
+    "soxx": 546.02, "soxx_delta": "-2.75%/wk (-3.86% today)", "soxx_color": "red",
+    "qqq": 713.41, "qqq_delta": "+0.63%/wk", "qqq_color": "grey",
+    "spy": 751.96, "spy_delta": "+1.02%/wk", "spy_color": "green",
+    "soxx_spy_ratio": 0.7261
   },
+
   "chain": [
-    { "ticker": "DRAM", "price": 61.20, "delta": "+6.80%", "color": "green", "note": "Rebounding after yesterday's -10.03% HBM-pricing-fear crash." },
-    { "ticker": "000660", "price": 1913000, "delta": "+3.69%", "color": "green", "note": "SK Hynix — partial recovery after yesterday's -15.37% record drop." },
-    { "ticker": "005930", "price": 263000, "delta": "+3.34%", "color": "green", "note": "Samsung Electronics — partial recovery after yesterday's -10.70% drop." },
-    { "ticker": "CRDO", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "ASX", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "GLW", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "LITE", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "AMKR", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "MU", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "APH", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "POWI", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." },
-    { "ticker": "EOSE", "price": null, "delta": null, "color": "grey", "note": "No longer on watchlist — data unavailable this run." }
+    { "ticker": "DRAM", "price": 55.92, "delta": "-7.93%/wk (-8.67% today)", "color": "red", "note": "Sharp selloff" },
+    { "ticker": "CRDO", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "ASX", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "GLW", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "LITE", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "AMKR", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "MU", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "APH", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "POWI", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run" },
+    { "ticker": "EOSE", "price": null, "delta": null, "color": "grey", "note": "Removed from watchlist — no data this run; prior close priority flag could not be checked" }
   ],
+
   "crosschecks": {
-    "vix": { "value": 16.49, "delta": "-3.85%", "color": "green", "note": "Equity vol calming after yesterday's spike." },
-    "oil": { "value": 79.07, "delta": "+1.19%", "color": "amber", "note": "Still grinding higher on Hormuz risk — up ~11% over the past week." },
-    "gold": { "value": 4060.358, "delta": "+1.47%", "color": "green", "note": "Bid alongside the broader relief rally." },
-    "move": { "value": 77.7746, "delta": "+11.83%", "color": "red", "note": "Extending its spike, now within ~2.5 points of the 80 stress line." }
+    "vix":  { "value": 16.17, "delta": "-4.4%/wk", "color": "green", "note": "Equity vol continues to ease" },
+    "oil":  { "value": 79.56, "delta": "+6.7%/wk", "color": "red", "note": "Oil back above $79 — renewed inflation risk if sustained" },
+    "gold": { "value": 4038.71, "delta": "-0.66%/wk", "color": "grey", "note": "Roughly flat" },
+    "move": { "value": 75.0326, "delta": "+6.8%/wk", "color": "red", "note": "Bond vol rising even as VIX falls" }
   },
+
   "sector_rotation": {
-    "current_regime": "CPI-Driven Relief Rally, Oil/Hormuz Overhang Persists",
-    "regime_scores": {
-      "liquidity_expansion": 62,
-      "disinflationary_slowdown": 58,
-      "recession": 15,
-      "inflation_reacceleration": 40,
-      "liquidity_shock": 30
-    },
-    "best_fit": "liquidity_expansion",
-    "second_fit": "disinflationary_slowdown",
+    "current_regime": "Disinflationary Slowdown (early liquidity-expansion signs)",
+    "regime_scores": { "liquidity_expansion": 55, "disinflationary_slowdown": 62, "recession": 30, "inflation_reacceleration": 40, "liquidity_shock": 25 },
+    "best_fit": "disinflationary_slowdown",
+    "second_fit": "liquidity_expansion",
     "confidence": "Medium",
-    "actionable_output": {
-      "favor": ["Semis/Korea beta (tactical rebound)", "Cyclicals", "Duration (modest)"],
-      "avoid": ["Chasing oil-sensitive shorts", "Over-sizing into the MOVE spike"],
-      "note": "Today's price action (yields down, semis/Korea/cyclicals up, dollar weaker) fits a Liquidity Expansion bounce, but it's happening on top of an unresolved oil shock and a MOVE index nearing stress levels — treat the rebound as tactical until oil and bond vol both calm down."
-    }
+    "actionable_output": { "leaders": "IGV, mega-cap software, quality growth", "laggards": "Broad semis (weak today), Korea (gate closed)", "note": "Mixed signals — reserves rising and TGA draining support liquidity expansion, but real yields remain restrictive and oil poses a reacceleration risk." }
   },
+
   "changed_today": [
-    { "label": "MOVE (bond vol)", "value": "77.77", "delta": "↑ +11.83% — nearing 80 stress line", "color": "red" },
-    { "label": "June CPI", "value": "core flat, headline -0.4%", "delta": "Cooler than +0.2% consensus — largest headline drop since Apr 2020", "color": "green" },
-    { "label": "EWY", "value": "$176.05", "delta": "↑ +4.77% — rebound off Iran/chip-shock lows, gate still fails", "color": "green" },
-    { "label": "Oil (CL1!)", "value": "$79.07", "delta": "↑ +1.19%, +~11% over the week — Hormuz risk persists", "color": "amber" },
-    { "label": "DRAM ETF", "value": "$61.20", "delta": "↑ +6.80% — rebound from -10.03% crash", "color": "green" },
-    { "label": "SOXX", "value": "$571.94", "delta": "↑ +3.31% — rebound from -5.02%", "color": "green" },
-    { "label": "SK Hynix (000660)", "value": "₩1,913,000", "delta": "↑ +3.69% — partial recovery", "color": "green" },
-    { "label": "VIX", "value": "16.49", "delta": "↓ -3.85% — calming", "color": "green" }
+    { "label": "Oil (CL1!)", "value": "$79.56", "delta": "↑ +6.7%/wk — watch disinflation thesis", "color": "red" },
+    { "label": "RRP (RRPONTSYD)", "value": "$0.28B", "delta": "Drained to near-zero — buffer exhausted", "color": "red" },
+    { "label": "EWY", "value": "$167.38", "delta": "↓ -5.4% today, now well below SMA20 ($192.02)", "color": "red" },
+    { "label": "KOSPI", "value": "7,284.42", "delta": "↑ +6.2% today (domestic session) but still below 8,200 gate", "color": "amber" },
+    { "label": "Reserves (WRESBAL)", "value": "$3.099T", "delta": "↑ +$148B/wk", "color": "green" },
+    { "label": "TGA (WTREGEN)", "value": "$774.1B", "delta": "↓ -$145B/2wk", "color": "green" },
+    { "label": "Watchlist coverage", "value": "9 tickers removed", "delta": "CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE no longer on the TradingView watchlist", "color": "amber" }
   ],
+
   "section_horizons": {
-    "plumbing": "structural",
-    "curve": "structural",
-    "fx": "structural",
-    "credit": "structural",
-    "duration": "tactical",
-    "crosschecks": "tactical",
-    "semis": "tactical",
-    "korea_gate": "structural"
+    "plumbing": "structural", "curve": "structural", "fx": "structural",
+    "credit": "structural", "duration": "tactical", "crosschecks": "tactical",
+    "semis": "tactical", "korea_gate": "structural"
   }
 }
