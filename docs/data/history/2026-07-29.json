@@ -1,14 +1,14 @@
 {
   "meta": {
-    "pulled_at": "2026-07-29T06:34:14Z",
-    "pulled_at_cet": "Jul 29, 2026 08:34 CEST",
+    "pulled_at": "2026-07-29T16:22:24Z",
+    "pulled_at_cet": "Jul 29, 2026 18:22 CEST",
     "source": "TradingView watchlist + FRED live scrape (Chrome extension)"
   },
   "scores": {
     "liquidity": {
       "value": 38,
       "trend_wk": 0,
-      "label": "Plumbing still frozen at Jul 22 H.4.1 vintage; RRP/SOFR both unchanged vs yesterday's fresh prints",
+      "label": "Plumbing still frozen at Jul 22 H.4.1 vintage; SOFR ticks up +1bp to 3.65%, RRP unchanged",
       "color": "amber",
       "trend_label": "Stable",
       "decomp": [
@@ -21,7 +21,7 @@
           0
         ],
         [
-          "SOFR unchanged at 3.64%, stable vs IORB",
+          "SOFR +1bp to 3.65%, still stable vs IORB",
           0
         ],
         [
@@ -31,72 +31,80 @@
       ]
     },
     "credit": {
-      "value": 50,
-      "trend_wk": 4,
-      "label": "ALLY/CACC/COF extend their bounce for a 2nd straight session; HY OAS holds steady",
-      "color": "green",
-      "trend_label": "Improving",
-      "decomp": [
-        [
-          "HY OAS unchanged at 2.81% -- no further widening",
-          0
-        ],
-        [
-          "COF +2.59% today, extends its firming streak",
-          5
-        ],
-        [
-          "CACC +1.05%, ALLY +0.98% -- both extend yesterday's bounce",
-          5
-        ],
-        [
-          "HYG +0.19%, firming",
-          2
-        ]
-      ]
-    },
-    "inflation": {
-      "value": 60,
-      "trend_wk": 0,
-      "label": "Oil snaps back +3.77% after two sharp down days -- disinflation thesis stalls, though breakevens still stable-to-lower",
+      "value": 45,
+      "trend_wk": -5,
+      "label": "Credit proxies turn mixed intraday -- COF reverses to -0.75%, ALLY weakens to +0.14%, but CACC still firm and HY OAS holds flat",
       "color": "amber",
       "trend_label": "Deteriorating",
       "decomp": [
         [
-          "Oil +3.77% to $82.25, reverses Jul27-28's combined -11.8% decline",
-          -10
+          "HY OAS unchanged at 2.81% -- no widening despite the broader risk-off tone",
+          0
         ],
         [
-          "T10YIE -1bp to 2.20%, T5YIE -2bps to 2.16% -- breakevens still calm despite the oil bounce",
-          4
+          "COF -0.75% today, reverses its 2-day bounce",
+          -6
         ],
         [
-          "DFII5 +3bps to 2.22% -- real yields ticking up slightly",
+          "ALLY +0.14% -- much weaker than this morning's +0.98%",
+          -2
+        ],
+        [
+          "CACC +1.61% -- still extending its bounce, a bright spot",
+          3
+        ],
+        [
+          "HYG -0.33%, reverses from +0.19% this morning",
           -2
         ]
       ]
     },
-    "vol": {
-      "value": 52,
-      "trend_wk": 12,
-      "label": "VIX and MOVE both fall for a 2nd straight session even as the Korea/semis rout extends into a 3rd day -- a persistent, notable decoupling",
-      "color": "green",
-      "trend_label": "Improving",
+    "inflation": {
+      "value": 48,
+      "trend_wk": -12,
+      "label": "Oil extends its surge to +7.18% intraday (from +3.77% this morning) -- the biggest single-day oil move this cycle; breakevens still calm",
+      "color": "red",
+      "trend_label": "Deteriorating",
       "decomp": [
         [
-          "VIX -2.57% to 18.20, 2nd straight day of calming",
-          8
+          "Oil +7.18% to $84.95, nearly doubling this morning's already-sharp +3.77% reversal",
+          -14
         ],
         [
-          "MOVE -1.45% to 76.09, also falling",
+          "T10YIE -0.01 to 2.20%, T5YIE -0.02 to 2.16% -- breakevens still not confirming an inflation scare",
           4
         ],
         [
-          "USDJPY 163.55, roughly flat, still above the 162 BOJ threshold",
+          "DFII5 unchanged at 2.22% -- real yields not yet reflecting the oil move",
+          0
+        ],
+        [
+          "Gold -0.49% -- a genuine inflation/flight-to-safety bid would likely show gold firmer too; argues this is more dollar-strength/event-risk than broad reflation",
+          2
+        ]
+      ]
+    },
+    "vol": {
+      "value": 34,
+      "trend_wk": -18,
+      "label": "VIX spikes +11.15% intraday to 20.23 -- the 2-day US-vol/Korea-rout decoupling flagged this morning resolves via VIX catching up, not Korea stabilizing",
+      "color": "red",
+      "trend_label": "Deteriorating",
+      "decomp": [
+        [
+          "VIX +11.15% to 20.23, sharp reversal from -2.57% this morning",
+          -14
+        ],
+        [
+          "MOVE unchanged at 76.09 -- bond vol hasn't caught up yet, still below the 80 stress line",
+          0
+        ],
+        [
+          "USDJPY 163.89, ticking higher, still above the 162 BOJ threshold",
           -2
         ],
         [
-          "KOSPI -5.98% (3rd straight down session), SK Hynix -11.00% despite a record-beat earnings print -- US vol still not pricing this in",
+          "KOSPI closed -5.98% (4th straight down session); EWY -5.32% further intraday on top of that",
           -6
         ]
       ]
@@ -107,77 +115,86 @@
     "base_confidence": 55,
     "adjusted_confidence": 39,
     "penalty_applied": 16,
-    "reason": "FOMC decision lands today at 2:00pm ET / 8:00pm CEST, ~11 hours out -- -8%. The China DUV chip-tool shock enters its 3rd session (KOSPI -5.98% today on top of -10.84% Jul28), contagion outcome still unresolved -- -8%. SK Hynix's earnings catalyst resolved this run (record beat -- revenue +257% YoY, operating profit +557% YoY -- but stock still fell -8.98% on capex-sustainability concerns), so it no longer carries a forward-looking penalty. MOVE stayed below 80 (no penalty). Scores not a clean 2-2 split (2 improving -- credit, vol; 1 deteriorating -- inflation; 1 stable -- liquidity)."
+    "reason": "FOMC decision lands today at 2:00pm ET / 8:00pm CEST, now only ~1.5-2 hours out -- -8%. The China DUV chip-tool shock enters a 4th session (KOSPI closed -5.98%, EWY now -5.32% further intraday, gap to its 20-day SMA widening to -16.4%), contagion outcome still unresolved -- -8%. MOVE stayed below 80 (76.09, no penalty per the formula), though VIX itself spiked +11.15% intraday -- a real increase in near-term uncertainty that the confidence formula doesn't directly capture since it keys off MOVE, not VIX. Scores not a clean 2-2 split (3 deteriorating -- credit, inflation, vol; 1 stable -- liquidity). Numeric confidence is unchanged vs this morning's pull, but the intraday tape (VIX spike, oil surge, curve-wide yield backup, SPY/QQQ/SOXX all reversing to red) argues for treating this print as a floor, not a settled read, pending the decision."
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
-    "short_term_conditions": "Improving (ex-Korea/semis)",
+    "short_term_conditions": "Deteriorating",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "Disinflationary Slowdown (US) With a Deepening Korea/AI-Memory Structural Shock -- Oil Bounces Off Its Lows, US Vol Keeps Calming",
-    "likely_rotation": "Broad US market, credit, and vol all calming; capital continues rotating out of Korea/memory semis (EWY, SOXX, DRAM, SK Hynix, Samsung), now in a 3rd straight session of losses despite SK Hynix's record earnings beat",
+    "macro_trend": "Pre-FOMC Risk-Off Intensifies -- Curve-Wide Yield Backup, Oil Surge to +7.18%, and a VIX Spike Resolve the US-Vol/Korea-Rout Decoupling; China DUV/Korea Shock Now a 4th Session",
+    "likely_rotation": "Broad de-risking into FOMC -- high-beta semis/Korea, duration, and short-oil positioning all under simultaneous pressure; defensive positioning pending the decision and Warsh's press conference",
     "risk_level": "High",
-    "next_catalyst": "FOMC decision today, 2:00pm ET / 8:00pm CEST (~11 hours), no SEP this meeting",
-    "korea_gate": "Closed 1/3 -- USDKRW pass only; EWY $151.45 vs SMA20 $174.39 (gap -13.1%); KOSPI 5,663.25 (-5.98% today, 3rd straight down session)"
+    "next_catalyst": "FOMC decision + Fed Chair Kevin Warsh press conference -- TODAY, ~1.5-2 hours out (8:00pm CEST / 2:00pm ET), no SEP this meeting",
+    "korea_gate": "Closed 1/3 -- USDKRW pass only; EWY $143.39 vs SMA20 $171.46 (gap widened to -16.4% from -13.1% this morning); KOSPI 5,663.25 (-5.98%, market closed, unchanged from this morning's print)"
   },
-  "bias": "US financial conditions continued easing at the margin overnight -- credit proxies (ALLY/CACC/COF) extended their bounce for a second straight session, HY OAS held steady rather than widening further, and both VIX (-2.57%) and MOVE (-1.45%) fell again. That's a genuine, now two-day-old calming trend, not a one-off. But it sits awkwardly next to a Korea/AI-memory shock that is not stabilizing: KOSPI fell another 5.98% today (on top of Jul28's 10.84% drop), and SK Hynix fell 11% despite reporting a genuine blowout quarter (revenue +257% YoY, record operating margin) -- the market is reading the capex guidance and pricing-sustainability questions as more important than the beat itself. Oil also reversed sharply, +3.77% off its recent low, muddying the disinflation thesis even as breakevens stayed calm. The persistent gap between falling US vol and an escalating Asia/semis rout is itself worth flagging: either US markets are right that this stays contained, or vol is underpricing a risk that hasn't fully arrived yet. FOMC lands later today as the next real test.",
+  "bias": "Conditions re-tightened sharply today after two mornings of relative calm: nominal yields backed up across the entire curve (2s through 30s all up 0.7-1.3%), oil extended its reversal to +7.18% (nearly double this morning's already-sharp bounce), and VIX spiked +11.15% -- closing the 2-day gap between calming US vol and the deepening Korea/AI-memory shock that this monitor flagged explicitly this morning. Credit softened at the margin (COF reversed to -0.75%, ALLY weakened) but did not blow out -- HY OAS held flat at 2.81%, and CACC kept firming. Breakevens (T5YIE, T10YIE) stayed calm despite the oil surge, and USDKRW remains comfortably below the BOK watch line, so this reads more as pre-FOMC positioning and event risk than a new systemic credit or FX event. The Korea/DUV chip-tool shock is now in a 4th session with no sign of stabilizing -- EWY's gap to its 20-day average has widened further intraday. The FOMC decision and Kevin Warsh's press conference in roughly two hours are the swing factor for whether today's move extends or reverses.",
   "counterargs": {
-    "thesis": "US credit and vol keep calming, but the Korea/AI-memory shock is deepening rather than stabilizing, and US vol's calm looks increasingly out of step with it",
+    "thesis": "A curve-wide yield backup, oil surge, and VIX spike suggest risk-off is intensifying into FOMC, layered on top of an unresolved, 4th-session Korea/AI-memory shock",
     "supporting": [
-      "ALLY/CACC/COF all extended their bounce for a 2nd straight session",
-      "HY OAS held flat at 2.81% -- no further widening since Jul28",
-      "VIX -2.57% and MOVE -1.45%, both falling for a 2nd straight day",
-      "USDKRW still comfortably below the 1,530 BOK line despite the ongoing KOSPI rout",
-      "SPY +0.24%, QQQ roughly flat (-0.97%) -- broad US equities still absorbing the shock calmly"
+      "US10Y through US30Y all rose 0.7-1.3% today -- a genuine curve-wide backup, not an isolated move",
+      "Oil +7.18% intraday, nearly double this morning's +3.77% bounce -- a large, hard-to-ignore one-day move",
+      "VIX +11.15% to 20.23 -- the clearest single-day vol move this cycle, resolving the prior 2-day US-vol/Korea-rout decoupling",
+      "SPY -1.16%, QQQ -1.71%, SOXX -4.96% -- broad US equities and semis both red, no longer just a Korea-specific story",
+      "EWY -5.32% further intraday on top of a 3-session rout; gap to its SMA20 now -16.4%, the widest yet"
     ],
     "against": [
-      "KOSPI -5.98% today, a 3rd consecutive sharply negative session (-10.84% Jul28, -5.98% today)",
-      "SK Hynix -11.00% and -8.98% in regular trading on earnings day DESPITE a record beat (revenue +257% YoY, op profit +557% YoY) -- the beat was not enough against capex-guidance and pricing-sustainability concerns",
-      "SOXX -4.80%, DRAM -8.89% -- US semis spillover continuing, not decelerating",
-      "Oil reversed sharply, +3.77%, muddying the 2-day disinflation move",
-      "FOMC decision lands later today -- a genuine binary risk on top of an already-live, unresolved shock"
+      "HY OAS still flat at 2.81% -- no credit-spread widening despite the equity/vol stress",
+      "CACC still firming (+1.61%) -- credit proxies are mixed, not uniformly deteriorating",
+      "Breakevens (T5YIE, T10YIE) still calm/slightly lower despite the oil surge -- no genuine inflation-expectations unanchoring",
+      "USDKRW still comfortably below the 1,530 BOK line -- zero FX contagion from the Korea rout",
+      "Gold fell -0.49% -- not the commodity/flight-to-safety pattern a true inflation or crisis scare would typically show",
+      "MOVE unchanged at 76.09, still well below the 80 stress line -- bond-market vol hasn't confirmed the equity-vol spike"
     ],
-    "read": "The US-centric read (credit, vol, breakevens) keeps improving, but that's now the second day running where it's diverging from what's actually happening in Korea and semis. SK Hynix's results were objectively excellent -- a record quarter by a wide margin -- and the stock still fell double digits, which says the market has moved past 'is the AI-memory boom real' and onto 'how much capex is being committed against how sustainable is current pricing.' That's a much harder question to resolve with one earnings print. VIX and MOVE calming through all of this is either evidence the US market correctly sees this as contained, or a complacency gap that FOMC or a continuation of the Korea rout could close abruptly."
+    "read": "Today looks like a genuine, broad-based risk-off day -- yields up everywhere, oil surging, VIX spiking, and US equities/semis joining the Korea rout for the first time in several sessions. But credit spreads, breakevens, and the KRW have not moved with it, which argues this is concentrated in rates and equity-vol positioning ahead of a binary FOMC decision rather than a new systemic credit or inflation event. The next 1-2 hours (the decision itself and Warsh's press conference) will likely determine whether today's move extends into a genuine regime shift or partially reverses as event risk clears."
   },
   "trade_table": [
     {
       "theme": "Korea / Memory Semis (EWY, SOXX, SK Hynix, Samsung)",
       "signal": "Avoid / Reduce",
       "signal_color": "red",
-      "conviction": 8,
+      "conviction": 9,
       "horizon": "1-10 days",
-      "rationale": "3rd straight down session; SK Hynix fell double digits DESPITE a record earnings beat, on capex/pricing-sustainability concerns. Gate closed 1/3, EWY -13.1% below its 20-day SMA. This looks structural, not sentiment-driven."
+      "rationale": "4th straight down session; EWY -5.32% further intraday, gap to its 20-day SMA now -16.4% (widest yet). Gate remains closed 1/3. No sign of stabilization."
     },
     {
       "theme": "US Credit (ALLY/CACC/COF/HYG)",
-      "signal": "Constructive",
-      "signal_color": "green",
-      "conviction": 6,
+      "signal": "Neutral / Watch",
+      "signal_color": "amber",
+      "conviction": 5,
       "horizon": "3-10 days",
-      "rationale": "2nd straight session of synchronized bounces; HY OAS flat. No contagion from the Asia shock so far, though FOMC is a live risk today."
+      "rationale": "Mixed today -- COF and HYG reversed negative, ALLY weakened, but CACC still firm and HY OAS held flat. Downgraded from this morning's 'Constructive' pending FOMC."
     },
     {
       "theme": "Vol (VIX/MOVE)",
-      "signal": "Watch for complacency",
-      "signal_color": "amber",
-      "conviction": 4,
+      "signal": "Vol event live",
+      "signal_color": "red",
+      "conviction": 7,
       "horizon": "1-5 days",
-      "rationale": "2 straight days of calming even as KOSPI/SK Hynix deteriorate further -- either genuinely contained or a gap that could close fast around FOMC."
+      "rationale": "VIX +11.15% resolves the 2-day decoupling from the Korea rout flagged this morning. MOVE hasn't confirmed yet (still 76.09) -- watch whether bond vol catches up post-FOMC."
     },
     {
       "theme": "US Mega-Cap / SPY-QQQ",
-      "signal": "Resilient",
-      "signal_color": "green",
+      "signal": "Cautious",
+      "signal_color": "amber",
       "conviction": 6,
       "horizon": "1-5 days",
-      "rationale": "SPY +0.24%, QQQ roughly flat -- broad market continuing to absorb the Korea/semis shock without spillover."
+      "rationale": "SPY -1.16%, QQQ -1.71% -- both reversed negative today, no longer absorbing the Korea/semis shock without spillover. Downgraded from 'Resilient' this morning."
     },
     {
       "theme": "Oil / Inflation Trade",
-      "signal": "Reduce conviction",
+      "signal": "Increase conviction (bounce)",
       "signal_color": "amber",
-      "conviction": 3,
-      "horizon": "3-10 days",
-      "rationale": "Oil reversed sharply, +3.77% off its low, after two days of sharp declines -- the disinflation thesis needs re-confirmation, though breakevens are still calm."
+      "conviction": 6,
+      "horizon": "1-5 days",
+      "rationale": "Oil extended to +7.18%, nearly double this morning's reversal. Breakevens still not confirming, so treat as event-risk/positioning rather than a durable reflation signal until confirmed."
+    },
+    {
+      "theme": "Duration / Long Rates (TLT)",
+      "signal": "Avoid into FOMC",
+      "signal_color": "red",
+      "conviction": 6,
+      "horizon": "0-2 days",
+      "rationale": "Curve-wide backup (2s-30s all +0.7-1.3%) into today's decision. TLT -0.55%. Wait for the decision/Warsh guidance before re-entering duration."
     }
   ],
   "catalysts": [
@@ -188,16 +205,16 @@
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Decision at 2:00pm ET / 8:00pm CEST, ~11 hours out. No SEP this meeting -- Fed Chair Kevin Warsh's press conference guidance is the swing factor"
+      "note": "Decision at 2:00pm ET / 8:00pm CEST, ~1.5-2 hours out. No SEP this meeting -- Fed Chair Kevin Warsh's press conference guidance is the swing factor"
     },
     {
-      "date": "Jul 28-29 (ongoing)",
+      "date": "Jul 26-29 (ongoing)",
       "days": 0,
       "event": "China DUV Chip-Tool Shock / Korea-Semis Rout",
       "type": "Shock",
       "type_color": "red",
       "stars": 5,
-      "note": "3rd straight session: KOSPI -5.98% today (-10.84% Jul28), SK Hynix -11.00% despite a record earnings beat; contagion outcome unresolved"
+      "note": "4th straight session; EWY gap to SMA20 widened to -16.4%, KOSPI closed -5.98%; contagion outcome still unresolved"
     },
     {
       "date": "Jul 30",
@@ -239,44 +256,44 @@
     "reserves_t": 3.062149,
     "reserves_delta": "unchanged -- still Jul22 H.4.1 vintage",
     "reserves_color": "grey",
-    "sofr_pct": 3.64,
-    "sofr_delta": "unchanged, stable vs IORB",
+    "sofr_pct": 3.65,
+    "sofr_delta": "+1bp to 3.65%, fresh Jul28 print, still stable vs IORB",
     "sofr_color": "grey"
   },
   "duration": {
-    "tlt": 84.24,
-    "tlt_delta": "+0.59%",
-    "tlt_color": "green",
-    "shy": 81.94,
-    "shy_delta": "+0.09%",
+    "tlt": 83.78,
+    "tlt_delta": "-0.55%",
+    "tlt_color": "red",
+    "shy": 81.86,
+    "shy_delta": "-0.10%",
     "shy_color": "grey",
-    "hyg": 79.42,
-    "hyg_delta": "+0.19%",
-    "hyg_color": "green",
+    "hyg": 79.16,
+    "hyg_delta": "-0.33%",
+    "hyg_color": "amber",
     "t10yie": 2.2,
-    "t10yie_delta": "-1bp to 2.20%",
-    "t10yie_color": "green",
-    "real_yield": 2.414,
-    "tlt_shy_ratio": 1.0281,
+    "t10yie_delta": "-0.01, roughly flat",
+    "t10yie_color": "grey",
+    "real_yield": 2.455,
+    "tlt_shy_ratio": 1.0235,
     "move": 76.0938,
-    "move_delta": "-1.45%, 2nd straight day falling",
-    "move_color": "green"
+    "move_delta": "unchanged at 76.09, still below the 80 stress line",
+    "move_color": "grey"
   },
   "duration_score": {
-    "score": 1,
-    "classification": "Disinflationary-Leaning but Yields Ticking Up -- Oil Reversal Adds Noise",
-    "reason": "US10Y actually rose slightly today (+0.17%) after two days of sharp declines, while breakevens stayed calm (T10YIE -1bp, T5YIE -2bps) and credit kept improving (ALLY/CACC/COF extending their bounce, HY OAS flat). The mild yield uptick alongside a sharp oil reversal (+3.77%) is a modest headwind versus yesterday's cleaner disinflation read, but it's not a credit or recession signal -- more a pause/reversal in the recent yield rally pending FOMC.",
+    "score": -4,
+    "classification": "Curve-Wide Yield Backup Into FOMC -- Broad Real-Rate Pressure, Not the Classic Sticky-Front-End Pain Trade",
+    "reason": "Unlike the textbook James pain trade (sticky nominal 2Y + collapsing 2Y breakeven), today shows ALL maturities rising together (2s through 30s, +0.7-1.3%) alongside a VIX spike and an oil surge to +7.18%. This is a broader, curve-wide repricing -- consistent with pre-FOMC positioning and event risk -- rather than a narrow real-rate story. It's negative for duration (TLT -0.55%) and a genuine deterioration from this morning, but credit hasn't blown out and breakevens are still calm, keeping it short of a 'very negative' recession-style read.",
     "james_framework": {
-      "what_market_IS_saying": "Nominal front-end (2Y) ticked back up today (+0.28%) after yesterday's sharp fall -- a partial reversal of the growth-scare/cuts signal, likely repositioning ahead of the FOMC decision rather than a resumption of the real-rate-tightening pain trade",
-      "pain_trade": "Real 2Y proxy (US02Y - EXPINF2YR) ticked up to roughly 1.853% from 1.837% -- a small reversal, not a resumption of sustained real-rate pressure",
-      "watch_signal": "Whether nominal 2Y resumes falling (cuts/growth-scare) or resumes climbing (real-rate-tightening pain trade) likely resolves with today's FOMC decision and guidance"
+      "what_market_IS_saying": "The whole curve is backing up into the FOMC decision rather than just the front end -- a broader repricing of term premium/event risk than the narrow sticky-2Y pattern",
+      "pain_trade": "Real 2Y proxy (US02Y - EXPINF2YR) rose to ~1.894% from ~1.853% this morning -- real-rate pressure is building, but via rising nominal yields across the curve rather than collapsing breakevens specifically",
+      "watch_signal": "If yields broadly reverse lower post-FOMC (dovish hold or dovish guidance), this unwinds quickly; a hawkish Warsh tone alongside the oil surge could extend the real-rate pressure"
     },
     "conditions": {
       "10y_falling": false,
       "breakevens_stable": true,
       "two_y_breakeven_collapsing": false,
       "nominal_2y_sticky": false,
-      "real_2y_rising": false
+      "real_2y_rising": true
     }
   },
   "breakevens": {
@@ -291,15 +308,15 @@
       "value": 2.16,
       "label": "5Y breakeven",
       "color": "green",
-      "trend_label": "Falling",
-      "note": "-2bps vs prior session"
+      "trend_label": "Stable / Slightly falling",
+      "note": "-0.02 vs prior session, still calm despite the oil surge"
     },
     "t10yie": {
       "value": 2.2,
       "label": "10Y breakeven",
       "color": "green",
-      "trend_label": "Falling",
-      "note": "-1bp vs prior session"
+      "trend_label": "Stable / Slightly falling",
+      "note": "-0.01 vs prior session, still calm despite the oil surge"
     },
     "expinf2yr": {
       "value": 2.44,
@@ -311,107 +328,107 @@
     "dfii5": {
       "value": 2.22,
       "label": "5Y TIPS real yield (primary)",
-      "color": "amber",
-      "trend_label": "Ticking up",
-      "note": "+3bps vs prior session"
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "Unchanged vs this morning"
     },
     "dfii10": {
       "value": 2.44,
       "label": "10Y TIPS real yield",
       "color": "grey",
-      "trend_label": "Roughly flat",
-      "note": "+1bp"
+      "trend_label": "Flat",
+      "note": "Unchanged"
     },
     "real_yield_2y": {
-      "value": 1.853,
-      "calculation": "US02Y (4.293%) - EXPINF2YR (2.44%) = 1.853% [experimental proxy, T2YIE retired]",
-      "color": "amber",
-      "trend_label": "Ticking up slightly",
-      "note": "Up from ~1.837% the prior session -- a small reversal, not a resumption of sustained real-rate pressure"
+      "value": 1.894,
+      "calculation": "US02Y (4.334%) - EXPINF2YR (2.44%) = 1.894% [experimental proxy, T2YIE retired]",
+      "color": "red",
+      "trend_label": "Rising",
+      "note": "Up from ~1.853% this morning -- real-rate pressure building into FOMC"
     },
     "real_yield_10y": {
-      "value": 2.414,
-      "calculation": "US10Y (4.614%) - T10YIE (2.20%) = 2.414%",
+      "value": 2.455,
+      "calculation": "US10Y (4.655%) - T10YIE (2.20%) = 2.455%",
       "color": "amber",
-      "trend_label": "Roughly flat, slightly elevated",
-      "note": "Up marginally from 2.394% the prior session"
+      "trend_label": "Rising",
+      "note": "Up from 2.414% this morning as US10Y backs up"
     },
-    "breakeven_curve_signal": "Both 5Y and 10Y breakevens fell again despite the oil bounce and the small yield uptick -- the disinflation signal in breakevens is holding even as nominal yields wobble"
+    "breakeven_curve_signal": "Breakevens (5Y, 10Y) held calm/slightly lower even as the nominal curve backed up sharply and oil surged -- the disinflation signal in breakevens specifically is intact, even though nominal and real yields both rose"
   },
   "credit": {
     "hy_oas": 2.81,
-    "hy_oas_delta": "unchanged at 2.81% -- no further widening",
+    "hy_oas_delta": "unchanged at 2.81% -- no widening despite the risk-off tone",
     "hy_oas_color": "grey",
-    "ally": 44.11,
-    "ally_delta": "+0.98%, extends its bounce",
-    "ally_color": "green",
-    "cacc": 558.55,
-    "cacc_delta": "+1.05%, extends its bounce",
+    "ally": 44.17,
+    "ally_delta": "+0.14%, much weaker than this morning's +0.98%",
+    "ally_color": "amber",
+    "cacc": 567.55,
+    "cacc_delta": "+1.61%, extends its bounce further",
     "cacc_color": "green",
-    "cof": 212.41,
-    "cof_delta": "+2.59%, extends its firming streak",
-    "cof_color": "green"
+    "cof": 210.82,
+    "cof_delta": "-0.75%, reverses its 2-day bounce",
+    "cof_color": "red"
   },
   "curve": {
     "us03my": 3.875,
-    "us06my": 4.052,
-    "us02y": 4.293,
-    "us05y": 4.375,
-    "us10y": 4.614,
-    "us30y": 5.097,
+    "us06my": 4.06,
+    "us02y": 4.334,
+    "us05y": 4.422,
+    "us10y": 4.655,
+    "us30y": 5.129,
     "spread_2s10s": 0.321,
-    "spread_3m10y": 0.739,
-    "real_10y": 2.414,
-    "us_japan_spread_bps": 187,
+    "spread_3m10y": 0.78,
+    "real_10y": 2.455,
+    "us_japan_spread_bps": 189,
     "trend_classifications": {
       "us10y": {
         "level": "Restrictive",
-        "trend": "Ticking up",
-        "momentum": "Slightly negative (for duration)",
-        "note": "+0.17% today, partial reversal after two down days, likely FOMC positioning"
+        "trend": "Backing up",
+        "momentum": "Negative (for duration)",
+        "note": "+1.06% today, extending the reversal off the recent lows"
       },
       "us30y": {
         "level": "Very Restrictive",
-        "trend": "Ticking up",
-        "momentum": "Slightly negative",
-        "note": "+0.10% today"
+        "trend": "Backing up",
+        "momentum": "Negative",
+        "note": "+0.73% today"
       },
       "us02y": {
         "level": "Elevated",
-        "trend": "Ticking up",
-        "momentum": "Slightly negative",
-        "note": "+0.28% today, partial reversal of yesterday's sharp fall"
+        "trend": "Backing up",
+        "momentum": "Negative",
+        "note": "+1.24% today, the sharpest move on the curve"
       },
       "spread_2s10s": {
         "level": "Positive",
         "trend": "Roughly flat",
         "momentum": "Neutral",
-        "note": "0.321% vs 0.327% prior session -- essentially unchanged"
+        "note": "0.321%, essentially unchanged vs this morning as the whole curve shifts up in parallel"
       }
     }
   },
   "fx": {
-    "usdjpy": 163.548,
+    "usdjpy": 163.894,
     "usdjpy_alert": true,
-    "usdjpy_note": "Still above the 162 BOJ threshold, roughly flat (-0.20%)",
-    "usdkrw": 1447.08,
+    "usdjpy_note": "Still above the 162 BOJ threshold, ticking higher (+0.02%)",
+    "usdkrw": 1452.08,
     "usdkrw_pass": true,
-    "usdkrw_note": "-0.45% today, still comfortably below 1,530 despite the ongoing KOSPI rout",
-    "dxy": 101.33,
-    "dxy_delta": "-0.06%",
-    "dxy_color": "grey",
-    "jp10y": 2.744,
-    "us_japan_spread_bps": 187,
-    "ni225": 61434.14,
-    "usdcny": 6.7694
+    "usdkrw_note": "Still comfortably below 1,530 despite the ongoing Korea rout",
+    "dxy": 101.486,
+    "dxy_delta": "+0.09%",
+    "dxy_color": "amber",
+    "jp10y": 2.763,
+    "us_japan_spread_bps": 189,
+    "ni225": 61433.97,
+    "usdcny": 6.7656
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 1,
-    "ewy": 151.45,
-    "ewy_sma20": 174.39,
+    "ewy": 143.39,
+    "ewy_sma20": 171.46,
     "ewy_pass": false,
-    "usdkrw": 1447.08,
+    "usdkrw": 1452.08,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": true,
     "kospi": 5663.25,
@@ -419,22 +436,22 @@
     "kospi_pass": false
   },
   "semis": {
-    "soxx": 491.46,
-    "soxx_delta": "-4.80%",
+    "soxx": 467.07,
+    "soxx_delta": "-4.96%",
     "soxx_color": "red",
-    "qqq": 675.49,
-    "qqq_delta": "-0.97%",
-    "qqq_color": "amber",
-    "spy": 740.86,
-    "spy_delta": "+0.24%",
-    "spy_color": "green",
-    "soxx_spy_ratio": 0.6634
+    "qqq": 663.95,
+    "qqq_delta": "-1.71%",
+    "qqq_color": "red",
+    "spy": 732.24,
+    "spy_delta": "-1.16%",
+    "spy_color": "red",
+    "soxx_spy_ratio": 0.6378
   },
   "chain": [
     {
       "ticker": "DRAM",
-      "price": 47.77,
-      "delta": "-8.89%, still sharply lower, 2nd straight day of near double-digit declines",
+      "price": 44.56,
+      "delta": "-6.72%, still sharply lower though a touch better than this morning's -8.89%",
       "color": "red",
       "note": "Only enabling-layer chain ticker remaining in the watchlist"
     },
@@ -504,85 +521,91 @@
   ],
   "crosschecks": {
     "vix": {
-      "value": 18.2,
-      "delta": "-2.57%, 2nd straight day falling",
-      "color": "green",
-      "note": "Notable decoupling from the escalating Korea/semis rout -- watch for a snapback"
+      "value": 20.23,
+      "delta": "+11.15%, sharp reversal from -2.57% this morning",
+      "color": "red",
+      "note": "Resolves the 2-day US-vol/Korea-rout decoupling flagged this morning, via VIX catching up"
     },
     "oil": {
-      "value": 82.25,
-      "delta": "+3.77%, sharp reversal off its recent low",
-      "color": "amber",
-      "note": "Volatile trading around OPEC/GDP/FOMC headlines; reverses part of Jul27-28's -11.8% combined decline"
+      "value": 84.95,
+      "delta": "+7.18%, extends this morning's already-sharp +3.77% reversal",
+      "color": "red",
+      "note": "Nearly doubles the intraday move; largest single-day oil surge this cycle"
     },
     "gold": {
-      "value": 4042.89,
-      "delta": "+0.38%",
-      "color": "grey",
-      "note": ""
+      "value": 4008.75,
+      "delta": "-0.49%, reverses from +0.38% this morning",
+      "color": "amber",
+      "note": "Gold falling argues against a pure inflation/flight-to-safety read"
     },
     "move": {
       "value": 76.0938,
-      "delta": "-1.45%, 2nd straight day falling",
-      "color": "green",
-      "note": "Held well below the 80 stress line"
+      "delta": "unchanged vs this morning",
+      "color": "grey",
+      "note": "Still below the 80 stress line, hasn't confirmed the VIX spike"
     }
   },
   "sector_rotation": {
-    "current_regime": "Disinflationary Slowdown (US) with a deepening, unresolved China DUV chip-tool shock to Korea/AI-memory semis",
+    "current_regime": "Pre-FOMC risk-off intensifying -- curve-wide yield backup, oil surge, and a VIX spike, layered on a deepening, unresolved 4th-session Korea/AI-memory shock",
     "regime_scores": {
       "liquidity_expansion": "Low",
-      "disinflationary_slowdown": "Medium-High",
-      "recession": "Low-Medium",
-      "inflation_reacceleration": "Low (oil bounce adds some risk back)",
-      "liquidity_shock": "Low-Medium (Korea/semis-specific, deepening but still not broad)"
+      "disinflationary_slowdown": "Low-Medium (yields backing up today works against this fit)",
+      "recession": "Low (yields rising, not falling; credit not widening)",
+      "inflation_reacceleration": "Medium (rising yields + oil surge, but breakevens still not confirming)",
+      "liquidity_shock": "Medium (equity/vol stress, dollar firmness, Korea/semis-specific but broadening into US equities today)"
     },
-    "best_fit": "disinflationary_slowdown",
+    "best_fit": "inflation_reacceleration",
     "second_fit": "liquidity_shock",
-    "confidence": "Medium",
+    "confidence": "Low-Medium",
     "actionable_output": {
-      "rotation_into": "US credit and mega-cap/broad market -- both extending a 2-session calming trend",
-      "rotation_out_of": "Korea / AI-memory semis complex -- 3rd straight down session, SK Hynix fell despite a record earnings beat",
-      "hedge": "Watch whether US VIX/MOVE calm is validated or reversed by today's FOMC decision, and whether the Korea/semis rout finds a floor or keeps extending"
+      "rotation_into": "Cash / short-duration -- reduce risk into the FOMC decision rather than add exposure to either the reflation or risk-off narratives",
+      "rotation_out_of": "Long duration (TLT), Korea/AI-memory semis complex -- both under simultaneous pressure",
+      "hedge": "Wait for the FOMC decision and Warsh's press conference (~1.5-2 hours out) before committing to either the inflation-reacceleration or liquidity-shock read; today's moves could substantially reverse or extend on the announcement"
     },
-    "note": "The gap between calming US vol/credit and a deepening Korea/semis shock is now two sessions old. SK Hynix's record beat failing to stop the stock's slide is the clearest sign this has moved from an earnings-anxiety story to a structural repricing of AI-memory capex and pricing sustainability."
+    "note": "Today's signals are genuinely mixed and event-driven -- rising yields and a big oil surge argue for inflation reacceleration, while the equity/vol stress and continuing Korea rout argue for liquidity shock, but neither is confirmed by credit spreads or breakevens. This looks like FOMC-eve positioning more than a settled regime change; treat with low confidence until after the decision."
   },
   "changed_today": [
     {
-      "label": "SK Hynix Q2 Earnings",
-      "value": "Record beat: revenue +257% YoY, op profit +557% YoY",
-      "delta": "Stock still fell -8.98% regular / -11.00% on the day -- capex/pricing-sustainability concerns override the beat",
-      "color": "red"
-    },
-    {
-      "label": "KOSPI",
-      "value": "5,663.25",
-      "delta": "-5.98% -- 3rd straight sharply negative session",
+      "label": "VIX",
+      "value": "20.23",
+      "delta": "+11.15%, sharp reversal from -2.57% this morning -- resolves the US-vol/Korea decoupling",
       "color": "red"
     },
     {
       "label": "Oil (CL1!)",
-      "value": "$82.25",
-      "delta": "+3.77% -- sharp reversal off its recent low, reverses part of the 2-day decline",
-      "color": "amber"
+      "value": "$84.95",
+      "delta": "+7.18%, extends this morning's +3.77% reversal -- largest single-day move this cycle",
+      "color": "red"
     },
     {
-      "label": "VIX",
-      "value": "18.20",
-      "delta": "-2.57%, 2nd straight day falling despite the deepening Korea/semis rout",
-      "color": "green"
+      "label": "US Treasury curve",
+      "value": "2s-30s all +0.7-1.3%",
+      "delta": "Curve-wide backup into FOMC",
+      "color": "red"
+    },
+    {
+      "label": "EWY / Korea gate",
+      "value": "$143.39 vs SMA20 $171.46",
+      "delta": "Gap widens to -16.4% from -13.1% this morning; gate still closed 1/3",
+      "color": "red"
+    },
+    {
+      "label": "SPY / QQQ / SOXX",
+      "value": "-1.16% / -1.71% / -4.96%",
+      "delta": "All reverse negative, joining the Korea/semis rout for the first time in several sessions",
+      "color": "red"
     },
     {
       "label": "COF",
-      "value": "$212.41",
-      "delta": "+2.59%, extends its firming streak",
-      "color": "green"
+      "value": "$210.82",
+      "delta": "-0.75%, reverses its 2-day bounce",
+      "color": "red"
     },
     {
       "label": "FOMC",
-      "value": "Decision today 2:00pm ET",
-      "delta": "~11 hours out, no SEP this meeting",
-      "color": "amber"
+      "value": "Decision today 2:00pm ET / 8:00pm CEST",
+      "delta": "~1.5-2 hours out, no SEP this meeting",
+      "color": "red"
     }
   ],
   "section_horizons": {
@@ -596,13 +619,12 @@
     "korea_gate": "structural"
   },
   "data_notes": {
-    "run_continuity": "This run continues the daily series from the Jul28 20:28 CEST run, roughly 10 hours later.",
+    "run_continuity": "This run continues the daily series from the Jul29 08:34 CEST run, roughly 10 hours later, same trading day.",
     "watchlist_gap": "The 'enabling-layer thesis chain' tickers (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain absent from the 'Liquidity Monitor - Jae' TradingView watchlist (36 symbols). DRAM is the only chain ticker still tracked.",
     "h41_timing": "H.4.1 (WALCL/WTREGEN/WRESBAL) is unchanged, still the Jul 22, 2026 vintage. Next release due Jul 30, 2026 (1 day out).",
-    "fresh_daily_prints": "RRP and SOFR values are unchanged vs the Jul28 20:28 CEST pull (same observation dates) -- both series' next release is Jul 29, but had not posted at this early pull time (~2:34am ET). HY OAS, EXPINF2YR, DFII10 also effectively unchanged. T5YIE, T10YIE, DFII5 show small genuine moves.",
-    "major_event": "SK Hynix reported Q2 2026 results: revenue 79.32T KRW / operating profit 60.54T KRW (76% margin), +257%/+557% YoY, an all-time high. Stock still fell -8.98% in regular trading (-11.00% on the watchlist's day-change) on concerns about capex guided to the high end of its ~40T KRW range and questions about current AI-memory pricing sustainability. This lands on top of the ongoing China DUV chip-tool shock -- KOSPI fell a further -5.98% today after Jul28's -10.84% drop. Confirmed via live web search (Investing.com, SK hynix Newsroom, Benzinga, dated Jul 29, 2026).",
-    "fomc_note": "Fed Chair is Kevin Warsh (sworn in May 2026), not Jerome Powell -- Powell is now a Board of Governors member. FOMC decision and press conference land today at 2:00pm ET / 2:30pm ET respectively (8:00-8:30pm CEST). No SEP this meeting. Consensus expects a hold at 3.50-3.75%.",
-    "catalyst_source": "SK Hynix earnings results and FOMC chair/timing details confirmed via live web search this run.",
+    "fresh_daily_prints": "SOFR ticked to a fresh Jul 28 print (+1bp to 3.65%). RRP is still the Jul 28 print, unchanged ($1.126B) -- Jul 29's RRP release had not posted as of this pull. HY OAS, EXPINF2YR, DFII5, DFII10, T5YIE, T10YIE, MOVE all effectively unchanged vs this morning's pull. The Treasury curve, USDJPY, DXY, VIX, oil, gold, and all US equity/semis tickers show large genuine intraday moves as NY trading progressed.",
+    "korea_japan_market_close": "KOSPI, 000660 (SK Hynix), 005930 (Samsung), and NI225 reflect their local market closes (already past close in KST/JST by this pull's CEST time) -- 000660/005930 show slightly improved closing prints (-9.61%/-5.23%) vs this morning's intraday reads (-11.00%/-7.05%), while KOSPI's headline print is effectively identical to this morning's close.",
+    "fomc_note": "Fed Chair is Kevin Warsh (sworn in May 2026), not Jerome Powell -- Powell is now a Board of Governors member. FOMC decision and press conference land today at 2:00pm ET / 2:30pm ET respectively (8:00-8:30pm CEST), now only ~1.5-2 hours out from this pull. No SEP this meeting. Consensus expects a hold at 3.50-3.75%.",
     "github_token_location": "Token lives at github_token.txt inside the Liquidity Monitor OneDrive folder, not at the C:\\Users\\jaehy\\Claude\\ path referenced in the bundled skill instructions.",
     "network_workaround": "api.github.com is blocked at the sandbox network layer; github.com itself is reachable. Used git clone/commit/push via https://<token>@github.com/... from /tmp."
   }
