@@ -1,0 +1,249 @@
+{
+  "meta": {
+    "pulled_at": "2026-08-11T15:27:00Z",
+    "pulled_at_cet": "Aug 11, 2026 17:27 CEST",
+    "source": "FRED (5 series) + TradingView watchlist live scrape (Chrome extension)"
+  },
+
+  "scores": {
+    "liquidity": {
+      "value": 47,
+      "trend_wk": -3,
+      "label": "Flat — awaiting Aug 13 H.4.1 print",
+      "color": "amber",
+      "trend_label": "Stable",
+      "decomp": [
+        ["H.4.1 unchanged — still Aug 5 vintage, next print Aug 13 (T-2)", 0],
+        ["RRP buffer fell to $0.98B from $1.45B — further near-exhausted", -3],
+        ["SOFR +1bp to 3.63%, still comfortably near IORB — no funding stress", 0],
+        ["TGA unchanged, no new draw this week", 0]
+      ]
+    },
+    "credit": {
+      "value": 62,
+      "trend_wk": -1,
+      "label": "Stable — firm",
+      "color": "green",
+      "trend_label": "Stable",
+      "decomp": [
+        ["HY OAS tightened ~1bp to 2.70%, still tight", 2],
+        ["ALLY +1.5% and COF +1.0% vs yesterday, CACC -1.3% — broadly firm", 1],
+        ["MOVE +4.76% today — bond vol picking up pre-CPI, modest drag", -2],
+        ["Spreads still historically tight, no acute stress", 0]
+      ]
+    },
+    "inflation": {
+      "value": 48,
+      "trend_wk": -7,
+      "label": "At risk — oil rally now confirming in breakevens",
+      "color": "amber",
+      "trend_label": "Deteriorating",
+      "decomp": [
+        ["Oil +3.5% vs yesterday's pull, extending 3-session rally into tomorrow's CPI", -6],
+        ["T5YIE +3bp, T10YIE +4bp — breakevens starting to catch up to oil", -4],
+        ["DFII5 (primary real yield) at 2.13%, still elevated", -1],
+        ["EXPINF2YR flat at 2.44% — no confirmation yet from this slower series", 0]
+      ]
+    },
+    "vol": {
+      "value": 60,
+      "trend_wk": -6,
+      "label": "Mixed — bond vol waking up, equity vol still calm",
+      "color": "amber",
+      "trend_label": "Deteriorating",
+      "decomp": [
+        ["MOVE +4.76% today to 75.46 — still under 80 but rising into CPI", -5],
+        ["VIX -1.10% to 15.28 — equity vol still calm near cycle lows", 2],
+        ["USDJPY 159.25, well below 162 BOJ threshold — no carry stress", 1],
+        ["No auction or FOMC catalyst today itself", 0]
+      ]
+    }
+  },
+
+  "regime_confidence": 47,
+  "confidence_meta": {
+    "base_confidence": 55,
+    "adjusted_confidence": 47,
+    "penalty_applied": 8,
+    "reason": "CPI (July data) lands Aug 12, 8:30am ET — within 24h of this pull (-8%). MOVE 75.46 < 80, no penalty. Scores: inflation + vol deteriorating, liquidity + credit stable — not a clean 2-2 split, no additional penalty."
+  },
+
+  "structured_conclusion": {
+    "structural_liquidity": "Neutral",
+    "short_term_conditions": "Deteriorating",
+    "long_term_conditions": "Restrictive",
+    "macro_trend": "Pre-CPI Inflation Reacceleration Watch (oil-led)",
+    "likely_rotation": "Energy/value would lead if CPI confirms; until then, neutral-to-cautious duration, constructive-to-neutral credit",
+    "risk_level": "Medium-High",
+    "next_catalyst": "CPI (July data) — Aug 12, T-1 day",
+    "korea_gate": "2/3 — EWY back above SMA20 (pass), USDKRW below 1,530 (pass), KOSPI below 8,200 (fail)"
+  },
+
+  "bias": "Rate-of-change framing. Not 'inflation risk rising' as an absolute state — but 'a month-long, mostly quiet backdrop is being tested by oil's persistent rally, which is now starting to show up in breakeven inflation expectations for the first time, right before tomorrow's CPI print.'",
+
+  "counterargs": {
+    "thesis": "Wait for CPI — inflation-reacceleration risk building but unconfirmed",
+    "supporting": [
+      "Oil +3.5% vs yesterday, extending a multi-session rally (was already +3.77% over 3 sessions as of yesterday's pull)",
+      "T5YIE (+3bp) and T10YIE (+4bp) breakevens both firmed — first real confirmation from this series",
+      "DFII5 (primary real-rate signal) still elevated near 2.13%",
+      "MOVE +4.76% today — bond vol waking up ahead of the print"
+    ],
+    "against": [
+      "VIX still calm near cycle lows, -1.10% today",
+      "Nominal 10Y/2Y roughly unchanged vs yesterday's pull despite the oil move",
+      "HY OAS tightened further, credit shows no stress (ALLY/COF firmer)",
+      "Korea gate improved to 2/3 — EWY back above its 20-day SMA",
+      "USDKRW at 1,410, well below the 1,530 BOK watch line and down sharply over the past month"
+    ],
+    "read": "This is a genuinely two-sided setup into tomorrow's CPI. Oil's persistent rally is finally bleeding into breakeven inflation expectations — the confirmation that was missing as of yesterday's read — but nominal yields and equity vol haven't moved to price real stress, and credit and Korea risk gauges are actually improving, not deteriorating. A hot CPI print would likely resolve this toward the inflation-reacceleration case; a soft print would let the market treat the oil move as noise and support a continuation of the otherwise calm, credit-constructive backdrop."
+  },
+
+  "trade_table": [
+    { "theme": "Duration (TLT)", "signal": "Neutral", "signal_color": "grey", "conviction": 4, "horizon": "1-3 days", "rationale": "10Y/30Y roughly flat vs yesterday's pull; wait for tomorrow's CPI outcome before taking directional duration risk." },
+    { "theme": "Oil / Inflation watch", "signal": "Caution", "signal_color": "amber", "conviction": 5, "horizon": "1-2 days", "rationale": "Oil extending a multi-session rally into CPI, with breakevens now starting to confirm — binary event risk tomorrow." },
+    { "theme": "Credit", "signal": "Constructive", "signal_color": "green", "conviction": 5, "horizon": "3-10 days", "rationale": "HY OAS tightened further, ALLY/COF firmer day-over-day; no stress signal despite rate/vol chop." },
+    { "theme": "Korea (EWY)", "signal": "Watch", "signal_color": "amber", "conviction": 4, "horizon": "3-10 days", "rationale": "Gate improved to 2/3 as EWY reclaimed its SMA20; still needs KOSPI above 8,200 (currently 6,345) to fully open." },
+    { "theme": "Semis (SOXX/SPY)", "signal": "Neutral", "signal_color": "grey", "conviction": 3, "horizon": "3-10 days", "rationale": "Ratio at 0.69, little changed; no fresh liquidity signal to drive rotation either way." }
+  ],
+
+  "catalysts": [
+    { "date": "Aug 12", "days": 1, "event": "CPI (July data)", "type": "Binary", "type_color": "red", "stars": 5, "note": "T-1 day. Oil's rally and firming breakevens raise the stakes for a hot print." },
+    { "date": "Aug 13", "days": 2, "event": "Next H.4.1 Fed Balance Sheet release", "type": "Scheduled", "type_color": "grey", "stars": 2, "note": "Will refresh WALCL/WTREGEN/WRESBAL for the week ending Aug 12 — current print still Aug 5 vintage." },
+    { "date": "Sep 16", "days": 36, "event": "FOMC decision + SEP/dot plot", "type": "Binary", "type_color": "red", "stars": 5, "note": "Fed Chair Kevin Warsh." },
+    { "date": "Ongoing", "days": 0, "event": "Korea/memory-chip demand watch", "type": "Idiosyncratic", "type_color": "amber", "stars": 2, "note": "EWY back above its SMA20 today; KOSPI still far below the 8,200 gate level (6,345.54)." }
+  ],
+
+  "plumbing": {
+    "net_liquidity_t": 5.840,
+    "walcl_b": 6748.567,
+    "tga_b": 907.324, "tga_delta": "flat wk (H.4.1 still Aug 5 vintage, next print Aug 13)", "tga_color": "grey",
+    "rrp_b": 0.975, "rrp_delta": "-$0.48B vs yesterday — buffer nearly exhausted", "rrp_color": "red",
+    "reserves_t": 2.993, "reserves_delta": "flat wk (H.4.1 still Aug 5 vintage)", "reserves_color": "grey",
+    "sofr_pct": 3.63, "sofr_delta": "+1bp", "sofr_color": "grey"
+  },
+
+  "duration": {
+    "tlt": 82.25, "tlt_delta": "+0.23%", "tlt_color": "green",
+    "shy": 81.89, "shy_delta": "+0.04%", "shy_color": "grey",
+    "hyg": 79.54, "hyg_delta": "+0.08%", "hyg_color": "grey",
+    "t10yie": 2.29, "t10yie_delta": "+0.04", "t10yie_color": "amber",
+    "real_yield": 2.394,
+    "tlt_shy_ratio": 1.0044,
+    "move": 75.4556, "move_delta": "+4.76%", "move_color": "amber"
+  },
+
+  "duration_score": {
+    "score": -3,
+    "classification": "Pre-CPI Inflation-Reacceleration Watch",
+    "reason": "Nominal 10Y/2Y roughly flat vs yesterday's pull, but breakevens (T5YIE +3bp, T10YIE +4bp) are firming for the first time alongside oil's continued rally. This is a milder, earlier-stage version of an inflation-reacceleration setup — not yet a real-rate shock, since nominal yields haven't backed up and DFII5 is little changed.",
+    "james_framework": {
+      "what_market_IS_saying": "Breakevens are starting to catch up to oil's multi-session rally ahead of tomorrow's CPI — early-stage reflation drift, not a real-rate panic.",
+      "pain_trade": "Not real-rate panic. A slow breakeven catch-up to oil.",
+      "watch_signal": "A hot CPI print with breakevens continuing to climb would confirm inflation-reacceleration; a soft print would likely deflate the oil/breakeven move and support duration/credit."
+    },
+    "conditions": {
+      "10y_falling": false,
+      "breakevens_stable": false,
+      "two_y_breakeven_collapsing": false,
+      "nominal_2y_sticky": true,
+      "real_2y_rising": false
+    }
+  },
+
+  "breakevens": {
+    "t5yie": { "value": 2.25, "label": "5Y breakeven", "color": "amber", "trend_label": "Firming", "note": "+3bp vs yesterday — first confirmation of oil's rally in this series." },
+    "t10yie": { "value": 2.29, "label": "10Y breakeven", "color": "amber", "trend_label": "Firming", "note": "+4bp vs yesterday." },
+    "expinf2yr": { "value": 2.44, "label": "2Y expected inflation (experimental proxy)", "color": "grey", "trend_label": "Stable", "note": "Unchanged — slow-moving monthly series, not a live daily signal." },
+    "real_yield_5y": { "value": 2.13, "label": "5Y real yield (primary, market-based TIPS — DFII5)", "color": "amber", "trend_label": "Elevated", "note": "Primary real-rate signal per the James framework; little changed today." },
+    "real_yield_10y": { "value": 2.394, "calculation": "US10Y (4.684%) - T10YIE (2.29%) = 2.394%", "color": "amber", "trend_label": "Elevated, easing slightly", "note": "Down ~3bp vs yesterday as breakevens rose faster than nominal yields." },
+    "real_yield_2y_proxy": { "value": 1.786, "calculation": "US02Y (4.226%) - EXPINF2YR (2.44%) = 1.786%", "color": "grey", "trend_label": "Flat", "note": "Experimental/modeled proxy only — EXPINF2YR is a slow monthly series." },
+    "breakeven_curve_signal": "5Y and 10Y breakevens both firmed 3-4bp today alongside oil's rally — the first sign the market is starting to price a modest inflation-reacceleration risk into tomorrow's CPI, though nominal yields haven't confirmed yet."
+  },
+
+  "credit": {
+    "hy_oas": 2.70, "hy_oas_delta": "-1bp, tightened", "hy_oas_color": "green",
+    "ally": 44.24, "ally_delta": "+1.03%", "ally_color": "green",
+    "cacc": 574.09, "cacc_delta": "-1.23%", "cacc_color": "amber",
+    "cof": 220.23, "cof_delta": "+0.58%", "cof_color": "green"
+  },
+
+  "curve": {
+    "us03my": 3.823, "us06my": 3.955, "us02y": 4.226,
+    "us05y": 4.389, "us10y": 4.684, "us30y": 5.236,
+    "spread_2s10s": 0.458, "spread_3m10y": 0.861,
+    "real_10y": 2.394, "us_japan_spread_bps": 187.8,
+    "trend_classifications": {
+      "us10y": { "level": "Restrictive", "trend": "Stable", "momentum": "Flat", "note": "4.684%, +0.8bp vs yesterday's pull — roughly unchanged despite intraday chop." },
+      "us30y": { "level": "Very Restrictive", "trend": "Stable", "momentum": "Flat", "note": "5.236%, +1.3bp vs yesterday." },
+      "us02y": { "level": "Elevated", "trend": "Stable", "momentum": "Flat", "note": "4.226%, +0.6bp vs yesterday — front end still sticky." },
+      "spread_2s10s": { "level": "Positive", "trend": "Stable", "momentum": "Flat", "note": "0.458%, roughly unchanged vs yesterday's 0.456%." }
+    }
+  },
+
+  "fx": {
+    "usdjpy": 159.248, "usdjpy_alert": false, "usdjpy_note": "Well below the 162 BOJ threshold; little changed today.",
+    "usdkrw": 1409.98, "usdkrw_pass": true, "usdkrw_note": "-0.55% today, comfortably below the 1,530 gate threshold and down sharply over the past month.",
+    "dxy": 99.835, "dxy_delta": "+0.03%", "dxy_color": "grey",
+    "jp10y": 2.806, "us_japan_spread_bps": 187.8, "ni225": 66970.00,
+    "usdcny": 6.7445
+  },
+
+  "korea_gate": {
+    "status": "closed", "conditions_met": 2,
+    "ewy": 168.04, "ewy_sma20": 163.88, "ewy_pass": true,
+    "usdkrw": 1409.98, "usdkrw_threshold": 1530, "usdkrw_pass": true,
+    "kospi": 6345.54, "kospi_threshold": 8200, "kospi_pass": false
+  },
+
+  "semis": {
+    "soxx": 534.20, "soxx_delta": "+0.91%", "soxx_color": "green",
+    "qqq": 720.02, "qqq_delta": "-0.12%", "qqq_color": "grey",
+    "spy": 772.49, "spy_delta": "-0.07%", "spy_color": "grey",
+    "soxx_spy_ratio": 0.6915
+  },
+
+  "chain": [
+    { "ticker": "DRAM", "price": 50.99, "delta": "+2.79%", "color": "green", "note": "Roundhill Memory ETF. Other enabling-layer names (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain removed from the watchlist since Jul 12." }
+  ],
+
+  "crosschecks": {
+    "vix": { "value": 15.28, "delta": "-1.10%", "color": "green", "note": "Still calm near cycle lows." },
+    "oil": { "value": 82.42, "delta": "+0.35% today; +3.5% vs yesterday's pull", "color": "red", "note": "Extending its multi-session rally into tomorrow's CPI — the key thing to watch." },
+    "gold": { "value": 4384.220, "delta": "-0.15% today; +1.1% vs yesterday's pull", "color": "grey", "note": "Still elevated near recent highs." },
+    "move": { "value": 75.4556, "delta": "+4.76%", "color": "amber", "note": "Bond vol picking up pre-CPI, still under the 80 stress threshold." }
+  },
+
+  "sector_rotation": {
+    "current_regime": "Pre-CPI Inflation-Reacceleration Watch — oil extending its rally, breakevens starting to confirm",
+    "regime_scores": {
+      "liquidity_expansion": "Low",
+      "disinflationary_slowdown": "Low",
+      "recession": "Low",
+      "inflation_reacceleration": "Medium",
+      "liquidity_shock": "Low-Medium"
+    },
+    "best_fit": "inflation_reacceleration",
+    "second_fit": "liquidity_shock",
+    "confidence": "Low-Medium",
+    "actionable_output": {
+      "leaders": "Energy/value would lead if tomorrow's CPI confirms; until then, stay neutral-to-cautious on duration and constructive-to-neutral on credit.",
+      "watch": "Tomorrow's CPI print is the swing factor — a hot number with breakevens continuing to climb would confirm inflation-reacceleration; a soft number would argue this was just an oil-driven blip."
+    }
+  },
+
+  "changed_today": [
+    { "label": "Oil (CL1!)", "value": "$82.42", "delta": "+3.5% vs yesterday — extending rally into CPI", "color": "red" },
+    { "label": "Korea gate", "value": "2/3", "delta": "EWY back above SMA20 — improved from 1/3", "color": "green" },
+    { "label": "USDKRW", "value": "1,409.98", "delta": "-0.55% today, well below 1,530", "color": "green" },
+    { "label": "MOVE", "value": "75.46", "delta": "+4.76% today — bond vol waking up pre-CPI", "color": "amber" },
+    { "label": "T5YIE / T10YIE breakevens", "value": "2.25% / 2.29%", "delta": "+3bp / +4bp — first confirmation from oil's rally", "color": "amber" },
+    { "label": "RRP", "value": "$0.98B", "delta": "-$0.48B vs yesterday, buffer nearly exhausted", "color": "red" }
+  ],
+
+  "section_horizons": {
+    "plumbing": "structural", "curve": "structural", "fx": "structural",
+    "credit": "structural", "duration": "tactical", "crosschecks": "tactical",
+    "semis": "tactical", "korea_gate": "structural"
+  }
+}
