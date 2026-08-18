@@ -1,0 +1,510 @@
+{
+  "meta": {
+    "pulled_at": "2026-08-18T13:06:32Z",
+    "pulled_at_cet": "Aug 18, 2026 15:06 CEST",
+    "source": "FRED (5 series) + TradingView watchlist live scrape (Chrome extension)."
+  },
+  "scores": {
+    "liquidity": {
+      "value": 39,
+      "trend_wk": -1,
+      "label": "Steady but SOFR firming — still no new H.4.1 print (Aug 20 next), RRP buffer stays near-exhausted at $0.26B",
+      "color": "red",
+      "trend_label": "Stable",
+      "decomp": [
+        [
+          "No new H.4.1 print — still Aug 12 vintage, Aug 20 release in 2 days",
+          0
+        ],
+        [
+          "RRP still near-exhausted at $0.26B, unchanged",
+          0
+        ],
+        [
+          "SOFR ticked up to 3.66% (+4bp) — mild funding firming",
+          -1
+        ],
+        [
+          "TGA still elevated at $963.95B pending Aug 20 update",
+          -1
+        ]
+      ]
+    },
+    "credit": {
+      "value": 62,
+      "trend_wk": -9,
+      "label": "Softening — MOVE breaks above 70, ALLY/CACC/COF all down 2.4-2.9%; HY OAS itself still historically tight at 2.67%",
+      "color": "amber",
+      "trend_label": "Deteriorating",
+      "decomp": [
+        [
+          "HY OAS tightened slightly to 2.67% from 2.71%, still historically tight",
+          2
+        ],
+        [
+          "ALLY -2.89%, CACC -2.41%, COF -2.59% — broad-based proxy weakness today",
+          -6
+        ],
+        [
+          "MOVE +8.70% to 75.63, crossing above the 70 line",
+          -5
+        ]
+      ]
+    },
+    "inflation": {
+      "value": 58,
+      "trend_wk": -1,
+      "label": "Watch — oil grinds to $84.28 though -0.26% intraday; breakevens and DFII5 still flat, not confirming an inflation scare",
+      "color": "amber",
+      "trend_label": "Stable",
+      "decomp": [
+        [
+          "Oil at $84.28, continuing its multi-day grind higher though -0.26% today",
+          -2
+        ],
+        [
+          "T10YIE 2.28%, T5YIE 2.25% — both essentially flat, not confirming oil move",
+          0
+        ],
+        [
+          "DFII5 (primary real-rate signal) flat at 2.12%",
+          1
+        ],
+        [
+          "EXPINF2YR flat at 2.47%",
+          0
+        ]
+      ]
+    },
+    "vol": {
+      "value": 51,
+      "trend_wk": -12,
+      "label": "Vol picks up — MOVE breaks above 70 (75.63, +8.70%) for the first time in weeks; VIX extends its uptick to 15.76 (+3.82%); USDJPY still calm below BOJ threshold",
+      "color": "amber",
+      "trend_label": "Deteriorating",
+      "decomp": [
+        [
+          "VIX +3.82% to 15.76, extending its move off cycle lows",
+          -2
+        ],
+        [
+          "MOVE +8.70% to 75.63 — breaks above the 70 line that had held for weeks",
+          -6
+        ],
+        [
+          "USDJPY 159.65, still comfortably below the 162 BOJ threshold",
+          1
+        ]
+      ]
+    }
+  },
+  "regime_confidence": 47,
+  "confidence_meta": {
+    "base_confidence": 55,
+    "adjusted_confidence": 47,
+    "penalty_applied": 8,
+    "reason": "H.4.1 plumbing release Aug 20, within 48h"
+  },
+  "structured_conclusion": {
+    "structural_liquidity": "Tightening",
+    "short_term_conditions": "Deteriorating",
+    "long_term_conditions": "Restrictive",
+    "macro_trend": "Liquidity Shock risk building / Disinflationary Slowdown still marginal best fit",
+    "likely_rotation": "Cash / short-duration Treasuries near-term; Korea (EWY) and memory/DRAM relative leaders; duration and credit-proxy names lag",
+    "risk_level": "Medium",
+    "next_catalyst": "H.4.1 Release Aug 20 (2 days)",
+    "korea_gate": "2/3 — EWY>SMA20 PASS, USDKRW<1530 PASS, KOSPI>8200 FAIL"
+  },
+  "bias": "Financial conditions remain restrictive with modest incremental tightening today — MOVE breaking above 70 and credit-proxy softening (ALLY/CACC/COF) are the notable rate-of-change signals, not a level-based liquidity crisis. Real yields continue drifting higher (real 10Y at 2.456% vs 2.44% yesterday) while breakevens stay anchored, consistent with real-rate/term-premium pressure rather than an inflation scare.",
+  "counterargs": {
+    "thesis": "Rates / Duration",
+    "supporting": [
+      "Breakevens (T5YIE, T10YIE) flat — no inflation confirmation",
+      "HY OAS itself still tight at 2.67%, near cycle lows",
+      "USDJPY still well below 162 BOJ threshold",
+      "Korea gate improved to 2/3 as EWY clears its 20-day average"
+    ],
+    "against": [
+      "MOVE broke above 70 for the first time in weeks (+8.70%)",
+      "Nominal yields rising across the entire curve (2Y through 30Y)",
+      "Credit proxies ALLY/CACC/COF all down 2.4-2.9% in a single session",
+      "SOFR firming (+4bp) with no new H.4.1 print to explain funding conditions",
+      "Oil continuing its multi-day grind higher toward $84-85"
+    ],
+    "read": "Today's move looks like a real-rate/duration story rather than a credit or inflation scare: yields rose broadly while breakevens stayed flat, and the credit-proxy weakness (ALLY/CACC/COF) hasn't yet shown up in HY OAS itself. The MOVE breakout above 70 is the single most notable signal and worth watching into the Aug 20 H.4.1 print and the Aug 27-29 Jackson Hole symposium — if it's the start of a real vol regime shift rather than a one-day pre-data air pocket."
+  },
+  "trade_table": [
+    {
+      "theme": "Semis",
+      "signal": "Neutral",
+      "signal_color": "amber",
+      "conviction": 4,
+      "horizon": "3-10 days",
+      "rationale": "SOXX/SPY ratio at 0.724 vs 0.709 yesterday — relative strength intact, but rising real yields are a headwind for long-duration growth names."
+    },
+    {
+      "theme": "Duration (TLT)",
+      "signal": "Bearish",
+      "signal_color": "red",
+      "conviction": 5,
+      "horizon": "1-5 days",
+      "rationale": "Yields rising across the curve into the Aug 20 H.4.1 print; TLT/SHY ratio slipped to 0.992 from 1.001."
+    },
+    {
+      "theme": "Credit",
+      "signal": "Watch",
+      "signal_color": "amber",
+      "conviction": 5,
+      "horizon": "3-10 days",
+      "rationale": "ALLY/CACC/COF all down 2.4-2.9% in one session while HY OAS stays tight — a proxy/index divergence worth confirming over the next few sessions."
+    },
+    {
+      "theme": "Korea (EWY)",
+      "signal": "Improving",
+      "signal_color": "green",
+      "conviction": 3,
+      "horizon": "5-15 days",
+      "rationale": "Gate now 2/3 — EWY cleared its 20-day SMA (185.10 vs 166.79) and USDKRW stays well below 1,530; KOSPI (6,869.84) remains the lone holdout vs the 8,200 threshold."
+    }
+  ],
+  "catalysts": [
+    {
+      "date": "Aug 20",
+      "days": 2,
+      "event": "H.4.1 Fed Balance Sheet release",
+      "type": "Scheduled",
+      "type_color": "amber",
+      "stars": 4,
+      "note": "Refreshes WALCL/TGA/reserves from the Aug 12 vintage — key test of whether the exhausted RRP buffer is showing up in reserves; today's +4bp SOFR firming sharpens the watch."
+    },
+    {
+      "date": "Aug 27-29",
+      "days": 9,
+      "event": "Jackson Hole Economic Symposium",
+      "type": "Binary",
+      "type_color": "red",
+      "stars": 4,
+      "note": "Fed Chair Kevin Warsh's first Jackson Hole appearance as chair. Topic: 'Financial Innovation: Implications for Payments and Policy.'"
+    },
+    {
+      "date": "Sep 15-16",
+      "days": 28,
+      "event": "FOMC decision + SEP/dot plot",
+      "type": "Binary",
+      "type_color": "red",
+      "stars": 5,
+      "note": "Next scheduled policy meeting."
+    }
+  ],
+  "plumbing": {
+    "net_liquidity_t": 5.796,
+    "walcl_b": 6759.955,
+    "tga_b": 963.95,
+    "tga_delta": "unchanged — still Aug 12 H.4.1 vintage, next release Aug 20 (2 days)",
+    "tga_color": "grey",
+    "rrp_b": 0.255,
+    "rrp_delta": "~unchanged at $0.26B — buffer remains fully exhausted",
+    "rrp_color": "red",
+    "reserves_t": 2.944,
+    "reserves_delta": "unchanged — still Aug 12 H.4.1 vintage",
+    "reserves_color": "grey",
+    "sofr_pct": 3.66,
+    "sofr_delta": "+4bp to 3.66% from 3.62% — modest funding firming",
+    "sofr_color": "amber"
+  },
+  "duration": {
+    "tlt": 81.35,
+    "tlt_delta": "-0.84%",
+    "tlt_color": "red",
+    "shy": 82.0,
+    "shy_delta": "0.00%",
+    "shy_color": "grey",
+    "hyg": 79.61,
+    "hyg_delta": "-0.13%",
+    "hyg_color": "amber",
+    "t10yie": 2.28,
+    "t10yie_delta": "+0.01",
+    "t10yie_color": "grey",
+    "real_yield": 2.456,
+    "tlt_shy_ratio": 0.9921,
+    "move": 75.6302,
+    "move_delta": "+8.70% — breaks above 70",
+    "move_color": "red"
+  },
+  "duration_score": {
+    "score": -3,
+    "classification": "Real-Rate/Vol Firming — Yields and MOVE Both Break Higher",
+    "reason": "Nominal yields extended higher across the whole curve (2Y +0.33%, 10Y +0.21%, 30Y +0.11%) while T10YIE/T5YIE and DFII5 stayed flat, again pointing to a real-rate/term-premium move rather than a fresh inflation scare. The new wrinkle is MOVE's break above 70 (+8.70%) alongside a same-day 2.4-2.9% pullback in ALLY/CACC/COF — the first time this run that rates, vol, and credit proxies have moved together, even though HY OAS itself hasn't confirmed.",
+    "james_framework": {
+      "what_market_IS_saying": "Yields and bond-market vol firming together while breakevens and DFII5 stay flat — still a real-rate/term-premium story, but the vol confirmation is new.",
+      "pain_trade": "Not yet the acute real-rate pain trade flagged in July — DFII5 is flat at 2.12%, not accelerating. Worth watching if MOVE keeps rising.",
+      "watch_signal": "If nominal 2Y starts falling while MOVE stays elevated → transition to a growth-scare/cuts narrative; if DFII5 breaks higher alongside MOVE, that reopens the real-rate pain trade."
+    },
+    "conditions": {
+      "10y_falling": false,
+      "breakevens_stable": true,
+      "two_y_breakeven_collapsing": null,
+      "nominal_2y_sticky": true,
+      "real_2y_rising": true
+    }
+  },
+  "breakevens": {
+    "t5yie": {
+      "value": 2.25,
+      "label": "5Y breakeven inflation",
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "Unchanged vs prior read."
+    },
+    "t10yie": {
+      "value": 2.28,
+      "label": "10Y breakeven inflation",
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "+0.01 vs prior read."
+    },
+    "expinf2yr": {
+      "value": 2.47,
+      "label": "2Y expected inflation",
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "Unchanged vs prior read."
+    },
+    "dfii5": {
+      "value": 2.12,
+      "label": "5Y real yield (primary, market-based TIPS — DFII5)",
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "+0.01 vs prior read; primary real-rate signal per the James framework showing no fresh stress."
+    },
+    "dfii10": {
+      "value": 2.41,
+      "label": "10Y real yield (direct, market-based TIPS — DFII10)",
+      "color": "grey",
+      "trend_label": "Flat",
+      "note": "+0.02 vs prior read."
+    },
+    "real_yield_10y_derived": {
+      "value": 2.456,
+      "calculation": "US10Y (4.736%) - T10YIE (2.28%) = 2.456%",
+      "color": "amber",
+      "trend_label": "Firming",
+      "note": "+1.6bp vs prior read of 2.44%, driven by the nominal yield move, not breakevens."
+    },
+    "real_yield_2y_proxy_experimental": {
+      "value": 1.726,
+      "calculation": "US02Y (4.196%) - EXPINF2YR (2.47%) = 1.726% [modeled, not central]",
+      "color": "grey",
+      "trend_label": "Little changed",
+      "note": "Experimental/modeled proxy only."
+    },
+    "breakeven_curve_signal": "Breakevens and DFII5 both flat while nominal yields firm across the curve — real-rate/term-premium move, not a breakeven-confirmed inflation repricing."
+  },
+  "credit": {
+    "hy_oas": 2.67,
+    "hy_oas_delta": "-0.04pts, tightened slightly, still historically tight",
+    "hy_oas_color": "green",
+    "ally": 43.61,
+    "ally_delta": "-2.89%",
+    "ally_color": "red",
+    "cacc": 573.09,
+    "cacc_delta": "-2.41%",
+    "cacc_color": "red",
+    "cof": 221.45,
+    "cof_delta": "-2.59%",
+    "cof_color": "red"
+  },
+  "curve": {
+    "us03my": 3.805,
+    "us06my": 3.912,
+    "us02y": 4.196,
+    "us05y": 4.392,
+    "us10y": 4.736,
+    "us30y": 5.317,
+    "spread_2s10s": 0.54,
+    "spread_3m10y": 0.931,
+    "real_10y": 2.456,
+    "us_japan_spread_bps": 179.7,
+    "trend_classifications": {
+      "us10y": {
+        "level": "Restrictive",
+        "trend": "Firming",
+        "momentum": "Positive (yield up)",
+        "note": "+0.21%, extending the recent uptrend."
+      },
+      "us30y": {
+        "level": "Very Restrictive",
+        "trend": "Firming",
+        "momentum": "Positive",
+        "note": "+0.11%."
+      },
+      "us02y": {
+        "level": "Elevated",
+        "trend": "Firming",
+        "momentum": "Positive",
+        "note": "+0.33%."
+      },
+      "spread_2s10s": {
+        "level": "Positive",
+        "trend": "Steepening",
+        "momentum": "Positive",
+        "note": "0.540% now vs 0.533% previous read."
+      }
+    }
+  },
+  "fx": {
+    "usdjpy": 159.652,
+    "usdjpy_alert": false,
+    "usdjpy_note": "+0.11%, still comfortably below the 162 BOJ threshold",
+    "usdkrw": 1410.41,
+    "usdkrw_pass": true,
+    "usdkrw_note": "-0.31%, still comfortably below 1,530",
+    "dxy": 99.621,
+    "dxy_delta": "+0.04%",
+    "dxy_color": "grey",
+    "jp10y": 2.939,
+    "us_japan_spread_bps": 179.7,
+    "ni225": 67460.51,
+    "usdcny": 6.7417
+  },
+  "korea_gate": {
+    "status": "closed",
+    "conditions_met": 2,
+    "ewy": 185.1,
+    "ewy_sma20": 166.79,
+    "ewy_pass": true,
+    "usdkrw": 1410.41,
+    "usdkrw_threshold": 1530,
+    "usdkrw_pass": true,
+    "kospi": 6869.84,
+    "kospi_threshold": 8200,
+    "kospi_pass": false
+  },
+  "semis": {
+    "soxx": 559.12,
+    "soxx_delta": "+1.58%",
+    "soxx_color": "green",
+    "qqq": 729.87,
+    "qqq_delta": "-0.16%",
+    "qqq_color": "grey",
+    "spy": 772.67,
+    "spy_delta": "-0.47%",
+    "spy_color": "amber",
+    "soxx_spy_ratio": 0.7237
+  },
+  "chain": [
+    {
+      "ticker": "DRAM",
+      "price": 60.39,
+      "delta": "+5.36%",
+      "color": "green",
+      "note": "Roundhill Memory ETF. CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE remain removed from the watchlist since Jul 12."
+    }
+  ],
+  "crosschecks": {
+    "vix": {
+      "value": 15.76,
+      "delta": "+3.82%",
+      "color": "amber",
+      "note": "Extends yesterday's +5.61% bounce off cycle lows — two straight up days now."
+    },
+    "oil": {
+      "value": 84.28,
+      "delta": "-0.26%",
+      "color": "amber",
+      "note": "Basically flat intraday but up ~1.5% since yesterday's snapshot, continuing the multi-day grind higher; still below the 3%/day single-session alert threshold."
+    },
+    "gold": {
+      "value": 4392.48,
+      "delta": "-0.56%",
+      "color": "grey",
+      "note": "Little changed."
+    },
+    "move": {
+      "value": 75.6302,
+      "delta": "+8.70% — breaks above 70",
+      "color": "red",
+      "note": "First break above the 70 line in weeks; the most notable single-day move in the dataset."
+    }
+  },
+  "sector_rotation": {
+    "current_regime": "Real-rate/vol-led yield backup broadens — MOVE breaks above 70 and credit proxies (ALLY/CACC/COF) soften together for the first time in weeks, while breakevens and DFII5 stay flat and HY OAS itself remains tight",
+    "regime_scores": {
+      "liquidity_expansion": {
+        "score": 32,
+        "match": "RRP still fully exhausted and TGA still elevated cut against this; SOFR's +4bp firming today is a further mild negative."
+      },
+      "disinflationary_slowdown": {
+        "score": 38,
+        "match": "DFII5 and breakevens flat, credit (HY OAS) tight — still a partial fit, but yields firming further and MOVE's breakout argue against it more than yesterday."
+      },
+      "recession": {
+        "score": 12,
+        "match": "No credit spread widening (HY OAS tightened to 2.67%) or growth deterioration signals."
+      },
+      "inflation_reacceleration": {
+        "score": 37,
+        "match": "Oil's continued grind higher (~1.5% since yesterday) is the building risk, but breakevens and DFII5 both flat — not yet confirmed."
+      },
+      "liquidity_shock": {
+        "score": 32,
+        "match": "MOVE's break above 70 plus the ALLY/CACC/COF pullback are new liquidity-shock-style signals, though DXY is flat and HY OAS itself hasn't widened."
+      }
+    },
+    "best_fit": "disinflationary_slowdown",
+    "second_fit": "inflation_reacceleration",
+    "confidence": "Low — scores clustered close together (38 vs 37 vs 32/32), no regime has a clear lead this run",
+    "actionable_output": {
+      "leaders": "Korea (EWY, SK Hynix +1.03%) and DRAM (+5.36%) lead on the day; duration (TLT) and credit-proxy names (ALLY/CACC/COF) lag as yields and MOVE both move against them.",
+      "watch": "MOVE's break above 70 and the ALLY/CACC/COF pullback are the two new items to confirm (or fade) into Thursday's H.4.1 print (Aug 20) and Jackson Hole (Aug 27-29)."
+    }
+  },
+  "changed_today": [
+    {
+      "label": "MOVE",
+      "value": "75.63",
+      "delta": "+8.70% — breaks above 70 for first time in weeks",
+      "color": "red"
+    },
+    {
+      "label": "ALLY / CACC / COF",
+      "value": "$43.61 / $573.09 / $221.45",
+      "delta": "-2.89% / -2.41% / -2.59% — broad credit-proxy weakness",
+      "color": "red"
+    },
+    {
+      "label": "US10Y / US30Y",
+      "value": "4.736% / 5.317%",
+      "delta": "+0.21% / +0.11% — long end extends its creep higher",
+      "color": "amber"
+    },
+    {
+      "label": "EWY",
+      "value": "$185.10",
+      "delta": "+2.98% — clears its 20-day SMA, Korea gate condition 1 now passing",
+      "color": "green"
+    },
+    {
+      "label": "VIX",
+      "value": "15.76",
+      "delta": "+3.82% — second straight up day off cycle lows",
+      "color": "amber"
+    },
+    {
+      "label": "Oil (CL1!)",
+      "value": "$84.28",
+      "delta": "-0.26% intraday but +1.5% since yesterday's snapshot",
+      "color": "amber"
+    }
+  ],
+  "section_horizons": {
+    "plumbing": "structural",
+    "curve": "structural",
+    "fx": "structural",
+    "credit": "structural",
+    "duration": "tactical",
+    "crosschecks": "tactical",
+    "semis": "tactical",
+    "korea_gate": "structural"
+  }
+}
