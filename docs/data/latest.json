@@ -1,28 +1,28 @@
 {
   "meta": {
-    "pulled_at": "2026-08-27T13:06:36Z",
-    "pulled_at_cet": "Aug 27, 2026 15:06 CEST",
+    "pulled_at": "2026-08-27T15:21:06Z",
+    "pulled_at_cet": "Aug 27, 2026 17:21 CEST",
     "source": "TradingView watchlist + FRED live scrape (Chrome extension)"
   },
   "scores": {
     "liquidity": {
       "value": 45,
-      "trend_wk": 1,
+      "trend_wk": 0,
       "label": "Draining Buffer",
       "color": "amber",
       "trend_label": "Stable",
       "decomp": [
         [
-          "RRP still near-depleted ($0.70B)",
-          -6
-        ],
-        [
-          "TGA/WALCL/reserves unchanged, H.4.1 print due today (Aug 27), not yet posted",
+          "FRED plumbing entirely unchanged vs this morning's pull",
           0
         ],
         [
-          "SOFR -2bp to 3.64%",
-          3
+          "H.4.1 still not posted as of 17:21 CEST",
+          0
+        ],
+        [
+          "RRP and SOFR unchanged",
+          0
         ],
         [
           "Net liquidity flat at $5.791T",
@@ -31,72 +31,68 @@
       ]
     },
     "credit": {
-      "value": 61,
-      "trend_wk": -3,
-      "label": "Softening",
-      "color": "amber",
-      "trend_label": "Deteriorating",
-      "decomp": [
-        [
-          "HY OAS ~flat, +1bp to 2.70%",
-          -1
-        ],
-        [
-          "CACC -1.76% today, clear underperformer",
-          -4
-        ],
-        [
-          "ALLY -0.14%, COF +0.45% (mixed)",
-          0
-        ],
-        [
-          "HYG -0.03%, roughly flat",
-          -1
-        ]
-      ]
-    },
-    "inflation": {
-      "value": 56,
-      "trend_wk": -5,
-      "label": "At risk (oil reversal)",
-      "color": "amber",
-      "trend_label": "Deteriorating",
-      "decomp": [
-        [
-          "Oil +0.64% today, now $82.76 vs $80.34 yesterday's pull (+3.0% cumulative) \u2014 reversing Tuesday's pullback",
-          -6
-        ],
-        [
-          "T5YIE/T10YIE flat (2.31%/2.32%)",
-          0
-        ],
-        [
-          "EXPINF2YR +0.03pp to 2.47%",
-          -1
-        ],
-        [
-          "DFII5 -5bp to 2.04% \u2014 real yield easing",
-          2
-        ]
-      ]
-    },
-    "vol": {
-      "value": 69,
-      "trend_wk": 4,
-      "label": "Compressing",
+      "value": 66,
+      "trend_wk": 5,
+      "label": "Firming",
       "color": "green",
       "trend_label": "Improving",
       "decomp": [
         [
-          "MOVE -3.45% to 69.44, continuing to ease",
+          "CACC +1.72% today, reversing this morning's -1.76% softness",
           5
         ],
         [
-          "VIX -1.18% to 15.04, reversing yesterday's uptick",
-          3
+          "ALLY +0.89% today",
+          2
         ],
         [
-          "USDJPY 159.39, stable below 162 BOJ line",
+          "COF +0.23%, HYG +0.03%",
+          1
+        ],
+        [
+          "HY OAS steady at 2.70%",
+          0
+        ]
+      ]
+    },
+    "inflation": {
+      "value": 58,
+      "trend_wk": 2,
+      "label": "Steadying (oil cooling)",
+      "color": "amber",
+      "trend_label": "Improving",
+      "decomp": [
+        [
+          "Oil +0.13% today, cooling from $82.76 this morning to $82.34",
+          2
+        ],
+        [
+          "Breakevens (T5YIE/T10YIE) unchanged",
+          0
+        ],
+        [
+          "DFII5 unchanged at 2.04%",
+          0
+        ]
+      ]
+    },
+    "vol": {
+      "value": 75,
+      "trend_wk": 6,
+      "label": "Sharply Compressing",
+      "color": "green",
+      "trend_label": "Improving",
+      "decomp": [
+        [
+          "VIX -4.93% to 14.47, sharp compression alongside NVDA-led rally",
+          5
+        ],
+        [
+          "MOVE flat at 69.44, unchanged vs this morning",
+          0
+        ],
+        [
+          "USDJPY 159.32, stable below 162 BOJ line",
           1
         ]
       ]
@@ -107,53 +103,53 @@
     "base_confidence": 55,
     "adjusted_confidence": 47,
     "penalty_applied": 8,
-    "reason": "Jackson Hole Economic Symposium \u2014 Fed Chair Kevin Warsh's first appearance as chair \u2014 plus the delayed H.4.1 balance-sheet release both land today (Aug 27), within the 48h catalyst window."
+    "reason": "Fed Chair Kevin Warsh's Jackson Hole keynote (tomorrow, Fri Aug 28, ~8-10am ET \u2014 his first as chair) plus the still-overdue H.4.1 balance-sheet release both remain within the 48h catalyst window."
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
-    "short_term_conditions": "Stable",
+    "short_term_conditions": "Improving",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "Mixed / Jackson Hole Day 1 \u2014 Awaiting Warsh",
-    "likely_rotation": "No clean signal; vol compression (MOVE+VIX both down) argues for risk-on optionality, but oil's reversal and CACC weakness caution against chasing credit/cyclicals until Warsh speaks",
-    "risk_level": "Medium-High",
-    "next_catalyst": "Jackson Hole Day 1 (Warsh's debut speech) \u2014 TODAY",
+    "macro_trend": "Liquidity Expansion (NVDA Earnings-Led Risk-On)",
+    "likely_rotation": "Semis/AI leadership decisively reasserting \u2014 NVDA +7.6% pulling SOXX/QQQ higher; credit and vol both confirming the risk-on move, though rates haven't followed",
+    "risk_level": "Medium",
+    "next_catalyst": "Warsh's Jackson Hole keynote \u2014 tomorrow, Fri Aug 28 (~8-10am ET)",
     "korea_gate": "2/3 \u2014 EWY>SMA20 PASS, USDKRW<1530 PASS, KOSPI>8200 FAIL"
   },
-  "bias": "Conditions are little changed structurally (FRED plumbing still on the Aug 19 vintage, H.4.1 due later today) but the tactical picture flipped mildly negative: oil reversed higher after Tuesday's sharp pullback, credit softened at the margin (CACC -1.76%), while vol kept compressing (MOVE and VIX both lower) \u2014 a market that looks calm on the surface but is quietly repricing ahead of Warsh's Jackson Hole debut.",
+  "bias": "NVDA's blockbuster Q2 print (data center revenue +116.6% YoY to $89.02B, Blackwell Ultra ramp) is driving a broad risk-on session \u2014 SOXX, QQQ and SPY all firmly higher, credit proxies (CACC, ALLY) reversing higher, and vol compressing sharply (VIX -4.93%). Structural liquidity metrics are unchanged (H.4.1 still pending) and yields haven't budged, so this reads as an equity-specific, earnings-driven rally layered on an otherwise flat macro backdrop \u2014 not a liquidity-driven regime shift.",
   "counterargs": {
-    "thesis": "Calm surface, mixed undertone \u2014 no clean directional signal into Warsh's debut",
+    "thesis": "NVDA-led risk-on rally \u2014 genuine earnings catalyst, not a liquidity or Fed signal",
     "supporting": [
-      "MOVE -3.45% and VIX -1.18% \u2014 both vol gauges compressing, not spiking, into a major Fed event",
-      "USDKRW at 1,381.88, comfortably below the 1,530 gate threshold",
-      "DFII5 (primary real-rate signal) eased 5bp to 2.04%",
-      "Korea gate holding steady at 2/3",
-      "SOXX/SPY ratio ticked up slightly; chip names (SK Hynix +2.49%, Samsung +1.72%) firm"
+      "NVDA +7.57% on blockbuster Q2 earnings (data center rev +116.6% YoY, Blackwell Ultra ramp)",
+      "SOXX +1.35%, QQQ +1.11%, SPY +0.64% \u2014 broad-based follow-through, not NVDA-isolated",
+      "VIX -4.93%, MOVE flat and low \u2014 vol compressing sharply, not spiking",
+      "CACC +1.72% and ALLY +0.89% reversing their earlier softness \u2014 credit confirming the risk-on tone",
+      "Korea gate holding steady at 2/3, EWY extending its gain (+0.88% on the day)"
     ],
     "against": [
-      "Oil reversed higher, now $82.76 vs $80.34 yesterday \u2014 undoing Tuesday's disinflation-supportive pullback",
-      "CACC -1.76%, HY OAS ticked ~1bp wider \u2014 first credit softening in several sessions",
-      "Nominal yields drifted up across the curve (2Y +0.31%, 5Y +0.46%, 10Y +0.24%, 30Y +0.25%)",
-      "Jackson Hole Day 1 (Warsh's debut) and the delayed H.4.1 release both land today \u2014 genuine binary risk still ahead, not behind",
-      "KOSPI still ~1,288 points below the 8,200 gate threshold"
+      "FRED plumbing (WALCL/TGA/WRESBAL) still hasn't updated \u2014 H.4.1 remains overdue as of this pull",
+      "Warsh's actual Jackson Hole keynote is still ahead (tomorrow, Fri Aug 28) \u2014 the real event-risk catalyst hasn't happened yet",
+      "Nominal yields are still up on the day across the curve (2Y +0.21%, 10Y +0.15%) \u2014 no yield relief accompanying the equity rally",
+      "This is a single-name-earnings-driven move; broad macro conditions (liquidity, credit spreads structurally, real yields) are essentially unchanged from this morning",
+      "KOSPI still ~1,288 points below the 8,200 gate threshold, and Korea/Japan session data is now stale (markets closed)"
     ],
-    "read": "Today's data is quiet on its face \u2014 small moves across most series \u2014 but the underlying mix (oil reversing, credit softening slightly, yields drifting up, even as vol compresses) doesn't confirm any clean regime. The likeliest read is a market holding its breath: vol compression into a binary Fed event usually reflects complacency or genuine confidence, not resolved uncertainty. Warsh's actual remarks (expected over the next 1-3 days) plus tonight's delayed H.4.1 print are what will move this from 'mixed, low-conviction' to an actual signal."
+    "read": "This looks like a clean, idiosyncratic catalyst \u2014 Nvidia's earnings \u2014 rather than a macro regime shift. The follow-through into SOXX/QQQ/SPY and the vol compression are real and worth respecting, but the structural liquidity picture (Fed balance sheet, TGA, reserves) hasn't moved at all, and nominal yields haven't come down to confirm a genuine 'easing' narrative. Treat this as an equity-specific tailwind that coexists with, rather than resolves, the macro uncertainty still sitting ahead of Warsh's keynote tomorrow."
   },
   "trade_table": [
     {
       "theme": "Semis",
-      "signal": "Neutral-to-Bullish",
-      "signal_color": "amber",
-      "conviction": 5,
-      "horizon": "3-10 days",
-      "rationale": "SOXX +0.26%, chip proxies (SK Hynix +2.49%, Samsung +1.72%, DRAM +0.27%) firm while NVDA -1.59% caps enthusiasm; SOXX/SPY ratio 0.673, marginally higher than yesterday."
+      "signal": "Bullish",
+      "signal_color": "green",
+      "conviction": 7,
+      "horizon": "1-2 wks",
+      "rationale": "NVDA +7.57% on blockbuster Q2 earnings (data center rev +116.6% YoY, Blackwell Ultra ramp) lifting SOXX +1.35% and QQQ +1.11%; SOXX/SPY ratio jumped to 0.678 from 0.673."
     },
     {
       "theme": "Long Duration (TLT)",
       "signal": "Neutral",
-      "signal_color": "amber",
-      "conviction": 4,
+      "signal_color": "grey",
+      "conviction": 3,
       "horizon": "1-3 wks",
-      "rationale": "TLT -0.20% as nominal yields drifted up across the curve into Jackson Hole; DFII5 easing offers some offsetting support but nominal direction is the dominant near-term signal."
+      "rationale": "TLT roughly flat (-0.05%) over the last 2 hours; yields still up on the day despite the equity rally \u2014 no duration tailwind from today's risk-on move."
     },
     {
       "theme": "Korea (EWY/KOSPI)",
@@ -161,34 +157,34 @@
       "signal_color": "amber",
       "conviction": 5,
       "horizon": "1-4 wks",
-      "rationale": "EWY comfortably above SMA20 (179.18 vs 171.63) and USDKRW well below 1,530, but KOSPI still ~1,288pts below the 8,200 gate level despite today's +1.53% pop."
+      "rationale": "EWY +0.88% to $180.76, comfortably above its $172.61 SMA20; KOSPI and Korea stocks now stale (session closed) at 6,912.38, still ~1,288pts below the 8,200 gate level."
     },
     {
       "theme": "High Yield Credit",
-      "signal": "Neutral (softening)",
-      "signal_color": "amber",
-      "conviction": 5,
+      "signal": "Bullish",
+      "signal_color": "green",
+      "conviction": 6,
       "horizon": "structural",
-      "rationale": "HY OAS ticked ~1bp wider, CACC -1.76% the clear underperformer; ALLY/COF mixed. First soft credit print in several sessions \u2014 watch for follow-through."
+      "rationale": "CACC +1.72% and ALLY +0.89% both reversing this morning's softness; HY OAS steady at 2.70%."
     },
     {
-      "theme": "Event Risk \u2014 Jackson Hole",
+      "theme": "Event Risk \u2014 Warsh's Jackson Hole Keynote",
       "signal": "Reduce leverage into event",
       "signal_color": "red",
       "conviction": 3,
-      "horizon": "1-3 days",
-      "rationale": "Fed Chair Kevin Warsh's first appearance as chair, live today; H.4.1 balance-sheet release also due, still unposted as of this pull."
+      "horizon": "~18 hrs",
+      "rationale": "Warsh's actual keynote lands tomorrow morning (Fri Aug 28, ~8-10am ET) \u2014 the real binary catalyst is still ahead, not behind, despite today's rally."
     }
   ],
   "catalysts": [
     {
-      "date": "Aug 27-29",
-      "days": 0,
-      "event": "Jackson Hole Economic Symposium \u2014 Fed Chair Kevin Warsh's first appearance as chair (Day 1 TODAY)",
+      "date": "Aug 28",
+      "days": 1,
+      "event": "Fed Chair Kevin Warsh's Jackson Hole keynote \u2014 first as chair",
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Topic: 'Financial Innovation: Implications for Payments and Policy.' Live today \u2014 confidence penalty applied."
+      "note": "Scheduled ~8-10am ET Friday. Topic: 'Financial Innovation: Implications for Payments and Policy.' The actual binary event \u2014 today (Aug 27) was symposium Day 1 only."
     },
     {
       "date": "Aug 27",
@@ -197,7 +193,7 @@
       "type": "Data",
       "type_color": "amber",
       "stars": 4,
-      "note": "Due today; still showing Aug 19 vintage as of this pull \u2014 first fresh print in over a month."
+      "note": "Still not posted as of this pull (17:21 CEST) \u2014 still Aug 19 vintage."
     },
     {
       "date": "Sep 11",
@@ -206,7 +202,7 @@
       "type": "Data",
       "type_color": "amber",
       "stars": 4,
-      "note": "Key confirmation for the disinflation-vs-reacceleration debate, especially after today's oil reversal."
+      "note": "Key confirmation for the disinflation-vs-reacceleration debate."
     },
     {
       "date": "Sep 15-16",
@@ -222,45 +218,45 @@
     "net_liquidity_t": 5.791,
     "walcl_b": 6745.699,
     "tga_b": 953.612,
-    "tga_delta": "Unchanged \u2014 still Aug 19 vintage; H.4.1 due today, not yet posted",
+    "tga_delta": "Unchanged \u2014 still Aug 19 vintage; H.4.1 still not posted as of 17:21 CEST",
     "tga_color": "grey",
     "rrp_b": 0.702,
-    "rrp_delta": "Ticked up from $0.405B yesterday, still near-depleted",
+    "rrp_delta": "Unchanged vs this morning's pull ($0.702B)",
     "rrp_color": "grey",
     "reserves_t": 2.935287,
     "reserves_delta": "Unchanged, still below $3T",
     "reserves_color": "red",
     "sofr_pct": 3.64,
-    "sofr_delta": "-2bp vs yesterday (3.66%)",
-    "sofr_color": "green"
+    "sofr_delta": "Unchanged vs this morning (3.64%)",
+    "sofr_color": "grey"
   },
   "duration": {
-    "tlt": 83.3,
-    "tlt_delta": "-0.20%",
-    "tlt_color": "amber",
-    "shy": 82.05,
-    "shy_delta": "-0.04%",
+    "tlt": 83.26,
+    "tlt_delta": "-0.05%",
+    "tlt_color": "grey",
+    "shy": 82.06,
+    "shy_delta": "+0.01%",
     "shy_color": "grey",
-    "hyg": 79.9,
-    "hyg_delta": "-0.03%",
+    "hyg": 79.92,
+    "hyg_delta": "+0.03%",
     "hyg_color": "grey",
     "t10yie": 2.32,
-    "t10yie_delta": "Flat vs yesterday",
+    "t10yie_delta": "Flat",
     "t10yie_color": "grey",
-    "real_yield": 2.34,
+    "real_yield": 2.336,
     "tlt_shy_ratio": 1.015,
     "move": 69.4375,
-    "move_delta": "-3.45%",
-    "move_color": "green"
+    "move_delta": "Flat vs this morning",
+    "move_color": "grey"
   },
   "duration_score": {
     "score": 0,
-    "classification": "Neutral / Pre-Event Positioning (Jackson Hole Day 1)",
-    "reason": "Nominal yields drifted modestly higher across the entire curve today (2Y +0.31%, 10Y +0.24%, 30Y +0.25%) while breakevens held flat and the primary real-rate signal (DFII5) actually eased 5bp to 2.04%. That combination \u2014 nominal up, real down \u2014 is unusual and low-conviction; most consistent with light pre-event positioning ahead of Warsh's Jackson Hole debut rather than a genuine reflation or real-rate-pressure move.",
+    "classification": "Neutral / Equity Rally Not Confirmed by Rates",
+    "reason": "Yields are essentially flat over the last two hours even as equities rallied hard on NVDA's earnings \u2014 a classic 'good news for growth, no relief for duration' pattern. Breakevens held flat and the primary real-rate signal (DFII5) is unchanged at 2.04%. This reads as an equity-specific catalyst that hasn't yet fed through to the rates complex.",
     "james_framework": {
-      "what_market_IS_saying": "Modest nominal yield firming across the curve, but the market-based real-rate signal (DFII5) is easing, not rising \u2014 this is not the acute real-rate-pressure pain trade seen earlier in the year.",
-      "pain_trade": "Not currently active. EXPINF2YR (2Y breakeven proxy) is flat at 2.47%, not collapsing, so the 'nominal-2Y-sticky + breakeven-collapsing' setup isn't present.",
-      "watch_signal": "Watch for EXPINF2YR to start falling while nominal 2Y stays sticky \u2014 that combination would flip this into the real-rate-pressure trade. Also watch Warsh's tone: a hawkish debut could push nominal yields further while breakevens stay anchored, reviving the pain trade."
+      "what_market_IS_saying": "Rates are holding steady while equities rally on an idiosyncratic earnings catalyst \u2014 the bond market isn't yet reacting to NVDA's print.",
+      "pain_trade": "Not currently active. EXPINF2YR flat at 2.47%, nominal 2Y roughly steady \u2014 no acute real-rate pressure.",
+      "watch_signal": "Watch whether equity strength eventually pulls yields up (growth-optimism repricing) or whether Warsh's keynote tomorrow resets the rates picture independently."
     },
     "conditions": {
       "10y_falling": false,
@@ -276,121 +272,121 @@
       "label": "5Y breakeven inflation",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Flat vs yesterday's 2.31%."
+      "note": "Unchanged vs this morning."
     },
     "t10yie": {
       "value": 2.32,
       "label": "10Y breakeven inflation",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Flat vs yesterday's 2.32%."
+      "note": "Unchanged vs this morning."
     },
     "real_yield_5y_primary": {
       "value": 2.04,
       "ticker": "DFII5",
       "label": "5Y TIPS real yield (primary, market-based)",
-      "color": "green",
-      "trend_label": "Easing",
-      "note": "Down 5bp vs yesterday's 2.09%."
+      "color": "grey",
+      "trend_label": "Stable",
+      "note": "Unchanged vs this morning's 2.04%."
     },
     "real_yield_10y_primary": {
       "value": 2.32,
       "ticker": "DFII10",
       "label": "10Y TIPS real yield (confirmation)",
-      "color": "green",
-      "trend_label": "Easing",
-      "note": "Down 6bp vs yesterday's 2.38%."
+      "color": "grey",
+      "trend_label": "Stable",
+      "note": "Unchanged vs this morning's 2.32%."
     },
     "real_yield_10y_derived": {
-      "value": 2.34,
-      "calculation": "US10Y (4.660%) - T10YIE (2.32%) = 2.340%",
+      "value": 2.336,
+      "calculation": "US10Y (4.656%) - T10YIE (2.32%) = 2.336%",
       "color": "amber",
-      "trend_label": "Firming slightly",
+      "trend_label": "Roughly flat",
       "note": "Secondary confirmation only."
     },
     "real_yield_2y_experimental": {
-      "value": 1.752,
-      "calculation": "US02Y (4.222%) - EXPINF2YR (2.47%) = 1.752%",
+      "value": 1.748,
+      "calculation": "US02Y (4.218%) - EXPINF2YR (2.47%) = 1.748%",
       "color": "grey",
       "trend_label": "Roughly flat",
       "note": "Experimental modeled proxy; T2YIE remains deprecated."
     },
-    "breakeven_curve_signal": "Breakevens held flat today (2.31%/2.32%) even as nominal yields firmed and oil reversed higher \u2014 inflation expectations aren't yet confirming the oil move, but it's early."
+    "breakeven_curve_signal": "Breakevens are completely unchanged over the past two hours even as equities rallied sharply on NVDA's earnings \u2014 inflation expectations aren't reacting to the AI-capex optimism, at least not yet."
   },
   "credit": {
     "hy_oas": 2.7,
-    "hy_oas_delta": "\u2191 ~1bp wider vs 2.69% yesterday",
-    "hy_oas_color": "amber",
-    "ally": 42.54,
-    "ally_delta": "-0.14% today",
-    "ally_color": "amber",
-    "cacc": 593.64,
-    "cacc_delta": "-1.76% today",
-    "cacc_color": "red",
-    "cof": 217.21,
-    "cof_delta": "+0.45% today",
+    "hy_oas_delta": "Flat vs this morning",
+    "hy_oas_color": "grey",
+    "ally": 42.92,
+    "ally_delta": "+0.89% today",
+    "ally_color": "green",
+    "cacc": 603.85,
+    "cacc_delta": "+1.72% today",
+    "cacc_color": "green",
+    "cof": 217.7,
+    "cof_delta": "+0.23% today",
     "cof_color": "green"
   },
   "curve": {
-    "us03my": 3.779,
-    "us06my": 3.909,
-    "us02y": 4.222,
-    "us05y": 4.38,
-    "us10y": 4.66,
-    "us30y": 5.185,
+    "us03my": 3.774,
+    "us06my": 3.904,
+    "us02y": 4.218,
+    "us05y": 4.379,
+    "us10y": 4.656,
+    "us30y": 5.181,
     "spread_2s10s": 0.438,
-    "spread_3m10y": 0.881,
-    "real_10y": 2.34,
-    "us_japan_spread_bps": 176.9,
+    "spread_3m10y": 0.882,
+    "real_10y": 2.336,
+    "us_japan_spread_bps": 176.5,
     "trend_classifications": {
       "us10y": {
         "level": "Restrictive",
-        "trend": "Firming",
-        "momentum": "Mildly negative for duration",
-        "note": "+0.24% today, part of a broad-based curve firming ahead of Jackson Hole."
+        "trend": "Steady",
+        "momentum": "Neutral",
+        "note": "Essentially flat over the last 2 hours despite the equity rally; still up modestly on the day."
       },
       "us30y": {
         "level": "Very Restrictive",
-        "trend": "Firming",
-        "momentum": "Mildly negative for duration",
-        "note": "+0.25% today."
+        "trend": "Steady",
+        "momentum": "Neutral",
+        "note": "Flat over the last 2 hours."
       },
       "us02y": {
         "level": "Elevated",
-        "trend": "Firming",
-        "momentum": "Slightly negative",
-        "note": "+0.31% today, front end leading the move (same pattern as yesterday)."
+        "trend": "Steady",
+        "momentum": "Neutral",
+        "note": "Flat over the last 2 hours; front end holding."
       },
       "spread_2s10s": {
         "level": "Positive",
         "trend": "Steady",
         "momentum": "Neutral",
-        "note": "0.438%, unchanged vs yesterday \u2014 curve shape held even as the whole curve shifted up in parallel."
+        "note": "0.438%, unchanged all day \u2014 remarkably stable curve shape through a large equity move."
       }
     }
   },
   "fx": {
-    "usdjpy": 159.392,
+    "usdjpy": 159.318,
     "usdjpy_alert": false,
-    "usdjpy_note": "159.39, +0.05% today, comfortably below the 162 BOJ threshold.",
-    "usdkrw": 1381.88,
+    "usdjpy_note": "159.32, flat over the last 2 hours, comfortably below the 162 BOJ threshold.",
+    "usdkrw": 1381.8,
     "usdkrw_pass": true,
-    "usdkrw_note": "-0.24% today, down further from 1,385.00 yesterday, well below the 1,530 gate level.",
-    "dxy": 99.188,
-    "dxy_delta": "+0.06% today",
+    "usdkrw_note": "-0.25% today, essentially flat vs this morning's 1,381.88, well below the 1,530 gate level.",
+    "dxy": 99.137,
+    "dxy_delta": "Flat over the last 2 hours",
     "dxy_color": "grey",
     "jp10y": 2.891,
-    "us_japan_spread_bps": 176.9,
+    "us_japan_spread_bps": 176.5,
     "ni225": 66131.76,
-    "usdcny": 6.7194
+    "usdcny": 6.7193
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 2,
-    "ewy": 179.18,
-    "ewy_sma20": 171.63,
+    "ewy": 180.76,
+    "ewy_sma20": 172.61,
     "ewy_pass": true,
-    "usdkrw": 1381.88,
+    "usdkrw": 1381.8,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": true,
     "kospi": 6912.38,
@@ -398,97 +394,97 @@
     "kospi_pass": false
   },
   "semis": {
-    "soxx": 515.4,
-    "soxx_delta": "+0.26%",
+    "soxx": 522.37,
+    "soxx_delta": "+1.35%",
     "soxx_color": "green",
-    "qqq": 711.37,
-    "qqq_delta": "+0.09%",
-    "qqq_color": "grey",
-    "spy": 766.08,
-    "spy_delta": "+0.02%",
-    "spy_color": "grey",
-    "soxx_spy_ratio": 0.673
+    "qqq": 719.29,
+    "qqq_delta": "+1.11%",
+    "qqq_color": "green",
+    "spy": 771.0,
+    "spy_delta": "+0.64%",
+    "spy_color": "green",
+    "soxx_spy_ratio": 0.678
   },
   "chain": [],
-  "chain_note": "The 9-name enabling-layer thesis chain (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remains absent from the 'Liquidity Monitor - Jae' TradingView watchlist (37 symbols today, incl. NVDA). DRAM is still tracked (+0.27% today); re-add the other 9 tickers to resume full chain tracking.",
+  "chain_note": "The 9-name enabling-layer thesis chain (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remains absent from the 'Liquidity Monitor - Jae' TradingView watchlist (37 symbols today, incl. NVDA). DRAM is still tracked (-0.42% today, cooling slightly); re-add the other 9 tickers to resume full chain tracking.",
   "crosschecks": {
     "vix": {
-      "value": 15.04,
-      "delta": "-1.18% today, down from 15.71 yesterday's pull",
+      "value": 14.47,
+      "delta": "-4.93% today, down sharply from 15.04 this morning",
       "color": "green",
-      "note": "Reversing yesterday's pre-event hedging tick-up."
+      "note": "Sharp compression alongside the NVDA-led equity rally."
     },
     "oil": {
-      "value": 82.76,
-      "delta": "+0.64% today, but up from $80.34 yesterday's pull (+3.0% cumulative) \u2014 reversing Tuesday's sharp pullback",
-      "color": "amber",
-      "note": "Not yet a confirmed reflation signal, but worth watching given today's Jackson Hole/H.4.1 catalyst window."
+      "value": 82.34,
+      "delta": "+0.13% today, cooling slightly from $82.76 this morning",
+      "color": "grey",
+      "note": "Little changed, no longer the day's dominant signal."
     },
     "gold": {
-      "value": 4587.84,
-      "delta": "-0.21% today",
+      "value": 4594.93,
+      "delta": "-0.06% today",
       "color": "grey",
       "note": "n/a"
     },
     "move": {
       "value": 69.4375,
-      "delta": "-3.45% today, down from 71.92 yesterday's pull",
-      "color": "green",
-      "note": "Bond vol continuing to compress, now below 70."
+      "delta": "Flat vs this morning",
+      "color": "grey",
+      "note": "Unchanged; bond vol steady at a compressed level."
     }
   },
   "sector_rotation": {
-    "current_regime": "Mixed / Jackson Hole Day 1 \u2014 Awaiting Warsh",
+    "current_regime": "Liquidity Expansion (NVDA Earnings-Led Risk-On)",
     "regime_scores": {
-      "liquidity_expansion": 38,
-      "disinflationary_slowdown": 28,
-      "recession": 10,
-      "inflation_reacceleration": 42,
-      "liquidity_shock": 22
+      "liquidity_expansion": 52,
+      "disinflationary_slowdown": 30,
+      "recession": 8,
+      "inflation_reacceleration": 32,
+      "liquidity_shock": 15
     },
-    "best_fit": "inflation_reacceleration",
-    "second_fit": "liquidity_expansion",
-    "confidence": "Low",
+    "best_fit": "liquidity_expansion",
+    "second_fit": "inflation_reacceleration",
+    "confidence": "Low-Medium",
     "actionable_output": {
-      "leaders_if_confirmed": "Energy/value/financials if inflation-reacceleration confirms (oil's reversal is the key tell); semis/cyclicals/small caps if liquidity-expansion confirms instead (DFII5 easing supports this read too)",
-      "current_tactical_leaders": "Korea chip names (SK Hynix +2.49%, Samsung +1.72%) and KOSPI (+1.53%) show the cleanest strength today; credit is the weak spot (CACC -1.76%); broad market (SPY, QQQ) essentially flat awaiting Jackson Hole."
+      "leaders_if_confirmed": "Semis and broad growth/cyclicals \u2014 SOXX, QQQ leading today; would need credit and real rates to confirm over subsequent sessions before treating this as a genuine regime shift rather than a single-name catalyst",
+      "current_tactical_leaders": "NVDA (+7.57%) and the broader semis complex (SOXX +1.35%) are the unambiguous leaders today; CACC/ALLY confirming from the credit side; Korea (EWY) also firm (+0.88%)."
     }
   },
   "changed_today": [
     {
-      "label": "Oil (CL1!)",
-      "value": "$82.76",
-      "delta": "\u2191 +0.64% today, +3.0% vs yesterday's pull \u2014 reversing Tuesday's sharp decline",
-      "color": "amber"
+      "label": "NVDA",
+      "value": "$225.54",
+      "delta": "\u2191 +7.57% \u2014 blockbuster Q2 earnings, data center revenue +116.6% YoY to $89.02B (Blackwell Ultra ramp)",
+      "color": "green"
     },
     {
-      "label": "CACC",
-      "value": "$593.64",
-      "delta": "\u2193 -1.76% \u2014 first notable credit-proxy weakness in several sessions",
-      "color": "red"
-    },
-    {
-      "label": "MOVE",
-      "value": "69.44",
-      "delta": "\u2193 -3.45% \u2014 bond vol continuing to compress, now below 70",
+      "label": "SOXX",
+      "value": "$522.37",
+      "delta": "\u2191 +1.35% \u2014 NVDA earnings lifting the broader semis complex",
       "color": "green"
     },
     {
       "label": "VIX",
-      "value": "15.04",
-      "delta": "\u2193 -1.18% \u2014 reversing yesterday's hedging tick-up",
+      "value": "14.47",
+      "delta": "\u2193 -4.93% \u2014 vol compressing sharply alongside the equity rally",
       "color": "green"
     },
     {
-      "label": "KOSPI",
-      "value": "6,912.38",
-      "delta": "\u2191 +1.53% \u2014 still ~1,288pts below the 8,200 gate threshold",
-      "color": "amber"
+      "label": "CACC",
+      "value": "$603.85",
+      "delta": "\u2191 +1.72% \u2014 reversing this morning's softness",
+      "color": "green"
     },
     {
-      "label": "DFII5 (primary real yield)",
-      "value": "2.04%",
-      "delta": "\u2193 -5bp vs yesterday's 2.09%",
+      "label": "QQQ",
+      "value": "$719.29",
+      "delta": "\u2191 +1.11%",
+      "color": "green"
+    },
+    {
+      "label": "EWY",
+      "value": "$180.76",
+      "delta": "\u2191 +0.88% \u2014 extending its gain, still above SMA20",
       "color": "green"
     }
   ],
