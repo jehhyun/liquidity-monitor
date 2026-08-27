@@ -1,8 +1,8 @@
 {
   "meta": {
-    "pulled_at": "2026-08-27T17:03:32Z",
-    "pulled_at_cet": "Aug 27, 2026 19:03 CEST",
-    "source": "TradingView watchlist + FRED live scrape (Chrome extension); Treasury Auction data reused from 18:04 CEST pull (not re-scraped this run)"
+    "pulled_at": "2026-08-27T17:12:34Z",
+    "pulled_at_cet": "Aug 27, 2026 19:12 CEST",
+    "source": "No new data scraped this run (explicit user instruction) \u2014 all values carried forward unchanged from the 19:03 CEST pull. This is a confirmation pulse only."
   },
   "scores": {
     "liquidity": {
@@ -513,7 +513,7 @@
       "last_updated": "2026-08-27T16:04:53Z",
       "source": "TreasuryDirect TA_WS (securities/search) + NY Fed Primary Dealer Statistics (PDPOSGST-TOT)",
       "methodology_note": "First run of this module (v2.1). The reference file with exact scoring weights (references/treasury-auctions.md) was not present in the bundled skill this run, so absorption_score / dealer_stress_score use a documented first-pass methodology: absorption_score = 30%*(100-dealer_pctile) + 30%*indirect_pctile + 20%*btc_pctile + 20%*direct_pctile, weighted 60/40 toward the most recent vs second-most-recent settled auction; dealer_stress_score = 40%*dealer_pctile + 30%*(100-btc_pctile) + 30%*funding_stress_term (from SOFR-IORB spread). tail_bps left null per instructions (no reliable free when-issued yield source). Recommend formalizing exact weights in the reference file for future runs.",
-      "reuse_note": "Not re-scraped this run (19:03 CEST) per user instruction \u2014 data confirmed still current from the 16:04:53Z (18:04 CEST) pull. Now the 3rd consecutive run reusing this block unchanged."
+      "reuse_note": "Not re-scraped this run (19:12 CEST) \u2014 entire pull was skipped per user instruction, not just Treasury Auctions. Data unchanged since 16:04:53Z (18:04 CEST)."
     },
     "state": "Healthy",
     "state_since": "2026-08-27",
