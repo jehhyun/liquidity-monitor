@@ -464,7 +464,8 @@
     "confidence": "Medium",
     "actionable_output": {
       "leaders_if_confirmed": "Same as prior run \u2014 semis, Korea/EM, broad cyclicals",
-      "current_tactical_leaders": "NVDA/SOXX still the clearest leader; Korea (EWY) gate confirmed open a third time; credit steady, not accelerating."
+      "current_tactical_leaders": "NVDA/SOXX still the clearest leader; Korea (EWY) gate confirmed open a third time; credit steady, not accelerating.",
+      "likely_rotation": "Same as prior run \u2014 semis/AI leadership holding, Korea gate now confirmed open on a third consecutive intraday check"
     }
   },
   "changed_today": [
