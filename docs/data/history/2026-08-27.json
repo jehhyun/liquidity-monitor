@@ -406,7 +406,8 @@
     "kospi": 6912.37,
     "kospi_sma5": 6814.65,
     "kospi_pass": true,
-    "methodology_note": "KOSPI condition updated this run: now trend-relative (price vs 5-day SMA, computed manually from Investing.com's last 5 daily closes \u2014 Aug 21/24/25/26/27 \u2014 since TradingView's technicals page does not expose a native 5-period SMA) rather than the deprecated static 8,200 level. This is the first run where all 3 conditions pass simultaneously."
+    "methodology_note": "KOSPI condition updated this run: now trend-relative (price vs 5-day SMA, computed manually from Investing.com's last 5 daily closes \u2014 Aug 21/24/25/26/27 \u2014 since TradingView's technicals page does not expose a native 5-period SMA) rather than the deprecated static 8,200 level. This is the first run where all 3 conditions pass simultaneously.",
+    "kospi_threshold": 6814.65
   },
   "semis": {
     "soxx": 522.65,
