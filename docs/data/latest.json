@@ -317,7 +317,16 @@
       "trend_label": "Roughly flat",
       "note": "Experimental modeled proxy; T2YIE remains deprecated."
     },
-    "breakeven_curve_signal": "Breakevens remain unchanged all day despite the slow nominal yield drift \u2014 inflation expectations still anchored."
+    "breakeven_curve_signal": "Breakevens remain unchanged all day despite the slow nominal yield drift \u2014 inflation expectations still anchored.",
+    "dfii5": {
+      "value": 2.04,
+      "trend_label": "Stable",
+      "note": "Unchanged all day at 2.04%."
+    },
+    "dfii10": {
+      "value": 2.32,
+      "note": "Unchanged all day at 2.32%."
+    }
   },
   "credit": {
     "hy_oas": 2.7,
