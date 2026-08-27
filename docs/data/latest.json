@@ -1,28 +1,28 @@
 {
   "meta": {
-    "pulled_at": "2026-08-27T17:12:34Z",
-    "pulled_at_cet": "Aug 27, 2026 19:12 CEST",
-    "source": "No new data scraped this run (explicit user instruction) \u2014 all values carried forward unchanged from the 19:03 CEST pull. This is a confirmation pulse only."
+    "pulled_at": "2026-08-27T18:20:36Z",
+    "pulled_at_cet": "Aug 27, 2026 20:20 CEST",
+    "source": "Live scrape: FRED (6 series) + TradingView 'Liquidity Monitor - Jae' watchlist (37 symbols) + Korea gate technicals (EWY SMA20, KOSPI SMA5 computed) + TreasuryDirect TA_WS + NY Fed PDPOSGST-TOT"
   },
   "scores": {
     "liquidity": {
-      "value": 48,
+      "value": 49,
       "trend_wk": 0,
-      "label": "Draining Buffer, Auctions Absorbing Well",
+      "label": "Draining Buffer, Auction Absorbing Well",
       "color": "amber",
       "trend_label": "Stable",
       "decomp": [
         [
-          "FRED plumbing unchanged for the 5th consecutive check today",
+          "Today's 7-Year Note auction settled clean — dealer take 10.84%, indirect 53.72%, BTC 2.50, no signs of stress",
+          2
+        ],
+        [
+          "RRP continues draining toward zero ($0.702B → $0.456B) — normal pattern, not a fresh stress signal",
           0
         ],
         [
-          "Treasury Auction module not re-scraped this run (reused Healthy read)",
-          0
-        ],
-        [
-          "Net liquidity flat at $5.791T",
-          0
+          "FRED plumbing (WALCL/TGA/WRESBAL) still stuck at Aug 19 vintage — H.4.1 now technically overdue as of today's scheduled release date",
+          -1
         ]
       ]
     },
@@ -34,57 +34,57 @@
       "trend_label": "Stable",
       "decomp": [
         [
-          "CACC +1.18%, ALLY +0.69% \u2014 both essentially unchanged from the prior run's pace",
+          "CACC +0.96%, ALLY +0.87% — both steady, no acceleration or deterioration",
           0
         ],
         [
-          "COF -0.26%, still slightly negative, unchanged",
+          "COF -0.38%, still marginally negative, unchanged pattern",
           0
         ],
         [
-          "HY OAS steady at 2.70%",
+          "HY OAS flat at 2.70% — no credit spread widening",
           0
         ]
       ]
     },
     "inflation": {
-      "value": 57,
-      "trend_wk": -1,
-      "label": "Steadying (oil creeping up)",
+      "value": 55,
+      "trend_wk": -2,
+      "label": "Steadying, But Oil's Drift Is Accelerating",
       "color": "amber",
-      "trend_label": "Stable",
+      "trend_label": "Deteriorating",
       "decomp": [
         [
-          "Oil +0.79% today, continuing a slow multi-check drift higher to $82.88",
-          -1
+          "Oil's drift has become more pronounced: +0.79% → +2.27% today",
+          -2
         ],
         [
-          "Breakevens (T5YIE/T10YIE) unchanged",
+          "Breakevens (T5YIE/T10YIE) and DFII5 all unchanged — no inflation-expectation repricing yet",
           0
         ],
         [
-          "DFII5 unchanged at 2.04%",
+          "7Y auction results clean, no auction-driven inflation signal",
           0
         ]
       ]
     },
     "vol": {
-      "value": 75,
-      "trend_wk": 0,
-      "label": "Sharply Compressing",
+      "value": 73,
+      "trend_wk": -2,
+      "label": "Still Compressed, Ticked Up Slightly",
       "color": "green",
       "trend_label": "Stable",
       "decomp": [
         [
-          "VIX 14.45, essentially flat vs prior run, still near the day's lows",
-          0
+          "VIX 14.70, up modestly from the run's earlier lows (14.45) but still very compressed",
+          -2
         ],
         [
-          "MOVE flat at 69.44, unchanged all day",
-          0
+          "MOVE -3.45% today — bond vol actually falling",
+          1
         ],
         [
-          "USDJPY 159.27, stable below 162 BOJ line",
+          "USDJPY 159.43, stable and well below the 162 BOJ line",
           0
         ]
       ]
@@ -95,45 +95,45 @@
     "base_confidence": 55,
     "adjusted_confidence": 47,
     "penalty_applied": 8,
-    "reason": "Fed Chair Kevin Warsh's Jackson Hole keynote (tomorrow morning, ~13-15 hrs out) plus the still-overdue H.4.1 balance-sheet release both remain within the 48h catalyst window."
+    "reason": "Fed Chair Kevin Warsh's Jackson Hole keynote (tomorrow morning, ~12-14 hrs out) plus the still-overdue H.4.1 balance-sheet release both remain within the 48h catalyst window."
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
-    "short_term_conditions": "Improving",
+    "short_term_conditions": "Stable, Cooling Slightly",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "Liquidity Expansion (NVDA Rally Holding, Korea Gate Open 3rd Check)",
-    "likely_rotation": "Same as prior run \u2014 semis/AI leadership holding, Korea gate now confirmed open on a third consecutive intraday check",
+    "macro_trend": "Liquidity Expansion, Cooling Into the Evening (Korea Gate Still Open 3/3, 7Y Auction Clean)",
+    "likely_rotation": "Semis/AI leadership still intact but pared back from the day's highs; Korea gate remains open on fresh data; today's 7-Year Note auction cleared cleanly, reinforcing the Treasury Auction module's Healthy read.",
     "risk_level": "Medium",
-    "next_catalyst": "Warsh's Jackson Hole keynote \u2014 tomorrow morning (~13-15 hrs out)",
-    "korea_gate": "3/3 \u2014 OPEN, confirmed for a 3rd consecutive check. EWY>SMA20 PASS, USDKRW<1530 PASS, KOSPI>5-day SMA PASS"
+    "next_catalyst": "Warsh's Jackson Hole keynote — tomorrow morning (~12-14 hrs out)",
+    "korea_gate": "3/3 — OPEN. EWY $179.83>SMA20 $172.57 PASS, USDKRW 1,381.80<1,530 PASS, KOSPI 6,912.38>5-day SMA 6,814.65 PASS"
   },
-  "bias": "A very quiet fifth check of the day: essentially nothing has changed since the prior run. NVDA holding its extended gain (+9.62%), SOXX/QQQ/SPY all marginally higher still, VIX marginally lower still. Korea's gate held open for a third consecutive intraday check. The one mild pattern worth flagging across today's five checks: nominal yields have ticked up, in small increments, in the same direction every single time (2Y now +0.26% vs the day's open, 10Y +0.32%) \u2014 no single move is meaningful, but the cumulative drift over ~4 hours is a genuine (if modest) trend worth watching into tomorrow. FRED plumbing remains completely unchanged and the Treasury Auction module was not re-scraped this run.",
+  "bias": "A modest late-session cooling rather than a reversal: NVDA has pared back from its earlier +9.62% peak to +8.55% but is still holding a large gain; SOXX/QQQ/SPY are all still positive on the day but slightly softer than the last check. VIX ticked up marginally (14.45→14.70) while still sitting near multi-week lows. The genuinely notable thread from today continues to be the slow, consistent nominal yield drift — now joined by an oil drift that has become more pronounced (+0.79%→+2.27% today). Neither move is alarming in isolation, and breakevens/DFII5 remain completely flat, so this still reads as rate-of-change noise rather than a real regime shift. The Treasury Auction module got its first live confirmation of the day: the 7-Year Note auction that was pending at the last check has now settled cleanly (dealer take 10.84%, solid indirect demand), supporting the Healthy state.",
   "counterargs": {
-    "thesis": "Same story continuing \u2014 NVDA rally holding, Korea gate open a 3rd time, yields drifting up slowly",
+    "thesis": "Liquidity Expansion intact but cooling into the evening — NVDA/semis leadership holding at a reduced pace, Korea gate open, 7Y auction clean",
     "supporting": [
-      "NVDA +9.62%, still holding its extended gain rather than fading late in the session",
-      "VIX 14.45, essentially at the day's lows \u2014 no late-session vol pickup",
-      "Korea gate OPEN 3/3 for a third consecutive intraday check",
-      "HY OAS unchanged at 2.70% all day \u2014 no credit spread widening despite the price momentum cooling",
-      "Breakevens and DFII5 both completely unchanged \u2014 no inflation-expectation or real-rate deterioration"
+      "7-Year Note auction settled cleanly — dealer take just 10.84%, indirect demand 53.72%, no stress signals",
+      "Korea gate OPEN 3/3 on fresh data (EWY, USDKRW, KOSPI all re-confirmed)",
+      "HY OAS unchanged at 2.70% — no credit spread widening despite the equity pullback",
+      "Breakevens and DFII5 completely unchanged — no inflation-expectation or real-rate deterioration",
+      "MOVE actually falling (-3.45%) — bond market vol still compressed"
     ],
     "against": [
-      "Yields have now ticked up in the same direction across all 5 checks today \u2014 small each time, but a consistent cumulative drift (2Y +0.26%, 10Y +0.32% vs the day's open)",
-      "Oil has also drifted up in small increments across multiple checks, now +0.79% \u2014 worth watching if this becomes a real trend into tomorrow",
-      "FRED plumbing (WALCL/TGA/WRESBAL) still hasn't updated after 5 checks today",
-      "Warsh's keynote is still tomorrow morning \u2014 today's calm doesn't reduce that binary risk",
-      "Treasury Auction module data is now ~1 hour stale (not re-scraped for a 3rd consecutive run)"
+      "Oil's drift has become more pronounced today (+0.79% → +2.27%) — the clearest deteriorating signal this check",
+      "Yields ticked up again in the same direction (US10Y +1.0bp, US02Y +0.8bp this check) — persistent, not sharp, but consistent",
+      "NVDA, SOXX, QQQ, SPY, and EWY all pulled back modestly from the prior check's levels",
+      "FRED plumbing (WALCL/TGA/WRESBAL) still hasn't updated — H.4.1 is now technically overdue as of today's scheduled release date",
+      "Warsh's keynote is tomorrow morning — today's calm doesn't reduce that binary risk"
     ],
-    "read": "Today's data has essentially plateaued at a constructive but unremarkable level for the last two checks. The only things worth actually tracking into tomorrow are the slow, consistent drift higher in both yields and oil \u2014 neither is alarming on its own, but the persistence across 5 checks today is more notable than any single reading. Everything else (equities, vol, credit, Korea) is holding steady at levels already established by the 18:04 CEST run."
+    "read": "Today's session appears to be cooling modestly into the evening rather than reversing: risk assets are still up on the day but softer than their peaks, while oil's drift is the one signal that has genuinely strengthened since the last check. The 7-Year auction's clean settlement is a real, fresh positive data point for the Treasury Auction module rather than a reused/stale read. Nothing here changes the medium-term picture — Warsh's keynote tomorrow remains the dominant unresolved catalyst."
   },
   "trade_table": [
     {
       "theme": "Semis",
-      "signal": "Bullish",
+      "signal": "Bullish, momentum cooling slightly",
       "signal_color": "green",
-      "conviction": 8,
+      "conviction": 7,
       "horizon": "1-2 wks",
-      "rationale": "NVDA holding +9.62%; SOXX +1.64%, QQQ +1.26% both marginally higher still; SOXX/SPY ratio steady at 0.679."
+      "rationale": "NVDA +8.55% (pared back from +9.62% peak); SOXX +1.03%, QQQ +0.95% — still solidly positive but softer than the last check. SOXX/SPY ratio 0.676."
     },
     {
       "theme": "Long Duration (TLT)",
@@ -141,15 +141,15 @@
       "signal_color": "amber",
       "conviction": 3,
       "horizon": "1-3 wks",
-      "rationale": "TLT -0.14%; yields have now ticked up across all 5 checks today (small each time, consistent direction) \u2014 worth watching if this persists into tomorrow."
+      "rationale": "TLT -0.26%; yields continue their slow, consistent drift higher — now compounded by an accelerating oil move."
     },
     {
       "theme": "Korea (EWY/KOSPI)",
-      "signal": "Bullish \u2014 gate 3/3 OPEN (3rd check)",
+      "signal": "Bullish — gate 3/3 OPEN (fresh data)",
       "signal_color": "green",
       "conviction": 6,
       "horizon": "1-4 wks",
-      "rationale": "Gate held open for a third consecutive intraday check: EWY $181.36 vs SMA20 $172.64, USDKRW 1,381.19, KOSPI 6,912.38 vs 5-day SMA 6,814.65."
+      "rationale": "Gate re-confirmed open on fresh scrape: EWY $179.83 vs SMA20 $172.57, USDKRW 1,381.80, KOSPI 6,912.38 vs 5-day SMA 6,814.65."
     },
     {
       "theme": "High Yield Credit",
@@ -157,26 +157,34 @@
       "signal_color": "amber",
       "conviction": 5,
       "horizon": "structural",
-      "rationale": "CACC/ALLY steady, COF still marginally negative \u2014 unchanged from the prior run, HY OAS flat."
+      "rationale": "CACC/ALLY steady, COF still marginally negative — unchanged pattern, HY OAS flat."
     },
     {
-      "theme": "Event Risk \u2014 Warsh's Jackson Hole Keynote",
+      "theme": "Treasury Auctions",
+      "signal": "Healthy — 7Y Note cleared cleanly",
+      "signal_color": "green",
+      "conviction": 5,
+      "horizon": "structural",
+      "rationale": "Dealer take 10.84%, indirect demand 53.72%, BTC 2.50 — no stress signals; dealer inventory trending down over the last 3 weekly NY Fed prints."
+    },
+    {
+      "theme": "Event Risk — Warsh's Jackson Hole Keynote",
       "signal": "Reduce leverage into event",
       "signal_color": "red",
       "conviction": 3,
-      "horizon": "~13-15 hrs",
-      "rationale": "Still the dominant unresolved catalyst; nothing about today's calm changes that."
+      "horizon": "~12-14 hrs",
+      "rationale": "Still the dominant unresolved catalyst; nothing about today's data changes that."
     }
   ],
   "catalysts": [
     {
       "date": "Aug 28",
       "days": 1,
-      "event": "Fed Chair Kevin Warsh's Jackson Hole keynote \u2014 first as chair",
+      "event": "Fed Chair Kevin Warsh's Jackson Hole keynote — first as chair",
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Scheduled ~8-10am ET Friday (~13-15 hrs from this pull). Topic: 'Financial Innovation: Implications for Payments and Policy.'"
+      "note": "Scheduled ~8-10am ET Friday (~12-14 hrs from this pull). Topic: 'Financial Innovation: Implications for Payments and Policy.'"
     },
     {
       "date": "Aug 27",
@@ -185,16 +193,16 @@
       "type": "Data",
       "type_color": "amber",
       "stars": 4,
-      "note": "Still not posted as of this pull (19:03 CEST) \u2014 still Aug 19 vintage, 5th check today."
+      "note": "Still not posted as of this pull (20:20 CEST) — still Aug 19 vintage, technically overdue as of today's scheduled release date."
     },
     {
       "date": "Aug 27",
       "days": 0,
-      "event": "7-Year Note Auction \u2014 settlement pending",
+      "event": "7-Year Note Auction — SETTLED",
       "type": "Data",
-      "type_color": "grey",
+      "type_color": "green",
       "stars": 2,
-      "note": "Auctioned today; not re-checked this run (Treasury Auction data not re-scraped, 3rd consecutive run reused)."
+      "note": "Settled clean this run: dealer take 10.84%, indirect 53.72%, direct 23.83%, bid-to-cover 2.50, high yield 4.512%."
     },
     {
       "date": "Sep 11",
@@ -203,7 +211,7 @@
       "type": "Data",
       "type_color": "amber",
       "stars": 4,
-      "note": "Key confirmation for the disinflation-vs-reacceleration debate."
+      "note": "Key confirmation for the disinflation-vs-reacceleration debate, more relevant now given oil's accelerating drift."
     },
     {
       "date": "Sep 15-16",
@@ -212,57 +220,57 @@
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Next Fed rate decision and dot plot \u2014 first with Warsh as chair."
+      "note": "Next Fed rate decision and dot plot — first with Warsh as chair."
     }
   ],
   "plumbing": {
-    "net_liquidity_t": 5.791,
+    "net_liquidity_t": 5.792,
     "walcl_b": 6745.699,
     "tga_b": 953.612,
-    "tga_delta": "Unchanged \u2014 still Aug 19 vintage; H.4.1 still not posted as of 19:03 CEST (5th check today)",
+    "tga_delta": "Unchanged — still Aug 19 vintage; H.4.1 still not posted as of this pull (today is the scheduled release date, not yet live)",
     "tga_color": "grey",
-    "rrp_b": 0.702,
-    "rrp_delta": "Unchanged all day ($0.702B)",
+    "rrp_b": 0.456,
+    "rrp_delta": "↓ from $0.702B — continued drain toward zero, in line with the multi-week pattern",
     "rrp_color": "grey",
     "reserves_t": 2.935287,
     "reserves_delta": "Unchanged, still below $3T",
     "reserves_color": "red",
     "sofr_pct": 3.64,
-    "sofr_delta": "Unchanged all day (3.64%)",
+    "sofr_delta": "Unchanged (3.64%)",
     "sofr_color": "grey",
     "iorb_pct": 3.65,
     "iorb_delta": "Unchanged",
     "iorb_color": "grey",
     "sofr_iorb_bps": -1.0,
-    "sofr_iorb_note": "SOFR trading 1bp below IORB \u2014 normal, healthy funding conditions."
+    "sofr_iorb_note": "SOFR trading 1bp below IORB — normal, healthy funding conditions, unchanged."
   },
   "duration": {
-    "tlt": 83.18,
-    "tlt_delta": "-0.14%",
-    "tlt_color": "grey",
-    "shy": 82.06,
-    "shy_delta": "+0.01%",
+    "tlt": 83.08,
+    "tlt_delta": "-0.26%",
+    "tlt_color": "red",
+    "shy": 82.04,
+    "shy_delta": "-0.01%",
     "shy_color": "grey",
-    "hyg": 79.91,
-    "hyg_delta": "+0.01%",
+    "hyg": 79.86,
+    "hyg_delta": "-0.05%",
     "hyg_color": "grey",
     "t10yie": 2.32,
     "t10yie_delta": "Flat",
     "t10yie_color": "grey",
-    "real_yield": 2.344,
-    "tlt_shy_ratio": 1.014,
+    "real_yield": 2.354,
+    "tlt_shy_ratio": 1.013,
     "move": 69.4375,
-    "move_delta": "Flat, unchanged all day",
-    "move_color": "grey"
+    "move_delta": "-3.45% today — bond vol falling",
+    "move_color": "green"
   },
   "duration_score": {
-    "score": 0,
-    "classification": "Neutral / Slow Yield Drift, Equities Decoupled",
-    "reason": "Yields have ticked up in the same direction across all 5 checks today \u2014 small increments each time, but a consistent cumulative drift (2Y +0.26%, 10Y +0.32% vs the day's open). Breakevens flat, DFII5 unchanged. Equities continue to run independently of this drift.",
+    "score": -1,
+    "classification": "Neutral / Slow Yield Drift Continuing, Modest Late-Session Risk Cooling",
+    "reason": "Yields ticked up again this check (US10Y 4.664%→4.674%, US02Y 4.220%→4.228%) — the same slow, consistent drift flagged in the prior run is still intact. Oil's drift has become more pronounced (+0.79%→+2.27% today). Equities (SOXX/QQQ/SPY/NVDA) pulled back modestly from the run's earlier highs. Breakevens and DFII5 remain completely unchanged — no inflation-expectation repricing, so this reads as risk-off cooling plus a continued nominal-yield drift, not a real-rate pain-trade setup.",
     "james_framework": {
-      "what_market_IS_saying": "A slow, persistent nominal yield drift higher through the session, uncorrelated with the equity rally or with breakevens \u2014 modest but worth tracking into tomorrow.",
-      "pain_trade": "Not currently active. EXPINF2YR flat at 2.47%, nominal 2Y roughly steady.",
-      "watch_signal": "If this yield drift continues or accelerates after Warsh speaks tomorrow, it would be worth re-examining the real-rate-pressure framework."
+      "what_market_IS_saying": "A continued slow nominal yield drift higher, now paired with a modest pullback in risk assets and oil's drift becoming more pronounced — worth watching into Warsh's keynote tomorrow.",
+      "pain_trade": "Not currently active. Breakevens and DFII5 unchanged; nominal 2Y drift is modest.",
+      "watch_signal": "If oil's drift keeps accelerating and breakevens start moving with it, re-examine the real-rate-pressure framework before Warsh speaks."
     },
     "conditions": {
       "10y_falling": false,
@@ -278,14 +286,14 @@
       "label": "5Y breakeven inflation",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged all day."
+      "note": "Unchanged."
     },
     "t10yie": {
       "value": 2.32,
       "label": "10Y breakeven inflation",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged all day."
+      "note": "Unchanged."
     },
     "real_yield_5y_primary": {
       "value": 2.04,
@@ -293,7 +301,7 @@
       "label": "5Y TIPS real yield (primary, market-based)",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged all day at 2.04%."
+      "note": "Unchanged at 2.04%."
     },
     "real_yield_10y_primary": {
       "value": 2.32,
@@ -301,64 +309,64 @@
       "label": "10Y TIPS real yield (confirmation)",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged all day at 2.32%."
+      "note": "Unchanged at 2.32%."
     },
     "real_yield_10y_derived": {
-      "value": 2.344,
-      "calculation": "US10Y (4.664%) - T10YIE (2.32%) = 2.344%",
+      "value": 2.354,
+      "calculation": "US10Y (4.674%) - T10YIE (2.32%) = 2.354%",
       "color": "amber",
       "trend_label": "Slowly firming",
       "note": "Secondary confirmation only."
     },
     "real_yield_2y_experimental": {
-      "value": 1.75,
-      "calculation": "US02Y (4.220%) - EXPINF2YR (2.47%) = 1.750%",
+      "value": 1.758,
+      "calculation": "US02Y (4.228%) - EXPINF2YR (2.47%) = 1.758%",
       "color": "grey",
       "trend_label": "Roughly flat",
       "note": "Experimental modeled proxy; T2YIE remains deprecated."
     },
-    "breakeven_curve_signal": "Breakevens remain unchanged all day despite the slow nominal yield drift \u2014 inflation expectations still anchored.",
+    "breakeven_curve_signal": "Breakevens remain unchanged despite the continued slow nominal yield drift — inflation expectations still anchored.",
     "dfii5": {
       "value": 2.04,
       "trend_label": "Stable",
-      "note": "Unchanged all day at 2.04%."
+      "note": "Unchanged at 2.04%."
     },
     "dfii10": {
       "value": 2.32,
-      "note": "Unchanged all day at 2.32%."
+      "note": "Unchanged at 2.32%."
     }
   },
   "credit": {
     "hy_oas": 2.7,
-    "hy_oas_delta": "Flat all day",
+    "hy_oas_delta": "Flat",
     "hy_oas_color": "grey",
-    "ally": 42.84,
-    "ally_delta": "+0.69% today",
+    "ally": 42.91,
+    "ally_delta": "+0.87% today",
     "ally_color": "amber",
-    "cacc": 600.63,
-    "cacc_delta": "+1.18% today",
+    "cacc": 599.32,
+    "cacc_delta": "+0.96% today",
     "cacc_color": "amber",
-    "cof": 216.65,
-    "cof_delta": "-0.26% today",
+    "cof": 216.38,
+    "cof_delta": "-0.38% today",
     "cof_color": "amber"
   },
   "curve": {
-    "us03my": 3.774,
-    "us06my": 3.907,
-    "us02y": 4.22,
-    "us05y": 4.382,
-    "us10y": 4.664,
-    "us30y": 5.187,
-    "spread_2s10s": 0.444,
-    "spread_3m10y": 0.89,
-    "real_10y": 2.344,
-    "us_japan_spread_bps": 174.7,
+    "us03my": 3.776,
+    "us06my": 3.909,
+    "us02y": 4.228,
+    "us05y": 4.394,
+    "us10y": 4.674,
+    "us30y": 5.193,
+    "spread_2s10s": 0.446,
+    "spread_3m10y": 0.898,
+    "real_10y": 2.354,
+    "us_japan_spread_bps": 178.2,
     "trend_classifications": {
       "us10y": {
         "level": "Restrictive",
         "trend": "Slowly firming",
         "momentum": "Neutral",
-        "note": "5th consecutive small uptick today; cumulative drift, not a single sharp move."
+        "note": "Continued small uptick; cumulative drift, not a single sharp move."
       },
       "us30y": {
         "level": "Very Restrictive",
@@ -376,134 +384,149 @@
         "level": "Positive",
         "trend": "Steady",
         "momentum": "Neutral",
-        "note": "0.444%, essentially unchanged all day despite the parallel yield drift."
+        "note": "0.446%, essentially unchanged despite the parallel yield drift."
       }
     }
   },
   "fx": {
-    "usdjpy": 159.274,
+    "usdjpy": 159.426,
     "usdjpy_alert": false,
-    "usdjpy_note": "159.27, flat all day, comfortably below the 162 BOJ threshold.",
-    "usdkrw": 1381.19,
+    "usdjpy_note": "159.43, comfortably below the 162 BOJ threshold.",
+    "usdkrw": 1381.8,
     "usdkrw_pass": true,
-    "usdkrw_note": "-0.29% today, well below the 1,530 gate level.",
-    "dxy": 99.109,
-    "dxy_delta": "-0.02% today",
+    "usdkrw_note": "+0.04% today, well below the 1,530 gate level.",
+    "dxy": 99.167,
+    "dxy_delta": "+0.03% today",
     "dxy_color": "grey",
-    "jp10y": 2.917,
-    "us_japan_spread_bps": 174.7,
+    "jp10y": 2.892,
+    "us_japan_spread_bps": 178.2,
     "ni225": 66131.76,
     "usdcny": 6.7193
   },
   "korea_gate": {
     "status": "open",
     "conditions_met": 3,
-    "ewy": 181.36,
-    "ewy_sma20": 172.64,
+    "ewy": 179.83,
+    "ewy_sma20": 172.57,
     "ewy_pass": true,
-    "usdkrw": 1381.19,
+    "usdkrw": 1381.8,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": true,
     "kospi": 6912.38,
     "kospi_sma5": 6814.65,
     "kospi_pass": true,
     "kospi_threshold": 6814.65,
-    "methodology_note": "KOSPI condition is trend-relative (price vs 5-day SMA). Gate confirmed OPEN 3/3 for a third consecutive intraday check today (also open at 18:04 and 18:41 CEST). KOSPI itself is session-closed and unchanged since morning \u2014 the repeat confirmation is mechanical on that leg, not a fresh independent signal."
+    "methodology_note": "KOSPI condition is trend-relative (price vs 5-day SMA, computed from last 5 daily closes). Gate confirmed OPEN 3/3 this check: EWY $179.83 vs SMA20 $172.57, USDKRW 1,381.80 vs 1,530, KOSPI 6,912.38 vs 5-day SMA 6,814.65. KOSPI itself is session-closed and unchanged since this morning."
   },
   "semis": {
-    "soxx": 523.83,
-    "soxx_delta": "+1.64%",
+    "soxx": 520.73,
+    "soxx_delta": "+1.03%",
     "soxx_color": "green",
-    "qqq": 720.33,
-    "qqq_delta": "+1.26%",
+    "qqq": 718.16,
+    "qqq_delta": "+0.95%",
     "qqq_color": "green",
-    "spy": 772.09,
-    "spy_delta": "+0.78%",
+    "spy": 770.27,
+    "spy_delta": "+0.55%",
     "spy_color": "green",
-    "soxx_spy_ratio": 0.679
+    "soxx_spy_ratio": 0.676
   },
-  "chain": [],
-  "chain_note": "The 9-name enabling-layer thesis chain (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remains absent from the 'Liquidity Monitor - Jae' TradingView watchlist (37 symbols today, incl. NVDA). DRAM is still tracked (-0.50% today); re-add the other 9 tickers to resume full chain tracking.",
+  "chain": [
+    {
+      "ticker": "DRAM",
+      "price": 55.79,
+      "delta": "-1.06%",
+      "color": "red",
+      "note": "Only enabling-layer name still in the watchlist."
+    },
+    {
+      "ticker": "NVDA",
+      "price": 227.58,
+      "delta": "+8.55%",
+      "color": "green",
+      "note": "Newly added to watchlist; rally holding, pared back slightly from its earlier +9.62% peak today."
+    }
+  ],
+  "chain_note": "9 of the original enabling-layer thesis-chain names (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain absent from the 'Liquidity Monitor - Jae' TradingView watchlist (37 symbols today). DRAM is still tracked; NVDA was added and is shown here for context. Re-add the other 9 tickers to resume full chain tracking.",
   "crosschecks": {
     "vix": {
-      "value": 14.45,
-      "delta": "-5.06% today, essentially flat vs the prior run, still near the day's lows",
+      "value": 14.7,
+      "delta": "-3.42% today, ticked up slightly from the run's earlier lows but still very compressed",
       "color": "green",
-      "note": "No late-session vol pickup."
+      "note": "No meaningful late-session vol pickup."
     },
     "oil": {
-      "value": 82.88,
-      "delta": "+0.79% today, continuing a slow multi-check drift higher",
+      "value": 84.1,
+      "delta": "+2.27% today — the drift flagged in the prior run has become more pronounced (was +0.79%)",
       "color": "amber",
-      "note": "Small but persistent across multiple checks today \u2014 worth watching into tomorrow."
+      "note": "Worth watching into tomorrow; not yet at a level that threatens the disinflation thesis outright."
     },
     "gold": {
-      "value": 4615.16,
-      "delta": "+0.38% today",
+      "value": 4605.77,
+      "delta": "+0.18% today",
       "color": "grey",
       "note": "n/a"
     },
     "move": {
       "value": 69.4375,
-      "delta": "Flat, unchanged all day",
-      "color": "grey",
-      "note": "Bond vol steady at a compressed level."
+      "delta": "-3.45% today",
+      "color": "green",
+      "note": "Bond vol falling, still at a compressed level."
     }
   },
   "sector_rotation": {
-    "current_regime": "Liquidity Expansion (NVDA Rally Holding, Korea Gate Open 3rd Check)",
+    "current_regime": "Liquidity Expansion, Cooling Into the Evening",
     "regime_scores": {
-      "liquidity_expansion": 55,
-      "disinflationary_slowdown": 28,
-      "recession": 7,
-      "inflation_reacceleration": 32,
-      "liquidity_shock": 14
+      "liquidity_expansion": 52,
+      "disinflationary_slowdown": 29,
+      "recession": 8,
+      "inflation_reacceleration": 35,
+      "liquidity_shock": 15
     },
     "best_fit": "liquidity_expansion",
-    "second_fit": "disinflationary_slowdown",
+    "second_fit": "inflation_reacceleration",
     "confidence": "Medium",
     "actionable_output": {
-      "leaders_if_confirmed": "Same as prior run \u2014 semis, Korea/EM, broad cyclicals",
-      "current_tactical_leaders": "NVDA/SOXX still the clearest leader; Korea (EWY) gate confirmed open a third time; credit steady, not accelerating.",
-      "likely_rotation": "Same as prior run \u2014 semis/AI leadership holding, Korea gate now confirmed open on a third consecutive intraday check"
+      "leaders_if_confirmed": "Semis, Korea/EM, broad cyclicals — same as prior run",
+      "current_tactical_leaders": "NVDA/SOXX still the clearest leader despite pulling back from the day's highs; Korea (EWY) gate re-confirmed open on fresh data; credit steady, not accelerating.",
+      "likely_rotation": "Semis/AI leadership still intact but cooling into the evening; Korea gate remains open on fresh data; watch oil's accelerating drift as the one genuinely new risk signal."
     }
   },
   "changed_today": [
     {
-      "label": "Korea Gate",
-      "value": "3/3 OPEN",
-      "delta": "Confirmed open for a 3rd consecutive intraday check",
-      "color": "green"
-    },
-    {
-      "label": "Yield drift",
-      "value": "US10Y 4.664%",
-      "delta": "5th consecutive small uptick today (+0.32% vs day's open) \u2014 modest but consistent",
-      "color": "amber"
-    },
-    {
-      "label": "NVDA",
-      "value": "$229.83",
-      "delta": "\u2191 +9.62% \u2014 holding its extended gain",
+      "label": "7-Year Note Auction",
+      "value": "Settled",
+      "delta": "Dealer take 10.84%, indirect 53.72%, BTC 2.50 — clean, no stress signals",
       "color": "green"
     },
     {
       "label": "Oil (CL1!)",
-      "value": "$82.88",
-      "delta": "\u2191 +0.79% \u2014 slow continued drift higher across multiple checks",
+      "value": "$84.10",
+      "delta": "↑ +2.27% — drift has become more pronounced (was +0.79%)",
       "color": "amber"
     },
     {
-      "label": "SOXX",
-      "value": "$523.83",
-      "delta": "\u2191 +1.64%",
+      "label": "Korea Gate",
+      "value": "3/3 OPEN",
+      "delta": "Re-confirmed open on fresh data",
+      "color": "green"
+    },
+    {
+      "label": "NVDA",
+      "value": "$227.58",
+      "delta": "↑ +8.55% — pared back slightly from the day's +9.62% peak",
       "color": "green"
     },
     {
       "label": "VIX",
-      "value": "14.45",
-      "delta": "\u2193 -5.06% \u2014 holding near the day's lows",
-      "color": "green"
+      "value": "14.70",
+      "delta": "↑ +1.7% vs the last check, still near multi-week lows",
+      "color": "grey"
+    },
+    {
+      "label": "RRP",
+      "value": "$0.456B",
+      "delta": "↓ from $0.702B, continuing to drain toward zero",
+      "color": "grey"
     }
   ],
   "section_horizons": {
@@ -520,17 +543,34 @@
   "treasury_auctions": {
     "meta": {
       "status": "ok",
-      "last_updated": "2026-08-27T16:04:53Z",
+      "last_updated": "2026-08-27T18:20:36Z",
       "source": "TreasuryDirect TA_WS (securities/search) + NY Fed Primary Dealer Statistics (PDPOSGST-TOT)",
-      "methodology_note": "First run of this module (v2.1). The reference file with exact scoring weights (references/treasury-auctions.md) was not present in the bundled skill this run, so absorption_score / dealer_stress_score use a documented first-pass methodology: absorption_score = 30%*(100-dealer_pctile) + 30%*indirect_pctile + 20%*btc_pctile + 20%*direct_pctile, weighted 60/40 toward the most recent vs second-most-recent settled auction; dealer_stress_score = 40%*dealer_pctile + 30%*(100-btc_pctile) + 30%*funding_stress_term (from SOFR-IORB spread). tail_bps left null per instructions (no reliable free when-issued yield source). Recommend formalizing exact weights in the reference file for future runs.",
-      "reuse_note": "Not re-scraped this run (19:12 CEST) \u2014 entire pull was skipped per user instruction, not just Treasury Auctions. Data unchanged since 16:04:53Z (18:04 CEST)."
+      "methodology_note": "references/treasury-auctions.md is not present in the bundled skill; absorption_score / dealer_stress_score continue using the first-pass documented methodology from the module's initial run: absorption_score = 30%*(100-dealer_pctile) + 30%*indirect_pctile + 20%*btc_pctile + 20%*direct_pctile where percentiles are available, blended qualitatively with raw metrics where the (type, term) bucket has an insufficient sample; dealer_stress_score = 40%*dealer_pctile + 30%*(100-btc_pctile) + 30%*funding_stress_term (from SOFR-IORB spread). tail_bps left null per instructions (no reliable free when-issued yield source)."
     },
     "state": "Healthy",
     "state_since": "2026-08-27",
-    "absorption_score": 57,
-    "dealer_stress_score": 26,
+    "absorption_score": 59,
+    "dealer_stress_score": 24,
     "sofr_iorb_bps": -1.0,
     "latest_settled_auctions": [
+      {
+        "cusip": "91282CRJ2",
+        "type": "Note",
+        "term": "7-Year",
+        "auctionDate": "2026-08-27",
+        "issueDate": "2026-08-31",
+        "highYield": 4.512,
+        "bidToCover": 2.5,
+        "dealer_pct": 10.84,
+        "direct_pct": 23.83,
+        "indirect_pct": 53.72,
+        "dealer_pctile": null,
+        "indirect_pctile": null,
+        "direct_pctile": null,
+        "btc_pctile": null,
+        "tail_bps": null,
+        "read": "Healthy — low dealer take (10.84%, even lower than the two prior settled auctions), solid indirect demand (53.72%), decent bid-to-cover (2.50). No percentile assigned — only 2 comparable (Note, 7-Year) auctions exist in the ledger (need min 8)."
+      },
       {
         "cusip": "91282CRK9",
         "type": "Note",
@@ -547,7 +587,7 @@
         "direct_pctile": 75,
         "btc_pctile": 70,
         "tail_bps": null,
-        "read": "Healthy \u2014 low dealer take (25th pctile), strong direct demand (75th pctile); indirect demand soft (20th pctile) but not concerning given the low dealer take."
+        "read": "Healthy — low dealer take (25th pctile), strong direct demand (75th pctile); indirect demand soft (20th pctile) but not concerning given the low dealer take."
       },
       {
         "cusip": "91282CRH6",
@@ -565,17 +605,10 @@
         "direct_pctile": 25,
         "btc_pctile": 40,
         "tail_bps": null,
-        "read": "Healthy \u2014 strong indirect (foreign) demand (75th pctile), moderate dealer take (35th pctile)."
+        "read": "Healthy — strong indirect (foreign) demand (75th pctile), moderate dealer take (35th pctile)."
       }
     ],
-    "pending_auction": {
-      "cusip": "91282CRJ2",
-      "type": "Note",
-      "term": "7-Year",
-      "auctionDate": "2026-08-27",
-      "issueDate": "2026-08-31",
-      "note": "Auctioned today; settles after this run's trigger time. Results will be ingested next run."
-    },
+    "pending_auction": null,
     "dealer_inventory": {
       "series": "NY Fed PDPOSGST-TOT (net UST holdings ex-TIPS, primary dealers)",
       "latest_date": "2026-08-12",
@@ -585,14 +618,14 @@
         460.3,
         444.7
       ],
-      "trend_note": "Declining over the last 3 weekly prints (Jul 29 \u2192 Aug 12) \u2014 dealers are not accumulating a growing backlog of unsold Treasury supply, consistent with the low dealer-take percentiles in the two most recent auctions.",
-      "staleness_note": "NY Fed publishes this series with a ~2-week lag; Aug 12 is the most recent print available as of this pull."
+      "trend_note": "Declining over the last 3 weekly prints (Jul 29 → Aug 12) — dealers are not accumulating a growing backlog of unsold Treasury supply, consistent with the low dealer-take on today's 7-Year auction.",
+      "staleness_note": "NY Fed publishes this series with a ~2-week lag; Aug 12 is still the most recent print available as of this pull (unchanged from the prior run)."
     },
     "transmission": {
       "auction_weakness": false,
       "dealer_pressure": false,
       "repo_confirmation": false
     },
-    "narrative": "The Treasury Auction module is live for the first time this run. Both auctions that settled this week \u2014 Tuesday's 2-Year and Wednesday's 5-Year Note \u2014 cleared cleanly: dealer take sat in the 25th-35th percentile of the trailing 20 comparable auctions (well below levels that would signal dealers being forced to absorb unwanted supply), and NY Fed's primary-dealer net Treasury inventory has been declining for three straight weekly prints. SOFR is trading 1bp below IORB, a textbook-normal funding reading with no repo stress. None of the three transmission flags (auction weakness, dealer pressure, repo confirmation) are triggered. This reads as 'duration repricing' territory if yields do move \u2014 not 'Treasury intermediation stress.' Today's own 7-Year Note auction hasn't settled yet and will be the next real test of this read."
+    "narrative": "Today's 7-Year Note auction — pending at the last check — has now settled cleanly: dealer take of just 10.84% is the lowest of the three auctions in this week's cluster, indirect (foreign/institutional) demand held at 53.72%, and the bid-to-cover of 2.50 sits comfortably in the normal range. Combined with the 2-Year and 5-Year Notes that settled earlier this week (both also showing low dealer takedown), this is now three consecutive clean auctions. NY Fed's primary-dealer net Treasury inventory continues its 3-week decline (most recent available print, Aug 12) — dealers are not stuck holding unwanted supply. SOFR is trading 1bp below IORB, a normal funding reading with no repo stress. None of the three transmission flags are triggered. This reads as 'duration repricing' territory (absorption healthy, dealer take low, repo normal) rather than 'Treasury intermediation stress' — even with yields drifting slowly higher this week."
   }
 }

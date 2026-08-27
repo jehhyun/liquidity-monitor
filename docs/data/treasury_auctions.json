@@ -1,10 +1,27 @@
 {
   "meta": {
-    "last_updated": "2026-08-27T16:04:53Z",
+    "last_updated": "2026-08-27T18:30:00Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Initial seed of this ledger (module first run, v2.1). Populated with the trailing 45 days of settled Note/Bond/TIPS auctions for percentile-bucket continuity. Dedup on CUSIP on future runs."
+    "note": "Ongoing ledger, dedup on CUSIP. Latest ingest: 91282CRJ2 (7-Year Note, 2026-08-27)."
   },
   "auctions": [
+    {
+      "cusip": "91282CRJ2",
+      "type": "Note",
+      "term": "7-Year",
+      "auctionDate": "2026-08-27",
+      "issueDate": "2026-08-31",
+      "highYield": 4.512,
+      "bidToCover": 2.5,
+      "dealer_pct": 10.84,
+      "direct_pct": 23.83,
+      "indirect_pct": 53.72,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null,
+      "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking \u2014 only 2 comparable auctions in ledger (need min 8). Raw metrics shown; no percentile assigned."
+    },
     {
       "cusip": "91282CRK9",
       "type": "Note",
