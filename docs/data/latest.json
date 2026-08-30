@@ -97,42 +97,69 @@
       {
         "driver": "Monetary tightening",
         "level": "HIGH",
-        "note": "Front-end and real yields are unambiguously elevated and still rising."
+        "note": "Front-end and real yields are unambiguously elevated and still rising.",
+        "type": "state"
       },
       {
         "driver": "Inflation credibility",
         "level": "MEDIUM-HIGH",
-        "note": "Breakevens anchored near target and stable."
+        "note": "Breakevens anchored near target and stable.",
+        "type": "state"
       },
       {
         "driver": "Treasury-market resilience",
         "level": "HIGH",
-        "note": "Curve is bear-flattening, not bear-steepening (2s10s -13.7bp/wk) \u2014 the long end is not breaking."
+        "note": "Curve is bear-flattening, not bear-steepening (2s10s -13.7bp/wk) \u2014 the long end is not breaking.",
+        "type": "state"
       },
       {
         "driver": "Credit / funding resilience",
         "level": "HIGH",
-        "note": "HY OAS and IG OAS both tight; SOFR-IORB normal."
+        "note": "HY OAS and IG OAS both tight; SOFR-IORB normal.",
+        "type": "state"
       },
       {
         "driver": "Long-duration auction validation",
         "level": "HIGH",
-        "note": "Last 3 long-duration auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) all cleared with low dealer take-down (7-11%) and strong indirect demand (53-61%)."
+        "note": "Last 3 long-duration auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) all cleared with low dealer take-down (7-11%) and strong indirect demand (53-61%).",
+        "type": "state"
       },
       {
         "driver": "Structural bill absorption",
         "level": "MEDIUM",
-        "note": "MMF industry assets $7.93T (+$6.1B w/w), $6.55T of it in government/Treasury-repo funds. Real demand exists, but net bill supply and SOMA composition are not yet wired in to fully confirm demand offsets supply."
+        "note": "MMF industry assets $7.93T (+$6.1B w/w), $6.55T of it in government/Treasury-repo funds. Real demand exists, but net bill supply and SOMA composition are not yet wired in to fully confirm demand offsets supply.",
+        "type": "mechanism"
       },
       {
         "driver": "Official-sector causality",
         "level": "LOW-MEDIUM",
-        "note": "Cannot yet confirm that Treasury buybacks, issuance composition, or FIMA facilities are causing the observed resilience versus merely coexisting with it."
+        "note": "Cannot yet confirm that Treasury buybacks, issuance composition, or FIMA facilities are causing the observed resilience versus merely coexisting with it.",
+        "type": "mechanism"
       }
     ],
     "stale_input_fraction": 0.25,
     "degraded": false,
-    "downgraded_one_level": false
+    "downgraded_one_level": false,
+    "state_confidence": {
+      "level": "HIGH",
+      "definition": "Confidence that OBSERVABLE market conditions (yields, curve, credit, funding, vol, auctions) currently fit the stated regime.",
+      "drivers": [
+        "Monetary tightening",
+        "Inflation credibility",
+        "Treasury-market resilience",
+        "Credit / funding resilience",
+        "Long-duration auction validation"
+      ]
+    },
+    "mechanism_confidence": {
+      "level": "MEDIUM",
+      "definition": "Confidence that the proposed Treasury / structural-liquidity MECHANISMS (MMF absorption, SOMA, issuance composition, official-sector actions) causally explain those observed conditions, as opposed to merely coexisting with them.",
+      "drivers": [
+        "Structural bill absorption",
+        "Official-sector causality"
+      ]
+    },
+    "note": "State confidence and mechanism confidence are tracked separately: observed long-end/credit/funding/MOVE/curve behavior can support high state confidence even while causal (mechanism) confidence remains lower."
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
@@ -635,7 +662,10 @@
       "label": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED",
       "provisional": true,
       "one_liner": "Monetary policy is restrictive and front-end/real yields are elevated, but current Treasury-market, credit, funding, and volatility signals indicate that tightening is not yet propagating into systemic liquidity stress.",
-      "confidence_level": "HIGH"
+      "confidence_level": "STATE: HIGH / MECHANISM: MEDIUM",
+      "confidence_level_legacy": "HIGH",
+      "state_confidence": "HIGH",
+      "mechanism_confidence": "MEDIUM"
     },
     "master_scores": {
       "monetary_restrictiveness": {
@@ -747,70 +777,92 @@
       "spread_2s30s": 0.853
     },
     "real_yield_breakeven": {
+      "as_of": "2026-08-27",
+      "as_of_note": "Last date FRED had co-published nominal (DGS), real (DFII), and breakeven (T5YIE/T10YIE) series on the same vintage. Aug 28 breakeven prints exist but same-date DGS/DFII were not yet published (normal ~1-business-day H.15 lag) and are intentionally excluded to avoid mixing vintages.",
+      "source": "FRED: DGS5/7/10/20/30, DFII5/7/10/20/30, T5YIE, T10YIE",
+      "comparison_period": "1D = vs 2026-08-26, 1W = vs 2026-08-20 (5 trading days)",
+      "data_mismatch": false,
       "ladder": [
+        {
+          "tenor": "2Y",
+          "real": null,
+          "role": "n/a",
+          "chg_1d_bps": null,
+          "chg_1w_bps": null,
+          "note": "2Y TIPS not issued"
+        },
         {
           "tenor": "5Y",
           "real": 2.07,
-          "chg_1d_bps": 3.0,
-          "chg_1w_bps": -3.0,
-          "role": "PRIMARY"
+          "role": "PRIMARY",
+          "chg_1d_bps": 1.0,
+          "chg_1w_bps": 2.0
         },
         {
           "tenor": "7Y",
           "real": 2.19,
-          "chg_1d_bps": null,
-          "chg_1w_bps": null,
-          "role": "secondary"
+          "role": "secondary",
+          "chg_1d_bps": 1.0,
+          "chg_1w_bps": 1.0
         },
         {
           "tenor": "10Y",
           "real": 2.34,
-          "chg_1d_bps": 2.0,
-          "chg_1w_bps": null,
-          "role": "CONFIRMATION"
+          "role": "CONFIRMATION",
+          "chg_1d_bps": 0.0,
+          "chg_1w_bps": -1.0
         },
         {
           "tenor": "20Y",
           "real": 2.71,
-          "chg_1d_bps": null,
-          "chg_1w_bps": null,
-          "role": "secondary"
+          "role": "secondary",
+          "chg_1d_bps": 0.0,
+          "chg_1w_bps": -2.0
         },
         {
           "tenor": "30Y",
           "real": 2.92,
-          "chg_1d_bps": null,
-          "chg_1w_bps": null,
-          "role": "secondary"
+          "role": "secondary",
+          "chg_1d_bps": 0.0,
+          "chg_1w_bps": -3.0
         }
       ],
-      "classification": "CREDIBILITY TIGHTENING",
-      "so_what": "Higher nominal yields this session are being driven primarily by higher real discount rates (DFII5 +3bp) rather than deteriorating inflation expectations (10Y breakeven roughly flat, -1bp). Consistent with credible monetary tightening, not an inflation panic.",
-      "nominal_10y": 4.73,
-      "breakeven_10y": 2.31
+      "classification": "STABLE / RANGE-BOUND",
+      "so_what": "On a fully time-aligned FRED vintage (all series as of 2026-08-27), real yields moved at most 2-3bp across the 5Y-30Y ladder over the past week, and both the 5Y and 10Y breakevens are also within 1-3bp of a week ago. This is a flat reading, not a directional tightening or reflation signal. The prior classification (\"CREDIBILITY TIGHTENING\") was generated by mixing live intraday nominal yields with a stale/mismatched breakeven print and has been withdrawn.",
+      "nominal_10y": 4.67,
+      "breakeven_10y": 2.33,
+      "breakeven_5y": 2.31,
+      "breakeven_20y_30y_note": "FRED does not publish official 20Y/30Y breakeven series (only 5Y and 10Y). Implied 20Y/30Y breakevens (DGS-DFII) are not shown here to avoid presenting an unofficial derived figure as an official one."
     },
     "structural_demand": {
       "core_question": "Is structural short-duration demand sufficient to absorb marginal Treasury financing without forcing materially greater duration supply onto dealer/private-sector balance sheets?",
       "mmf": {
-        "status": "CONFIRMED",
-        "total_t": 7.93,
-        "wow_change_b": 6.11,
-        "government_t": 6.55,
+        "total_aum_t": 7.93,
+        "total_aum_status": "CONFIRMED",
+        "total_aum_wow_change_b": 6.11,
+        "total_aum_wow_note": "This is the change in TOTAL industry AUM week-over-week -- it is NOT a measure of net Treasury purchases. Inflows can sit in repo or agency paper rather than bills/notes.",
+        "government_fund_aum_t": 6.55,
+        "government_fund_aum_status": "CONFIRMED",
+        "government_fund_aum_note": "Government/Treasury funds are the largest MMF subclass by AUM. This is a buyer-BASE size, not a measure of actual Treasury securities held -- government funds also hold repo (often Treasury-collateralized but not itself a Treasury security) and agency debt.",
+        "treasury_holdings_status": "PENDING DATA",
+        "treasury_holdings_note": "The ICI weekly release does not break out direct Treasury bill/note/bond holdings within government funds separately from repo and agency exposure. Actual $ of Treasury securities held by MMFs is not yet wired into this pipeline.",
+        "net_treasury_purchases_status": "PENDING DATA",
+        "net_treasury_purchases_note": "Marginal net Treasury purchases by MMFs this week cannot be measured from AUM changes alone. Not fabricated -- shown as PENDING until a flow-based source (e.g., Treasury OFR MMF holdings detail, or SEC N-MFP) is integrated.",
         "retail_t": 3.1,
         "institutional_t": 4.83,
         "source": "ICI weekly Money Market Fund Assets release",
         "last_updated": "2026-08-26",
         "frequency": "WEEKLY",
-        "note": "Government (Treasury/repo) funds are the dominant component at $6.55T \u2014 the largest structural short-duration buyer base."
+        "status": "PARTIALLY CONFIRMED"
       },
       "stablecoins": {
-        "status": "STRUCTURAL / LOW CURRENT WEIGHT",
+        "status": "STRUCTURAL / MATERIALLY LOWER WEIGHT THAN MMF",
         "total_b": 304.58,
         "chg_7d_pct": 0.48,
         "source": "DefiLlama aggregate stablecoin market cap",
         "last_updated": "live",
         "frequency": "NEAR-LIVE",
-        "note": "At $304.6B, aggregate stablecoin market cap is roughly 3.8% the size of the MMF industry ($7.93T). Structural-growth signal, not a current-scale factor in bill demand."
+        "note": "At $304.6B, aggregate stablecoin market cap is ~3.8% the size of MMF total AUM ($7.93T). Reserve base is roughly 26x smaller than the MMF industry. Stablecoin reserves are NOT counted as part of the current Treasury buyer base at comparable weight to MMFs -- treated as a structural/growth signal only, not a current-scale demand factor."
       },
       "banks_corporates": {
         "status": "PENDING DATA",
@@ -824,7 +876,9 @@
         "status": "PENDING DATA",
         "note": "Net bill issuance, coupon issuance, and CMB issuance not yet wired into the pipeline."
       },
-      "demand_vs_supply_read": "BALANCED (partial) \u2014 real, confirmed MMF demand ($7.93T, +$6.1B w/w) is large and growing modestly, but without net bill supply and SOMA data this cannot be scored DEMAND>SUPPLY with full confidence. Shown as an estimate, not fabricated precision."
+      "demand_vs_supply_read": "BALANCED (partial, low confidence in precision) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base, but net TREASURY-SPECIFIC purchases, bank/corporate demand, SOMA composition, and net issuance are all PENDING DATA. This cannot be scored DEMAND>SUPPLY -- shown as a directional estimate, not a precise measurement.",
+      "status": "PARTIALLY CONFIRMED",
+      "status_note": "Module remains PARTIALLY CONFIRMED, not CONFIRMED, until actual marginal Treasury demand (net purchases, not AUM) can be measured reliably across MMFs, banks/corporates, and SOMA."
     },
     "shock_absorbers_table": [
       {
@@ -1508,6 +1562,214 @@
         "Financial conditions"
       ],
       "current_read": "Crypto should be read through real rates and USD liquidity, not treated as a systemic-liquidity canary. No evidence today's softness is a liquidity event rather than a real-rate/risk-appetite move."
+    },
+    "auction_recent_evidence": [
+      {
+        "maturity": "10-Year",
+        "date": "2026-08-12",
+        "offering_b": 42.0,
+        "btc": 2.53,
+        "dealer_pct": 6.84,
+        "direct_pct": 11.66,
+        "indirect_pct": 60.98,
+        "high_yield": 4.683,
+        "is_validation": true,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 6.8%, indirect 61.0%, bid-to-cover 2.53.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "STRONG",
+        "post_auction_reaction": {
+          "pre": 4.684,
+          "day_of": 4.658,
+          "next_day": 4.657,
+          "day_of_chg_bp": -2.6,
+          "next_day_chg_bp": -0.1,
+          "note": "10Y yield fell -2.6bp on auction day and held (-0.1bp further next day) -- consistent with a well-absorbed auction.",
+          "verdict": "SUPPORTIVE"
+        },
+        "regime_impact_verdict": "SUPPORTIVE"
+      },
+      {
+        "maturity": "30-Year",
+        "date": "2026-08-13",
+        "offering_b": 25.0,
+        "btc": 2.39,
+        "dealer_pct": 9.15,
+        "direct_pct": 17.21,
+        "indirect_pct": 53.15,
+        "high_yield": 5.216,
+        "is_validation": true,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 9.2%, indirect 53.1%, bid-to-cover 2.39.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "NORMAL",
+        "post_auction_reaction": {
+          "pre": 5.224,
+          "day_of": 5.227,
+          "next_day": 5.262,
+          "day_of_chg_bp": 0.3,
+          "next_day_chg_bp": 3.5,
+          "note": "30Y yield was roughly flat on auction day (+0.3bp) then rose +3.5bp the next day, but the 10Y moved +2.3bp over the same span -- the move looks like broad market drift, not an auction-specific reaction.",
+          "verdict": "NEUTRAL"
+        },
+        "regime_impact_verdict": "NEUTRAL"
+      },
+      {
+        "maturity": "20-Year",
+        "date": "2026-08-19",
+        "offering_b": 16.0,
+        "btc": 2.53,
+        "dealer_pct": 10.93,
+        "direct_pct": 21.53,
+        "indirect_pct": 55.09,
+        "high_yield": 5.204,
+        "is_validation": true,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 10.9%, indirect 55.1%, bid-to-cover 2.53.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "NORMAL",
+        "post_auction_reaction": {
+          "pre": 5.317,
+          "day_of": 5.205,
+          "next_day": null,
+          "day_of_chg_bp": -11.2,
+          "next_day_chg_bp": null,
+          "note": "20Y fell -11.2bp on auction day vs the 10Y's -8.1bp same-day move -- the 20Y outperformed the broad rally by only ~3bp, so this is a mild, largely market-wide-driven signal rather than a strong auction-specific one.",
+          "verdict": "SUPPORTIVE (mild)"
+        },
+        "regime_impact_verdict": "SUPPORTIVE"
+      },
+      {
+        "maturity": "2-Year",
+        "date": "2026-08-25",
+        "btc": 2.6,
+        "dealer_pct": 9.5,
+        "direct_pct": 20.2,
+        "indirect_pct": 57.7,
+        "high_yield": 4.204,
+        "is_validation": false,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 9.5%, indirect 57.7%, bid-to-cover 2.60.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "NORMAL",
+        "post_auction_reaction": null,
+        "regime_impact_verdict": "NOT ASSESSED (routine short-duration; not a regime-validation test)"
+      },
+      {
+        "maturity": "5-Year",
+        "date": "2026-08-26",
+        "btc": 2.37,
+        "dealer_pct": 8.9,
+        "direct_pct": 25.1,
+        "indirect_pct": 54.3,
+        "high_yield": 4.393,
+        "is_validation": false,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 8.9%, indirect 54.3%, bid-to-cover 2.37.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "NORMAL",
+        "post_auction_reaction": null,
+        "regime_impact_verdict": "NOT ASSESSED (routine short-duration; not a regime-validation test)"
+      },
+      {
+        "maturity": "7-Year",
+        "date": "2026-08-27",
+        "btc": 2.5,
+        "dealer_pct": 10.84,
+        "direct_pct": 23.83,
+        "indirect_pct": 53.72,
+        "high_yield": 4.512,
+        "is_validation": false,
+        "so_what": "STRONG DEMAND \u2014 dealer take-down 10.8%, indirect 53.7%, bid-to-cover 2.50.",
+        "read_color": "green",
+        "status": "settled",
+        "quality_verdict": "NORMAL",
+        "post_auction_reaction": null,
+        "regime_impact_verdict": "NOT ASSESSED (routine short-duration; not a regime-validation test)"
+      }
+    ],
+    "auction_next_validation_tests": [
+      {
+        "maturity": "3-Year",
+        "date": "2026-09-08",
+        "status": "scheduled",
+        "is_validation": false
+      },
+      {
+        "maturity": "10-Year",
+        "date": "2026-09-09",
+        "status": "scheduled",
+        "is_validation": true
+      },
+      {
+        "maturity": "30-Year",
+        "date": "2026-09-10",
+        "status": "scheduled",
+        "is_validation": true
+      },
+      {
+        "maturity": "20-Year",
+        "date": "2026-09-15",
+        "status": "scheduled",
+        "is_validation": true
+      },
+      {
+        "maturity": "10-Year TIPS",
+        "date": "2026-09-17",
+        "status": "scheduled",
+        "is_validation": false
+      },
+      {
+        "maturity": "2-Year",
+        "date": "2026-09-22",
+        "status": "scheduled",
+        "is_validation": false
+      },
+      {
+        "maturity": "5-Year",
+        "date": "2026-09-23",
+        "status": "scheduled",
+        "is_validation": false
+      },
+      {
+        "maturity": "7-Year",
+        "date": "2026-09-24",
+        "status": "scheduled",
+        "is_validation": false
+      }
+    ],
+    "auction_core_question": "Can private markets continue absorbing duration while monetary policy remains restrictive, without destabilizing the long end?",
+    "auction_summary_verdict": "All three most recent long-duration validation tests (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) cleared with low-to-normal dealer take-down and adequate-to-strong indirect demand; post-auction yield reaction was SUPPORTIVE (10Y), NEUTRAL (30Y, likely broad-market drift not auction-specific), and mildly SUPPORTIVE (20Y, though largely inseparable from a market-wide rally that day). No auction has produced a tail, a dealer-take-down spike, or an adverse post-auction yield reaction so far.",
+    "momentum": {
+      "monetary_restrictiveness": {
+        "direction": "up",
+        "label": "increasing",
+        "basis": "Front-end (2Y) yield +17.5bp over 1W; 5Y real yield +2.0bp over 1W."
+      },
+      "liquidity_resilience": {
+        "direction": "flat",
+        "label": "stable",
+        "basis": "HY OAS 2.63% vs 2.75% 1W ago (tightened); MOVE 71.0 vs 71.3 1W ago (flat); funding normal, healthy funding conditions.; last 3 long-duration auctions cleared STRONG/NORMAL with no tails."
+      },
+      "state_confidence": {
+        "direction": "flat",
+        "label": "stable",
+        "basis": "No material change in the observable-conditions picture this week."
+      },
+      "mechanism_confidence": {
+        "direction": "flat",
+        "label": "stable",
+        "basis": "MMF/SOMA/issuance flow data still PENDING -- no new structural evidence resolved this week."
+      },
+      "risk_off_distance": {
+        "direction": "flat",
+        "label": "unchanged",
+        "basis": "0/8 risk-off conditions met, distance FAR -- same as prior read."
+      },
+      "regime_momentum": {
+        "value": "STRENGTHENING",
+        "rationale": "Front-end/real yields continue rising (tightening intact) while the long end is not accelerating, the curve is flattening (not steepening), MOVE is flat, credit has tightened, funding (SOFR-IORB) is normal, and the last three long-duration auctions all cleared cleanly with supportive-to-neutral post-auction reactions -- matches the STRENGTHENING definition (front-end tightening continues while long-end/credit/funding/auctions remain healthy)."
+      }
     }
   }
 }

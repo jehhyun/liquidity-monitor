@@ -241,6 +241,9 @@ function render(d) {
   const freshness = v2.data_freshness || [];
   const confMeta = d.confidence_meta || {};
   const confBreak = confMeta.breakdown || [];
+  const mom = v2.momentum || {};
+  const momArrow = (dir) => dir==='up' ? '↑' : (dir==='down' ? '↓' : '→');
+  const momColor = (dir,goodIsUp) => dir==='flat' ? C.grey : ((dir==='up')===!!goodIsUp ? C.green : C.red);
   const qqqm = v2.qqq_module || {};
   const goldm = v2.gold_module || {};
   const cryptom = v2.crypto_module || {};
@@ -250,6 +253,8 @@ function render(d) {
     : (ms.system_regime||'').includes('Risk-On') ? 'green' : 'amber';
 
   // ============ ROW 1a: CURRENT REGIME ============
+  const rmom = mom.regime_momentum || {};
+  const rmomColor = rmom.value==='STRENGTHENING'?C.green:(rmom.value==='WEAKENING'?C.red:C.amber);
   const row1a = `
   <div class="panel">
     <div class="panel-hd"><span><span class="section-num">1.</span>Current Regime</span></div>
@@ -259,9 +264,18 @@ function render(d) {
       <div class="regime-oneliner">${esc(rh.one_liner||'')}</div>
     </div>
     <div class="conf-row">
-      <span class="conf-lbl">Regime Confidence</span>
-      <span class="conf-val" style="color:${(rh.confidence_level||'').includes('LOW')?C.red:((rh.confidence_level||'').includes('MEDIUM')?C.amber:C.green)}">${esc(rh.confidence_level||d.regime_confidence||'—')}</span>
+      <span class="conf-lbl">State Confidence</span>
+      <span class="conf-val" style="color:${(rh.state_confidence||'').includes('LOW')?C.red:((rh.state_confidence||'').includes('MEDIUM')?C.amber:C.green)}">${esc(rh.state_confidence||'—')} <span style="color:${momColor((mom.state_confidence||{}).direction,true)};font-size:10px">${momArrow((mom.state_confidence||{}).direction)} ${esc((mom.state_confidence||{}).label||'')}</span></span>
     </div>
+    <div class="conf-row">
+      <span class="conf-lbl">Mechanism Confidence</span>
+      <span class="conf-val" style="color:${(rh.mechanism_confidence||'').includes('LOW')?C.red:((rh.mechanism_confidence||'').includes('MEDIUM')?C.amber:C.green)}">${esc(rh.mechanism_confidence||'—')} <span style="color:${momColor((mom.mechanism_confidence||{}).direction,true)};font-size:10px">${momArrow((mom.mechanism_confidence||{}).direction)} ${esc((mom.mechanism_confidence||{}).label||'')}</span></span>
+    </div>
+    <div class="conf-row" style="margin-top:6px;padding-top:6px;border-top:1px solid #232323">
+      <span class="conf-lbl">Regime Momentum</span>
+      <span class="conf-val" style="color:${col(rmomColor==C.green?'green':(rmomColor==C.red?'red':'amber'))}">${esc(rmom.value||'—')}</span>
+    </div>
+    ${rmom.rationale?`<div style="font-size:9.5px;color:#666;margin-top:4px;line-height:1.4">${esc(rmom.rationale)}</div>`:''}
   </div>`;
 
   // ============ ROW 1b: MASTER SCORES ============
@@ -270,14 +284,16 @@ function render(d) {
   <div class="panel">
     <div class="panel-hd"><span><span class="section-num">2.</span>Master Scores</span></div>
     <div class="score-block">
-      <div class="score-top"><span class="score-name">Monetary Restrictiveness</span><span class="score-num" style="color:${col('amber')}">${mr.value}/100</span></div>
+      <div class="score-top"><span class="score-name">Monetary Restrictiveness</span><span class="score-num" style="color:${col('amber')}">${mr.value}/100 <span style="font-size:11px;color:${momColor((mom.monetary_restrictiveness||{}).direction,false)}">${momArrow((mom.monetary_restrictiveness||{}).direction)} ${esc((mom.monetary_restrictiveness||{}).label||'')}</span></span></div>
       <div class="score-bar-bg"><div class="score-bar-fill" style="width:${mr.value}%;background:${C.amber}"></div></div>
       <div class="score-label">${esc(mr.label||'')}</div>
+      ${(mom.monetary_restrictiveness||{}).basis?`<div style="font-size:9px;color:#555;margin-top:2px">${esc((mom.monetary_restrictiveness||{}).basis)}</div>`:''}
     </div>
     <div class="score-block" style="margin-bottom:4px">
-      <div class="score-top"><span class="score-name">Liquidity Resilience</span><span class="score-num" style="color:${col('green')}">${lr.value}/100</span></div>
+      <div class="score-top"><span class="score-name">Liquidity Resilience</span><span class="score-num" style="color:${col('green')}">${lr.value}/100 <span style="font-size:11px;color:${momColor((mom.liquidity_resilience||{}).direction,true)}">${momArrow((mom.liquidity_resilience||{}).direction)} ${esc((mom.liquidity_resilience||{}).label||'')}</span></span></div>
       <div class="score-bar-bg"><div class="score-bar-fill" style="width:${lr.value}%;background:${C.green}"></div></div>
       <div class="score-label">${esc(lr.label||'')}</div>
+      ${(mom.liquidity_resilience||{}).basis?`<div style="font-size:9px;color:#555;margin-top:2px">${esc((mom.liquidity_resilience||{}).basis)}</div>`:''}
     </div>
     <div class="matrix-note">HIGH restrictiveness × HIGH resilience → <b style="color:${col(regimeColor)}">${esc(ms.system_regime||'')}</b>. Regime is derived from this matrix every run, not hardcoded.</div>
   </div>`;
@@ -285,7 +301,7 @@ function render(d) {
   // ============ ROW 1c: SIGNAL SUMMARY ============
   const sigRows = [
     ['Curve topology (1wk)', esc(ct.classification||'—'), levelColor(ct.interpretation)],
-    ['Real yield / breakeven', esc(ry.classification||'—'), 'amber'],
+    ['Real yield / breakeven', ry.data_mismatch ? 'DATA MISMATCH' : esc(ry.classification||'—'), ry.data_mismatch ? 'red' : 'amber'],
     ['HY / IG credit', `${(d.credit||{}).hy_oas}% / ${(d.credit||{}).ig_oas}%`, 'green'],
     ['MOVE index', `${fmt((d.duration||{}).move,1)}`, (d.duration||{}).move>80?'red':'green'],
     ['SOFR − IORB', `${fmt((d.plumbing||{}).sofr_iorb_bps,1)}bp`, 'green'],
@@ -347,12 +363,18 @@ function render(d) {
     <div class="panel-hd">Why This Regime?</div>
     ${evHtml}
   </div>`;
-  const cdHtml = confBreak.map(x=>`<div class="conf-decomp-row"><span class="conf-decomp-lbl">${esc(x.driver)}</span><span class="conf-decomp-lvl" style="color:${col(levelColor(x.level))}">${esc(x.level)}</span></div>`).join('');
+  const cdRow = x=>`<div class="conf-decomp-row"><span class="conf-decomp-lbl">${esc(x.driver)}</span><span class="conf-decomp-lvl" style="color:${col(levelColor(x.level))}">${esc(x.level)}</span></div>`;
+  const stateBreak = confBreak.filter(x=>x.type==='state');
+  const mechBreak = confBreak.filter(x=>x.type==='mechanism');
+  const scLvl = (confMeta.state_confidence||{}).level, mcLvl = (confMeta.mechanism_confidence||{}).level;
   const row3c = `
   <div class="panel">
-    <div class="panel-hd">Regime Confidence Breakdown</div>
-    ${cdHtml}
-    <div class="so-what" style="margin-top:8px"><b>EPISTEMIC NOTE</b> We may know the system is currently resilient without knowing with equal confidence *why*. Rows above marked LOW/MEDIUM are hypotheses, not observations.</div>
+    <div class="panel-hd">Confidence Breakdown <span class="sub">state vs. mechanism</span></div>
+    <div style="font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.04em;margin:2px 0 4px">State Confidence: <b style="color:${col(levelColor(scLvl))}">${esc(scLvl||'—')}</b> <span style="color:#555;font-weight:400;text-transform:none;letter-spacing:0"> — do observable conditions fit the regime?</span></div>
+    ${stateBreak.map(cdRow).join('')}
+    <div style="font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px">Mechanism Confidence: <b style="color:${col(levelColor(mcLvl))}">${esc(mcLvl||'—')}</b> <span style="color:#555;font-weight:400;text-transform:none;letter-spacing:0"> — do proposed Treasury/structural mechanisms explain them?</span></div>
+    ${mechBreak.map(cdRow).join('')}
+    <div class="so-what" style="margin-top:8px"><b>EPISTEMIC NOTE</b> ${esc(confMeta.note || 'We may know the system is currently resilient without knowing with equal confidence *why*. Mechanism-confidence rows are hypotheses, not observations.')}</div>
   </div>`;
 
   // ============ PRESSURE MAP ============
@@ -390,17 +412,29 @@ function render(d) {
 
   // ============ REAL YIELD / BREAKEVEN LADDER ============
   const ladder = ry.ladder||[];
-  const ladderRows = ladder.map(l=>`<tr><td>${esc(l.tenor)} ${l.role==='PRIMARY'?'<span class="chip confirmed">PRIMARY</span>':(l.role==='CONFIRMATION'?'<span class="chip proxy">CONFIRM</span>':'')}</td><td style="text-align:right">${fmt(l.real,2)}%</td><td style="text-align:right">${l.chg_1d_bps!=null?(l.chg_1d_bps>=0?'+':'')+fmt(l.chg_1d_bps,1)+'bp':'—'}</td></tr>`).join('');
+  const isMismatch = !!ry.data_mismatch;
+  const ladderRows = ladder.map(l=>{
+    if (l.real==null) return `<tr><td>${esc(l.tenor)}</td><td style="text-align:right;color:#555">n/a</td><td style="text-align:right;color:#555">${esc(l.note||'—')}</td></tr>`;
+    return `<tr><td>${esc(l.tenor)} ${l.role==='PRIMARY'?'<span class="chip confirmed">PRIMARY</span>':(l.role==='CONFIRMATION'?'<span class="chip proxy">CONFIRM</span>':'')}</td><td style="text-align:right">${fmt(l.real,2)}%</td><td style="text-align:right">${l.chg_1d_bps!=null?(l.chg_1d_bps>=0?'+':'')+fmt(l.chg_1d_bps,1)+'bp / 1W '+(l.chg_1w_bps>=0?'+':'')+fmt(l.chg_1w_bps,1)+'bp':'—'}</td></tr>`;
+  }).join('');
   const secReal = `
   <div class="panel">
     <div class="panel-hd"><span><span class="section-num">7.</span>Real Yield / Breakeven Decomposition</span></div>
+    ${isMismatch ? `
+    <div class="classification-badge" style="background:#1a1010;border:1px solid #3a1a1a;color:${C.red}">DATA MISMATCH / CLASSIFICATION UNAVAILABLE</div>
+    <div class="so-what" style="border-left-color:${C.red}">${esc(ry.mismatch_note||'Underlying nominal, real, and breakeven observations are not from the same vintage. No current-state classification is generated until they align.')}</div>
+    ` : `
     <div class="classification-badge" style="background:#0f0f0f;border:1px solid ${col('amber')};color:${col('amber')}">${esc(ry.classification||'—')}</div>
+    <div style="font-size:9px;color:#555;margin-bottom:4px">AS OF ${esc(ry.as_of||'—')} · ${esc(ry.source||'')} · ${esc(ry.comparison_period||'')}</div>
     <table class="mini-table">
-      <tr><th>Tenor (TIPS)</th><th style="text-align:right">Real Yield</th><th style="text-align:right">1D Δ</th></tr>
+      <tr><th>Tenor (TIPS)</th><th style="text-align:right">Real Yield</th><th style="text-align:right">1D / 1W Δ</th></tr>
       ${ladderRows}
     </table>
-    <div style="font-size:10px;color:#666">10Y breakeven: <b style="color:#ddd">${fmt(ry.breakeven_10y,2)}%</b> &nbsp; Nominal 10Y: <b style="color:#ddd">${fmt(ry.nominal_10y,3)}%</b></div>
+    <div style="font-size:10px;color:#666">10Y breakeven: <b style="color:#ddd">${fmt(ry.breakeven_10y,2)}%</b> &nbsp; 5Y breakeven: <b style="color:#ddd">${fmt(ry.breakeven_5y,2)}%</b> &nbsp; Nominal 10Y: <b style="color:#ddd">${fmt(ry.nominal_10y,3)}%</b></div>
+    ${ry.breakeven_20y_30y_note?`<div style="font-size:9px;color:#444;margin-top:2px">${esc(ry.breakeven_20y_30y_note)}</div>`:''}
     <div class="so-what"><b>SO WHAT?</b> ${esc(ry.so_what||'')}</div>
+    ${ry.as_of_note?`<details class="methodology"><summary>Why AS OF ${esc(ry.as_of||'')} and not today?</summary><div>${esc(ry.as_of_note)}</div></details>`:''}
+    `}
     <div class="so-what" style="margin-top:5px;border-left-color:${C.purple}"><b style="color:${C.purple}">GOLD:</b> ${esc(goldm.current_read||'')}</div>
   </div>`;
 
@@ -426,15 +460,22 @@ function render(d) {
   const mmf = sd.mmf||{}, stbl = sd.stablecoins||{};
   const secStructural = `
   <div class="panel">
-    <div class="panel-hd"><span><span class="section-num">9.</span>Structural Treasury Demand / Funding Absorption</span></div>
+    <div class="panel-hd"><span><span class="section-num">9.</span>Structural Treasury Demand / Funding Absorption <span class="chip ${statusChipClass(sd.status)}" style="margin-left:6px">${esc(sd.status||'')}</span></span></div>
     <div style="font-size:10.5px;color:#999;margin-bottom:8px;line-height:1.5">${esc(sd.core_question||'')}</div>
     <div class="two-col">
       <div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><span style="font-size:10.5px;color:#ddd;font-weight:600">Money Market Funds</span><span class="chip ${statusChipClass(mmf.status)}">${esc(mmf.status)}</span></div>
-        <div class="cv" style="font-size:20px">$${fmt(mmf.total_t,2)}T</div>
-        <div class="cd" style="color:${C.green}">+$${fmt(mmf.wow_change_b,1)}B w/w</div>
-        <div style="font-size:9.5px;color:#666;margin-top:4px">Gov't/repo $${fmt(mmf.government_t,2)}T · Retail $${fmt(mmf.retail_t,2)}T · Institutional $${fmt(mmf.institutional_t,2)}T</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><span style="font-size:10.5px;color:#ddd;font-weight:600">MMF Total AUM</span><span class="chip ${statusChipClass(mmf.total_aum_status)}">${esc(mmf.total_aum_status)}</span></div>
+        <div class="cv" style="font-size:20px">$${fmt(mmf.total_aum_t,2)}T</div>
+        <div class="cd" style="color:${C.green}">+$${fmt(mmf.total_aum_wow_change_b,1)}B w/w</div>
+        <div style="font-size:9px;color:#666;margin-top:3px">${esc(mmf.total_aum_wow_note||'')}</div>
+        <div style="font-size:9.5px;color:#666;margin-top:6px">Gov't fund AUM $${fmt(mmf.government_fund_aum_t,2)}T <span class="chip ${statusChipClass(mmf.government_fund_aum_status)}" style="font-size:8px">${esc(mmf.government_fund_aum_status)}</span> · Retail $${fmt(mmf.retail_t,2)}T · Institutional $${fmt(mmf.institutional_t,2)}T</div>
         <div style="font-size:9px;color:#444;margin-top:3px">${esc(mmf.source)} · ${esc(mmf.frequency)} · last ${esc(mmf.last_updated)}</div>
+        <div style="margin-top:8px;padding-top:6px;border-top:1px solid #232323">
+          <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:9.5px;color:#999">Treasury holdings (direct)</span><span class="chip pending" style="font-size:8px">${esc(mmf.treasury_holdings_status)}</span></div>
+          <div style="font-size:9px;color:#555;margin-top:2px">${esc(mmf.treasury_holdings_note||'')}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px"><span style="font-size:9.5px;color:#999">Net Treasury purchases (marginal)</span><span class="chip pending" style="font-size:8px">${esc(mmf.net_treasury_purchases_status)}</span></div>
+          <div style="font-size:9px;color:#555;margin-top:2px">${esc(mmf.net_treasury_purchases_note||'')}</div>
+        </div>
       </div>
       <div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><span style="font-size:10.5px;color:#ddd;font-weight:600">Stablecoins</span><span class="chip ${statusChipClass(stbl.status)}">${esc(stbl.status)}</span></div>
@@ -467,45 +508,50 @@ function render(d) {
   </div>`;
 
   // ============ TREASURY AUCTION VALIDATION ============
-  const validationRows = adash.filter(a=>a.is_validation).map(a=>{
-    const settled = a.status==='settled';
-    return `<tr class="validation">
-      <td>${esc(a.maturity)} <span class="chip event">TEST</span></td>
+  const recentEv = v2.auction_recent_evidence || adash.filter(a=>a.status==='settled');
+  const nextTests = v2.auction_next_validation_tests || adash.filter(a=>a.status==='scheduled');
+  const qColor = q => q==='STRONG'?C.green:(q==='WEAK'?C.red:C.amber);
+  const iColor = im => (im||'').startsWith('SUPPORTIVE')?C.green:((im||'').startsWith('NEGATIVE')?C.red:C.amber);
+  const evidenceRows = recentEv.map(a=>{
+    const isVal = a.is_validation;
+    const reaction = a.post_auction_reaction;
+    return `<tr class="${isVal?'validation':''}">
+      <td>${esc(a.maturity)} ${isVal?'<span class="chip event">TEST</span>':''}</td>
       <td>${esc(a.date)}</td>
-      <td style="text-transform:capitalize">${esc(a.status)}</td>
-      <td>${settled?'$'+fmt(a.offering_b,0)+'B':'—'}</td>
-      <td>${settled?fmt(a.btc,2):'—'}</td>
-      <td>${settled?fmt(a.indirect_pct,1)+'%':'—'}</td>
-      <td>${settled?fmt(a.dealer_pct,1)+'%':'—'}</td>
-      <td style="color:${col(a.read_color||'grey')}">${esc(a.so_what||'Scheduled — results pending.')}</td>
+      <td>${a.offering_b?'$'+fmt(a.offering_b,0)+'B':'—'}</td>
+      <td>${fmt(a.btc,2)}</td>
+      <td>${fmt(a.indirect_pct,1)}%</td>
+      <td>${fmt(a.dealer_pct,1)}%</td>
+      <td style="color:${qColor(a.quality_verdict)}">${esc(a.quality_verdict||'—')}</td>
+      <td style="color:${iColor(a.regime_impact_verdict)}">${esc(a.regime_impact_verdict||'—')}</td>
+      <td style="font-size:9.5px;color:#888">${reaction?esc(reaction.note):'—'}</td>
     </tr>`;
   }).join('');
-  const routineRows = adash.filter(a=>!a.is_validation).map(a=>{
-    const settled = a.status==='settled';
-    return `<tr>
-      <td>${esc(a.maturity)}</td><td>${esc(a.date)}</td><td style="text-transform:capitalize">${esc(a.status)}</td>
-      <td>${settled?fmt(a.btc,2):'—'}</td><td>${settled?fmt(a.indirect_pct,1)+'%':'—'}</td><td>${settled?fmt(a.dealer_pct,1)+'%':'—'}</td>
-      <td style="color:${col(a.read_color||'grey')}">${esc(a.so_what||'Scheduled.')}</td>
-    </tr>`;
-  }).join('');
+  const nextRows = nextTests.map(a=>`<tr class="${a.is_validation?'validation':''}">
+      <td>${esc(a.maturity)} ${a.is_validation?'<span class="chip event">KEY TEST</span>':''}</td>
+      <td>${esc(a.date)}</td>
+      <td style="color:#666">Scheduled</td>
+    </tr>`).join('');
   const secAuctions = `
   <div class="panel">
     <div class="panel-hd"><span><span class="section-num">11.</span>Treasury Auction Validation <span class="sub">primary regime-confirmation module</span></span></div>
-    <div style="font-size:10px;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Current Regime Validation Tests — 10Y / 20Y / 30Y</div>
+    <div style="font-size:10.5px;color:#999;margin-bottom:8px;line-height:1.5">${esc(v2.auction_core_question||'')}</div>
+    <div style="font-size:10px;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Recent Auction Evidence</div>
     <div style="overflow-x:auto">
     <table class="abs-table">
-      <tr><th>Maturity</th><th>Date</th><th>Status</th><th>Offering</th><th>BTC</th><th>Indirect%</th><th>Dealer%</th><th>So What?</th></tr>
-      ${validationRows}
+      <tr><th>Maturity</th><th>Date</th><th>Offering</th><th>BTC</th><th>Indirect%</th><th>Dealer%</th><th>Quality</th><th>Regime Impact</th><th>Post-Auction Reaction</th></tr>
+      ${evidenceRows}
     </table>
     </div>
-    <div style="font-size:9px;color:#3a3a3a;margin:6px 0">Can private markets continue absorbing duration without destabilizing the long end while policy stays restrictive? All three most recent tests: yes.</div>
-    <details class="methodology"><summary>Routine auctions (2Y/5Y/7Y + upcoming schedule) — lower regime-validation weight</summary><div>
-      <table class="abs-table" style="margin-top:6px">
-        <tr><th>Maturity</th><th>Date</th><th>Status</th><th>BTC</th><th>Indirect%</th><th>Dealer%</th><th>So What?</th></tr>
-        ${routineRows}
-      </table>
-      <div style="margin-top:4px">6-auction average: dealer ${fmt(a6.dealer_pct,1)}%, indirect ${fmt(a6.indirect_pct,1)}%, BTC ${fmt(a6.btc,2)}.</div>
-    </div></details>
+    ${v2.auction_summary_verdict?`<div class="so-what" style="margin-top:8px">${esc(v2.auction_summary_verdict)}</div>`:''}
+    <div style="font-size:10px;color:#888;margin:12px 0 6px;text-transform:uppercase;letter-spacing:.05em">Next Regime Validation Tests <span style="color:#555;text-transform:none;letter-spacing:0">— 10Y / 20Y / 30Y are the key tests</span></div>
+    <div style="overflow-x:auto">
+    <table class="abs-table">
+      <tr><th>Maturity</th><th>Date</th><th>Status</th></tr>
+      ${nextRows}
+    </table>
+    </div>
+    <div style="margin-top:6px;font-size:9.5px;color:#666">6-auction average (context): dealer ${fmt(a6.dealer_pct,1)}%, indirect ${fmt(a6.indirect_pct,1)}%, BTC ${fmt(a6.btc,2)}.</div>
   </div>`;
 
   // ============ SCENARIOS + DISTANCE TO TRANSITION + STATE DIAGRAM ============
