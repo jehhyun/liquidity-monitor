@@ -13,15 +13,15 @@
       "trend_label": "Stable",
       "decomp": [
         [
-          "Today's 7-Year Note auction settled clean — dealer take 10.84%, indirect 53.72%, BTC 2.50, no signs of stress",
+          "Today's 7-Year Note auction settled clean \u2014 dealer take 10.84%, indirect 53.72%, BTC 2.50, no signs of stress",
           2
         ],
         [
-          "RRP continues draining toward zero ($0.702B → $0.456B) — normal pattern, not a fresh stress signal",
+          "RRP continues draining toward zero ($0.702B \u2192 $0.456B) \u2014 normal pattern, not a fresh stress signal",
           0
         ],
         [
-          "FRED plumbing (WALCL/TGA/WRESBAL) still stuck at Aug 19 vintage — H.4.1 now technically overdue as of today's scheduled release date",
+          "FRED plumbing (WALCL/TGA/WRESBAL) still stuck at Aug 19 vintage \u2014 H.4.1 now technically overdue as of today's scheduled release date",
           -1
         ]
       ]
@@ -34,7 +34,7 @@
       "trend_label": "Stable",
       "decomp": [
         [
-          "CACC +0.96%, ALLY +0.87% — both steady, no acceleration or deterioration",
+          "CACC +0.96%, ALLY +0.87% \u2014 both steady, no acceleration or deterioration",
           0
         ],
         [
@@ -42,7 +42,7 @@
           0
         ],
         [
-          "HY OAS flat at 2.70% — no credit spread widening",
+          "HY OAS flat at 2.70% \u2014 no credit spread widening",
           0
         ]
       ]
@@ -55,11 +55,11 @@
       "trend_label": "Deteriorating",
       "decomp": [
         [
-          "Oil's drift has become more pronounced: +0.79% → +2.27% today",
+          "Oil's drift has become more pronounced: +0.79% \u2192 +2.27% today",
           -2
         ],
         [
-          "Breakevens (T5YIE/T10YIE) and DFII5 all unchanged — no inflation-expectation repricing yet",
+          "Breakevens (T5YIE/T10YIE) and DFII5 all unchanged \u2014 no inflation-expectation repricing yet",
           0
         ],
         [
@@ -80,7 +80,7 @@
           -2
         ],
         [
-          "MOVE -3.45% today — bond vol actually falling",
+          "MOVE -3.45% today \u2014 bond vol actually falling",
           1
         ],
         [
@@ -104,27 +104,27 @@
     "macro_trend": "Liquidity Expansion, Cooling Into the Evening (Korea Gate Still Open 3/3, 7Y Auction Clean)",
     "likely_rotation": "Semis/AI leadership still intact but pared back from the day's highs; Korea gate remains open on fresh data; today's 7-Year Note auction cleared cleanly, reinforcing the Treasury Auction module's Healthy read.",
     "risk_level": "Medium",
-    "next_catalyst": "Warsh's Jackson Hole keynote — tomorrow morning (~12-14 hrs out)",
-    "korea_gate": "3/3 — OPEN. EWY $179.83>SMA20 $172.57 PASS, USDKRW 1,381.80<1,530 PASS, KOSPI 6,912.38>5-day SMA 6,814.65 PASS"
+    "next_catalyst": "Warsh's Jackson Hole keynote \u2014 tomorrow morning (~12-14 hrs out)",
+    "korea_gate": "3/3 \u2014 OPEN. EWY $179.83>SMA20 $172.57 PASS, USDKRW 1,381.80<1,530 PASS, KOSPI 6,912.38>5-day SMA 6,814.65 PASS"
   },
-  "bias": "A modest late-session cooling rather than a reversal: NVDA has pared back from its earlier +9.62% peak to +8.55% but is still holding a large gain; SOXX/QQQ/SPY are all still positive on the day but slightly softer than the last check. VIX ticked up marginally (14.45→14.70) while still sitting near multi-week lows. The genuinely notable thread from today continues to be the slow, consistent nominal yield drift — now joined by an oil drift that has become more pronounced (+0.79%→+2.27% today). Neither move is alarming in isolation, and breakevens/DFII5 remain completely flat, so this still reads as rate-of-change noise rather than a real regime shift. The Treasury Auction module got its first live confirmation of the day: the 7-Year Note auction that was pending at the last check has now settled cleanly (dealer take 10.84%, solid indirect demand), supporting the Healthy state.",
+  "bias": "A modest late-session cooling rather than a reversal: NVDA has pared back from its earlier +9.62% peak to +8.55% but is still holding a large gain; SOXX/QQQ/SPY are all still positive on the day but slightly softer than the last check. VIX ticked up marginally (14.45\u219214.70) while still sitting near multi-week lows. The genuinely notable thread from today continues to be the slow, consistent nominal yield drift \u2014 now joined by an oil drift that has become more pronounced (+0.79%\u2192+2.27% today). Neither move is alarming in isolation, and breakevens/DFII5 remain completely flat, so this still reads as rate-of-change noise rather than a real regime shift. The Treasury Auction module got its first live confirmation of the day: the 7-Year Note auction that was pending at the last check has now settled cleanly (dealer take 10.84%, solid indirect demand), supporting the Healthy state.",
   "counterargs": {
-    "thesis": "Liquidity Expansion intact but cooling into the evening — NVDA/semis leadership holding at a reduced pace, Korea gate open, 7Y auction clean",
+    "thesis": "Liquidity Expansion intact but cooling into the evening \u2014 NVDA/semis leadership holding at a reduced pace, Korea gate open, 7Y auction clean",
     "supporting": [
-      "7-Year Note auction settled cleanly — dealer take just 10.84%, indirect demand 53.72%, no stress signals",
+      "7-Year Note auction settled cleanly \u2014 dealer take just 10.84%, indirect demand 53.72%, no stress signals",
       "Korea gate OPEN 3/3 on fresh data (EWY, USDKRW, KOSPI all re-confirmed)",
-      "HY OAS unchanged at 2.70% — no credit spread widening despite the equity pullback",
-      "Breakevens and DFII5 completely unchanged — no inflation-expectation or real-rate deterioration",
-      "MOVE actually falling (-3.45%) — bond market vol still compressed"
+      "HY OAS unchanged at 2.70% \u2014 no credit spread widening despite the equity pullback",
+      "Breakevens and DFII5 completely unchanged \u2014 no inflation-expectation or real-rate deterioration",
+      "MOVE actually falling (-3.45%) \u2014 bond market vol still compressed"
     ],
     "against": [
-      "Oil's drift has become more pronounced today (+0.79% → +2.27%) — the clearest deteriorating signal this check",
-      "Yields ticked up again in the same direction (US10Y +1.0bp, US02Y +0.8bp this check) — persistent, not sharp, but consistent",
+      "Oil's drift has become more pronounced today (+0.79% \u2192 +2.27%) \u2014 the clearest deteriorating signal this check",
+      "Yields ticked up again in the same direction (US10Y +1.0bp, US02Y +0.8bp this check) \u2014 persistent, not sharp, but consistent",
       "NVDA, SOXX, QQQ, SPY, and EWY all pulled back modestly from the prior check's levels",
-      "FRED plumbing (WALCL/TGA/WRESBAL) still hasn't updated — H.4.1 is now technically overdue as of today's scheduled release date",
-      "Warsh's keynote is tomorrow morning — today's calm doesn't reduce that binary risk"
+      "FRED plumbing (WALCL/TGA/WRESBAL) still hasn't updated \u2014 H.4.1 is now technically overdue as of today's scheduled release date",
+      "Warsh's keynote is tomorrow morning \u2014 today's calm doesn't reduce that binary risk"
     ],
-    "read": "Today's session appears to be cooling modestly into the evening rather than reversing: risk assets are still up on the day but softer than their peaks, while oil's drift is the one signal that has genuinely strengthened since the last check. The 7-Year auction's clean settlement is a real, fresh positive data point for the Treasury Auction module rather than a reused/stale read. Nothing here changes the medium-term picture — Warsh's keynote tomorrow remains the dominant unresolved catalyst."
+    "read": "Today's session appears to be cooling modestly into the evening rather than reversing: risk assets are still up on the day but softer than their peaks, while oil's drift is the one signal that has genuinely strengthened since the last check. The 7-Year auction's clean settlement is a real, fresh positive data point for the Treasury Auction module rather than a reused/stale read. Nothing here changes the medium-term picture \u2014 Warsh's keynote tomorrow remains the dominant unresolved catalyst."
   },
   "trade_table": [
     {
@@ -133,7 +133,7 @@
       "signal_color": "green",
       "conviction": 7,
       "horizon": "1-2 wks",
-      "rationale": "NVDA +8.55% (pared back from +9.62% peak); SOXX +1.03%, QQQ +0.95% — still solidly positive but softer than the last check. SOXX/SPY ratio 0.676."
+      "rationale": "NVDA +8.55% (pared back from +9.62% peak); SOXX +1.03%, QQQ +0.95% \u2014 still solidly positive but softer than the last check. SOXX/SPY ratio 0.676."
     },
     {
       "theme": "Long Duration (TLT)",
@@ -141,11 +141,11 @@
       "signal_color": "amber",
       "conviction": 3,
       "horizon": "1-3 wks",
-      "rationale": "TLT -0.26%; yields continue their slow, consistent drift higher — now compounded by an accelerating oil move."
+      "rationale": "TLT -0.26%; yields continue their slow, consistent drift higher \u2014 now compounded by an accelerating oil move."
     },
     {
       "theme": "Korea (EWY/KOSPI)",
-      "signal": "Bullish — gate 3/3 OPEN (fresh data)",
+      "signal": "Bullish \u2014 gate 3/3 OPEN (fresh data)",
       "signal_color": "green",
       "conviction": 6,
       "horizon": "1-4 wks",
@@ -157,18 +157,18 @@
       "signal_color": "amber",
       "conviction": 5,
       "horizon": "structural",
-      "rationale": "CACC/ALLY steady, COF still marginally negative — unchanged pattern, HY OAS flat."
+      "rationale": "CACC/ALLY steady, COF still marginally negative \u2014 unchanged pattern, HY OAS flat."
     },
     {
       "theme": "Treasury Auctions",
-      "signal": "Healthy — 7Y Note cleared cleanly",
+      "signal": "Healthy \u2014 7Y Note cleared cleanly",
       "signal_color": "green",
       "conviction": 5,
       "horizon": "structural",
-      "rationale": "Dealer take 10.84%, indirect demand 53.72%, BTC 2.50 — no stress signals; dealer inventory trending down over the last 3 weekly NY Fed prints."
+      "rationale": "Dealer take 10.84%, indirect demand 53.72%, BTC 2.50 \u2014 no stress signals; dealer inventory trending down over the last 3 weekly NY Fed prints."
     },
     {
-      "theme": "Event Risk — Warsh's Jackson Hole Keynote",
+      "theme": "Event Risk \u2014 Warsh's Jackson Hole Keynote",
       "signal": "Reduce leverage into event",
       "signal_color": "red",
       "conviction": 3,
@@ -180,7 +180,7 @@
     {
       "date": "Aug 28",
       "days": 1,
-      "event": "Fed Chair Kevin Warsh's Jackson Hole keynote — first as chair",
+      "event": "Fed Chair Kevin Warsh's Jackson Hole keynote \u2014 first as chair",
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
@@ -193,12 +193,12 @@
       "type": "Data",
       "type_color": "amber",
       "stars": 4,
-      "note": "Still not posted as of this pull (20:20 CEST) — still Aug 19 vintage, technically overdue as of today's scheduled release date."
+      "note": "Still not posted as of this pull (20:20 CEST) \u2014 still Aug 19 vintage, technically overdue as of today's scheduled release date."
     },
     {
       "date": "Aug 27",
       "days": 0,
-      "event": "7-Year Note Auction — SETTLED",
+      "event": "7-Year Note Auction \u2014 SETTLED",
       "type": "Data",
       "type_color": "green",
       "stars": 2,
@@ -220,17 +220,17 @@
       "type": "Binary",
       "type_color": "red",
       "stars": 5,
-      "note": "Next Fed rate decision and dot plot — first with Warsh as chair."
+      "note": "Next Fed rate decision and dot plot \u2014 first with Warsh as chair."
     }
   ],
   "plumbing": {
     "net_liquidity_t": 5.792,
     "walcl_b": 6745.699,
     "tga_b": 953.612,
-    "tga_delta": "Unchanged — still Aug 19 vintage; H.4.1 still not posted as of this pull (today is the scheduled release date, not yet live)",
+    "tga_delta": "Unchanged \u2014 still Aug 19 vintage; H.4.1 still not posted as of this pull (today is the scheduled release date, not yet live)",
     "tga_color": "grey",
     "rrp_b": 0.456,
-    "rrp_delta": "↓ from $0.702B — continued drain toward zero, in line with the multi-week pattern",
+    "rrp_delta": "\u2193 from $0.702B \u2014 continued drain toward zero, in line with the multi-week pattern",
     "rrp_color": "grey",
     "reserves_t": 2.935287,
     "reserves_delta": "Unchanged, still below $3T",
@@ -242,7 +242,7 @@
     "iorb_delta": "Unchanged",
     "iorb_color": "grey",
     "sofr_iorb_bps": -1.0,
-    "sofr_iorb_note": "SOFR trading 1bp below IORB — normal, healthy funding conditions, unchanged."
+    "sofr_iorb_note": "SOFR trading 1bp below IORB \u2014 normal, healthy funding conditions, unchanged."
   },
   "duration": {
     "tlt": 83.08,
@@ -260,15 +260,15 @@
     "real_yield": 2.354,
     "tlt_shy_ratio": 1.013,
     "move": 69.4375,
-    "move_delta": "-3.45% today — bond vol falling",
+    "move_delta": "-3.45% today \u2014 bond vol falling",
     "move_color": "green"
   },
   "duration_score": {
     "score": -1,
     "classification": "Neutral / Slow Yield Drift Continuing, Modest Late-Session Risk Cooling",
-    "reason": "Yields ticked up again this check (US10Y 4.664%→4.674%, US02Y 4.220%→4.228%) — the same slow, consistent drift flagged in the prior run is still intact. Oil's drift has become more pronounced (+0.79%→+2.27% today). Equities (SOXX/QQQ/SPY/NVDA) pulled back modestly from the run's earlier highs. Breakevens and DFII5 remain completely unchanged — no inflation-expectation repricing, so this reads as risk-off cooling plus a continued nominal-yield drift, not a real-rate pain-trade setup.",
+    "reason": "Yields ticked up again this check (US10Y 4.664%\u21924.674%, US02Y 4.220%\u21924.228%) \u2014 the same slow, consistent drift flagged in the prior run is still intact. Oil's drift has become more pronounced (+0.79%\u2192+2.27% today). Equities (SOXX/QQQ/SPY/NVDA) pulled back modestly from the run's earlier highs. Breakevens and DFII5 remain completely unchanged \u2014 no inflation-expectation repricing, so this reads as risk-off cooling plus a continued nominal-yield drift, not a real-rate pain-trade setup.",
     "james_framework": {
-      "what_market_IS_saying": "A continued slow nominal yield drift higher, now paired with a modest pullback in risk assets and oil's drift becoming more pronounced — worth watching into Warsh's keynote tomorrow.",
+      "what_market_IS_saying": "A continued slow nominal yield drift higher, now paired with a modest pullback in risk assets and oil's drift becoming more pronounced \u2014 worth watching into Warsh's keynote tomorrow.",
       "pain_trade": "Not currently active. Breakevens and DFII5 unchanged; nominal 2Y drift is modest.",
       "watch_signal": "If oil's drift keeps accelerating and breakevens start moving with it, re-examine the real-rate-pressure framework before Warsh speaks."
     },
@@ -325,7 +325,7 @@
       "trend_label": "Roughly flat",
       "note": "Experimental modeled proxy; T2YIE remains deprecated."
     },
-    "breakeven_curve_signal": "Breakevens remain unchanged despite the continued slow nominal yield drift — inflation expectations still anchored.",
+    "breakeven_curve_signal": "Breakevens remain unchanged despite the continued slow nominal yield drift \u2014 inflation expectations still anchored.",
     "dfii5": {
       "value": 2.04,
       "trend_label": "Stable",
@@ -456,7 +456,7 @@
     },
     "oil": {
       "value": 84.1,
-      "delta": "+2.27% today — the drift flagged in the prior run has become more pronounced (was +0.79%)",
+      "delta": "+2.27% today \u2014 the drift flagged in the prior run has become more pronounced (was +0.79%)",
       "color": "amber",
       "note": "Worth watching into tomorrow; not yet at a level that threatens the disinflation thesis outright."
     },
@@ -486,7 +486,7 @@
     "second_fit": "inflation_reacceleration",
     "confidence": "Medium",
     "actionable_output": {
-      "leaders_if_confirmed": "Semis, Korea/EM, broad cyclicals — same as prior run",
+      "leaders_if_confirmed": "Semis, Korea/EM, broad cyclicals \u2014 same as prior run",
       "current_tactical_leaders": "NVDA/SOXX still the clearest leader despite pulling back from the day's highs; Korea (EWY) gate re-confirmed open on fresh data; credit steady, not accelerating.",
       "likely_rotation": "Semis/AI leadership still intact but cooling into the evening; Korea gate remains open on fresh data; watch oil's accelerating drift as the one genuinely new risk signal."
     }
@@ -495,13 +495,13 @@
     {
       "label": "7-Year Note Auction",
       "value": "Settled",
-      "delta": "Dealer take 10.84%, indirect 53.72%, BTC 2.50 — clean, no stress signals",
+      "delta": "Dealer take 10.84%, indirect 53.72%, BTC 2.50 \u2014 clean, no stress signals",
       "color": "green"
     },
     {
       "label": "Oil (CL1!)",
       "value": "$84.10",
-      "delta": "↑ +2.27% — drift has become more pronounced (was +0.79%)",
+      "delta": "\u2191 +2.27% \u2014 drift has become more pronounced (was +0.79%)",
       "color": "amber"
     },
     {
@@ -513,19 +513,19 @@
     {
       "label": "NVDA",
       "value": "$227.58",
-      "delta": "↑ +8.55% — pared back slightly from the day's +9.62% peak",
+      "delta": "\u2191 +8.55% \u2014 pared back slightly from the day's +9.62% peak",
       "color": "green"
     },
     {
       "label": "VIX",
       "value": "14.70",
-      "delta": "↑ +1.7% vs the last check, still near multi-week lows",
+      "delta": "\u2191 +1.7% vs the last check, still near multi-week lows",
       "color": "grey"
     },
     {
       "label": "RRP",
       "value": "$0.456B",
-      "delta": "↓ from $0.702B, continuing to drain toward zero",
+      "delta": "\u2193 from $0.702B, continuing to drain toward zero",
       "color": "grey"
     }
   ],
@@ -569,7 +569,7 @@
         "direct_pctile": null,
         "btc_pctile": null,
         "tail_bps": null,
-        "read": "Healthy — low dealer take (10.84%, even lower than the two prior settled auctions), solid indirect demand (53.72%), decent bid-to-cover (2.50). No percentile assigned — only 2 comparable (Note, 7-Year) auctions exist in the ledger (need min 8)."
+        "read": "Healthy \u2014 low dealer take (10.84%, even lower than the two prior settled auctions), solid indirect demand (53.72%), decent bid-to-cover (2.50). No percentile assigned \u2014 only 2 comparable (Note, 7-Year) auctions exist in the ledger (need min 8)."
       },
       {
         "cusip": "91282CRK9",
@@ -587,7 +587,7 @@
         "direct_pctile": 75,
         "btc_pctile": 70,
         "tail_bps": null,
-        "read": "Healthy — low dealer take (25th pctile), strong direct demand (75th pctile); indirect demand soft (20th pctile) but not concerning given the low dealer take."
+        "read": "Healthy \u2014 low dealer take (25th pctile), strong direct demand (75th pctile); indirect demand soft (20th pctile) but not concerning given the low dealer take."
       },
       {
         "cusip": "91282CRH6",
@@ -605,7 +605,7 @@
         "direct_pctile": 25,
         "btc_pctile": 40,
         "tail_bps": null,
-        "read": "Healthy — strong indirect (foreign) demand (75th pctile), moderate dealer take (35th pctile)."
+        "read": "Healthy \u2014 strong indirect (foreign) demand (75th pctile), moderate dealer take (35th pctile)."
       }
     ],
     "pending_auction": null,
@@ -618,7 +618,7 @@
         460.3,
         444.7
       ],
-      "trend_note": "Declining over the last 3 weekly prints (Jul 29 → Aug 12) — dealers are not accumulating a growing backlog of unsold Treasury supply, consistent with the low dealer-take on today's 7-Year auction.",
+      "trend_note": "Declining over the last 3 weekly prints (Jul 29 \u2192 Aug 12) \u2014 dealers are not accumulating a growing backlog of unsold Treasury supply, consistent with the low dealer-take on today's 7-Year auction.",
       "staleness_note": "NY Fed publishes this series with a ~2-week lag; Aug 12 is still the most recent print available as of this pull (unchanged from the prior run)."
     },
     "transmission": {
@@ -626,6 +626,545 @@
       "dealer_pressure": false,
       "repo_confirmation": false
     },
-    "narrative": "Today's 7-Year Note auction — pending at the last check — has now settled cleanly: dealer take of just 10.84% is the lowest of the three auctions in this week's cluster, indirect (foreign/institutional) demand held at 53.72%, and the bid-to-cover of 2.50 sits comfortably in the normal range. Combined with the 2-Year and 5-Year Notes that settled earlier this week (both also showing low dealer takedown), this is now three consecutive clean auctions. NY Fed's primary-dealer net Treasury inventory continues its 3-week decline (most recent available print, Aug 12) — dealers are not stuck holding unwanted supply. SOFR is trading 1bp below IORB, a normal funding reading with no repo stress. None of the three transmission flags are triggered. This reads as 'duration repricing' territory (absorption healthy, dealer take low, repo normal) rather than 'Treasury intermediation stress' — even with yields drifting slowly higher this week."
+    "narrative": "Today's 7-Year Note auction \u2014 pending at the last check \u2014 has now settled cleanly: dealer take of just 10.84% is the lowest of the three auctions in this week's cluster, indirect (foreign/institutional) demand held at 53.72%, and the bid-to-cover of 2.50 sits comfortably in the normal range. Combined with the 2-Year and 5-Year Notes that settled earlier this week (both also showing low dealer takedown), this is now three consecutive clean auctions. NY Fed's primary-dealer net Treasury inventory continues its 3-week decline (most recent available print, Aug 12) \u2014 dealers are not stuck holding unwanted supply. SOFR is trading 1bp below IORB, a normal funding reading with no repo stress. None of the three transmission flags are triggered. This reads as 'duration repricing' territory (absorption healthy, dealer take low, repo normal) rather than 'Treasury intermediation stress' \u2014 even with yields drifting slowly higher this week."
+  },
+  "v2": {
+    "regime_header": {
+      "label": "Controlled Tightening / Liquidity Protected",
+      "provisional": true,
+      "one_liner": "Fed tightening is raising front-end and real yields while Treasury/official-sector shock absorbers are currently preserving market functioning and liquidity transmission.",
+      "evidence": [
+        {
+          "ok": true,
+          "text": "Front-end (2Y) yield elevated at 4.23%"
+        },
+        {
+          "ok": true,
+          "text": "Real yields (DFII5) elevated at 2.04%"
+        },
+        {
+          "ok": null,
+          "text": "USD (DXY) at 99.17 \u2014 moderate, not sharply strengthening"
+        },
+        {
+          "ok": true,
+          "text": "Inflation expectations contained \u2014 10Y breakeven 2.32%, unchanged"
+        },
+        {
+          "ok": true,
+          "text": "Long-end comparatively stable \u2014 parallel drift, not a long-end breakout"
+        },
+        {
+          "ok": true,
+          "text": "MOVE contained at 69.4, falling (-3.45% today \u2014 bond vol falling)"
+        },
+        {
+          "ok": true,
+          "text": "Credit spreads contained \u2014 HY OAS 2.7%, flat"
+        },
+        {
+          "ok": true,
+          "text": "Funding markets functioning \u2014 SOFR -1.0bp vs IORB, normal"
+        },
+        {
+          "ok": null,
+          "text": "Official-sector shock absorbers (buybacks, MMF/stablecoin demand) \u2014 not yet independently confirmed, data pending"
+        }
+      ]
+    },
+    "master_scores": {
+      "monetary_restrictiveness": {
+        "value": 56,
+        "bucket": "HIGH",
+        "label": "MODERATELY-HIGH",
+        "methodology": "v1: 40%*norm(2Y yield,0-6%) + 40%*norm(DFII5 real yield,0-4%) + 20%*norm(DXY,90-115). Documented in SKILL.md.",
+        "inputs": {
+          "us02y": 4.228,
+          "dfii5": 2.04,
+          "dxy": 99.167
+        }
+      },
+      "liquidity_resilience": {
+        "value": 71,
+        "bucket": "HIGH",
+        "label": "HEALTHY",
+        "methodology": "v1: 30%*credit_score + 30%*(100-dealer_stress_score) + 25%*auction_absorption_score + 15%*funding_calm(SOFR-IORB spread). Documented in SKILL.md.",
+        "inputs": {
+          "credit_score": 63,
+          "dealer_stress_score": 24,
+          "absorption_score": 59,
+          "sofr_iorb_bps": -1.0
+        }
+      },
+      "system_regime": "Controlled Tightening / Liquidity Protected",
+      "regime_signal": "STAY IN CURRENT REGIME"
+    },
+    "transmission": {
+      "drivers": [
+        "Fed policy",
+        "Inflation data",
+        "Growth/labor",
+        "Fiscal financing needs",
+        "Treasury supply",
+        "Global monetary/FX pressures"
+      ],
+      "monetary_restrictiveness": {
+        "state": "HIGH",
+        "trend": "Slowly firming (parallel curve drift)",
+        "bullets": [
+          "2Y yield: 4.23% \u2191",
+          "Real yields (DFII5): 2.04% (unchanged)",
+          "USD (DXY): 99.17 (++0.03% today)"
+        ]
+      },
+      "shock_absorbers": {
+        "state": "PARTIALLY CONFIRMED",
+        "bullets": [
+          "Treasury auctions (2Y/5Y/7Y, last 3 sessions): clean, low dealer take-down",
+          "Dealer inventory (NY Fed, ~2wk lag): declining 3 straight prints",
+          "Buybacks / MMF / stablecoin demand: not yet independently confirmed \u2014 data pending"
+        ]
+      },
+      "liquidity_outcome": {
+        "state": "STABLE / RESILIENT",
+        "bullets": [
+          "MOVE: 69.4 (-3.45% today \u2014 bond vol falling)",
+          "HY OAS: 2.7% (Flat)",
+          "SOFR-IORB: -1.0bp (normal)"
+        ]
+      },
+      "market_impact": {
+        "bullets": [
+          "Parallel yield drift higher (not a clean front-end or long-end breakout)",
+          "USD firm but not surging (+0.03% today)",
+          "Equities/semis resilient (SOXX/QQQ/SPY all positive)",
+          "Credit stable, volatility contained"
+        ]
+      },
+      "bottom_line": "Tightening is showing up as a parallel drift across the curve rather than a clean front-end-led repricing. Auctions and dealer inventory data confirm absorption is healthy so far; buyback/MMF/stablecoin confirmation is still pending. Nothing here currently signals disorderly system-wide liquidity stress."
+    },
+    "curve_topology": {
+      "classification": "PARALLEL BEAR SHIFT (NOT CLEARLY LED BY EITHER END)",
+      "so_what": "2Y (+drift), 10Y and 30Y have all been drifting higher together this week while the 2s10s spread (0.446%) has stayed essentially flat. That means this is not a classic front-end-led hawkish bear-flattening, nor a long-end-led fiscal/term-premium bear-steepening \u2014 it's a uniform upward shift across the curve. Watch for the spread to start moving one direction before reading this as either 'tightening working cleanly' (flattening) or 'duration/term-premium stress building' (steepening).",
+      "points": {
+        "us02y": 4.228,
+        "us05y": 4.394,
+        "us10y": 4.674,
+        "us30y": 5.193,
+        "spread_2s10s": 0.446
+      },
+      "bills": {
+        "us03my": 3.776,
+        "us06my": 3.909,
+        "sofr": 3.64,
+        "spread_3m_sofr_bps": 13.6,
+        "spread_6m_sofr_bps": 26.9,
+        "classification": "CHEAP TO SOFR / NO SCARCITY SIGNAL",
+        "so_what": "3M bills yield 3.776% and 6M bills 3.909%, both running +13.6bp / +26.9bp above SOFR (3.64%). Bills are trading cheap to SOFR, not rich \u2014 the market is requiring extra yield to absorb bill supply rather than bidding bills up the way it would if cash were genuinely scarce. A real cash-scarcity signal would show bills trading yield BELOW SOFR (rich/special), which is not the current picture. Watch this spread compress or invert around TGA rebuilds and heavy bill auction weeks \u2014 that's the tell for tightening cash conditions."
+      },
+      "jp_cooperation": {
+        "status": "pending_data_source",
+        "us02y": 4.228,
+        "jp02y": null,
+        "spread_bps": null,
+        "us10y_jp10y_spread_bps": 178.2,
+        "note": "JP2Y is not yet in the scraped TradingView watchlist (only JP10Y is pulled today), so the true US2Y:JP2Y spread can't be computed live yet \u2014 shown as pending rather than estimated. The 10Y version (US10Y minus JP10Y) is available now as a rough stand-in: 178.2bps. Add JP2Y to the TradingView watchlist to light this module up.",
+        "why_it_matters": "With BOJ and the U.S. Treasury now coordinating on yen-funding conditions, the front-end (2Y) US-Japan spread is the more relevant read on carry-trade incentives and yen-funded flows into North Asian hardware names than the 10Y spread, which reflects duration/term-premium dynamics more than funding-cost dynamics."
+      }
+    },
+    "real_yield_breakeven": {
+      "classification": "CREDIBILITY TIGHTENING (mild)",
+      "so_what": "10Y real yield (derived, US10Y minus T10YIE) sits at 2.35% while the 10Y breakeven (2.32%) is flat/anchored near the Fed's implicit target range. Real yields are doing the work, not inflation fear \u2014 consistent with credibility tightening rather than an inflation shock. DFII5 (primary, market-based) is unchanged at 2.04%.",
+      "nominal_10y": 4.674,
+      "real_10y_derived": 2.354,
+      "breakeven_10y": 2.32,
+      "dfii5": 2.04,
+      "dfii10": 2.32
+    },
+    "structural_demand": {
+      "status": "pending_data_source",
+      "note": "MMF AUM, stablecoin market cap, bank/corporate Treasury holdings, and SOMA composition are not yet wired into the scrape pipeline. Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new).",
+      "core_question": "Is structural short-duration demand sufficient to absorb marginal Treasury financing without forcing materially greater duration supply onto dealer/private-sector balance sheets?"
+    },
+    "shock_absorbers_table": [
+      {
+        "name": "Treasury Buybacks",
+        "track": "10-20Y & 20-30Y buyback ops, size/frequency",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "Issuance Composition",
+        "track": "Bills vs Coupons vs CMBs, QoQ change",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "MMF Demand",
+        "track": "MMF AUM, Treasury holdings, repo allocation",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "Stablecoin Demand",
+        "track": "Aggregate market cap, reserve T-bill exposure",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "Bank/Corporate Demand",
+        "track": "Treasury holdings, repo/cash positioning",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "FIMA / Collateral",
+        "track": "FIMA repo usage, collateral availability",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      },
+      {
+        "name": "FX Intervention",
+        "track": "MOF/BOJ, official USDJPY/USDKRW intervention",
+        "status": "pending_data_source",
+        "note": "Not yet wired into the scrape pipeline \u2014 no live source configured. See SKILL.md Phase 2C (new)."
+      }
+    ],
+    "auction_dashboard": [
+      {
+        "maturity": "7-Year",
+        "date": "2026-08-27",
+        "status": "settled",
+        "bid_to_cover": 2.5,
+        "indirect_pct": 53.72,
+        "dealer_pct": 10.84,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Healthy \u2014 low dealer take (10.84%, even lower than the two prior settled auctions), solid indirect demand (53.72%), decent bid-to-cover (2.50). No percentile assigned \u2014 only 2 comparable (Note, 7-Year) auctions exist in the ledger (need min 8).",
+        "read_color": "green"
+      },
+      {
+        "maturity": "5-Year",
+        "date": "2026-08-26",
+        "status": "settled",
+        "bid_to_cover": 2.37,
+        "indirect_pct": 54.3,
+        "dealer_pct": 8.9,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Healthy \u2014 low dealer take (25th pctile), strong direct demand (75th pctile); indirect demand soft (20th pctile) but not concerning given the low dealer take.",
+        "read_color": "green"
+      },
+      {
+        "maturity": "2-Year",
+        "date": "2026-08-25",
+        "status": "settled",
+        "bid_to_cover": 2.6,
+        "indirect_pct": 57.7,
+        "dealer_pct": 9.5,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Healthy \u2014 strong indirect (foreign) demand (75th pctile), moderate dealer take (35th pctile).",
+        "read_color": "green"
+      },
+      {
+        "maturity": "3Y",
+        "date": "Sep 8",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned.",
+        "read_color": "grey",
+        "is_validation": false
+      },
+      {
+        "maturity": "10Y",
+        "date": "Sep 9",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned. Flagged as a current-regime validation event (10Y/20Y/30Y test whether private markets keep absorbing duration while the Fed stays restrictive).",
+        "read_color": "amber",
+        "is_validation": true
+      },
+      {
+        "maturity": "30Y",
+        "date": "Sep 10",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned. Flagged as a current-regime validation event (10Y/20Y/30Y test whether private markets keep absorbing duration while the Fed stays restrictive).",
+        "read_color": "amber",
+        "is_validation": true
+      },
+      {
+        "maturity": "20Y",
+        "date": "Sep 15",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned. Flagged as a current-regime validation event (10Y/20Y/30Y test whether private markets keep absorbing duration while the Fed stays restrictive).",
+        "read_color": "amber",
+        "is_validation": true
+      },
+      {
+        "maturity": "10Y",
+        "date": "Sep 17",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned.",
+        "read_color": "grey",
+        "is_validation": false
+      },
+      {
+        "maturity": "2Y",
+        "date": "Sep 22",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned.",
+        "read_color": "grey",
+        "is_validation": false
+      },
+      {
+        "maturity": "5Y",
+        "date": "Sep 23",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned.",
+        "read_color": "grey",
+        "is_validation": false
+      },
+      {
+        "maturity": "7Y",
+        "date": "Sep 24",
+        "status": "scheduled",
+        "bid_to_cover": null,
+        "indirect_pct": null,
+        "dealer_pct": null,
+        "tail_bps": null,
+        "post_auction": null,
+        "so_what": "Scheduled \u2014 results pending, not yet auctioned.",
+        "read_color": "grey",
+        "is_validation": false
+      }
+    ],
+    "next_key_events": [
+      {
+        "date": "Sep 4",
+        "day": "Fri",
+        "time_et": "8:30 AM",
+        "event": "Employment Situation, August",
+        "why": "Labor confirmation for Fed path"
+      },
+      {
+        "date": "Sep 8",
+        "day": "Tue",
+        "time_et": "1:00 PM",
+        "event": "3Y Treasury auction",
+        "why": "Front-end demand read"
+      },
+      {
+        "date": "Sep 9",
+        "day": "Wed",
+        "time_et": "1:00 PM",
+        "event": "10Y Treasury reopening",
+        "why": "REGIME VALIDATION \u2014 duration absorption test"
+      },
+      {
+        "date": "Sep 10",
+        "day": "Thu",
+        "time_et": "1:00 PM",
+        "event": "30Y Treasury reopening",
+        "why": "REGIME VALIDATION \u2014 long-end absorption test"
+      },
+      {
+        "date": "Sep 10",
+        "day": "Thu",
+        "time_et": "8:30 AM",
+        "event": "PPI, August",
+        "why": "Pipeline inflation confirmation"
+      },
+      {
+        "date": "Sep 11",
+        "day": "Fri",
+        "time_et": "8:30 AM",
+        "event": "CPI, August",
+        "why": "Disinflation-vs-reacceleration debate"
+      },
+      {
+        "date": "Sep 15",
+        "day": "Tue",
+        "time_et": "1:00 PM",
+        "event": "20Y Treasury reopening",
+        "why": "REGIME VALIDATION \u2014 duration absorption test"
+      },
+      {
+        "date": "Sep 15-16",
+        "day": "Tue-Wed",
+        "time_et": "\u2014",
+        "event": "FOMC meeting",
+        "why": "Rate decision + dot plot"
+      },
+      {
+        "date": "Sep 16",
+        "day": "Wed",
+        "time_et": "2:00 PM",
+        "event": "FOMC decision / press conference",
+        "why": "Policy path + Warsh press conference"
+      },
+      {
+        "date": "Sep 17",
+        "day": "Thu",
+        "time_et": "1:00 PM",
+        "event": "10Y TIPS reopening",
+        "why": "Real-yield / breakeven demand read"
+      },
+      {
+        "date": "Sep 22",
+        "day": "Tue",
+        "time_et": "1:00 PM",
+        "event": "2Y Treasury auction",
+        "why": "Front-end demand read"
+      },
+      {
+        "date": "Sep 23",
+        "day": "Wed",
+        "time_et": "1:00 PM",
+        "event": "5Y Treasury auction",
+        "why": "Belly-of-curve demand read"
+      },
+      {
+        "date": "Sep 24",
+        "day": "Thu",
+        "time_et": "1:00 PM",
+        "event": "7Y Treasury auction",
+        "why": "Belly-of-curve demand read"
+      },
+      {
+        "date": "Sep 30",
+        "day": "Wed",
+        "time_et": "8:30 AM",
+        "event": "Personal Income & Outlays / August PCE",
+        "why": "Fed's preferred inflation gauge"
+      }
+    ],
+    "scenarios": {
+      "base": {
+        "label": "Controlled Tightening / Liquidity Protected",
+        "probability_confidence": "Medium confidence (~55-60%)",
+        "evidence": [
+          "Front end elevated, real yields elevated",
+          "Inflation expectations contained",
+          "Long-end comparatively stable this week",
+          "Auctions clean the last 3 sessions",
+          "Official-sector absorber confirmation still pending"
+        ],
+        "signal": "STAY IN CURRENT REGIME"
+      },
+      "upside": {
+        "label": "Liquidity-Driven Risk-On",
+        "probability_confidence": "Low-Medium confidence (~20-25%)",
+        "triggers": [
+          "Real yields fall",
+          "USD weakens",
+          "Liquidity expands (net liquidity turns up)",
+          "Auctions remain strong",
+          "Credit stays tight"
+        ],
+        "signal": "Regime \u2192 Risk-On"
+      },
+      "downside": {
+        "label": "Liquidity Contraction / Risk-Off",
+        "probability_confidence": "Low confidence (~15-20%)",
+        "triggers": [
+          "Bear steepening (30Y/10Y breakout)",
+          "2s10s / 2s30s steepen materially",
+          "MOVE spikes",
+          "Auction tails widen, dealer take-down rises",
+          "Credit spreads widen",
+          "Repo/funding stress emerges"
+        ],
+        "signal": "Regime \u2192 Risk-Off"
+      },
+      "note": "Probabilities are qualitative confidence bands, not modeled statistical probabilities \u2014 see SKILL.md methodology note."
+    },
+    "transition_triggers": {
+      "current": "Controlled Tightening / Liquidity Protected",
+      "to_risk_on": [
+        "Real yields \u2193",
+        "USD \u2193",
+        "Net liquidity \u2191",
+        "Credit stable",
+        "Auctions strong"
+      ],
+      "to_risk_off": [
+        "30Y/10Y yields \u2191\u2191",
+        "2s10s / 2s30s steepen materially",
+        "MOVE \u2191",
+        "Auction tails \u2191",
+        "Dealer take-down \u2191",
+        "Credit spreads \u2191",
+        "Funding stress \u2191"
+      ]
+    },
+    "trade_posture_v2": {
+      "favors": [
+        "Profitable growth / quality growth over speculative growth",
+        "Banks/financials where curve/NIM conditions support them",
+        "Cash / short-duration instruments",
+        "USD long bias"
+      ],
+      "headwinds": [
+        "Gold \u2014 while real yields and USD firm",
+        "Bitcoin/crypto \u2014 while real rates elevated",
+        "Extremely long-duration assets"
+      ],
+      "qqq_view": {
+        "resilient_if": [
+          "Real yields rise but long end stays controlled",
+          "Credit remains stable",
+          "MOVE stays contained",
+          "Auctions clear well",
+          "Earnings remain supportive"
+        ],
+        "risk_signal": [
+          "Bear steepening",
+          "Auction deterioration",
+          "Credit widening",
+          "MOVE/funding stress"
+        ]
+      }
+    },
+    "key_takeaways": [
+      "Markets are accepting Fed-driven tightening because Treasury/liquidity plumbing has held so far \u2014 official-sector absorber confirmation (buybacks/MMF/stablecoin) is still pending, not yet negative.",
+      "Parallel yield drift + stable long end + clean recent auctions = easier on dealers and system liquidity than a long-end-led selloff would be.",
+      "Korea gate is 3/3 OPEN \u2014 EWY, USDKRW, and KOSPI all confirm.",
+      "September's 10Y/20Y/30Y auctions are the next real validation test for this regime call.",
+      "The two new master scores (Monetary Restrictiveness, Liquidity Resilience) are v1 methodology \u2014 refine thresholds/weights as more history accumulates."
+    ]
   }
 }
