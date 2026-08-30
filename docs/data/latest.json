@@ -119,9 +119,9 @@
         "type": "state"
       },
       {
-        "driver": "Long-duration auction validation",
-        "level": "HIGH",
-        "note": "Last 3 long-duration auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) all cleared with low dealer take-down (7-11%) and strong indirect demand (53-61%).",
+        "driver": "Recent long-duration demand",
+        "level": "STRONG",
+        "note": "PRE-REPRICING evidence only: the last 3 long-duration auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) all cleared with low dealer take-down and strong indirect demand, but occurred BEFORE the latest hawkish front-end repricing (2Y +17.5bp over the past week). They show duration demand was healthy under the PRIOR policy configuration -- they do not validate the current regime under the new one.",
         "type": "state"
       },
       {
@@ -148,7 +148,7 @@
         "Inflation credibility",
         "Treasury-market resilience",
         "Credit / funding resilience",
-        "Long-duration auction validation"
+        "Recent long-duration demand"
       ]
     },
     "mechanism_confidence": {
@@ -159,7 +159,11 @@
         "Official-sector causality"
       ]
     },
-    "note": "State confidence and mechanism confidence are tracked separately: observed long-end/credit/funding/MOVE/curve behavior can support high state confidence even while causal (mechanism) confidence remains lower."
+    "note": "State confidence and mechanism confidence are tracked separately: observed long-end/credit/funding/MOVE/curve behavior can support high state confidence even while causal (mechanism) confidence remains lower.",
+    "post_repricing_regime_validation": {
+      "status": "PENDING",
+      "note": "The Sept 10Y (9/9), 30Y (9/10), and 20Y (9/15) auctions are the actual forward validation tests for the current regime -- they are the first long-duration auctions to occur AFTER the hawkish front-end repricing. Until they settle, long-duration demand under the new policy configuration is UNTESTED, not confirmed."
+    }
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
@@ -832,7 +836,17 @@
       "nominal_10y": 4.67,
       "breakeven_10y": 2.33,
       "breakeven_5y": 2.31,
-      "breakeven_20y_30y_note": "FRED does not publish official 20Y/30Y breakeven series (only 5Y and 10Y). Implied 20Y/30Y breakevens (DGS-DFII) are not shown here to avoid presenting an unofficial derived figure as an official one."
+      "breakeven_20y_30y_note": "FRED does not publish official 20Y/30Y breakeven series (only 5Y and 10Y). Implied 20Y/30Y breakevens (DGS-DFII) are not shown here to avoid presenting an unofficial derived figure as an official one.",
+      "intraday_market_estimate": {
+        "nominal_10y": 4.73,
+        "breakeven_10y_live": 2.31,
+        "implied_real_10y": 2.42,
+        "source": "TradingView live intraday (nominal 10Y) + live breakeven feed -- NOT the same vintage as the official aligned series",
+        "vs_official_real_10y_bps": 8.0,
+        "note": "Live intraday pricing implies a 10Y real yield of ~2.42%, about +8.0bp above the OFFICIAL aligned FRED read (2.34%, as of 2026-08-27). This gap is normal live-vs-official-close noise (weekend/settlement timing) and is shown for transparency only -- it is NOT used to override the official classification below."
+      },
+      "label_official": "OFFICIAL DAILY CLASSIFICATION",
+      "label_intraday": "INTRADAY / MARKET ESTIMATE"
     },
     "structural_demand": {
       "core_question": "Is structural short-duration demand sufficient to absorb marginal Treasury financing without forcing materially greater duration supply onto dealer/private-sector balance sheets?",
@@ -1739,37 +1753,146 @@
       }
     ],
     "auction_core_question": "Can private markets continue absorbing duration while monetary policy remains restrictive, without destabilizing the long end?",
-    "auction_summary_verdict": "All three most recent long-duration validation tests (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) cleared with low-to-normal dealer take-down and adequate-to-strong indirect demand; post-auction yield reaction was SUPPORTIVE (10Y), NEUTRAL (30Y, likely broad-market drift not auction-specific), and mildly SUPPORTIVE (20Y, though largely inseparable from a market-wide rally that day). No auction has produced a tail, a dealer-take-down spike, or an adverse post-auction yield reaction so far.",
+    "auction_summary_verdict": "HISTORICAL: all three most recent long-duration auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19) cleared cleanly pre-repricing, with no tails and supportive-to-neutral post-auction reactions. FORWARD: post-repricing regime validation is PENDING -- the Sept 10Y/20Y/30Y auctions are the first real tests of duration demand under the new, more hawkish front-end configuration.",
     "momentum": {
       "monetary_restrictiveness": {
         "direction": "up",
         "label": "increasing",
-        "basis": "Front-end (2Y) yield +17.5bp over 1W; 5Y real yield +2.0bp over 1W."
+        "basis": "Front-end (2Y) yield +17.5bp over 1W; 5Y real yield +2.0bp over 1W.",
+        "horizon": "5D",
+        "horizon_note": "vs. 5 trading days ago"
       },
       "liquidity_resilience": {
         "direction": "flat",
         "label": "stable",
-        "basis": "HY OAS 2.63% vs 2.75% 1W ago (tightened); MOVE 71.0 vs 71.3 1W ago (flat); funding normal, healthy funding conditions.; last 3 long-duration auctions cleared STRONG/NORMAL with no tails."
+        "basis": "HY OAS 2.63% vs 2.75% 1W ago (tightened); MOVE 71.0 vs 71.3 1W ago (flat); funding normal, healthy funding conditions.; last 3 long-duration auctions cleared STRONG/NORMAL with no tails.",
+        "horizon": "5D",
+        "horizon_note": "vs. 5 trading days ago"
       },
       "state_confidence": {
         "direction": "flat",
         "label": "stable",
-        "basis": "No material change in the observable-conditions picture this week."
+        "basis": "No material change in the observable-conditions picture this week.",
+        "horizon": "5D",
+        "horizon_note": "vs. 5 trading days ago"
       },
       "mechanism_confidence": {
         "direction": "flat",
         "label": "stable",
-        "basis": "MMF/SOMA/issuance flow data still PENDING -- no new structural evidence resolved this week."
+        "basis": "MMF/SOMA/issuance flow data still PENDING -- no new structural evidence resolved this week.",
+        "horizon": "5D",
+        "horizon_note": "vs. 5 trading days ago"
       },
       "risk_off_distance": {
         "direction": "flat",
         "label": "unchanged",
-        "basis": "0/8 risk-off conditions met, distance FAR -- same as prior read."
+        "basis": "0/8 risk-off conditions met, distance FAR -- same as prior read.",
+        "horizon": "5D",
+        "horizon_note": "vs. 5 trading days ago"
       },
       "regime_momentum": {
         "value": "STRENGTHENING",
-        "rationale": "Front-end/real yields continue rising (tightening intact) while the long end is not accelerating, the curve is flattening (not steepening), MOVE is flat, credit has tightened, funding (SOFR-IORB) is normal, and the last three long-duration auctions all cleared cleanly with supportive-to-neutral post-auction reactions -- matches the STRENGTHENING definition (front-end tightening continues while long-end/credit/funding/auctions remain healthy)."
+        "rationale": "Front-end/real yields continue rising (tightening intact) while the long end is not accelerating, the curve is flattening (not steepening), MOVE is flat, credit has tightened, funding (SOFR-IORB) is normal, and the last three long-duration auctions all cleared cleanly with supportive-to-neutral post-auction reactions -- matches the STRENGTHENING definition (front-end tightening continues while long-end/credit/funding/auctions remain healthy).",
+        "horizon": "5D",
+        "horizon_label": "vs. 5 trading days ago"
+      },
+      "prior_close_momentum": {
+        "value": "UNCHANGED",
+        "note": "No new trading session since Friday 2026-08-28's close (weekend) -- prior-close momentum is mechanically UNCHANGED, not 'strengthening', until Monday's session prints."
       }
-    }
+    },
+    "auction_evidence_framing": {
+      "historical_label": "HISTORICAL SUPPORTING EVIDENCE (pre-repricing)",
+      "forward_label": "FORWARD REGIME VALIDATION (post-repricing)",
+      "note": "Settled 10Y/20Y/30Y auctions below occurred before the latest hawkish front-end repricing and are shown as historical evidence of healthy duration demand, not as validation of the current regime. The scheduled Sept 10Y/20Y/30Y auctions are the actual forward tests."
+    },
+    "data_freshness_state": {
+      "quality": "GOOD",
+      "stale_fraction": 0.14,
+      "rows": [
+        {
+          "input": "WALCL / TGA / Reserves (H.4.1)",
+          "status": "GREEN",
+          "cadence": "Weekly (Wed, published Thu)",
+          "last": "2026-08-26"
+        },
+        {
+          "input": "RRP (daily)",
+          "status": "GREEN",
+          "cadence": "Daily",
+          "last": "2026-08-28"
+        },
+        {
+          "input": "SOFR / IORB",
+          "status": "GREEN",
+          "cadence": "Daily",
+          "last": "2026-08-27 / 2026-08-31 (set)"
+        },
+        {
+          "input": "TIPS ladder (DFII5/7/10/20/30)",
+          "status": "GREEN",
+          "cadence": "Daily",
+          "last": "2026-08-27"
+        },
+        {
+          "input": "Credit OAS (HY/IG)",
+          "status": "GREEN",
+          "cadence": "Daily",
+          "last": "2026-08-27"
+        },
+        {
+          "input": "Treasury curve / FX / equities",
+          "status": "GREEN",
+          "cadence": "Live/intraday",
+          "last": "2026-08-28 close (weekend \u2014 expected)"
+        },
+        {
+          "input": "NY Fed primary dealer inventory",
+          "status": "AMBER",
+          "cadence": "Weekly, ~2wk lag",
+          "last": "2026-08-12"
+        }
+      ],
+      "feeds": "STATE CONFIDENCE",
+      "quality_detail": "GOOD (minor gaps)"
+    },
+    "data_freshness_mechanism": {
+      "quality": "POOR",
+      "stale_fraction": 0.6,
+      "rows": [
+        {
+          "input": "MMF assets (ICI)",
+          "status": "GREEN",
+          "cadence": "Weekly",
+          "last": "2026-08-26"
+        },
+        {
+          "input": "Stablecoin market cap",
+          "status": "GREEN",
+          "cadence": "Near-live",
+          "last": "live"
+        },
+        {
+          "input": "SOMA bill/Treasury composition",
+          "status": "RED",
+          "cadence": "n/a",
+          "last": "never wired"
+        },
+        {
+          "input": "Treasury buybacks / issuance composition",
+          "status": "RED",
+          "cadence": "n/a",
+          "last": "never wired"
+        },
+        {
+          "input": "FIMA repo usage",
+          "status": "RED",
+          "cadence": "n/a",
+          "last": "never wired"
+        }
+      ],
+      "feeds": "MECHANISM CONFIDENCE"
+    },
+    "data_freshness_note": "Missing/unwired mechanism data (SOMA, Treasury buybacks/issuance, FIMA) reduces MECHANISM CONFIDENCE only. It does not automatically reduce confidence that the currently observed market state (curve, TIPS, credit, funding, MOVE) is resilient."
   }
 }
