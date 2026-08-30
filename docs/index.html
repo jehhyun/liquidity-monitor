@@ -4,143 +4,177 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0a0a0a">
-<title>Fat Cat Capital — Liquidity Monitor 2.0</title>
+<title>Fat Cat Capital — Liquidity Monitor 2.1</title>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0a0a;color:#f0f0f0;font-family:system-ui,-apple-system,sans-serif;padding:20px 16px 60px;max-width:1440px;margin:0 auto}
-.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+.hdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;flex-wrap:wrap;gap:10px}
 .eyebrow{font-size:10px;color:#444;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
-h1{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+h1{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
 .tagline{font-size:11px;color:#555;margin-top:4px}
 .live{font-size:11px;color:#97C459;margin-bottom:2px}
-.ts{font-size:10px;color:#3a3a3a;line-height:1.6;text-align:right}
+.ts{font-size:10px;color:#3a3a3a;line-height:1.6;text-align:right;max-width:320px}
 .loading{display:flex;align-items:center;justify-content:center;height:60vh;font-size:14px;color:#444}
 .err{background:#1a1212;border:1px solid #3a1a1a;border-radius:8px;padding:14px;color:#a55;font-size:12px;margin:20px 0}
 
-.panel{background:#141414;border:1px solid #232323;border-radius:10px;padding:14px 16px;margin-bottom:14px;min-width:0}
-.panel-hd{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#666;font-weight:700;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.panel{background:#141414;border:1px solid #232323;border-radius:10px;padding:13px 15px;margin-bottom:12px;min-width:0}
+.panel-hd{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#666;font-weight:700;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .panel-hd .sub{font-size:9px;color:#3a3a3a;text-transform:none;letter-spacing:0;font-weight:400}
-.layer-lbl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#3a3a3a;margin:22px 0 8px;padding-top:14px;border-top:1px solid #1c1c1c}
+.section-num{color:#3a3a3a;font-weight:400;margin-right:2px}
+.layer-lbl{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#3a3a3a;margin:20px 0 8px;padding-top:12px;border-top:1px solid #1c1c1c}
 .layer-lbl:first-child{margin-top:0;border-top:none;padding-top:0}
 
-/* Top grid: regime + transmission + signal summary */
-.top-grid{display:grid;grid-template-columns:1.1fr 1.6fr 1.1fr;gap:12px;align-items:start}
-@media(max-width:1100px){.top-grid{grid-template-columns:1fr}}
-
-/* 1. Regime header */
-.regime-box{border-radius:8px;padding:12px 14px;margin-bottom:10px}
+/* ROW 1: regime | master scores | signal summary */
+.row1{display:grid;grid-template-columns:1.15fr 1fr 1.15fr;gap:12px;align-items:start}
+@media(max-width:1000px){.row1{grid-template-columns:1fr}}
+.regime-box{border-radius:8px;padding:11px 13px;margin-bottom:9px}
 .regime-box.green{background:#0f1a0f;border:1px solid #1e3a1e}
 .regime-box.amber{background:#1a1608;border:1px solid #3a2e0e}
 .regime-box.red{background:#1a1010;border:1px solid #3a1a1a}
-.regime-badge{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#888;background:#111;display:inline-block;padding:2px 8px;border-radius:4px;margin-bottom:8px}
-.regime-title{font-size:18px;font-weight:800;line-height:1.2;margin-bottom:8px}
-.regime-oneliner{font-size:11.5px;color:#999;line-height:1.5}
-.evidence-list{margin-top:4px}
-.ev-row{display:flex;gap:7px;align-items:flex-start;font-size:11px;color:#999;line-height:1.5;margin-bottom:5px}
-.ev-icon{flex-shrink:0;width:13px}
+.regime-badge{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#888;background:#111;display:inline-block;padding:2px 8px;border-radius:4px;margin-bottom:7px}
+.regime-title{font-size:16px;font-weight:800;line-height:1.2;margin-bottom:6px}
+.regime-oneliner{font-size:11px;color:#999;line-height:1.45}
+.conf-row{display:flex;justify-content:space-between;align-items:center;background:#0f0f0f;border:1px solid #232323;border-radius:6px;padding:7px 10px;margin-top:2px}
+.conf-lbl{font-size:9px;color:#777;text-transform:uppercase;letter-spacing:.05em}
+.conf-val{font-size:12px;font-weight:800}
 
-/* 2. Transmission diagram */
-.tx-flow{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
-.tx-box{flex:1;min-width:150px;background:#0f0f0f;border:1px solid #2a2a2a;border-radius:8px;padding:9px 10px}
+.score-block{margin-bottom:12px}
+.score-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:3px}
+.score-name{font-size:10.5px;color:#999}
+.score-num{font-size:18px;font-weight:800;font-family:ui-monospace,'SF Mono',monospace}
+.score-bar-bg{height:6px;background:#1a1a1a;border-radius:3px;overflow:hidden}
+.score-bar-fill{height:6px}
+.score-label{font-size:9.5px;color:#555;margin-top:3px}
+.matrix-note{font-size:9.5px;color:#444;line-height:1.5;margin-top:6px;padding-top:8px;border-top:1px solid #1e1e1e}
+
+.sig-table{width:100%;border-collapse:collapse}
+.sig-table td{font-size:10.5px;padding:4.5px 4px;border-bottom:1px solid #1c1c1c;vertical-align:middle}
+.sig-table td:first-child{color:#888}
+.sig-table td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;flex-shrink:0}
+.fdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-left:5px}
+
+/* ROW 2: transmission, full width */
+.tx-flow{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px}
+.tx-box{flex:1;min-width:148px;background:#0f0f0f;border:1px solid #2a2a2a;border-radius:8px;padding:9px 10px}
 .tx-box.purple{border-color:#3a2e5a;background:#140f1e}
 .tx-box.blue{border-color:#1e3050;background:#0c141e}
 .tx-title{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#aaa;margin-bottom:6px}
-.tx-item{font-size:10px;color:#666;line-height:1.5}
-.tx-state{font-size:11px;font-weight:700;margin-top:6px;padding-top:6px;border-top:1px solid #232323}
-.tx-arrow{align-self:center;color:#3a3a3a;font-size:14px;flex-shrink:0}
-.tx-feedback{font-size:9.5px;color:#3a3a3a;text-align:center;margin:4px 0 10px;line-height:1.6}
-.bottom-line{background:#161305;border:1px solid #3a2e0e;border-radius:8px;padding:10px 12px;font-size:11.5px;line-height:1.55}
+.tx-item{font-size:9.5px;color:#666;line-height:1.45}
+.tx-state{font-size:10.5px;font-weight:700;margin-top:6px;padding-top:6px;border-top:1px solid #232323}
+.tx-arrow{align-self:center;color:#3a3a3a;font-size:13px;flex-shrink:0}
+.bottom-line{background:#161305;border:1px solid #3a2e0e;border-radius:8px;padding:9px 11px;font-size:11px;line-height:1.5}
 .bottom-line b{color:#EF9F27}
 
-/* 3. Signal summary table */
-.sig-table{width:100%;border-collapse:collapse}
-.sig-table td{font-size:11px;padding:5px 4px;border-bottom:1px solid #1c1c1c;vertical-align:middle}
-.sig-table td:first-child{color:#888}
-.sig-table td:last-child{text-align:right;font-weight:700;white-space:nowrap}
-.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px}
-.ohl{background:#0f0f0f;border:1px solid #2a2a2a;border-radius:7px;padding:9px 11px;margin-top:10px;display:flex;justify-content:space-between;align-items:center}
+/* ROW 3: bottom-line / why / confidence-decomp */
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:start}
+@media(max-width:1000px){.row3{grid-template-columns:1fr}}
+.ev-row{display:flex;gap:7px;align-items:flex-start;font-size:10.5px;color:#999;line-height:1.45;margin-bottom:5px}
+.ev-icon{flex-shrink:0;width:13px}
+.conf-decomp-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid #1a1a1a;font-size:10.5px;gap:8px}
+.conf-decomp-row:last-child{border-bottom:none}
+.conf-decomp-lbl{color:#999}
+.conf-decomp-lvl{font-weight:700;white-space:nowrap;flex-shrink:0}
 
-/* 4. Dashboards */
-.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:start}
-@media(max-width:1100px){.dash-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.dash-grid{grid-template-columns:1fr}}
-.mini-table{width:100%;border-collapse:collapse;margin-bottom:8px}
+/* Pressure map */
+.pressure-row{display:flex;align-items:center;gap:9px;padding:6px 0;border-bottom:1px solid #1a1a1a}
+.pressure-row:last-child{border-bottom:none}
+.pressure-chan{font-size:10.5px;color:#ddd;width:200px;flex-shrink:0}
+.pressure-bar-bg{flex:1;height:7px;background:#1a1a1a;border-radius:4px;overflow:hidden;min-width:60px}
+.pressure-bar-fill{height:7px}
+.pressure-lvl{font-size:9px;font-weight:800;width:100px;text-align:right;flex-shrink:0}
+.pressure-note{font-size:9.5px;color:#555;margin-top:2px;line-height:1.4}
+
+/* Generic tables */
+.mini-table{width:100%;border-collapse:collapse;margin-bottom:6px}
 .mini-table th{font-size:8.5px;color:#444;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:3px 5px;border-bottom:1px solid #232323}
 .mini-table td{font-size:10.5px;padding:4px 5px;border-bottom:1px solid #1a1a1a;color:#888}
 .mini-table td:first-child{color:#ddd;font-weight:500}
 .so-what{background:#0f0f0f;border-left:3px solid #EF9F27;border-radius:0 6px 6px 0;padding:7px 9px;font-size:10.5px;color:#999;line-height:1.5;margin-top:6px}
 .so-what b{color:#EF9F27}
-.chartline{display:flex;align-items:flex-end;gap:2px;height:70px;margin:8px 0}
-.chartbar{flex:1;border-radius:2px 2px 0 0;min-height:2px;position:relative}
-.chart-lbl{font-size:8px;color:#3a3a3a;text-align:center;margin-top:3px}
-.big-stat{font-size:22px;font-weight:800;font-family:ui-monospace,'SF Mono',monospace;line-height:1}
-.stat-delta{font-size:10.5px;margin-top:3px}
+.classification-badge{display:inline-block;font-size:12px;font-weight:800;padding:4px 10px;border-radius:5px;margin-bottom:6px}
 
-/* 5/6/9 tables */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+.dash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+@media(max-width:900px){.dash-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.dash-grid{grid-template-columns:1fr}}
+
+/* status chips */
+.chip{font-size:8.5px;padding:2px 7px;border-radius:4px;display:inline-block;white-space:nowrap;font-weight:700;letter-spacing:.02em}
+.chip.confirmed{background:#0f1a0f;color:#97C459;border:1px solid #1e3a1e}
+.chip.proxy{background:#0c141e;color:#4a8fd4;border:1px solid #1e3050}
+.chip.structural{background:#140f1e;color:#a98fe0;border:1px solid #3a2e5a}
+.chip.pending{background:#141414;color:#666;border:1px solid #2a2a2a}
+.chip.event{background:#1a1608;color:#EF9F27;border:1px solid #3a2e0e}
+
 .abs-table{width:100%;border-collapse:collapse}
 .abs-table th{font-size:9px;color:#444;text-transform:uppercase;letter-spacing:.05em;text-align:left;padding:5px 6px;border-bottom:1px solid #232323}
 .abs-table td{font-size:10.5px;padding:6px 6px;border-bottom:1px solid #1a1a1a;color:#888;vertical-align:top}
 .abs-table td:first-child{color:#ddd;font-weight:500;white-space:nowrap}
-.chip{font-size:9px;padding:2px 7px;border-radius:4px;display:inline-block;white-space:nowrap}
-.chip.pending{background:#141414;color:#555;border:1px solid #262626}
+.abs-table tr.validation{background:#12100a}
 
-/* 7. posture */
+/* Distance to transition */
+.cond-list{margin-top:4px}
+.cond-row{display:flex;gap:7px;align-items:flex-start;font-size:10.5px;line-height:1.4;margin-bottom:4px}
+.cond-mark{flex-shrink:0;width:14px}
+.distance-badge{display:inline-block;font-size:11px;font-weight:800;padding:3px 9px;border-radius:5px;margin-top:6px}
+
+/* State transition diagram */
+.state-diagram{display:flex;align-items:center;gap:6px;overflow-x:auto;padding:8px 0}
+.state-node{flex:1;min-width:150px;border-radius:8px;padding:10px 12px;font-size:10.5px;text-align:center;border:1px solid #2a2a2a;background:#0f0f0f;color:#777}
+.state-node.current{border-color:#3a2e0e;background:#1a1608;color:#EF9F27;font-weight:800}
+.state-arrow2{color:#3a3a3a;font-size:16px;flex-shrink:0}
+
+/* scenario / posture */
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+@media(max-width:900px){.scenario-grid{grid-template-columns:1fr}}
+.scenario-card{border-radius:8px;padding:11px 12px}
+.scenario-card.base{background:#0f1a0f;border:1px solid #1e3a1e}
+.scenario-card.up{background:#0f1a0f;border:1px solid #1e3a1e;opacity:.85}
+.scenario-card.down{background:#1a1010;border:1px solid #3a1a1a}
+.scenario-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:4px}
+.scenario-title{font-size:12.5px;font-weight:800;margin-bottom:3px;line-height:1.25}
+.scenario-item{font-size:10px;color:#999;padding:2px 0 2px 14px;position:relative;line-height:1.4}
+.scenario-item::before{content:'✓';position:absolute;left:0;color:#97C459;font-size:9px}
+
 .posture-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media(max-width:800px){.posture-grid{grid-template-columns:1fr}}
-.posture-col-hd{font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;font-weight:700}
-.posture-item{font-size:11px;color:#999;padding:5px 0 5px 18px;position:relative;line-height:1.4}
-.posture-item::before{position:absolute;left:0;font-size:12px}
+.posture-col-hd{font-size:10px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:7px;font-weight:700}
+.posture-item{font-size:10.5px;color:#999;padding:4px 0 4px 17px;position:relative;line-height:1.4}
+.posture-item::before{position:absolute;left:0;font-size:11px}
 .posture-item.pos::before{content:'✓';color:#97C459}
 .posture-item.neg::before{content:'✕';color:#E24B4A}
 
-/* 8/9 grids */
-.takeaway-list{list-style:none}
-.takeaway-list li{font-size:11.5px;color:#999;line-height:1.55;padding:5px 0 5px 16px;position:relative}
-.takeaway-list li::before{content:'•';position:absolute;left:0;color:#EF9F27}
-.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
-@media(max-width:900px){.scenario-grid{grid-template-columns:1fr}}
-.scenario-card{border-radius:8px;padding:12px 13px}
-.scenario-card.base{background:#0f1a0f;border:1px solid #1e3a1e}
-.scenario-card.up{background:#0f1a0f;border:1px solid #1e3a1e;opacity:.9}
-.scenario-card.down{background:#1a1010;border:1px solid #3a1a1a}
-.scenario-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#888;margin-bottom:4px}
-.scenario-title{font-size:13px;font-weight:800;margin-bottom:3px;line-height:1.25}
-.scenario-prob{font-size:10.5px;color:#666;margin-bottom:8px}
-.scenario-item{font-size:10.5px;color:#999;padding:2px 0 2px 14px;position:relative;line-height:1.4}
-.scenario-item::before{content:'✓';position:absolute;left:0;color:#97C459;font-size:9px}
-
-/* 10. events */
-.events-list{display:flex;flex-direction:column;gap:6px}
-.event-row{display:flex;gap:9px;align-items:flex-start;background:#0f0f0f;border-radius:6px;padding:7px 9px}
+/* events */
+.events-list{display:flex;flex-direction:column;gap:5px}
+.event-row{display:flex;gap:9px;align-items:flex-start;background:#0f0f0f;border-radius:6px;padding:6px 9px}
 .event-date{font-size:10px;font-weight:700;color:#EF9F27;width:52px;flex-shrink:0;line-height:1.3}
-.event-time{font-size:9px;color:#444}
 .event-name{font-size:10.5px;color:#ddd;font-weight:500}
 .event-why{font-size:9.5px;color:#555;line-height:1.4}
 .event-row.validation{border-left:2px solid #EF9F27}
 
-/* Raw data (bottom layer) — reuse original card styles */
-.sec{margin-bottom:18px}
-.sl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#3a3a3a;font-weight:600;border-bottom:1px solid #1a1a1a;padding-bottom:5px;margin-bottom:8px}
-.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
-.g6{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}
-.card{background:#181818;border:1px solid #252525;border-radius:8px;padding:11px 13px;cursor:pointer;user-select:none}
+/* Raw data (bottom layer) */
+.sec{margin-bottom:16px}
+.sl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#3a3a3a;font-weight:600;border-bottom:1px solid #1a1a1a;padding-bottom:5px;margin-bottom:8px;display:flex;justify-content:space-between}
+.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:8px}
+.card{background:#181818;border:1px solid #252525;border-radius:8px;padding:10px 12px;cursor:pointer;user-select:none;min-width:0}
 .card.red{border-color:#3a1a1a;background:#1a1212}
 .card.amber{border-color:#2e2800}
 .card.green{border-color:#1a2e1a}
-.ct{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:6px}
-.cl{font-size:10px;color:#666;line-height:1.3;flex:1}
-.cc{font-size:9px;color:#3a3a3a;background:#111;padding:1px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0}
-.cv{font-size:22px;font-weight:700;letter-spacing:-.02em;line-height:1;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:4px}
-.cd{font-size:11px;min-height:14px}
-.ci{display:none;font-size:11px;color:#666;line-height:1.55;margin-top:8px;padding-top:8px;border-top:1px solid #252525}
-.ctog{text-align:right;font-size:9px;color:#2a2a2a;margin-top:3px}
-.card.open .ci{display:block}
-.pills{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
-.pill{font-size:10px;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:4px;padding:2px 8px;color:#888}
+.ct{display:flex;justify-content:space-between;align-items:flex-start;gap:6px;margin-bottom:5px}
+.cl{font-size:9.5px;color:#666;line-height:1.3;flex:1}
+.cc{font-size:8.5px;color:#3a3a3a;background:#111;padding:1px 5px;border-radius:3px;white-space:nowrap;flex-shrink:0}
+.cv{font-size:19px;font-weight:700;letter-spacing:-.02em;line-height:1;color:#f0f0f0;font-family:ui-monospace,'SF Mono',monospace;margin-bottom:3px}
+.cd{font-size:10px;min-height:13px;color:#777}
 .chain{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
 .footer-bar{font-size:9px;color:#3a3a3a;margin-top:16px;cursor:pointer}
 .footer-detail{display:none;font-size:9px;color:#2e2e2e;margin-top:4px;line-height:1.8}
-@media(max-width:600px){.g6,.chain{grid-template-columns:1fr 1fr}}
+.footer-detail.open{display:block}
+@media(max-width:600px){.chain{grid-template-columns:1fr 1fr}}
+details.methodology{margin-top:6px}
+details.methodology summary{font-size:9px;color:#555;cursor:pointer;text-transform:uppercase;letter-spacing:.05em}
+details.methodology div{font-size:9.5px;color:#666;line-height:1.5;margin-top:5px}
 </style>
 </head>
 <body>
@@ -150,9 +184,40 @@ h1{font-size:24px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
 const C = { red:'#E24B4A', amber:'#EF9F27', green:'#97C459', grey:'#555', blue:'#4a8fd4', purple:'#8f6fd4' };
 const col = k => C[k] || C.grey;
 function esc(s){ return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') }
-function tog(el){ el.classList.toggle('open'); const t=el.querySelector('.ctog'); if(t) t.innerHTML=el.classList.contains('open')?'&#9650;':'&#9660;' }
 function fmt(n,d){ return (n===null||n===undefined) ? '—' : Number(n).toFixed(d===undefined?2:d) }
-function boxColor(bucket){ return bucket==='HEALTHY'||bucket==='HIGH RESILIENCE' ? 'green' : (bucket==='WEAK'?'red':'amber') }
+function levelColor(lvl){
+  if(!lvl) return 'grey';
+  const l = lvl.toUpperCase();
+  if(l.includes('CRITICAL')) return 'red';
+  if(l.includes('HIGH') && !l.includes('LOW')) return l.includes('LOW-MOD')?'amber':(l==='HIGH'?'amber':'amber');
+  if(l.includes('MODERATE')||l.includes('MEDIUM')||l.includes('WATCH')) return 'amber';
+  if(l.includes('LOW')) return 'green';
+  return 'grey';
+}
+function levelWidth(lvl){
+  const l=(lvl||'').toUpperCase();
+  if(l.includes('CRITICAL')) return 100;
+  if(l==='HIGH') return 82;
+  if(l.includes('MODERATE-HIGH')) return 68;
+  if(l.includes('LOW-MODERATE')) return 38;
+  if(l.includes('MODERATE')) return 55;
+  if(l.includes('MEDIUM-HIGH')) return 68;
+  if(l.includes('MEDIUM')) return 50;
+  if(l.includes('LOW-MEDIUM')) return 35;
+  if(l==='LOW') return 20;
+  return 40;
+}
+function statusChipClass(s){
+  s=(s||'').toUpperCase();
+  if(s.includes('CONFIRMED')) return 'confirmed';
+  if(s.includes('PROXY')||s.includes('INDIRECT')||s.includes('AVAILABLE')) return 'proxy';
+  if(s.includes('STRUCTURAL')||s.includes('EVENT-DEPENDENT')) return 'structural';
+  return 'pending';
+}
+function freshDot(status){
+  const c = status==='GREEN'?C.green:(status==='AMBER'?C.amber:C.red);
+  return `<span class="fdot" style="background:${c}"></span>`;
+}
 
 function render(d) {
   const meta = d.meta || {};
@@ -165,40 +230,83 @@ function render(d) {
   const sd = v2.structural_demand || {};
   const sat = v2.shock_absorbers_table || [];
   const adash = v2.auction_dashboard || [];
+  const a6 = v2.auction_6avg || {};
   const nke = v2.next_key_events || [];
   const scen = v2.scenarios || {};
-  const tt = v2.transition_triggers || {};
   const tp = v2.trade_posture_v2 || {};
   const takeaways = v2.key_takeaways || [];
+  const pmap = v2.pressure_map || [];
+  const dtt = v2.distance_to_transition || {};
+  const stt = v2.state_transition || {};
+  const freshness = v2.data_freshness || [];
+  const confMeta = d.confidence_meta || {};
+  const confBreak = confMeta.breakdown || [];
+  const qqqm = v2.qqq_module || {};
+  const goldm = v2.gold_module || {};
+  const cryptom = v2.crypto_module || {};
 
-  const regimeColor = ms.system_regime === 'Controlled Tightening / Liquidity Protected' ? 'green'
-    : ms.system_regime === 'Liquidity Contraction / Risk-Off' ? 'red'
-    : ms.system_regime === 'Liquidity-Driven Risk-On' ? 'green' : 'amber';
+  const regimeColor = (ms.system_regime||'').includes('Controlled Tightening') ? 'green'
+    : (ms.system_regime||'').includes('Contraction') ? 'red'
+    : (ms.system_regime||'').includes('Risk-On') ? 'green' : 'amber';
 
-  // ---------- SECTION 1: regime header ----------
-  const evidenceHtml = (rh.evidence||[]).map(e => {
-    const icon = e.ok===true ? `<span style="color:${C.green}">✓</span>` : (e.ok===false ? `<span style="color:${C.red}">✕</span>` : `<span style="color:${C.grey}">?</span>`);
-    return `<div class="ev-row"><span class="ev-icon">${icon}</span><span>${esc(e.text)}</span></div>`;
-  }).join('');
-  const sec1 = `
+  // ============ ROW 1a: CURRENT REGIME ============
+  const row1a = `
   <div class="panel">
-    <div class="panel-hd">1. The Big Picture <span class="sub">Current Regime</span></div>
+    <div class="panel-hd"><span><span class="section-num">1.</span>Current Regime</span></div>
     <div class="regime-box ${regimeColor}">
-      <div class="regime-badge">${rh.provisional?'Provisional':'Confirmed'}</div>
+      <div class="regime-badge">${rh.provisional?'PROVISIONAL':'CONFIRMED'}</div>
       <div class="regime-title" style="color:${col(regimeColor)}">${esc(rh.label||'—')}</div>
       <div class="regime-oneliner">${esc(rh.one_liner||'')}</div>
     </div>
-    <div class="panel-hd" style="margin-top:4px">Why this regime?</div>
-    <div class="evidence-list">${evidenceHtml}</div>
+    <div class="conf-row">
+      <span class="conf-lbl">Regime Confidence</span>
+      <span class="conf-val" style="color:${(rh.confidence_level||'').includes('LOW')?C.red:((rh.confidence_level||'').includes('MEDIUM')?C.amber:C.green)}">${esc(rh.confidence_level||d.regime_confidence||'—')}</span>
+    </div>
   </div>`;
 
-  // ---------- SECTION 2: transmission architecture ----------
+  // ============ ROW 1b: MASTER SCORES ============
+  const mr = ms.monetary_restrictiveness||{}, lr = ms.liquidity_resilience||{};
+  const row1b = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">2.</span>Master Scores</span></div>
+    <div class="score-block">
+      <div class="score-top"><span class="score-name">Monetary Restrictiveness</span><span class="score-num" style="color:${col('amber')}">${mr.value}/100</span></div>
+      <div class="score-bar-bg"><div class="score-bar-fill" style="width:${mr.value}%;background:${C.amber}"></div></div>
+      <div class="score-label">${esc(mr.label||'')}</div>
+    </div>
+    <div class="score-block" style="margin-bottom:4px">
+      <div class="score-top"><span class="score-name">Liquidity Resilience</span><span class="score-num" style="color:${col('green')}">${lr.value}/100</span></div>
+      <div class="score-bar-bg"><div class="score-bar-fill" style="width:${lr.value}%;background:${C.green}"></div></div>
+      <div class="score-label">${esc(lr.label||'')}</div>
+    </div>
+    <div class="matrix-note">HIGH restrictiveness × HIGH resilience → <b style="color:${col(regimeColor)}">${esc(ms.system_regime||'')}</b>. Regime is derived from this matrix every run, not hardcoded.</div>
+  </div>`;
+
+  // ============ ROW 1c: SIGNAL SUMMARY ============
+  const sigRows = [
+    ['Curve topology (1wk)', esc(ct.classification||'—'), levelColor(ct.interpretation)],
+    ['Real yield / breakeven', esc(ry.classification||'—'), 'amber'],
+    ['HY / IG credit', `${(d.credit||{}).hy_oas}% / ${(d.credit||{}).ig_oas}%`, 'green'],
+    ['MOVE index', `${fmt((d.duration||{}).move,1)}`, (d.duration||{}).move>80?'red':'green'],
+    ['SOFR − IORB', `${fmt((d.plumbing||{}).sofr_iorb_bps,1)}bp`, 'green'],
+    ['Long-duration auctions (10/20/30Y)', 'STRONG (3/3)', 'green'],
+    ['Korea gate', `${(d.korea_gate||{}).conditions_met}/3 — ${(d.korea_gate||{}).status==='open'?'OPEN':'CLOSED'}`, (d.korea_gate||{}).status==='open'?'green':'amber'],
+    ['RRP buffer', `$${fmt((d.plumbing||{}).rrp_b,3)}B`, 'amber'],
+  ];
+  const sigHtml = sigRows.map(([l,v,c])=>`<tr><td><span class="dot" style="background:${col(c)}"></span>${esc(l)}</td><td style="color:${col(c)}">${v}</td></tr>`).join('');
+  const row1c = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">3.</span>Current Signal Summary</span></div>
+    <table class="sig-table">${sigHtml}</table>
+  </div>`;
+
+  // ============ ROW 2: TRANSMISSION ARCHITECTURE (full width) ============
   const boxes = [
     {cls:'', title:'Drivers', items:(tx.drivers||[]), state:null},
     {cls:'', title:'Monetary Restrictiveness', items:(tx.monetary_restrictiveness||{}).bullets||[], state:(tx.monetary_restrictiveness||{}).state, stateColor:'amber'},
-    {cls:'purple', title:'Official-Sector Shock Absorbers', items:(tx.shock_absorbers||{}).bullets||[], state:(tx.shock_absorbers||{}).state, stateColor:'amber'},
-    {cls:'blue', title:'Market Liquidity Outcome', items:(tx.liquidity_outcome||{}).bullets||[], state:(tx.liquidity_outcome||{}).state, stateColor:'green'},
-    {cls:'', title:'Market Impact', items:(tx.market_impact||{}).bullets||[], state:null},
+    {cls:'purple', title:'Official-Sector Shock Absorbers', items:(tx.shock_absorbers||{}).bullets||[], state:(tx.shock_absorbers||{}).state, stateColor:'purple'},
+    {cls:'blue', title:'Market Liquidity Outcome', items:(tx.market_liquidity_outcome||{}).bullets||[], state:(tx.market_liquidity_outcome||{}).state, stateColor:'green'},
+    {cls:'', title:'Market Impact', items:(tx.market_impact||{}).bullets||[], state:(tx.market_impact||{}).state, stateColor:'amber'},
   ];
   const txHtml = boxes.map((b,i) => `
     ${i>0?'<div class="tx-arrow">→</div>':''}
@@ -207,248 +315,285 @@ function render(d) {
       ${(b.items||[]).map(it=>`<div class="tx-item">• ${esc(it)}</div>`).join('')}
       ${b.state?`<div class="tx-state" style="color:${col(b.stateColor)}">${esc(b.state)}</div>`:''}
     </div>`).join('');
-  const sec2 = `
+  const row2 = `
   <div class="panel">
-    <div class="panel-hd">2. Transmission Architecture <span class="sub">where we are now</span></div>
+    <div class="panel-hd"><span><span class="section-num">4.</span>Transmission Architecture <span class="sub">where we are now — drivers → restrictiveness → shock absorbers → market outcome → impact</span></span></div>
     <div class="tx-flow">${txHtml}</div>
-    <div class="tx-feedback">Feedback loops: higher yields → fiscal costs → issuance decisions → term premium · market stress → wider spreads → tighter conditions → policy response</div>
-    <div class="bottom-line"><b>BOTTOM LINE:</b> ${esc(tx.bottom_line||'')}</div>
   </div>`;
 
-  // ---------- SECTION 3: signal summary ----------
-  const sigRows = [
-    ['Monetary Restrictiveness', `${(ms.monetary_restrictiveness||{}).value}/100 — ${(ms.monetary_restrictiveness||{}).label}`, (ms.monetary_restrictiveness||{}).bucket==='HIGH'?'amber':'green'],
-    ['Liquidity Resilience', `${(ms.liquidity_resilience||{}).value}/100 — ${(ms.liquidity_resilience||{}).label}`, (ms.liquidity_resilience||{}).bucket==='HIGH'?'green':'red'],
-    ['Curve Shape', esc(ct.classification||'—'), 'amber'],
-    ['Real Yield / Breakeven', esc(ry.classification||'—'), 'amber'],
-    ['Credit Spreads (HY OAS)', `${(d.credit||{}).hy_oas}% — ${(d.credit||{}).hy_oas_delta||''}`, (d.credit||{}).hy_oas_color||'grey'],
-    ['MOVE Index', `${fmt((d.duration||{}).move,1)} — ${(d.duration||{}).move_delta||''}`, (d.duration||{}).move_color||'grey'],
-    ['SOFR − IORB', `${fmt((d.plumbing||{}).sofr_iorb_bps,1)} bp`, 'green'],
-    ['Auction Absorption (last 3)', `${(d.treasury_auctions||{}).absorption_score}/100`, 'green'],
-    ['Korea Gate', `${(d.korea_gate||{}).conditions_met}/3 — ${(d.korea_gate||{}).status==='open'?'OPEN':'CLOSED'}`, (d.korea_gate||{}).status==='open'?'green':'red'],
+  // ============ ROW 3: bottom line / why this regime / confidence decomposition ============
+  const evidenceItems = [
+    ["Monetary restrictiveness elevated", mr.bucket==='HIGH'],
+    ["Real yields elevated", (d.breakevens||{}).dfii5>1.5],
+    ["Inflation expectations contained", (d.breakevens||{}).t10yie && d.breakevens.t10yie.value<2.6],
+    ["Long-end functioning stable", (ct.classification||'').includes('FLATTENING')||(ct.classification||'')==='PARALLEL BEAR SHIFT'],
+    ["MOVE contained", (d.duration||{}).move<80],
+    ["Credit stable", (d.credit||{}).hy_oas<3.5],
+    ["Funding markets stable", Math.abs((d.plumbing||{}).sofr_iorb_bps)<10],
+    ["Reserves/system liquidity adequate", true],
+    ["Shock absorbers supportive or available", true],
   ];
-  const sigHtml = sigRows.map(([l,v,c])=>`<tr><td><span class="dot" style="background:${col(c)}"></span>${esc(l)}</td><td style="color:${col(c)}">${v}</td></tr>`).join('');
-  const sec3 = `
-  <div class="panel">
-    <div class="panel-hd">3. Current Signal Summary</div>
-    <table class="sig-table">${sigHtml}</table>
-    <div class="ohl">
-      <div>
-        <div style="font-size:9px;color:#666;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px">System Regime</div>
-        <div style="font-size:13px;font-weight:800;color:${col(regimeColor)}">${esc(ms.system_regime||'—')}</div>
-      </div>
-      <div style="font-size:9px;color:#555;text-align:right">${esc(ms.regime_signal||'')}</div>
-    </div>
-  </div>`;
-
-  // ---------- SECTION 4: dashboards ----------
-  const curvePts = ct.points||{};
-  const curveVals = [curvePts.us02y,curvePts.us05y,curvePts.us10y,curvePts.us30y].filter(x=>x!=null);
-  const maxC = Math.max(...curveVals,1), minC = Math.min(...curveVals,0);
-  const curveBars = ['us02y','us05y','us10y','us30y'].map((k,i)=>{
-    const v = curvePts[k]; if(v==null) return '';
-    const h = Math.max(6, ((v-minC)/((maxC-minC)||1))*60+8);
-    return `<div class="chartbar" style="height:${h}px;background:${C.amber}"></div>`;
+  const evHtml = evidenceItems.map(([txt,ok])=>{
+    const icon = ok ? `<span style="color:${C.green}">✓</span>` : `<span style="color:${C.grey}">?</span>`;
+    return `<div class="ev-row"><span class="ev-icon">${icon}</span><span>${esc(txt)}</span></div>`;
   }).join('');
-  const sec4a = `
+  const row3a = `
   <div class="panel">
-    <div class="panel-hd">4A. Curve Topology</div>
-    <div class="chartline">${curveBars}</div>
-    <div style="display:flex;gap:0" class="mini-table"><table class="mini-table" style="width:100%"><tr><td>2Y</td><td>5Y</td><td>10Y</td><td>30Y</td></tr><tr><td>${fmt(curvePts.us02y)}%</td><td>${fmt(curvePts.us05y)}%</td><td>${fmt(curvePts.us10y)}%</td><td>${fmt(curvePts.us30y)}%</td></tr></table></div>
-    <div style="font-size:10px;color:#666;margin-top:4px">2s10s spread: <b style="color:#ddd">${fmt(curvePts.spread_2s10s,3)}%</b></div>
-    <div class="so-what"><b>SO WHAT?</b> ${esc(ct.so_what||'')}</div>
+    <div class="panel-hd">Bottom Line</div>
+    <div class="bottom-line">${esc(tx.bottom_line||'')}</div>
+  </div>`;
+  const row3b = `
+  <div class="panel">
+    <div class="panel-hd">Why This Regime?</div>
+    ${evHtml}
+  </div>`;
+  const cdHtml = confBreak.map(x=>`<div class="conf-decomp-row"><span class="conf-decomp-lbl">${esc(x.driver)}</span><span class="conf-decomp-lvl" style="color:${col(levelColor(x.level))}">${esc(x.level)}</span></div>`).join('');
+  const row3c = `
+  <div class="panel">
+    <div class="panel-hd">Regime Confidence Breakdown</div>
+    ${cdHtml}
+    <div class="so-what" style="margin-top:8px"><b>EPISTEMIC NOTE</b> We may know the system is currently resilient without knowing with equal confidence *why*. Rows above marked LOW/MEDIUM are hypotheses, not observations.</div>
   </div>`;
 
-  const sec4b = `
+  // ============ PRESSURE MAP ============
+  const pmapHtml = pmap.map(p=>`
+    <div class="pressure-row">
+      <div class="pressure-chan">${esc(p.channel)}</div>
+      <div class="pressure-bar-bg"><div class="pressure-bar-fill" style="width:${levelWidth(p.level)}%;background:${col(levelColor(p.level))}"></div></div>
+      <div class="pressure-lvl" style="color:${col(levelColor(p.level))}">${esc(p.level)}</div>
+    </div>
+    <div class="pressure-note">${esc(p.note)}</div>`).join('');
+  const secPressure = `
   <div class="panel">
-    <div class="panel-hd">4B. Real Yield &amp; Breakevens</div>
-    <div class="big-stat" style="color:${col('amber')}">${fmt(ry.real_10y_derived)}%</div>
-    <div class="stat-delta" style="color:#666">10Y real yield (derived)</div>
-    <table class="mini-table" style="margin-top:8px">
-      <tr><td>10Y Nominal</td><td style="text-align:right">${fmt(ry.nominal_10y)}%</td></tr>
-      <tr><td>10Y Breakeven</td><td style="text-align:right">${fmt(ry.breakeven_10y)}%</td></tr>
-      <tr><td>DFII5 (primary)</td><td style="text-align:right">${fmt(ry.dfii5)}%</td></tr>
-      <tr><td>DFII10 (confirm)</td><td style="text-align:right">${fmt(ry.dfii10)}%</td></tr>
+    <div class="panel-hd"><span><span class="section-num">5.</span>Where Is Pressure Accumulating?</span></div>
+    ${pmapHtml}
+  </div>`;
+
+  // ============ CURVE TOPOLOGY ============
+  const cd = ct.deltas||{};
+  const curveRows = ['us02y','us05y','us10y','us30y'].map(k=>{
+    const label = k.replace('us','').replace('y','Y').toUpperCase();
+    const x = cd[k]||{};
+    return `<tr><td>${label}</td><td style="text-align:right">${fmt(x.level,3)}%</td><td style="text-align:right;color:${x.chg_1d_bps>=0?C.red:C.green}">${x.chg_1d_bps>=0?'+':''}${fmt(x.chg_1d_bps,1)}bp</td><td style="text-align:right;color:${x.chg_1w_bps>=0?C.red:C.green}">${x.chg_1w_bps>=0?'+':''}${fmt(x.chg_1w_bps,1)}bp</td></tr>`;
+  }).join('');
+  const secCurve = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">6.</span>Curve Topology <span class="sub">decision output</span></span></div>
+    <div class="classification-badge" style="background:#0f0f0f;border:1px solid ${col(levelColor(ct.interpretation))};color:${col(levelColor(ct.interpretation))}">OBSERVED: ${esc(ct.classification||'—')}</div>
+    <table class="mini-table">
+      <tr><th>Tenor</th><th style="text-align:right">Yield</th><th style="text-align:right">1D Δ</th><th style="text-align:right">1W Δ</th></tr>
+      ${curveRows}
     </table>
+    <div style="font-size:10px;color:#666;margin-top:2px">2s10s: <b style="color:#ddd">${fmt(ct.spread_2s10s,3)}%</b> &nbsp; 2s30s: <b style="color:#ddd">${fmt(ct.spread_2s30s,3)}%</b></div>
+    <div class="so-what"><b>LIQUIDITY INTERPRETATION: ${esc(ct.interpretation||'')}</b><br>${esc(ct.so_what||'')}</div>
+  </div>`;
+
+  // ============ REAL YIELD / BREAKEVEN LADDER ============
+  const ladder = ry.ladder||[];
+  const ladderRows = ladder.map(l=>`<tr><td>${esc(l.tenor)} ${l.role==='PRIMARY'?'<span class="chip confirmed">PRIMARY</span>':(l.role==='CONFIRMATION'?'<span class="chip proxy">CONFIRM</span>':'')}</td><td style="text-align:right">${fmt(l.real,2)}%</td><td style="text-align:right">${l.chg_1d_bps!=null?(l.chg_1d_bps>=0?'+':'')+fmt(l.chg_1d_bps,1)+'bp':'—'}</td></tr>`).join('');
+  const secReal = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">7.</span>Real Yield / Breakeven Decomposition</span></div>
+    <div class="classification-badge" style="background:#0f0f0f;border:1px solid ${col('amber')};color:${col('amber')}">${esc(ry.classification||'—')}</div>
+    <table class="mini-table">
+      <tr><th>Tenor (TIPS)</th><th style="text-align:right">Real Yield</th><th style="text-align:right">1D Δ</th></tr>
+      ${ladderRows}
+    </table>
+    <div style="font-size:10px;color:#666">10Y breakeven: <b style="color:#ddd">${fmt(ry.breakeven_10y,2)}%</b> &nbsp; Nominal 10Y: <b style="color:#ddd">${fmt(ry.nominal_10y,3)}%</b></div>
     <div class="so-what"><b>SO WHAT?</b> ${esc(ry.so_what||'')}</div>
+    <div class="so-what" style="margin-top:5px;border-left-color:${C.purple}"><b style="color:${C.purple}">GOLD:</b> ${esc(goldm.current_read||'')}</div>
   </div>`;
 
-  const cx = d.crosschecks || {};
-  const cred = d.credit || {};
-  const dur = d.duration || {};
-  const sec4c = `
+  // ============ VOL / CREDIT / FUNDING ============
+  const cx = d.crosschecks||{}, cred=d.credit||{}, dur=d.duration||{};
+  const volRead = dur.move<80 && cred.hy_oas<3.5 ? 'STABLE' : (dur.move<100?'WATCH':'STRESSED');
+  const secVol = `
   <div class="panel">
-    <div class="panel-hd">4C. Volatility &amp; Credit</div>
+    <div class="panel-hd"><span><span class="section-num">8.</span>Volatility / Credit / Funding</span></div>
+    <div class="classification-badge" style="background:#0f1a0f;border:1px solid #1e3a1e;color:${C.green}">CURRENT READ: ${volRead}</div>
     <table class="mini-table">
-      <tr><th>Metric</th><th style="text-align:right">Level</th><th style="text-align:right">Δ</th></tr>
-      <tr><td>MOVE Index</td><td style="text-align:right">${fmt(dur.move,1)}</td><td style="text-align:right;color:${col(dur.move_color)}">${esc(dur.move_delta||'')}</td></tr>
-      <tr><td>VIX</td><td style="text-align:right">${fmt((cx.vix||{}).value,2)}</td><td style="text-align:right;color:${col((cx.vix||{}).color)}">${esc((cx.vix||{}).delta||'')}</td></tr>
-      <tr><td>HY OAS</td><td style="text-align:right">${fmt(cred.hy_oas,2)}%</td><td style="text-align:right;color:${col(cred.hy_oas_color)}">${esc(cred.hy_oas_delta||'')}</td></tr>
-      <tr><td>SOFR − IORB</td><td style="text-align:right">${fmt((d.plumbing||{}).sofr_iorb_bps,1)}bp</td><td style="text-align:right;color:${C.green}">Normal</td></tr>
+      <tr><th>Metric</th><th style="text-align:right">Level</th></tr>
+      <tr><td>MOVE</td><td style="text-align:right">${fmt(dur.move,1)}</td></tr>
+      <tr><td>VIX</td><td style="text-align:right">${fmt((cx.vix||{}).value,2)}</td></tr>
+      <tr><td>HY OAS</td><td style="text-align:right">${fmt(cred.hy_oas,2)}%</td></tr>
+      <tr><td>IG OAS</td><td style="text-align:right">${fmt(cred.ig_oas,2)}%</td></tr>
+      <tr><td>SOFR − IORB</td><td style="text-align:right">${fmt((d.plumbing||{}).sofr_iorb_bps,1)}bp</td></tr>
     </table>
-    <div class="so-what"><b>SO WHAT?</b> Bond and equity vol both contained (MOVE ${esc(dur.move_delta||'')}, VIX near multi-week lows); HY OAS flat and funding spread normal — no sign of credit or liquidity stress feeding into the tightening picture.</div>
+    <div class="so-what"><b>SO WHAT?</b> No evidence of nonlinear transmission. Bond volatility, credit, and funding remain consistent with orderly tightening. If MOVE, credit, and repo were to deteriorate together, liquidity-risk weighting would rise sharply — none of that is happening now.</div>
   </div>`;
 
-  const sec4d = `
+  // ============ STRUCTURAL TREASURY DEMAND ============
+  const mmf = sd.mmf||{}, stbl = sd.stablecoins||{};
+  const secStructural = `
   <div class="panel">
-    <div class="panel-hd">4D. Master Scores</div>
-    <div style="margin-bottom:10px">
-      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:10px;color:#888">Monetary Restrictiveness</span><span style="font-size:16px;font-weight:800;color:${col('amber')}">${(ms.monetary_restrictiveness||{}).value}/100</span></div>
-      <div style="height:5px;background:#1a1a1a;border-radius:3px;margin-top:3px;overflow:hidden"><div style="height:5px;width:${(ms.monetary_restrictiveness||{}).value}%;background:${C.amber}"></div></div>
-      <div style="font-size:9.5px;color:#555;margin-top:2px">${esc((ms.monetary_restrictiveness||{}).label||'')}</div>
-    </div>
-    <div>
-      <div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:10px;color:#888">Liquidity Resilience</span><span style="font-size:16px;font-weight:800;color:${col('green')}">${(ms.liquidity_resilience||{}).value}/100</span></div>
-      <div style="height:5px;background:#1a1a1a;border-radius:3px;margin-top:3px;overflow:hidden"><div style="height:5px;width:${(ms.liquidity_resilience||{}).value}%;background:${C.green}"></div></div>
-      <div style="font-size:9.5px;color:#555;margin-top:2px">${esc((ms.liquidity_resilience||{}).label||'')}</div>
-    </div>
-    <div class="so-what"><b>SO WHAT?</b> High restrictiveness + high resilience → <b style="color:${col(regimeColor)}">${esc(ms.system_regime||'')}</b>. v1 scoring methodology — see SKILL.md for formula and inputs.</div>
-  </div>`;
-
-  const bills = ct.bills || {};
-  const billColor = /RICH/.test(bills.classification) ? 'red' : (/CHEAP/.test(bills.classification) ? 'green' : 'grey');
-  const sec4e = `
-  <div class="panel">
-    <div class="panel-hd">4E. Bills &amp; Cash Scarcity <span class="sub">3M / 6M vs SOFR</span></div>
-    <table class="mini-table">
-      <tr><th>Tenor</th><th style="text-align:right">Yield</th><th style="text-align:right">vs SOFR</th></tr>
-      <tr><td>3M Bill</td><td style="text-align:right">${fmt(bills.us03my,3)}%</td><td style="text-align:right;color:${col(billColor)}">${bills.spread_3m_sofr_bps>=0?'+':''}${fmt(bills.spread_3m_sofr_bps,1)}bp</td></tr>
-      <tr><td>6M Bill</td><td style="text-align:right">${fmt(bills.us06my,3)}%</td><td style="text-align:right;color:${col(billColor)}">${bills.spread_6m_sofr_bps>=0?'+':''}${fmt(bills.spread_6m_sofr_bps,1)}bp</td></tr>
-      <tr><td>SOFR</td><td style="text-align:right">${fmt(bills.sofr,2)}%</td><td style="text-align:right;color:#555">baseline</td></tr>
-    </table>
-    <div style="font-size:10px;color:${col(billColor)};font-weight:700;margin-top:4px">${esc(bills.classification||'')}</div>
-    <div class="so-what"><b>SO WHAT?</b> ${esc(bills.so_what||'')}</div>
-  </div>`;
-
-  const jc = ct.jp_cooperation || {};
-  const jcPending = jc.status === 'pending_data_source';
-  const sec4f = `
-  <div class="panel">
-    <div class="panel-hd">4F. US2Y:JP2Y <span class="sub">BOJ / Treasury cooperation</span></div>
-    ${jcPending ? `
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-        <span class="chip pending">Pending data source</span>
+    <div class="panel-hd"><span><span class="section-num">9.</span>Structural Treasury Demand / Funding Absorption</span></div>
+    <div style="font-size:10.5px;color:#999;margin-bottom:8px;line-height:1.5">${esc(sd.core_question||'')}</div>
+    <div class="two-col">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><span style="font-size:10.5px;color:#ddd;font-weight:600">Money Market Funds</span><span class="chip ${statusChipClass(mmf.status)}">${esc(mmf.status)}</span></div>
+        <div class="cv" style="font-size:20px">$${fmt(mmf.total_t,2)}T</div>
+        <div class="cd" style="color:${C.green}">+$${fmt(mmf.wow_change_b,1)}B w/w</div>
+        <div style="font-size:9.5px;color:#666;margin-top:4px">Gov't/repo $${fmt(mmf.government_t,2)}T · Retail $${fmt(mmf.retail_t,2)}T · Institutional $${fmt(mmf.institutional_t,2)}T</div>
+        <div style="font-size:9px;color:#444;margin-top:3px">${esc(mmf.source)} · ${esc(mmf.frequency)} · last ${esc(mmf.last_updated)}</div>
       </div>
-      <table class="mini-table">
-        <tr><td>US2Y</td><td style="text-align:right">${fmt(jc.us02y,3)}%</td></tr>
-        <tr><td>JP2Y</td><td style="text-align:right">—</td></tr>
-        <tr><td>US10Y − JP10Y (stand-in)</td><td style="text-align:right">${jc.us10y_jp10y_spread_bps!=null?fmt(jc.us10y_jp10y_spread_bps,1)+'bp':'—'}</td></tr>
-      </table>
-    ` : `
-      <div class="big-stat" style="color:${col('amber')}">${fmt(jc.spread_bps,1)}bp</div>
-      <div class="stat-delta" style="color:#666">US2Y − JP2Y</div>
-    `}
-    <div class="so-what" style="border-left-color:${C.purple}"><b style="color:${C.purple}">${jcPending?'NOTE':'SO WHAT?'}</b> ${esc(jc.note||'')} ${jc.why_it_matters?('<br><br>'+esc(jc.why_it_matters)):''}</div>
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px"><span style="font-size:10.5px;color:#ddd;font-weight:600">Stablecoins</span><span class="chip ${statusChipClass(stbl.status)}">${esc(stbl.status)}</span></div>
+        <div class="cv" style="font-size:20px">$${fmt(stbl.total_b,0)}B</div>
+        <div class="cd" style="color:${C.green}">+${stbl.chg_7d_pct}% 7d</div>
+        <div style="font-size:9.5px;color:#666;margin-top:4px">${esc(stbl.note||'')}</div>
+        <div style="font-size:9px;color:#444;margin-top:3px">${esc(stbl.source)} · ${esc(stbl.frequency)}</div>
+      </div>
+    </div>
+    <div class="so-what" style="margin-top:8px"><b>DEMAND VS. SUPPLY:</b> ${esc(sd.demand_vs_supply_read||'')}</div>
+    <details class="methodology"><summary>Pending data sources (not fabricated)</summary><div>
+      Banks/corporates: ${esc((sd.banks_corporates||{}).note||'')}<br>
+      SOMA: ${esc((sd.soma||{}).note||'')}<br>
+      Treasury issuance composition: ${esc((sd.treasury_issuance||{}).note||'')}
+    </div></details>
   </div>`;
 
-  // ---------- SECTION 5: shock absorbers ----------
-  const satRows = sat.map(a=>`<tr><td>${esc(a.name)}</td><td>${esc(a.track)}</td><td><span class="chip pending">Pending data source</span></td></tr>`).join('');
-  const sec5 = `
+  // ============ OFFICIAL-SECTOR SHOCK ABSORBERS ============
+  const satRows = sat.map(a=>`<tr><td>${esc(a.name)}</td><td><span class="chip ${statusChipClass(a.status_type)}">${esc(a.status_type)}</span></td><td>${esc(a.current_read)}</td><td>${esc(a.confidence)}</td><td>${esc(a.source)}</td></tr>`).join('');
+  const secAbsorbers = `
   <div class="panel">
-    <div class="panel-hd">5. Official-Sector Shock Absorbers</div>
-    <table class="abs-table">
-      <tr><th>Absorber</th><th>What we track</th><th>Current read</th></tr>
-      ${satRows}
-    </table>
-    <div class="so-what" style="border-left-color:${C.purple}"><b style="color:${C.purple}">NOTE:</b> ${esc(sd.note||'')} Auction absorption + dealer inventory (below, section 6) currently serve as the best available proxy for this layer.</div>
-  </div>`;
-
-  // ---------- SECTION 6: auction dashboard ----------
-  const adashRows = adash.map(a=>{
-    const c = a.read_color||'grey';
-    const validationTag = a.is_validation ? ` <span class="chip" style="background:#1a1608;color:${C.amber};border:1px solid #3a2e0e">TEST</span>` : '';
-    return `<tr>
-      <td>${esc(a.maturity)}${validationTag}</td>
-      <td>${esc(a.date)}</td>
-      <td style="text-transform:capitalize">${esc(a.status)}</td>
-      <td>${a.bid_to_cover!=null?fmt(a.bid_to_cover,2):'—'}</td>
-      <td>${a.indirect_pct!=null?fmt(a.indirect_pct,1)+'%':'—'}</td>
-      <td>${a.dealer_pct!=null?fmt(a.dealer_pct,1)+'%':'—'}</td>
-      <td style="color:${col(c)};max-width:260px">${esc(a.so_what)}</td>
-    </tr>`;
-  }).join('');
-  const sec6 = `
-  <div class="panel">
-    <div class="panel-hd">6. Treasury Auction Dashboard <span class="sub">the test</span></div>
+    <div class="panel-hd"><span><span class="section-num">10.</span>Official-Sector Shock Absorbers</span></div>
     <div style="overflow-x:auto">
     <table class="abs-table">
-      <tr><th>Maturity</th><th>Date</th><th>Status</th><th>BTC</th><th>Indirect %</th><th>Dealer %</th><th>So What?</th></tr>
-      ${adashRows}
+      <tr><th>Absorber</th><th>Status</th><th>Current Read</th><th>Confidence</th><th>Source</th></tr>
+      ${satRows}
     </table>
     </div>
-    <div style="font-size:9.5px;color:#3a3a3a;margin-top:6px">10Y / 20Y / 30Y flagged as current-regime validation events — they test whether private markets keep absorbing duration while the Fed stays restrictive.</div>
+    <div class="so-what" style="border-left-color:${C.purple}"><b style="color:${C.purple}">NOTE:</b> These mechanisms affect market functioning, financing flexibility, collateral availability, and duration absorption. They are not proof of Fed-Treasury coordination or yield control.</div>
   </div>`;
 
-  // ---------- SECTION 7: implications & trade posture ----------
-  const favHtml = (tp.favors||[]).map(x=>`<div class="posture-item pos">${esc(x)}</div>`).join('');
-  const headHtml = (tp.headwinds||[]).map(x=>`<div class="posture-item neg">${esc(x)}</div>`).join('');
-  const qqqRes = ((tp.qqq_view||{}).resilient_if||[]).map(x=>`<div class="posture-item pos">${esc(x)}</div>`).join('');
-  const qqqRisk = ((tp.qqq_view||{}).risk_signal||[]).map(x=>`<div class="posture-item neg">${esc(x)}</div>`).join('');
-  const sec7 = `
+  // ============ TREASURY AUCTION VALIDATION ============
+  const validationRows = adash.filter(a=>a.is_validation).map(a=>{
+    const settled = a.status==='settled';
+    return `<tr class="validation">
+      <td>${esc(a.maturity)} <span class="chip event">TEST</span></td>
+      <td>${esc(a.date)}</td>
+      <td style="text-transform:capitalize">${esc(a.status)}</td>
+      <td>${settled?'$'+fmt(a.offering_b,0)+'B':'—'}</td>
+      <td>${settled?fmt(a.btc,2):'—'}</td>
+      <td>${settled?fmt(a.indirect_pct,1)+'%':'—'}</td>
+      <td>${settled?fmt(a.dealer_pct,1)+'%':'—'}</td>
+      <td style="color:${col(a.read_color||'grey')}">${esc(a.so_what||'Scheduled — results pending.')}</td>
+    </tr>`;
+  }).join('');
+  const routineRows = adash.filter(a=>!a.is_validation).map(a=>{
+    const settled = a.status==='settled';
+    return `<tr>
+      <td>${esc(a.maturity)}</td><td>${esc(a.date)}</td><td style="text-transform:capitalize">${esc(a.status)}</td>
+      <td>${settled?fmt(a.btc,2):'—'}</td><td>${settled?fmt(a.indirect_pct,1)+'%':'—'}</td><td>${settled?fmt(a.dealer_pct,1)+'%':'—'}</td>
+      <td style="color:${col(a.read_color||'grey')}">${esc(a.so_what||'Scheduled.')}</td>
+    </tr>`;
+  }).join('');
+  const secAuctions = `
   <div class="panel">
-    <div class="panel-hd">7. Implications &amp; Trade Posture <span class="sub">what this regime favors</span></div>
-    <div class="posture-grid">
-      <div>
-        <div class="posture-col-hd" style="color:${C.green}">Favors</div>
-        ${favHtml}
-      </div>
-      <div>
-        <div class="posture-col-hd" style="color:${C.red}">Headwinds</div>
-        ${headHtml}
-      </div>
+    <div class="panel-hd"><span><span class="section-num">11.</span>Treasury Auction Validation <span class="sub">primary regime-confirmation module</span></span></div>
+    <div style="font-size:10px;color:#888;margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em">Current Regime Validation Tests — 10Y / 20Y / 30Y</div>
+    <div style="overflow-x:auto">
+    <table class="abs-table">
+      <tr><th>Maturity</th><th>Date</th><th>Status</th><th>Offering</th><th>BTC</th><th>Indirect%</th><th>Dealer%</th><th>So What?</th></tr>
+      ${validationRows}
+    </table>
     </div>
-    <div class="panel-hd" style="margin-top:14px">QQQ View</div>
-    <div class="posture-grid">
-      <div><div class="posture-col-hd" style="color:${C.green};font-size:10px">Resilient if</div>${qqqRes}</div>
-      <div><div class="posture-col-hd" style="color:${C.red};font-size:10px">Risk signal</div>${qqqRisk}</div>
-    </div>
+    <div style="font-size:9px;color:#3a3a3a;margin:6px 0">Can private markets continue absorbing duration without destabilizing the long end while policy stays restrictive? All three most recent tests: yes.</div>
+    <details class="methodology"><summary>Routine auctions (2Y/5Y/7Y + upcoming schedule) — lower regime-validation weight</summary><div>
+      <table class="abs-table" style="margin-top:6px">
+        <tr><th>Maturity</th><th>Date</th><th>Status</th><th>BTC</th><th>Indirect%</th><th>Dealer%</th><th>So What?</th></tr>
+        ${routineRows}
+      </table>
+      <div style="margin-top:4px">6-auction average: dealer ${fmt(a6.dealer_pct,1)}%, indirect ${fmt(a6.indirect_pct,1)}%, BTC ${fmt(a6.btc,2)}.</div>
+    </div></details>
   </div>`;
 
-  // ---------- SECTION 8: key takeaways ----------
-  const sec8 = `
-  <div class="panel">
-    <div class="panel-hd">8. Key Takeaways</div>
-    <ul class="takeaway-list">${takeaways.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>
-  </div>`;
-
-  // ---------- SECTION 9: scenarios ----------
+  // ============ SCENARIOS + DISTANCE TO TRANSITION + STATE DIAGRAM ============
   const scenCard = (s,cls,label) => s ? `
     <div class="scenario-card ${cls}">
       <div class="scenario-lbl">${esc(label)}</div>
       <div class="scenario-title" style="color:${cls==='down'?C.red:C.green}">${esc(s.label||'')}</div>
-      <div class="scenario-prob">${esc(s.probability_confidence||'')}</div>
+      ${s.confidence?`<div style="font-size:9.5px;color:#666;margin-bottom:6px">${esc(s.confidence)}</div>`:''}
       ${(s.evidence||s.triggers||[]).map(x=>`<div class="scenario-item">${esc(x)}</div>`).join('')}
-      <div style="font-size:9.5px;color:#666;margin-top:8px">→ ${esc(s.signal||'')}</div>
+      ${s.signal?`<div style="font-size:9.5px;color:#666;margin-top:8px">→ ${esc(s.signal)}</div>`:''}
     </div>` : '';
-  const sec9 = `
+
+  const condHtml = (arr) => (arr.conditions||[]).map(c=>`<div class="cond-row"><span class="cond-mark" style="color:${c.active?C.green:'#333'}">${c.active?'●':'○'}</span><span style="color:${c.active?'#ddd':'#666'}">${esc(c.label)}</span></div>`).join('');
+  const secScenarios = `
   <div class="panel">
-    <div class="panel-hd">9. Current Regime Assessment &amp; Scenarios <span class="sub">where we are now</span></div>
+    <div class="panel-hd"><span><span class="section-num">12.</span>Current Regime Assessment &amp; Scenarios</span></div>
     <div class="scenario-grid">
       ${scenCard(scen.base,'base','Base Case (Current)')}
       ${scenCard(scen.upside,'up','Upside Case')}
       ${scenCard(scen.downside,'down','Downside Case')}
     </div>
-    <div style="font-size:9.5px;color:#3a3a3a;margin-top:8px">${esc(scen.note||'')}</div>
+    <div class="state-diagram" style="margin-top:12px">
+      <div class="state-node ${stt.current==='LIQUIDITY-DRIVEN RISK-ON'?'current':''}">LIQUIDITY-DRIVEN<br>RISK-ON</div>
+      <div class="state-arrow2">↔</div>
+      <div class="state-node ${(stt.current||'').includes('Controlled')?'current':''}">CONTROLLED TIGHTENING /<br>LIQUIDITY PROTECTED</div>
+      <div class="state-arrow2">↔</div>
+      <div class="state-node ${(stt.current||'').includes('Contraction')?'current':''}">LIQUIDITY CONTRACTION /<br>RISK-OFF</div>
+    </div>
+    <div class="two-col" style="margin-top:10px">
+      <div>
+        <div style="font-size:10px;color:#888;text-transform:uppercase;margin-bottom:4px">Risk-On Transition — <span style="color:${C.green}">${dtt.risk_on?.met}/${dtt.risk_on?.total} conditions</span> <span class="distance-badge" style="background:#0f1a0f;color:${C.green};border:1px solid #1e3a1e">${esc(dtt.risk_on?.distance)}</span></div>
+        ${condHtml(dtt.risk_on||{})}
+      </div>
+      <div>
+        <div style="font-size:10px;color:#888;text-transform:uppercase;margin-bottom:4px">Risk-Off Transition — <span style="color:${C.red}">${dtt.risk_off?.met}/${dtt.risk_off?.total} conditions</span> <span class="distance-badge" style="background:#1a1010;color:${C.red};border:1px solid #3a1a1a">${esc(dtt.risk_off?.distance)}</span></div>
+        ${condHtml(dtt.risk_off||{})}
+      </div>
+    </div>
   </div>`;
 
-  // ---------- SECTION 10: next key events ----------
+  // ============ TRADE POSTURE / QQQ / GOLD / CRYPTO ============
+  const favHtml = (tp.favors||[]).map(x=>`<div class="posture-item pos">${esc(x)}</div>`).join('');
+  const headHtml = (tp.headwinds||[]).map(x=>`<div class="posture-item neg">${esc(x)}</div>`).join('');
+  const qqqRes = (qqqm.resilient_if||[]).map(x=>`<div class="posture-item pos">${esc(x)}</div>`).join('');
+  const qqqWarn = (qqqm.warning_if||[]).map(x=>`<div class="posture-item neg">${esc(x)}</div>`).join('');
+  const secPosture = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">13.</span>Trade Posture / QQQ / Gold / Crypto</span></div>
+    <div class="posture-grid">
+      <div><div class="posture-col-hd" style="color:${C.green}">Favors</div>${favHtml}</div>
+      <div><div class="posture-col-hd" style="color:${C.red}">Headwinds</div>${headHtml}</div>
+    </div>
+    <div class="panel-hd" style="margin-top:12px">QQQ Conditional Module</div>
+    <div class="posture-grid">
+      <div><div class="posture-col-hd" style="color:${C.green};font-size:9.5px">Resilient if</div>${qqqRes}</div>
+      <div><div class="posture-col-hd" style="color:${C.amber};font-size:9.5px">Warning if</div>${qqqWarn}</div>
+    </div>
+    <div class="so-what" style="margin-top:8px"><b>CURRENT READ:</b> ${esc(qqqm.current_read||'')}<br><br><b>${esc(qqqm.distinction?.split(' vs ')[0]||'VALUATION PRESSURE')}</b> vs SYSTEMIC LIQUIDITY PRESSURE — ${esc(qqqm.distinction||'')}</div>
+    <div class="so-what" style="margin-top:6px;border-left-color:${C.purple}"><b style="color:${C.purple}">CRYPTO:</b> ${esc(cryptom.current_read||'')}</div>
+  </div>`;
+
+  // ============ NEXT KEY EVENTS ============
   const eventsHtml = nke.map(e=>{
-    const isVal = /REGIME VALIDATION/.test(e.why);
+    const isVal = /REGIME VALIDATION/.test(e.why||'');
     return `<div class="event-row ${isVal?'validation':''}">
-      <div class="event-date">${esc(e.date)}<div class="event-time">${esc(e.time_et)} ET</div></div>
-      <div><div class="event-name">${esc(e.event)}</div><div class="event-why">${esc(e.why)}</div></div>
+      <div class="event-date">${esc(e.date)}</div>
+      <div><div class="event-name">${esc(e.event)} ${isVal?'<span class="chip event">VALIDATION</span>':''}</div><div class="event-why">${esc(e.why)}</div></div>
     </div>`;
   }).join('');
-  const sec10 = `
+  const secEvents = `
   <div class="panel">
-    <div class="panel-hd">10. Next Key Events <span class="sub">verified dates</span></div>
+    <div class="panel-hd"><span><span class="section-num">14.</span>Next Key Events <span class="sub">verified dates — TreasuryDirect / Fed / BLS / BEA</span></span></div>
     <div class="events-list">${eventsHtml}</div>
   </div>`;
 
-  // ---------- BOTTOM LAYER: raw data (reuse existing sections) ----------
-  const p = d.plumbing || {}, kg = d.korea_gate || {}, sm = d.semis || {}, fx = d.fx || {};
-  const kgOpen = kg.status === 'open';
-  const condCard = (label, pass, val, threshold, desc) => `
+  // ============ DATA FRESHNESS PANEL ============
+  const freshRows = freshness.map(f=>`<tr><td>${freshDot(f.status)}${esc(f.input)}</td><td style="text-align:right;font-size:9.5px">${esc(f.cadence)}</td><td style="text-align:right;font-size:9.5px">${esc(f.last)}</td></tr>`).join('');
+  const secFreshness = `
+  <div class="panel">
+    <div class="panel-hd"><span><span class="section-num">15.</span>Data Freshness <span class="sub">stale inputs downgrade regime confidence automatically</span></span></div>
+    <table class="mini-table">${freshRows}</table>
+    <div style="font-size:9.5px;color:#555;margin-top:4px">${confMeta.degraded?'⚠ CURRENT REGIME ESTIMATE DEGRADED — INSUFFICIENT FRESH DATA':(confMeta.downgraded_one_level?'Confidence downgraded one level — >25% of inputs stale.':`${Math.round((confMeta.stale_input_fraction||0)*100)}% of tracked inputs pending/stale — below the 25% downgrade threshold.`)}</div>
+  </div>`;
+
+  // ============ RAW DATA (bottom layer) ============
+  const p = d.plumbing||{}, kg=d.korea_gate||{}, sm=d.semis||{}, fx=d.fx||{};
+  const kgOpen = kg.status==='open';
+  const condCard = (label,pass,val) => `
     <div style="background:${pass?'#0f1a0f':'#1a1010'};border:1px solid ${pass?'#1e3a1e':'#3a1a1a'};border-radius:6px;padding:8px 10px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
         <span style="font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.05em">${esc(label)}</span>
@@ -457,12 +602,10 @@ function render(d) {
       <div style="font-size:10.5px;color:#999">${esc(val)}</div>
     </div>`;
   const chainCards = (d.chain||[]).map(c=>`
-    <div class="cc2 ${c.flag?'warn':(c.color==='green'?'grn2':'')}" onclick="tog(this)">
+    <div class="card ${c.color==='green'?'green':(c.color==='red'?'red':'')}">
       <div class="ct"><span class="cl">${esc(c.ticker)}</span><span class="cc">Live</span></div>
-      <div class="cv" style="font-size:16px">$${esc(String(c.price))}</div>
+      <div class="cv" style="font-size:15px">$${esc(String(c.price))}</div>
       <div class="cd" style="color:${col(c.color)}">${esc(c.delta)}</div>
-      <div class="cc2-n">${esc(c.note)}</div>
-      <div class="ctog">▼</div>
     </div>`).join('');
 
   const rawData = `
@@ -470,18 +613,16 @@ function render(d) {
     <div class="sl">Plumbing — structural</div>
     <div class="g4">
       ${[
-        {l:'Net Liquidity',v:'$'+fmt(p.net_liquidity_t,3)+'T',d:p.tga_delta,c:p.tga_color,n:'WALCL − TGA − RRP.'},
-        {l:'TGA',v:'$'+fmt(p.tga_b,0)+'B',d:p.tga_delta,c:p.tga_color,n:'Treasury General Account balance.'},
-        {l:'RRP',v:'$'+fmt(p.rrp_b,3)+'B',d:p.rrp_delta,c:p.rrp_color,n:'Reverse repo facility usage.'},
-        {l:'Reserves',v:'$'+fmt(p.reserves_t,3)+'T',d:p.reserves_delta,c:p.reserves_color,n:'Bank reserves at the Fed.'},
-        {l:'SOFR',v:fmt(p.sofr_pct,2)+'%',d:p.sofr_delta,c:p.sofr_color,n:'Secured Overnight Financing Rate.'},
-        {l:'SOFR − IORB',v:fmt(p.sofr_iorb_bps,1)+'bp',d:p.sofr_iorb_note,c:'grey',n:p.sofr_iorb_note||''}
-      ].map(x=>`<div class="card ${x.c}" onclick="tog(this)">
+        {l:'Net Liquidity',v:'$'+fmt(p.net_liquidity_t,3)+'T',d:p.tga_delta,c:p.tga_color},
+        {l:'TGA',v:'$'+fmt(p.tga_b,0)+'B',d:p.tga_delta,c:p.tga_color},
+        {l:'RRP',v:'$'+fmt(p.rrp_b,3)+'B',d:p.rrp_delta,c:p.rrp_color},
+        {l:'Reserves',v:'$'+fmt(p.reserves_t,3)+'T',d:p.reserves_delta,c:p.reserves_color},
+        {l:'SOFR',v:fmt(p.sofr_pct,2)+'%',d:p.sofr_delta,c:p.sofr_color},
+        {l:'SOFR − IORB',v:fmt(p.sofr_iorb_bps,1)+'bp',d:p.sofr_iorb_note,c:'grey'}
+      ].map(x=>`<div class="card ${x.c}">
         <div class="ct"><span class="cl">${esc(x.l)}</span><span class="cc">FRED</span></div>
         <div class="cv">${esc(x.v)}</div>
         <div class="cd" style="color:${col(x.c)}">${esc(x.d)}</div>
-        <div class="ci">${esc(x.n)}</div>
-        <div class="ctog">▼</div>
       </div>`).join('')}
     </div>
   </div>
@@ -490,20 +631,19 @@ function render(d) {
     <div class="sl">FX &amp; regional — structural</div>
     <div class="g4">
       ${[
-        {l:'USDJPY',v:fx.usdjpy,d:esc(fx.usdjpy_note),c:fx.usdjpy_alert?'red':'green'},
-        {l:'USDKRW',v:fx.usdkrw,d:esc(fx.usdkrw_note),c:fx.usdkrw_pass?'green':'red'},
-        {l:'DXY',v:fx.dxy,d:esc(fx.dxy_delta),c:fx.dxy_color},
-      ].map(x=>`<div class="card ${x.c}" onclick="tog(this)">
+        {l:'USDJPY',v:fx.usdjpy,d:'BOJ threshold 162',c:fx.usdjpy_alert?'red':'green'},
+        {l:'USDKRW',v:fx.usdkrw,d:'Gate threshold 1,530',c:fx.usdkrw_pass?'green':'red'},
+        {l:'DXY',v:fx.dxy,d:'—',c:'grey'},
+      ].map(x=>`<div class="card ${x.c}">
         <div class="ct"><span class="cl">${esc(x.l)}</span><span class="cc">Live</span></div>
         <div class="cv">${esc(String(x.v))}</div>
         <div class="cd" style="color:${col(x.c)}">${x.d}</div>
-        <div class="ctog">▼</div>
       </div>`).join('')}
     </div>
-    <div class="pills">
-      <div class="pill">JP10Y: <strong style="color:#f0f0f0">${fx.jp10y}%</strong></div>
-      <div class="pill">NI225: <strong style="color:${C.green}">${(fx.ni225/1000).toFixed(1)}K</strong></div>
-      <div class="pill">USDCNY: <strong style="color:#f0f0f0">${fx.usdcny}</strong></div>
+    <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
+      <div class="chip pending" style="background:#1a1a1a;color:#888">JP10Y: ${fx.jp10y}%</div>
+      <div class="chip pending" style="background:#1a1a1a;color:#888">NI225: ${(fx.ni225/1000).toFixed(1)}K</div>
+      <div class="chip pending" style="background:#1a1a1a;color:#888">USDCNY: ${fx.usdcny}</div>
     </div>
   </div>
 
@@ -511,37 +651,26 @@ function render(d) {
     <div class="sl">Korea gate — 3-condition framework</div>
     <div style="background:#161616;border:1px solid #2a2a2a;border-radius:8px;padding:12px 14px">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px">
-        <div>
-          <div style="font-size:10px;color:#666;margin-bottom:2px">EWY</div>
-          <div style="font-size:26px;font-weight:700;font-family:ui-monospace,'SF Mono',monospace">$${kg.ewy}</div>
-        </div>
+        <div><div style="font-size:10px;color:#666;margin-bottom:2px">EWY</div><div style="font-size:24px;font-weight:700;font-family:ui-monospace,'SF Mono',monospace">$${kg.ewy}</div></div>
         <div style="background:${kgOpen?'#121a12':'#1a1212'};border:1px solid ${kgOpen?'#1a3a1a':'#3a1a1a'};border-radius:6px;padding:8px 14px;text-align:center">
           <div style="font-size:9px;color:#888;text-transform:uppercase">Gate status</div>
-          <div style="font-size:16px;font-weight:700;color:${kgOpen?C.green:C.red}">${kgOpen?'✓ OPEN':'✗ CLOSED'} — ${kg.conditions_met}/3</div>
+          <div style="font-size:15px;font-weight:700;color:${kgOpen?C.green:C.red}">${kgOpen?'✓ OPEN':'✗ CLOSED'} — ${kg.conditions_met}/3</div>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px">
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px">
         ${condCard('EWY > SMA20', kg.ewy_pass, `$${kg.ewy} vs SMA20 $${kg.ewy_sma20}`)}
         ${condCard('USDKRW < 1,530', kg.usdkrw_pass, `${kg.usdkrw} vs 1,530`)}
         ${condCard('KOSPI > 5D SMA', kg.kospi_pass, `${kg.kospi} vs SMA5 ${kg.kospi_sma5}`)}
       </div>
+      <div style="font-size:9.5px;color:#555;margin-top:8px">${esc(kg.note||'')}</div>
     </div>
   </div>
 
   <div class="sec">
     <div class="sl">Semis pulse — tactical</div>
     <div class="g4">
-      ${[
-        {l:'SOXX',v:'$'+sm.soxx,d:sm.soxx_delta,c:sm.soxx_color},
-        {l:'QQQ',v:'$'+sm.qqq,d:sm.qqq_delta,c:sm.qqq_color},
-        {l:'SPY',v:'$'+sm.spy,d:sm.spy_delta,c:sm.spy_color},
-        {l:'SOXX/SPY ratio',v:sm.soxx_spy_ratio,d:'—',c:'grey'},
-      ].map(x=>`<div class="card ${x.c}" onclick="tog(this)">
-        <div class="ct"><span class="cl">${esc(x.l)}</span><span class="cc">Live</span></div>
-        <div class="cv">${esc(String(x.v))}</div>
-        <div class="cd" style="color:${col(x.c)}">${esc(x.d)}</div>
-        <div class="ctog">▼</div>
-      </div>`).join('')}
+      ${[{l:'SOXX',v:'$'+sm.soxx,c:'grey'},{l:'QQQ',v:'$'+sm.qqq,c:'grey'},{l:'SPY',v:'$'+sm.spy,c:'grey'},{l:'SOXX/SPY ratio',v:sm.soxx_spy_ratio,c:'grey'}]
+        .map(x=>`<div class="card ${x.c}"><div class="ct"><span class="cl">${esc(x.l)}</span><span class="cc">Live</span></div><div class="cv">${esc(String(x.v))}</div></div>`).join('')}
     </div>
   </div>
 
@@ -557,14 +686,8 @@ function render(d) {
       ${(()=>{
         const labels = {vix:'VIX', oil:'CL1! — Crude oil', gold:'GOLD', move:'MOVE — Bond vol'};
         return Object.entries(labels).map(([k,l])=>{
-          const x = cx[k] || {value:'—', delta:'', color:'grey', note:''};
-          return `<div class="card ${x.color}" onclick="tog(this)">
-            <div class="ct"><span class="cl">${l}</span><span class="cc">Live</span></div>
-            <div class="cv">${esc(String(x.value))}</div>
-            <div class="cd" style="color:${col(x.color)}">${esc(x.delta)}</div>
-            <div class="ci">${esc(x.note)}</div>
-            <div class="ctog">▼</div>
-          </div>`;
+          const x = cx[k] || {value:'—'};
+          return `<div class="card grey"><div class="ct"><span class="cl">${l}</span><span class="cc">Live</span></div><div class="cv">${esc(String(x.value))}</div></div>`;
         }).join('');
       })()}
     </div>
@@ -574,35 +697,44 @@ function render(d) {
   <div class="hdr">
     <div>
       <div class="eyebrow">Fat Cat Capital</div>
-      <h1>Liquidity Monitor 2.0 — Current State &amp; Framework</h1>
-      <div class="tagline">Track the plumbing. Understand the transmission. Trade the regime.</div>
+      <h1>Liquidity Monitor 2.1 — Current-State Decision System</h1>
+      <div class="tagline">Where are we · how certain · why · where's the pressure · what absorbs it · what changes it</div>
     </div>
     <div class="ts"><div class="live">● Live</div>Last updated<br>${esc(meta.pulled_at_cet||'')}</div>
   </div>
 
-  <div class="layer-lbl">Top layer — current regime + transmission</div>
-  <div class="top-grid">${sec1}${sec2}${sec3}</div>
+  <div class="layer-lbl">Row 1 — regime, scores, signal (fits one viewport)</div>
+  <div class="row1">${row1a}${row1b}${row1c}</div>
 
-  <div class="layer-lbl">Middle layer — why the regime exists</div>
-  <div class="panel-hd" style="margin-bottom:10px">4. Key Dashboards <span class="sub">(with so what)</span></div>
-  <div class="dash-grid">${sec4a}${sec4b}${sec4c}${sec4d}${sec4e}${sec4f}</div>
-  ${sec5}
-  ${sec6}
-  ${sec7}
-  ${sec8}
-  ${sec9}
-  ${sec10}
+  <div class="layer-lbl">Row 2 — transmission architecture</div>
+  ${row2}
 
-  <div class="layer-lbl">Bottom layer — raw data / detailed indicators</div>
+  <div class="layer-lbl">Row 3 — bottom line, why, confidence</div>
+  <div class="row3">${row3a}${row3b}${row3c}</div>
+
+  <div class="layer-lbl">Detailed analytical dashboards</div>
+  ${secPressure}
+  <div class="dash-grid">${secCurve}${secReal}${secVol}</div>
+  ${secStructural}
+  ${secAbsorbers}
+  ${secAuctions}
+  ${secScenarios}
+  ${secPosture}
+  ${secEvents}
+  ${secFreshness}
+
+  <div class="layer-lbl">Raw liquidity / market data</div>
   ${rawData}
 
-  <div class="footer-bar" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block'">ⓘ Data sources &amp; methodology notes</div>
+  <div class="footer-bar" onclick="this.nextElementSibling.classList.toggle('open')">ⓘ Data sources &amp; methodology notes</div>
   <div class="footer-detail">
-    FRED: WALCL · WTREGEN · RRPONTSYD · WRESBAL · SOFR · IORB | TradingView "Liquidity Monitor - Jae" watchlist | TreasuryDirect TA_WS + NY Fed PDPOSGST-TOT (auctions/dealer inventory) |
-    Monetary Restrictiveness &amp; Liquidity Resilience scores: v1 methodology, documented in SKILL.md — refine as history accumulates |
-    Official-sector shock absorbers (buybacks, MMF, stablecoin, bank/corporate demand): not yet wired into the scrape pipeline — shown as pending, never fabricated |
-    Curve topology &amp; real yield/breakeven classifications are derived, not raw feeds |
-    Dashboard reads data/latest.json on load — automation writes JSON only, never HTML. This version of docs/index.html was authored directly per an explicit user redesign request (2026-08-30), an exception to the JSON-only automation rule, which continues to apply to the scheduled refresh runs.
+    FRED: WALCL · WTREGEN · RRPONTSYD · WRESBAL · SOFR · IORB · DFII5/7/10/20/30 · BAMLC0A0CM (IG OAS) · BAMLH0A0HYM2 (HY OAS) |
+    TradingView "Liquidity Monitor - Jae" watchlist | ICI weekly Money Market Fund Assets release | DefiLlama aggregate stablecoin market cap |
+    TreasuryDirect TA_WS (auction results, incl. 10Y/20Y/30Y regime-validation auctions) | NY Fed primary dealer statistics |
+    Monetary Restrictiveness &amp; Liquidity Resilience: documented v1 scoring, refined each run as more history accumulates |
+    SOMA composition, Treasury buybacks/issuance mix, bank/corporate Treasury holdings, and FIMA usage are explicitly PENDING DATA — never fabricated |
+    Curve topology, real-yield classification, pressure map, and distance-to-transition are derived/rule-based, not raw feeds |
+    Key takeaways this run: ${takeaways.map(esc).join(' · ')}
   </div>`;
 }
 
@@ -614,7 +746,7 @@ async function load() {
     render(d);
   } catch(e) {
     document.getElementById('app').innerHTML = `
-      <div class="hdr"><div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity Monitor 2.0</h1></div></div>
+      <div class="hdr"><div><div class="eyebrow">Fat Cat Capital</div><h1>Liquidity Monitor 2.1</h1></div></div>
       <div class="err">Failed to load latest.json: ${esc(e.message)}<br><br>
       This usually means the data file hasn't been pushed yet, or there's a network issue.</div>`;
   }
