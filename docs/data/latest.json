@@ -4,7 +4,8 @@
     "pulled_at_cet": "Aug 31, 2026 15:12 CEST",
     "source": "Live scrape: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB) + TradingView 'Liquidity Monitor - Jae' watchlist (38 symbols) + TradingView Technicals (EWY, KOSPI) + Investing.com KOSPI historical (5-day SMA) + TreasuryDirect TA_WS (checked for new Note/Bond/TIPS auctions, none since Aug 27) + prior GitHub snapshot for deltas",
     "version": "2.1",
-    "methodology_update": "2026-08-31 (later pass): corrected risk-off/headwind conditional logic to multi-signal confirmation per standing instruction — see docs/METHODOLOGY.md. Underlying market data timestamps (pulled_at) unchanged from the prior data refresh."
+    "methodology_update": "2026-08-31 (later pass): corrected risk-off/headwind conditional logic to multi-signal confirmation per standing instruction — see docs/METHODOLOGY.md. Underlying market data timestamps (pulled_at) unchanged from the prior data refresh.",
+    "data_wiring_update": "2026-08-31 (later pass): wired SOMA composition (NY Fed SOMA holdings), Treasury buybacks (TreasuryDirect buyback results), and FIMA Repo Facility usage (FRED H41RESPPALGTRFNWW + WMTSECL1 context) into the Mechanism Data Quality panel and Official-Sector Shock Absorbers table. All three were previously RED/never-wired."
   },
   "scores": {
     "liquidity": {
@@ -847,37 +848,37 @@
         "note": "Bank/corporate Treasury holdings and repo/cash positioning not yet wired into the pipeline."
       },
       "soma": {
-        "status": "PENDING DATA",
-        "note": "SOMA Treasury/bill holdings and maturity composition not yet wired into the pipeline."
+        "status": "CONFIRMED",
+        "note": "Fed's own SOMA holdings: $541.99B T-Bills of $4.440T total Treasury holdings (12.2% bills); total SOMA (incl. agency/MBS/CMBS) $6.356T, -$12.9B w/w (QT runoff continuing). Source: NY Fed SOMA holdings, weekly (Wed level, published Thu). Last: 2026-08-26."
       },
       "treasury_issuance": {
-        "status": "PENDING DATA",
-        "note": "Net bill issuance, coupon issuance, and CMB issuance not yet wired into the pipeline."
+        "status": "PARTIALLY CONFIRMED",
+        "note": "Buyback operation cadence confirmed live and active (46 ops YTD 2026, most recent 2026-08-25) — this is Treasury buying back existing issues, not new issuance mix. Net bill/coupon/CMB issuance mix itself still requires the quarterly refunding financing tables and is not yet wired as a standalone series."
       },
       "demand_vs_supply_read": "BALANCED (partial, low confidence in precision) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base, but net TREASURY-SPECIFIC purchases, bank/corporate demand, SOMA composition, and net issuance are all PENDING DATA. This cannot be scored DEMAND>SUPPLY -- shown as a directional estimate, not a precise measurement.",
       "status": "PARTIALLY CONFIRMED",
-      "status_note": "Module remains PARTIALLY CONFIRMED, not CONFIRMED, until actual marginal Treasury demand (net purchases, not AUM) can be measured reliably across MMFs, banks/corporates, and SOMA."
+      "status_note": "SOMA holdings are now wired (CONFIRMED). Module remains PARTIALLY CONFIRMED overall — bank/corporate demand and the underlying Treasury net-issuance mix (as opposed to buyback activity) are not yet measured, so marginal net Treasury demand across all channels still can't be fully confirmed."
     },
     "shock_absorbers_table": [
       {
         "name": "Treasury buybacks",
-        "status_type": "STRUCTURAL / EVENT-DEPENDENT",
-        "current_read": "Mechanism exists; not independently confirmed this period.",
-        "confidence": "LOW",
-        "trend": "n/a",
-        "source": "TreasuryDirect buyback operation schedule",
-        "last_updated": "not wired",
-        "frequency": "per-operation"
+        "status_type": "CONFIRMED",
+        "current_read": "46 operations YTD 2026, active on a roughly weekly cadence. Most recent: 2026-08-25, Liquidity Support, Nominal Coupons, 5Y-7Y maturity bucket. Mix of regular 'Liquidity Support' operations spanning the coupon curve (bills through 30Y) plus periodic 'Cash Management' bill-area operations. Confirms the buyback mechanism is active and routine, not just structurally available.",
+        "confidence": "HIGH",
+        "trend": "Steady weekly cadence, no acceleration",
+        "source": "TreasuryDirect buyback operation results",
+        "last_updated": "2026-08-25",
+        "frequency": "~Weekly (per operation calendar)"
       },
       {
         "name": "Treasury issuance composition",
-        "status_type": "PENDING DATA",
-        "current_read": "Bills vs coupons vs CMB mix not yet tracked live.",
-        "confidence": "n/a",
+        "status_type": "PARTIALLY CONFIRMED",
+        "current_read": "Buyback operation cadence confirmed active (see Treasury buybacks row) — mostly weekly 'Liquidity Support' operations across the coupon curve, occasional 'Cash Management' bill-area operations. Full bills-vs-coupons issuance mix (as opposed to buyback mix) still requires the quarterly refunding financing tables — not yet wired as a standalone series.",
+        "confidence": "MEDIUM",
         "trend": "n/a",
-        "source": "TreasuryDirect / quarterly refunding",
-        "last_updated": "not wired",
-        "frequency": "quarterly"
+        "source": "TreasuryDirect buyback results + quarterly refunding (financing tables not yet wired)",
+        "last_updated": "2026-08-25",
+        "frequency": "Per-operation / quarterly"
       },
       {
         "name": "MMF demand",
@@ -911,23 +912,23 @@
       },
       {
         "name": "SOMA bill composition",
-        "status_type": "PENDING DATA",
-        "current_read": "Not yet wired into the pipeline.",
-        "confidence": "n/a",
-        "trend": "n/a",
-        "source": "NY Fed SOMA holdings",
-        "last_updated": "never wired",
-        "frequency": "weekly (when wired)"
+        "status_type": "CONFIRMED",
+        "current_read": "Fed's own SOMA portfolio: $541.99B T-Bills / $4.440T total Treasury holdings (Bills+Notes/Bonds+FRN+TIPS) = 12.2% bills. Total SOMA (incl. agency/MBS/CMBS) $6.356T, -$12.9B w/w. This is the Fed's own holdings mix, not Treasury's issuance mix (see the separate issuance-composition row).",
+        "confidence": "HIGH",
+        "trend": "SOMA total declining slowly (QT), -$12.9B w/w",
+        "source": "NY Fed SOMA holdings (newyorkfed.org/markets/soma-holdings)",
+        "last_updated": "2026-08-26",
+        "frequency": "Weekly (Wed level, published Thu)"
       },
       {
-        "name": "FIMA / collateral facilities",
-        "status_type": "AVAILABLE / NOT NECESSARILY ACTIVE",
-        "current_read": "Facility exists; usage not tracked live.",
-        "confidence": "LOW",
-        "trend": "n/a",
-        "source": "NY Fed FIMA repo facility",
-        "last_updated": "not wired",
-        "frequency": "weekly (when wired)"
+        "name": "FIMA / Foreign Official Liquidity",
+        "status_type": "AVAILABLE / DORMANT (USAGE $0M)",
+        "current_read": "Backstop: AVAILABLE. Usage: $0M, unchanged w/w — DORMANT, no current draw. Foreign official holders show no need to access the FIMA dollar-liquidity backstop; the facility remains available if Treasury liquidation pressure develops. Context: foreign official Treasury custody (FRED WMTSECL1) $2.615T as of 2026-08-26 (trend vs prior weeks not yet tracked — first pull this run). Usage > $0 = ACTIVATED, flag for review; sustained/rising usage = global dollar/Treasury liquidity watch, not read as bullish.",
+        "confidence": "HIGH",
+        "trend": "→ flat (no draw)",
+        "source": "FRED H41RESPPALGTRFNWW (H.4.1, Repurchase Agreements - Foreign Official) + WMTSECL1 (custody context)",
+        "last_updated": "2026-08-26",
+        "frequency": "Weekly (Wed level, published Thu)"
       },
       {
         "name": "Repo facilities (SRF)",
@@ -1500,21 +1501,21 @@
       },
       {
         "input": "SOMA bill/Treasury composition",
-        "status": "RED",
-        "cadence": "n/a",
-        "last": "never wired"
+        "status": "GREEN",
+        "cadence": "Weekly (Wed level, published Thu)",
+        "last": "2026-08-26"
       },
       {
         "input": "Treasury buybacks / issuance composition",
-        "status": "RED",
-        "cadence": "n/a",
-        "last": "never wired"
+        "status": "GREEN",
+        "cadence": "Per-operation (~weekly)",
+        "last": "2026-08-25"
       },
       {
         "input": "FIMA repo usage",
-        "status": "RED",
-        "cadence": "n/a",
-        "last": "never wired"
+        "status": "GREEN",
+        "cadence": "Weekly (Wed level, H.4.1)",
+        "last": "2026-08-26"
       }
     ],
     "qqq_module": {
@@ -1843,8 +1844,8 @@
       "quality_detail": "GOOD (minor gaps)"
     },
     "data_freshness_mechanism": {
-      "quality": "POOR",
-      "stale_fraction": 0.6,
+      "quality": "GOOD",
+      "stale_fraction": 0,
       "rows": [
         {
           "input": "MMF assets (ICI)",
@@ -1860,21 +1861,21 @@
         },
         {
           "input": "SOMA bill/Treasury composition",
-          "status": "RED",
-          "cadence": "n/a",
-          "last": "never wired"
+          "status": "GREEN",
+          "cadence": "Weekly (Wed level, published Thu)",
+          "last": "2026-08-26"
         },
         {
           "input": "Treasury buybacks / issuance composition",
-          "status": "RED",
-          "cadence": "n/a",
-          "last": "never wired"
+          "status": "GREEN",
+          "cadence": "Per-operation (~weekly)",
+          "last": "2026-08-25"
         },
         {
           "input": "FIMA repo usage",
-          "status": "RED",
-          "cadence": "n/a",
-          "last": "never wired"
+          "status": "GREEN",
+          "cadence": "Weekly (Wed level, H.4.1)",
+          "last": "2026-08-26"
         }
       ],
       "feeds": "MECHANISM CONFIDENCE"
