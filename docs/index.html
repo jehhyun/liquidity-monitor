@@ -413,7 +413,7 @@ function render(d) {
       ${curveRows}
     </table>
     <div style="font-size:10px;color:#666;margin-top:2px">2s10s: <b style="color:#ddd">${fmt(ct.spread_2s10s,3)}%</b> &nbsp; 2s30s: <b style="color:#ddd">${fmt(ct.spread_2s30s,3)}%</b></div>
-    <div class="so-what"><b>LIQUIDITY INTERPRETATION: ${esc(ct.interpretation||'')}</b><br>${esc(ct.so_what||'')}</div>${ct.steepening_type? `<div class="so-what" style="border-left-color:${ct.steepening_type.includes('STRESS')?C.red:C.green};margin-top:6px"><b style="color:${ct.steepening_type.includes('STRESS')?C.red:C.green}">STEEPENING TYPE: ${esc(ct.steepening_type)}</b><br>${esc(ct.steepening_basis||'')}<br>${esc(ct.steepening_read||'')}</div>` : ''}
+    <div class="so-what"><b>LIQUIDITY INTERPRETATION: ${esc(ct.interpretation||'')}</b><br>${esc(ct.so_what||'')}</div>${ct.steepening_type? `<div class="so-what" style="border-left-color:${ct.steepening_type.startsWith('STRESS')?C.red:(ct.steepening_type.startsWith('BENIGN')?C.green:C.amber)};margin-top:6px"><b style="color:${ct.steepening_type.startsWith('STRESS')?C.red:(ct.steepening_type.startsWith('BENIGN')?C.green:C.amber)}">STEEPENING TYPE: ${esc(ct.steepening_type)}</b><br>${esc(ct.steepening_basis||'')}<br>${esc(ct.steepening_read||'')}</div>` : ''}
   </div>`;
 
   // ============ REAL YIELD / BREAKEVEN LADDER ============
