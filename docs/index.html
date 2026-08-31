@@ -413,7 +413,7 @@ function render(d) {
       ${curveRows}
     </table>
     <div style="font-size:10px;color:#666;margin-top:2px">2s10s: <b style="color:#ddd">${fmt(ct.spread_2s10s,3)}%</b> &nbsp; 2s30s: <b style="color:#ddd">${fmt(ct.spread_2s30s,3)}%</b></div>
-    <div class="so-what"><b>LIQUIDITY INTERPRETATION: ${esc(ct.interpretation||'')}</b><br>${esc(ct.so_what||'')}</div>
+    <div class="so-what"><b>LIQUIDITY INTERPRETATION: ${esc(ct.interpretation||'')}</b><br>${esc(ct.so_what||'')}</div>${ct.steepening_type? `<div class="so-what" style="border-left-color:${ct.steepening_type.includes('STRESS')?C.red:C.green};margin-top:6px"><b style="color:${ct.steepening_type.includes('STRESS')?C.red:C.green}">STEEPENING TYPE: ${esc(ct.steepening_type)}</b><br>${esc(ct.steepening_basis||'')}<br>${esc(ct.steepening_read||'')}</div>` : ''}
   </div>`;
 
   // ============ REAL YIELD / BREAKEVEN LADDER ============
@@ -605,10 +605,7 @@ function render(d) {
         <div style="font-size:10px;color:#888;text-transform:uppercase;margin-bottom:4px">Risk-On Transition — <span style="color:${C.green}">${dtt.risk_on?.met}/${dtt.risk_on?.total} conditions</span> <span class="distance-badge" style="background:#0f1a0f;color:${C.green};border:1px solid #1e3a1e">${esc(dtt.risk_on?.distance)}</span></div>
         ${condHtml(dtt.risk_on||{})}
       </div>
-      <div>
-        <div style="font-size:10px;color:#888;text-transform:uppercase;margin-bottom:4px">Risk-Off Transition — <span style="color:${C.red}">${dtt.risk_off?.met}/${dtt.risk_off?.total} conditions</span> <span class="distance-badge" style="background:#1a1010;color:${C.red};border:1px solid #3a1a1a">${esc(dtt.risk_off?.distance)}</span></div>
-        ${condHtml(dtt.risk_off||{})}
-      </div>
+      <div><div style="font-size:10px;color:#888;text-transform:uppercase;margin-bottom:4px">Risk-Off Transition — <span class="distance-badge" style="background:${dtt.risk_off?.overall_confirmed?'#2a1010':'#1a1010'};color:${C.red};border:1px solid #3a1a1a">${esc(dtt.risk_off?.overall_confirmed? 'CONFIRMED' : 'NOT CONFIRMED')} · ${esc(dtt.risk_off?.distance)}</span></div><div style="font-size:9px;color:#666;margin-bottom:6px">${esc(dtt.risk_off?.rule||'Requires Group A + (Group B or Group C). A single-group signal alone does not confirm a transition.')}</div><div style="font-size:9px;color:#999;text-transform:uppercase;margin:4px 0 2px">Group A — Duration / Treasury Stress (${dtt.risk_off?.groups?.a?.met||0}/${dtt.risk_off?.groups?.a?.total||0})</div>${condHtml(dtt.risk_off?.groups?.a||{})}<div style="font-size:9px;color:#999;text-transform:uppercase;margin:6px 0 2px">Group B — Market-Functioning Stress (${dtt.risk_off?.groups?.b?.met||0}/${dtt.risk_off?.groups?.b?.total||0})</div>${condHtml(dtt.risk_off?.groups?.b||{})}<div style="font-size:9px;color:#999;text-transform:uppercase;margin:6px 0 2px">Group C — Credit Confirmation (${dtt.risk_off?.groups?.c?.met||0}/${dtt.risk_off?.groups?.c?.total||0})</div>${condHtml(dtt.risk_off?.groups?.c||{})}</div>
     </div>
   </div>`;
 
