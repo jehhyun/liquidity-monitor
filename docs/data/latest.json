@@ -670,9 +670,9 @@
         "state": "PARTIALLY CONFIRMED / SUPPORTIVE",
         "bullets": [
           "MMF assets $7.93T (+$6.1B w/w) — CONFIRMED",
-          "Treasury buybacks — STRUCTURAL/EVENT-DEPENDENT",
+          "Treasury buybacks — CONFIRMED (weekly operations active, per TreasuryDirect cadence)",
           "Stablecoins $305B — STRUCTURAL/LOW WEIGHT",
-          "SOMA composition, bank/corporate demand, FIMA — PENDING DATA"
+          "SOMA composition & FIMA repo usage — CONFIRMED (FIMA backstop AVAILABLE, usage $0M/DORMANT); bank/corporate Treasury demand remains PENDING DATA"
         ]
       },
       "market_liquidity_outcome": {
@@ -855,7 +855,7 @@
         "status": "PARTIALLY CONFIRMED",
         "note": "Buyback operation cadence confirmed live and active (46 ops YTD 2026, most recent 2026-08-25) — this is Treasury buying back existing issues, not new issuance mix. Net bill/coupon/CMB issuance mix itself still requires the quarterly refunding financing tables and is not yet wired as a standalone series."
       },
-      "demand_vs_supply_read": "BALANCED (partial, low confidence in precision) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base, but net TREASURY-SPECIFIC purchases, bank/corporate demand, SOMA composition, and net issuance are all PENDING DATA. This cannot be scored DEMAND>SUPPLY -- shown as a directional estimate, not a precise measurement.",
+      "demand_vs_supply_read": "BALANCED (partial, low confidence in precision) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base; SOMA composition and FIMA repo facility usage are now CONFIRMED (FIMA backstop available, usage $0M/dormant), but net TREASURY-SPECIFIC purchases, bank/corporate demand, and precise net issuance composition remain PENDING DATA. This cannot be scored DEMAND>SUPPLY -- shown as a directional estimate, not a precise measurement.",
       "status": "PARTIALLY CONFIRMED",
       "status_note": "SOMA holdings are now wired (CONFIRMED). Module remains PARTIALLY CONFIRMED overall — bank/corporate demand and the underlying Treasury net-issuance mix (as opposed to buyback activity) are not yet measured, so marginal net Treasury demand across all channels still can't be fully confirmed."
     },
@@ -1266,7 +1266,7 @@
       "3 of 3 recent long-duration auctions (10Y/30Y/20Y) cleared strongly — the clearest confirmed evidence the regime call currently rests on.",
       "Korea gate: 3/3 OPEN — EWY above SMA20, USDKRW well below 1,530, KOSPI now above its 5-day SMA.",
       "RRP buffer is effectively exhausted ($0.175B) — the one structural liquidity item to watch going into September.",
-      "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA, bank/corporate demand, buybacks, and FIMA usage remain PENDING DATA — not fabricated."
+      "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA composition, Treasury buybacks, and FIMA repo facility usage are now CONFIRMED (FIMA backstop available, usage $0M/dormant); bank/corporate Treasury demand and precise net issuance composition remain PENDING DATA — not fabricated."
     ],
     "pressure_map": [
       {
