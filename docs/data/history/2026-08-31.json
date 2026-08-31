@@ -3,7 +3,8 @@
     "pulled_at": "2026-08-31T13:12:00Z",
     "pulled_at_cet": "Aug 31, 2026 15:12 CEST",
     "source": "Live scrape: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB) + TradingView 'Liquidity Monitor - Jae' watchlist (38 symbols) + TradingView Technicals (EWY, KOSPI) + Investing.com KOSPI historical (5-day SMA) + TreasuryDirect TA_WS (checked for new Note/Bond/TIPS auctions, none since Aug 27) + prior GitHub snapshot for deltas",
-    "version": "2.1"
+    "version": "2.1",
+    "methodology_update": "2026-08-31 (later pass): corrected risk-off/headwind conditional logic to multi-signal confirmation per standing instruction — see docs/METHODOLOGY.md. Underlying market data timestamps (pulled_at) unchanged from the prior data refresh."
   },
   "scores": {
     "liquidity": {
@@ -695,50 +696,53 @@
     },
     "curve_topology": {
       "points": {
-        "us03my": 3.822,
-        "us06my": 3.984,
-        "us02y": 4.36,
-        "us05y": 4.491,
-        "us10y": 4.73,
-        "us30y": 5.213
+        "us03my": 3.829,
+        "us06my": 3.989,
+        "us02y": 4.344,
+        "us05y": 4.5,
+        "us10y": 4.756,
+        "us30y": 5.25
       },
       "deltas": {
         "us03my": {
-          "level": 3.822,
-          "chg_1d_bps": 4.6,
-          "chg_1w_bps": 2.8
+          "level": 3.829,
+          "chg_1d_bps": 0.7,
+          "chg_1w_bps": null
         },
         "us06my": {
-          "level": 3.984,
-          "chg_1d_bps": 7.5,
-          "chg_1w_bps": 8
+          "level": 3.989,
+          "chg_1d_bps": 0.5,
+          "chg_1w_bps": null
         },
         "us02y": {
-          "level": 4.36,
-          "chg_1d_bps": 13.2,
-          "chg_1w_bps": 17.5
+          "level": 4.344,
+          "chg_1d_bps": -1.6,
+          "chg_1w_bps": null
         },
         "us05y": {
-          "level": 4.491,
-          "chg_1d_bps": 9.7,
-          "chg_1w_bps": 11.1
+          "level": 4.5,
+          "chg_1d_bps": 0.9,
+          "chg_1w_bps": null
         },
         "us10y": {
-          "level": 4.73,
-          "chg_1d_bps": 5.6,
-          "chg_1w_bps": 3.8
+          "level": 4.756,
+          "chg_1d_bps": 2.6,
+          "chg_1w_bps": null
         },
         "us30y": {
-          "level": 5.213,
-          "chg_1d_bps": 2,
-          "chg_1w_bps": -2.5
+          "level": 5.25,
+          "chg_1d_bps": 3.7,
+          "chg_1w_bps": null
         }
       },
-      "classification": "BEAR FLATTENING",
-      "interpretation": "WATCH",
-      "so_what": "2Y rose +17.5bp vs 30Y -2.5bp over the past week (2s10s tightened -13.7bp) — the front end is rising materially faster than the long end. Policy tightening is concentrated at the front end, which is generally easier on dealer balance sheets and duration absorption than a long-end-led selloff. This is the single most important curve fact supporting the current regime call.",
-      "spread_2s10s": 0.37,
-      "spread_2s30s": 0.853
+      "classification": "BEAR STEEPENING",
+      "interpretation": "WATCH — NOT STRESS-CONFIRMED",
+      "so_what": "2Y eased -1.6bp while 30Y rose +3.7bp day over day (2s10s widened +4.2bp to 0.412%) — a reversal of the prior bear-flattening trend. Long end is now leading the move higher. Under the corrected framework this is evaluated for STRESS-type confirmation (MOVE, credit, auctions, dealer take-down, funding) before being treated as a regime-relevant signal — see STEEPENING TYPE below. Weekly (1W) deltas are not shown this run (require a fresh multi-day pull); only the 1-day move vs the prior run is shown.",
+      "spread_2s10s": 0.412,
+      "spread_2s30s": 0.906,
+      "steepening_type": "AMBIGUOUS — STRESS SIGNALS ABSENT, ROTATION UNCONFIRMED",
+      "steepening_basis": "Stress conditions (Group A/B/C, corrected framework) are NOT met: MOVE contained (70.97, well under 80), HY OAS tight and unchanged (2.63%), funding healthy (SOFR-IORB 0bp), Treasury auctions clearing normally (Healthy state, absorption 59/100, dealer stress 24/100). But the benign/rotationary confirmation is also incomplete: cyclicals/broad equities are not strengthening this session — SOXX -3.20%, QQQ -0.65%, SPY -0.23% pre-market (semis specifically reversing hard, NVDA -4.57%).",
+      "steepening_read": "This does not clear the bar for STRESS/FISCAL bear steepening (no MOVE spike, no credit widening, no auction weakness, no dealer-take pressure), so it should not be treated as a risk-off trigger. It also isn't a clean BENIGN/ROTATIONARY read since equities aren't confirming a reflation/rotation trade pre-market. Treat as WATCH — reassess once equities and credit react at the cash open, rather than reading the steepening alone as directional."
     },
     "real_yield_breakeven": {
       "as_of": "2026-08-27",
@@ -1224,7 +1228,7 @@
       }
     },
     "transition_triggers": {
-      "current": "Controlled Tightening / Liquidity Protected",
+      "current": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED",
       "to_risk_on": [
         "Real yields ↓",
         "USD ↓",
@@ -1233,13 +1237,10 @@
         "Auctions strong"
       ],
       "to_risk_off": [
-        "30Y/10Y yields ↑↑",
-        "2s10s / 2s30s steepen materially",
-        "MOVE ↑",
-        "Auction tails ↑",
-        "Dealer take-down ↑",
-        "Credit spreads ↑",
-        "Funding stress ↑"
+        "Group A (Duration/Treasury): STRESS-type bear steepening, or Long-End Stress Confirmed (30Y>5.5% + a confirming signal), or auction tails, or dealer take-down rising",
+        "PLUS Group B (Market-functioning): MOVE spike, or repo/funding stress, or reserves deterioration",
+        "OR Group C (Credit): HY/IG spreads widen materially",
+        "A single group alone does not constitute a confirmed transition — see Risk-Off Transition panel."
       ]
     },
     "trade_posture_v2": {
@@ -1251,18 +1252,18 @@
         "USD strength"
       ],
       "headwinds": [
-        "Gold while real yields and USD rise",
-        "Bitcoin / crypto while real yields rise",
-        "Highly speculative long-duration equities",
-        "Weak-balance-sheet companies"
+        "Gold — headwind ONLY if real yields AND USD both rise together with breakevens stable/down. NOT currently triggered: real yields, USD and breakevens are all roughly flat this session. See Gold Conditional Module.",
+        "Bitcoin / crypto — headwind ONLY if real yields AND USD both rise while liquidity is flat/down. NOT currently triggered: real yields and USD are both roughly flat and credit/funding remain healthy. Read as BTC MIXED/NEUTRAL, not a directional call. See Crypto Conditional Module.",
+        "Highly speculative long-duration equities — a VALUATION headwind from elevated real yields; escalates to a SYSTEMIC headwind only if credit spreads widen, funding tightens, and liquidity deteriorates together. Currently valuation-only (credit tight, funding healthy, liquidity flat this week) — see QQQ Conditional Module.",
+        "Weak-balance-sheet companies — depends on credit spreads, refinancing costs, lending standards and funding conditions, not on the tightening-regime label alone. NOT currently triggered: HY OAS tight and unchanged (2.63%), funding healthy (SOFR-IORB 0bp). Lending-standards/default-expectations data is not currently tracked by this monitor — treat as a watch item pending that input, not an automatic headwind."
       ]
     },
     "key_takeaways": [
       "Regime: CONTROLLED TIGHTENING / LIQUIDITY PROTECTED (PROVISIONAL) — Monetary Restrictiveness 58/100 (MODERATELY HIGH) × Liquidity Resilience 73/100 (HEALTHY).",
-      "Curve is BEAR FLATTENING this week (2s10s -13.7bp) — front-end-led tightening, not a long-end break.",
+      "Curve flipped to BEAR STEEPENING today (2Y -1.6bp, 30Y +3.7bp) — evaluated under the corrected multi-signal framework as AMBIGUOUS (stress signals absent: MOVE/credit/auctions/funding all calm, but equities aren't confirming a rotation either). Not treated as a risk-off trigger on its own.",
       "Real yields: CREDIBILITY TIGHTENING — DFII5 2.07% doing the work, breakevens anchored.",
       "3 of 3 recent long-duration auctions (10Y/30Y/20Y) cleared strongly — the clearest confirmed evidence the regime call currently rests on.",
-      "Korea gate: 2/3 — KOSPI fails its 5-day SMA by a razor-thin margin (6788.88 vs 6789.83).",
+      "Korea gate: 3/3 OPEN — EWY above SMA20, USDKRW well below 1,530, KOSPI now above its 5-day SMA.",
       "RRP buffer is effectively exhausted ($0.175B) — the one structural liquidity item to watch going into September.",
       "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA, bank/corporate demand, buybacks, and FIMA usage remain PENDING DATA — not fabricated."
     ],
@@ -1356,43 +1357,65 @@
         "distance": "MODERATE"
       },
       "risk_off": {
-        "met": 0,
-        "total": 8,
-        "conditions": [
-          {
-            "label": "Bear steepening",
-            "active": false
+        "groups": {
+          "a": {
+            "label": "Duration / Treasury Stress",
+            "met": 0,
+            "total": 4,
+            "conditions": [
+              {
+                "label": "Bear steepening confirmed as STRESS/FISCAL type (not benign rotation)",
+                "active": false
+              },
+              {
+                "label": "Long-End Stress Confirmed: 30Y > 5.5% WITH ≥1 confirming signal",
+                "active": false
+              },
+              {
+                "label": "Auction tails / weak indirect demand",
+                "active": false
+              },
+              {
+                "label": "Dealer take-down rising",
+                "active": false
+              }
+            ]
           },
-          {
-            "label": "30Y breaks above 5.5%",
-            "active": false
+          "b": {
+            "label": "Market-Functioning Stress",
+            "met": 0,
+            "total": 3,
+            "conditions": [
+              {
+                "label": "MOVE spikes (>80)",
+                "active": false
+              },
+              {
+                "label": "Repo / funding stress (SOFR-IORB > +10bp)",
+                "active": false
+              },
+              {
+                "label": "Reserves deteriorate sharply",
+                "active": false
+              }
+            ]
           },
-          {
-            "label": "Auction tails / weak indirect demand",
-            "active": false
-          },
-          {
-            "label": "Dealer take-down rising",
-            "active": false
-          },
-          {
-            "label": "MOVE spikes (>80)",
-            "active": false
-          },
-          {
-            "label": "Credit spreads widen (HY OAS > 3.5%)",
-            "active": false
-          },
-          {
-            "label": "Repo / funding stress (SOFR-IORB > +10bp)",
-            "active": false
-          },
-          {
-            "label": "Reserves deteriorate sharply",
-            "active": false
+          "c": {
+            "label": "Credit Confirmation",
+            "met": 0,
+            "total": 1,
+            "conditions": [
+              {
+                "label": "HY/IG spreads widen materially (HY OAS > 3.5%)",
+                "active": false
+              }
+            ]
           }
-        ],
-        "distance": "FAR"
+        },
+        "rule": "Requires Group A + (Group B or Group C). A single-group signal alone does not confirm a transition.",
+        "overall_confirmed": false,
+        "distance": "FAR",
+        "methodology_note": "Corrected 2026-08-31: replaced the flat 8-condition equal-weight checklist with grouped confirmation per the standing correction — isolated observations (e.g. a bear-steepening day or a 30Y level breach alone) no longer count toward a regime transition without cross-group confirmation."
       }
     },
     "state_transition": {
@@ -1496,7 +1519,7 @@
     ],
     "qqq_module": {
       "resilient_if": [
-        "Real yields rise but the long end stays orderly",
+        "Real yields rise but the long end stays orderly (no STRESS-type steepening confirmed)",
         "Credit remains stable",
         "MOVE stays contained",
         "Funding stays normal",
@@ -1504,38 +1527,41 @@
         "Earnings remain supportive"
       ],
       "warning_if": [
-        "Real yields rise AND 30Y/10Y accelerates",
-        "MOVE rises",
+        "Long-End Stress Confirmed (30Y > 5.5% WITH a confirming signal)",
+        "Bear steepening flips to the STRESS/FISCAL type (MOVE + credit + auctions + dealer take-down together)",
+        "MOVE rises materially",
         "Auction quality deteriorates",
         "Credit widens"
       ],
       "high_risk_if": [
-        "Bear steepening",
+        "STRESS/FISCAL bear steepening confirmed",
         "Funding stress",
         "Credit stress",
         "Long-duration auction weakness"
       ],
-      "current_read": "RESILIENT-CASE CONDITIONS CURRENTLY HOLDING — long end is orderly (bear flattening, not steepening), credit and funding are calm, MOVE is contained, and the last three long-duration auctions cleared strongly. Today's semis-led weakness (SOXX, NVDA) reads as valuation pressure from elevated real yields, not systemic liquidity pressure.",
-      "distinction": "VALUATION PRESSURE (real yields elevated, hitting long-duration growth multiples) vs SYSTEMIC LIQUIDITY PRESSURE (funding/credit/auction breakdown) — currently the former, not the latter."
+      "current_read": "RESILIENT-CASE CONDITIONS STILL HOLDING on the corrected multi-signal check — credit and funding are calm (HY OAS 2.63% unchanged, SOFR-IORB 0bp), MOVE is contained (70.97), and Treasury auctions remain in a Healthy state (absorption 59/100). The curve did flip to bear steepening today (30Y +3.7bp vs 2Y -1.6bp), but none of the STRESS-type confirming signals (MOVE spike, credit widening, auction weakness, dealer take-down) are present, so this reads as VALUATION PRESSURE, not SYSTEMIC PRESSURE. Today's semis-led weakness (SOXX -3.20%, NVDA -4.57% pre-market) is consistent with real-yield-driven valuation pressure on long-duration growth, not a liquidity/funding event — but it is pre-market and unconfirmed by the cash open.",
+      "distinction": "VALUATION PRESSURE (real yields elevated, hitting long-duration growth multiples) vs SYSTEMIC LIQUIDITY PRESSURE (funding/credit/auction breakdown) — currently the former, not the latter, per the corrected confirmation framework (credit tight, funding healthy, auctions clearing, MOVE contained)."
     },
     "gold_module": {
       "drivers": [
         "Real yields",
         "USD",
-        "Inflation expectations",
+        "Breakevens",
         "Policy credibility"
       ],
-      "current_read": "Real yields (DFII5 2.07%) and USD (DXY 99.677) both firm while breakevens (2.31%) hold flat — SHORT-TERM GOLD HEADWIND / CREDIBILITY TIGHTENING. Gold 4453.67 today (-3.23%).",
-      "classification": "SHORT-TERM GOLD HEADWIND / CREDIBILITY TIGHTENING"
+      "classification": "GOLD NEUTRAL — DRIVERS ROUGHLY FLAT",
+      "current_read": "Real yields (DFII5 2.07%, unchanged), USD (DXY 99.576, -0.10%) and breakevens (T10YIE 2.31%, roughly flat) are all essentially flat this session — none of the GOLD HEADWIND conditions (real yields UP and USD UP with breakevens stable/down) are met, and none of the GOLD MIXED/POSITIVE conditions (breakevens up strongly, or USD down materially, or credibility stress) are met either. Gold itself is -0.33% today, in line with a quiet/no-signal session. The prior classification (SHORT-TERM GOLD HEADWIND / CREDIBILITY TIGHTENING) reflected Aug 27 conditions where both real yields and USD were firming that day — it does not describe today and has been withdrawn."
     },
     "crypto_module": {
       "drivers": [
-        "Real rates",
-        "USD liquidity",
-        "Risk appetite",
-        "Financial conditions"
+        "Real yields",
+        "USD",
+        "Net / global liquidity",
+        "Financial conditions",
+        "Credit / funding"
       ],
-      "current_read": "Crypto should be read through real rates and USD liquidity, not treated as a systemic-liquidity canary. No evidence today's softness is a liquidity event rather than a real-rate/risk-appetite move."
+      "classification": "BTC MIXED / NEUTRAL — NO STRONG DIRECTIONAL SIGNAL",
+      "current_read": "Evaluated across all five factors rather than real yields alone: real yields are flat (DFII5 2.07%, unchanged — not rising), USD is roughly flat/marginally softer (DXY 99.576, -0.10% — not rising), net liquidity is flat rather than expanding (H.4.1 unchanged this week, $5.780T), and financial conditions/credit-funding remain healthy and supportive (HY OAS 2.63% tight, SOFR-IORB 0bp). None of the BTC HEADWIND conditions (real yields UP and USD UP and liquidity flat/down) are met, since real yields and USD are not rising. None of the BTC TAILWIND conditions (liquidity UP strongly, USD DOWN, financial conditions easing) are met either, since liquidity is flat, not expanding. Read as MIXED/NEUTRAL: the supportive backdrop (healthy credit/funding, no USD/real-yield headwind) is offset by liquidity simply being flat rather than a genuine tailwind. Do not read crypto as a systemic-liquidity canary from this data alone."
     },
     "auction_recent_evidence": [
       {
