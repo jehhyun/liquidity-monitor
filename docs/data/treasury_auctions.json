@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-08-27T18:30:00Z",
+    "last_updated": "2026-09-01T14:58:00Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ongoing ledger, dedup on CUSIP. Latest ingest: 91282CRJ2 (7-Year Note, 2026-08-27)."
+    "note": "Ongoing ledger, dedup on CUSIP. Checked TreasuryDirect TA_WS through Sep 1 — no new Note/Bond/TIPS auctions since 91282CRJ2 (7-Year Note, 2026-08-27). Issue date for that auction (Aug 31) has now passed, settlement complete."
   },
   "auctions": [
     {
@@ -20,7 +20,7 @@
       "indirect_pctile": null,
       "direct_pctile": null,
       "btc_pctile": null,
-      "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking \u2014 only 2 comparable auctions in ledger (need min 8). Raw metrics shown; no percentile assigned."
+      "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking — only 2 comparable auctions in ledger (need min 8). Raw metrics shown; no percentile assigned."
     },
     {
       "cusip": "91282CRK9",
@@ -112,7 +112,7 @@
       "bidToCover": 2.53,
       "dealer_pct": 6.8,
       "direct_pct": 11.7,
-      "indirect_pct": 61.0,
+      "indirect_pct": 61,
       "dealer_pctile": 20,
       "indirect_pctile": 65,
       "direct_pctile": 5,
@@ -127,7 +127,7 @@
       "highYield": 4.291,
       "bidToCover": 2.71,
       "dealer_pct": 9.3,
-      "direct_pct": 19.0,
+      "direct_pct": 19,
       "indirect_pct": 50.7,
       "dealer_pctile": 30,
       "indirect_pctile": 35,
@@ -144,7 +144,7 @@
       "bidToCover": 2.49,
       "dealer_pct": 11.7,
       "direct_pct": 15.2,
-      "indirect_pct": 63.0,
+      "indirect_pct": 63,
       "dealer_pctile": 80,
       "indirect_pctile": 75,
       "direct_pctile": 20,
@@ -215,14 +215,5 @@
       "btc_pctile": 40
     }
   ],
-  "pending": [
-    {
-      "cusip": "91282CRJ2",
-      "type": "Note",
-      "term": "7-Year",
-      "auctionDate": "2026-08-27",
-      "issueDate": "2026-08-31",
-      "status": "pending_settlement"
-    }
-  ]
+  "pending": []
 }
