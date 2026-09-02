@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-02T07:13:00Z",
+    "last_updated": "2026-09-02T13:15:00Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ongoing ledger, dedup on CUSIP. Checked TreasuryDirect TA_WS through Sep 2 — no new Note/Bond/TIPS auctions since 91282CRJ2 (7-Year Note, 2026-08-27)."
+    "note": "Ongoing ledger, dedup on CUSIP. Checked TreasuryDirect TA_WS through Sep 2 15:15 CEST — no new Note/Bond/TIPS auctions since 91282CRJ2 (7-Year Note, 2026-08-27)."
   },
   "auctions": [
     {
