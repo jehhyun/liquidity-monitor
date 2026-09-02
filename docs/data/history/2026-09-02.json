@@ -251,9 +251,16 @@
     "classification": "Modest Risk-Off Rally in Duration — Not Real-Rate Driven",
     "reason": "10Y -0.4bp and 30Y -0.5bp today (live) amid the Asia-led equity selloff, with DFII5 (real yield) flat at 2.18% and breakevens unchanged — today's modest bond rally looks like a flight-to-quality/growth-scare bid rather than fresh disinflation or Fed-cut repricing. Credit remains only mildly softer (HY OAS flat, bank proxies -0.85% to -1.48%), not confirming stress.",
     "james_framework": {
-      "what_market_IS_saying": "Not a real-rate story today — DFII5 held flat while nominal yields eased on safe-haven demand tied to the Asia/semis selloff, distinct from the real-rate-led pressure seen earlier in the week.",
-      "watch_signal": "If nominal 2Y keeps falling while breakevens stay flat over the next 1-2 sessions, that's consistent with a budding growth-scare/cuts repricing rather than a one-day wobble.",
-      "chain": "TGA pressure → sticky front-end → rising real yields → USD firm → Asia FX stress → high-beta equities hit (the framework's stress chain; today's move runs partly opposite to it, which is itself informative — see 'against' in counterarguments)."
+      "what_market_IS_saying": "Not a real-rate story today — DFII5 held flat (2.18%) while nominal yields eased on safe-haven demand tied to the Asia/semis selloff, distinct from the real-rate-led pressure seen earlier in the week.",
+      "pain_trade": "Absent today — yesterday/this-morning's setup was real-rate pressure with breakevens starting to confirm; today that has paused, with DFII5 flat and breakevens unchanged. No fresh pain trade building.",
+      "watch_signal": "If nominal 2Y keeps falling while breakevens stay flat over the next 1-2 sessions, that's consistent with a budding growth-scare/cuts repricing rather than a one-day wobble. If oil and breakevens resume rising together, the inflation-reacceleration setup from this morning could reassert."
+    },
+    "conditions": {
+      "10y_falling": true,
+      "breakevens_stable": true,
+      "two_y_breakeven_collapsing": false,
+      "nominal_2y_sticky": false,
+      "real_2y_rising": false
     }
   },
   "breakevens": {
@@ -371,26 +378,19 @@
     "usdcny": 6.7203
   },
   "korea_gate": {
-    "ewy": {
-      "value": 175.8,
-      "sma20": 175.1,
-      "pass": true,
-      "note": "175.80 vs SMA20 175.10 — holding, barely (+0.4%)"
-    },
-    "usdkrw": {
-      "value": 1363.48,
-      "threshold": 1530,
-      "pass": true,
-      "note": "1,363.48 vs 1,530 threshold — well clear"
-    },
-    "kospi": {
-      "value": 6562.73,
-      "sma5": 6783.96,
-      "pass": false,
-      "note": "6,562.73 vs 5-day SMA 6,783.96 — fails, -3.3% below"
-    },
+    "status": "closed",
     "conditions_met": 2,
-    "status": "closed"
+    "ewy": 175.8,
+    "ewy_sma20": 175.1,
+    "ewy_pass": true,
+    "usdkrw": 1363.48,
+    "usdkrw_threshold": 1530,
+    "usdkrw_pass": true,
+    "kospi": 6562.73,
+    "kospi_sma5": 6783.96,
+    "kospi_pass": false,
+    "kospi_threshold": 6783.96,
+    "note": "Gate stays CLOSED, unchanged since this morning — KOSPI remains below its 5-day SMA (6,562.73 vs 6,783.96, -3.99% today). EWY still barely holds its SMA20 (175.80 vs 175.10); USDKRW continues to strengthen (1,363.48). KOSPI 5-day SMA computed manually from Yahoo Finance daily closes (Aug 27, 28, 31, Sep 1, Sep 2)."
   },
   "semis": {
     "soxx": 500.31,
@@ -461,7 +461,8 @@
     "confidence": "Low",
     "actionable_output": {
       "leaders_if_confirmed": "IGV, mega-cap software, quality growth (if disinflationary_slowdown persists) vs. cash/short-duration Treasuries (if liquidity_shock reasserts)",
-      "caution": "Signals are genuinely split intraday — oil/VIX point away from inflation reacceleration while Korea/semis remain weak. Wait for confirmation before rotating; this is explicitly a mixed-signal read, not a resolved regime call."
+      "current_tactical_leaders": "No clean long right now — Korea gate closed, semis soft (SOXX -2.10%), duration only modestly bid. Cash/short-duration remains relatively best-positioned pending confirmation.",
+      "likely_rotation": "Away from Korea/EM and high-beta semis while the gate stays closed; watch whether USDKRW's continued strength and calm credit spreads mean this stays contained to Asia equities rather than broadening into a dollar-liquidity event."
     }
   },
   "changed_today": [
@@ -668,7 +669,6 @@
       "bottom_line": "Tightening is currently working primarily through the front end and real discount rates. It has not yet become a disorderly long-duration, funding, credit, or collateral event."
     },
     "curve_topology": {
-      "as_of": "2026-08-31",
       "points": {
         "us03my": 3.91,
         "us06my": 3.99,
@@ -711,7 +711,12 @@
       },
       "classification": "BEAR STEEPENING (mild)",
       "interpretation": "WATCH — NOT STRESS-CONFIRMED",
-      "so_what": "On the FRED constant-maturity vintage (Aug 31, latest published), the 2Y was flat (0bp) while the 30Y rose +3bp day-over-day — a mild continuation of bear-steepening (2s10s widened +2bp to 0.41%). This lags one session behind the live intraday picture: today's real-time TradingView quotes (see v1 Curve section) show yields easing across the board (2Y -1.4bp, 30Y -0.5bp) amid the Asia/semis risk-off — a modest bull-steepening reversal that FRED's official vintage won't reflect until tomorrow's H.15 print. On the week (vs Aug 24), the curve has cheapened meaningfully: 2Y +10bp, 10Y +5bp, 30Y +2bp — none of this yet stress-confirmed by MOVE, credit, auctions or funding, all of which remain calm."
+      "spread_2s10s": 0.41,
+      "spread_2s30s": 0.91,
+      "so_what": "On the FRED constant-maturity vintage (Aug 31, latest published), the 2Y was flat (0bp) while the 30Y rose +3bp day-over-day — a mild continuation of bear-steepening (2s10s widened +2bp to 0.41%). This lags one session behind live intraday quotes, which show yields easing across the board today (2Y -1.4bp, 30Y -0.5bp) amid the Asia/semis risk-off — a modest bull-steepening reversal the official vintage won't reflect until tomorrow's H.15 print. On the week (vs Aug 24), the curve has cheapened meaningfully: 2Y +10bp, 10Y +5bp, 30Y +2bp.",
+      "steepening_basis": "Stress conditions are NOT met: MOVE contained relative to the 80 alert level (77.88), HY OAS tight and unchanged (2.63%), funding healthy (SOFR-IORB +1bp), Treasury auctions clearing normally (Healthy state, absorption 59/100, dealer stress 24/100). But the benign/rotationary confirmation is also incomplete: cyclicals/broad equities are not strengthening this session — SOXX -2.10%, QQQ -1.27%, SPY -0.69% (semis specifically underperforming, NVDA -1.51%).",
+      "steepening_type": "AMBIGUOUS — STRESS SIGNALS ABSENT, ROTATION UNCONFIRMED",
+      "steepening_read": "This does not clear the bar for STRESS/FISCAL bear steepening (no incremental MOVE spike, no credit widening, no auction weakness, no dealer-take pressure), so it should not be treated as a risk-off trigger. It also isn't a clean BENIGN/ROTATIONARY read since equities aren't confirming a reflation trade today — the live intraday curve is actually easing (bull-steepening), not cheapening further. Treat as WATCH — reassess once tomorrow's FRED vintage catches up to today's live move."
     },
     "real_yield_breakeven": {
       "as_of": "2026-08-31",
@@ -719,6 +724,22 @@
       "source": "FRED: DGS3MO/6MO/2/5/10/30, DFII5/7/10/20/30, T5YIE, T10YIE",
       "comparison_period": "1D = vs 2026-08-28, 1W = vs 2026-08-24 (5 trading days)",
       "data_mismatch": false,
+      "nominal_10y": 4.75,
+      "breakeven_5y": 2.31,
+      "breakeven_10y": 2.31,
+      "breakeven_20y_30y_note": "FRED does not publish official 20Y/30Y breakeven series (only 5Y and 10Y). Implied 20Y/30Y breakevens (DGS-DFII) are not shown here to avoid presenting an unofficial derived figure as an official one.",
+      "label_intraday": "INTRADAY / MARKET ESTIMATE",
+      "label_official": "OFFICIAL DAILY CLASSIFICATION",
+      "intraday_market_estimate": {
+        "nominal_10y": 4.792,
+        "breakeven_10y_live": 2.35,
+        "implied_real_10y": 2.442,
+        "source": "TradingView live intraday (nominal 10Y) + live breakeven feed -- NOT the same vintage as the official aligned series",
+        "vs_official_real_10y_bps": 0,
+        "note": "Live intraday pricing implies a 10Y real yield essentially in line with the official Aug 31 print (2.44%) — minimal drift since the last aligned vintage."
+      },
+      "classification": "STABLE / RANGE-BOUND",
+      "so_what": "On a fully time-aligned FRED vintage (all series as of 2026-08-31), real yields were flat-to-firm across the 5Y-30Y ladder over the past day (0 to +3bp) and are up more noticeably over the past week (+2 to +9bp, led by the 5Y). Breakevens (5Y 2.31%, 10Y 2.31%) are little-changed from a week ago. This reads as real-rate pressure pausing after last week's repricing, not reversing — consistent with the DFII5 primary signal holding flat today.",
       "ladder": [
         {
           "tenor": "2Y",
@@ -763,10 +784,7 @@
           "chg_1d_bps": 3,
           "chg_1w_bps": 2
         }
-      ],
-      "classification": "REAL YIELDS FIRM, FLAT-TO-UP TODAY / UP ON THE WEEK",
-      "interpretation": "The primary signal (DFII5) was flat on the day (0bp) — the disinflationary real-rate move has paused rather than reversed. On the week, real yields are up meaningfully across the curve (+2 to +9bp), led by the 5Y.",
-      "breakeven_note": "T5YIE and T10YIE (live watchlist vintage) are unchanged since this morning at 2.37%/2.35% — no incremental inflation-expectations repricing today."
+      ]
     },
     "structural_demand": {
       "core_question": "Is structural short-duration demand sufficient to absorb marginal Treasury financing without forcing materially greater duration supply onto dealer/private-sector balance sheets?",
