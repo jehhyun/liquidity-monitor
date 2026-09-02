@@ -1,17 +1,17 @@
 {
   "meta": {
-    "pulled_at": "2026-09-02T13:15:00Z",
-    "pulled_at_cet": "Sep 2, 2026 15:15 CEST",
-    "source": "Live scrape: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + FRED DGS3MO/6MO/2/5/10/30 + DFII5/7/10/20/30 (Aug 31 vintage) + TradingView 'Liquidity Monitor - Jae' watchlist (38 symbols) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (checked for new Note/Bond/TIPS auctions, none since Aug 27) + prior GitHub snapshot for deltas",
+    "pulled_at": "2026-09-02T17:42:00Z",
+    "pulled_at_cet": "Sep 2, 2026 19:42 CEST",
+    "source": "Live scrape: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB, all unchanged vintage) + TradingView 'Liquidity Monitor - Jae' watchlist (38 symbols, US session now open) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (checked for new Note/Bond/TIPS auctions, none since Aug 27) + prior GitHub snapshot for deltas",
     "version": "2.2"
   },
   "scores": {
     "liquidity": {
       "value": 48,
-      "trend_wk": 1,
+      "trend_wk": 0,
       "color": "amber",
       "trend_label": "Stable",
-      "label": "SOFR-IORB compresses to +1bp; RRP and reserves unchanged pre-Sep 3 H.4.1 release",
+      "label": "No change since midday — plumbing still frozen pre-Sep 3 H.4.1 release, SOFR-IORB steady at +1bp",
       "decomp": [
         [
           "H.4.1 unchanged, Aug 26 vintage (release TOMORROW Sep 3)",
@@ -26,29 +26,29 @@
           -3
         ],
         [
-          "SOFR-IORB compresses to +1bp from +3bp — modestly easier funding",
+          "SOFR-IORB steady at +1bp — no change since midday",
           1
         ],
         [
-          "Treasury auctions: Healthy state maintained, absorption 59",
+          "Treasury auctions: Healthy state maintained, absorption 59, no new auctions",
           2
         ]
       ]
     },
     "credit": {
-      "value": 49,
-      "trend_wk": -3,
+      "value": 58,
+      "trend_wk": 9,
       "color": "amber",
-      "trend_label": "Deteriorating",
-      "label": "Bank-proxy equities extend declines; HY OAS steady, MOVE unchanged near 80",
+      "trend_label": "Improving",
+      "label": "US session reverses hard — ALLY/CACC/COF all up 2%+, HY OAS steady",
       "decomp": [
         [
-          "HY OAS steady at 2.63%, no further widening since this morning",
+          "HY OAS steady at 2.63%, no widening today",
           0
         ],
         [
-          "ALLY/CACC/COF extending declines (-0.85%/-0.93%/-1.48%)",
-          -3
+          "ALLY +2.13%, CACC +2.16%, COF +2.47% — sharp reversal from this morning's declines",
+          8
         ],
         [
           "MOVE unchanged at 77.88, still elevated near the 80 alert level",
@@ -57,22 +57,22 @@
       ]
     },
     "inflation": {
-      "value": 43,
-      "trend_wk": 9,
+      "value": 40,
+      "trend_wk": -3,
       "color": "amber",
-      "trend_label": "Improving",
-      "label": "Oil reverses sharply from this morning's 3% cross; breakevens hold steady",
+      "trend_label": "Stable",
+      "label": "Oil ticks back up modestly; breakevens still flat",
       "decomp": [
         [
-          "Oil (CL1!) reverses to -0.41% ($89.85), well off this morning's +3.05% spike — acute inflation-shock risk fades",
-          9
+          "Oil (CL1!) +0.98% to $91.10, up modestly from midday's -0.41% but well below this morning's +3.05% spike",
+          -3
         ],
         [
-          "T10YIE holds at 2.35%, T5YIE at 2.37% — breakevens steady, not extending further",
+          "T10YIE holds at 2.35%, T5YIE at 2.37% — breakevens unchanged all day",
           0
         ],
         [
-          "EXPINF2YR ticks to 2.47% (+3bp)",
+          "EXPINF2YR flat at 2.47%",
           0
         ],
         [
@@ -82,27 +82,27 @@
       ]
     },
     "vol": {
-      "value": 54,
-      "trend_wk": 10,
+      "value": 62,
+      "trend_wk": 8,
       "color": "amber",
       "trend_label": "Improving",
-      "label": "VIX round-trips this morning's spike; MOVE steady, Asia weakness already priced",
+      "label": "VIX extends its reversal to -5.7%; US risk assets broadly green",
       "decomp": [
         [
-          "VIX reverses to -0.73% (16.21), fully round-tripping this morning's +6-9% spike — US equity vol not confirming the Asia shock",
-          8
+          "VIX -5.70% to 15.40, extending the round-trip from this morning's +6-9% spike — now net lower on the day",
+          7
         ],
         [
           "MOVE unchanged at 77.88, still elevated near 80 but not extending further",
           0
         ],
         [
-          "USDJPY -0.37% to 159.61 — yen firm, still below the 162 BOJ threshold",
+          "USDJPY -0.78% to 158.95 — yen firmer, still below the 162 BOJ threshold",
           -1
         ],
         [
-          "Asia risk-off (KOSPI -3.99%, NI225 -2.85%, EWY -2.80%) already reflected, no incremental deterioration since prior run",
-          3
+          "US equities broadly green (SPY +0.34%, SOXX +0.07%, NVDA +3.46%) — no confirmation of the Asia risk-off spreading",
+          2
         ]
       ]
     }
@@ -116,66 +116,66 @@
   },
   "structured_conclusion": {
     "structural_liquidity": "Neutral",
-    "short_term_conditions": "Stable",
+    "short_term_conditions": "Improving",
     "long_term_conditions": "Restrictive",
-    "macro_trend": "Asia/Semis-Led Risk-Off Persists, But This Morning's Inflation Shock (Oil, VIX) Has Faded",
-    "likely_rotation": "Korea gate remains closed (KOSPI still below its 5-day SMA) and Asia/high-beta semis stay under pressure (SOXX -2.10%, SK Hynix -4.73%, Samsung -4.02%), but the acute cross-asset panic from this morning eased — oil round-tripped from +3.05% to -0.41% and VIX gave back its entire spike (+6-9% intraday to -0.73%). Duration caught a modest safe-haven bid (10Y/30Y yields down ~0.4-0.5bp) without a real-rate or credit-stress signature.",
-    "risk_level": "Medium",
+    "macro_trend": "US Session Fully Reverses This Morning's Asia-Led Risk-Off — VIX -5.7%, Credit Proxies and Semis All Green",
+    "likely_rotation": "The US session has broadly reversed this morning's Asia/semis scare: VIX is down 5.7% to 15.40 (now net lower on the day), ALLY/CACC/COF are all up 2%+, and SPY/SOXX/NVDA are all green. Korea's gate remains closed only on the KOSPI SMA failure — EWY itself is now comfortably above its SMA20 (+1.31%). Duration is little-changed (10Y flat, 30Y +0.2bp) — this looks like a genuine equity/vol reversal rather than a rates-driven move.",
+    "risk_level": "Low",
     "next_catalyst": "H.4.1 Weekly Release Sep 3 (TOMORROW)",
-    "korea_gate": "Closed 2/3 — EWY>SMA20 pass, USDKRW<1530 pass, KOSPI>5-day SMA FAIL (unchanged since this morning)"
+    "korea_gate": "Closed 2/3 — EWY>SMA20 pass (more comfortably now), USDKRW<1530 pass, KOSPI>5-day SMA FAIL (unchanged, Asia session closed)"
   },
-  "bias": "Rate-of-change framing: today's session reads more like an Asia/semis-specific shock that partially reversed intraday than a broadening risk-off. Korea's gate stays closed for a second consecutive check (KOSPI still below its 5-day SMA), but the inputs that flagged acute stress this morning — oil's cross above +3%, VIX's +6-9% spike — have both faded materially by this pull (oil -0.41%, VIX -0.73%). MOVE remains elevated and unchanged near the 80 alert level, and credit proxies (ALLY/CACC/COF) are extending modest declines, so this isn't a clean all-clear. Structural plumbing (WALCL/TGA/reserves) is still frozen at the Aug 26 vintage pending tomorrow's H.4.1 release, the week's key catalyst.",
+  "bias": "Rate-of-change framing: the session has moved through three distinct phases today — an acute Asia-led risk-off this morning (oil +3%, VIX +6-9%, Korea gate flipping closed), a partial fade by midday (oil and VIX both round-tripping), and now a fuller US-session reversal into the afternoon (VIX -5.7% net on the day, credit proxies and semis broadly green). Korea's gate is the one signal that hasn't moved — KOSPI remains below its 5-day SMA — but EWY itself, USDKRW, and every US risk-asset proxy have recovered. Structural plumbing (WALCL/TGA/reserves) remains frozen at the Aug 26 vintage pending tomorrow's H.4.1 release, still the week's key catalyst.",
   "counterargs": {
-    "thesis": "Broad-based risk-off (Asia + rates + oil) vs. a contained, technical pullback that partially reversed intraday",
+    "thesis": "Broad-based risk-off (Asia + rates + oil) vs. a contained shock that fully reversed intraday",
     "supporting": [
       "Korea gate remains CLOSED 2/3 — KOSPI still below its 5-day SMA (6,562.73 vs 6,783.96)",
-      "Broad Asia weakness persists: NI225 -2.85%, SK Hynix -4.73%, Samsung -4.02%, DRAM -3.23%",
-      "MOVE still elevated at 77.88, unchanged and close to the 80 alert level",
-      "Credit proxies extending declines: ALLY -0.85%, CACC -0.93%, COF -1.48%",
-      "SOXX underperforming SPY/QQQ (-2.10% vs -0.69%/-1.27%) — semis bearing the brunt"
+      "Broad Asia weakness from this morning is unrevised (Asia session already closed): NI225 -2.85%, SK Hynix -4.73%, Samsung -4.02%",
+      "MOVE still elevated at 77.88, unchanged all day and close to the 80 alert level",
+      "Oil has ticked back up to +0.98% intraday, off its midday low"
     ],
     "against": [
-      "Oil has fully reversed from this morning's +3.05% spike to -0.41% — the acute inflation-shock catalyst has faded",
-      "VIX round-tripped its entire +6-9% intraday spike, now -0.73% — US equity vol isn't confirming the Asia shock",
-      "EWY still holds above its SMA20 (175.80 vs 175.10) and USDKRW strengthened further (-0.83%) — no FX risk-off signal",
-      "DFII5 (primary real-rate signal) is flat — no fresh real-rate shock, and breakevens (T5YIE/T10YIE) haven't extended beyond this morning's move",
-      "HY OAS is flat at 2.63%, no incremental credit widening since the morning read",
-      "Treasury auctions remain Healthy (absorption 59) and SOFR-IORB compressed to +1bp — funding markets show no stress"
+      "VIX is now net LOWER on the day (-5.70% to 15.40) — a full round-trip and then some from this morning's +6-9% spike",
+      "EWY has moved from barely holding its SMA20 to comfortably clearing it (178.10 vs 175.55, +1.31%)",
+      "Credit proxies reversed sharply: ALLY +2.13%, CACC +2.16%, COF +2.47%",
+      "US equities are broadly green: SPY +0.34%, SOXX +0.07%, QQQ +0.03%, NVDA +3.46%, DRAM +1.47%",
+      "DFII5 (primary real-rate signal) remains flat all day — no real-rate shock at any point",
+      "HY OAS is flat at 2.63% all day, no incremental credit widening",
+      "Treasury auctions remain Healthy (absorption 59) and SOFR-IORB steady at +1bp — funding markets calm throughout"
     ],
-    "read": "The picture looks more like a contained, Korea/semis-specific technical pullback that partially reversed intraday than a broadening macro risk-off. The acute catalysts from this morning — oil crossing +3%, VIX spiking 6-9% — have both faded significantly, while credit and funding markets show no confirming stress. The one signal that hasn't reversed is Korea's gate, which stays closed on the KOSPI SMA failure alone; watch whether that resolves over the next session or whether it's an early warning the broader tape hasn't caught up to yet."
+    "read": "This now reads clearly as a contained, Asia/semis-specific shock this morning that fully reversed through the US session — not a broadening risk-off. Every US risk-asset proxy (VIX, credit, semis, broad equities) has recovered and then some, while credit and funding markets showed no stress at any point today. The one signal still flagging red is Korea's gate, closed purely on the KOSPI SMA failure from a session that has already closed — worth watching whether it reopens tomorrow if KOSPI stabilizes, but it is not being confirmed by anything else in the book right now."
   },
   "trade_table": [
     {
       "theme": "Korea (EWY/KOSPI)",
-      "signal": "Bearish — gate stays CLOSED 2/3, unchanged since this morning",
-      "signal_color": "red",
-      "conviction": 5,
-      "horizon": "days",
-      "rationale": "KOSPI 6,562.73 remains below its 5-day SMA (6,783.96) after today's -3.99% session; EWY 175.80 still barely holds its SMA20 (175.10). No new deterioration since the morning read, but no recovery either."
-    },
-    {
-      "theme": "Oil / Inflation",
-      "signal": "Neutral — sharp reversal from this morning's 3% cross",
-      "signal_color": "amber",
-      "conviction": 3,
-      "horizon": "1-2 wks",
-      "rationale": "CL1! reversed to -0.41% ($89.85) from +3.05% ($90.53) this morning — the acute single-day inflation-shock signal did not hold. Breakevens (T5YIE 2.37%, T10YIE 2.35%) unchanged, not extending further."
-    },
-    {
-      "theme": "Long Duration (TLT)",
-      "signal": "Modest safe-haven bid, not real-rate driven",
-      "signal_color": "grey",
-      "conviction": 3,
-      "horizon": "1-3 wks",
-      "rationale": "Live 10Y -0.4bp, 30Y -0.5bp on the day amid the Asia selloff; DFII5 real yield flat at 2.18%. Looks like flight-to-quality rather than a Fed-cut or disinflation repricing."
-    },
-    {
-      "theme": "Vol (VIX/MOVE)",
-      "signal": "Split — VIX round-trips, MOVE holds near alert level",
+      "signal": "Split — EWY reclaims comfortably, gate stays CLOSED on KOSPI alone",
       "signal_color": "amber",
       "conviction": 4,
       "horizon": "days",
-      "rationale": "VIX fully reversed its +6-9% intraday spike to -0.73% (16.21); MOVE unchanged at 77.88, still close to the 80 alert level. US equity vol isn't confirming the Asia/rates move."
+      "rationale": "KOSPI 6,562.73 remains below its 5-day SMA (6,783.96, Asia session already closed) but EWY 178.10 now comfortably clears its SMA20 (175.55, +1.31% today). Gate stays closed 2/3 on the KOSPI condition alone."
+    },
+    {
+      "theme": "Oil / Inflation",
+      "signal": "Neutral — ticking back up but well off this morning's cross",
+      "signal_color": "amber",
+      "conviction": 3,
+      "horizon": "1-2 wks",
+      "rationale": "CL1! +0.98% to $91.10, up from midday's -0.41% but still well below this morning's +3.05% spike ($90.53→ intraday high). Breakevens (T5YIE 2.37%, T10YIE 2.35%) unchanged all day."
+    },
+    {
+      "theme": "Long Duration (TLT)",
+      "signal": "Flat — little moved either direction today",
+      "signal_color": "grey",
+      "conviction": 2,
+      "horizon": "1-3 wks",
+      "rationale": "10Y flat on the day, 30Y +0.2bp; DFII5 real yield flat at 2.18% throughout. No real-rate or duration signal today."
+    },
+    {
+      "theme": "Vol / Credit (VIX/Credit proxies)",
+      "signal": "Bullish — broad US-session reversal confirmed",
+      "signal_color": "green",
+      "conviction": 6,
+      "horizon": "days",
+      "rationale": "VIX -5.70% to 15.40 (net lower on the day), ALLY/CACC/COF all up 2%+, SPY/SOXX/NVDA all green. This is now a confirmed reversal, not just a fade of this morning's spike."
     }
   ],
   "catalysts": [
@@ -214,49 +214,49 @@
     "tga_delta": "H.4.1 Aug 26 vintage, unchanged (next release TOMORROW Sep 3)",
     "tga_color": "grey",
     "rrp_b": 0.725,
-    "rrp_delta": "Unchanged at $0.73B — buffer still effectively depleted",
+    "rrp_delta": "Unchanged at $0.73B all day — buffer still effectively depleted",
     "rrp_color": "amber",
     "reserves_t": 2.924936,
     "reserves_delta": "Below $3T, unchanged this week (Aug 26 vintage)",
     "reserves_color": "amber",
     "sofr_pct": 3.66,
-    "sofr_delta": "-2bp since this morning (3.68% → 3.66%)",
+    "sofr_delta": "Unchanged since midday",
     "sofr_color": "grey",
     "iorb_pct": 3.65,
     "iorb_delta": "Unchanged",
     "sofr_iorb_bps": 1,
-    "sofr_iorb_note": "Compressed to +1bp from +3bp this morning — still a normal, healthy funding reading"
+    "sofr_iorb_note": "Steady at +1bp all afternoon — still a normal, healthy funding reading"
   },
   "duration": {
-    "tlt": 81.87,
-    "tlt_delta": "-0.79%",
-    "tlt_color": "amber",
-    "shy": 81.59,
-    "shy_delta": "-0.37%",
+    "tlt": 81.83,
+    "tlt_delta": "-0.05%",
+    "tlt_color": "grey",
+    "shy": 81.63,
+    "shy_delta": "+0.04%",
     "shy_color": "grey",
-    "hyg": 79.1,
-    "hyg_delta": "-0.89%",
-    "hyg_color": "amber",
+    "hyg": 79.16,
+    "hyg_delta": "+0.07%",
+    "hyg_color": "grey",
     "t10yie": 2.35,
-    "t10yie_delta": "Unchanged since this morning (+4bp today)",
+    "t10yie_delta": "Unchanged all day",
     "t10yie_color": "grey",
-    "real_yield": 2.442,
-    "tlt_shy_ratio": 1.0034,
+    "real_yield": 2.446,
+    "tlt_shy_ratio": 1.0025,
     "move": 77.8754,
-    "move_delta": "+3.39% (unchanged since this morning)",
+    "move_delta": "+3.39% (unchanged all day)",
     "move_color": "red"
   },
   "duration_score": {
-    "score": 2,
-    "classification": "Modest Risk-Off Rally in Duration — Not Real-Rate Driven",
-    "reason": "10Y -0.4bp and 30Y -0.5bp today (live) amid the Asia-led equity selloff, with DFII5 (real yield) flat at 2.18% and breakevens unchanged — today's modest bond rally looks like a flight-to-quality/growth-scare bid rather than fresh disinflation or Fed-cut repricing. Credit remains only mildly softer (HY OAS flat, bank proxies -0.85% to -1.48%), not confirming stress.",
+    "score": 0,
+    "classification": "Flat — No Real-Rate or Duration Signal Today",
+    "reason": "10Y and 2Y both essentially flat on the day (0bp, -1.4bp respectively), 30Y +0.2bp; DFII5 real yield unchanged at 2.18% throughout the session. Today's story is entirely in equities/vol (VIX -5.7%, credit proxies +2%+), not duration or real rates.",
     "james_framework": {
-      "what_market_IS_saying": "Not a real-rate story today — DFII5 held flat (2.18%) while nominal yields eased on safe-haven demand tied to the Asia/semis selloff, distinct from the real-rate-led pressure seen earlier in the week.",
-      "pain_trade": "Absent today — yesterday/this-morning's setup was real-rate pressure with breakevens starting to confirm; today that has paused, with DFII5 flat and breakevens unchanged. No fresh pain trade building.",
-      "watch_signal": "If nominal 2Y keeps falling while breakevens stay flat over the next 1-2 sessions, that's consistent with a budding growth-scare/cuts repricing rather than a one-day wobble. If oil and breakevens resume rising together, the inflation-reacceleration setup from this morning could reassert."
+      "what_market_IS_saying": "Not a real-rate story today, and not really a duration story either — DFII5 and the nominal curve barely moved while VIX and credit did all the work.",
+      "pain_trade": "Absent today — no fresh real-rate pressure building; DFII5 flat and breakevens unchanged all session.",
+      "watch_signal": "If nominal 2Y starts falling meaningfully with breakevens flat, that would be the growth-scare/cuts setup; nothing in today's flat curve points that way yet."
     },
     "conditions": {
-      "10y_falling": true,
+      "10y_falling": false,
       "breakevens_stable": true,
       "two_y_breakeven_collapsing": false,
       "nominal_2y_sticky": false,
@@ -271,66 +271,66 @@
       "label": "5Y breakeven",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged since this morning (+6bp today)"
+      "note": "Unchanged all day (+6bp on the day)"
     },
     "t10yie": {
       "value": 2.35,
       "label": "10Y breakeven",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "Unchanged since this morning (+4bp today)"
+      "note": "Unchanged all day (+4bp on the day)"
     },
     "expinf2yr": {
       "value": 2.47,
       "label": "2Y expected inflation",
       "color": "grey",
       "trend_label": "Stable",
-      "note": "+3bp"
+      "note": "Unchanged all day"
     },
     "real_yield_2y_experimental": {
       "value": 1.916,
       "calculation": "US02Y (4.386%) - EXPINF2YR (2.47%) = 1.916%",
       "color": "amber",
       "trend_label": "Stable",
-      "note": "Essentially flat vs this morning"
+      "note": "Unchanged all day"
     },
     "real_yield_10y": {
-      "value": 2.442,
-      "calculation": "US10Y (4.792%) - T10YIE (2.35%) = 2.442%",
+      "value": 2.446,
+      "calculation": "US10Y (4.796%) - T10YIE (2.35%) = 2.446%",
       "color": "amber",
       "trend_label": "Stable",
       "note": "Secondary confirmation metric"
     },
-    "breakeven_curve_signal": "Breakevens (T5YIE 2.37%, T10YIE 2.35%) are unchanged since this morning's move — no further inflation-expectations repricing today, even as oil reversed sharply. DFII5 also flat. Today's move looks more like a risk-off/flight-to-quality session than a continuation of the inflation-reacceleration signal flagged this morning."
+    "breakeven_curve_signal": "Breakevens (T5YIE 2.37%, T10YIE 2.35%) have been unchanged all session — no inflation-expectations repricing today despite the swings in oil and equities. DFII5 also flat throughout. Today's move is confined to equities/vol, not rates."
   },
   "credit": {
     "hy_oas": 2.63,
-    "hy_oas_delta": "Unchanged since this morning",
+    "hy_oas_delta": "Unchanged all day",
     "hy_oas_color": "amber",
     "ig_oas": 0.79,
     "ig_oas_delta": "Not in live watchlist scrape this run — carried forward",
     "ig_oas_color": "grey",
-    "ally": 41.85,
-    "ally_delta": "-0.85%",
-    "ally_color": "amber",
-    "cacc": 594.18,
-    "cacc_delta": "-0.93%",
-    "cacc_color": "amber",
-    "cof": 211.34,
-    "cof_delta": "-1.48%",
-    "cof_color": "amber"
+    "ally": 42.74,
+    "ally_delta": "+2.13%",
+    "ally_color": "green",
+    "cacc": 607.03,
+    "cacc_delta": "+2.16%",
+    "cacc_color": "green",
+    "cof": 216.55,
+    "cof_delta": "+2.47%",
+    "cof_color": "green"
   },
   "curve": {
     "us03my": 3.872,
-    "us06my": 4.026,
+    "us06my": 4.028,
     "us02y": 4.386,
-    "us05y": 4.548,
-    "us10y": 4.792,
-    "us30y": 5.262,
-    "spread_2s10s": 0.406,
-    "spread_3m10y": 0.92,
-    "spread_2s30s": 0.876,
-    "real_10y": 2.442,
+    "us05y": 4.55,
+    "us10y": 4.796,
+    "us30y": 5.269,
+    "spread_2s10s": 0.41,
+    "spread_3m10y": 0.924,
+    "spread_2s30s": 0.883,
+    "real_10y": 2.446,
     "us_japan_spread_bps": 179,
     "deltas": {
       "us03my": {
@@ -338,163 +338,163 @@
         "chg_1d_bps": 0
       },
       "us06my": {
-        "level": 4.026,
-        "chg_1d_bps": -0.8
+        "level": 4.028,
+        "chg_1d_bps": -0.6
       },
       "us02y": {
         "level": 4.386,
         "chg_1d_bps": -1.4
       },
       "us05y": {
-        "level": 4.548,
-        "chg_1d_bps": -1.1
+        "level": 4.55,
+        "chg_1d_bps": -0.9
       },
       "us10y": {
-        "level": 4.792,
-        "chg_1d_bps": -0.4
+        "level": 4.796,
+        "chg_1d_bps": 0
       },
       "us30y": {
-        "level": 5.262,
-        "chg_1d_bps": -0.5
+        "level": 5.269,
+        "chg_1d_bps": 0.2
       }
     },
     "topology": "BULL STEEPENING (modest)",
     "topology_interp": "WATCH",
-    "topology_so_what": "Live yields eased across the curve today (2Y -1.4bp, 10Y -0.4bp, 30Y -0.5bp) with the front end leading the decline — a mild bull-steepening move (2s10s widened ~1bp to 0.406%) consistent with a flight-to-quality bid tied to today's Asia/semis selloff rather than a Fed-cut repricing. This contrasts with the FRED CMT vintage (Aug 31, one session behind live), which still shows a mild bear-steepening posture — see v2 curve topology for the vintage-basis detail."
+    "topology_so_what": "Live yields are little-changed on the day (2Y -1.4bp, 10Y flat, 30Y +0.2bp) — the front end remains slightly lower while the long end has ticked back up marginally through the US session, still a mild bull-steepening posture (2s10s at 0.41%). Duration is not driving today's story; the FRED CMT vintage (Aug 31, one session behind live) still shows a mild bear-steepening posture — see v2 curve topology for the vintage-basis detail."
   },
   "fx": {
-    "usdjpy": 159.606,
+    "usdjpy": 158.954,
     "usdjpy_alert": false,
-    "usdjpy_note": "159.61 — below the 162 BOJ threshold; yen firm, -0.37% amid the risk-off",
-    "usdkrw": 1363.48,
+    "usdjpy_note": "158.95 — below the 162 BOJ threshold; yen firmer, -0.78% today",
+    "usdkrw": 1358.08,
     "usdkrw_pass": true,
-    "usdkrw_note": "-0.83% — strengthened further, well below 1,530 despite the Asia sell-off",
-    "dxy": 99.749,
-    "dxy_delta": "+0.10%",
+    "usdkrw_note": "-1.22% — strengthened further through the session, well below 1,530",
+    "dxy": 99.599,
+    "dxy_delta": "-0.05%",
     "dxy_color": "grey",
-    "jp10y": 3,
+    "jp10y": 3.002,
     "us_japan_spread_bps": 179,
     "ni225": 64325.42,
-    "usdcny": 6.7203
+    "usdcny": 6.7185
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 2,
-    "ewy": 175.8,
-    "ewy_sma20": 175.1,
+    "ewy": 178.1,
+    "ewy_sma20": 175.55,
     "ewy_pass": true,
-    "usdkrw": 1363.48,
+    "usdkrw": 1358.08,
     "usdkrw_threshold": 1530,
     "usdkrw_pass": true,
     "kospi": 6562.73,
     "kospi_sma5": 6783.96,
     "kospi_pass": false,
     "kospi_threshold": 6783.96,
-    "note": "Gate stays CLOSED, unchanged since this morning — KOSPI remains below its 5-day SMA (6,562.73 vs 6,783.96, -3.99% today). EWY still barely holds its SMA20 (175.80 vs 175.10); USDKRW continues to strengthen (1,363.48). KOSPI 5-day SMA computed manually from Yahoo Finance daily closes (Aug 27, 28, 31, Sep 1, Sep 2)."
+    "note": "Gate stays CLOSED on the KOSPI condition alone — KOSPI's Asia session already closed, still below its 5-day SMA (6,562.73 vs 6,783.96, -3.99% today). EWY has since recovered to comfortably clear its SMA20 (178.10 vs 175.55, +1.31%) and USDKRW keeps strengthening (1,358.08). KOSPI 5-day SMA computed manually from Yahoo Finance daily closes (Aug 27, 28, 31, Sep 1, Sep 2)."
   },
   "semis": {
-    "soxx": 500.31,
-    "soxx_delta": "-2.10%",
-    "soxx_color": "red",
-    "qqq": 707.64,
-    "qqq_delta": "-1.27%",
-    "qqq_color": "amber",
-    "spy": 761.78,
-    "spy_delta": "-0.69%",
-    "spy_color": "amber",
-    "soxx_spy_ratio": 0.6568
+    "soxx": 500.68,
+    "soxx_delta": "+0.07%",
+    "soxx_color": "grey",
+    "qqq": 707.82,
+    "qqq_delta": "+0.03%",
+    "qqq_color": "grey",
+    "spy": 764.38,
+    "spy_delta": "+0.34%",
+    "spy_color": "green",
+    "soxx_spy_ratio": 0.6549
   },
   "chain": [
     {
       "ticker": "DRAM",
-      "price": 55.06,
-      "delta": "-3.23%",
-      "color": "red",
+      "price": 55.87,
+      "delta": "+1.47%",
+      "color": "green",
       "note": "Only enabling-layer name still in the watchlist."
     },
     {
       "ticker": "NVDA",
-      "price": 217.44,
-      "delta": "-1.51%",
-      "color": "amber",
-      "note": "Underperforming with the broader semis/Asia complex today."
+      "price": 224.96,
+      "delta": "+3.46%",
+      "color": "green",
+      "note": "Leading the semis reversal today, +3.46%."
     }
   ],
   "chain_note": "9 of the original enabling-layer thesis-chain names (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain absent from the 'Liquidity Monitor - Jae' TradingView watchlist (38 symbols today). DRAM is still tracked; NVDA remains for context. Re-add the other 9 tickers to resume full chain tracking.",
   "crosschecks": {
     "vix": {
-      "value": 16.21,
-      "delta": "-0.73%, round-tripping the +6-9% intraday spike from this morning",
-      "color": "grey",
-      "note": "Fully reversed; US equity vol not confirming the Asia shock."
+      "value": 15.4,
+      "delta": "-5.70%, extending the reversal — now net lower on the day vs this morning's +6-9% spike",
+      "color": "green",
+      "note": "Confirmed reversal; US equity vol is well below its opening level."
     },
     "oil": {
-      "value": 89.85,
-      "delta": "-0.41%, reversing sharply from +3.05% this morning",
+      "value": 91.1,
+      "delta": "+0.98%, ticking back up from midday's -0.41% but still well off this morning's +3.05% spike",
       "color": "amber",
-      "note": "The single-day inflation-shock cross did not hold — watch for confirmation either way."
+      "note": "Modest re-acceleration — watch tomorrow for confirmation either way."
     },
     "gold": {
-      "value": 4339.103,
-      "delta": "+0.24%",
+      "value": 4366.91,
+      "delta": "+0.89%",
       "color": "grey",
-      "note": "Modest bounce after yesterday's pullback."
+      "note": "Extending its bounce through the session."
     },
     "move": {
       "value": 77.8754,
-      "delta": "+3.39% (unchanged since this morning)",
+      "delta": "+3.39% (unchanged all day)",
       "color": "red",
-      "note": "Still elevated and closing in on the 80 alert level, but not extending further today."
+      "note": "Still elevated and close to the 80 alert level, unchanged since this morning despite the equity/vol reversal elsewhere."
     }
   },
   "sector_rotation": {
-    "current_regime": "Mixed — Asia/Semis Risk-Off Persists While This Morning's Inflation-Reacceleration Read Fades",
+    "current_regime": "Mixed, Tilting Risk-On — US Session Reversal Confirmed, Korea Gate Still Closed on KOSPI Alone",
     "regime_scores": {
-      "liquidity_expansion": 22,
-      "disinflationary_slowdown": 38,
-      "recession": 30,
-      "inflation_reacceleration": 25,
-      "liquidity_shock": 32
+      "liquidity_expansion": 30,
+      "disinflationary_slowdown": 32,
+      "recession": 20,
+      "inflation_reacceleration": 28,
+      "liquidity_shock": 22
     },
-    "best_fit": "disinflationary_slowdown",
-    "second_fit": "liquidity_shock",
+    "best_fit": "liquidity_expansion",
+    "second_fit": "disinflationary_slowdown",
     "confidence": "Low",
     "actionable_output": {
-      "leaders_if_confirmed": "IGV, mega-cap software, quality growth (if disinflationary_slowdown persists) vs. cash/short-duration Treasuries (if liquidity_shock reasserts)",
-      "current_tactical_leaders": "No clean long right now — Korea gate closed, semis soft (SOXX -2.10%), duration only modestly bid. Cash/short-duration remains relatively best-positioned pending confirmation.",
-      "likely_rotation": "Away from Korea/EM and high-beta semis while the gate stays closed; watch whether USDKRW's continued strength and calm credit spreads mean this stays contained to Asia equities rather than broadening into a dollar-liquidity event."
+      "leaders_if_confirmed": "Semis, cyclicals, small caps (if liquidity_expansion / risk-on persists) vs. IGV, mega-cap software, quality growth (if disinflationary_slowdown reasserts)",
+      "current_tactical_leaders": "Credit proxies and semis leading (ALLY/CACC/COF +2%+, NVDA +3.46%); Korea/KOSPI still the one laggard pending gate confirmation.",
+      "likely_rotation": "Broad US risk-on into the close if VIX holds its reversal; Korea/KOSPI would need to confirm tomorrow (gate reopening) before adding conviction there specifically."
     }
   },
   "changed_today": [
     {
-      "label": "Oil (CL1!)",
-      "value": "$89.85",
-      "delta": "Reversed to -0.41% from this morning's +3.05% spike — acute inflation-shock risk fades",
-      "color": "amber"
+      "label": "VIX",
+      "value": "15.40",
+      "delta": "Extended reversal to -5.70%, now net lower on the day vs this morning's +6-9% spike",
+      "color": "green"
     },
     {
-      "label": "VIX",
-      "value": "16.21",
-      "delta": "Round-tripped to -0.73% from this morning's +6-9% intraday spike",
-      "color": "grey"
+      "label": "Credit proxies",
+      "value": "ALLY/CACC/COF",
+      "delta": "All up 2%+ (+2.13%/+2.16%/+2.47%), sharp reversal from this morning's declines",
+      "color": "green"
+    },
+    {
+      "label": "EWY",
+      "value": "$178.10",
+      "delta": "+1.31%, now comfortably above its SMA20 (175.55)",
+      "color": "green"
     },
     {
       "label": "Korea Gate",
       "value": "CLOSED 2/3",
-      "delta": "Unchanged since this morning — KOSPI still below its 5-day SMA",
+      "delta": "Unchanged — KOSPI's already-closed Asia session still fails its 5-day SMA",
       "color": "red"
     },
     {
-      "label": "MOVE",
-      "value": "77.88",
-      "delta": "Unchanged since this morning, still elevated near the 80 alert level",
+      "label": "Oil (CL1!)",
+      "value": "$91.10",
+      "delta": "+0.98%, ticking back up from midday's -0.41% low",
       "color": "amber"
-    },
-    {
-      "label": "SOFR-IORB",
-      "value": "+1bp",
-      "delta": "Compressed from +3bp this morning — modestly easier funding",
-      "color": "grey"
     }
   ],
   "section_horizons": {
@@ -511,9 +511,9 @@
   "treasury_auctions": {
     "meta": {
       "status": "ok",
-      "last_updated": "2026-09-02T13:15:00Z",
+      "last_updated": "2026-09-02T17:42:00Z",
       "source": "TreasuryDirect TA_WS (securities/search) + NY Fed Primary Dealer Statistics (PDPOSGST-TOT)",
-      "methodology_note": "Checked TreasuryDirect TA_WS (Note/Bond/TIPS) this run — confirmed no new auctions have settled since the 7-Year on Aug 27. SOFR-IORB compressed to +1bp (SOFR 3.66%, IORB 3.65%), down from +3bp this morning — funding markets calm despite today's Asia/semis risk-off."
+      "methodology_note": "Checked TreasuryDirect TA_WS (Note/Bond/TIPS) this run — confirmed no new auctions have settled since the 7-Year on Aug 27. SOFR-IORB steady at +1bp all afternoon (SOFR 3.66%, IORB 3.65%) — funding markets calm throughout today's equity/vol swings."
     },
     "state": "Healthy",
     "state_since": "2026-08-27",
@@ -594,7 +594,7 @@
       "dealer_pressure": false,
       "repo_confirmation": false
     },
-    "narrative": "No new Note/Bond/TIPS auctions have settled since the 7-Year on Aug 27 (checked through Sep 2) — the 2-Year, 5-Year and 7-Year Notes from that week remain the most current auction data, all three showing low dealer takedown and no stress signals. NY Fed's primary-dealer net Treasury inventory print is still the Aug 12 read (~2-week reporting lag). SOFR-IORB compressed further to +1bp (from +3bp this morning) — still normal, no repo stress despite today's Asia/semis-led equity risk-off and the broad reversal in oil and VIX."
+    "narrative": "No new Note/Bond/TIPS auctions have settled since the 7-Year on Aug 27 (checked through Sep 2 afternoon) — the 2-Year, 5-Year and 7-Year Notes from that week remain the most current auction data, all three showing low dealer takedown and no stress signals. NY Fed's primary-dealer net Treasury inventory print is still the Aug 12 read (~2-week reporting lag). SOFR-IORB has been steady at +1bp all day — no repo stress at any point despite this morning's Asia/semis-led equity risk-off and this afternoon's full reversal."
   },
   "v2": {
     "regime_header": {
@@ -613,7 +613,7 @@
         "label": "MODERATELY HIGH"
       },
       "liquidity_resilience": {
-        "value": 71,
+        "value": 75,
         "bucket": "HIGH",
         "label": "HEALTHY"
       },
@@ -651,10 +651,10 @@
       "market_liquidity_outcome": {
         "state": "STABLE / RESILIENT",
         "bullets": [
-          "Live curve: modest bull-steepening today (2Y -1.4bp, 30Y -0.5bp) — flight-to-quality tied to the Asia/semis selloff, not a real-rate or credit-stress signal",
-          "MOVE 77.88 (+3.39%, unchanged since this morning), HY OAS 2.63% (flat)",
-          "SOFR−IORB +1bp (compressed from +3bp this morning) — funding calm",
-          "3/3 recent long-duration auctions cleared strongly, absorption score 59 (Healthy)"
+          "US session fully reversed this morning's Asia/semis risk-off: VIX -5.70% to 15.40 (net lower on the day), ALLY/CACC/COF all +2%+, SPY/SOXX/NVDA all green",
+          "MOVE 77.88 (+3.39%, unchanged all day), HY OAS 2.63% (flat all day)",
+          "SOFR−IORB steady at +1bp — funding calm throughout",
+          "3/3 recent long-duration auctions cleared strongly, absorption score 59 (Healthy), no new auctions today"
         ]
       },
       "market_impact": {
@@ -1262,11 +1262,11 @@
       ]
     },
     "key_takeaways": [
-      "Regime: CONTROLLED TIGHTENING / LIQUIDITY PROTECTED (PROVISIONAL) — Monetary Restrictiveness 58/100 (MODERATELY HIGH) · Liquidity Resilience 71/100 (HEALTHY).",
-      "Korea gate: CLOSED 2/3 — EWY holds above its SMA20 (barely), USDKRW well below 1,530, but KOSPI fails its 5-day SMA for a second consecutive check (6,562.73 vs 6,783.96, -3.99% today).",
-      "Today's session looks like a contained Asia/semis-specific shock that partially reversed intraday: oil fully round-tripped from +3.05% this morning to -0.41% now, and VIX gave back its entire +6-9% intraday spike (-0.73%). MOVE remains elevated and unchanged near the 80 alert level.",
-      "Real yields: DFII5 (primary signal) flat at 2.18% on the day but up +9bp on the week — real-rate pressure has paused, not reversed.",
-      "FRED's official curve vintage (Aug 31) still shows mild bear-steepening (2Y flat, 30Y +3bp), one session behind live intraday quotes, which show a modest bull-steepening reversal today (2Y -1.4bp, 30Y -0.5bp) tied to the Asia-led flight-to-quality bid.",
+      "Regime: CONTROLLED TIGHTENING / LIQUIDITY PROTECTED (PROVISIONAL) — Monetary Restrictiveness 58/100 (MODERATELY HIGH) · Liquidity Resilience 75/100 (HEALTHY).",
+      "Korea gate: CLOSED 2/3 — EWY now comfortably clears its SMA20 (178.10 vs 175.55, +1.31%) and USDKRW keeps strengthening, but KOSPI's already-closed Asia session remains below its 5-day SMA (6,562.73 vs 6,783.96).",
+      "Today's session has moved through three phases: an acute Asia-led shock this morning (oil +3%, VIX +6-9%), a partial fade by midday, and now a fuller US-session reversal (VIX -5.70% net on the day, credit proxies and semis broadly green).",
+      "Real yields: DFII5 (primary signal) flat at 2.18% all day — no real-rate signal in today's move at any point.",
+      "FRED's official curve vintage (Aug 31) still shows mild bear-steepening (2Y flat, 30Y +3bp), one session behind live intraday quotes, which are essentially flat today (2Y -1.4bp, 10Y 0bp, 30Y +0.2bp) — duration is not driving today's story.",
       "3 of 3 recent long-duration auctions (10Y/30Y/20Y) cleared strongly — the clearest confirmed evidence the regime call currently rests on; no new Note/Bond/TIPS auctions have settled since Aug 27.",
       "RRP buffer remains near-zero ($0.73B) — the one structural liquidity item to watch going into September, alongside tomorrow's H.4.1 release (Sep 3).",
       "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA composition, Treasury buybacks, and FIMA repo facility usage are CONFIRMED (FIMA backstop available, usage $0M/dormant); bank demand is CONFIRMED and roughly flat ($4.81T, H.8 weekly); corporate demand is CONFIRMED but quarterly and lagged ($132.4B, Q1 2026, -6.6% q/q, Z.1). Precise net issuance composition remains PENDING DATA — not fabricated."
