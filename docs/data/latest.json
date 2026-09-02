@@ -643,12 +643,12 @@
         "note": "Front-end and real rates are doing most of the tightening."
       },
       "shock_absorbers": {
-        "state": "PARTIALLY CONFIRMED / SUPPORTIVE",
+        "state": "MOSTLY CONFIRMED / SUPPORTIVE",
         "bullets": [
           "MMF assets $7.93T (+$6.1B w/w) — CONFIRMED",
           "Treasury buybacks — CONFIRMED (weekly operations active, per TreasuryDirect cadence)",
           "Stablecoins $305B — STRUCTURAL/LOW WEIGHT",
-          "SOMA composition & FIMA repo usage — CONFIRMED (FIMA backstop AVAILABLE, usage $0M/DORMANT); bank/corporate Treasury demand remains PENDING DATA"
+          "SOMA composition & FIMA repo usage — CONFIRMED (FIMA backstop AVAILABLE, usage $0M/DORMANT); bank demand CONFIRMED (Treasury+agency roughly flat, $4.81T); corporate demand CONFIRMED but low-frequency (Treasury holdings $132.4B, Q1 2026, -6.6% q/q)"
         ]
       },
       "market_liquidity_outcome": {
@@ -820,8 +820,25 @@
         "note": "At $304.6B, aggregate stablecoin market cap is ~3.8% the size of MMF total AUM ($7.93T). Reserve base is roughly 26x smaller than the MMF industry. Stablecoin reserves are NOT counted as part of the current Treasury buyer base at comparable weight to MMFs -- treated as a structural/growth signal only, not a current-scale demand factor."
       },
       "banks_corporates": {
-        "status": "PENDING DATA",
-        "note": "Bank/corporate Treasury holdings and repo/cash positioning not yet wired into the pipeline."
+        "bank": {
+          "status": "CONFIRMED",
+          "value_b": 4809.3,
+          "as_of": "2026-08-19",
+          "wow_change_b": -0.4,
+          "off_recent_high_pct": -0.6,
+          "source": "FRED H.8 (TASACBW027SBOG), weekly",
+          "note": "Treasury+agency combined; no weekly pure-Treasury breakout exists at the bank level."
+        },
+        "corporate": {
+          "status": "CONFIRMED (LOW FREQUENCY)",
+          "value_b": 132.4,
+          "as_of": "Q1 2026",
+          "qoq_change_b": -9.4,
+          "qoq_change_pct": -6.6,
+          "source": "FRED Z.1 Financial Accounts (TSABSNNCB), quarterly, ~10-12wk lag",
+          "note": "No monthly/weekly proxy exists; next release Sep 10, 2026."
+        },
+        "note": "Bank demand confirmed weekly (H.8); corporate demand confirmed but quarterly with a reporting lag (Z.1). Repo/cash positioning for either sector is not separately tracked."
       },
       "soma": {
         "status": "CONFIRMED",
@@ -831,9 +848,9 @@
         "status": "PARTIALLY CONFIRMED",
         "note": "Buyback operation cadence confirmed live and active (46 ops YTD 2026, most recent 2026-08-25) — this is Treasury buying back existing issues, not new issuance mix. Net bill/coupon/CMB issuance mix itself still requires the quarterly refunding financing tables and is not yet wired as a standalone series."
       },
-      "demand_vs_supply_read": "BALANCED (partial, low confidence in precision) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base; SOMA composition and FIMA repo facility usage are now CONFIRMED (FIMA backstop available, usage $0M/dormant), but net TREASURY-SPECIFIC purchases, bank/corporate demand, and precise net issuance composition remain PENDING DATA. This cannot be scored DEMAND>SUPPLY -- shown as a directional estimate, not a precise measurement.",
+      "demand_vs_supply_read": "MOSTLY CONFIRMED (bank + corporate demand now wired, low precision on corporate given quarterly lag) -- confirmed MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large potential buyer base; SOMA composition and FIMA repo facility usage are CONFIRMED (FIMA backstop available, usage $0M/dormant); bank Treasury+agency demand is CONFIRMED and roughly flat ($4.81T); corporate Treasury demand is CONFIRMED but quarterly and lagged ($132.4B, Q1 2026, -6.6% q/q). Net TREASURY-SPECIFIC purchases (as opposed to holdings levels) and precise net issuance composition remain PENDING DATA. This still cannot be scored DEMAND>SUPPLY precisely -- shown as a directional estimate.",
       "status": "PARTIALLY CONFIRMED",
-      "status_note": "SOMA holdings are now wired (CONFIRMED). Module remains PARTIALLY CONFIRMED overall — bank/corporate demand and the underlying Treasury net-issuance mix (as opposed to buyback activity) are not yet measured, so marginal net Treasury demand across all channels still can't be fully confirmed."
+      "status_note": "SOMA holdings, bank demand, and corporate demand are now wired (all CONFIRMED, though corporate is quarterly/lagged). Module remains PARTIALLY CONFIRMED overall — the underlying Treasury net-issuance mix (as opposed to buyback activity) and marginal (flow) purchases by any sector are not yet measured, so precise marginal net Treasury demand across all channels still can't be fully confirmed."
     },
     "shock_absorbers_table": [
       {
@@ -877,14 +894,26 @@
         "frequency": "NEAR-LIVE"
       },
       {
-        "name": "Bank/corporate demand",
-        "status_type": "PENDING DATA",
-        "current_read": "Not yet wired into the pipeline.",
-        "confidence": "n/a",
-        "trend": "n/a",
-        "source": "n/a",
-        "last_updated": "never wired",
-        "frequency": "n/a"
+        "name": "Bank demand",
+        "status_type": "CONFIRMED",
+        "current_read": "$4,809.3B in Treasury & agency securities held by all commercial banks (FRED H.8) as of Aug 19, 2026 — roughly flat over the past 4 weeks (-$0.4B w/w) and -0.6% off the Jul 29 high of $4,838.2B. No evidence of banks reducing Treasury/agency holdings to fund other needs.",
+        "confidence": "HIGH",
+        "trend": "Flat/plateaued after a mild build through July",
+        "source": "FRED H.8 (TASACBW027SBOG), weekly",
+        "last_updated": "2026-08-19",
+        "frequency": "Weekly (Wed level)",
+        "note": "Bundles Treasury with agency debt — banks do not report a pure Treasury-only holdings line at weekly frequency."
+      },
+      {
+        "name": "Corporate demand",
+        "status_type": "CONFIRMED (LOW FREQUENCY)",
+        "current_read": "$132.4B in Treasury securities held by nonfinancial corporate business (Fed Z.1 Financial Accounts) as of Q1 2026 — down -$9.4B (-6.6%) from the Q4 2025 peak of $141.8B, after four consecutive quarters of growth (from $94.8B in Q2 2024).",
+        "confidence": "MEDIUM",
+        "trend": "Pulled back in Q1 2026 after a multi-quarter buildup",
+        "source": "FRED Z.1 Financial Accounts (TSABSNNCB), quarterly",
+        "last_updated": "2026-01-01 (Q1 2026 period; published Jun 11, 2026)",
+        "frequency": "Quarterly, ~10-12 week reporting lag (next release Sep 10, 2026)",
+        "note": "Only sector-level breakdown available; no weekly/monthly proxy exists for corporate Treasury demand."
       },
       {
         "name": "SOMA bill composition",
@@ -1242,7 +1271,7 @@
       "3 of 3 recent long-duration auctions (10Y/30Y/20Y) cleared strongly — the clearest confirmed evidence the regime call currently rests on.",
       "Korea gate: 3/3 OPEN — EWY above SMA20, USDKRW well below 1,530, KOSPI now above its 5-day SMA.",
       "RRP buffer is effectively exhausted ($0.175B) — the one structural liquidity item to watch going into September.",
-      "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA composition, Treasury buybacks, and FIMA repo facility usage are now CONFIRMED (FIMA backstop available, usage $0M/dormant); bank/corporate Treasury demand and precise net issuance composition remain PENDING DATA — not fabricated."
+      "Structural Treasury demand: MMF assets ($7.93T) are real, confirmed, and growing; SOMA composition, Treasury buybacks, and FIMA repo facility usage are CONFIRMED (FIMA backstop available, usage $0M/dormant); bank demand is CONFIRMED and roughly flat ($4.81T, H.8 weekly); corporate demand is CONFIRMED but quarterly and lagged ($132.4B, Q1 2026, -6.6% q/q, Z.1). Precise net issuance composition remains PENDING DATA — not fabricated."
     ],
     "pressure_map": [
       {
