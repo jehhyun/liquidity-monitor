@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-09T13:10:00Z",
+    "last_updated": "2026-09-10T14:11:53Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ledger checked Sep 9 13:10 UTC -- 3-Year auction (91282CRL7, Sep 8) has settled and been added (BTC 2.72, dealer 10.84%, indirect 61.74%). 10Y reopening (91282CRF0, Sep 9) has NOT yet settled as of this pull (results ~1pm ET); 30Y reopening (912810UW6) is Sep 10."
+    "note": "Ledger checked Sep 10 14:11 UTC -- the 10-Year reopening (91282CRF0, Sep 9) has settled and been added (BTC 2.71, dealer 4.30%, indirect 78.99% -- strongest 10-Year print in the ledger). The 30Y reopening (912810UW6, Sep 10) has NOT yet settled as of this pull (results typically post ~1:00pm ET, this pull was ~10:10am ET) -- it is the final REGIME VALIDATION test of the Sep 8-10 refunding cycle."
   },
   "auctions": [
     {
@@ -230,16 +230,25 @@
       "indirect_pctile": 75,
       "direct_pctile": 45,
       "btc_pctile": 40
-    }
-  ],
-  "pending": [
+    },
     {
       "cusip": "91282CRF0",
       "type": "Note",
       "term": "10-Year",
       "auctionDate": "2026-09-09",
-      "issueDate": "2026-09-15"
-    },
+      "issueDate": "2026-09-15",
+      "highYield": 4.834,
+      "bidToCover": 2.71,
+      "dealer_pct": 4.3,
+      "direct_pct": 16.46,
+      "indirect_pct": 78.99,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null
+    }
+  ],
+  "pending": [
     {
       "cusip": "912810UW6",
       "type": "Bond",
