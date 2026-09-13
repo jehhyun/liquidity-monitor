@@ -1070,8 +1070,16 @@
       {
         "maturity": "30-Year",
         "date": "2026-09-10",
-        "status": "scheduled",
-        "is_validation": true
+        "offering_b": 22,
+        "btc": 2.61,
+        "dealer_pct": 2.2,
+        "direct_pct": 18.27,
+        "indirect_pct": 79.33,
+        "high_yield": 5.308,
+        "is_validation": true,
+        "so_what": "EXCEPTIONALLY STRONG DEMAND — dealer take-down collapses to 2.2% (lowest 30Y print in the ledger), indirect 79.3%, bid-to-cover 2.61.",
+        "read_color": "green",
+        "status": "settled"
       },
       {
         "maturity": "20-Year",
@@ -1106,39 +1114,25 @@
     ],
     "next_key_events": [
       {
-        "date": "Sep 10",
-        "day": "Thu",
-        "time_et": "1:00 PM",
-        "event": "30Y Treasury reopening",
-        "why": "REGIME VALIDATION -- final long-end absorption test of the Sep 8-10 cycle"
-      },
-      {
-        "date": "Sep 10",
-        "day": "Thu",
-        "time_et": "8:30 AM",
-        "event": "PPI, August",
-        "why": "Pipeline inflation confirmation"
-      },
-      {
-        "date": "Sep 11",
-        "day": "Fri",
-        "time_et": "8:30 AM",
-        "event": "CPI, August",
-        "why": "Disinflation-vs-reacceleration debate -- oil spiked today but breakevens stayed flat"
-      },
-      {
         "date": "Sep 15",
         "day": "Tue",
         "time_et": "1:00 PM",
         "event": "20Y Treasury reopening",
-        "why": "REGIME VALIDATION -- duration absorption test"
+        "why": "REGIME VALIDATION -- duration absorption test, following the Sep 8-10 cycle's exceptionally clean close (10Y & 30Y both settled with the lowest dealer takedowns in the ledger)."
       },
       {
         "date": "Sep 15-16",
         "day": "Tue-Wed",
         "time_et": "—",
         "event": "FOMC meeting",
-        "why": "Rate decision + dot plot"
+        "why": "Rate decision + dot plot -- first binary policy test since the cycle's clean close and this week's liquidity-positive plumbing (TGA drawdown, reserve build)."
+      },
+      {
+        "date": "Oct 14",
+        "day": "Wed",
+        "time_et": "8:30 AM",
+        "event": "CPI, September",
+        "why": "Next inflation print. August CPI (released Sep 11) showed headline +0.4% m/m (gas-driven) but core cooled to 2.4% YoY, lowest since March 2021."
       }
     ],
     "scenarios": {
@@ -1300,7 +1294,7 @@
           },
           {
             "label": "Net liquidity expanding",
-            "active": false
+            "active": true
           },
           {
             "label": "Credit stays tight (HY OAS < 3%)",
@@ -1308,7 +1302,7 @@
           },
           {
             "label": "MOVE stays subdued (<80)",
-            "active": true
+            "active": false
           },
           {
             "label": "Treasury auctions strong",
@@ -1344,12 +1338,12 @@
           },
           "b": {
             "label": "Market-Functioning Stress",
-            "met": 0,
+            "met": 1,
             "total": 3,
             "conditions": [
               {
                 "label": "MOVE spikes (>80)",
-                "active": false
+                "active": true
               },
               {
                 "label": "Repo / funding stress (SOFR-IORB > +10bp)",
@@ -1619,12 +1613,6 @@
     ],
     "auction_next_validation_tests": [
       {
-        "maturity": "30-Year",
-        "date": "2026-09-10",
-        "status": "scheduled",
-        "is_validation": true
-      },
-      {
         "maturity": "20-Year",
         "date": "2026-09-15",
         "status": "scheduled",
@@ -1656,35 +1644,35 @@
       }
     ],
     "auction_core_question": "Can private markets continue absorbing duration while monetary policy remains restrictive, without destabilizing the long end?",
-    "auction_summary_verdict": "HISTORICAL: the five most recent auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19, 3Y Sep 8, and now 10Y Sep 9) have all cleared cleanly, with no tails -- the Sep 9 10Y reopening notably beat the trailing 6-auction average on every metric (BTC 2.71 vs 2.62, dealer take 4.3% vs 7.7%, indirect 79.0% vs 63.5%), the strongest print of the cycle. FORWARD: today's 30Y reopening is the final REGIME VALIDATION test of the Sep 8-10 refunding cycle under the post-repricing, more-hawkish front-end configuration -- results pending (~1:00pm ET).",
+    "auction_summary_verdict": "HISTORICAL: the six most recent auctions (10Y Aug 12, 30Y Aug 13, 20Y Aug 19, 3Y Sep 8, 10Y Sep 9, and now 30Y Sep 10) have all cleared cleanly, with no tails -- the Sep 8-10 refunding cycle's two REGIME VALIDATION tests were the strongest of the stretch: 10Y Sep 9 (BTC 2.71, dealer 4.3%, indirect 79.0%) and 30Y Sep 10 (BTC 2.61, dealer 2.2% -- the lowest 30Y dealer take-down in the ledger, indirect 79.3%). FORWARD: the cycle is now fully closed; the next REGIME VALIDATION test is the 20Y reopening on Sep 15, alongside the Sep 15-16 FOMC meeting.",
     "momentum": {
       "monetary_restrictiveness": {
         "direction": "up",
         "label": "increasing",
-        "basis": "2Y yield +9.1bp today; 5Y real yield (DFII5) flat.",
+        "basis": "Curve backed up front-led into Friday's close (US02Y +10.3bp to 4.630%); DFII5 (primary real-rate signal) rose +12bp to 2.29%, now confirming the tightening move.",
         "horizon": "1D",
-        "horizon_note": "vs. yesterday's live pull"
+        "horizon_note": "vs. the prior (Sep 10) live pull"
       },
       "liquidity_resilience": {
         "direction": "up",
         "label": "strengthening",
-        "basis": "10Y auction cleared exceptionally healthy (BTC 2.71, dealer 4.3%, indirect 79.0%, strongest print in the ledger); HY OAS ticked down 1bp; credit-sensitive names mixed-to-calmer than yesterday.",
+        "basis": "30Y auction (Sep 10) cleared exceptionally healthy (BTC 2.61, dealer 2.2%, indirect 79.3%, lowest 30Y dealer take in the ledger), completing the Sep 8-10 cycle; TGA drew down -$84.6B w/w and reserves rose +$96.8B w/w.",
         "horizon": "1D",
-        "horizon_note": "vs. yesterday's live pull"
+        "horizon_note": "vs. the prior (Sep 10) live pull"
       },
       "state_confidence": {
         "direction": "flat",
         "label": "stable",
-        "basis": "No group-confirmed transition signal today -- moves stayed inside normal ranges across MOVE, HY OAS, and auction quality (which improved).",
+        "basis": "No group-confirmed transition signal -- MOVE ticked back above 80 but Group A (duration/Treasury stress) remains unconfirmed, so the risk-off threshold is not met.",
         "horizon": "1D",
-        "horizon_note": "vs. yesterday's live pull"
+        "horizon_note": "vs. the prior (Sep 10) live pull"
       },
       "mechanism_confidence": {
-        "direction": "flat",
-        "label": "stable",
-        "basis": "MMF/SOMA/bank/corporate demand all re-checked this run with no new prints -- no new structural evidence resolved.",
+        "direction": "up",
+        "label": "improving",
+        "basis": "Corporate Treasury demand refreshed with a new Q2 2026 print (Sep 11 release); NY Fed dealer inventory re-pulled (Sep 2 vintage) confirming the prior week's jump was a one-time settlement effect.",
         "horizon": "1D",
-        "horizon_note": "vs. yesterday's live pull"
+        "horizon_note": "vs. the prior (Sep 10) live pull"
       },
       "risk_off_distance": {
         "direction": "flat",
