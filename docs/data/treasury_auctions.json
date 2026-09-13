@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-10T14:11:53Z",
+    "last_updated": "2026-09-13T13:06:03.445Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ledger checked Sep 10 14:11 UTC -- the 10-Year reopening (91282CRF0, Sep 9) has settled and been added (BTC 2.71, dealer 4.30%, indirect 78.99% -- strongest 10-Year print in the ledger). The 30Y reopening (912810UW6, Sep 10) has NOT yet settled as of this pull (results typically post ~1:00pm ET, this pull was ~10:10am ET) -- it is the final REGIME VALIDATION test of the Sep 8-10 refunding cycle."
+    "note": "Ledger checked 2026-09-13 -- the 30Y reopening (912810UW6, Sep 10) has settled (BTC 2.61, dealer 2.20%, indirect 79.33%), completing the Sep 8-10 cycle cleanly. No new Note/Bond/TIPS auctions since. Next test: 20Y reopening, Sep 15."
   },
   "auctions": [
     {
@@ -246,15 +246,25 @@
       "indirect_pctile": null,
       "direct_pctile": null,
       "btc_pctile": null
-    }
-  ],
-  "pending": [
+    },
     {
       "cusip": "912810UW6",
       "type": "Bond",
       "term": "30-Year",
       "auctionDate": "2026-09-10",
-      "issueDate": "2026-09-15"
+      "issueDate": "2026-09-15",
+      "highYield": 5.308,
+      "bidToCover": 2.61,
+      "dealer_pct": 2.2,
+      "direct_pct": 18.27,
+      "indirect_pct": 79.33,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null,
+      "tail_bps": null,
+      "read": "Exceptionally healthy -- dealer take-down collapses to 2.20% (vs 9.2% at the Aug 13 30Y auction), best BTC of the cycle at 2.61, indirect demand 79.33%. Clears the final REGIME VALIDATION test of the Sep 8-10 cycle. No percentile -- only 1 comparable 30-Year auction in the ledger."
     }
-  ]
+  ],
+  "pending": []
 }
