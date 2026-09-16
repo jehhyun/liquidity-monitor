@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-15T17:23:41.403Z",
+    "last_updated": "2026-09-16T18:17:13.310Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ledger checked 2026-09-15 -- the 20Y reopening (912810UX4, Sep 15) has settled: BTC 2.57, dealer 16.74%, indirect 52.12% (weakest demand mix in the ledger, 100th/5th percentile vs trailing 20 comparable 19-20Y Bond auctions). Next test: 9Y10M Note reopening (91282CRE3), Sep 17."
+    "note": "Ledger checked 2026-09-16 -- backfilled two settled reopenings that were missing from the ledger: 10Y (91282CRF0, auctioned Sep 9, issued Sep 15, BTC 2.71, dealer 4.3%, indirect 79.0%) and 30Y (912810UW6, auctioned Sep 10, issued Sep 15, BTC 2.61, dealer 2.2%, indirect 79.3%) -- both exceptionally strong. The 20Y reopening (912810UX4, Sep 15) remains the weakest demand mix in the ledger (dealer 16.7%, indirect 52.1%). Next test: 9Y10M TIPS reopening (91282CRE3), Sep 17."
   },
   "auctions": [
     {
@@ -90,50 +90,53 @@
     {
       "cusip": "912810UX4",
       "type": "Bond",
-      "term": "20-Year",
-      "auctionDate": "2026-08-19",
-      "issueDate": null,
-      "highYield": 5.204,
-      "bidToCover": 2.53,
-      "dealer_pct": 10.9,
-      "direct_pct": 21.5,
-      "indirect_pct": 55.1,
-      "dealer_pctile": 45,
-      "indirect_pctile": 20,
-      "direct_pctile": 85,
-      "btc_pctile": 60
+      "term": "19-Year 11-Month (20Y reopening)",
+      "auctionDate": "2026-09-15",
+      "issueDate": "2026-09-18",
+      "highYield": 5.42,
+      "bidToCover": 2.57,
+      "dealer_pct": 16.74,
+      "direct_pct": 30.48,
+      "indirect_pct": 52.12,
+      "dealer_pctile": 100,
+      "indirect_pctile": 5,
+      "direct_pctile": 100,
+      "btc_pctile": 35,
+      "pctile_note": "Percentile vs trailing 20 comparable 19-20Y Bond auctions -- weakest demand mix in the ledger."
     },
     {
       "cusip": "912810UW6",
       "type": "Bond",
-      "term": "30-Year",
-      "auctionDate": "2026-08-13",
-      "issueDate": null,
-      "highYield": 5.216,
-      "bidToCover": 2.39,
-      "dealer_pct": 9.2,
-      "direct_pct": 17.2,
-      "indirect_pct": 53.1,
-      "dealer_pctile": 50,
-      "indirect_pctile": 40,
-      "direct_pctile": 70,
-      "btc_pctile": 50
+      "term": "29-Year 11-Month (30Y reopening)",
+      "auctionDate": "2026-09-10",
+      "issueDate": "2026-09-15",
+      "highYield": 5.308,
+      "bidToCover": 2.61,
+      "dealer_pct": 2.2,
+      "direct_pct": 18.27,
+      "indirect_pct": 79.33,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null,
+      "pctile_note": "Insufficient sample size in (Bond, ~30-Year) bucket for percentile ranking (need min 8). Raw metrics shown; no percentile assigned. Backfilled 2026-09-16 -- this reopening had settled but was not yet reflected in the ledger."
     },
     {
       "cusip": "91282CRF0",
       "type": "Note",
-      "term": "10-Year",
-      "auctionDate": "2026-08-12",
-      "issueDate": null,
-      "highYield": 4.683,
-      "bidToCover": 2.53,
-      "dealer_pct": 6.8,
-      "direct_pct": 11.7,
-      "indirect_pct": 61,
-      "dealer_pctile": 20,
-      "indirect_pctile": 65,
-      "direct_pctile": 5,
-      "btc_pctile": 75
+      "term": "9-Year 11-Month (10Y reopening)",
+      "auctionDate": "2026-09-09",
+      "issueDate": "2026-09-15",
+      "highYield": 4.834,
+      "bidToCover": 2.71,
+      "dealer_pct": 4.3,
+      "direct_pct": 16.46,
+      "indirect_pct": 78.99,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null,
+      "pctile_note": "Insufficient sample size in (Note, ~10-Year) bucket for percentile ranking (need min 8). Raw metrics shown; no percentile assigned. Backfilled 2026-09-16 -- this reopening had settled but was not yet reflected in the ledger."
     },
     {
       "cusip": "91282CRG8",
@@ -285,7 +288,7 @@
   "pending": [
     {
       "cusip": "91282CRE3",
-      "type": "Note",
+      "type": "TIPS",
       "term": "9-Year 10-Month (reopening)",
       "auctionDate": "2026-09-17",
       "issueDate": "2026-09-30"
