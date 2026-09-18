@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-09-18T13:10:58.028Z",
+  "last_updated": "2026-09-18T13:12:07.338Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Ledger checked 2026-09-18 -- ingested the Sep 17 9Y10M TIPS reopening (91282CRE3, first TIPS entry: BTC 2.24, dealer 10.5%, indirect 51.1%, real yield 2.653%). Picked up three newly announced coupon auctions (2Y 91282CRP8 Sep 22, 5Y 91282CRN3 Sep 23, 7Y 91282CRM5 Sep 24, all issuing Sep 30) -- not yet auctioned, tracked in latest.json's treasury_auctions.pending. The Sep 15 20Y reopening (912810UX4) remains the weakest demand mix in the ledger (dealer 16.7%, indirect 52.1%) and is still unconfirmed either way by a same-bucket follow-up; next test is the Sep 22-24 coupon trio."
+  "note": "Ledger checked 2026-09-18 -- ingested the Sep 17 9Y10M TIPS reopening (91282CRE3): BTC 2.24, dealer 10.5%, indirect 51.1%, real yield 2.653%. IMPORTANT: this CUSIP was already in the ledger from a Jul 23 2026 original new-issuance auction (BTC 2.30, dealer 8.8%, real yield 2.438%) -- kept as a separate entry (keyed on cusip+auctionDate) rather than deduped/overwritten by cusip alone, since a reopening legitimately reuses the original CUSIP but is a distinct auction event with its own results; collapsing on cusip alone would have silently destroyed the Jul 23 data point. Picked up three newly announced coupon auctions (2Y 91282CRP8 Sep 22, 5Y 91282CRN3 Sep 23, 7Y 91282CRM5 Sep 24, all issuing Sep 30) -- not yet auctioned, tracked in latest.json's treasury_auctions.pending. The Sep 15 20Y reopening (912810UX4) remains the weakest demand mix in the ledger (dealer 16.7%, indirect 52.1%) and is still unconfirmed either way; next test is the Sep 22-24 coupon trio."
  },
  "auctions": [
   {
@@ -283,6 +283,23 @@
    "indirect_pctile": 5,
    "direct_pctile": 100,
    "btc_pctile": 35
+  },
+  {
+   "cusip": "91282CRE3",
+   "type": "TIPS",
+   "term": "9-Year 10-Month (Sep 17 reopening -- distinct from the Jul 23 original new-issuance auction under the same CUSIP)",
+   "auctionDate": "2026-09-17",
+   "issueDate": "2026-09-30",
+   "highYield": 2.653,
+   "bidToCover": 2.24,
+   "dealer_pct": 10.52,
+   "direct_pct": 24.79,
+   "indirect_pct": 51.07,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "pctile_note": "First TIPS REOPENING logged distinctly in the ledger -- no trailing-20 comparable bucket yet. Note: the Jul 23 2026 original new-issuance auction of this same CUSIP (91282CRE3) is a separate, earlier entry -- kept, not overwritten, since it's a genuinely different auction event."
   }
  ],
  "pending": [
