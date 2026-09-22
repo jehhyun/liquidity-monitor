@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-21T15:25:16.848Z",
+    "last_updated": "2026-09-22T13:15:38.988Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Ledger checked 2026-09-21 -- no new Note/Bond/TIPS auctions found via TA_WS since the Sep 17 9Y10M TIPS reopening (91282CRE3) already in the ledger. The 2Y/5Y/7Y coupon trio (91282CRP8/CRN3/CRM5, Sep 22-24, all issuing Sep 30) remains pending -- not yet auctioned. The Sep 15 20Y reopening (912810UX4) remains the weakest demand mix in the ledger and is still unconfirmed either way; next test begins tomorrow."
+    "note": "Checked 2026-09-22: no new Note/Bond/TIPS auctions settled via TA_WS. Today's 2Y (91282CRP8, auctionDate Sep 22) has occurred but results not yet published (normal ~1pm ET timing, after this run's trigger) -- expect settlement data in tomorrow's run. 5Y (91282CRN3) auctions Sep 23, 7Y (91282CRM5) Sep 24."
   },
   "auctions": [
     {
