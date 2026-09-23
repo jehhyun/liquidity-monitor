@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-22T13:15:38.988Z",
+    "last_updated": "2026-09-23T13:35:23.689Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Checked 2026-09-22: no new Note/Bond/TIPS auctions settled via TA_WS. Today's 2Y (91282CRP8, auctionDate Sep 22) has occurred but results not yet published (normal ~1pm ET timing, after this run's trigger) -- expect settlement data in tomorrow's run. 5Y (91282CRN3) auctions Sep 23, 7Y (91282CRM5) Sep 24."
+    "note": "Checked 2026-09-23: ingested 2Y 91282CRP8 (Sep 22) -- 4.787%, BTC 2.63, dealer 11.25%, direct 24.74%, indirect 49.27%. 5Y (91282CRN3) auctions Sep 23 and 7Y (91282CRM5) Sep 24 -- results after this run trigger."
   },
   "auctions": [
     {
@@ -300,6 +300,22 @@
       "direct_pctile": null,
       "btc_pctile": null,
       "pctile_note": "First TIPS REOPENING logged distinctly in the ledger -- no trailing-20 comparable bucket yet. Note: the Jul 23 2026 original new-issuance auction of this same CUSIP (91282CRE3) is a separate, earlier entry -- kept, not overwritten, since it's a genuinely different auction event."
+    },
+    {
+      "cusip": "91282CRP8",
+      "type": "Note",
+      "term": "2-Year",
+      "auctionDate": "2026-09-22",
+      "issueDate": "2026-09-30",
+      "highYield": 4.787,
+      "bidToCover": 2.63,
+      "dealer_pct": 11.25,
+      "direct_pct": 24.74,
+      "indirect_pct": 49.27,
+      "dealer_pctile": 75,
+      "indirect_pctile": 10,
+      "direct_pctile": 35,
+      "btc_pctile": 50
     }
   ],
   "pending": [
@@ -309,6 +325,14 @@
       "term": "9-Year 10-Month (reopening)",
       "auctionDate": "2026-09-17",
       "issueDate": "2026-09-30"
+    },
+    {
+      "cusip": "91282CRP8",
+      "type": "Note",
+      "term": "2-Year",
+      "auctionDate": "2026-09-22",
+      "issueDate": "2026-09-30",
+      "note": "Results published; awaiting issue"
     }
   ]
 }
