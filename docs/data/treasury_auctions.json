@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-23T13:35:23.689Z",
+    "last_updated": "2026-09-24T13:42:51.267Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Checked 2026-09-23: ingested 2Y 91282CRP8 (Sep 22) -- 4.787%, BTC 2.63, dealer 11.25%, direct 24.74%, indirect 49.27%. 5Y (91282CRN3) auctions Sep 23 and 7Y (91282CRM5) Sep 24 -- results after this run trigger."
+    "note": "Checked 2026-09-24: ingested 5Y 91282CRN3 (Sep 23) -- 5.033%, BTC 2.21, dealer 13.65%, direct 25.88%, indirect 46.98% (BTC/indirect lowest of trailing 20 5Y; dealer 95th pctile). State -> Early Warning. 7Y (91282CRM5) auctions Sep 24 -- results after this run trigger."
   },
   "auctions": [
     {
@@ -316,6 +316,23 @@
       "indirect_pctile": 10,
       "direct_pctile": 35,
       "btc_pctile": 50
+    },
+    {
+      "cusip": "91282CRN3",
+      "type": "Note",
+      "term": "5-Year",
+      "auctionDate": "2026-09-23",
+      "issueDate": "2026-09-30",
+      "highYield": 5.033,
+      "bidToCover": 2.21,
+      "dealer_pct": 13.65,
+      "direct_pct": 25.88,
+      "indirect_pct": 46.98,
+      "dealer_pctile": 95,
+      "indirect_pctile": 0,
+      "direct_pctile": 75,
+      "btc_pctile": 0,
+      "pctile_note": "Percentiles vs trailing 20 5-Year auctions (TA_WS, n=20). BTC 2.21 and indirect 46.98% are below every one of the trailing 20 (prior range BTC 2.28-2.42, indirect 53.2-73.4%); dealer 13.65% exceeded by only one (14.1%). Shares computed on totalAccepted (incl. SOMA add-ons), consistent with prior ledger entries."
     }
   ],
   "pending": [
@@ -333,6 +350,22 @@
       "auctionDate": "2026-09-22",
       "issueDate": "2026-09-30",
       "note": "Results published; awaiting issue"
+    },
+    {
+      "cusip": "91282CRN3",
+      "type": "Note",
+      "term": "5-Year",
+      "auctionDate": "2026-09-23",
+      "issueDate": "2026-09-30",
+      "note": "Results published; awaiting issue"
+    },
+    {
+      "cusip": "91282CRM5",
+      "type": "Note",
+      "term": "7-Year",
+      "auctionDate": "2026-09-24",
+      "issueDate": "2026-09-30",
+      "note": "Auctions 1pm ET Sep 24 -- after this run"
     }
   ]
 }
