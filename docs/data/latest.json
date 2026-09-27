@@ -1,222 +1,222 @@
 {
  "meta": {
-  "pulled_at": "2026-09-25T15:46:25.000Z",
-  "pulled_at_cet": "Sep 25, 2026, 5:46 PM CEST",
+  "pulled_at": "2026-09-27T08:36:30.000Z",
+  "pulled_at_cet": "Sep 27, 2026, 10:36 AM CEST",
   "version": "2.2",
-  "source": "FULL refresh: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + TradingView \"Liquidity Monitor - Jae\" watchlist (38 symbols, live) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (7Y 91282CRM5 results ingested) -- sourced via the Claude in Chrome extension.",
-  "labor_day_note": "Full weekday refresh (~17:46 CET / 11:46 ET). The 7Y auction (91282CRM5, Sep 24) settled DECENT: 5.085% high yield, BTC 2.42, dealer 10.76%, indirect 49.13% -- better than the weak 5Y on BTC/dealer, but indirect stays soft vs the two comparable 7Y prints in the ledger (53.7%/63.0%), extending the pattern of thinning indirect demand across the whole Sep 22-24 Note trio (2Y 49.3%, 5Y 47.0%, 7Y 49.1%). Treasury module HOLDS at EARLY WARNING -- no third weak print to escalate to Intermediation Stress, but no clean auction to downgrade either. Separately, bond markets kept selling off into today's session regardless of the decent 7Y: US10Y +11.1bp to 5.207%, US30Y +11.7bp to 5.515% -- CROSSING the 5.5% long-end stress line for the first time -- and MOVE spiked a further +9.56% to 104.58, a second consecutive session above 80 and now above 100. Real yields extended their surge (DFII5 2.51%->2.65%, DFII10 2.63%->2.76%) while breakevens stayed flat -- still a real-rate/term-premium story, not inflation. Yet credit (HY OAS ~2.8%, +12bp), USD (DXY -0.17%), FX (USDJPY/USDKRW both easing further from their stress thresholds) and equities (SPY/QQQ/SOXX all higher) are NOT confirming a broad risk-off -- this remains a rates-market-specific stress that has not spread. Korea reopened after Chuseok: KOSPI live again, gate holds 3/3."
+  "source": "FULL refresh: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + TradingView \"Liquidity Monitor - Jae\" watchlist (38 symbols) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (checked, no new auctions) -- sourced via the Claude in Chrome extension. Pulled Sunday; markets closed, so curve/FX/equities reflect Friday Sep 25's FINAL close (vs the prior run's ~15:46 CET intraday snapshot).",
+  "labor_day_note": "Weekend refresh (pulled Sun Sep 27, ~10:36 CET). No new Treasury auctions settled (none scheduled over the weekend) -- the Treasury Auction module is carried forward unchanged at EARLY WARNING, last auction still the Sep 24 7Y (91282CRM5). Two genuine new data points did land since the prior run: (1) H.8 finally posted the Sep 16 bank Treasury+agency vintage -- $4,792.3B, down -$9.1B (-0.19%) w/w from the Sep 9 print ($4,801.3B), now -0.95% off the Jul 29 peak; (2) RRP's Sep 25 daily print ticked to $0.58B (from $0.63B), buffer still effectively empty. The bigger story is Friday's session finishing calmer than it started: MOVE fell -8.2% to 96.00 (from 104.58 at the prior run) -- still elevated but no longer above 100 -- and the curve pulled back 2.5-4.1bp across the belly and long end, with US30Y closing at 5.490%, BACK BELOW the 5.5% long-end stress line it had breached intraday. VIX eased further to 14.88. Korea's gate strengthened further (EWY's SMA20 margin widened from 1.82 to 3.86). Credit and equities stayed calm-to-firm throughout. Net read: Friday's stress episode looks like it partially unwound into the close rather than escalating -- 'Long-End Stress Confirmed' is no longer active on today's levels, though the underlying auction-demand picture (three straight thin-indirect Note prints) is unchanged and keeps the Treasury module at Early Warning."
  },
  "scores": {
   "liquidity": {
-   "value": 45,
+   "value": 44,
    "color": "amber",
-   "trend_label": "Deteriorating",
-   "trend_wk": -9,
-   "label": "7Y auction (91282CRM5) was NOT weak on BTC (2.42) or dealer take (10.76%), but indirect demand stayed soft (49.1%) -- the third straight Note auction with thinning indirect take (2Y 49.3%, 5Y 47.0%, 7Y 49.1%). Treasury module holds at EARLY WARNING (no third weak print to escalate, no clean print to downgrade). Separately, H.4.1 finally updated: TGA jumped to $977.1B (from $877.0B, +$100B w/w) draining reserves to $2.930T (from $3.014T) -- a genuine liquidity drain independent of the auction story. RRP buffer still empty ($0.63B). Funding normal (SOFR-IORB -2bp).",
+   "trend_label": "Stable",
+   "trend_wk": -8,
+   "label": "New H.8 vintage (Sep 16): bank Treasury+agency holdings dip to $4,792.3B, -$9.1B (-0.19%) w/w from $4,801.3B -- a mild pullback after two weekly gains, now -0.95% off the Jul 29 peak. TGA/reserves unchanged at the Sep 23 vintage ($977.1B / $2.930T); RRP's new Sep 25 print ticked to $0.58B, buffer still empty. No new Treasury auctions over the weekend -- module holds at Early Warning. Funding normal (SOFR-IORB -2bp).",
    "decomp": [
     [
-     "7Y decent on BTC/dealer but indirect stays soft -- third straight thin-indirect Note print, module holds at Early Warning",
-     -5
+     "Bank demand ticks down -0.19% w/w to the new Sep 16 vintage ($4,792.3B) -- mild pullback, not a trend break",
+     -2
     ],
     [
-     "TGA rebuilds +$100B w/w (H.4.1 finally updated) -- drains reserves to $2.930T",
-     -3
+     "TGA/reserves unchanged at Sep 23 vintage ($977.1B / $2.930T) -- no new drain this run",
+     0
+    ],
+    [
+     "RRP $0.58B (new Sep 25 print, from $0.63B) -- still no slack either way",
+     0
     ],
     [
      "SOFR-IORB -2bp -- funding unstressed",
      0
     ],
     [
-     "RRP buffer $0.63B -- still no slack",
-     0
-    ],
-    [
-     "Bank Treasury/agency holdings unchanged at Sep 9 vintage (+$0.9B w/w), H.8 due today 4:15pm ET",
+     "No new Treasury auctions over the weekend -- module holds at Early Warning, unchanged",
      1
     ]
    ]
   },
   "credit": {
-   "value": 53,
-   "color": "amber",
-   "trend_label": "Stable",
-   "trend_wk": -5,
-   "label": "HY OAS drifts a touch wider to ~2.8% (est., +~12bp) -- still far under the 3.5% stress line. HYG -0.21%, ALLY -0.70%, CACC +1.11%, COF +0.55% -- mixed, no directional credit stress. MOVE stays the drag, now at 104.58 (a second session above 80, further above it than yesterday's 95.45).",
+   "value": 58,
+   "color": "green",
+   "trend_label": "Improving",
+   "trend_wk": 2,
+   "label": "MOVE's sharp -8.2% pullback to 96.00 (from 104.58) removes the biggest drag on this score. HY OAS roughly flat (~2.8%), HYG +0.18%, and ALLY/CACC/COF all firmer (+0.83%/+0.40%/+1.26%) into Friday's close -- credit stayed calm to slightly firmer with no contagion from the bond-vol spike.",
    "decomp": [
     [
-     "HY OAS ~2.8% (+~12bp) -- drifting wider but far from the 3.5% stress line",
+     "MOVE falls -8.2% to 96.00 -- no longer above 100, though still above the 80 stress line",
+     5
+    ],
+    [
+     "HY OAS ~2.8%, essentially flat -- still far under the 3.5% stress line",
      0
     ],
     [
-     "MOVE 104.58 (+9.6% today, second session >80) -- bond-vol drag intensifies",
-     -3
-    ],
-    [
-     "ALLY/CACC/COF mixed (-0.70% to +1.11%), HYG -0.21% -- no directional credit contagion",
-     -1
+     "ALLY +0.83%, CACC +0.40%, COF +1.26%, HYG +0.18% -- broadly firmer, no directional stress",
+     1
     ]
    ]
   },
   "inflation": {
-   "value": 52,
+   "value": 53,
    "color": "amber",
    "trend_label": "Stable",
-   "trend_wk": -1,
-   "label": "Oil essentially flat ($93.96, -0.69% today, -0.02% vs the prior run) -- no reacceleration signal. Breakevens flat-to-down (T5YIE 2.33%, T10YIE 2.33%, both -1 to -2bp) even as nominal yields and DFII5/10 surge further -- confirms the move is real-rate/term-premium, not inflation. EXPINF2YR ticks up to 2.63% (secondary/experimental proxy).",
+   "trend_wk": 0,
+   "label": "Oil eases a further -1.65% to $92.41 (from $93.96) -- still no reacceleration signal. Breakevens ticked up marginally (T5YIE/T10YIE both 2.34%, +1bp) while DFII5/DFII10 pushed higher again (2.70%/2.85% live) -- the gap continues to confirm a real-rate story, not an inflation scare. EXPINF2YR unchanged at 2.63%.",
    "decomp": [
     [
-     "Oil flat at $93.96 -- no single-day or multi-day reacceleration signal",
+     "Oil down a further -1.65% to $92.41 -- disinflationary, no reacceleration signal",
      1
     ],
     [
-     "Breakevens flat-to-down while nominals surge -- inflation expectations well anchored despite the rates shock",
-     2
+     "Breakevens tick up only 1bp each while real yields keep rising -- inflation expectations still anchored",
+     1
     ],
     [
-     "DFII5/DFII10 continue higher (2.65%/2.76% live) -- real-rate story, not read as an inflation score negative",
+     "DFII5/DFII10 higher again (2.70%/2.85% live) -- real-rate story, not scored as an inflation negative",
      0
     ],
     [
-     "EXPINF2YR +0.15% to 2.63% -- monthly proxy, low weight",
-     -1
+     "EXPINF2YR unchanged at 2.63% -- secondary/experimental proxy, no signal",
+     0
     ]
    ]
   },
   "vol": {
-   "value": 47,
+   "value": 58,
    "color": "amber",
-   "trend_label": "Deteriorating",
-   "trend_wk": -26,
-   "label": "MOVE spikes a further +9.6% to 104.58 -- a second consecutive session above 80 and now above 100 for the first time this cycle, even as the 7Y auction cleared decently. VIX actually eases to 15.45 (-1.5%), and broad Asia risk-on today (NI225 +1.30%, KOSPI +0.90%, EWY +1.39%) -- no regional equity risk-off. USDJPY 157.41 moves further from the 162 BOJ threshold. This reads as a bond-market-specific vol event, not a cross-asset one.",
+   "trend_label": "Improving",
+   "trend_wk": -15,
+   "label": "MOVE drops -8.2% to 96.00 into Friday's close -- still elevated and above the 80 stress line, but no longer above 100 for the first time since the spike began. VIX eases further to 14.88 (-3.7%). USDJPY (157.30) and USDKRW (1,355.28) both drift further from their stress thresholds, and Asia closed calm-to-firm (KOSPI +0.90% for the week, EWY +2.55%, NI225 flat). This reads as the bond-vol event cooling rather than spreading.",
    "decomp": [
     [
-     "MOVE 104.58 (+9.6%) -- second session above 80, now above 100",
-     -6
+     "MOVE 96.00 (-8.2%) -- pulls back below 100, though still above the 80 stress line",
+     8
     ],
     [
-     "VIX 15.45 (-1.5%) -- equity vol calm, decoupled from bond vol",
+     "VIX 14.88 (-3.7%) -- equity vol stays calm and eases further",
      1
     ],
     [
-     "USDJPY 157.41 -- 4.59 yen below the 162 BOJ threshold, moving further away",
+     "USDJPY 157.30 -- 4.7 yen below the 162 BOJ threshold, still widening",
      1
     ],
     [
-     "NI225 +1.30%, KOSPI +0.90%, EWY +1.39% -- broad Asia risk-ON, no regional contagion",
+     "KOSPI/EWY/NI225 calm-to-firm into the close -- no regional risk-off",
      1
     ]
    ]
   }
  },
- "regime_confidence": 42,
+ "regime_confidence": 50,
  "confidence_meta": {
   "base": 55,
-  "catalyst_within_48h": -8,
+  "catalyst_within_48h": 0,
   "move_over_80": -5,
   "scores_split_2_2": 0,
   "floor": 25,
-  "note": "Base 55% - 8% (H.8 bank Treasury/agency holdings due today 4:15pm ET, within 48h) - 5% (MOVE 104.58 > 80) - 0% (no clean 2-2 split: liquidity/vol Deteriorating, credit/inflation ~Stable) = 42%."
+  "note": "Base 55% - 0% (the H.8 catalyst the prior run was counting down to has now posted; next catalyst, H.4.1 on Oct 1, is >48h out) - 5% (MOVE 96.00 still > 80) - 0% (no clean 2-2 split: credit and vol improving, liquidity and inflation roughly stable) = 50%."
  },
  "structured_conclusion": {
   "structural_liquidity": "Neutral",
-  "short_term_conditions": "Deteriorating",
+  "short_term_conditions": "Improving",
   "long_term_conditions": "Restrictive",
-  "macro_trend": "The 7Y auction (91282CRM5, Sep 24) cleared decently -- BTC 2.42, dealer 10.76% -- but indirect take (49.1%) stayed soft, the third straight Note auction (2Y 49.3%, 5Y 47.0%, 7Y 49.1%) with thinning indirect demand. Treasury module holds at EARLY WARNING. Independently, bond markets kept selling off into today's session: US10Y +11.1bp to 5.207%, US30Y +11.7bp to 5.515% -- crossing the 5.5% long-end stress line for the first time -- and MOVE spiked a further +9.6% to 104.58, a second consecutive session above 80. Real yields extended their surge (DFII5 2.51%->2.65% live, DFII10 2.63%->2.76% live) while breakevens stayed flat, confirming a real-rate/term-premium story rather than inflation. H.4.1 finally updated: TGA rebuilt +$100B w/w to $977.1B, draining reserves to $2.930T. Yet credit (HY OAS ~2.8%), USD (DXY -0.17%), FX (USDJPY/USDKRW both easing) and equities (SPY/QQQ/SOXX all higher, Asia broadly risk-on) are not confirming a broad risk-off -- the stress remains concentrated in duration and bond vol.",
-  "likely_rotation": "Equities are shrugging off the bond-vol spike for now: SOXX +0.74%, QQQ +0.09%, SPY +0.13%, DRAM +0.97%, EWY +1.39%, NI225 +1.30%, KOSPI +0.90% all firmer today. The pain trade stays concentrated in long duration itself (TLT -0.51%, -1.7% since the 5Y auction) rather than in duration-sensitive equities. Energy/oil flat, gold roughly flat. If MOVE keeps rising without credit or equities following, this looks like a bond-market normalization (term premium re-rating) that risk assets can absorb, not yet the start of a Liquidity Shock.",
-  "risk_level": "High",
-  "next_catalyst": "H.8 bank Treasury/agency holdings, today Sep 25, 4:15pm ET (0 days) -- did banks absorb the coupon supply?",
-  "korea_gate": "3/3 -- OPEN (EWY 185.03 vs SMA20 183.21, margin 1.82; USDKRW 1,357.68 well below 1,530; KOSPI 7,080.92 -- live again after Chuseok -- above its 5-day SMA 6,943.24)"
+  "macro_trend": "Friday's session finished calmer than it started. Since the prior run's intraday snapshot, MOVE fell -8.2% to 96.00 and the curve pulled back 2.5-4.1bp across the belly and long end -- US30Y closed at 5.490%, back BELOW the 5.5% long-end stress line it had breached intraday, and US10Y closed at 5.167%. VIX eased further to 14.88. Real yields (DFII5/DFII10) still pushed to fresh cycle highs (2.70%/2.85% live) with breakevens only ticking up 1bp -- still a real-rate/term-premium story, not inflation. Two genuine data updates landed over the weekend window: H.8 finally posted the Sep 16 bank Treasury+agency vintage, down -0.19% w/w to $4,792.3B; and RRP's Sep 25 daily print ticked to $0.58B. No new Treasury auctions settled (none scheduled over the weekend) -- the module holds at EARLY WARNING on the unchanged Sep 24 7Y result. Credit, funding, USD and equities (US and Asia) stayed calm-to-firm throughout, and Korea's gate strengthened further.",
+  "likely_rotation": "Friday's close confirmed the risk-on lean into the weekend: SOXX +0.42%, QQQ +0.37%, SPY +0.41%, DRAM +1.6% vs the prior run, EWY +1.2%, and Korea/Japan holding firm. Long duration itself (TLT +0.38% vs the prior run) actually recovered as yields pulled back, easing the pain trade rather than extending it. With the long end back under 5.5% and MOVE below 100, the setup looks more like a partial unwind of Friday's rates stress than a broadening risk-off -- watch whether Monday's open holds these levels or reopens the selloff.",
+  "risk_level": "Medium",
+  "next_catalyst": "H.4.1 (WALCL/TGA/reserves), Thu Oct 1, ~4:30pm ET (4 days) -- first reserves print since the TGA rebuild.",
+  "korea_gate": "3/3 -- OPEN (EWY 187.18 vs SMA20 183.32, margin 3.86, wider than 1.82 at the prior run; USDKRW 1,355.28 well below 1,530; KOSPI 7,080.93 above its 5-day SMA 6,943.24)"
  },
- "bias": "Financial conditions are being pulled in two directions at once. The Treasury-demand story from earlier in the week held rather than resolved -- the 7Y cleared decently on price (BTC 2.42, dealer 10.76%) but indirect demand stayed thin for a third straight Note auction, and the Treasury module remains at EARLY WARNING. Independently, the bond market kept selling off: the 30Y crossed the 5.5% stress line for the first time this cycle and MOVE pushed above 100. But none of the standard confirmation channels are following -- credit is barely wider, funding is normal, the dollar eased, and equities (including Asia) are broadly higher. That combination reads as a genuine but so-far self-contained rates-market repricing rather than a system-wide liquidity event. The next test is whether credit, funding or equities start reacting to a 30Y above 5.5% and a MOVE above 100, or whether this settles as a one-off term-premium adjustment.",
+ "bias": "Friday's late-session price action reads as a partial unwind rather than an escalation. The Treasury-demand story held exactly where it was -- three straight Note auctions with thin indirect demand, module still at Early Warning, no new auctions over the weekend to move it either way. But the acute bond-market stress that had pushed the 30Y through 5.5% and MOVE above 100 eased into the close: yields pulled back 2.5-4.1bp across the belly/long end, the 30Y ended back under the 5.5% stress line, and MOVE dropped -8.2% to 96.00. None of the standard confirmation channels ever joined in the first place -- credit stayed calm, funding stayed normal, the dollar was flat, and equities (including Asia) firmed further. On top of that, the one new structural data point (H.8's Sep 16 bank-demand vintage) ticked down only marginally (-0.19% w/w). Taken together, this looks like a rates-market repricing that has, for now, stopped short of the long-end stress line rather than one that broke through it and kept going. The open question into next week is whether Monday's session holds these calmer levels or reopens the selloff.",
  "counterargs": {
   "supporting": [
-   "30Y crosses 5.5% for the first time this cycle (5.515%, +11.7bp) -- the long-end stress line is now breached, not just approached",
-   "MOVE spikes a further +9.6% to 104.58 -- second consecutive session above 80, now above 100",
-   "Indirect demand thin for a third straight Note auction (2Y 49.3%, 5Y 47.0%, 7Y 49.1%) -- a persistent pattern, not a one-off",
-   "TGA rebuilds +$100B w/w (H.4.1 finally updated), draining reserves to $2.930T -- a genuine structural liquidity drain",
-   "Real yields extend their surge (DFII5/DFII10 live readings up ~14bp/~13bp) with breakevens flat -- real-rate pressure intensifying, per the James framework"
+   "MOVE still elevated at 96.00 -- above the 80 stress threshold even after the -8.2% pullback",
+   "Indirect demand thin for three straight Note auctions (2Y 49.3%, 5Y 47.0%, 7Y 49.1%) -- unresolved, no new print to clear it",
+   "Bank Treasury+agency demand ticks down -0.19% w/w to a new cycle-adjacent low ($4,792.3B, -0.95% off the Jul 29 peak)",
+   "Real yields (DFII5/DFII10) pushed to fresh cycle highs (2.70%/2.85% live) even as nominal yields eased",
+   "TGA/reserves still at the drained Sep 23 level ($977.1B / $2.930T) -- no new print to confirm a reversal"
   ],
   "against": [
-   "7Y auction (91282CRM5) was NOT weak on the metrics that matter most for dealer stress -- BTC 2.42 and dealer 10.76% both reasonable",
-   "Credit calm -- HY OAS still well under 3.5%, ALLY/CACC/COF mixed but not directional, HYG only -0.21%",
-   "Funding normal -- SOFR-IORB -2bp, no repo corroboration whatsoever",
-   "USD eased (DXY -0.17%), USDJPY and USDKRW both moved further from their stress thresholds -- the FX/carry leg is not confirming",
-   "Equities broadly higher including Asia (SPY/QQQ/SOXX/EWY/NI225/KOSPI all up) -- no risk-off in the asset classes that would matter most"
+   "US30Y closed back below the 5.5% long-end stress line (5.490%) after breaching it intraday -- the technical trigger is no longer active",
+   "MOVE fell -8.2% into the close, its largest single-session improvement this cycle",
+   "Curve pulled back 2.5-4.1bp across the belly and long end -- a broad, not narrow, de-escalation",
+   "Credit, funding, USD and equities (US and Asia) stayed calm-to-firm throughout -- no channel ever confirmed the stress",
+   "Korea's gate strengthened further (EWY SMA20 margin widens to 3.86 from 1.82) -- risk appetite intact"
   ],
-  "read": "The evidence continues to point at a rates-market-specific event: the long end has now technically breached the stress line the framework was watching, and bond vol keeps climbing, but every other transmission channel -- credit, funding, USD, and equities -- is calm or improving. That is consistent with a term-premium/real-rate repricing that the rest of the system can absorb, not (yet) a liquidity or credit event. The call is to keep Treasury EARLY WARNING in place (confirmed by three straight thin-indirect Note auctions) without escalating to Intermediation Stress, and to watch whether credit or equities start reacting to a 30Y above 5.5% before revising that read."
+  "read": "The weight of Friday's own closing evidence favors de-escalation over confirmation: the specific technical trigger this framework was watching (30Y > 5.5%) is no longer active, and the move to get there partially reversed within the same session on a MOVE decline. But the underlying auction-demand weakness (three straight thin-indirect prints) and the fresh dip in bank Treasury demand are still live, unresolved threads with no new print this weekend to clear them. The right read is to keep the Treasury module at Early Warning -- unchanged, not downgraded -- while treating the long-end breach as a within-session event rather than a new steady state, and to watch whether Monday holds Friday's closing levels."
  },
  "trade_table": [
   {
    "theme": "Long-End Treasuries (30Y)",
-   "signal": "30Y crosses 5.5% for the first time this cycle (5.515%)",
-   "signal_color": "red",
-   "conviction": 4,
+   "signal": "Closed back below 5.5% after breaching it intraday (5.490%)",
+   "signal_color": "amber",
+   "conviction": 3,
    "horizon": "days",
-   "rationale": "US30Y +11.7bp to 5.515%, breaching the long-end stress line the framework has been watching since early Sep. Combined with MOVE >80, this technically satisfies the 'Long-End Stress Confirmed' condition for the first time."
+   "rationale": "US30Y pulled back 2.5bp from the prior run's 5.515% to close at 5.490%, back under the long-end stress line. The breach did not hold into the close -- watch whether Monday reopens above or below 5.5%."
   },
   {
    "theme": "Rates Vol (MOVE/VIX)",
-   "signal": "MOVE +9.6% further to 104.58 -- second session above 80",
-   "signal_color": "red",
-   "conviction": 3,
+   "signal": "MOVE -8.2% to 96.00 -- largest single-session improvement this cycle",
+   "signal_color": "amber",
+   "conviction": 2,
    "horizon": "days",
-   "rationale": "MOVE now above 100 for the first time this cycle; VIX calm at 15.45 (-1.5%). Bond vol is decoupled from equity vol -- a rates-specific stress signature."
+   "rationale": "MOVE falls back below 100 but stays above the 80 stress threshold; VIX eases further to 14.88. Bond vol cooling, not yet normalized."
   },
   {
    "theme": "Treasury Auctions",
-   "signal": "EARLY WARNING holds -- 7Y decent on price, indirect stays thin (3rd straight)",
+   "signal": "EARLY WARNING holds, unchanged -- no new auctions over the weekend",
    "signal_color": "amber",
    "conviction": 3,
    "horizon": "weeks",
-   "rationale": "7Y (91282CRM5): BTC 2.42, dealer 10.76%, indirect 49.13%. Not weak enough to escalate to Intermediation Stress, not clean enough to downgrade from Early Warning."
+   "rationale": "Last print still the Sep 24 7Y (91282CRM5): BTC 2.42, dealer 10.76%, indirect 49.13%. Module unchanged pending the next coupon cycle."
+  },
+  {
+   "theme": "Bank Treasury Demand",
+   "signal": "New Sep 16 vintage ticks down -0.19% w/w to $4,792.3B",
+   "signal_color": "amber",
+   "conviction": 2,
+   "horizon": "weeks",
+   "rationale": "Down from $4,801.3B (Sep 9), now -0.95% off the Jul 29 peak ($4,838.2B). A mild pullback after two weekly gains, not yet a trend break."
   },
   {
    "theme": "Equities / Risk Assets",
-   "signal": "Broadly higher, including Asia -- not confirming the bond-vol stress",
+   "signal": "Broadly firmer into the close, including Asia",
    "signal_color": "green",
    "conviction": 2,
    "horizon": "days",
-   "rationale": "SPY +0.13%, QQQ +0.09%, SOXX +0.74%, NI225 +1.30%, KOSPI +0.90%, EWY +1.39%. Duration itself (TLT -0.51%) is the pain trade, not duration-sensitive equities."
+   "rationale": "SPY +0.41%, QQQ +0.37%, SOXX +0.42% vs the prior run; EWY +1.2%, KOSPI/NI225 firm. No confirmation of the bond-vol stress at any point."
   },
   {
    "theme": "Korea (EWY/KOSPI)",
-   "signal": "Gate OPEN 3/3, KOSPI live again after Chuseok",
+   "signal": "Gate OPEN 3/3, margin strengthens further",
    "signal_color": "green",
    "conviction": 2,
    "horizon": "days",
-   "rationale": "EWY 185.03 (+1.39%) vs SMA20 183.21 (margin 1.82, wider than the 1.56 prior run); USDKRW 1,357.68; KOSPI 7,080.92 above its fresh 5-day SMA 6,943.24."
-  },
-  {
-   "theme": "Credit (ALLY/CACC/COF)",
-   "signal": "Calm, mixed -- no contagion from the bond-vol/rates shock",
-   "signal_color": "green",
-   "conviction": 2,
-   "horizon": "days",
-   "rationale": "HY OAS ~2.8% (+~12bp), still far under 3.5%. ALLY -0.70%, CACC +1.11%, COF +0.55%, HYG -0.21% -- no directional stress."
+   "rationale": "EWY 187.18 vs SMA20 183.32 (margin 3.86, up from 1.82); USDKRW 1,355.28; KOSPI 7,080.93 above its 5-day SMA 6,943.24."
   }
  ],
  "catalysts": [
   {
-   "date": "Sep 25",
-   "days": 0,
-   "event": "H.8 bank Treasury/agency holdings",
-   "note": "Today, ~4:15pm ET -- next weekly bank-demand read (currently Sep 9 vintage). Did banks absorb the Sep coupon supply?",
+   "date": "Oct 1",
+   "days": 4,
+   "event": "H.4.1 (WALCL/TGA/reserves)",
+   "note": "Next weekly balance-sheet print -- first reserves read since the TGA rebuild to $977.1B / reserves to $2.930T.",
    "stars": 3,
    "type": "Data",
    "type_color": "amber"
   },
   {
-   "date": "Sep 25",
-   "days": 0,
-   "event": "H.4.1 (WALCL/TGA/reserves) -- next weekly print",
-   "note": "This run already reflects the Sep 23 H.4.1 vintage (TGA $977.1B, reserves $2.930T); next release is next Thursday.",
+   "date": "Oct 2",
+   "days": 5,
+   "event": "H.8 bank Treasury/agency holdings -- next weekly print",
+   "note": "This run already reflects the new Sep 16 vintage ($4,792.3B, -0.19% w/w); next release due Oct 2.",
    "stars": 2,
    "type": "Data",
    "type_color": "grey"
   },
   {
    "date": "Oct 14",
-   "days": 19,
+   "days": 17,
    "event": "CPI, September",
    "note": "First CPI print after the Sep 16 hike. August CPI: headline +0.4% m/m (gas-driven, YoY 3.4%), core cooled to 2.4% YoY.",
    "stars": 3,
@@ -232,9 +232,9 @@
   "reserves_t": 2.93,
   "reserves_color": "amber",
   "reserves_delta": "$2.930T (Sep 23 H.4.1, from $3.014T) -- down ~$84B w/w as TGA rebuilds",
-  "rrp_b": 0.63,
+  "rrp_b": 0.576,
   "rrp_color": "amber",
-  "rrp_delta": "$0.63B (Sep 24 daily print) -- buffer effectively empty",
+  "rrp_delta": "$0.58B (Sep 25 daily print, from $0.63B) -- buffer still effectively empty",
   "sofr_pct": 3.88,
   "sofr_color": "green",
   "sofr_delta": "3.88% (Sep 24 print) -- unchanged, funding normal",
@@ -245,253 +245,253 @@
   "net_liquidity_t": 5.77
  },
  "duration": {
-  "tlt": 79.02,
-  "tlt_color": "red",
-  "tlt_delta": "-0.51% today; -1.7% since the 5Y auction as long yields keep rising",
-  "shy": 81.16,
+  "tlt": 79.32,
+  "tlt_color": "green",
+  "tlt_delta": "+0.38% vs the prior run as long yields pulled back into the close",
+  "shy": 81.21,
   "shy_color": "grey",
-  "shy_delta": "+0.08% today",
-  "tlt_shy_ratio": 0.97363,
-  "hyg": 77.72,
-  "hyg_color": "amber",
-  "hyg_delta": "-0.21% today",
-  "move": 104.5805,
-  "move_color": "red",
-  "move_delta": "+9.56% further to 104.58 -- second consecutive session above 80, now above 100 for the first time this cycle",
-  "t10yie": 2.33,
+  "shy_delta": "+0.06% vs the prior run",
+  "tlt_shy_ratio": 0.97673,
+  "hyg": 77.86,
+  "hyg_color": "green",
+  "hyg_delta": "+0.18% vs the prior run",
+  "move": 96.0025,
+  "move_color": "amber",
+  "move_delta": "-8.20% to 96.00 -- back below 100, still above the 80 stress line",
+  "t10yie": 2.34,
   "t10yie_color": "amber",
-  "t10yie_delta": "-2bp today -- breakevens easing slightly even as nominals rise",
-  "real_yield": 2.65
+  "t10yie_delta": "+1bp vs the prior run -- still anchored",
+  "real_yield": 2.7
  },
  "duration_score": {
-  "score": -3,
-  "label": "NEGATIVE -- LONG END CROSSES 5.5% STRESS LINE, MOVE ABOVE 100, BUT CREDIT/EQUITIES STILL CALM",
-  "note": "US10Y +11.1bp to 5.207%, US30Y +11.7bp to 5.515% -- the 30Y crosses the 5.5% long-end stress line the framework has been watching, for the first time this cycle. MOVE +9.6% further to 104.58, a second session above 80. Breakevens ticked down slightly (T5YIE/T10YIE both -1 to -2bp) so this remains a real-rate/term-premium move, not inflation -- DFII5/DFII10 live readings up to 2.65%/2.76%. Credit (HY OAS ~2.8%) and equities (SPY/QQQ/SOXX all higher) are not confirming, so this stays short of the recession-fear case. Score -3 from -2. James-framework check: real-2Y proxy (US02Y - EXPINF2YR) at 2.26%, similar to the prior run -- real-rate pressure persists but isn't accelerating at the front end the way it is at the long end. Watch signal: if nominal 2Y starts falling, transition to the cuts/growth-scare read."
+  "score": -1,
+  "label": "NEGATIVE BUT EASING -- LONG END CLOSES BACK BELOW 5.5%, MOVE PULLS BACK BELOW 100",
+  "note": "US10Y -4.0bp to 5.167%, US30Y -2.5bp to 5.490% vs the prior run -- the 30Y closes back BELOW the 5.5% long-end stress line it had breached intraday. MOVE fell -8.2% further to 96.00, its largest single-session improvement this cycle, though still above the 80 stress threshold. Breakevens ticked up only 1bp (T5YIE/T10YIE both 2.34%) while DFII5/DFII10 pushed to fresh cycle highs (2.70%/2.85% live) -- still a real-rate/term-premium move, not inflation. Credit and equities stayed calm-to-firm throughout. Score improves to -1 from -3. James-framework check: real-2Y proxy (US02Y - EXPINF2YR) eases to 2.23% (from 2.26%) -- real-rate pressure at the front end easing slightly in step with the broader pullback. Watch signal unchanged: if nominal 2Y starts falling further, shift toward the cuts/growth-scare read."
  },
  "breakevens": {
-  "dfii5": 2.65,
-  "dfii10": 2.76,
+  "dfii5": 2.7,
+  "dfii10": 2.85,
   "t5yie": {
-   "value": 2.33,
+   "value": 2.34,
    "color": "amber",
    "label": "5Y breakeven",
    "trend_label": "Stable",
-   "note": "-1bp today -- anchored"
+   "note": "+1bp vs the prior run -- anchored"
   },
   "t10yie": {
-   "value": 2.33,
+   "value": 2.34,
    "color": "amber",
    "label": "10Y breakeven",
    "trend_label": "Stable",
-   "note": "-2bp today -- far smaller than the nominal move, confirming a real-rate story"
+   "note": "+1bp vs the prior run -- still far smaller than the real-yield move"
   },
   "expinf2yr": {
    "value": 2.63,
    "color": "amber",
    "label": "2Y expected inflation",
    "trend_label": "Stable",
-   "note": "+0.15% -- monthly Cleveland Fed model, secondary/experimental proxy"
+   "note": "Unchanged at 2.63% -- monthly Cleveland Fed model, secondary/experimental proxy"
   },
-  "source_note": "DFII5 2.65% / DFII10 2.76% (live TradingView watchlist reads, now the highest of the cycle). FRED official vintage lags a few days; the live reads confirm the real-rate surge already implied by the nominal/breakeven gap."
+  "source_note": "DFII5 2.70% / DFII10 2.85% (live TradingView watchlist reads, fresh cycle highs). FRED official vintage lags a few days; the live reads confirm real yields kept pushing higher even as nominal yields pulled back into Friday's close."
  },
  "credit": {
   "hy_oas": 2.8,
   "hy_oas_color": "amber",
-  "hy_oas_delta": "~2.8% (est. +~12bp) -- drifting wider but well under the 3.5% stress threshold",
+  "hy_oas_delta": "~2.8%, essentially flat -- still well under the 3.5% stress threshold",
   "ig_oas": 0.79,
   "ig_oas_color": "grey",
   "ig_oas_delta": "Not in live watchlist scrape this run -- carried forward",
-  "ally": 38.47,
-  "ally_color": "grey",
-  "ally_delta": "-0.70% today",
-  "cacc": 553.49,
-  "cacc_color": "grey",
-  "cacc_delta": "+1.11% today",
-  "cof": 197.7,
-  "cof_color": "grey",
-  "cof_delta": "+0.55% today"
+  "ally": 38.79,
+  "ally_color": "green",
+  "ally_delta": "+0.83% vs the prior run",
+  "cacc": 555.68,
+  "cacc_color": "green",
+  "cacc_delta": "+0.40% vs the prior run",
+  "cof": 200.2,
+  "cof_color": "green",
+  "cof_delta": "+1.26% vs the prior run"
  },
  "curve": {
-  "us03my": 4.188,
-  "us06my": 4.38,
-  "us02y": 4.891,
-  "us05y": 5.034,
-  "us10y": 5.207,
-  "us30y": 5.515,
+  "us03my": 4.178,
+  "us06my": 4.362,
+  "us02y": 4.86,
+  "us05y": 4.993,
+  "us10y": 5.167,
+  "us30y": 5.49,
   "deltas": {
    "us03my": {
-    "level": 4.188,
-    "chg_1d_bps": 0.6
+    "level": 4.178,
+    "chg_1d_bps": -1.0
    },
    "us06my": {
-    "level": 4.38,
-    "chg_1d_bps": 0.3
+    "level": 4.362,
+    "chg_1d_bps": -1.8
    },
    "us02y": {
-    "level": 4.891,
-    "chg_1d_bps": -4.0
+    "level": 4.86,
+    "chg_1d_bps": -3.1
    },
    "us05y": {
-    "level": 5.034,
-    "chg_1d_bps": -3.2
+    "level": 4.993,
+    "chg_1d_bps": -4.1
    },
    "us10y": {
-    "level": 5.207,
-    "chg_1d_bps": -0.1
+    "level": 5.167,
+    "chg_1d_bps": -4.0
    },
    "us30y": {
-    "level": 5.515,
-    "chg_1d_bps": 2.6
+    "level": 5.49,
+    "chg_1d_bps": -2.5
    }
   },
-  "spread_2s10s": 0.316,
-  "spread_3m10y": 1.019,
-  "spread_2s30s": 0.624,
-  "real_10y": 2.877,
-  "real_2y_proxy": 2.261,
-  "us_japan_spread_bps": 212.8,
-  "topology": "SINCE THE PRIOR RUN (SEP 24 INTRADAY): US10Y +11.1BP AND US30Y +11.7BP, CROSSING THE 5.5% LONG-END STRESS LINE. WITHIN TODAY'S OWN SESSION THE MOVE IS MODEST AND MIXED -- FRONT END (3M/6M) +0.3 TO +0.6BP, 2Y/5Y/10Y -0.1 TO -4.0BP, 30Y +2.6BP -- SO MOST OF TODAY'S DAMAGE WAS ALREADY DONE BY THE TIME OF THE PRIOR RUN AND THE CURVE IS CONSOLIDATING AT THE NEW, HIGHER LEVEL RATHER THAN SELLING OFF FURTHER INTRADAY.",
-  "topology_interp": "EARLY WARNING, ESCALATING AT THE LONG END -- 30Y > 5.5% WITH MOVE > 80 NOW BOTH ACTIVE (SATISFYING THE 'LONG-END STRESS CONFIRMED' CONDITION FOR THE FIRST TIME), BUT CREDIT AND FUNDING STILL CALM (NOT STRESS-CONFIRMED PER THE GROUPED RULE -- GROUP C INACTIVE)"
+  "spread_2s10s": 0.307,
+  "spread_3m10y": 0.989,
+  "spread_2s30s": 0.63,
+  "real_10y": 2.827,
+  "real_2y_proxy": 2.23,
+  "us_japan_spread_bps": 209.2,
+  "topology": "SINCE THE PRIOR RUN (SEP 25 INTRADAY, ~15:46 CET) TO FRIDAY'S FINAL CLOSE: THE CURVE PULLED BACK ACROSS THE BOARD -- 3M/6M -1.0/-1.8BP, 2Y/5Y/10Y -3.1 TO -4.1BP, 30Y -2.5BP. THE 30Y CLOSED AT 5.490%, BACK BELOW THE 5.5% LONG-END STRESS LINE IT HAD BREACHED INTRADAY AT THE PRIOR RUN (5.515%).",
+  "topology_interp": "EARLY WARNING, EASING AT THE LONG END -- 30Y CLOSED BACK UNDER 5.5%, SO 'LONG-END STRESS CONFIRMED' IS NO LONGER ACTIVE ON TODAY'S LEVELS. CREDIT AND FUNDING REMAIN CALM (GROUP C STILL INACTIVE); MOVE STAYS ABOVE 80 SO GROUP B IS STILL PARTIALLY ACTIVE."
  },
  "fx": {
-  "dxy": 101.077,
+  "dxy": 101.034,
   "dxy_color": "grey",
-  "dxy_delta": "-0.17% today -- USD eases back (101.31 at the prior run)",
-  "usdjpy": 157.414,
+  "dxy_delta": "-0.04% vs the prior run -- essentially flat",
+  "usdjpy": 157.295,
   "usdjpy_alert": false,
-  "usdjpy_note": "157.41 -- -0.91% today, further below the 162 BOJ threshold (4.59 yen of headroom, widening from 3.19)",
-  "usdkrw": 1357.68,
-  "usdkrw_note": "-0.55% today -- far below the 1,530 BOK watch level",
+  "usdjpy_note": "157.30 -- -0.08% vs the prior run, 4.7 yen below the 162 BOJ threshold, still widening",
+  "usdkrw": 1355.28,
+  "usdkrw_note": "-0.18% vs the prior run -- far below the 1,530 BOK watch level",
   "usdkrw_pass": true,
-  "usdcny": 6.7123,
-  "jp10y": 3.079,
+  "usdcny": 6.7128,
+  "jp10y": 3.075,
   "ni225": 66363.98,
-  "us_japan_spread_bps": 212.8,
-  "japan_note": "JP10Y +0.8bp to 3.079%, roughly flat; NI225 +1.30% -- Japan equities firm despite the global duration selloff."
+  "us_japan_spread_bps": 209.2,
+  "japan_note": "JP10Y -0.4bp to 3.075%, roughly flat; NI225 unchanged at 66,363.98 into the weekend."
  },
  "korea_gate": {
   "status": "open",
   "conditions_met": 3,
-  "ewy": 185.03,
+  "ewy": 187.18,
   "ewy_pass": true,
-  "ewy_sma20": 183.21,
-  "usdkrw": 1357.68,
+  "ewy_sma20": 183.32,
+  "usdkrw": 1355.28,
   "usdkrw_pass": true,
   "usdkrw_threshold": 1530,
-  "kospi": 7080.92,
+  "kospi": 7080.93,
   "kospi_pass": true,
   "kospi_sma5": 6943.24,
   "kospi_threshold": 6943.24,
-  "note": "Gate holds OPEN at 3/3. EWY (185.03, +1.39%) clears its SMA20 (183.21) by 1.82 -- wider than the 1.56 margin at the prior run. USDKRW (1,357.68) far below 1,530. KOSPI is live again after the Chuseok holiday: 7,080.92 above its fresh 5-day SMA of 6,943.24 (last 5 closes Sep 18-24)."
+  "note": "Gate holds OPEN at 3/3, margin strengthens further. EWY (187.18, +2.55% into the close) clears its SMA20 (183.32) by 3.86 -- more than double the 1.82 margin at the prior run. USDKRW (1,355.28) far below 1,530. KOSPI (7,080.93) stays above its 5-day SMA of 6,943.24."
  },
  "semis": {
-  "soxx": 570.26,
+  "soxx": 572.68,
   "soxx_color": "green",
-  "soxx_delta": "+0.74% today",
-  "qqq": 741.79,
+  "soxx_delta": "+0.42% vs the prior run",
+  "qqq": 744.5,
   "qqq_color": "green",
-  "qqq_delta": "+0.09% today",
-  "spy": 768.18,
+  "qqq_delta": "+0.37% vs the prior run",
+  "spy": 771.35,
   "spy_color": "green",
-  "spy_delta": "+0.13% today",
+  "spy_delta": "+0.41% vs the prior run",
   "soxx_spy_ratio": 0.7424
  },
  "chain": [
   {
    "ticker": "DRAM",
-   "price": 61.31,
-   "delta": "+0.97% today",
+   "price": 61.91,
+   "delta": "+0.98% vs the prior run",
    "color": "green",
-   "note": "Memory recovers as risk assets firm despite the bond-vol spike."
+   "note": "Memory extends its firm tone into the close despite the earlier bond-vol spike."
   },
   {
    "ticker": "NVDA",
-   "price": 224.29,
-   "delta": "-0.13% today",
-   "color": "grey",
-   "note": "Roughly flat -- long-duration growth holding up despite the real-rate surge."
+   "price": 225.07,
+   "delta": "+0.35% vs the prior run",
+   "color": "green",
+   "note": "Long-duration growth firm as real yields extend higher but nominal yields pull back."
   }
  ],
- "chain_note": "9 of the original 10 enabling-layer thesis-chain names (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain absent from the watchlist. DRAM is still tracked; NVDA remains for context. SK Hynix (+1.20%) and Samsung (+3.25%) both firm as Korea reopens after Chuseok.",
+ "chain_note": "9 of the original 10 enabling-layer thesis-chain names (CRDO, ASX, GLW, LITE, AMKR, MU, APH, POWI, EOSE) remain absent from the watchlist. DRAM is still tracked; NVDA remains for context. SK Hynix (+1.20%) and Samsung (+3.25%) both firm on the day.",
  "crosschecks": {
   "oil": {
-   "value": 93.96,
-   "delta": "-0.69% today",
-   "color": "grey",
-   "note": "Essentially flat vs the prior run ($93.98) -- no reacceleration signal, well below the 3% single-day flag."
+   "value": 92.41,
+   "delta": "-1.65% vs the prior run",
+   "color": "green",
+   "note": "Eases a further -1.65% to $92.41 -- disinflationary, well below the 3% single-day flag."
   },
   "gold": {
-   "value": 4272.1,
-   "delta": "-0.09% today",
+   "value": 4284.13,
+   "delta": "+0.28% vs the prior run",
    "color": "grey",
-   "note": "Roughly flat -- real yields and USD pulling in opposite directions today (real yields up, USD down) leaves gold directionless."
+   "note": "Ticks up slightly to $4,284 -- real yields still rising but USD roughly flat, leaving gold mildly directionless."
   },
   "vix": {
-   "value": 15.45,
-   "delta": "-1.47% today",
+   "value": 14.88,
+   "delta": "-3.7% vs the prior run",
    "color": "green",
-   "note": "Calm and easing -- equity vol continues to decouple from the MOVE spike."
+   "note": "Eases further -- equity vol stays calm and continues to decouple from the (now-improving) MOVE spike."
   }
  },
  "sector_rotation": {
-  "best_fit": "liquidity_shock",
-  "second_fit": "disinflationary_slowdown",
-  "confidence": "Low",
-  "current_regime": "Duration-Specific Stress -- 30Y Crosses 5.5%, MOVE Above 100, But Credit/Equities/FX Calm",
+  "best_fit": "disinflationary_slowdown",
+  "second_fit": "liquidity_expansion",
+  "confidence": "Medium",
+  "current_regime": "Rates Stress Easing -- 30Y Back Below 5.5%, MOVE Off Its Highs, Credit/Equities Firm Throughout",
   "regime_scores": {
-   "liquidity_expansion": 20,
-   "disinflationary_slowdown": 22,
-   "inflation_reacceleration": 16,
-   "liquidity_shock": 28,
+   "liquidity_expansion": 24,
+   "disinflationary_slowdown": 30,
+   "inflation_reacceleration": 13,
+   "liquidity_shock": 20,
    "recession": 9
   },
-  "mixed_signals": "Mixed: the long-end breach of 5.5% and MOVE above 100 keep Liquidity Shock as the nominal best fit, but its USD-strength and credit-widening legs are both absent this run (DXY -0.17%, HY OAS calm). Falling breakevens alongside rising real yields and firm equities look more like a Disinflationary Slowdown / term-premium normalization than a liquidity event -- this is a genuinely low-confidence, mixed-signal read.",
+  "mixed_signals": "Less mixed than the prior run: the long-end breach and MOVE-above-100 conditions that kept Liquidity Shock as the nominal best fit have both reversed (30Y back under 5.5%, MOVE back under 100). Falling nominal yields, calm credit, firm equities and only marginally higher breakevens now point more clearly at a Disinflationary Slowdown / term-premium normalization -- though MOVE still above 80 and the thin-indirect auction pattern unresolved keep this a Medium- rather than High-confidence read.",
   "actionable_output": {
-   "current_tactical_leaders": "Broad risk-on today: semis (SOXX +0.74%), Korea (EWY +1.39%), Japan (NI225 +1.30%), memory (DRAM +0.97%); laggard is long-duration Treasuries themselves (TLT -0.51%).",
-   "leaders_if_confirmed": "If credit or equities start reacting to the 30Y > 5.5% / MOVE > 100 combination, expect a rotation back toward cash/short-duration and away from semis/Korea/long-duration growth.",
-   "likely_rotation_if_confirmed": "A fourth soft/weak Note auction plus credit spreads widening past 3.5% would complete the Liquidity Shock template; continued equity resilience alongside stable-to-lower yields would instead confirm this as a passing term-premium repricing."
+   "current_tactical_leaders": "Broad risk-on into the close: Korea (EWY +2.55%), semis (SOXX firm), memory (DRAM firm); long duration (TLT) actually recovered as yields eased.",
+   "leaders_if_confirmed": "If Monday holds Friday's calmer levels (30Y<5.5%, MOVE<100), expect continued support for semis/Korea/long-duration growth and a further bid under long-duration Treasuries.",
+   "likely_rotation_if_confirmed": "A fourth soft/weak Note auction or a reopening of the 30Y above 5.5% would revive the Liquidity Shock case; continued calm would confirm this as a passing term-premium spike."
   }
  },
  "changed_today": [
   {
-   "label": "7Y auction",
-   "value": "5.085% / BTC 2.42",
-   "delta": "DECENT on BTC/dealer (10.76%), but indirect 49.1% stays soft -- 3rd straight thin-indirect Note print"
-  },
-  {
    "label": "US30Y",
-   "value": "5.515%",
-   "delta": "+11.7bp vs prior run -- CROSSES the 5.5% long-end stress line for the first time"
-  },
-  {
-   "label": "US10Y",
-   "value": "5.207%",
-   "delta": "+11.1bp vs prior run"
+   "value": "5.490%",
+   "delta": "-2.5bp vs the prior run -- closes back BELOW the 5.5% stress line it breached intraday"
   },
   {
    "label": "MOVE",
-   "value": "104.58",
-   "delta": "+9.6% further -- second session above 80, now above 100"
+   "value": "96.00",
+   "delta": "-8.2% vs the prior run -- back below 100, still above 80"
   },
   {
-   "label": "TGA (H.4.1)",
-   "value": "$977.1B",
-   "delta": "+$100B w/w -- first new H.4.1 print since Sep 16; reserves down to $2.930T"
+   "label": "US10Y",
+   "value": "5.167%",
+   "delta": "-4.0bp vs the prior run"
+  },
+  {
+   "label": "Bank demand (H.8)",
+   "value": "$4,792.3B",
+   "delta": "New Sep 16 vintage, -0.19% w/w from $4,801.3B"
+  },
+  {
+   "label": "RRP",
+   "value": "$0.58B",
+   "delta": "New Sep 25 daily print, from $0.63B -- buffer still empty"
   },
   {
    "label": "DFII5/DFII10 (live)",
-   "value": "2.65% / 2.76%",
-   "delta": "Up further (+14bp / +13bp) -- real yields extend their surge, breakevens flat"
+   "value": "2.70% / 2.85%",
+   "delta": "Fresh cycle highs even as nominal yields pulled back"
   },
   {
-   "label": "DXY",
-   "value": "101.08",
-   "delta": "-0.17% -- USD eases, the Liquidity Shock USD leg weakens"
+   "label": "Treasury auctions",
+   "value": "No new settlements",
+   "delta": "None scheduled over the weekend -- module unchanged at Early Warning"
   },
   {
-   "label": "Equities",
-   "value": "SPY +0.13%, SOXX +0.74%, Korea/Japan firm",
-   "delta": "Broad risk-on, not confirming the bond-vol stress"
+   "label": "Korea gate",
+   "value": "3/3 OPEN",
+   "delta": "EWY SMA20 margin widens to 3.86 from 1.82"
   }
  ],
  "section_horizons": {
@@ -507,10 +507,10 @@
  },
  "treasury_auctions": {
   "meta": {
-   "last_updated": "2026-09-25T15:50:00.000Z",
+   "last_updated": "2026-09-27T08:36:30.000Z",
    "source": "TreasuryDirect TA_WS (securities/search)",
    "status": "ok",
-   "methodology_note": "Ingested the Sep 24 7Y (91282CRM5) results this run: BTC 2.42, dealer 10.76%, indirect 49.13%, high yield 5.085%. No trailing-20 comparable bucket yet for 7Y (n=2, below the min-8 threshold). STATE HOLDS at Early Warning: the 7Y was not weak enough on BTC/dealer to escalate to Intermediation Stress, but indirect demand stayed thin for a third consecutive Note auction (2Y 49.3%, 5Y 47.0%, 7Y 49.1%), so there is no clean print to downgrade back to Healthy either -- per the two-auction confirmation rule, a state change (either direction) needs more than one auction's worth of evidence. Absorption 44->47 (7Y not weak), dealer stress 52->49 (7Y dealer take back near normal). SOFR-IORB -2bp gives no repo confirmation of stress. NY Fed dealer inventory not rescraped (last known vintage retained)."
+   "methodology_note": "Checked TreasuryDirect TA_WS on Sun Sep 27 -- no auctions with auctionDate newer than the Sep 24 7Y (91282CRM5) (expected: none are scheduled over a weekend). State HOLDS at Early Warning, unchanged: absorption 47, dealer stress 49. SOFR-IORB -2bp gives no repo confirmation of stress. NY Fed dealer inventory not rescraped this run (last known vintage retained). Separately, the underlying rates backdrop eased into Friday's close (30Y back under 5.5%, MOVE -8.2% to 96.00) -- see the top-level curve/duration blocks -- but this does not change the auction-module state, which depends only on auction results."
   },
   "state": "Early Warning",
   "state_since": "2026-09-24",
@@ -670,26 +670,26 @@
  },
  "v2": {
   "regime_header": {
-   "label": "CONTROLLED TIGHTENING -- DURATION STRESS ESCALATES AT THE LONG END, TRANSITION STILL UNCONFIRMED",
+   "label": "RATES STRESS EASING -- LONG END CLOSES BACK BELOW 5.5%, TRANSITION NO LONGER TECHNICALLY CONFIRMED",
    "state_confidence": "MEDIUM",
    "mechanism_confidence": "MEDIUM",
    "confidence_level": "STATE: MEDIUM / MECHANISM: MEDIUM",
    "confidence_level_legacy": "MEDIUM",
    "provisional": true,
-   "one_liner": "The 7Y auction (91282CRM5) cleared decently on BTC (2.42) and dealer take (10.76%), but indirect demand stayed thin for a third straight Note auction (2Y 49.3%, 5Y 47.0%, 7Y 49.1%) -- Treasury module holds at EARLY WARNING. Independently, the bond selloff continued into today: US30Y crossed 5.5% for the first time this cycle (5.515%, +11.7bp) and MOVE spiked a further +9.6% to 104.58, a second session above 80. That technically satisfies 'Long-End Stress Confirmed' (30Y>5.5% + a confirming MOVE signal) for the first time. But credit (HY OAS ~2.8%), funding (SOFR-IORB -2bp), USD (DXY -0.17%) and equities (SPY/QQQ/SOXX/Korea/Japan all higher) are not confirming a broad risk-off -- treat the transition as still PROVISIONAL and rates-market-specific until a second channel (credit or equities) joins."
+   "one_liner": "Friday's session pulled back into the close: US30Y fell 2.5bp to 5.490%, back BELOW the 5.5% long-end stress line it had breached intraday, and MOVE dropped -8.2% to 96.00 (no longer above 100). The Treasury-demand story is unchanged -- three straight thin-indirect Note auctions, module still at EARLY WARNING, no new auctions over the weekend -- and a new H.8 vintage shows bank demand ticking down -0.19% w/w. Credit, funding, USD and equities (US and Asia) stayed calm-to-firm throughout. With the technical long-end trigger no longer active, treat this as an easing, still-provisional rates episode rather than a confirmed transition -- watch whether Monday holds Friday's calmer levels."
   },
   "master_scores": {
    "liquidity_resilience": {
-    "value": 52,
+    "value": 50,
     "bucket": "MODERATE",
-    "label": "DETERIORATING -- TGA REBUILDS $100B W/W, DRAINING RESERVES; AUCTION DEMAND STILL THIN BUT NOT WORSENING"
+    "label": "STABLE -- NEW H.8 VINTAGE TICKS DOWN -0.19% W/W, MILD PULLBACK; NO NEW AUCTION DATA TO MOVE THE MODULE EITHER WAY"
    },
    "monetary_restrictiveness": {
-    "value": 77,
+    "value": 74,
     "bucket": "HIGH",
-    "label": "HIGH -- RISING FURTHER. 30Y CROSSES 5.5%, REAL YIELDS AT CYCLE HIGHS (DFII5 2.65%, DFII10 2.76% LIVE); FED FUNDS 3.75-4.00% AFTER THE SEP 16 HIKE"
+    "label": "HIGH BUT EASING AT THE MARGIN -- NOMINAL CURVE PULLS BACK 2.5-4.1BP, 30Y BACK UNDER 5.5%; REAL YIELDS STILL AT CYCLE HIGHS (DFII5 2.70%, DFII10 2.85% LIVE)"
    },
-   "system_regime": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED -- DURATION-SPECIFIC STRESS, TRANSITION UNCONFIRMED",
+   "system_regime": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED -- RATES STRESS EASING, LONG END BACK UNDER 5.5%",
    "regime_matrix_note": "LOW restrictiveness + HIGH resilience = Liquidity-Driven Risk-On · HIGH+HIGH = Controlled Tightening/Liquidity Protected · HIGH+LOW = Liquidity Contraction/Risk-Off · LOW+LOW = Weak/Transitional."
   },
   "transmission": {
@@ -703,14 +703,14 @@
     "FX / Japan"
    ],
    "monetary_restrictiveness": {
-    "state": "HIGH / RISING -- LONG END NOW ABOVE THE STRESS LINE",
+    "state": "HIGH / EASING AT THE MARGIN -- LONG END BACK UNDER THE STRESS LINE",
     "bullets": [
-     "US30Y 5.515% (+11.7bp since the prior run) -- crosses the 5.5% long-end stress line for the first time this cycle",
-     "US10Y 5.207% (+11.1bp) -- implied real 10Y ~2.88% (live US10Y less live T10YIE)",
-     "DFII5 2.65% / DFII10 2.76% (live) -- both at cycle highs; breakevens flat to slightly down",
-     "DXY 101.08 (-0.17%) -- USD eases, the dollar-strength leg of the restrictiveness story is not currently active"
+     "US30Y 5.490% (-2.5bp vs the prior run) -- closes back BELOW the 5.5% long-end stress line breached intraday at the prior run",
+     "US10Y 5.167% (-4.0bp) -- implied real 10Y ~2.83% (live US10Y less live T10YIE)",
+     "DFII5 2.70% / DFII10 2.85% (live) -- fresh cycle highs even as nominal yields eased; breakevens up only 1bp",
+     "DXY 101.03 (-0.04%) -- essentially flat; the dollar-strength leg of the restrictiveness story remains inactive"
     ],
-    "note": "Real-2Y proxy (US02Y - EXPINF2YR) at 2.26%, similar to the prior run. James framework: still real-rate pressure, not CPI panic; watch signal unchanged -- if nominal 2Y starts falling, shift toward the cuts/growth-scare read."
+    "note": "Real-2Y proxy (US02Y - EXPINF2YR) eases to 2.23% (from 2.26%). James framework unchanged: real-rate pressure, not CPI panic; watch signal unchanged -- if nominal 2Y starts falling further, shift toward the cuts/growth-scare read."
    },
    "shock_absorbers": {
     "state": "MOSTLY CONFIRMED / UNDER TEST",
@@ -718,89 +718,89 @@
      "MMF assets $7.93T (+$6.1B w/w) -- CONFIRMED, not rescraped this run",
      "Treasury buybacks -- CONFIRMED (weekly operations active, per TreasuryDirect cadence)",
      "Stablecoins $305B -- STRUCTURAL/LOW WEIGHT",
-     "Bank Treasury+agency demand CONFIRMED, unchanged at the Sep 9 vintage ($4,801.1B, +$0.9B w/w; H.8 due today); corporate demand CONFIRMED but quarterly/lagged, unchanged at $218.6B (Q2 2026, -3.0% q/q). Neither leg has yet absorbed the thinning indirect demand at the Note tenor -- three straight auctions now (2Y/5Y/7Y) with soft indirect take."
+     "Bank Treasury+agency demand CONFIRMED, new Sep 16 vintage $4,792.3B (-$9.1B / -0.19% w/w from $4,801.3B, -0.95% off the Jul 29 peak); corporate demand CONFIRMED but quarterly/lagged, unchanged at $218.6B (Q2 2026, -3.0% q/q). Neither leg has yet absorbed the thinning indirect demand at the Note tenor -- three straight auctions now (2Y/5Y/7Y) with soft indirect take."
     ]
    },
    "market_liquidity_outcome": {
-    "state": "DETERIORATING AT THE LONG END -- 30Y CROSSES 5.5%, MOVE ABOVE 100",
+    "state": "EASING AT THE LONG END -- 30Y BACK BELOW 5.5%, MOVE BELOW 100",
     "bullets": [
-     "Since the prior run: US10Y +11.1bp to 5.207%, US30Y +11.7bp to 5.515%; today's own session is a modest consolidation (front end +0.3-0.6bp, 2Y/5Y/10Y -0.1 to -4.0bp, 30Y +2.6bp)",
-     "MOVE 104.58 (+9.6% further) -- second consecutive session above 80, first time above 100 this cycle; VIX 15.45 (-1.5%) stays calm",
+     "Since the prior run: US10Y -4.0bp to 5.167%, US30Y -2.5bp to 5.490% -- the curve pulled back 2.5-4.1bp across the belly and long end into Friday's close",
+     "MOVE 96.00 (-8.2%) -- back below 100 for the first time since the spike began, though still above the 80 stress threshold; VIX 14.88 (-3.7%) stays calm",
      "SOFR-IORB -2bp -- funding normal, no repo confirmation",
-     "TGA rebuilt +$100B w/w to $977.1B (first new H.4.1 print since Sep 16), draining reserves to $2.930T",
-     "7Y (91282CRM5): BTC 2.42, dealer 10.76% decent; indirect 49.13% stays thin -- third straight soft-indirect Note print"
+     "TGA/reserves unchanged at the Sep 23 vintage ($977.1B / $2.930T); RRP's new Sep 25 print ticks to $0.58B",
+     "No new Treasury auctions over the weekend -- module unchanged at Early Warning on the Sep 24 7Y result"
     ]
    },
    "market_impact": {
-    "state": "BROAD RISK-ON DESPITE THE BOND-VOL SPIKE",
+    "state": "BROAD RISK-ON, EXTENDING INTO THE CLOSE",
     "bullets": [
-     "SPY +0.13%, QQQ +0.09%, SOXX +0.74%, DRAM +0.97%, NVDA -0.13% -- US equities firm to flat, not confirming the bond stress",
-     "Korea/Japan reopen strong: EWY +1.39%, KOSPI +0.90% (live again post-Chuseok), NI225 +1.30%",
-     "Oil -0.69% to $93.96 (flat vs prior run); gold roughly flat at $4,272; DXY -0.17%, USDJPY -0.91% to 157.41, USDKRW -0.55% to 1,357.68 -- USD/FX legs both easing, not confirming a Liquidity Shock template",
-     "Credit calm: ALLY -0.70%, CACC +1.11%, COF +0.55%, HYG -0.21% -- mixed, no directional stress"
+     "SPY +0.41%, QQQ +0.37%, SOXX +0.42%, DRAM +0.98%, NVDA +0.35% vs the prior run -- US equities firmer across the board",
+     "Korea/Japan stay firm: EWY +2.55% on the day, KOSPI holds above its SMA, NI225 flat into the weekend",
+     "Oil -1.65% to $92.41 (further disinflationary); gold +0.28% to $4,284; DXY -0.04% (flat), USDJPY -0.08% to 157.30, USDKRW -0.18% to 1,355.28 -- FX legs calm, not confirming a Liquidity Shock template",
+     "Credit firmer: ALLY +0.83%, CACC +0.40%, COF +1.26%, HYG +0.18% -- no stress, broadly constructive"
     ]
    },
-   "bottom_line": "The Treasury-demand story held rather than resolved -- a decent-on-price but soft-on-indirect 7Y keeps the module at Early Warning after three straight thin-indirect Note auctions. Separately, the bond market pushed further: the 30Y crossed 5.5% and MOVE broke above 100, satisfying the technical 'Long-End Stress Confirmed' condition for the first time. But every other transmission channel -- credit, funding, USD, and both US and Asian equities -- is calm or improving. That combination reads as a genuine, still-developing but so-far self-contained rates-market repricing. The next test is whether credit or equities start reacting to a 30Y above 5.5% and a MOVE above 100, or whether today's cross-asset calm holds and this settles as a term-premium adjustment."
+   "bottom_line": "Friday's close looks like a partial unwind of the day's own stress episode rather than an escalation. The Treasury-demand story is exactly where it was -- three straight thin-indirect Note auctions, module at Early Warning, no new print this weekend to move it -- and a new H.8 vintage shows bank demand ticking down a modest -0.19% w/w. But the acute bond-market stress eased: the 30Y closed back under 5.5%, MOVE fell -8.2% to below 100, and every other transmission channel -- credit, funding, USD, and both US and Asian equities -- stayed calm-to-firm throughout. Treat 'Long-End Stress Confirmed' as no longer active on today's levels while keeping the underlying auction-demand and bank-demand softness on watch. The next test is whether Monday's session holds Friday's calmer levels or reopens the selloff."
   },
   "curve_topology": {
-   "classification": "BEAR STEEPENING PERSISTS -- 30Y CROSSES 5.5%, TODAY'S OWN SESSION IS A CONSOLIDATION",
+   "classification": "BEAR STEEPENING PAUSES -- 30Y CLOSES BACK BELOW 5.5% INTO THE WEEKEND",
    "points": {
-    "us03my": 4.188,
-    "us06my": 4.38,
-    "us02y": 4.891,
-    "us05y": 5.034,
-    "us10y": 5.207,
-    "us30y": 5.515
+    "us03my": 4.178,
+    "us06my": 4.362,
+    "us02y": 4.86,
+    "us05y": 4.993,
+    "us10y": 5.167,
+    "us30y": 5.49
    },
    "deltas": {
     "us03my": {
-     "level": 4.188,
-     "chg_1d_bps": 0.6,
+     "level": 4.178,
+     "chg_1d_bps": -1.0,
      "chg_1w_bps": null
     },
     "us06my": {
-     "level": 4.38,
-     "chg_1d_bps": 0.3,
+     "level": 4.362,
+     "chg_1d_bps": -1.8,
      "chg_1w_bps": null
     },
     "us02y": {
-     "level": 4.891,
-     "chg_1d_bps": -4.0,
+     "level": 4.86,
+     "chg_1d_bps": -3.1,
      "chg_1w_bps": null
     },
     "us05y": {
-     "level": 5.034,
-     "chg_1d_bps": -3.2,
+     "level": 4.993,
+     "chg_1d_bps": -4.1,
      "chg_1w_bps": null
     },
     "us10y": {
-     "level": 5.207,
-     "chg_1d_bps": -0.1,
+     "level": 5.167,
+     "chg_1d_bps": -4.0,
      "chg_1w_bps": null
     },
     "us30y": {
-     "level": 5.515,
-     "chg_1d_bps": 2.6,
+     "level": 5.49,
+     "chg_1d_bps": -2.5,
      "chg_1w_bps": null
     }
    },
-   "spread_2s10s": 0.316,
-   "spread_2s30s": 0.624,
-   "interpretation": "EARLY WARNING, ESCALATING AT THE LONG END -- 30Y>5.5% + MOVE>80 BOTH ACTIVE; NOT STRESS-CONFIRMED (credit/funding calm, equities firm)",
-   "so_what": "Since the prior run, the belly-to-long end kept selling off (10Y +11.1bp, 30Y +11.7bp), pushing the 30Y through the 5.5% long-end stress line for the first time this cycle. 2s10s widened to 31.6bp (from 24.6bp), 2s30s to 62.4bp (from 54.8bp) -- a continued bear-steepening. Today's own session, though, is a modest consolidation at the new higher level rather than a further acceleration -- front-end mildly firmer, 2Y/5Y/10Y little changed to slightly lower, 30Y +2.6bp. The level of the long end, not today's day-over-day move, is now the thing that matters."
+   "spread_2s10s": 0.307,
+   "spread_2s30s": 0.63,
+   "interpretation": "EASING AT THE LONG END -- 30Y BACK UNDER 5.5%, 'LONG-END STRESS CONFIRMED' NO LONGER ACTIVE; CREDIT/FUNDING STILL CALM, EQUITIES FIRM",
+   "so_what": "Since the prior run, the belly-to-long end pulled back (10Y -4.0bp, 30Y -2.5bp), taking the 30Y back below the 5.5% long-end stress line it had crossed for the first time intraday. 2s10s narrowed slightly to 30.7bp (from 31.6bp), 2s30s to 63.0bp (from 62.4bp) -- essentially unchanged curve shape at a slightly lower level, i.e. a parallel-ish pullback rather than a shape change. The level of the long end relative to 5.5% is again the thing that matters, and it has stepped back from the line for now."
   },
   "real_yield_breakeven": {
-   "as_of": "2026-09-25 (live watchlist)",
-   "as_of_note": "DFII5/DFII10 and T5YIE/T10YIE are live TradingView reads this run (2.65%/2.76% and 2.33%/2.33%), running ahead of FRED's official vintage by a few days -- consistent with the nominal/breakeven gap implying higher real yields.",
-   "nominal_10y": 5.207,
-   "breakeven_10y": 2.33,
-   "breakeven_5y": 2.33,
+   "as_of": "2026-09-25 (Friday final close, pulled Sep 27)",
+   "as_of_note": "DFII5/DFII10 and T5YIE/T10YIE are live TradingView reads this run (2.70%/2.85% and 2.34%/2.34%), running ahead of FRED's official vintage -- real yields pushed to fresh cycle highs even as nominal yields pulled back into Friday's close.",
+   "nominal_10y": 5.167,
+   "breakeven_10y": 2.34,
+   "breakeven_5y": 2.34,
    "breakeven_20y_30y_note": "FRED does not publish official 20Y/30Y breakeven series (only 5Y and 10Y). Implied 20Y/30Y breakevens (DGS-DFII) are not shown here to avoid presenting an unofficial derived figure as an official one.",
-   "classification": "REAL YIELDS AT CYCLE HIGHS -- NOMINAL AND REAL BOTH UP, BREAKEVENS FLAT TO SLIGHTLY DOWN",
-   "comparison_period": "vs the prior run (Sep 24 intraday)",
+   "classification": "REAL YIELDS AT FRESH CYCLE HIGHS -- NOMINAL EASES, REAL KEEPS RISING, BREAKEVENS BARELY MOVE",
+   "comparison_period": "vs the prior run (Sep 25 intraday)",
    "data_mismatch": false,
    "source": "TradingView live watchlist (DFII5/DFII10/T5YIE/T10YIE) + live US10Y",
-   "so_what": "Live DFII5/DFII10 readings (2.65%/2.76%) are both at cycle highs, up ~14bp/~13bp from the prior run's official FRED vintage, while T5YIE/T10YIE ticked down 1-2bp. That combination -- real yields up, breakevens down -- is the cleanest possible confirmation that this is a real-rate/term-premium move, not an inflation scare.",
+   "so_what": "Live DFII5/DFII10 readings (2.70%/2.85%) are both fresh cycle highs, up ~5bp/~9bp from the prior run, even as nominal US10Y eased -4.0bp. T5YIE/T10YIE ticked up only 1bp each. That combination -- real yields still climbing while nominal yields ease -- is consistent with the market pricing a lower term-premium/inflation-risk component rather than a change in the real-rate stance.",
    "ladder": [
     {
      "tenor": "2Y",
@@ -812,11 +812,11 @@
     },
     {
      "tenor": "5Y",
-     "real": 2.65,
+     "real": 2.7,
      "role": "PRIMARY",
-     "chg_1d_bps": 14,
+     "chg_1d_bps": 5,
      "chg_1w_bps": null,
-     "note": "Live TradingView DFII5, cycle high"
+     "note": "Live TradingView DFII5, fresh cycle high"
     },
     {
      "tenor": "7Y",
@@ -828,11 +828,11 @@
     },
     {
      "tenor": "10Y",
-     "real": 2.76,
+     "real": 2.85,
      "role": "CONFIRMATION",
-     "chg_1d_bps": 13,
+     "chg_1d_bps": 9,
      "chg_1w_bps": null,
-     "note": "Live TradingView DFII10, cycle high"
+     "note": "Live TradingView DFII10, fresh cycle high"
     },
     {
      "tenor": "20Y",
@@ -854,12 +854,12 @@
    "label_intraday": "INTRADAY / MARKET ESTIMATE",
    "label_official": "OFFICIAL DAILY CLASSIFICATION",
    "intraday_market_estimate": {
-    "nominal_10y": 5.207,
-    "breakeven_10y_live": 2.33,
-    "implied_real_10y": 2.877,
+    "nominal_10y": 5.167,
+    "breakeven_10y_live": 2.34,
+    "implied_real_10y": 2.827,
     "source": "TradingView live US10Y + live T10YIE",
-    "vs_official_real_10y_bps": 25,
-    "note": "Live US10Y 5.207% less live T10YIE 2.33% implies a 10Y real yield of ~2.88%, ~25bp above the last official DFII10 vintage (2.63%)."
+    "vs_official_real_10y_bps": 20,
+    "note": "Live US10Y 5.167% less live T10YIE 2.34% implies a 10Y real yield of ~2.83%, ~20bp above the last official DFII10 vintage (2.63%)."
    }
   },
   "structural_demand": {
@@ -894,11 +894,11 @@
    },
    "banks_corporates": {
     "bank": {
-     "as_of": "2026-09-09",
-     "value_b": 4801.1,
-     "wow_change_b": 0.9,
-     "off_recent_high_pct": -0.767,
-     "note": "Unchanged Sep 9 vintage this run (next H.8 Sep 25): second straight weekly increase (+$0.9B) after the prior week's +$5.8B rebound; still -0.77% off the Jul 29 peak of $4,838.2B.",
+     "as_of": "2026-09-16",
+     "value_b": 4792.27,
+     "wow_change_b": -9.06,
+     "off_recent_high_pct": -0.949,
+     "note": "New Sep 16 vintage this run (from Sep 9's $4,801.3B): first weekly DECLINE in three weeks, -$9.1B (-0.19%) w/w, after back-to-back gains; now -0.95% off the Jul 29 peak of $4,838.2B. Next H.8 print due Oct 2.",
      "source": "FRED H.8 (TASACBW027SBOG), weekly",
      "status": "CONFIRMED"
     },
@@ -911,7 +911,7 @@
      "source": "FRED Z.1 Financial Accounts (TSABSNNCB), quarterly",
      "note": "New Q2 2026 print released Sep 11, 2026 -- second straight quarterly decline, -7.5% off the Q4 2025 peak of $236.3B."
     },
-    "note": "Bank demand confirmed weekly (Sep 9 vintage, +$0.9B w/w, unchanged this run -- next H.8 Sep 25); corporate demand confirmed quarterly (Q2 2026 vintage, same vintage this run, next Z.1 print ~Dec 2026)."
+    "note": "Bank demand confirmed weekly (new Sep 16 vintage, -0.19% w/w, first decline in three weeks -- next H.8 Oct 2); corporate demand confirmed quarterly (Q2 2026 vintage, unchanged this run, next Z.1 print ~Dec 2026)."
    },
    "soma": {
     "status": "CONFIRMED",
@@ -921,9 +921,9 @@
     "status": "PARTIALLY CONFIRMED",
     "note": "Buyback operation cadence confirmed live and active (46 ops YTD 2026, most recent 2026-08-25) — this is Treasury buying back existing issues, not new issuance mix. Net bill/coupon/CMB issuance mix itself still requires the quarterly refunding financing tables and is not yet wired as a standalone series."
    },
-   "demand_vs_supply_read": "MOSTLY CONFIRMED BUT UNDER TEST -- MMF TOTAL AUM ($7.93T) and government-fund AUM ($6.55T) establish a large buyer base; SOMA/FIMA CONFIRMED; bank demand CONFIRMED ($4.80T, +$0.9B w/w, Sep 9 vintage); corporate demand CONFIRMED but quarterly/lagged ($218.6B, Q2 2026, -3.0% q/q). The full Sep 22-24 Note trio (2Y/5Y/7Y) shows persistently weak indirect demand (49.3%/47.0%/49.1%), though only the 5Y also showed elevated dealer take-down (95th pctile vs the 7Y's normal 10.76%). Net flow-level Treasury purchases remain PENDING DATA.",
+   "demand_vs_supply_read": "MOSTLY CONFIRMED BUT UNDER TEST -- MMF total AUM ($7.93T) and government-fund AUM ($6.55T) establish a large buyer base; SOMA/FIMA CONFIRMED; bank demand CONFIRMED but ticked down -0.19% w/w to a new Sep 16 vintage ($4,792.3B); corporate demand CONFIRMED but quarterly/lagged ($218.6B, Q2 2026, -3.0% q/q, unchanged this run). The Sep 22-24 Note trio (2Y/5Y/7Y) still shows persistently weak indirect demand (49.3%/47.0%/49.1%) with no new auction this weekend to update it. Net flow-level Treasury purchases remain PENDING DATA.",
    "status": "PARTIALLY CONFIRMED",
-   "status_note": "SOMA, bank, and corporate demand are all wired and CONFIRMED (bank on the Sep 9 weekly vintage; corporate on the Q2 2026 quarterly vintage, low frequency). Module remains PARTIALLY CONFIRMED overall because MMF net Treasury purchases are still unwired. Note: the full Sep 22-24 Note trio (2Y indirect 49.3%, 5Y 47.0%, 7Y 49.1%) shows the marginal buyer base persistently thin at the Note tenor even with these absorbers confirmed."
+   "status_note": "SOMA, bank, and corporate demand are all wired and CONFIRMED (bank now on the Sep 16 weekly vintage, down -0.19% w/w; corporate on the Q2 2026 quarterly vintage, low frequency). Module remains PARTIALLY CONFIRMED overall because MMF net Treasury purchases are still unwired. The Sep 22-24 Note trio (2Y indirect 49.3%, 5Y 47.0%, 7Y 49.1%) still shows the marginal buyer base thin at the Note tenor even with these absorbers confirmed."
   },
   "shock_absorbers_table": [
    {
@@ -969,11 +969,11 @@
    {
     "name": "Bank demand",
     "status_type": "CONFIRMED",
-    "current_read": "$4,801.1B in Treasury + agency securities held by all commercial banks (FRED H.8) as of Sep 9, 2026 -- second straight weekly increase, +$0.9B w/w (prior week +$5.8B). Same vintage this run; H.8 due today, Sep 25, 4:15pm ET.",
+    "current_read": "$4,792.3B in Treasury + agency securities held by all commercial banks (FRED H.8) as of Sep 16, 2026 -- first weekly decline in three weeks, -$9.1B (-0.19%) w/w from $4,801.3B. Next H.8 print due Oct 2, 2026.",
     "confidence": "HIGH",
-    "trend": "Second consecutive weekly uptick after the Jul 29 peak pullback; now -0.77% off that $4,838.2B high.",
+    "trend": "First weekly decline in three weeks after two straight increases; now -0.95% off the Jul 29 peak ($4,838.2B).",
     "source": "FRED H.8 (TASACBW027SBOG), weekly",
-    "last_updated": "2026-09-09",
+    "last_updated": "2026-09-16",
     "frequency": "Weekly (Wed level)",
     "note": "Bundles Treasury with agency debt."
    },
@@ -1226,18 +1226,18 @@
   ],
   "next_key_events": [
    {
-    "date": "Sep 25",
-    "day": "Fri",
-    "time_et": "4:15 PM",
-    "event": "H.8 bank Treasury/agency holdings",
-    "why": "Did banks absorb the Sep coupon supply, including the soft-indirect 2Y/5Y/7Y trio? Currently Sep 9 vintage."
-   },
-   {
     "date": "Oct 1",
     "day": "Thu",
     "time_et": "4:30 PM",
     "event": "H.4.1 (WALCL/TGA/reserves)",
-    "why": "Next weekly balance-sheet print after this run's TGA rebuild (+$100B w/w to $977.1B)."
+    "why": "Next weekly balance-sheet print -- first reserves read since the TGA rebuild to $977.1B / reserves to $2.930T."
+   },
+   {
+    "date": "Oct 2",
+    "day": "Fri",
+    "time_et": "4:15 PM",
+    "event": "H.8 bank Treasury/agency holdings",
+    "why": "This run already reflects the new Sep 16 vintage (-0.19% w/w); did the pullback continue or reverse?"
    },
    {
     "date": "Oct 14",
@@ -1249,21 +1249,21 @@
   ],
   "scenarios": {
    "base": {
-    "label": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED -- UNDER STRESS TEST",
+    "label": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED -- STRESS EPISODE EASING",
     "confidence": "MEDIUM",
     "evidence": [
-     "Monetary restrictiveness high and rising further (30Y crosses 5.5%, real yields at cycle highs)",
-     "Real yields sharply higher (live DFII5 2.65%, DFII10 2.76%)",
-     "Inflation expectations contained (breakevens -1 to -2bp)",
-     "Long end now above the 5.5% stress line (30Y 5.515%) -- Long-End Stress Confirmed condition active for the first time",
-     "MOVE above 80 for a second session, now above 100 (104.58) -- NOT contained",
-     "Credit stable (HY OAS ~2.8%)",
+     "Monetary restrictiveness high but easing at the margin (30Y back under 5.5%, though real yields still at fresh cycle highs)",
+     "Real yields sharply higher again (live DFII5 2.70%, DFII10 2.85%) even as nominal yields eased",
+     "Inflation expectations contained (breakevens +1bp only)",
+     "Long end closed back below the 5.5% stress line (30Y 5.490%) -- 'Long-End Stress Confirmed' no longer active",
+     "MOVE fell -8.2% to 96.00 -- below 100 but still above the 80 stress threshold",
+     "Credit firmer (ALLY/CACC/COF all up, HY OAS flat)",
      "Funding markets stable (SOFR-IORB -2bp)",
-     "TGA rebuilds +$100B w/w, draining reserves to $2.930T; RRP buffer exhausted",
-     "Treasury auction demand weak on indirect for a third straight Note auction -- module holds at EARLY WARNING",
-     "Equities (US and Asia) broadly firm -- not confirming a broad risk-off"
+     "Bank Treasury demand ticks down -0.19% w/w to a new Sep 16 vintage; TGA/reserves unchanged",
+     "Treasury auction demand still weak on indirect for three straight Note auctions -- module holds at EARLY WARNING, no new print this weekend",
+     "Equities (US and Asia) broadly firmer -- extending the non-confirmation of a broad risk-off"
     ],
-    "signal": "CURRENT STATE (GROUP A ESCALATES, STILL PROVISIONAL -- CREDIT/EQUITIES NOT CONFIRMING)"
+    "signal": "CURRENT STATE (GROUP A WEAKENS AS THE LONG-END TRIGGER DEACTIVATES; STILL PROVISIONAL)"
    },
    "upside": {
     "label": "LIQUIDITY-DRIVEN RISK-ON",
@@ -1295,7 +1295,7 @@
    }
   },
   "transition_triggers": {
-   "current": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED (RISK-OFF TRANSITION TRIGGERED, PROVISIONAL)",
+   "current": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED (RISK-OFF TRANSITION EASING, STILL PROVISIONAL)",
    "to_risk_on": [
     "Real yields ↓",
     "USD ↓",
@@ -1326,43 +1326,42 @@
    ]
   },
   "key_takeaways": [
-   "Regime: CONTROLLED TIGHTENING, duration stress escalating at the long end -- Monetary Restrictiveness 77/100 (HIGH, rising), Liquidity Resilience 52/100 (MODERATE, deteriorating). 30Y crosses 5.5% + MOVE>80 technically satisfies 'Long-End Stress Confirmed', but credit/funding/equities are not confirming -- transition stays PROVISIONAL.",
-   "7Y auction (91282CRM5) MIXED: BTC 2.42 and dealer 10.76% decent, but indirect 49.13% stays thin -- third straight Note auction (2Y 49.3%, 5Y 47.0%, 7Y 49.1%) with soft indirect demand. Treasury module HOLDS at Early Warning (absorption 47, dealer stress 49).",
-   "US30Y 5.515% (+11.7bp since the prior run) crosses the 5.5% stress line for the first time this cycle; US10Y 5.207% (+11.1bp). MOVE spikes a further +9.6% to 104.58 -- second session above 80, first time above 100.",
-   "Real yields at cycle highs (live DFII5 2.65%, DFII10 2.76%) while breakevens (T5YIE/T10YIE) tick down 1-2bp -- confirms a real-rate/term-premium story, not inflation. Oil and gold roughly flat.",
-   "TGA rebuilds +$100B w/w to $977.1B (first new H.4.1 print since Sep 16), draining reserves to $2.930T; RRP buffer still near-empty ($0.63B).",
-   "Korea gate holds OPEN 3/3 -- KOSPI live again after Chuseok, above its fresh 5-day SMA; EWY's SMA20 margin widens to 1.82. Credit and equities (US and Asia) broadly calm-to-firm, not confirming the bond-market stress. SOFR-IORB -2bp, funding normal."
+   "Regime: CONTROLLED TIGHTENING, stress episode easing -- Monetary Restrictiveness 74/100 (HIGH but easing at the margin), Liquidity Resilience 50/100 (MODERATE, stable). The 30Y closed back below 5.5% and MOVE fell below 100, so 'Long-End Stress Confirmed' is no longer active -- transition eases back toward provisional.",
+   "No new Treasury auctions settled over the weekend -- module HOLDS at Early Warning on the unchanged Sep 24 7Y result (BTC 2.42, dealer 10.76%, indirect 49.13%). The three-straight thin-indirect-demand pattern (2Y/5Y/7Y) remains unresolved.",
+   "US30Y 5.490% (-2.5bp vs the prior run) closes back below the 5.5% stress line it breached intraday; US10Y 5.167% (-4.0bp). MOVE falls -8.2% further to 96.00 -- its largest single-session improvement this cycle, though still above the 80 stress threshold.",
+   "New H.8 vintage (Sep 16): bank Treasury+agency demand ticks down -0.19% w/w to $4,792.3B, the first weekly decline in three weeks, now -0.95% off the Jul 29 peak. Corporate demand unchanged at the Q2 2026 vintage.",
+   "Real yields at fresh cycle highs (live DFII5 2.70%, DFII10 2.85%) even as nominal yields eased -- breakevens ticked up only 1bp, still a real-rate/term-premium story, not inflation. Korea gate holds OPEN 3/3, margin widening further (EWY SMA20 margin now 3.86, from 1.82). Credit and equities (US and Asia) stayed calm-to-firm throughout."
   ],
   "pressure_map": [
    {
     "channel": "Long-duration Treasury",
-    "level": "HIGH",
-    "note": "US30Y 5.515% -- crosses the 5.5% long-end stress line for the first time this cycle (+11.7bp since prior run)."
+    "level": "MODERATE-HIGH",
+    "note": "US30Y 5.490% -- closed back below the 5.5% long-end stress line it breached intraday at the prior run (-2.5bp)."
    },
    {
     "channel": "Real yields",
     "level": "HIGH",
-    "note": "Live DFII5 2.65% / DFII10 2.76% -- cycle highs; implied real 10Y ~2.88%."
+    "note": "Live DFII5 2.70% / DFII10 2.85% -- fresh cycle highs; implied real 10Y ~2.83%."
    },
    {
     "channel": "Front-end rates",
-    "level": "MODERATE-HIGH",
-    "note": "US02Y 4.891% -- steady to mildly firmer on the day, elevated vs the cycle."
+    "level": "MODERATE",
+    "note": "US02Y 4.860% -- eased -3.1bp vs the prior run, off its recent highs."
    },
    {
     "channel": "Dealer balance sheets",
     "level": "MODERATE",
-    "note": "Dealer stress score 49/100 (from 52) -- 7Y dealer take 10.76% back near normal; 5Y (95th pctile) and 2Y (75th) remain the outliers."
+    "note": "Dealer stress score unchanged at 49/100 -- no new auction this weekend to move it."
    },
    {
     "channel": "System liquidity",
     "level": "MODERATE",
-    "note": "Reserves $2.930T (down from $3.014T) as TGA rebuilds +$100B w/w; RRP $0.63B -- buffer exhausted."
+    "note": "Reserves $2.930T, TGA $977.1B (unchanged Sep 23 vintage); RRP $0.58B (new Sep 25 print) -- buffer still exhausted."
    },
    {
     "channel": "USD / FX",
-    "level": "LOW-MODERATE",
-    "note": "DXY 101.08 (-0.17%); USDJPY 157.41 (4.59 below 162, widening); USDKRW 1,358 -- both easing further from stress thresholds."
+    "level": "LOW",
+    "note": "DXY 101.03 (-0.04%, flat); USDJPY 157.30 (4.7 below 162, widening); USDKRW 1,355 -- both calm."
    },
    {
     "channel": "Funding / repo",
@@ -1371,18 +1370,18 @@
    },
    {
     "channel": "Credit",
-    "level": "LOW-MODERATE",
-    "note": "HY OAS ~2.8%; ALLY/CACC/COF mixed, no directional stress."
+    "level": "LOW",
+    "note": "HY OAS ~2.8%, flat; ALLY/CACC/COF all firmer -- no directional stress."
    },
    {
     "channel": "Equity duration / long-duration growth",
-    "level": "LOW-MODERATE",
-    "note": "QQQ +0.09%, NVDA -0.13%, SOXX +0.74% -- resilient despite the real-rate surge."
+    "level": "LOW",
+    "note": "QQQ +0.37%, NVDA +0.35%, SOXX +0.42% vs the prior run -- resilient, extending gains as nominal yields eased."
    },
    {
     "channel": "Inflation expectations",
     "level": "LOW",
-    "note": "T5YIE/T10YIE both 2.33% (-1 to -2bp) -- anchored; oil flat."
+    "note": "T5YIE/T10YIE both 2.34% (+1bp) -- anchored; oil down a further -1.65%."
    }
   ],
   "auction_6avg": {
@@ -1392,7 +1391,7 @@
   },
   "distance_to_transition": {
    "risk_on": {
-    "met": 2,
+    "met": 1,
     "total": 6,
     "conditions": [
      {
@@ -1401,7 +1400,7 @@
      },
      {
       "label": "USD weakening",
-      "active": true
+      "active": false
      },
      {
       "label": "Net liquidity expanding",
@@ -1426,7 +1425,7 @@
     "groups": {
      "a": {
       "label": "Duration / Treasury Stress",
-      "met": 3,
+      "met": 1,
       "total": 4,
       "conditions": [
        {
@@ -1435,7 +1434,7 @@
        },
        {
         "label": "Long-End Stress Confirmed: 30Y > 5.5% WITH >~1 confirming signal",
-        "active": true
+        "active": false
        },
        {
         "label": "Auction tails / weak indirect demand",
@@ -1443,7 +1442,7 @@
        },
        {
         "label": "Dealer take-down rising",
-        "active": true
+        "active": false
        }
       ]
      },
@@ -1479,10 +1478,10 @@
      }
     },
     "rule": "Requires Group A + (Group B or Group C). A single-group signal alone does not confirm a transition.",
-    "overall_confirmed": true,
-    "distance": "AT THRESHOLD, ESCALATING AT THE LONG END (PROVISIONAL)",
+    "overall_confirmed": false,
+    "distance": "STEPPING BACK FROM THRESHOLD -- LONG-END STRESS CONDITION DEACTIVATED",
     "methodology_note": "Corrected 2026-08-31: replaced the flat 8-condition equal-weight checklist with grouped confirmation per the standing correction -- isolated observations no longer count toward a regime transition without cross-group confirmation.",
-    "provisional_note": "Group A strengthens to 3/4 this run as the 30Y crosses 5.5% with MOVE>80 confirming (the 'Long-End Stress Confirmed' condition, active for the first time). Group B (MOVE 104.58) remains active. Group C (credit) stays inactive -- HY OAS calm and equities (US and Asia) broadly firm. The A+(B or C) rule is met, but with credit and equities not confirming, this is treated as an escalating but still PROVISIONAL, rates-market-specific transition rather than a confirmed broad risk-off."
+    "provisional_note": "Group A weakens to 1/4 this run: the 'Long-End Stress Confirmed' condition deactivates as the 30Y closes back under 5.5%, and dealer take-down is no longer flagged as rising (no new auction this weekend). Only the persistent thin-indirect-demand pattern keeps Group A non-zero. Group B (MOVE 96.00) stays active but eased from 104.58. Group C (credit) stays inactive. With Group A no longer clearing a 2-of-4 bar, the grouped confirmation rule (A + (B or C)) is no longer met -- treat the risk-off transition as having stepped back from confirmed to provisional/easing."
    }
   },
   "state_transition": {
@@ -1509,7 +1508,7 @@
     "Credit spreads ↑",
     "Funding stress ↑"
    ],
-   "transition_in_progress": "→ LIQUIDITY CONTRACTION / RISK-OFF (PROVISIONAL -- Group A strengthens as 30Y crosses 5.5%; still awaiting credit/equity confirmation)"
+   "transition_in_progress": "EASING BACK TOWARD LIQUIDITY-DRIVEN RISK-ON (PROVISIONAL -- Group A weakens as the 30Y closes back under 5.5%; MOVE still elevated above 80 keeps Group B partially active; awaiting Monday's session to confirm the pullback holds)"
   },
   "data_freshness": [
    {
@@ -1522,7 +1521,7 @@
     "input": "RRP (daily)",
     "status": "GREEN",
     "cadence": "Daily",
-    "last": "2026-09-24"
+    "last": "2026-09-25"
    },
    {
     "input": "SOFR / IORB",
@@ -1534,7 +1533,7 @@
     "input": "TIPS ladder (DFII5/7/10/20/30)",
     "status": "GREEN",
     "cadence": "Daily/live",
-    "last": "2026-09-25 (live watchlist, DFII5/10); 7/20/30 carried forward"
+    "last": "2026-09-25 (live watchlist, DFII5/10, fresh cycle highs); 7/20/30 carried forward"
    },
    {
     "input": "Credit OAS (HY/IG)",
@@ -1546,7 +1545,7 @@
     "input": "Treasury curve / FX / equities",
     "status": "GREEN",
     "cadence": "Live/intraday",
-    "last": "2026-09-25 -- ~17:46 CET / 11:46 ET; Korea live again post-Chuseok"
+    "last": "2026-09-25 final close (pulled Sun Sep 27, ~10:36 CET); Korea firm"
    },
    {
     "input": "MMF assets (ICI)",
@@ -1607,7 +1606,7 @@
     "Credit stress",
     "Long-duration auction weakness"
    ],
-   "current_read": "WARNING-CASE CONDITIONS remain partly active -- auction quality stays soft (three straight thin-indirect Note prints, module at EARLY WARNING) and MOVE has risen further (104.58, above 100). But QQQ +0.09% and SOXX +0.74% today show no valuation damage yet -- resilient-case supports (credit calm, funding normal) are still holding, and the 30Y crossing 5.5% has not (so far) repriced long-duration growth multiples lower. Distinguish valuation pressure (elevated, building) from systemic liquidity pressure (still absent) -- currently the former only.",
+   "current_read": "WARNING-CASE CONDITIONS ease this run -- MOVE fell -8.2% to 96.00 (back below 100) and the long end closed back under 5.5%, removing the acute valuation trigger. Auction quality is still soft (three straight thin-indirect Note prints, module at EARLY WARNING) but no new print this weekend made it worse. QQQ +0.37% and SOXX +0.42% vs the prior run confirm no valuation damage -- resilient-case supports (credit firmer, funding normal) are strengthening. Currently reads closer to the resilient case than the warning case.",
    "distinction": "VALUATION PRESSURE (real yields elevated, hitting long-duration growth multiples) vs SYSTEMIC LIQUIDITY PRESSURE (funding/credit/auction breakdown) — currently the former, not the latter, per the corrected confirmation framework (credit tight, funding healthy, auctions clearing, MOVE contained)."
   },
   "gold_module": {
@@ -1617,8 +1616,8 @@
     "Breakevens",
     "Policy credibility"
    ],
-   "classification": "GOLD HEADWIND -- REAL YIELDS AND USD UP, BREAKEVENS ~FLAT",
-   "current_read": "Real yields extended their surge (live DFII5 2.65%, DFII10 2.76%, both cycle highs) while breakevens ticked down -- the real-yield leg of the headwind is firmly in place. But DXY eased -0.17% today, so the USD leg is not currently active, leaving the full two-leg headwind condition only partially met. Gold is essentially flat ($4,272.10, -0.09%) as a result -- the two drivers are pulling in opposite directions."
+   "classification": "GOLD MIXED -- REAL YIELDS UP FURTHER, USD ROUGHLY FLAT",
+   "current_read": "Real yields pushed to fresh cycle highs (live DFII5 2.70%, DFII10 2.85%) while breakevens ticked up only 1bp -- the real-yield leg of the headwind stays firmly in place. DXY was essentially flat (-0.04%), so the USD leg remains inactive. Gold ticked up modestly to $4,284.13 (+0.28%) as the two drivers continue to offset each other."
   },
   "crypto_module": {
    "drivers": [
@@ -1628,8 +1627,8 @@
     "Financial conditions",
     "Credit / funding"
    ],
-   "classification": "BTC HEADWIND-LEANING -- REAL YIELDS AND USD UP, LIQUIDITY FLAT, BOND VOL SPIKING",
-   "current_read": "Real yields extended higher (cycle highs) but USD eased (DXY -0.17%), so only one of the two market legs is active. Net liquidity is now falling, not flat, as the TGA rebuild drains reserves -- a incremental headwind on that leg. MOVE above 100 tightens financial conditions at the margin; credit/funding remain healthy. Read as mixed/headwind-leaning, not a directional call."
+   "classification": "BTC MIXED -- REAL YIELDS UP, USD FLAT, BOND VOL EASING",
+   "current_read": "Real yields extended to fresh cycle highs but USD stayed flat (DXY -0.04%), so only one of the two market legs is active. Net liquidity is unchanged this run (no new H.4.1 print). MOVE easing off its highs (96.00, from 104.58) loosens financial conditions at the margin versus the prior run; credit/funding remain healthy. Read as mixed, tilting slightly less headwind-leaning than the prior run."
   },
   "auction_recent_evidence": [
    {
@@ -1763,23 +1762,23 @@
   "auction_summary_verdict": "HISTORICAL: the Aug 12-Sep 10 run cleared cleanly; the Sep 15 20Y reopening was weak; the Sep 17 TIPS reopening cleared cleanly. FORWARD: the Sep 22-24 coupon trio is now complete. The 2Y was SOFT (indirect 10th pctile, dealer 75th), the 5Y was WEAK (BTC and indirect lowest of trailing 20, dealer 95th pctile), and the 7Y was MIXED -- decent BTC/dealer but indirect still thin (49.1%), the third straight soft-indirect Note print. Two consecutive weak/soft prints already triggered EARLY WARNING; the 7Y did not confirm a further escalation to Intermediation Stress (dealer take normal, no repo confirmation, SOFR-IORB -2bp) but also did not clear cleanly enough to downgrade. Module holds at EARLY WARNING pending the next coupon cycle.",
   "momentum": {
    "monetary_restrictiveness": {
-    "direction": "up",
-    "label": "rising further -- long end crosses 5.5%",
-    "basis": "US30Y +11.7bp to 5.515% and US10Y +11.1bp to 5.207% since the prior run; live real yields (DFII5/DFII10) at cycle highs.",
+    "direction": "down",
+    "label": "easing at the margin -- long end back under 5.5%",
+    "basis": "US30Y -2.5bp to 5.490% and US10Y -4.0bp to 5.167% vs the prior run, though live real yields (DFII5/DFII10) pushed to fresh cycle highs.",
     "horizon": "intraday",
     "horizon_note": "vs. prior run (Sep 24)"
    },
    "liquidity_resilience": {
     "direction": "down",
-    "label": "deteriorating",
-    "basis": "TGA rebuilds +$100B w/w draining reserves to $2.930T; Treasury module holds at Early Warning after a third thin-indirect Note auction.",
+    "label": "mildly softer",
+    "basis": "New H.8 vintage shows bank Treasury+agency demand down -0.19% w/w; no new Treasury auction this weekend to move the module.",
     "horizon": "intraday",
     "horizon_note": "vs. prior run (Sep 24)"
    },
    "state_confidence": {
-    "direction": "flat",
-    "label": "unchanged, still provisional",
-    "basis": "Group A (auction) still active but not worsening; Group B (MOVE) active and higher; Group C (credit) still inactive.",
+    "direction": "up",
+    "label": "improving, stress partially unwinding",
+    "basis": "Group A (long-end stress) deactivates as the 30Y closes back under 5.5%; Group B (MOVE) still active but easing; Group C (credit) still inactive.",
     "horizon": "intraday",
     "horizon_note": "vs. prior run (Sep 24)"
    },
@@ -1810,7 +1809,7 @@
      "input": "RRP (daily)",
      "status": "GREEN",
      "cadence": "Daily",
-     "last": "2026-09-24"
+     "last": "2026-09-25"
     },
     {
      "input": "SOFR / IORB",
@@ -1822,7 +1821,7 @@
      "input": "TIPS ladder (DFII5/7/10/20/30)",
      "status": "GREEN",
      "cadence": "Daily/live",
-     "last": "2026-09-25 (live watchlist, DFII5/10); 7/20/30 carried forward"
+     "last": "2026-09-25 (live watchlist, DFII5/10, fresh cycle highs); 7/20/30 carried forward"
     },
     {
      "input": "Credit OAS (HY/IG)",
@@ -1834,7 +1833,7 @@
      "input": "Treasury curve / FX / equities",
      "status": "GREEN",
      "cadence": "Live/intraday",
-     "last": "2026-09-25 -- ~17:46 CET / 11:46 ET; Korea live again post-Chuseok"
+     "last": "2026-09-25 final close (pulled Sun Sep 27, ~10:36 CET); Korea firm"
     },
     {
      "input": "NY Fed primary dealer inventory",
