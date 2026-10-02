@@ -3,8 +3,8 @@
     "pulled_at": "2026-10-02T18:45:42.003Z",
     "pulled_at_cet": "Oct 2, 2026, 8:45 PM CEST",
     "version": "2.2",
-    "source": "FULL refresh: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + TradingView \"Liquidity Monitor - Jae\" watchlist (38 symbols) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (checked, no new auctions) -- sourced via the Claude in Chrome extension. Pulled Friday pre-open (~9:23am ET / 3:23pm CEST): Treasury yields, FX, oil, gold, VIX and the completed Asian session reflect live Friday levels; US equities, credit-proxy names and TLT/SHY/MOVE show their latest prints pending the 9:30am ET cash open.",
-    "weekday_note": "Friday pre-open refresh, first full pull since Mon Sep 28. Three weekly vintages landed in between: H.4.1 Sep 30 (WALCL $6.743T, TGA down to $948.7B, reserves up to $2.948T) with a quarter-end RRP blip that has already faded back to $0.35B. The long end kept selling off -- US30Y 5.633% (+10.0bp, well above the 5.5% stress line), US10Y 5.281% (+6.0bp) -- while the front end rallied (US02Y -9.1bp to 4.827%), a bear steepening that pushes 2s10s to 45bp from 30bp. MOVE jumped to 107.6 (from 96.0) and HY OAS widened to 3.24% (from ~2.8%), approaching the 3.5% line, with CACC -5.4% and HYG -1.2% vs the prior run. Offsetting that: Korea rebounded (KOSPI +1.65%, EWY +3.1%) and the Korea gate flips back to OPEN 3/3, VIX is lower (15.57), oil fell to $91.19 and funding is normal (SOFR-IORB -3bp). No new Treasury auctions since the Sep 22-24 Note trio (settled Sep 30); next: 3Y Oct 6, 10Y Oct 7, 30Y Oct 8. H.8 (bank demand) due today 4:15pm ET.",
+    "source": "FULL refresh: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + TradingView \"Liquidity Monitor - Jae\" watchlist (38 symbols) + TradingView Technicals (EWY SMA20) + Yahoo Finance historical closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (checked, no new auctions) -- sourced via the Claude in Chrome extension. Pulled Friday afternoon (~2:45pm ET / 8:45pm CEST): Treasury yields, FX, oil, gold, VIX, US equities/credit-proxy names and the completed Asian session reflect live Friday levels; MOVE shows its latest print.",
+    "weekday_note": "Friday afternoon refresh, first full pull since Mon Sep 28. Three weekly vintages landed in between: H.4.1 Sep 30 (WALCL $6.743T, TGA down to $948.7B, reserves up to $2.948T) with a quarter-end RRP blip that has already faded back to $0.35B. The long end kept selling off -- US30Y 5.633% (+10.0bp, well above the 5.5% stress line), US10Y 5.281% (+6.0bp) -- while the front end rallied (US02Y -9.1bp to 4.827%), a bear steepening that pushes 2s10s to 45bp from 30bp. MOVE jumped to 107.6 (from 96.0) and HY OAS widened to 3.24% (from ~2.8%), approaching the 3.5% line, with CACC -5.4% and HYG -1.2% vs the prior run. Offsetting that: Korea rebounded (KOSPI +1.65%, EWY +3.1%) and the Korea gate flips back to OPEN 3/3, VIX is lower (15.57), oil fell to $91.19 and funding is normal (SOFR-IORB -3bp). No new Treasury auctions since the Sep 22-24 Note trio (settled Sep 30); next: 3Y Oct 6, 10Y Oct 7, 30Y Oct 8. H.8 (bank demand) due today 4:15pm ET.",
     "status": "ok"
   },
   "scores": {
@@ -377,7 +377,7 @@
     "real_10y": 2.921,
     "real_2y_proxy": 2.197,
     "us_japan_spread_bps": 219.3,
-    "topology": "SINCE THE PRIOR RUN (MON SEP 28 PRE-MARKET) TO FRI OCT 2 PRE-OPEN: A BEAR STEEPENING -- THE FRONT END RALLIED (3M/6M -8.7/-10.5BP, 2Y -9.1BP) WHILE THE LONG END SOLD OFF (5Y +0.2BP, 10Y +6.0BP, 30Y +10.0BP). 2S10S WIDENS TO 45.4BP FROM 30.3BP AND 2S30S TO 80.6BP FROM 61.5BP. THE 30Y AT 5.633% IS WELL ABOVE THE 5.5% LONG-END STRESS LINE.",
+    "topology": "SINCE THE PRIOR RUN (MON SEP 28 PRE-MARKET) TO FRI OCT 2 AFTERNOON: A BEAR STEEPENING -- THE FRONT END RALLIED (3M/6M -8.7/-10.5BP, 2Y -9.1BP) WHILE THE LONG END SOLD OFF (5Y +0.2BP, 10Y +6.0BP, 30Y +10.0BP). 2S10S WIDENS TO 45.4BP FROM 30.3BP AND 2S30S TO 80.6BP FROM 61.5BP. THE 30Y AT 5.633% IS WELL ABOVE THE 5.5% LONG-END STRESS LINE.",
     "topology_interp": "LONG-END STRESS DEEPENS -- 30Y 5.633% IS 13BP ABOVE THE 5.5% LINE, WITH MOVE (107.6) AND HY OAS (3.24%) BOTH CONFIRMING PRESSURE. THE FRONT-END RALLY (2Y -9BP) IS NOT YET A GROWTH-SCARE SIGNAL: BREAKEVENS ARE FLAT AND REAL YIELDS ROSE, SO THIS IS A TERM-PREMIUM BEAR STEEPENER, NOT A BULL ONE."
   },
   "fx": {
@@ -538,7 +538,7 @@
       "last_updated": "2026-10-02T18:45:42.003Z",
       "source": "TreasuryDirect TA_WS (securities/search)",
       "status": "ok",
-      "methodology_note": "Checked TreasuryDirect TA_WS pre-open Fri Oct 2 -- no auctions with auctionDate newer than the Sep 24 7Y (91282CRM5). The Sep 22-24 Note trio and the Sep 17 TIPS reopening settled Sep 30 and are cleared from pending. State HOLDS at Early Warning, unchanged: absorption 47, dealer stress 49. SOFR 3.87% vs IORB 3.90% = -3bp -- still no repo confirmation of stress. NY Fed dealer inventory not rescraped this run (last known vintage retained, ~2wk lag). Next: 3Y Oct 6, 10Y reopening Oct 7, 30Y reopening Oct 8. The Treasury curve backed up at the long end since the prior run (30Y +10bp to 5.633%), but the auction-module state depends only on auction results."
+      "methodology_note": "Checked TreasuryDirect TA_WS Fri Oct 2 -- no auctions with auctionDate newer than the Sep 24 7Y (91282CRM5). The Sep 22-24 Note trio and the Sep 17 TIPS reopening settled Sep 30 and are cleared from pending. State HOLDS at Early Warning, unchanged: absorption 47, dealer stress 49. SOFR 3.87% vs IORB 3.90% = -3bp -- still no repo confirmation of stress. NY Fed dealer inventory not rescraped this run (last known vintage retained, ~2wk lag). Next: 3Y Oct 6, 10Y reopening Oct 7, 30Y reopening Oct 8. The Treasury curve backed up at the long end since the prior run (30Y +10bp to 5.633%), but the auction-module state depends only on auction results."
     },
     "state": "Early Warning",
     "state_since": "2026-09-24",
@@ -672,7 +672,7 @@
       "confidence_level": "STATE: MEDIUM / MECHANISM: MEDIUM",
       "confidence_level_legacy": "MEDIUM",
       "provisional": true,
-      "one_liner": "Friday pre-open (~9:23am ET) vs the Mon Sep 28 run: the long end kept selling off -- US30Y 5.633% (+10.0bp, 13bp above the 5.5% stress line), US10Y 5.281% (+6.0bp) -- while the front end rallied (US02Y -9.1bp to 4.827%), a bear steepening that takes 2s10s to 45bp. Unlike last time, the bond-vol and credit channels now confirm: MOVE jumped to 107.6 (from 96.0) and HY OAS widened to 3.24% (from ~2.8%, closing on 3.5%), with CACC -5.4% and HYG -1.2%. Real yields hit fresh cycle highs (DFII5 2.73%, DFII10 2.93%) against flat breakevens (2.36%) and oil is lower, so this is still term-premium/real-rate pressure rather than inflation. Offsets: the Korea gate reopens 3/3 after Monday's selloff fully reversed, VIX is 15.57, funding is normal (SOFR-IORB -3bp) and net liquidity edged up to ~$5.79T as the TGA drained. Treat this as a duration + credit stress signal that equity vol, funding and Asia have not yet joined; the Oct 6-8 3Y/10Y/30Y auctions are the next real test."
+      "one_liner": "Friday afternoon (~2:45pm ET) vs the Mon Sep 28 run: the long end kept selling off -- US30Y 5.633% (+10.0bp, 13bp above the 5.5% stress line), US10Y 5.281% (+6.0bp) -- while the front end rallied (US02Y -9.1bp to 4.827%), a bear steepening that takes 2s10s to 45bp. Unlike last time, the bond-vol and credit channels now confirm: MOVE jumped to 107.6 (from 96.0) and HY OAS widened to 3.24% (from ~2.8%, closing on 3.5%), with CACC -5.4% and HYG -1.2%. Real yields hit fresh cycle highs (DFII5 2.73%, DFII10 2.93%) against flat breakevens (2.36%) and oil is lower, so this is still term-premium/real-rate pressure rather than inflation. Offsets: the Korea gate reopens 3/3 after Monday's selloff fully reversed, VIX is 15.57, funding is normal (SOFR-IORB -3bp) and net liquidity edged up to ~$5.79T as the TGA drained. Treat this as a duration + credit stress signal that equity vol, funding and Asia have not yet joined; the Oct 6-8 3Y/10Y/30Y auctions are the next real test."
     },
     "master_scores": {
       "liquidity_resilience": {
@@ -786,7 +786,7 @@
       "so_what": "Since the prior run the 2Y fell 9.1bp while the 10Y rose 6.0bp and the 30Y 10.0bp: 2s10s widened to 45.4bp (from 30.3bp) and 2s30s to 80.6bp (from 61.5bp). The front-end rally with a long-end selloff is a term-premium bear steepener -- breakevens are flat and real yields rose -- and the 30Y at 5.633% is 13bp over the 5.5% stress line with MOVE and HY OAS now confirming."
     },
     "real_yield_breakeven": {
-      "as_of": "2026-10-02 (Friday pre-open, ~9:23am ET)",
+      "as_of": "2026-10-02 (Friday afternoon, ~2:45pm ET)",
       "as_of_note": "DFII5/DFII10 and T5YIE/T10YIE are live TradingView reads this run (2.73%/2.93% and 2.36%/2.36%) -- both real yields at fresh cycle highs while breakevens barely moved.",
       "nominal_10y": 5.281,
       "breakeven_10y": 2.36,
@@ -1558,13 +1558,13 @@
         "input": "Credit OAS (HY/IG)",
         "status": "AMBER",
         "cadence": "Daily/live",
-        "last": "2026-10-02 (HY OAS live 3.24%; US credit names at latest print pre-open)"
+        "last": "2026-10-02 (HY OAS live 3.24%; US credit names live Friday session)"
       },
       {
         "input": "Treasury curve / FX / equities",
         "status": "GREEN",
         "cadence": "Live/intraday",
-        "last": "2026-10-02 pre-open (~9:23am ET); Korea/Japan already closed, US equities pre-open"
+        "last": "2026-10-02 intraday (~2:45pm ET); Korea/Japan already closed"
       },
       {
         "input": "MMF assets (ICI)",
@@ -1846,13 +1846,13 @@
           "input": "Credit OAS (HY/IG)",
           "status": "AMBER",
           "cadence": "Daily/live",
-          "last": "2026-10-02 (HY OAS live 3.24%; US credit names at latest print pre-open)"
+          "last": "2026-10-02 (HY OAS live 3.24%; US credit names live Friday session)"
         },
         {
           "input": "Treasury curve / FX / equities",
           "status": "GREEN",
           "cadence": "Live/intraday",
-          "last": "2026-10-02 pre-open (~9:23am ET); Korea/Japan already closed, US equities pre-open"
+          "last": "2026-10-02 intraday (~2:45pm ET); Korea/Japan already closed"
         },
         {
           "input": "MMF assets (ICI)",
