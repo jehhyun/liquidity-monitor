@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-09-28T13:15:00.000Z",
+    "last_updated": "2026-10-02T18:45:42.003Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Checked 2026-09-25: ingested 7Y 91282CRM5 (Sep 24) -- 5.085%, BTC 2.42, dealer 10.76%, direct 26.01%, indirect 49.13%. No trailing-20 comparable bucket yet for 7Y (n=2). Third straight Note auction with thin indirect demand (2Y 49.3%, 5Y 47.0%, 7Y 49.1%). State HOLDS at Early Warning. | Checked 2026-09-27 (weekend): no new auctions -- TreasuryDirect TA_WS confirms nothing newer than the Sep 24 7Y (91282CRM5). Ledger unchanged. | Checked 2026-09-28 pre-open: no new auctions -- TreasuryDirect TA_WS confirms nothing newer than the Sep 24 7Y (91282CRM5). Ledger unchanged."
+    "note": "Checked 2026-09-25: ingested 7Y 91282CRM5 (Sep 24) -- 5.085%, BTC 2.42, dealer 10.76%, direct 26.01%, indirect 49.13%. No trailing-20 comparable bucket yet for 7Y (n=2). Third straight Note auction with thin indirect demand (2Y 49.3%, 5Y 47.0%, 7Y 49.1%). State HOLDS at Early Warning. | Checked 2026-09-27 (weekend): no new auctions -- TreasuryDirect TA_WS confirms nothing newer than the Sep 24 7Y (91282CRM5). Ledger unchanged. | Checked 2026-09-28 pre-open: no new auctions -- TreasuryDirect TA_WS confirms nothing newer than the Sep 24 7Y (91282CRM5). Ledger unchanged. | Checked 2026-10-02 pre-open: no new auctions -- TreasuryDirect TA_WS confirms nothing newer than the Sep 24 7Y (91282CRM5). Sep 22-24 Note trio + Sep 17 TIPS settled Sep 30 and cleared from pending. Upcoming: 3Y Oct 6, 10Y Oct 7, 30Y Oct 8."
   },
   "auctions": [
     {
@@ -37,7 +37,7 @@
       "indirect_pctile": null,
       "direct_pctile": null,
       "btc_pctile": null,
-      "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking \u2014 only 2 comparable auctions in ledger (need min 8). Raw metrics shown; no percentile assigned."
+      "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking — only 2 comparable auctions in ledger (need min 8). Raw metrics shown; no percentile assigned."
     },
     {
       "cusip": "91282CRK9",
@@ -352,37 +352,5 @@
       "pctile_note": "Insufficient sample size in (Note, 7-Year) bucket for percentile ranking -- only 2 comparable auctions in the ledger (91282CRJ2 Aug 27: BTC 2.50/dealer 10.84%/indirect 53.72%; 91282CRC7 Jul 28: BTC 2.49/dealer 11.7%/indirect 63.0%). Raw vs those two: BTC 2.42 and dealer 10.76% roughly in line; indirect 49.13% below both, continuing the thinning-indirect pattern seen in the Sep 22 2Y (49.27%) and Sep 23 5Y (46.98%)."
     }
   ],
-  "pending": [
-    {
-      "cusip": "91282CRE3",
-      "type": "TIPS",
-      "term": "9-Year 10-Month (reopening)",
-      "auctionDate": "2026-09-17",
-      "issueDate": "2026-09-30"
-    },
-    {
-      "cusip": "91282CRP8",
-      "type": "Note",
-      "term": "2-Year",
-      "auctionDate": "2026-09-22",
-      "issueDate": "2026-09-30",
-      "note": "Results published; awaiting issue (Sep 30)"
-    },
-    {
-      "cusip": "91282CRN3",
-      "type": "Note",
-      "term": "5-Year",
-      "auctionDate": "2026-09-23",
-      "issueDate": "2026-09-30",
-      "note": "Results published; awaiting issue (Sep 30)"
-    },
-    {
-      "cusip": "91282CRM5",
-      "type": "Note",
-      "term": "7-Year",
-      "auctionDate": "2026-09-24",
-      "issueDate": "2026-09-30",
-      "note": "Results published; awaiting issue (Sep 30)"
-    }
-  ]
+  "pending": []
 }
