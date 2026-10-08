@@ -47,10 +47,10 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.1}
 .score-label{font-size:11.5px;color:#7a7a7a;margin-top:3px}
 .matrix-note{font-size:11.5px;color:#707070;line-height:1.5;margin-top:6px;padding-top:8px;border-top:1px solid #1e1e1e}
 
-.sig-table{width:100%;border-collapse:collapse}
-.sig-table td{font-size:12.5px;padding:4.5px 4px;border-bottom:1px solid #1c1c1c;vertical-align:middle}
-.sig-table td:first-child{color:#888}
-.sig-table td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.sig-table{width:100%;border-collapse:collapse;table-layout:fixed}
+.sig-table td{font-size:12.5px;padding:4.5px 4px;border-bottom:1px solid #1c1c1c;vertical-align:top;line-height:1.3}
+.sig-table td:first-child{color:#888;width:44%}
+.sig-table td:last-child{text-align:right;font-weight:700;white-space:normal;word-break:break-word;overflow-wrap:anywhere;font-size:11.5px}
 .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:6px;flex-shrink:0}
 .fdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-left:5px}
 
@@ -311,7 +311,7 @@ function render(d) {
     ['HY / IG credit', `${(d.credit||{}).hy_oas}% / ${(d.credit||{}).ig_oas}%`, 'green'],
     ['MOVE index', `${fmt((d.duration||{}).move,1)}`, (d.duration||{}).move>80?'red':'green'],
     ['SOFR − IORB', `${fmt((d.plumbing||{}).sofr_iorb_bps,1)}bp`, 'green'],
-    ['Long-duration auctions (10/20/30Y)', 'STRONG (3/3)', 'green'],
+    ['Treasury auctions (absorption / dealer stress)', `${esc(((d.treasury_auctions||{}).state||'—').toUpperCase())} · ${(d.treasury_auctions||{}).absorption_score??'—'} / ${(d.treasury_auctions||{}).dealer_stress_score??'—'}`, ((d.treasury_auctions||{}).state==='Healthy')?'green':(/stress/i.test((d.treasury_auctions||{}).state||'')?'red':'amber')],
     ['Korea gate', `${(d.korea_gate||{}).conditions_met}/3 — ${(d.korea_gate||{}).status==='open'?'OPEN':'CLOSED'}`, (d.korea_gate||{}).status==='open'?'green':'amber'],
     ['RRP buffer', `$${fmt((d.plumbing||{}).rrp_b,3)}B`, 'amber'],
   ];
