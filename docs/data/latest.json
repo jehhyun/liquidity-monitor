@@ -1,11 +1,12 @@
 {
   "meta": {
-    "pulled_at": "2026-10-09T13:34:29.226Z",
-    "pulled_at_cet": "Oct 9, 2026, 3:30 PM CEST",
+    "pulled_at": "2026-10-12T16:08:16.439Z",
+    "pulled_at_cet": "Oct 12, 2026, 18:08 CEST",
     "version": "2.2",
     "source": "FULL refresh: FRED (WALCL/WTREGEN/RRPONTSYD/WRESBAL/SOFR/IORB/TASACBW027SBOG/TSABSNNCB) + TradingView Liquidity Monitor - Jae watchlist + TradingView Technicals (EWY SMA20) + Yahoo Finance closes (KOSPI 5-day SMA) + TreasuryDirect TA_WS (no new Note/Bond/TIPS auctions since the Oct 8 30Y) -- sourced via the Claude in Chrome extension. Pulled Friday ~3:30pm CEST (9:30am ET): US market data is pre-open/early session; Korea closed (KOSPI/KRW carry the Oct 8 close).",
     "weekday_note": "Friday 9:30am ET refresh vs the Thursday Oct 8 evening run. The Oct 8 H.4.1 (Oct 7 level) is now in: TGA fell $68.4B to $880.3B and reserves rebuilt +$81.6B to $3.030T, lifting net liquidity to ~$5.87T (+$78B). Treasury yields drifted a few bp higher after Thursday's rally (2Y 4.80%, 10Y 5.257%, 30Y 5.621%, so the 30Y is 12bp over the 5.5% line vs 10bp), with the front end up most. US risk assets rebounded in the early session (SOXX +1.17%, DRAM +1.84%, QQQ +0.58%) while Korea has not traded since Thursday's -2.62% KOSPI close, so the Korea gate stays CLOSED at 1/3. Oil gave back part of Thursday's jump (-0.79%, $90.77) and gold rose 1.3%. No new auctions; the H.8 bank holdings print is due this afternoon.",
-    "status": "ok"
+    "status": "partial",
+    "partial_note": "Oct 12 PARTIAL refresh: market levels (curve, FX, Korea gate, TIPS/breakevens) updated live from TradingView/Yahoo. FRED plumbing unchanged (same Oct 7 H.4.1 vintage, SOFR 3.87%, IORB 3.90%). Scores, insights, v2 narrative and treasury_auctions carried from the Oct 9 run and NOT regenerated."
   },
   "scores": {
     "liquidity": {
@@ -291,8 +292,8 @@
     "note": "US10Y +3.0bp to 5.257% and US30Y +1.6bp to 5.621% vs the Thursday evening run (watchlist day change +2.2bp / +1.4bp) as the market gives back a little of Thursday's auction-driven rally; the long end is now 12bp above the 5.5% stress line (from 10bp). The front end moved more (US02Y +4.4bp to 4.800%), so 2s10s narrows to 46bp and 2s30s to 82bp. DFII5 2.66% (flat) and DFII10 2.92% (+1bp) are unchanged against anchored breakevens (T5YIE 2.37%, T10YIE 2.35%) -- no inflation signal. MOVE 99.2 is still far above 80 and HY OAS is 3.09%. James-framework check: the real-2Y proxy (US02Y - EXPINF2YR) is 2.17% (from 2.126%) -- front-end real-rate pressure is edging back up after Thursday's relief. Watch signal: if nominal 2Y keeps rising while breakevens stay flat, the real-rate squeeze resumes; if it falls with credit calm, that points to cuts/growth-scare."
   },
   "breakevens": {
-    "dfii5": 2.66,
-    "dfii10": 2.92,
+    "dfii5": 2.62,
+    "dfii10": 2.87,
     "t5yie": {
       "value": 2.37,
       "color": "amber",
@@ -337,36 +338,36 @@
     "hyg_color": "amber"
   },
   "curve": {
-    "us03my": 4.162,
-    "us06my": 4.327,
-    "us02y": 4.8,
-    "us05y": 5.026,
-    "us10y": 5.257,
-    "us30y": 5.621,
+    "us03my": 4.159,
+    "us06my": 4.322,
+    "us02y": 4.791,
+    "us05y": 5.021,
+    "us10y": 5.242,
+    "us30y": 5.6,
     "deltas": {
       "us03my": {
-        "level": 4.162,
-        "chg_1d_bps": 1.1
+        "level": 4.159,
+        "chg_1d_bps": 0.8
       },
       "us06my": {
-        "level": 4.327,
-        "chg_1d_bps": 1.9
+        "level": 4.322,
+        "chg_1d_bps": 0.9
       },
       "us02y": {
-        "level": 4.8,
-        "chg_1d_bps": 4.4
+        "level": 4.791,
+        "chg_1d_bps": 2.9
       },
       "us05y": {
-        "level": 5.026,
-        "chg_1d_bps": 3.5
+        "level": 5.021,
+        "chg_1d_bps": 2.9
       },
       "us10y": {
-        "level": 5.257,
-        "chg_1d_bps": 3
+        "level": 5.242,
+        "chg_1d_bps": 0.7
       },
       "us30y": {
-        "level": 5.621,
-        "chg_1d_bps": 1.6
+        "level": 5.6,
+        "chg_1d_bps": -0.7
       }
     },
     "spread_2s10s": 0.457,
@@ -379,35 +380,35 @@
     "topology_interp": "LONG-END STRESS PERSISTS BUT NOT WORSENING -- 30Y 5.621% IS 12BP ABOVE THE 5.5% LINE (from 10bp Thursday) AFTER STRONG 10Y/30Y AUCTIONS. THE FRONT END LED THE BACK-UP, REAL YIELDS ARE UNCHANGED (DFII5 2.66%) AND MOVE IS 99.2: THIS IS A MILD GIVE-BACK OF THURSDAY'S RALLY, NOT A NEW STRESS SIGNAL."
   },
   "fx": {
-    "dxy": 102.279,
+    "dxy": 102.401,
     "dxy_color": "grey",
     "dxy_delta": "+0.16% today (102.28) -- dollar firm but rangebound",
-    "usdjpy": 158.317,
+    "usdjpy": 158.62,
     "usdjpy_alert": false,
-    "usdjpy_note": "158.32 -- +0.26% today, 3.68 yen below the 162 BOJ threshold; watch for a push toward the line",
-    "usdkrw": 1340.68,
-    "usdkrw_note": "1,340.68 (-0.16% today) -- far below the 1,530 BOK watch level despite the Korea equity selloff; no FX stress",
+    "usdjpy_note": "158.62 -- +0.20% today, 3.38 yen below the 162 BOJ threshold",
+    "usdkrw": 1333.61,
+    "usdkrw_note": "1,333.61 (-0.48% today) -- far below the 1,530 BOK watch level",
     "usdkrw_pass": true,
-    "usdcny": 6.6915,
-    "jp10y": 3.029,
+    "usdcny": 6.6931,
+    "jp10y": 3.002,
     "ni225": 69030.7,
-    "us_japan_spread_bps": 222.8,
+    "us_japan_spread_bps": 224,
     "japan_note": "JP10Y 3.029% (-6.2bp today), NI225 69,031 (-0.02%); US-Japan 10Y spread 222.8bp (from 213.7bp as the JGB yield fell and US yields rose)."
   },
   "korea_gate": {
     "status": "closed",
     "conditions_met": 1,
-    "ewy": 178.17,
+    "ewy": 172.25,
     "ewy_pass": false,
-    "ewy_sma20": 183.83,
-    "usdkrw": 1340.68,
+    "ewy_sma20": 183.58,
+    "usdkrw": 1333.61,
     "usdkrw_pass": true,
     "usdkrw_threshold": 1530,
-    "kospi": 6625.93,
+    "kospi": 6384.24,
     "kospi_pass": false,
-    "kospi_sma5": 6869.26,
-    "kospi_threshold": 6869.26,
-    "note": "Gate CLOSED 1/3 -- only USDKRW passes (1,340.68 < 1,530). EWY 178.17 is BELOW its SMA20 183.83 (FAIL; +1.07% today but 3.1% short) and KOSPI 6,625.93 is BELOW its 5-day SMA 6,869.26 (FAIL; no new session since Thursday's -2.62% close). Unchanged at 1/3 vs the Thursday run; reopens only when both EWY and KOSPI reclaim their averages."
+    "kospi_sma5": 6751.84,
+    "kospi_threshold": 6751.84,
+    "note": "Gate CLOSED 1/3 -- only USDKRW passes (1,333.61 < 1,530). EWY 172.25 below SMA20 183.58 (-2.8% today); KOSPI 6,384.24 below 5-day SMA 6,751.84 (-3.65% today)."
   },
   "semis": {
     "soxx": 569.88,
