@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-10-15T13:26:58.738Z",
+  "last_updated": "2026-10-20T18:41:15.850Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-10-15: no new Note/Bond/TIPS auctions since Oct 8 30Y; 3Y/10Y/30Y settle 2026-10-15, pending cleared."
+  "note": "Checked 2026-10-20: no new Note/Bond/TIPS auctions; 20Y 912810UX4 (Oct 21) and 5Y 91282CRR4 (Oct 22) pending."
  },
  "auctions": [
   {
