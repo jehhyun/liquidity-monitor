@@ -1,8 +1,8 @@
 {
   "meta": {
-    "last_updated": "2026-10-29T14:30:32.937Z",
+    "last_updated": "2026-10-30T14:36:34.572Z",
     "source": "TreasuryDirect TA_WS (securities/search)",
-    "note": "Checked 2026-10-29: appended 2Y 91282CRU7 (Oct 26) and 5Y 91282CRT0 (Oct 27). 7Y 91282CRV5 (Oct 28) bidder data not yet published."
+    "note": "Checked 2026-10-30: appended 7Y 91282CRV5 (Oct 29). Bidder fields read from grandTotalParAwarded / *CompetitiveParAwarded."
   },
   "auctions": [
     {
@@ -477,6 +477,25 @@
       "dealer_pct": 9.4,
       "direct_pct": 26.18,
       "indirect_pct": 53.47,
+      "dealer_pctile": null,
+      "indirect_pctile": null,
+      "direct_pctile": null,
+      "btc_pctile": null,
+      "tail_bps": null,
+      "pctile_note": "Fewer than 8 comparable auctions in the ledger -- percentile not valid."
+    },
+    {
+      "cusip": "91282CRV5",
+      "type": "Note",
+      "term": "7-Year",
+      "auctionDate": "2026-10-29",
+      "issueDate": "2026-11-02",
+      "highYield": 4.894,
+      "bidToCover": 2.46,
+      "totalAccepted_b": 48.889,
+      "dealer_pct": 8.4,
+      "direct_pct": 29.29,
+      "indirect_pct": 51.57,
       "dealer_pctile": null,
       "indirect_pctile": null,
       "direct_pctile": null,
