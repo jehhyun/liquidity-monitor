@@ -1,12 +1,12 @@
 {
  "meta": {
-  "pulled_at": "2026-11-04T14:08:24.834Z",
-  "pulled_at_cet": "Nov 4, 2026, 3:10 PM CET",
+  "pulled_at": "2026-11-05T14:08:25.750Z",
+  "pulled_at_cet": "Nov 5, 2026, 3:12 PM CET",
   "version": "2.3",
-  "source": "Scheduled run Tue Nov 3: FRED (fredgraph) + TradingView Liquidity Monitor - Jae watchlist (US equities/ETFs at Mon Nov 2 close) + Yahoo KOSPI 5d SMA + TradingView EWY SMA20 + TreasuryDirect TA_WS.",
-  "weekday_note": "FRED: H.4.1 Oct 28 vintage (unchanged), H.8 Oct 21 vintage, RRP/SOFR Nov 3, IORB Nov 4. US stock/ETF quotes are Tue Nov 3 closes; Asia/rates/FX live.",
+  "source": "Scheduled run Thu Nov 5: FRED (fredgraph) + TradingView Liquidity Monitor - Jae watchlist (live) + Yahoo KOSPI 5d SMA + TradingView EWY SMA20 + TreasuryDirect TA_WS.",
+  "weekday_note": "FRED: H.4.1 Oct 28 vintage (unchanged; Nov 4 print due Thu after 4:30pm ET), H.8 Oct 21 vintage, RRP/SOFR Nov 4, IORB Nov 5. Quotes live Thu Nov 5 session.",
   "status": "ok",
-  "partial_note": "Scheduled run Wed Nov 4: refreshed all numeric v1 fields, Korea gate (1/3 closed), plumbing, curve, FX, scores. No new H.4.1/H.8/Z.1 vintage and no new Treasury auctions since the Oct 29 7Y (state Healthy, absorption 77 / dealer stress 23 carried). Narrative text fields were only partially re-written this run; some commentary (and v2 prose) may still reflect Nov 3 context. SOFR corrected on 2026-11-04 to the published Oct 23 print (3.92%, +2bp vs IORB)."
+  "partial_note": "Scheduled run Thu Nov 5: refreshed all numeric v1 fields, Korea gate (1/3 closed), plumbing, curve, FX, scores, bias, structured conclusion. No new H.4.1/H.8/Z.1 vintage and no new Treasury auctions since the Oct 29 7Y (state Healthy, absorption 77 / dealer stress 23 carried); Nov refunding auctions start next week. SOXX quote on TradingView shows -66.67% (apparent 3:1 split artifact, SOXX/SPY ratio shown split-adjusted x3). Some v2 prose may still reflect Nov 4 context."
  },
  "scores": {
   "liquidity": {
@@ -40,9 +40,9 @@
   },
   "credit": {
    "color": "red",
-   "value": 28,
-   "trend_label": "Deteriorating",
-   "trend_wk": -8,
+   "value": 32,
+   "trend_label": "Stable",
+   "trend_wk": -4,
    "decomp": [
     [
      "HY OAS 3.14% (-4bp) -- index spread still tight",
@@ -61,7 +61,7 @@
   },
   "inflation": {
    "color": "amber",
-   "value": 42,
+   "value": 44,
    "trend_label": "Stable",
    "trend_wk": 0,
    "decomp": [
@@ -82,7 +82,7 @@
   },
   "vol": {
    "color": "red",
-   "value": 12,
+   "value": 10,
    "trend_label": "Deteriorating",
    "trend_wk": -9,
    "decomp": [
@@ -119,13 +119,13 @@
   "structural_liquidity": "Tightening",
   "short_term_conditions": "Deteriorating",
   "long_term_conditions": "Restrictive",
-  "macro_trend": "Risk-off continues, led by Korea/semis: KOSPI -3.6%, SOXX -3.8%, HY OAS +18bp to 3.44%; real yields easing (DFII5 2.25%), SOFR-IORB +5bp, funding and auctions intact",
+  "macro_trend": "Korea/Asia semis rout while US credit holds -- real-rate pressure, regional risk-off",
   "likely_rotation": "Defensive/short-duration; semis and high-beta Asia under pressure",
   "risk_level": "High",
   "next_catalyst": "Nov 4: H.4.1 balance sheet release (TGA/reserves); no new Treasury auctions since Oct 29 7Y",
-  "korea_gate": "1/3 -- USDKRW passes (1,343 < 1,530); EWY below SMA20 and KOSPI below its 5d SMA fail"
+  "korea_gate": "1/3 -- USDKRW passes; EWY below SMA20 and KOSPI below 5d SMA fail"
  },
- "bias": "Financial conditions remain restrictive and the direction of travel this session is risk-off with intact plumbing: SOXX -3.8%, QQQ -1.4%, SPY -0.5% on Monday, HY OAS widened another 18bp to 3.44%, and KOSPI fell 3.6% (SK Hynix -5%, Samsung -4%). Treasury yields edged up (10Y 4.929%, 30Y 5.302%) while real yields eased (DFII5 2.25%, DFII10 2.60%) and breakevens slipped (T10YIE 2.29%). Oil -1.7% to $94.79 with softer breakevens reads as demand/risk-off, not inflation relief. Korea gate is closed 1/3: only USDKRW 1,343 passes; EWY (155.06 vs SMA20 160.28) and KOSPI (5,683.80 vs 5d SMA 5,772.01) both fail. Watch HY OAS above 3.5%, MOVE (~100.6) and SOFR-IORB (+5bp) for confirmation of funding stress.",
+ "bias": "Financial conditions remain restrictive, and the direction of travel today is regional risk-off centred on Korea/Asia semis with US credit and plumbing intact. KOSPI fell 5.3% (SK Hynix -9.5%, Samsung -7.6%), NI225 -1.8%, EWY -1.9%, DRAM -5.3%, NVDA -3.2%, while US risk assets bounced (SPY +1.65%, QQQ +1.0%, HYG +0.7%) and HY OAS tightened 3bp to 3.40%. Treasuries rallied modestly at the long end (TLT +0.8%; 10Y 4.904%) while the 2Y rose to 4.614% and real yields firmed (DFII5 2.35%, DFII10 2.65%) with breakevens slipping (T10YIE 2.26%) -- real-rate pressure rather than CPI panic. Oil +1.4% to $89.34 is under the 3% flag. Korea gate is closed 1/3: only USDKRW 1,343.68 passes; EWY 152.12 (SMA20 158.70) and KOSPI 5,383.80 (5d SMA 5,661.24) fail. MOVE eased to 90.8 but remains above 80; watch MOVE, SOFR-IORB (+4bp) and the Fri jobs print.",
  "counterargs": {
   "supporting": [
    "Risk-off spreads: SOXX -7.4%, DRAM -6.5%, NVDA -3.5%, QQQ -2.9%, SPY -1.4%, VIX +15% to 19.80",
@@ -245,33 +245,33 @@
   "reserves_t": 2.894,
   "reserves_color": "amber",
   "reserves_delta": "$2.894T (Oct 28 H.4.1, -$68.8B w/w) -- lowest in the recent series",
-  "rrp_b": 0.427,
+  "rrp_b": 0.225,
   "rrp_color": "amber",
-  "rrp_delta": "$0.4B (Nov 3 daily print) - month-end bump unwound; buffer effectively empty",
-  "sofr_pct": 3.92,
+  "rrp_delta": "$0.2B (Nov 4) -- floor-level; month-end spike to $5.1B faded",
+  "sofr_pct": 3.94,
   "sofr_color": "green",
-  "sofr_delta": "3.92% (Oct 23 print, +2bp d/d)",
-  "sofr_iorb_bps": 2,
-  "sofr_iorb_note": "+2bp -- SOFR 3.92% vs IORB 3.90%; funding normal, SOFR drifting up with the TGA rebuild",
+  "sofr_delta": "-3bp vs Nov 3 (3.97%)",
+  "sofr_iorb_bps": 4,
+  "sofr_iorb_note": "SOFR 3.94% vs IORB 3.90% (+4bp) -- mildly above IORB, no stress",
   "iorb_pct": 3.9,
   "iorb_delta": "Unchanged at 3.90%",
-  "net_liquidity_t": 5.745
+  "net_liquidity_t": 5.746
  },
  "duration": {
-  "tlt": 81.11,
+  "tlt": 81.76,
   "tlt_color": "amber",
-  "tlt_delta": "-0.76% (Tue close)",
-  "shy": 81.4,
+  "tlt_delta": "+0.80% (live)",
+  "shy": 81.5,
   "shy_color": "grey",
-  "shy_delta": "-0.07% (Tue close)",
-  "tlt_shy_ratio": 0.996,
-  "hyg": 76.98,
+  "shy_delta": "+0.12% (live)",
+  "tlt_shy_ratio": 1.003,
+  "hyg": 77.52,
   "hyg_color": "amber",
-  "hyg_delta": "+0.12% (Tue close)",
-  "move": 97.7642,
+  "hyg_delta": "+0.70% (live)",
+  "move": 90.8339,
   "move_color": "red",
-  "move_delta": "-2.22% today",
-  "t10yie": 2.29,
+  "move_delta": "-3.26% today",
+  "t10yie": 2.26,
   "t10yie_color": "amber",
   "t10yie_delta": "2.29% (-5bp)",
   "real_yield": 2.64
@@ -282,117 +282,117 @@
   "note": "Fri Oct 23 closes: US02Y +3.8bp to 4.686%, US10Y +3.8bp to 4.999%, US30Y +4.1bp to 5.327% -- a parallel bear shift reversing part of the Oct 22 flight-to-quality rally. Oil +3.8% to $103.27 and T5YIE +3bp to 2.48% point to an inflation-expectations driver; DFII5 2.33% / DFII10 2.64% are well below the prior run (2.55% / 2.76%)."
  },
  "breakevens": {
-  "dfii5": 2.31,
-  "dfii10": 2.62,
-  "t5yie": 2.39,
-  "t10yie": 2.3,
+  "dfii5": 2.35,
+  "dfii10": 2.65,
+  "t5yie": 2.3,
+  "t10yie": 2.26,
   "expinf2yr": 2.87,
   "source_note": "DFII5 2.25% / DFII10 2.60% (TradingView watchlist, Nov 3); T5YIE 2.39% / T10YIE 2.29%; EXPINF2YR 2.87%."
  },
  "credit": {
-  "hy_oas": 3.43,
+  "hy_oas": 3.4,
   "hy_oas_color": "amber",
-  "hy_oas_delta": "3.43% (-1bp on the day)",
+  "hy_oas_delta": "3.40% (-3bp)",
   "ig_oas": 0.79,
   "ig_oas_color": "grey",
   "ig_oas_delta": "Not in live watchlist scrape this run -- carried from the prior run",
-  "ally": 37.92,
+  "ally": 39.36,
   "ally_color": "amber",
-  "ally_delta": "-1.79% (Tue close)",
-  "cacc": 480.65,
+  "ally_delta": "+3.80% (live)",
+  "cacc": 498.68,
   "cacc_color": "amber",
-  "cacc_delta": "-0.85% (Tue close)",
-  "cof": 208.71,
+  "cacc_delta": "+3.75% (live)",
+  "cof": 206.31,
   "cof_color": "amber",
-  "cof_delta": "-0.98% (Tue close)",
-  "hyg": 76.98,
-  "hyg_delta": "+0.12% (Tue close)",
+  "cof_delta": "-1.15% (live)",
+  "hyg": 77.52,
+  "hyg_delta": "+0.70% (live)",
   "hyg_color": "amber"
  },
  "curve": {
   "us03my": 4.128,
-  "us06my": 4.287,
-  "us02y": 4.6,
-  "us05y": 4.714,
-  "us10y": 4.925,
-  "us30y": 5.304,
+  "us06my": 4.292,
+  "us02y": 4.614,
+  "us05y": 4.709,
+  "us10y": 4.904,
+  "us30y": 5.285,
   "deltas": {
    "us03my": {
     "level": 4.128,
-    "chg_1d_bps": 4.9
+    "chg_1d_bps": 0
    },
    "us06my": {
-    "level": 4.282,
-    "chg_1d_bps": 2.1
+    "level": 4.292,
+    "chg_1d_bps": 0.5
    },
    "us02y": {
-    "level": 4.594,
-    "chg_1d_bps": -0.4
+    "level": 4.614,
+    "chg_1d_bps": 3.1
    },
    "us05y": {
-    "level": 4.72,
-    "chg_1d_bps": 0.9
+    "level": 4.709,
+    "chg_1d_bps": 2.5
    },
    "us10y": {
-    "level": 4.929,
-    "chg_1d_bps": 1.7
+    "level": 4.904,
+    "chg_1d_bps": 1.4
    },
    "us30y": {
-    "level": 5.302,
-    "chg_1d_bps": 1.5
+    "level": 5.285,
+    "chg_1d_bps": 0.9
    }
   },
-  "spread_2s10s": 0.325,
-  "spread_3m10y": 0.797,
-  "spread_2s30s": 0.704,
-  "real_10y": 2.625,
-  "real_2y_proxy": 1.73,
-  "us_japan_spread_bps": 210.8,
+  "spread_2s10s": 0.29,
+  "spread_3m10y": 0.776,
+  "spread_2s30s": 0.671,
+  "real_10y": 2.644,
+  "real_2y_proxy": 1.744,
+  "us_japan_spread_bps": 213.7,
   "topology": "Nov 2 pull: bear-flattening reversed into bull-steepening at the long end -- 2Y +1.2bp, 10Y -2.9bp, 30Y -3.6bp; 2s10s 29.8bp (from 33.1), 2s30s 66.7bp.",
   "topology_interp": "LONG-END STRESS EASING BUT NOT CLEARED -- 30Y 5.327% is 17bp under the 5.5% line; yields rose on oil/breakevens, not on real yields or auction weakness"
  },
  "fx": {
-  "dxy": 101.358,
+  "dxy": 101.599,
   "dxy_color": "grey",
-  "dxy_delta": "-0.52% today",
-  "usdjpy": 158.44,
+  "dxy_delta": "+0.11%",
+  "usdjpy": 158.417,
   "usdjpy_alert": false,
-  "usdjpy_note": "158.44 (-0.17% today); below the 162 BOJ threshold",
-  "usdkrw": 1339.02,
-  "usdkrw_note": "1,339.02 (-0.40% today) -- below 1,530 BOK watch level",
+  "usdjpy_note": "USDJPY 158.42 flat; 3.6 big figures below the 162 BOJ threshold (no breach).",
+  "usdkrw": 1343.68,
+  "usdkrw_note": "USDKRW 1,343.68 (+0.21%), well under 1,530 BOK watch level despite KOSPI -5.3%.",
   "usdkrw_pass": true,
-  "usdcny": 6.6715,
-  "jp10y": 2.817,
-  "ni225": 62188.41,
-  "us_japan_spread_bps": 210.8,
-  "japan_note": "JP10Y 2.817% (+4.2bp); US-Japan 10Y spread 210.8bp"
+  "usdcny": 6.6675,
+  "jp10y": 2.767,
+  "ni225": 61077.68,
+  "us_japan_spread_bps": 213.7,
+  "japan_note": "JP10Y 2.767% (-5bp) with NI225 -1.8%; US-Japan 10Y spread 214bp."
  },
  "korea_gate": {
   "status": "closed",
   "conditions_met": 1,
-  "ewy": 155.06,
+  "ewy": 152.12,
   "ewy_pass": false,
-  "ewy_sma20": 160.28,
-  "usdkrw": 1339.02,
+  "ewy_sma20": 158.7,
+  "usdkrw": 1343.68,
   "usdkrw_pass": true,
   "usdkrw_threshold": 1530,
-  "kospi": 5683.8,
+  "kospi": 5383.8,
   "kospi_pass": false,
-  "kospi_sma5": 5772.01,
-  "kospi_threshold": 5772.01,
-  "note": "Gate CLOSED 1/3 -- USDKRW 1,339.02 < 1,530 (pass); EWY 155.06 < SMA20 160.28 (fail); KOSPI 5,683.80 < 5d SMA 5,772.01 (fail)"
+  "kospi_sma5": 5661.24,
+  "kospi_threshold": 5661.24,
+  "note": "Gate CLOSED 1/3: USDKRW 1,343.68 passes (<1,530); EWY 152.12 < SMA20 158.70 fails; KOSPI 5,383.80 < 5d SMA 5,661.24 fails (KOSPI -5.3% today, SK Hynix -9.5%, Samsung -7.6%)."
  },
  "semis": {
-  "soxx": 465,
+  "soxx": 150.14,
   "soxx_color": "red",
-  "soxx_delta": "+2.50% (Tue close)",
-  "qqq": 685.28,
+  "soxx_delta": "n/a -- TradingView shows -66.67% (split artifact, likely 3:1); memory complex weak (DRAM -5.3%, NVDA -3.2%)",
+  "qqq": 691.95,
   "qqq_color": "amber",
-  "qqq_delta": "+0.62% (Tue close)",
-  "spy": 754.35,
+  "qqq_delta": "+0.97% (live)",
+  "spy": 766.81,
   "spy_color": "amber",
-  "spy_delta": "+0.30% (Tue close)",
-  "soxx_spy_ratio": 0.616
+  "spy_delta": "+1.65% (live)",
+  "soxx_spy_ratio": 0.587
  },
  "chain": [
   {
@@ -413,22 +413,22 @@
  "chain_note": "Only DRAM and NVDA present in the watchlist (other enabling-layer names removed).",
  "crosschecks": {
   "oil": {
-   "value": 93.59,
-   "color": "red",
-   "delta": "-2.60% today -- below the 3% threshold",
-   "note": "WTI front month $103.27 (+$3.80). Breakevens moved with oil (T5YIE +3bp to 2.48%, T10YIE +2bp to 2.34%), the stronger inflation-reacceleration read; real yields fell (DFII5 2.33%), so this is not a real-rate story."
+   "value": 89.34,
+   "color": "amber",
+   "delta": "+1.38% today",
+   "note": "WTI front month $89.34, +1.4% (below the 3% flag) with T5YIE/T10YIE slipping -- reads as supply/real-rate, not inflation re-acceleration."
   },
   "gold": {
-   "value": 4042.74,
+   "value": 4124.62,
    "color": "amber",
-   "delta": "+2.90% today",
-   "note": "Gold $3,995 (-0.72%): no flight-to-gold bid despite oil strength; gold has dropped below $4,000."
+   "delta": "+1.56% today",
+   "note": "Gold $4,124.62 +1.6%; real yields firm (DFII5 2.35%) yet gold bid -- haven demand amid Asia selloff."
   },
   "vix": {
-   "value": 18.01,
+   "value": 16.82,
    "color": "amber",
-   "delta": "-13.35% today",
-   "note": "VIX 19.44 -- just under the 20 line; equity vol elevated but not escalating while MOVE (103.3) eased 3.3%"
+   "delta": "+1.33% today",
+   "note": "VIX 16.82 +1.3%; US vol subdued while Korea/Japan sell off -- regional, not global, risk-off."
   }
  },
  "sector_rotation": {
@@ -450,36 +450,12 @@
   }
  },
  "changed_today": [
-  {
-   "label": "KOSPI / EWY",
-   "value": "5,683.80 / 155.06",
-   "delta": "-3.59% / -0.83% -- both below short SMAs; Korea gate 1/3"
-  },
-  {
-   "label": "SOXX / semis",
-   "value": "453.65",
-   "delta": "-3.79%; DRAM -3.52%, NVDA -1.26%, SK Hynix -5.03%"
-  },
-  {
-   "label": "HY OAS / HYG",
-   "value": "3.44% / 76.89",
-   "delta": "+18bp / -0.70%"
-  },
-  {
-   "label": "VIX / MOVE",
-   "value": "21.04 / 97.76",
-   "delta": "-0.47% / +0.23% -- MOVE stays above 80"
-  },
-  {
-   "label": "10Y / DFII5",
-   "value": "4.929% / 2.25%",
-   "delta": "+1.7bp / -6bp -- nominal up, real yield easing"
-  },
-  {
-   "label": "Oil (CL1!)",
-   "value": "94.79",
-   "delta": "-1.73% -- below 3% threshold"
-  }
+  "KOSPI -5.28% to 5,383.80; SK Hynix -9.5%, Samsung -7.6%; EWY -1.9%",
+  "HY OAS 3.40% (-3bp); HYG +0.70%; ALLY +3.8%, CACC +3.75%",
+  "MOVE 90.83 (-3.3%) but still >80; VIX 16.82",
+  "2Y 4.614% (+3bp), 10Y 4.904% (+1bp); DFII5 2.35%, T10YIE 2.26%",
+  "Oil $89.34 (+1.4%), gold $4,125 (+1.6%)",
+  "SOXX quote shows -66.67% (split artifact)"
  ],
  "section_horizons": {
   "plumbing": "structural",
