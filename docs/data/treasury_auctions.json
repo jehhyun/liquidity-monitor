@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-05T14:08:44.594Z",
+  "last_updated": "2026-11-06T14:08:33.497Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-05: no new auctions settled; ledger unchanged (last ingested 7Y 91282CRV5, Oct 29)."
+  "note": "Checked 2026-11-06: no new auctions settled; ledger unchanged (last ingested 7Y 91282CRV5, Oct 29). Refunding auctions 3Y/10Y/30Y due Nov 10-12."
  },
  "auctions": [
   {
