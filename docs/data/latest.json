@@ -1,10 +1,10 @@
 {
   "meta": {
-    "pulled_at": "2026-11-10T11:11:09.638Z",
-    "pulled_at_cet": "Nov 10, 2026, 12:07 CET",
+    "pulled_at": "2026-11-10T14:08:45.308Z",
+    "pulled_at_cet": "10 Nov 2026, 15:08 CET",
     "version": "2.3",
     "source": "Scheduled run Tue Nov 10: FRED (fredgraph) + TradingView Liquidity Monitor - Jae watchlist + Yahoo ^KS11/EWY + TreasuryDirect TA_WS",
-    "weekday_note": "FRED: H.4.1 Nov 4 vintage unchanged (next release Nov 12); H.8 Oct 28 new (4,795.1B); RRP Nov 9 $0.25B; SOFR Nov 6 3.89%; IORB 3.90%. TradingView quotes live Tue Nov 10. EWY SMA20 computed from Yahoo daily closes (TV technicals page not scraped).",
+    "weekday_note": "Afternoon refresh Tue Nov 10: FRED H.4.1 Nov 4 vintage unchanged; H.8 Oct 28 4,795.1B; RRP Nov 9 $0.25B; SOFR Nov 9 3.88%; IORB 3.90%. TradingView live quotes (yields +9-12bp front end vs morning run). No new auctions settled (10Y 91282CRX1 auctions later today). Korea gate recomputed from Yahoo closes: still 1/3.",
     "status": "ok",
     "partial_note": "Scheduled run Tue Nov 10 (fired late, originally scheduled Nov 9): refreshed all numeric v1 fields, Korea gate (1/3 closed), curve, FX, semis, scores, plumbing, auction module (new 3Y 91282CRW3 Nov 9), bank demand (H.8 Oct 28). v2 block: regime_header, master_scores, shock-absorber bank row refreshed; other v2 narrative blocks carried from prior run."
   },
@@ -24,7 +24,7 @@
           0
         ],
         [
-          "SOFR 3.89% vs IORB 3.90% (-1bp) -- funding normal",
+          "SOFR 3.88% vs IORB 3.90% (-2bp) -- funding normal",
           1
         ],
         [
@@ -36,7 +36,7 @@
           1
         ]
       ],
-      "label": "Liquidity stable: no new H.4.1 since Nov 4 (reserves $2.930T, TGA $957B, net liquidity $5.791T). SOFR now 1bp below IORB, bank holdings edging up, 3Y refunding auction absorbed with low dealer take. Funding is not the constraint."
+      "label": "Liquidity stable: no new H.4.1 since Nov 4 (reserves $2.930T, TGA $957B, net liquidity $5.791T). SOFR 2bp below IORB (3.88% vs 3.90%), bank holdings edging up, 3Y refunding auction absorbed with low dealer take. Funding is not the constraint."
     },
     "credit": {
       "color": "amber",
@@ -53,7 +53,7 @@
           1
         ],
         [
-          "MOVE 86.0 (-7.3%) -- easing but above 80",
+          "MOVE 88.9 (+3.4%) -- easing but above 80",
           0
         ]
       ],
@@ -61,12 +61,12 @@
     },
     "inflation": {
       "color": "amber",
-      "value": 48,
+      "value": 47,
       "trend_label": "Improving",
       "trend_wk": 4,
       "decomp": [
         [
-          "Oil $85.49 (-1.57%) -- sub-3% move, ~6% lower since Nov 6",
+          "Oil $84.42 (-2.80%) -- sub-3% move, ~6% lower since Nov 6",
           2
         ],
         [
@@ -74,28 +74,28 @@
           1
         ],
         [
-          "DFII5 2.35% (-4bp) -- real-rate pressure easing slightly",
+          "DFII5 2.35% (+2bp) -- real-rate pressure easing slightly",
           1
         ]
       ],
-      "label": "Inflation pressure easing: oil and breakevens are falling together (a stronger disinflation signal than oil alone) and DFII5 slipped 4bp to 2.35%."
+      "label": "Inflation pressure easing modestly: oil -2.8% to $84.42 (sub-3%) with breakevens flat (T5YIE 2.25%, T10YIE 2.22%), so this reads as real-rate rather than inflation story; DFII5 +2bp to 2.35%."
     },
     "vol": {
       "color": "red",
-      "value": 25,
-      "trend_label": "Improving",
+      "value": 22,
+      "trend_label": "Stable",
       "trend_wk": 20,
       "decomp": [
         [
-          "VIX 20.16 -- down from 27.02 on Nov 6",
+          "VIX 21.12 -- down from 27.02 on Nov 6",
           2
         ],
         [
-          "MOVE 86.0 (-7.3%) -- falling but still above 80",
+          "MOVE 88.9 (+3.4%) -- falling but still above 80",
           0
         ],
         [
-          "USDJPY 158.12 vs 162 BOJ threshold -- 3.9 yen of room",
+          "USDJPY 158.55 vs 162 BOJ threshold -- 3.9 yen of room",
           1
         ],
         [
@@ -103,7 +103,7 @@
           2
         ]
       ],
-      "label": "Volatility normalizing: VIX back near 20 and Asia equities rebounding sharply, but MOVE at 86 keeps rates vol elevated."
+      "label": "Volatility mixed: VIX back above 21 (+6%) and MOVE 88.9 (+3.4%) as the 2Y jumped 12bp, even as Asia equities rebound sharply. Rates vol stays above the 80 line."
     }
   },
   "regime_confidence": 42,
@@ -125,7 +125,7 @@
     "next_catalyst": "10Y auction (Nov 10, today), 30Y auction (Nov 12), H.4.1 (Nov 12)",
     "korea_gate": "1/3 -- USDKRW passes; EWY (142.10 vs SMA20 153.06) and KOSPI (5,239 vs 5d SMA 5,277) fail"
   },
-  "bias": "Financial conditions remain restrictive, but plumbing has improved at the margin (net liquidity $5.791T, up $45B; reserves rebounding as the TGA drains) while risk assets broke sharply lower: SOXX -12%, EWY -13%, KOSPI -6%, NI225 -6%, VIX 27. The shock is a risk-appetite/de-grossing event, not (yet) a funding event: SOFR-IORB +2bp, HY OAS tighter at 3.32%, front-end yields falling. Direction of travel is deteriorating for equities and vol, stable for liquidity and credit; watch for HY OAS and SOFR-IORB to confirm or not.",
+  "bias": "Financial conditions remain restrictive. Plumbing is steady (net liquidity $5.791T, SOFR 2bp below IORB, bank Treasury holdings edging up) and credit is calm (HY OAS 3.42%), but the front end is repricing higher: 2Y +12bp to 4.69%, 10Y 4.95%, 2s10s compressed to +27bp. The Asia/semis rebound (KOSPI +4.4%, Nikkei +2.9%) has not yet repaired the prior week's damage (Korea gate still 1/3). Direction of travel: rates vol and real-rate pressure rising, funding stable. Key test: today's 10Y auction and Nov 12 30Y/H.4.1.",
   "counterargs": {
     "supporting": [
       "Risk-off spreads: SOXX -7.4%, DRAM -6.5%, NVDA -3.5%, QQQ -2.9%, SPY -1.4%, VIX +15% to 19.80",
@@ -248,11 +248,11 @@
     "rrp_b": 0.252,
     "rrp_color": "amber",
     "rrp_delta": "$0.3B (Nov 9) -- floor-level, buffer empty",
-    "sofr_pct": 3.89,
+    "sofr_pct": 3.88,
     "sofr_color": "green",
-    "sofr_delta": "-3bp vs Nov 5 (3.92%)",
-    "sofr_iorb_bps": -1,
-    "sofr_iorb_note": "SOFR 3.89% vs IORB 3.90% (-1bp) -- funding normal, no repo pressure",
+    "sofr_delta": "-1bp vs Nov 6 (3.89%)",
+    "sofr_iorb_bps": -2,
+    "sofr_iorb_note": "SOFR 3.88% vs IORB 3.90% (-2bp) -- funding normal, no repo pressure",
     "iorb_pct": 3.9,
     "iorb_delta": "Unchanged at 3.90%",
     "net_liquidity_t": 5.791
@@ -268,12 +268,12 @@
     "hyg": 77.51,
     "hyg_color": "amber",
     "hyg_delta": "+0.36% (live)",
-    "move": 85.9938,
+    "move": 88.8838,
     "move_color": "amber",
     "move_delta": "-7.32% today (still above 80)",
     "t10yie": 2.22,
     "t10yie_color": "amber",
-    "t10yie_delta": "2.22% (-1bp)",
+    "t10yie_delta": "2.22% (-2bp)",
     "real_yield": 2.672
   },
   "duration_score": {
@@ -310,62 +310,62 @@
     "hyg_color": "amber"
   },
   "curve": {
-    "us03my": 4.18,
-    "us06my": 4.34,
-    "us02y": 4.612,
-    "us05y": 4.7,
-    "us10y": 4.892,
-    "us30y": 5.271,
+    "us03my": 4.229,
+    "us06my": 4.409,
+    "us02y": 4.689,
+    "us05y": 4.773,
+    "us10y": 4.954,
+    "us30y": 5.323,
     "deltas": {
       "us03my": {
-        "level": 4.18,
-        "chg_1d_bps": 6.9
+        "level": 4.229,
+        "chg_1d_bps": 9
       },
       "us06my": {
-        "level": 4.34,
-        "chg_1d_bps": 7.1
+        "level": 4.409,
+        "chg_1d_bps": 12.2
       },
       "us02y": {
-        "level": 4.612,
-        "chg_1d_bps": 9.4
+        "level": 4.689,
+        "chg_1d_bps": 12.3
       },
       "us05y": {
-        "level": 4.7,
-        "chg_1d_bps": 5.5
+        "level": 4.773,
+        "chg_1d_bps": 9.1
       },
       "us10y": {
-        "level": 4.892,
-        "chg_1d_bps": 3.1
+        "level": 4.954,
+        "chg_1d_bps": 7
       },
       "us30y": {
-        "level": 5.271,
-        "chg_1d_bps": 0.1
+        "level": 5.323,
+        "chg_1d_bps": 4.8
       }
     },
-    "spread_2s10s": 0.28,
-    "spread_3m10y": 0.712,
-    "spread_2s30s": 0.659,
-    "real_10y": 2.672,
-    "real_2y_proxy": 1.742,
-    "us_japan_spread_bps": 220,
-    "topology": "Nov 10 pull vs Nov 6 snapshot: bear-flattening -- front end led the selloff (2Y +9.4bp to 4.612%, 3M +6.9bp), 5Y +5.5bp, 10Y +3.1bp, 30Y flat at 5.271%; 2s10s compressed to +28bp (from +34bp).",
+    "spread_2s10s": 0.265,
+    "spread_3m10y": 0.725,
+    "spread_2s30s": 0.634,
+    "real_10y": 2.734,
+    "real_2y_proxy": 1.819,
+    "us_japan_spread_bps": 225,
+    "topology": "Nov 10 pull vs Nov 6 snapshot: bear-flattening -- front end led the selloff (2Y +9.4bp to 4.689%, 3M +6.9bp), 5Y +5.5bp, 10Y +3.1bp, 30Y flat at 5.323%; 2s10s compressed to +27bp (from +34bp).",
     "topology_interp": "FRONT-END REPRICING / BEAR FLATTENING -- risk-on bounce unwinds the growth-scare duration bid; long end still elevated at 5.27%, so no clean easing signal."
   },
   "fx": {
-    "dxy": 101.7,
+    "dxy": 102.043,
     "dxy_color": "amber",
-    "dxy_delta": "+0.02%",
-    "usdjpy": 158.124,
+    "dxy_delta": "+0.36%",
+    "usdjpy": 158.549,
     "usdjpy_alert": false,
-    "usdjpy_note": "USDJPY 158.12 (+0.14%) -- 3.9 yen below the 162 BOJ threshold",
-    "usdkrw": 1338.57,
-    "usdkrw_note": "USDKRW 1,338.57 (-0.13%) -- well below the 1,530 BOK watch level",
+    "usdjpy_note": "USDJPY 158.55 (+0.41%) -- 3.45 yen below the 162 BOJ threshold",
+    "usdkrw": 1342.68,
+    "usdkrw_note": "USDKRW 1,342.68 (+0.18%) -- well below the 1,530 BOK watch level",
     "usdkrw_pass": true,
     "usdcny": 6.6698,
-    "jp10y": 2.696,
+    "jp10y": 2.705,
     "ni225": 60459.36,
-    "us_japan_spread_bps": 220,
-    "japan_note": "JP10Y 2.696% (+3bp); Nikkei +2.9% in a broad Asia rebound."
+    "us_japan_spread_bps": 225,
+    "japan_note": "JP10Y 2.705% (+4bp); Nikkei +2.9% in a broad Asia rebound."
   },
   "korea_gate": {
     "status": "closed",
@@ -373,14 +373,14 @@
     "ewy": 142.1,
     "ewy_pass": false,
     "ewy_sma20": 153.06,
-    "usdkrw": 1338.57,
+    "usdkrw": 1342.68,
     "usdkrw_pass": true,
     "usdkrw_threshold": 1530,
     "kospi": 5239.13,
     "kospi_pass": false,
     "kospi_sma5": 5277.05,
     "kospi_threshold": 5277.05,
-    "note": "Gate CLOSED 1/3: USDKRW 1,338.57 passes (<1,530); EWY 142.10 is 7.2% below its SMA20 (153.06) despite +3.7% today; KOSPI 5,239.13 (+4.4%) still just below its 5-day SMA 5,277.05."
+    "note": "Gate CLOSED 1/3: USDKRW 1,342.68 passes (<1,530); EWY 142.10 is 7.2% below its SMA20 (153.06) despite +3.7% today; KOSPI 5,239.13 (+4.4%) still just below its 5-day SMA 5,277.05."
   },
   "semis": {
     "soxx": 146.76,
@@ -413,22 +413,22 @@
   "chain_note": "Only DRAM and NVDA are present in the watchlist; the other enabling-layer names remain removed.",
   "crosschecks": {
     "oil": {
-      "value": 85.49,
+      "value": 84.42,
       "color": "green",
-      "delta": "-1.57% today",
-      "note": "WTI front month $85.49, -1.6% (below the 3% threshold); down ~6% since Nov 6 with breakevens drifting lower."
+      "delta": "-2.80% today",
+      "note": "WTI front month $84.42, -1.6% (below the 3% threshold); down ~6% since Nov 6 with breakevens drifting lower."
     },
     "gold": {
-      "value": 4069.44,
+      "value": 4055.33,
       "color": "amber",
       "delta": "-1.71% today",
       "note": "Gold $4,069.44, -1.7% on the risk-on bounce."
     },
     "vix": {
-      "value": 20.16,
+      "value": 21.12,
       "color": "amber",
       "delta": "+1.15% today",
-      "note": "VIX 20.16 (+1.2% on the day) -- down from 27.02 on Nov 6 as the equity rout reverses."
+      "note": "VIX 21.12 (+1.2% on the day) -- down from 27.02 on Nov 6 as the equity rout reverses."
     }
   },
   "sector_rotation": {
@@ -480,7 +480,7 @@
     "state_since": "2026-10-08",
     "absorption_score": 78,
     "dealer_stress_score": 22,
-    "sofr_iorb_bps": -1,
+    "sofr_iorb_bps": -2,
     "latest_settled_auctions": [
       {
         "cusip": "91282CRW3",
@@ -548,7 +548,7 @@
     "narrative": "3Y refunding auction (Nov 9) cleared at 4.627% with BTC 2.53x (vs 2.62x last 3Y) and a low 7.8% dealer take -- soft-but-fine demand, indirect share 45.9% vs 55.3% last 3Y partly reflecting Fed SOMA add-ons. Yields are elevated from duration repricing, not intermediation stress: no tails, dealer take low, SOFR below IORB.",
     "pending": [],
     "iorb_pct": 3.9,
-    "sofr_pct": 3.89,
+    "sofr_pct": 3.88,
     "tail_bps": null
   },
   "v2": {
@@ -570,7 +570,7 @@
       "monetary_restrictiveness": {
         "value": 73,
         "bucket": "HIGH",
-        "label": "HIGH, STEADY -- DFII5 2.35%, DFII10 2.63%; NOMINAL 10Y 4.892% / 30Y 5.271%"
+        "label": "HIGH, STEADY -- DFII5 2.35%, DFII10 2.63%; NOMINAL 10Y 4.954% / 30Y 5.323%"
       },
       "system_regime": "CONTROLLED TIGHTENING / LIQUIDITY PROTECTED -- PLUMBING AND AUCTIONS INTACT; INFLATION (OIL >$103) AND CREDIT (HY OAS 3.40%) ARE THE EMERGING PRESSURES",
       "regime_matrix_note": "LOW restrictiveness + HIGH resilience = Liquidity-Driven Risk-On · HIGH+HIGH = Controlled Tightening/Liquidity Protected · HIGH+LOW = Liquidity Contraction/Risk-Off · LOW+LOW = Weak/Transitional."
@@ -891,7 +891,7 @@
       {
         "name": "Repo facilities (SRF)",
         "status_type": "PROXY / INDIRECT",
-        "current_read": "SOFR-IORB -1bp (SOFR 3.89% Oct 13 vs IORB 3.90%) implies no funding stress despite the equity selloff and MOVE 103.",
+        "current_read": "SOFR-IORB -1bp (SOFR 3.88% Oct 13 vs IORB 3.90%) implies no funding stress despite the equity selloff and MOVE 103.",
         "confidence": "MEDIUM",
         "trend": "Normal",
         "source": "FRED SOFR/IORB",
