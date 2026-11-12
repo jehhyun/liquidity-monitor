@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-11T14:07:19.000Z",
+  "last_updated": "2026-11-12T15:26:42.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-11: ingested new 10Y 91282CRX1 (auction Nov 10, 5.020%, BTC 2.46, dealer 8.1% / direct 24.0% / indirect 50.6% of $50.52B incl. SOMA add-on). 30Y 912810UY2 auctions Nov 12 (pending)."
+  "note": "Checked 2026-11-12 ~15:30 UTC: no new auction results since the 10Y 91282CRX1 (Nov 10). 30Y 912810UY2 auctions 1:00 PM ET Nov 12, after this run."
  },
  "auctions": [
   {
