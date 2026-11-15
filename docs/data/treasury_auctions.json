@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-12T15:26:42.000Z",
+  "last_updated": "2026-11-15T16:26:42.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-12 ~15:30 UTC: no new auction results since the 10Y 91282CRX1 (Nov 10). 30Y 912810UY2 auctions 1:00 PM ET Nov 12, after this run."
+  "note": "Checked 2026-11-15 ~16:20 UTC: appended 30Y 912810UY2 (Nov 12; 5.441%, BTC 2.36, dealer 9.45%). Pending: 20Y 912810UZ9 (Nov 18), 10Y TIPS 91282CRE3 (Nov 19)."
  },
  "auctions": [
   {
@@ -540,16 +540,43 @@
    "btc_pctile": null,
    "tail_bps": null,
    "pctile_note": "Fewer than 8 comparable 10-Year auctions in the ledger (3 incl. this one) -- percentile not valid. Total includes SOMA add-on, so bidder shares sum to <100% (competitive-only: dealer 9.8% / direct 29.0% / indirect 61.2% of $41.76B)."
-  }
- ],
- "pending": [
+  },
   {
    "cusip": "912810UY2",
    "type": "Bond",
    "term": "30-Year",
    "auctionDate": "2026-11-12",
    "issueDate": "2026-11-16",
-   "offering_b": 25.0
+   "highYield": 5.441,
+   "bidToCover": 2.36,
+   "totalAccepted_b": 30.071,
+   "dealer_pct": 9.45,
+   "direct_pct": 17.0,
+   "indirect_pct": 56.49,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "tail_bps": null,
+   "pctile_note": "Fewer than 8 comparable 30-Year auctions in the ledger (3 incl. this one) -- percentile not valid. Total ($30.07B) includes SOMA add-on/noncompetitive, so bidder shares sum to <100% (competitive-only: dealer 11.4% / direct 20.5% / indirect 68.1% of $24.94B). Allotted at high 21.29%."
+  }
+ ],
+ "pending": [
+  {
+   "cusip": "912810UZ9",
+   "type": "Bond",
+   "term": "20-Year",
+   "auctionDate": "2026-11-18",
+   "issueDate": "2026-11-30",
+   "offering_b": 16.0
+  },
+  {
+   "cusip": "91282CRE3",
+   "type": "TIPS",
+   "term": "10-Year TIPS (9Y8M reopening)",
+   "auctionDate": "2026-11-19",
+   "issueDate": "2026-11-30",
+   "offering_b": 19.0
   }
  ]
 }
