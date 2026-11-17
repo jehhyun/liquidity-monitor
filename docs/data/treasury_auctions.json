@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-15T16:26:42.000Z",
+  "last_updated": "2026-11-17T14:09:08.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-15 ~16:20 UTC: appended 30Y 912810UY2 (Nov 12; 5.441%, BTC 2.36, dealer 9.45%). Pending: 20Y 912810UZ9 (Nov 18), 10Y TIPS 91282CRE3 (Nov 19)."
+  "note": "Checked 2026-11-17 ~14:05 UTC: no new coupon auctions since 30Y 912810UY2 (Nov 12). Pending: 20Y 912810UZ9 (Nov 18), 10Y TIPS 91282CRE3 (Nov 19)."
  },
  "auctions": [
   {
