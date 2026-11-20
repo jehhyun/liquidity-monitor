@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-19T14:07:51.000Z",
+  "last_updated": "2026-11-20T14:08:05.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-19 ~14:05 UTC: ingested 20Y 912810UZ9 (Nov 18): 5.459%, BTC 2.63, dealer 11.73% / direct 24.00% / indirect 54.01% of $17.65B total. Pending: 10Y TIPS reopening 91282CRE3 (Nov 19 1PM ET), 2Y/5Y/7Y notes week of Nov 23 (settle Nov 30)."
+  "note": "Checked 2026-11-20 ~14:05 UTC: ingested 10Y TIPS reopening 91282CRE3 (Nov 19): 2.903%, BTC 2.43, dealer 5.44% / direct 22.94% / indirect 61.90% of $20.96B total. Pending: 2Y 91282CRY9 (Nov 23, $69B), 5Y 91282CRZ6 (Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), all settle Nov 30."
  },
  "auctions": [
   {
@@ -578,40 +578,51 @@
    "btc_pctile": null,
    "tail_bps": null,
    "pctile_note": "Fewer than 8 comparable 20-Year auctions in the ledger (4 incl. this one) -- percentile not valid. Total ($17.65B) includes SOMA add-on, so bidder shares sum to <100% (competitive-only: dealer 13.1% / direct 26.7% / indirect 60.2% of $15.84B). Allotted at high 70.87%. Vs Oct 20Y reopening (BTC 2.73 / dealer 10.18% / indirect 57.71%) slightly softer; vs Sep (BTC 2.57 / dealer 16.74%) much healthier."
-  }
- ],
- "pending": [
+  },
   {
    "cusip": "91282CRE3",
    "type": "TIPS",
    "term": "10-Year TIPS (9Y8M reopening)",
    "auctionDate": "2026-11-19",
    "issueDate": "2026-11-30",
-   "offering_b": 19.0
-  },
+   "highYield": 2.903,
+   "bidToCover": 2.43,
+   "totalAccepted_b": 20.959,
+   "dealer_pct": 5.44,
+   "direct_pct": 22.94,
+   "indirect_pct": 61.9,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "tail_bps": null,
+   "pctile_note": "Fewer than 8 comparable 10Y TIPS auctions in the ledger -- percentile not valid. Shares are of $20.96B total accepted. Vs the Sep 17 reopening of the same CUSIP (2.653%, BTC 2.24, dealer 10.52% / indirect 51.07%) and Jul original (BTC 2.30, dealer 8.82%): materially stronger -- lowest dealer take of any coupon/TIPS auction in the ledger's recent run."
+  }
+ ],
+ "pending": [
   {
    "cusip": "91282CRY9",
    "type": "Note",
    "term": "2-Year",
-   "auctionDate": "week of 2026-11-23",
+   "auctionDate": "2026-11-23",
    "issueDate": "2026-11-30",
-   "offering_b": null
+   "offering_b": 69.0
   },
   {
    "cusip": "91282CRZ6",
    "type": "Note",
    "term": "5-Year",
-   "auctionDate": "week of 2026-11-23",
+   "auctionDate": "2026-11-24",
    "issueDate": "2026-11-30",
-   "offering_b": null
+   "offering_b": 70.0
   },
   {
    "cusip": "91282CSA0",
    "type": "Note",
    "term": "7-Year",
-   "auctionDate": "week of 2026-11-23",
+   "auctionDate": "2026-11-25",
    "issueDate": "2026-11-30",
-   "offering_b": null
+   "offering_b": 44.0
   }
  ]
 }
