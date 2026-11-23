@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-20T14:08:05.000Z",
+  "last_updated": "2026-11-23T14:08:24.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-20 ~14:05 UTC: ingested 10Y TIPS reopening 91282CRE3 (Nov 19): 2.903%, BTC 2.43, dealer 5.44% / direct 22.94% / indirect 61.90% of $20.96B total. Pending: 2Y 91282CRY9 (Nov 23, $69B), 5Y 91282CRZ6 (Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), all settle Nov 30."
+  "note": "Checked 2026-11-23 ~14:10 UTC: no new Note/Bond/TIPS auctions since the 10Y TIPS reopening 91282CRE3 (Nov 19). Pending: 2Y 91282CRY9 (today Nov 23, $69B), 5Y 91282CRZ6 (Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), all settle Nov 30; 2Y FRN 91282CRS2 ($28B) also this week."
  },
  "auctions": [
   {
