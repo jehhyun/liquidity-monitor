@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-23T14:08:24.000Z",
+  "last_updated": "2026-11-24T14:07:57.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-23 ~14:10 UTC: no new Note/Bond/TIPS auctions since the 10Y TIPS reopening 91282CRE3 (Nov 19). Pending: 2Y 91282CRY9 (today Nov 23, $69B), 5Y 91282CRZ6 (Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), all settle Nov 30; 2Y FRN 91282CRS2 ($28B) also this week."
+  "note": "Checked 2026-11-24 ~14:05 UTC: added 2Y 91282CRY9 (Nov 23: 4.700%, BTC 2.65, dealer 9.29% / direct 33.99% / indirect 46.02% of $76.11B). Pending: 5Y 91282CRZ6 (today Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), both settle Nov 30; 2Y FRN reopening 91282CRS2 today."
  },
  "auctions": [
   {
@@ -597,17 +597,28 @@
    "btc_pctile": null,
    "tail_bps": null,
    "pctile_note": "Fewer than 8 comparable 10Y TIPS auctions in the ledger -- percentile not valid. Shares are of $20.96B total accepted. Vs the Sep 17 reopening of the same CUSIP (2.653%, BTC 2.24, dealer 10.52% / indirect 51.07%) and Jul original (BTC 2.30, dealer 8.82%): materially stronger -- lowest dealer take of any coupon/TIPS auction in the ledger's recent run."
-  }
- ],
- "pending": [
+  },
   {
    "cusip": "91282CRY9",
    "type": "Note",
    "term": "2-Year",
    "auctionDate": "2026-11-23",
    "issueDate": "2026-11-30",
-   "offering_b": 69.0
-  },
+   "highYield": 4.7,
+   "bidToCover": 2.65,
+   "totalAccepted_b": 76.113,
+   "dealer_pct": 9.29,
+   "direct_pct": 33.99,
+   "indirect_pct": 46.02,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "tail_bps": null,
+   "pctile_note": "Fewer than 8 comparable 2Y auctions in the ledger (5 incl. this one) -- percentile not valid. Shares are of $76.11B total accepted incl. SOMA/noncompetitive (competitive-only: dealer 10.4% / direct 38.1% / indirect 51.5% of $67.97B). Allotted at high 74.54%. Vs prior 2Ys: Oct 26 (4.708%, BTC 2.59, dealer 11.5%, indirect 40.4%), Sep 22 (BTC 2.63, dealer 11.25%), Aug 25 (BTC 2.60, dealer 9.5%) -- higher BTC and lower dealer take than Sep/Oct: solid."
+  }
+ ],
+ "pending": [
   {
    "cusip": "91282CRZ6",
    "type": "Note",
