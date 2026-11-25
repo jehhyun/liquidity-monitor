@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-24T14:07:57.000Z",
+  "last_updated": "2026-11-25T14:09:20.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-24 ~14:05 UTC: added 2Y 91282CRY9 (Nov 23: 4.700%, BTC 2.65, dealer 9.29% / direct 33.99% / indirect 46.02% of $76.11B). Pending: 5Y 91282CRZ6 (today Nov 24, $70B), 7Y 91282CSA0 (Nov 25, $44B), both settle Nov 30; 2Y FRN reopening 91282CRS2 today."
+  "note": "Checked 2026-11-25 ~14:00 UTC: added 5Y 91282CRZ6 (Nov 24: 4.719%, BTC 2.37, dealer 8.1% / direct 33.01% / indirect 48.81% of $77.22B). Pending: 7Y 91282CSA0 (today Nov 25, $44B), settles Nov 30. 2Y FRN reopening (Nov 24) not ingested (FRN low weight)."
  },
  "auctions": [
   {
@@ -616,17 +616,28 @@
    "btc_pctile": null,
    "tail_bps": null,
    "pctile_note": "Fewer than 8 comparable 2Y auctions in the ledger (5 incl. this one) -- percentile not valid. Shares are of $76.11B total accepted incl. SOMA/noncompetitive (competitive-only: dealer 10.4% / direct 38.1% / indirect 51.5% of $67.97B). Allotted at high 74.54%. Vs prior 2Ys: Oct 26 (4.708%, BTC 2.59, dealer 11.5%, indirect 40.4%), Sep 22 (BTC 2.63, dealer 11.25%), Aug 25 (BTC 2.60, dealer 9.5%) -- higher BTC and lower dealer take than Sep/Oct: solid."
-  }
- ],
- "pending": [
+  },
   {
    "cusip": "91282CRZ6",
    "type": "Note",
    "term": "5-Year",
    "auctionDate": "2026-11-24",
    "issueDate": "2026-11-30",
-   "offering_b": 70.0
-  },
+   "highYield": 4.719,
+   "bidToCover": 2.37,
+   "totalAccepted_b": 77.216,
+   "dealer_pct": 8.1,
+   "direct_pct": 33.01,
+   "indirect_pct": 48.81,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "tail_bps": null,
+   "pctile_note": "Fewer than 8 comparable 5Y auctions in the ledger (5 incl. this one) -- percentile not valid. Shares are of $77.22B total accepted incl. SOMA/noncompetitive (competitive-only: dealer 9.0% / direct 36.7% / indirect 54.3% of $69.43B). Allotted at high 63.47%. Vs prior 5Ys: Oct 27 (4.845%, BTC 2.33, dealer 9.4%, indirect 53.5%), Sep 23 (BTC 2.21, dealer 13.65%), Aug 26 (BTC 2.37, dealer 8.9%) -- BTC better than Sep/Oct and the lowest 5Y dealer take in the ledger; indirect share lighter, direct heavier: solid."
+  }
+ ],
+ "pending": [
   {
    "cusip": "91282CSA0",
    "type": "Note",
