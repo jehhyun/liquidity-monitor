@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-25T14:09:20.000Z",
+  "last_updated": "2026-11-26T14:08:22.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-25 ~14:00 UTC: added 5Y 91282CRZ6 (Nov 24: 4.719%, BTC 2.37, dealer 8.1% / direct 33.01% / indirect 48.81% of $77.22B). Pending: 7Y 91282CSA0 (today Nov 25, $44B), settles Nov 30. 2Y FRN reopening (Nov 24) not ingested (FRN low weight)."
+  "note": "Checked 2026-11-26 ~14:00 UTC: added 7Y 91282CSA0 (Nov 25: 4.708%, BTC 2.43, dealer 7.72% / direct 29.76% / indirect 52.18% of $48.54B). No coupon auctions pending this week; 2Y/5Y/7Y settle Nov 30. Next coupons: Dec refunding-cycle 3Y/10Y/30Y (dates TBA)."
  },
  "auctions": [
   {
@@ -635,16 +635,26 @@
    "btc_pctile": null,
    "tail_bps": null,
    "pctile_note": "Fewer than 8 comparable 5Y auctions in the ledger (5 incl. this one) -- percentile not valid. Shares are of $77.22B total accepted incl. SOMA/noncompetitive (competitive-only: dealer 9.0% / direct 36.7% / indirect 54.3% of $69.43B). Allotted at high 63.47%. Vs prior 5Ys: Oct 27 (4.845%, BTC 2.33, dealer 9.4%, indirect 53.5%), Sep 23 (BTC 2.21, dealer 13.65%), Aug 26 (BTC 2.37, dealer 8.9%) -- BTC better than Sep/Oct and the lowest 5Y dealer take in the ledger; indirect share lighter, direct heavier: solid."
-  }
- ],
- "pending": [
+  },
   {
    "cusip": "91282CSA0",
    "type": "Note",
    "term": "7-Year",
    "auctionDate": "2026-11-25",
    "issueDate": "2026-11-30",
-   "offering_b": 44.0
+   "highYield": 4.708,
+   "bidToCover": 2.43,
+   "totalAccepted_b": 48.536,
+   "dealer_pct": 7.72,
+   "direct_pct": 29.76,
+   "indirect_pct": 52.18,
+   "dealer_pctile": null,
+   "indirect_pctile": null,
+   "direct_pctile": null,
+   "btc_pctile": null,
+   "tail_bps": null,
+   "pctile_note": "Fewer than 8 comparable 7Y auctions in the ledger (5 incl. this one) -- percentile not valid. Shares are of $48.54B total accepted incl. SOMA/noncompetitive (competitive-only: dealer 8.6% / direct 33.2% / indirect 58.2% of $43.52B). Allotted at high 41.41%. Vs prior 7Ys: Oct 29 (4.894%, BTC 2.46, dealer 8.4%, indirect 51.6%), Sep 24 (BTC 2.42, dealer 10.8%), Aug 27 (BTC 2.50, dealer 10.8%), Jul 28 (BTC 2.49, dealer 11.7%) -- lowest 7Y dealer take in the ledger; BTC in line; indirect steady: solid."
   }
- ]
+ ],
+ "pending": []
 }
