@@ -1,8 +1,8 @@
 {
  "meta": {
-  "last_updated": "2026-11-26T14:08:22.000Z",
+  "last_updated": "2026-11-27T14:08:36.000Z",
   "source": "TreasuryDirect TA_WS (securities/search)",
-  "note": "Checked 2026-11-26 ~14:00 UTC: added 7Y 91282CSA0 (Nov 25: 4.708%, BTC 2.43, dealer 7.72% / direct 29.76% / indirect 52.18% of $48.54B). No coupon auctions pending this week; 2Y/5Y/7Y settle Nov 30. Next coupons: Dec refunding-cycle 3Y/10Y/30Y (dates TBA)."
+  "note": "Checked 2026-11-27 ~14:05 UTC: no new Note/Bond/TIPS auctions since the Nov 25 7Y (91282CSA0). 2Y/5Y/7Y/20Y/10Y TIPS settle Nov 30. Next coupons: Dec refunding-cycle 3Y/10Y/30Y (dates TBA)."
  },
  "auctions": [
   {
